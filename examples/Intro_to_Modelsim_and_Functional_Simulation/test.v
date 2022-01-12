@@ -8,12 +8,15 @@ module test (
   output wire c
 );
 
+//This module delays the inputs & output and takes the logical AND of them 
+
 reg a_reg;
 reg b_reg;
 
+//c is output wire
 assign c = a_reg & b_reg;
 
-
+//a & b regs should pass the a & b wires on the next cc
 always @ (posedge clk or posedge reset)
   if (reset)
     begin

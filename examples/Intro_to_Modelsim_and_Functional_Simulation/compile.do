@@ -12,20 +12,26 @@
 
 # Variables to configure
 set SIMULATION_LENGTH 10ms
+# this variable should held the path to where you saved your source files
 set SOURCE_DIR "./"
 set TB_DIR "./"
+# specify name of tb module to run as the top level simulation
 set TB_MODULE "test_tb"
 
 # End of variables to configure
 
+# continue running if an error occurs
 onerror {resume}
+# save output from modelsim console window into a transcript file
 transcript on
 
-# set up compilation library
+# set up compilation library; if the rtl_library already exists, delete it
 if {[file exists rtl_work]} {
 	vdel -lib rtl_work -all
 }
+# recreate the library
 vlib rtl_work
+# map the virtual library
 vmap work rtl_work
 
 # compile source files
@@ -36,6 +42,7 @@ vlog -sv -work work ${TB_DIR}/${TB_MODULE}.v
 
 # initialize simulation
 # add other libraries if necessary with -L lib_name
+# -t sets up the timescale
 # if simulating megafunctions, add libraries specified by Quartus
 vsim -t 1ns -L work ${TB_MODULE}
 

@@ -1,0 +1,13 @@
+1 way to do functional simulation:
+-create modelsim project
+-add files to project
+-compile
+-simulate
+
+In industry this is a time consuming process, a better way to simulate our design
+is to used TCL aka Tool Command Language to write scripts that execute what we need to
+simulate our design.
+
+Afterwards we can just use the command, "do file_name.do" to compile and run the simulation
+
+red or blue lines in modelsim usually indicate that wires are not properly connected in your simulation.
