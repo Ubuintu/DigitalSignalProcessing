@@ -1,28 +1,70 @@
 % calculation of filter coefficients and the magnitude response
 % for an approximation to a brick wall low pass filter
-clear
+clc
+close all
+clear all
+
 % parameters
-fp = 1/8;
-N=31;
-N_I = 2; % integer bits in filter output
-N_F = 16; % fraction bits in filter output
+N_I = 1; % integer bits in filter output
+N_F = 17; % fraction bits in filter output
+N = 21;   % Deliverable 1
+% Order of filter
+M = N-1;
+% Number of symbols per sample OR Nsps
+Nsps = 4;
+% length of the pulse
+span = M/Nsps;
+% ? or excess bandwidth
+beta = 0.25;
+% shape of rcosdesign filter
+shape = 'sqrt';
 
 %derived parameters
 n = [0:N-1];
 
 % Begin Computation
 % Find coefficients (i.e. the impulse response) for a filter that
-% approximates a brick wall filter with a pass-band gain of 1.
-h = 2 * fp * sin ( 2*pi * fp * (n- (N-1)/2) +10^(-8)) ./ ...
-               (2*pi * fp *(n- (N-1)/2)+10^(-8));  
+% approximates a SRRC filter with a pass-band gain of 1.
+
+h = rcosdesign(beta, span, Nsps, shape);  
+           
+% For Kaiser design to meet spec, increasing order wasn't enough; might
+% have to use PM to design it
+% fb = [0 fp fp fc fc fs 0.5];
+% ao = [1 1 1 0.5 0.5 0 0];
+
+
+% Use the appropriate windows as specified in lab 5 p.9
+% **Hann window**
+% win = hann(N);
+% **Kaiser equivalent of a Hann window**
+% win = kaiser(N,3.86);
+% **Hamming window**
+% win = hamming(N);
+% **Kaiser equivalent of a Hamming window**
+% win = kaiser(N,4.86);
+% **Blackman window**
+% win = blackman(N);
+% **Kaiser equivalent of a Blackman window**
+% win = kaiser(N,7.04);
+% **Rectangular window**
+win = rectwin(N);
+% **Kaiser equivalent of a Rectangular window**
+% Note that N & beta was found using the pre-lab instructions
+% win = kaiser(N, (0.1102*(A-8.7)) );
+
+% Actual freq resp/windowed freq resp? (idk if this is the right term)
+h = h.*win.';
+  
 % Find the magnitude response of the truncated impulse response
 % when the infinite length response has a flat pass-band gain of 1.
 % The truncated response will have ripple in the pass band.
 w = [.5:1:1000]/1000*pi; % frequency vector in radians/sample
 H= freqz(h, 1, w);
 figure(1); plot (w/2/pi,20*log10(abs(H))); % freq axis in cycles/sample
-grid; axis([0.0,0.5,-50,10]);
+grid; axis([0.0,0.5,-100,10]);
 xlabel('frequency in cycles'); ylabel('20  log ( | H(e^{j 2 pi f}) | )');
+title('magnitude response');
 print -deps mag_response_for_length_31
 % The peak of the magnitude response is
 H_max = max(abs(H));
@@ -51,7 +93,7 @@ w = [.5:1:1000]/1000*pi; % frequency vector in radians/sample
 H_hd_rm_removed= freqz(h_hd_rm_removed, 1, w);
 figure(2); 
 plot (w/2/pi,20*log10(abs(H_hd_rm_removed))); % freq axis in cycles/sample
-grid; axis([0.0,0.5,-50,10]);
+grid; axis([0.0,0.5,-100,10]);
 xlabel('frequency in cycles'); 
 ylabel('20  log ( | H_{hd rm removed}(e^{j 2 pi f}) | )');
 title('magnitude response with headroom removed from the output')
@@ -82,9 +124,10 @@ H_final_max = max(abs(H_final));
 figure(3); 
 plot (w/2/pi,20*log10(abs(H_final))); % freq axis in cycles/sample
 grid; 
-axis([0.0,0.5,-50,10]);
+axis([0.0,0.5,-100,10]);
 xlabel('frequency in cycles');
 ylabel('20  log ( | H_{final}(e^{j 2 pi f}) | )');
+title('Magnitude Response of final filter design');
 print -deps mag_response_with_practical_coefficients.eps
 
 

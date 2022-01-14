@@ -1,49 +1,63 @@
 % calculation of filter coefficients and the magnitude response
 % for an approximation to a brick wall low pass filter
+clc
+close all
 clear
+format long
+
 % parameters
-fp = 1/8;
-N=31;
-N_I = 2; % integer bits in filter output
-N_F = 16; % fraction bits in filter output
+N = 21;   % Deliverable 1
+% Order of filter
+M = N-1;
+% Number of symbols per sample OR Nsps
+Nsps = 4;
+% length of the pulse
+span = M/Nsps;
+% ? or excess bandwidth
+beta = 0.25;
+% shape of rcosdesign filter
+shape = 'sqrt';
 
 %derived parameters
-n = [0:N-1];
+% n = [0:N-1];
 
 % Begin Computation
 % Find coefficients (i.e. the impulse response) for a filter that
-% approximates a brick wall filter with a pass-band gain of 1.
-h = 2 * fp * sin ( 2*pi * fp * (n- (N-1)/2) +10^(-8)) ./ ...
-               (2*pi * fp *(n- (N-1)/2)+10^(-8));  
-% Find the magnitude response of the truncated impulse response
-% when the infinite length response has a flat pass-band gain of 1.
-% The truncated response will have ripple in the pass band.
+% approximates a SRRC filter with the above parameters.
+h = rcosdesign(beta, span, Nsps, shape);  
+  
+% Find the magnitude response of the SRRC
 w = [.5:1:1000]/1000*pi; % frequency vector in radians/sample
 H= freqz(h, 1, w);
 figure(1); plot (w/2/pi,20*log10(abs(H))); % freq axis in cycles/sample
-grid; axis([0.0,0.5,-50,10]);
-xlabel('frequency in cycles'); ylabel('20  log ( | H(e^{j 2 pi f}) | )');
+grid; axis([0.0,0.5,-100,20]);
+xlabel('frequency in cycles/samples'); ylabel('20  log ( | H(e^{j 2 pi f}) | )');
+title('magnitude response');
 print -deps mag_response_for_length_31
 % The peak of the magnitude response is
 H_max = max(abs(H));
 
 % Choose output format
-% Since H_max was observed to be 1.102, the output format will require s
-% 1 more integer bit than the input.  Since the format of the input 
-% is 1s17 and output is to be 18 bits, the output must have format 2s16
+% Since H_max was observed to be 2.0928, the output format will require 
+% 2 more integer bits than the input.  Since the format of the input 
+% is 1s17 and output is to be 18 bits, the output must have format 3s15
 
-% An output format of 2s16 can accommodate a peak value of nearly 2.
-% However the peak output is 1.102. This leaves considerable headroom
-% in the output. The head room in the output can be removed by increasing
-% the peak gain of the filter to nearly 2. The gain can be increased
-% to nearly 2 by scaling all the coefficients by (2/1.102)*safety_factor,
+% An output format of 3s15 can accommodate a peak value of nearly 4.
+% However the peak output is 2.0928. However we are asked to design the filter
+% such that a FS 1s17 sine input produces a 1s17 sine output. The head room in the output 
+% can be managed by determining a scaling factor that will reduce 
+% the peak gain of the filter to nearly 1. The gain can be reduced
+% to nearly 1 by scaling all the coefficients by (1/2.0928)*safety_factor,
 % where safety factor is slightly less than 1 to ensure the peak gain
-% will be less than 2.
+% will be less than 1.
 
+% For the first filter
+% h_hd_rm_removed = h;
 
-% Now scale the coefficient to remove the headroom in the output
-safety_factor = 0.999; % used to ensure peak gain is less than 2
-h_hd_rm_removed = h * (2/1.102) * safety_factor; 
+% Now scale the coefficient to ensure the output fits a 1s17 format
+safety_factor = 1-2^-17; % used to ensure peak gain of 18'H1FFFF
+h_hd_rm_removed = h * (1/H_max) * safety_factor;
+
 
 
 % Find the magnitude response of the scaled truncated impulse response
@@ -51,10 +65,10 @@ w = [.5:1:1000]/1000*pi; % frequency vector in radians/sample
 H_hd_rm_removed= freqz(h_hd_rm_removed, 1, w);
 figure(2); 
 plot (w/2/pi,20*log10(abs(H_hd_rm_removed))); % freq axis in cycles/sample
-grid; axis([0.0,0.5,-50,10]);
+grid; axis([0.0,0.5,-100,20]);
 xlabel('frequency in cycles'); 
 ylabel('20  log ( | H_{hd rm removed}(e^{j 2 pi f}) | )');
-title('magnitude response with headroom removed from the output')
+title('Magnitude response with headroom removed from the output')
 
 
 % Convert h_hd_rm_removed ( which has 1 integer bit with matlab precision 
@@ -82,9 +96,10 @@ H_final_max = max(abs(H_final));
 figure(3); 
 plot (w/2/pi,20*log10(abs(H_final))); % freq axis in cycles/sample
 grid; 
-axis([0.0,0.5,-50,10]);
+axis([0.0,0.5,-100,20]);
 xlabel('frequency in cycles');
 ylabel('20  log ( | H_{final}(e^{j 2 pi f}) | )');
+title('Magnitude Response of final filter design');
 print -deps mag_response_with_practical_coefficients.eps
 
 
