@@ -1,6 +1,7 @@
 %% Lect1 pt.3: 4 tap filter example
 close all
 clear
+clc
 
 h = [.5 .8 .4 .3];
 
