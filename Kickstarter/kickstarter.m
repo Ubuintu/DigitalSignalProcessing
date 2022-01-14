@@ -75,7 +75,7 @@ fprintf('decimal worth of the peak output given the worse case input: %10.17f\n\
 
 % 3) Scale the coefficients of the filter so that its 1s17 output has a a peak value of 18'H1FFFF, for the worst case input.
 scaled_h = h * (1-2^-17)/peak_output;
-scaled_h = h * (1)/peak_output;
+% scaled_h = h * (1)/peak_output;
 
 % verify magnitude response of scaled impulse response is the same
 [H_scaled, w] = freqz(scaled_h,1); 
