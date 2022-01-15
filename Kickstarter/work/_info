@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
@@ -8,3 +9,51 @@ z2
 !i10f 100
 cModel Technology
 d/home/tob208/engr-ece
+vfilter_tb
+DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z0 !s110 1642285151
+!i10b 1
+!s100 H9Bh6dfV;8]E:CFGz]Y=Y2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IN3C]g1Xa7gF>_kQfQNmXU3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z3 d/home/tob208/engr-ece/Documents/EE465/Kickstarter
+w1642285131
+8/home/tob208/engr-ece/Documents/EE465/Kickstarter/filter_tb.sv
+F/home/tob208/engr-ece/Documents/EE465/Kickstarter/filter_tb.sv
+!i122 6
+L0 1 27
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1642285151.000000
+!s107 /home/tob208/engr-ece/Documents/EE465/Kickstarter/filter_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/tob208/engr-ece/Documents/EE465/Kickstarter/filter_tb.sv|
+!i113 1
+o-work work -sv
+Z6 tCvgOpt 0
+vsine_filt
+R0
+!i10b 1
+!s100 b`>0PC8GQQQ?E0Cd_cibI3
+R1
+I_]]0P:jUJ6SOc2k=27ESP0
+R2
+R3
+w1642212139
+8/home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v
+F/home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v
+!i122 5
+L0 1 96
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v|
+!i113 1
+o-work work
+R6

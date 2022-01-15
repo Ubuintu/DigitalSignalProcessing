@@ -1,2 +1,43 @@
 # reading /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/../modelsim.ini
 # Loading project kickstarterMS
+# reading /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/../modelsim.ini
+project open /home/tob208/engr-ece/Documents/EE465/Kickstarter/kickstarterMS
+# Loading project kickstarterMS
+ls
+# approx_brick_wall_filt.v
+# coefficients_for_low_pass_brick_wall_filter.m
+# filter_tb.sv
+# kickstarter.m
+# kickstarter.m~
+# kickstarterMS.cr.mti
+# kickstarterMS.mpf
+# lab_exam_sheet.pdf
+# mag_response_for_length_31.eps
+# mag_response_with_practical_coefficients.eps
+# PartASineInput.m
+# PartASineInput.m~
+# pulse_shaping_filter.v
+# sineInputFilter.v
+# stage_2.m
+# testingGit.txt
+# transcript
+# work
+# worsecaseInputFilter.v
+# Compile of sineInputFilter.v was successful.
+# Compile of filter_tb.sv failed with 4 errors.
+# 2 compiles, 1 failed with 4 errors.
+# Compile of sineInputFilter.v was successful.
+# Compile of filter_tb.sv failed with 9 errors.
+# 2 compiles, 1 failed with 9 errors.
+# Compile of sineInputFilter.v was successful.
+# Compile of filter_tb.sv failed with 9 errors.
+# 2 compiles, 1 failed with 9 errors.
+# Compile of sineInputFilter.v was successful.
+# Compile of filter_tb.sv failed with 26 errors.
+# 2 compiles, 1 failed with 26 errors.
+# Compile of sineInputFilter.v was successful.
+# Compile of filter_tb.sv failed with 7 errors.
+# 2 compiles, 1 failed with 7 errors.
+# Compile of sineInputFilter.v was successful.
+# Compile of filter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
