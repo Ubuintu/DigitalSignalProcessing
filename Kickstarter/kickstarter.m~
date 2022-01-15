@@ -54,9 +54,9 @@ h_sine_scaled= h * (1/H_max_sine) * safety_factor;
 
 % Find the magnitude response of the scaled truncated impulse response
 w = [.5:1:1000]/1000*pi; % frequency vector in radians/sample
-H_hd_rm_removed= freqz(h_hd_rm_removed, 1, w);
+H_sine_scaled= freqz(h_sine_scaled, 1, w);
 figure(2); 
-plot (w/2/pi,20*log10(abs(H_hd_rm_removed))); % freq axis in cycles/sample
+plot (w/2/pi,20*log10(abs(H_sine_scaled))); % freq axis in cycles/sample
 grid; axis([0.0,0.5,-50,10]);
 xlabel('frequency in cycles'); 
 ylabel('20  log ( | H_{hd rm removed}(e^{j 2 pi f}) | )');
@@ -68,16 +68,21 @@ title('magnitude response with headroom removed from the output')
 % ( which is an 18 bit signed decimal integer ). An 18 bit  signed decimal
 % integer can be entered into a Verilog HDL as "18'sd number" if "number" 
 %  is positive and  as "-18sd |number|" if "number" is negative
-h_signed_integer = round(h_hd_rm_removed * 2^17);
-coefficients_for_Verilog_HDL = h_signed_integer' % print h_signed_integer 
-                                                 % as a column vector in
-                                                 % the command window
+h_signed_integer = round(h_sine_scaled * 2^17);
+disp(['coefficients for Sine input filter']);
+for i = 1:(length(h_signed_integer)/2)+1
+    if (h_signed_integer(i) > 0)
+        disp(['b[' num2str(i-1) '] = 18''sd' num2str(abs(h_signed_integer(i))) ';'])
+    else
+        disp(['b[' num2str(i-1) '] = -18''sd' num2str(abs(h_signed_integer(i))) ';'])
+    end
+end
 
 % Convert the 18 bit signed integer to a 1s17 format so that the actual
 % magnitude response (i.e. the magnitude response with coefficients
 % that have only 18 bits of precision) can be calculated
 h_final = h_signed_integer/2^17; 
-coefficients_in_18_bit_precision = h_final' % print h_final as a column  
+% coefficients_in_18_bit_precision = h_final' % print h_final as a column  
                                             % vector in the command window
 
 % Find the frequency response of the final filter, which has coefficients
@@ -91,6 +96,12 @@ grid;
 axis([0.0,0.5,-50,10]);
 xlabel('frequency in cycles');
 ylabel('20  log ( | H_{final}(e^{j 2 pi f}) | )');
+
+if (H_final_max > 1)
+    fprintf('\n\t\t\t!!!!ERROR!!!!\n\nMaximum magnitude response of the sine input SRRC filter is: %10.17f\n', H_final_max);
+else
+    fprintf('\n\t\t\tNo issues with Filter design\n\nMaximum magnitude response of the sine input SRRC filter is: %10.17f\n', H_final_max);
+end
 
 %% Part B Managing Headroom
 % 1) Find 21 sample input sequence that produces largest possible peak value
@@ -139,7 +150,7 @@ H_scaled_max = max(abs(H_scaled));
 
 % convert the scaled IR to 18s0 format for Verilog
 h_signed_integer = round(scaled_h * 2^17);
-disp(['coefficients for Verilog']);
+disp(['coefficients for Part B filter']);
 for i = 1:(length(h_signed_integer)/2)+1
     if (h_signed_integer(i) > 0)
         disp(['b[' num2str(i-1) '] = 18''sd' num2str(abs(h_signed_integer(i))) ';'])
@@ -153,7 +164,7 @@ end
 % precision can be calculated) can be calculated.
 disp(['coefficients for in 1s17 format']);
 h_final = h_signed_integer/2^17; 
-coefficients_in_18_bit_precision = h_final'
+% coefficients_in_18_bit_precision = h_final'
 
 % Find the frequency response of the final filter, which has coefficients
 % with only 18 bits of precision
@@ -171,10 +182,15 @@ title('Final filter');
 print -deps mag_response_with_practical_coefficients.eps
 peak_2 = max(20*log10(abs(H_final)));
 
-scale_factor_dB = peak_1 - peak_2;
+comparison = 0;
 
-if (H_final_max > 1)
-    fprintf('\n\t\t\t!!!!ERROR!!!!\n\nMaximum magnitude response of the final design filter is: %10.17f\n', H_final_max);
+for i = 1:length(h_final)
+    comparison = comparison + (h_final(i)*worse_case(i));
+end
+
+% H_final was 
+if (comparison > 1)
+    fprintf('\n\t\t\t!!!!ERROR!!!!\n\nMagnitude response of the filter given the worse case input is: %10.17f\n', comparison);
 else
-    fprintf('\n\t\t\tNo issues with Filter design\n\nMaximum magnitude response of the final design filter is: %10.17f\n', H_final_max);
+    fprintf('\n\t\t\tNo issues with Filter design\n\nMagnitude response of the filter given the worse case input is: %10.17f\n', comparison);
 end
