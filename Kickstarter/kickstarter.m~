@@ -70,7 +70,6 @@ title('magnitude response with headroom removed from the output')
 %  is positive and  as "-18sd |number|" if "number" is negative
 h_signed_integer = round(h_sine_scaled * 2^17);
 disp(['coefficients for Sine input filter']);
-fprintf('\n');
 for i = 1:(length(h_signed_integer)/2)+1
     if (h_signed_integer(i) > 0)
         disp(['b[' num2str(i-1) '] = 18''sd' num2str(abs(h_signed_integer(i))) ';'])
@@ -130,7 +129,7 @@ for i = 1:length(h)
     peak_output = peak_output + (worse_case(i)*h(i));
 end
 
-fprintf('\npardecimal worth of the peak output given the worse case input: %10.17f\n\n',peak_output);
+fprintf('decimal worth of the peak output given the worse case input: %10.17f\n\n',peak_output);
 
 % 3) Scale the coefficients of the filter so that its 1s17 output has a a peak value of 18'H1FFFF, for the worst case input.
 scaled_h = h * (1-2^-17)/peak_output;
@@ -151,8 +150,7 @@ H_scaled_max = max(abs(H_scaled));
 
 % convert the scaled IR to 18s0 format for Verilog
 h_signed_integer = round(scaled_h * 2^17);
-disp(['coefficients for filter given worse case input']);
-fprintf('\n');
+disp(['coefficients for Part B filter']);
 for i = 1:(length(h_signed_integer)/2)+1
     if (h_signed_integer(i) > 0)
         disp(['b[' num2str(i-1) '] = 18''sd' num2str(abs(h_signed_integer(i))) ';'])
@@ -164,7 +162,7 @@ end
 % Convert 18 bit signed number to 1s17 so the actual magnitude response
 % (i.e. the magnitude response with coefficients that only have 18 bits of
 % precision can be calculated) can be calculated.
-% disp(['coefficients for in 1s17 format']);
+disp(['coefficients for in 1s17 format']);
 h_final = h_signed_integer/2^17; 
 % coefficients_in_18_bit_precision = h_final'
 
@@ -190,7 +188,7 @@ for i = 1:length(h_final)
     comparison = comparison + (h_final(i)*worse_case(i));
 end
 
-% H_final was rounded up in its assignment
+% H_final was 
 if (comparison > 1)
     fprintf('\n\t\t\t!!!!ERROR!!!!\n\nMagnitude response of the filter given the worse case input is: %10.17f\n', comparison);
 else
