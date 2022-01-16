@@ -1,0 +1,134 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/tob208/engr-ece/Documents/EE465/Kickstarter
+vapprox_brick_wall_filt
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1642289572
+!i10b 1
+!s100 ^o1bgbXT]fO_9]moaNa_D0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+INS03h3>mOo>f_A7P8a`=`0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1642198780
+8/home/tob208/engr-ece/Documents/EE465/Kickstarter/approx_brick_wall_filt.v
+F/home/tob208/engr-ece/Documents/EE465/Kickstarter/approx_brick_wall_filt.v
+!i122 0
+L0 1 254
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1642289572.000000
+Z7 !s107 /home/tob208/engr-ece/Documents/EE465/Kickstarter/worsecaseInputFilter.v|/home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v|/home/tob208/engr-ece/Documents/EE465/Kickstarter/pulse_shaping_filter.v|/home/tob208/engr-ece/Documents/EE465/Kickstarter/approx_brick_wall_filt.v|
+Z8 !s90 -reportprogress|300|-sv|-work|work|/home/tob208/engr-ece/Documents/EE465/Kickstarter/approx_brick_wall_filt.v|/home/tob208/engr-ece/Documents/EE465/Kickstarter/pulse_shaping_filter.v|/home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v|/home/tob208/engr-ece/Documents/EE465/Kickstarter/worsecaseInputFilter.v|
+!i113 1
+Z9 o-sv -work work
+Z10 tCvgOpt 0
+vfilter_tb
+R1
+R2
+!i10b 1
+!s100 6XDFb[XU]`icNm1m0fcUW0
+R3
+I_;IHOZBbX0i=4MK_zzh2R2
+R4
+S1
+R0
+w1642289471
+8/home/tob208/engr-ece/Documents/EE465/Kickstarter/filter_tb.sv
+F/home/tob208/engr-ece/Documents/EE465/Kickstarter/filter_tb.sv
+!i122 1
+L0 1 33
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/tob208/engr-ece/Documents/EE465/Kickstarter/filter_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|/home/tob208/engr-ece/Documents/EE465/Kickstarter/filter_tb.sv|
+!i113 1
+R9
+R10
+vpulse_shaping_filter
+R1
+R2
+!i10b 1
+!s100 Hh<?=GdmJ:UiTj`_T?S>V2
+R3
+IBOU=E7DE62B]@>H2Ee]C40
+R4
+S1
+R0
+w1642198781
+8/home/tob208/engr-ece/Documents/EE465/Kickstarter/pulse_shaping_filter.v
+F/home/tob208/engr-ece/Documents/EE465/Kickstarter/pulse_shaping_filter.v
+!i122 0
+L0 1 101
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+R10
+vsine_filt
+!s110 1642289629
+!i10b 1
+!s100 ZTdFll`TmXP`eQbf<MGc70
+R3
+I:mee2cV`ZonB5]ll_;VP:0
+R4
+R0
+w1642287704
+8/home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v
+F/home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v
+!i122 2
+L0 1 97
+R5
+r1
+!s85 0
+31
+!s108 1642289629.000000
+!s107 /home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tob208/engr-ece/Documents/EE465/Kickstarter/sineInputFilter.v|
+!i113 1
+o-work work
+R10
+vworse_case_filt
+R1
+R2
+!i10b 1
+!s100 N:FU2NLT9@_gRf6DfUh9c3
+R3
+I7DYnn=9jTG44bO10SMWc91
+R4
+S1
+R0
+w1642287669
+8/home/tob208/engr-ece/Documents/EE465/Kickstarter/worsecaseInputFilter.v
+F/home/tob208/engr-ece/Documents/EE465/Kickstarter/worsecaseInputFilter.v
+!i122 0
+L0 1 107
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+R10

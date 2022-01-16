@@ -22,12 +22,13 @@ reg signed [17:0] sum_level_3[2:0];
 reg signed [17:0] sum_level_4;
 
 
-//always @ (posedge clk)
+always @ (posedge clk)
 //x[0] = { x_in[17], x_in[17:1]}; // sign extend input
+	x[0] = x_in;
 
 always @ (posedge clk)
     begin
-        for(i=1; i<20;i=i+1)
+        for(i=1; i<21;i=i+1)
             x[i] <= x[i-1];
     end
 
@@ -48,10 +49,10 @@ always @ *
 
 always @ *
     for(i=0;i<=4;i=i+1)
-        sum_level_2[i] = mult_out[2*i][35:18] + mult_out[2*i+1][35:18];
+        sum_level_2[i] = mult_out[2*i][34:17] + mult_out[2*i+1][34:17];
 
 always @ *
-    sum_level_2[5] = mult_out[10];
+    sum_level_2[5] = mult_out[10][34:17];
 
 
 always @ *
@@ -94,4 +95,3 @@ for (i=0; i<=15; i=i+1)
  b[i] =18'sd 8192; % value of 1/16
 */
 endmodule	
-	
