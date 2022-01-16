@@ -63,12 +63,12 @@ ylabel('20  log ( | H_{hd rm removed}(e^{j 2 pi f}) | )');
 title('magnitude response with headroom removed from the output')
 
 
-% Convert h_hd_rm_removed ( which has 1 integer bit with matlab precision 
+% Convert h_sine_scaled ( which has 0 integer bit with matlab precision 
 % number of fraction bits, say 1s"infinity" format ) to 18s0 format 
 % ( which is an 18 bit signed decimal integer ). An 18 bit  signed decimal
 % integer can be entered into a Verilog HDL as "18'sd number" if "number" 
 %  is positive and  as "-18sd |number|" if "number" is negative
-h_signed_integer = round(h_sine_scaled * 2^17);
+h_signed_integer = round(h_sine_scaled * 2^18);
 disp(['coefficients for Sine input filter']);
 fprintf('\n');
 for i = 1:(length(h_signed_integer)/2)+1
@@ -82,7 +82,7 @@ end
 % Convert the 18 bit signed integer to a 1s17 format so that the actual
 % magnitude response (i.e. the magnitude response with coefficients
 % that have only 18 bits of precision) can be calculated
-h_final = h_signed_integer/2^17; 
+h_final = h_signed_integer/2^18; 
 % coefficients_in_18_bit_precision = h_final' % print h_final as a column  
                                             % vector in the command window
 
@@ -150,7 +150,7 @@ H_scaled_max = max(abs(H_scaled));
 
 
 % convert the scaled IR to 18s0 format for Verilog
-h_signed_integer = round(scaled_h * 2^17);
+h_signed_integer = round(scaled_h * 2^18);
 disp(['coefficients for filter given worse case input']);
 fprintf('\n');
 for i = 1:(length(h_signed_integer)/2)+1
@@ -165,7 +165,7 @@ end
 % (i.e. the magnitude response with coefficients that only have 18 bits of
 % precision can be calculated) can be calculated.
 % disp(['coefficients for in 1s17 format']);
-h_final = h_signed_integer/2^17; 
+h_final = h_signed_integer/2^18; 
 % coefficients_in_18_bit_precision = h_final'
 
 % Find the frequency response of the final filter, which has coefficients

@@ -13,19 +13,23 @@ reg signed [17:0] x0, x1, x2, x3, x4, x5, x6, x7, x8, x9,
 						X2, X2, X2, 
 */
 integer i;	
-reg signed [17:0]	b[10:0];				 
+//coeff is 0s18
+reg signed [17:0]	b[10:0];	
+//input is 1s17			 
 reg signed [17:0]	x[20:0];	
-reg signed [35:0] mult_out[10:0];
-reg signed [17:0] sum_level_1[10:0];
-reg signed [17:0] sum_level_2[5:0];
-reg signed [17:0] sum_level_3[2:0];
-reg signed [17:0] sum_level_4;
+(* noprune *) reg signed [35:0] mult_out[10:0];
+(* noprune *) reg signed [17:0] sum_level_1[10:0];
+(* noprune *) reg signed [17:0] sum_level_2[5:0];
+(* noprune *) reg signed [17:0] sum_level_3[2:0];
+(* noprune *) reg signed [17:0] sum_level_4;
 
 
+//sign extend input to prevent overflow in sum_level_1
 always @ (posedge clk)
-//x[0] = { x_in[17], x_in[17:1]}; // sign extend input
-	x[0] = x_in;
+	x[0] = { x_in[17], x_in[17:1]}; 
+//	x[0] = x_in;
 
+//x_in[i] is 2s16
 always @ (posedge clk)
     begin
         for(i=1; i<21;i=i+1)
@@ -33,6 +37,7 @@ always @ (posedge clk)
     end
 
 
+//1s17 + 1s17 will cause overflow for sum_lvl_1[i]
 always @ *
     for(i=0;i<=9;i=i+1)
         sum_level_1[i] = x[i]+x[20-i];
@@ -44,9 +49,11 @@ always @ *
 // always @ (posedge clk)
 always @ *
     for(i=0;i<=10; i=i+1)
+	 //should be 2s34 (2s16*0s18)
         mult_out[i] = sum_level_1[i] * b[i];
 
 
+//Try sum_level_2 to 1s17 since mult_out will never be close to 1 from b[i]
 always @ *
     for(i=0;i<=4;i=i+1)
         sum_level_2[i] = mult_out[2*i][34:17] + mult_out[2*i+1][34:17];
@@ -63,22 +70,22 @@ always @ *
     sum_level_4 = sum_level_3[0] + sum_level_3[1] + sum_level_3[2];
 
 always @ (posedge clk)
-    y = sum_level_4;
+    y = {sum_level_4[17:1],sum_level_4[1]};
 
 	
 always @ *
    begin
-        b[0] = 18'sd2045;
-        b[1] = 18'sd2948;
-        b[2] = 18'sd1662;
-        b[3] = -18'sd1723;
-        b[4] = -18'sd5334;
-        b[5] = -18'sd6224;
-        b[6] = -18'sd2012;
-        b[7] = 18'sd7451;
-        b[8] = 18'sd19477;
-        b[9] = 18'sd29543;
-        b[10] = 18'sd33463;
+		b[0] = 18'sd4091;
+		b[1] = 18'sd5895;
+		b[2] = 18'sd3323;
+		b[3] = -18'sd3445;
+		b[4] = -18'sd10669;
+		b[5] = -18'sd12449;
+		b[6] = -18'sd4024;
+		b[7] = 18'sd14901;
+		b[8] = 18'sd38953;
+		b[9] = 18'sd59086;
+		b[10] = 18'sd66926;
    end
 
 /* for debugging
@@ -94,4 +101,4 @@ always@ *
 for (i=0; i<=15; i=i+1)
  b[i] =18'sd 8192; % value of 1/16
 */
-endmodule	
+endmodule 

@@ -77,7 +77,7 @@ title('magnitude response with headroom removed from the output')
 % ( which is an 18 bit signed decimal integer ). An 18 bit  signed decimal
 % integer can be entered into a Verilog HDL as "18'sd number" if "number" 
 %  is positive and  as "-18sd |number|" if "number" is negative
-h_signed_integer = round(h_hd_rm_removed * 2^17);
+h_signed_integer = round(h_hd_rm_removed * 2^18);
 coefficients_for_Verilog_HDL = h_signed_integer' % print h_signed_integer 
                                                  % as a column vector in
                                                  % the command window
@@ -85,7 +85,7 @@ coefficients_for_Verilog_HDL = h_signed_integer' % print h_signed_integer
 % Convert the 18 bit signed integer to a 1s17 format so that the actual
 % magnitude response (i.e. the magnitude response with coefficients
 % that have only 18 bits of precision) can be calculated
-h_final = h_signed_integer/2^17; 
+h_final = h_signed_integer/2^18; 
 coefficients_in_18_bit_precision = h_final' % print h_final as a column  
                                             % vector in the command window
 
@@ -111,13 +111,13 @@ print -deps mag_response_with_practical_coefficients.eps
 % Verilog HDL entry could be ``assign b_k = 18'd h_2s_comp(k)'', where 
 % the decimal number value of h_2s_comp(k) is typed in its place. 
 % In this format all values of h_2s_comp(k) are positive.
-for k = [1:N],
-if (h_signed_integer(k) < 0) % need to take two's complement
-    h_2s_comp(k) = 2^18+h_signed_integer(k);
-else
-    h_2s_comp(k) = h_signed_integer(k);
-end 
-end
+% for k = [1:N],
+% if (h_signed_integer(k) < 0) % need to take two's complement
+%     h_2s_comp(k) = 2^18+h_signed_integer(k);
+% else
+%     h_2s_comp(k) = h_signed_integer(k);
+% end 
+% end
 
 if (H_final_max > 1)
     fprintf('\n\t\t\t!!!!ERROR!!!!\n\nMaximum magnitude response of the final design filter is: %10.17f\n', H_final_max);
