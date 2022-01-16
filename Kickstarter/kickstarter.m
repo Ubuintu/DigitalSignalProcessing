@@ -130,7 +130,7 @@ for i = 1:length(h)
     peak_output = peak_output + (worse_case(i)*h(i));
 end
 
-fprintf('\npardecimal worth of the peak output given the worse case input: %10.17f\n\n',peak_output);
+fprintf('\ndecimal worth of the peak output given the worse case input: %10.17f\n\n',peak_output);
 
 % 3) Scale the coefficients of the filter so that its 1s17 output has a a peak value of 18'H1FFFF, for the worst case input.
 scaled_h = h * (1-2^-17)/peak_output;

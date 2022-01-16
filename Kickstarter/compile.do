@@ -1,12 +1,12 @@
-proc getResourceDirectory {} {
-    variable myLocation
-    return [file dirname $myLocation]
+proc getScriptDirectory {} {
+    set dispScriptFile [file normalize [info script]]
+    set scriptFolder [file dirname $dispScriptFile]
+    return $scriptFolder
 }
-
-set SIMULATION_LENGTH 100ms
-#set SOURCE_DIR [getResourceDirectory]
-set SOURCE_DIR /home/tob208/engr-ece/Documents/EE465/Kickstarter
-set TB_MODULE "filter_tb"
+set SIMULATION_LENGTH 1000ns
+set SOURCE_DIR [getScriptDirectory]
+#set TB_MODULE "filter_tb"
+set TB_MODULE "tb_filter"
 
 puts $SOURCE_DIR
 
@@ -26,8 +26,11 @@ vmap work rtl_work
 vlog -sv -work work ${SOURCE_DIR}/*.v
 vlog -sv -work work ${SOURCE_DIR}/*.sv
 
+puts ${TB_MODULE}
 vsim -t 1ns -L work ${TB_MODULE}
 
-do wave.do
+#do wave.do
+do waave.do
 
 run ${SIMULATION_LENGTH}
+#run -all

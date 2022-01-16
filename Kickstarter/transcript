@@ -1,2 +1,541 @@
 # reading /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/../modelsim.ini
 # Loading project kickstarterMS
+ls
+# approx_brick_wall_filt.v
+# coefficients_for_low_pass_brick_wall_filter.m
+# compile.do
+# directFilter.xopp
+# filter_tb.sv
+# kickstarter.m
+# kickstarter.m~
+# kickstarterMS.cr.mti
+# kickstarterMS.mpf
+# lab_exam_sheet.pdf
+# mag_response_for_length_31.eps
+# mag_response_with_practical_coefficients.eps
+# PartASineInput.m
+# PartASineInput.m~
+# pulse_shaping_filter.v
+# rtl_work
+# sineInputFilter.v
+# sineInputFilter.v.bak
+# stage_2.m
+# testingGit.txt
+# transcript
+# vsim.wlf
+# wave.do
+# worsecaseInputFilter.v
+# worsecaseInputFilter.v.bak
+pwd
+# /home/tob208/engr-ece/Documents/EE465/Kickstarter
+do compile.do
+# 100ms
+# ** Error: can't read "myLocation": no such variable
+# Error in macro ./compile.do line 7
+# can't read "myLocation": no such variable
+#     while executing
+# "file dirname $myLocation"
+#     (procedure "getResourceDirectory" line 3)
+#     invoked from within
+# "getResourceDirectory"
+#     invoked from within
+# "set SOURCE_DIR [getResourceDirectory]"
+do compile.do
+# 100ms
+# /mtitcl/vsim
+# filter_tb
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# 
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/Kickstarter/kickstarterMS.mpf
+# 
+# vlog -sv -work work ${SOURCE_DIR}/*.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:54 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work /mtitcl/vsim/*.v 
+# ** Error: (vlog-7) Failed to open design unit file "/mtitcl/vsim/*.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 21:14:54 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
+# Executing ONERROR command at macro ./compile.do line 27
+# vlog -sv -work work ${SOURCE_DIR}/*.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:54 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work /mtitcl/vsim/*.sv 
+# ** Error: (vlog-7) Failed to open design unit file "/mtitcl/vsim/*.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 21:14:54 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
+# Executing ONERROR command at macro ./compile.do line 28
+# 
+# vsim -t 1ns -L work ${TB_MODULE}
+# vsim -t 1ns -L work filter_tb 
+# Start time: 21:14:54 on Jan 15,2022
+# ** Error: (vsim-3170) Could not find 'filter_tb'.
+#         Searched libraries:
+#             /home/tob208/engr-ece/Documents/EE465/Kickstarter/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile.do PAUSED at line 30
+do compile.do
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# set SIMULATION_LENGTH 100ms
+# 100ms
+#set SOURCE_DIR [getResourceDirectory]
+# set SOURCE_DIR [getScriptDirectory]
+# .
+#set SOURCE_DIR /home/tob208/engr-ece/Documents/EE465/Kickstarter
+# set TB_MODULE "filter_tb"
+# filter_tb
+# 
+# puts $SOURCE_DIR
+# 
+# puts "Hello world"
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# 
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/Kickstarter/kickstarterMS.mpf
+# 
+# vlog -sv -work work ${SOURCE_DIR}/*.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:17:34 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work ./approx_brick_wall_filt.v ./pulse_shaping_filter.v ./sineInputFilter.v ./worsecaseInputFilter.v 
+# -- Compiling module approx_brick_wall_filt
+# -- Compiling module pulse_shaping_filter
+# -- Compiling module sine_filt
+# -- Compiling module worse_case_filt
+# 
+# Top level modules:
+# 	approx_brick_wall_filt
+# 	pulse_shaping_filter
+# 	sine_filt
+# 	worse_case_filt
+# End time: 21:17:34 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SOURCE_DIR}/*.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:17:34 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work ./filter_tb.sv 
+# -- Compiling module filter_tb
+# -- Compiling program test_filter
+# 
+# Top level modules:
+# 	filter_tb
+# End time: 21:17:34 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_MODULE}
+# vsim -t 1ns -L work filter_tb 
+# Start time: 21:14:54 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.filter_tb
+# ** Error: (vsim-7) Failed to open data file "/home/tob208/engr-ece/Documents/EE465/Kickstarter/rtl_work/test_filter/_primary.dat" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Loading work.sine_filt
+# WARNING: No extended dataflow license exists
+# 
+# do wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_tb/clk
+# add wave -noupdate /filter_tb/reset
+# add wave -noupdate /filter_tb/DUT/clk
+# add wave -noupdate /filter_tb/DUT/x_in
+# add wave -noupdate /filter_tb/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {22 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 208
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {63 ns}
+# 
+# run ${SIMULATION_LENGTH}
+# ** Note: implicit $finish from program
+#    Time: 65 ns  Iteration: 3  Instance: /filter_tb/test_filter
+# 1
+# Simulation stop requested.
+do compile.do
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# set SIMULATION_LENGTH 1000ns
+# 1000ns
+#set SOURCE_DIR [getResourceDirectory]
+# set SOURCE_DIR [getScriptDirectory]
+# .
+#set SOURCE_DIR /home/tob208/engr-ece/Documents/EE465/Kickstarter
+# set TB_MODULE "filter_tb"
+# filter_tb
+# 
+# puts $SOURCE_DIR
+# 
+# puts "Hello world"
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# 
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/Kickstarter/kickstarterMS.mpf
+# 
+# vlog -sv -work work ${SOURCE_DIR}/*.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:21:04 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work ./approx_brick_wall_filt.v ./pulse_shaping_filter.v ./sineInputFilter.v ./worsecaseInputFilter.v 
+# -- Compiling module approx_brick_wall_filt
+# -- Compiling module pulse_shaping_filter
+# -- Compiling module sine_filt
+# -- Compiling module worse_case_filt
+# 
+# Top level modules:
+# 	approx_brick_wall_filt
+# 	pulse_shaping_filter
+# 	sine_filt
+# 	worse_case_filt
+# End time: 21:21:04 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SOURCE_DIR}/*.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:21:04 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work ./filter_tb.sv 
+# -- Compiling module filter_tb
+# -- Compiling program test_filter
+# 
+# Top level modules:
+# 	filter_tb
+# End time: 21:21:04 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_MODULE}
+# End time: 21:21:05 on Jan 15,2022, Elapsed time: 0:06:11
+# Errors: 2, Warnings: 1
+# vsim -t 1ns -L work filter_tb 
+# Start time: 21:21:05 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.filter_tb
+# ** Error: (vsim-7) Failed to open data file "/home/tob208/engr-ece/Documents/EE465/Kickstarter/rtl_work/test_filter/_primary.dat" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Loading work.sine_filt
+# WARNING: No extended dataflow license exists
+# 
+# do wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_tb/clk
+# add wave -noupdate /filter_tb/reset
+# add wave -noupdate /filter_tb/DUT/clk
+# add wave -noupdate /filter_tb/DUT/x_in
+# add wave -noupdate /filter_tb/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {22 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 208
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {63 ns}
+# 
+# run ${SIMULATION_LENGTH}
+# ** Note: implicit $finish from program
+#    Time: 65 ns  Iteration: 3  Instance: /filter_tb/test_filter
+# 1
+# Simulation stop requested.
+do compile.do
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# set SIMULATION_LENGTH 1000ns
+# 1000ns
+#set SOURCE_DIR [getResourceDirectory]
+# set SOURCE_DIR [getScriptDirectory]
+# .
+#set SOURCE_DIR /home/tob208/engr-ece/Documents/EE465/Kickstarter
+# set TB_MODULE "filter_tb"
+# filter_tb
+# 
+# puts $SOURCE_DIR
+# 
+# puts "Hello world"
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# 
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/Kickstarter/kickstarterMS.mpf
+# 
+# vlog -sv -work work ${SOURCE_DIR}/*.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:26:57 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work ./approx_brick_wall_filt.v ./pulse_shaping_filter.v ./sineInputFilter.v ./worsecaseInputFilter.v 
+# -- Compiling module approx_brick_wall_filt
+# -- Compiling module pulse_shaping_filter
+# -- Compiling module sine_filt
+# -- Compiling module worse_case_filt
+# 
+# Top level modules:
+# 	approx_brick_wall_filt
+# 	pulse_shaping_filter
+# 	sine_filt
+# 	worse_case_filt
+# End time: 21:26:57 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SOURCE_DIR}/*.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:26:57 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work ./filter_tb.sv 
+# -- Compiling module filter_tb
+# -- Compiling program test_filter
+# 
+# Top level modules:
+# 	filter_tb
+# End time: 21:26:58 on Jan 15,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_MODULE}
+# End time: 21:26:58 on Jan 15,2022, Elapsed time: 0:05:53
+# Errors: 1, Warnings: 1
+# vsim -t 1ns -L work filter_tb 
+# Start time: 21:26:58 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.filter_tb
+# ** Error: (vsim-7) Failed to open data file "/home/tob208/engr-ece/Documents/EE465/Kickstarter/rtl_work/test_filter/_primary.dat" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Loading work.sine_filt
+# WARNING: No extended dataflow license exists
+# 
+# do wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_tb/clk
+# add wave -noupdate /filter_tb/reset
+# add wave -noupdate /filter_tb/DUT/clk
+# add wave -noupdate /filter_tb/DUT/x_in
+# add wave -noupdate /filter_tb/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {22 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 208
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {63 ns}
+# 
+# run ${SIMULATION_LENGTH}
+# ** Note: implicit $finish from program
+#    Time: 115 ns  Iteration: 4  Instance: /filter_tb/test_filter
+# 1
+# Simulation stop requested.
+do compile.do
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# set SIMULATION_LENGTH 1000ns
+# 1000ns
+#set SOURCE_DIR [getResourceDirectory]
+# set SOURCE_DIR [getScriptDirectory]
+# .
+#set SOURCE_DIR /home/tob208/engr-ece/Documents/EE465/Kickstarter
+# set TB_MODULE "filter_tb"
+# filter_tb
+# 
+# puts $SOURCE_DIR
+# 
+# puts "Hello world"
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# 
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/Kickstarter/kickstarterMS.mpf
+# 
+# vlog -sv -work work ${SOURCE_DIR}/*.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:49 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work ./approx_brick_wall_filt.v ./pulse_shaping_filter.v ./sineInputFilter.v ./worsecaseInputFilter.v 
+# -- Compiling module approx_brick_wall_filt
+# -- Compiling module pulse_shaping_filter
+# -- Compiling module sine_filt
+# -- Compiling module worse_case_filt
+# 
+# Top level modules:
+# 	approx_brick_wall_filt
+# 	pulse_shaping_filter
+# 	sine_filt
+# 	worse_case_filt
+# End time: 21:28:49 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SOURCE_DIR}/*.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:49 on Jan 15,2022
+# vlog -reportprogress 300 -sv -work work ./filter_tb.sv 
+# -- Compiling module filter_tb
+# -- Compiling program test_filter
+# 
+# Top level modules:
+# 	filter_tb
+# End time: 21:28:49 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_MODULE}
+# End time: 21:28:50 on Jan 15,2022, Elapsed time: 0:01:52
+# Errors: 1, Warnings: 1
+# vsim -t 1ns -L work filter_tb 
+# Start time: 21:28:50 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.filter_tb
+# ** Error: (vsim-7) Failed to open data file "/home/tob208/engr-ece/Documents/EE465/Kickstarter/rtl_work/test_filter/_primary.dat" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Loading work.sine_filt
+# WARNING: No extended dataflow license exists
+# 
+# do wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_tb/clk
+# add wave -noupdate /filter_tb/reset
+# add wave -noupdate /filter_tb/DUT/clk
+# add wave -noupdate /filter_tb/DUT/x_in
+# add wave -noupdate /filter_tb/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {22 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 208
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {63 ns}
+# 
+# run ${SIMULATION_LENGTH}
+# ** Note: implicit $finish from program
+#    Time: 115 ns  Iteration: 4  Instance: /filter_tb/test_filter
+# 1
+# Simulation stop requested.
+ls
+# approx_brick_wall_filt.v
+# coefficients_for_low_pass_brick_wall_filter.m
+# compile.do
+# directFilter.xopp
+# kickstarter.m
+# kickstarter.m~
+# lab_exam_sheet.pdf
+# mag_response_for_length_31.eps
+# mag_response_with_practical_coefficients.eps
+# modelsim
+# PartASineInput.m
+# PartASineInput.m~
+# pulse_shaping_filter.v
+# sineInputFilter.v
+# sineInputFilter.v.bak
+# stage_2.m
+# testingGit.txt
+# transcript
+# vsim.wlf
+# wave.do
+# worsecaseInputFilter.v
+# worsecaseInputFilter.v.bak
+cd modelsim
+# Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+quit -sim
+# Project file /home/tob208/engr-ece/Documents/EE465/Kickstarter/kickstarterMS.mpf is write protected, data cannot be saved.
+# Unable to save project.
+# End time: 21:30:50 on Jan 15,2022, Elapsed time: 0:02:00
+# Errors: 1, Warnings: 0
+quit
+# Project file /home/tob208/engr-ece/Documents/EE465/Kickstarter/kickstarterMS.mpf is write protected, data cannot be saved.
+# Unable to save project.

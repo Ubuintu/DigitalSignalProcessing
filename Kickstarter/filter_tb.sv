@@ -3,7 +3,7 @@ module filter_tb;
 reg clk, reset;
 
 reg [17:0] x_in;
-reg [17:0] y;
+wire [17:0] y;
 
 localparam PERIOD = 10;
 localparam RESET_DELAY = 2;
@@ -33,6 +33,7 @@ initial begin
     filt_cb.x_in <= 18'd0;
     ##1;
     reset = 0;
+    ##5;
     ##1 filt_cb.x_in <= 18'H1FFFF;
     ##1 filt_cb.x_in <= 18'H0;
     ##1 filt_cb.x_in <= 18'H1FFFF;
@@ -44,11 +45,11 @@ end
 endprogram
 
 sine_filt DUT (
-    .clk(clk),
-    .x_in(x_in),
-    .y(y)
+//    .clk(clk),
+//    .x_in(x_in),
+//    .y(y)
 
-    //.*
+    .*
 );
 
 endmodule
