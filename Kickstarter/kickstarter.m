@@ -143,7 +143,7 @@ for i = 1:length(h)
     peak_output = peak_output + (worse_case(i)*h(i));
 end
 
-% Make sure text file is for verilog
+% %Make sure text file is for verilog
 % fileID = fopen('input_worst.txt','w');
 % fprintf(fileID,'%d\r\n',worse_case);
 % fclose(fileID);
