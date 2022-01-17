@@ -26,37 +26,37 @@ reg signed [17:0]	x[20:0];
 
 //sign extend input to prevent overflow in sum_level_1
 always @ (posedge clk)
-	x[0] = { x_in[17], x_in[17:1]}; 
+	x[0] = $signed( {x_in[17], x_in[17:1]} ); 
 //	x[0] = x_in;
 
 //x_in[i] is 2s16
 always @ (posedge clk)
     begin
         for(i=1; i<21;i=i+1)
-            x[i] <= x[i-1];
+            x[i] <= $signed( x[i-1] );
     end
 
 
 //1s17 + 1s17 will cause overflow for sum_lvl_1[i]
 always @ *
     for(i=0;i<=9;i=i+1)
-        sum_level_1[i] = x[i]+x[20-i];
+        sum_level_1[i] = $signed(x[i])+$signed(x[20-i]);
 
 always @ *
-    sum_level_1[10] = x[10];
+    sum_level_1[10] = $signed(x[10]);
 
 
 // always @ (posedge clk)
 always @ *
     for(i=0;i<=10; i=i+1)
 	 //should be 2s34 (2s16*0s18)
-        mult_out[i] = sum_level_1[i] * b[i];
+        mult_out[i] = $signed(sum_level_1[i]) * $signed(b[i]);
 
 
 //Try sum_level_2 to 1s17 since mult_out will never be close to 1 from b[i]
 always @ *
     for(i=0;i<=4;i=i+1)
-        sum_level_2[i] = $signed(mult_out[2*i][34:17]) + $signed(mult_out[2*i+1][34:17]);
+        sum_level_2[i] = $signed( mult_out[2*i][34:17] ) + $signed( mult_out[2*i+1][34:17] );
 
 always @ *
     sum_level_2[5] = $signed(mult_out[10][34:17]);
@@ -64,13 +64,13 @@ always @ *
 
 always @ *
     for(i=0;i<=2;i=i+1)
-        sum_level_3[i] = sum_level_2[2*i] + sum_level_2[2*i+1];
+        sum_level_3[i] = $signed(sum_level_2[2*i]) + $signed(sum_level_2[2*i+1]);
 			
 always @ *
-    sum_level_4 = sum_level_3[0] + sum_level_3[1] + sum_level_3[2];
+    sum_level_4 = $signed(sum_level_3[0]) + $signed(sum_level_3[1]) + $signed(sum_level_3[2]);
 
 always @ (posedge clk)
-    y = sum_level_4;
+    y = $signed(sum_level_4);
 
 	
 always @ *
@@ -102,3 +102,4 @@ for (i=0; i<=15; i=i+1)
  b[i] =18'sd 8192; % value of 1/16
 */
 endmodule 
+

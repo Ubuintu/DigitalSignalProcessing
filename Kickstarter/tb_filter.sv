@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module tb_filter;
 
 reg clk, reset;
@@ -7,7 +8,7 @@ wire signed [17:0] y;
 
 localparam PERIOD = 10;
 localparam RESET_DELAY = 2;
-localparam RESET_LENGTH = 12;
+localparam RESET_LENGTH = 21;
 
 // Clock generation
 initial
@@ -23,7 +24,7 @@ initial begin
     reset = 0;
     #(RESET_DELAY);
     reset = 1;
-    #(RESET_LENGTH);
+    #(RESET_LENGTH * PERIOD);
     reset = 0;
 end
 
@@ -32,10 +33,10 @@ end
 always @ (posedge clk)
     if(reset)
         begin
-        x_in <= 18'b0;
+        x_in <= 18'sb0;
         end
     else
-        x_in <= x_in + 18'd1;
+        x_in <= x_in + 18'sd1;
         
 
 sine_filt DUT (

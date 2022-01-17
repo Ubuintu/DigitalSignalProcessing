@@ -1,0 +1,61 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/tob208/engr-ece/Documents/EE465/Kickstarter
+vsine_filt
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1642374619
+!i10b 1
+!s100 03R]5fdMn=:jTimdK[Sb62
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I2NEO?RPUO;_X4LQZA0jM31
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1642308228
+8/home/tob208/engr-ece/Documents/EE465/Kickstarter/sine_filt.v
+F/home/tob208/engr-ece/Documents/EE465/Kickstarter/sine_filt.v
+!i122 0
+L0 1 104
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1642374619.000000
+!s107 /home/tob208/engr-ece/Documents/EE465/Kickstarter/sine_filt.v|
+!s90 -reportprogress|300|-sv|-work|work|/home/tob208/engr-ece/Documents/EE465/Kickstarter/sine_filt.v|
+!i113 1
+Z7 o-sv -work work
+Z8 tCvgOpt 0
+vtest_tb
+R1
+R2
+!i10b 1
+!s100 f5ZIX1kfco4^X7dl@mXOe0
+R3
+IJmmbn2NTh7=4@<HLAX^9L1
+R4
+S1
+R0
+w1642374101
+8/home/tob208/engr-ece/Documents/EE465/Kickstarter/test_tb.v
+F/home/tob208/engr-ece/Documents/EE465/Kickstarter/test_tb.v
+!i122 1
+L0 1 114
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/tob208/engr-ece/Documents/EE465/Kickstarter/test_tb.v|
+!s90 -reportprogress|300|-sv|-work|work|/home/tob208/engr-ece/Documents/EE465/Kickstarter/test_tb.v|
+!i113 1
+R7
+R8

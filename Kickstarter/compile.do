@@ -24,7 +24,7 @@ vlib rtl_work
 vmap work rtl_work
 
 vlog -sv -work work ${SOURCE_DIR}/*.v
-vlog -sv -work work ${SOURCE_DIR}/*.sv
+vlog -sv -work work ${SOURCE_DIR}/${TB_MODULE}.sv
 
 puts ${TB_MODULE}
 vsim -t 1ns -L work ${TB_MODULE}
