@@ -87,7 +87,7 @@ always @ (posedge clk)
     y = $signed(sum_level_4);
 
 	
-//always @ *
+//always @ *	//<- Don't use this
 initial
    begin
 b[0] = 18'sd4095;

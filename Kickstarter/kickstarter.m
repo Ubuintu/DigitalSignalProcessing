@@ -48,7 +48,7 @@ H_max_sine = max(abs(H));
 
 % Now scale the coefficient to remove the headroom in the output
 % safety_factor = 1-2^-17; % used to ensure peak gain is less than 1
-safety_factor = 1-2^-16; % used to ensure peak gain is less than 1
+safety_factor = 0.999; % used to ensure peak gain is less than 1
 h_sine_scaled= h * (1/H_max_sine) * safety_factor; 
 
 
@@ -106,7 +106,7 @@ end
 
 % write 1s17 FS sinusoid to text for modelsim
 f = 0:0.001:1;
-FS1s17 = 2.^17*sin(2*pi*f);
+FS1s17 = 2.^17*(0.999)*sin(2*pi*f);
 % FS1s17 = sin(2*pi*f);
 format long
 FS1s17 = round(FS1s17);

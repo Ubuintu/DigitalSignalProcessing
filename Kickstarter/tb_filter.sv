@@ -27,10 +27,11 @@ initial begin
     x_in = 0;
     
     //for 1s17 sine input
-    file_in = $fopen("input_sine.txt","r");
+    //file_in = $fopen("input_sine.txt","r");
     
     //for worse case input
-    //file_in = $fopen("input_worst.txt","r");
+    file_in = $fopen("input_worst.txt","r");
+    //file_in = $fopen("input_A1.txt","r");
     
     //impulse response
     //file_in = $fopen("input_ir.txt","r");

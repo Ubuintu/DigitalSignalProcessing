@@ -133,18 +133,6 @@ for i = 1:length(h)
         worse_case(i) = -1;
     end
 end
-fileID = fopen('input_1and-1.txt','w');
-fprintf(fileID,'%d\r\n',worse_case);
-fclose(fileID);
-
-signed = zeros(length(h),1);
-for i = 1:length(h)
-    if ( mod(i,2) == 0)
-        signed(i) = 131071;
-    else
-        signed(i) = 131072;
-    end
-end
-fileID = fopen('input_A1.txt','w');
-fprintf(fileID,'%d\r\n',signed);
+fileID = fopen('input_sine.txt','w');
+fprintf(fileID,'%d\r\n',FS1s17);
 fclose(fileID);

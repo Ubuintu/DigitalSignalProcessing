@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/home/tob208/engr-ece/Documents/EE465/Kickstarter
 vsine_filt
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1642386498
+Z2 !s110 1642389636
 !i10b 1
 !s100 kE?D^:Q?6i7DjO;Lg2?8_1
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -19,7 +19,7 @@ IgFf5JneeGzYWG`jQRYYcj0
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1642386303
+w1642388474
 8./sine_filt.v
 F./sine_filt.v
 !i122 0
@@ -28,7 +28,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1642386498.000000
+Z6 !s108 1642389636.000000
 !s107 ./sine_filt.v|
 !s90 -reportprogress|300|-sv|-work|work|./sine_filt.v|
 !i113 1
@@ -38,17 +38,17 @@ vtb_filter
 R1
 R2
 !i10b 1
-!s100 [n6AhjHF@Z9J1Fl98;`bI0
+!s100 g_gV521mDTTajZ5cD4Ano0
 R3
-Im9@PmdOZIoGWF1IXOP[k>2
+IFX?WbScM@^Jc>;Oh`ANGi2
 R4
 S1
 R0
-w1642385462
+w1642389435
 8./tb_filter.sv
 F./tb_filter.sv
 !i122 1
-L0 2 73
+L0 2 74
 R5
 r1
 !s85 0
