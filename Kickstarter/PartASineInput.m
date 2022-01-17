@@ -145,6 +145,6 @@ for i = 1:length(h)
         signed(i) = 131072;
     end
 end
-fileID = fopen('input_A1.txt','w');
+fileID = fopen('input_A.txt','w');
 fprintf(fileID,'%d\r\n',signed);
 fclose(fileID);

@@ -126,11 +126,9 @@ worse_case = zeros(length(h),1);
 % is -1.
 for i = 1:length(h)
     if (h(i) > 0)
-%         worse_case(i) = 131071;
-        worse_case(i) = 1;
+        worse_case(i) = 131071;
     else
-%         worse_case(i) = 131072;
-        worse_case(i) = -1;
+        worse_case(i) = ;
     end
 end
 
@@ -143,16 +141,14 @@ for i = 1:length(h)
     peak_output = peak_output + (worse_case(i)*h(i));
 end
 
-% Make sure text file is for verilog
-% fileID = fopen('input_worst.txt','w');
-% fprintf(fileID,'%d\r\n',worse_case);
-% fclose(fileID);
+fileID = fopen('input_worst.txt','w');
+fprintf(fileID,'%d\r\n',worse_case);
+fclose(fileID);
 
 fprintf('\ndecimal worth of the peak output given the worse case input: %10.17f\n\n',peak_output);
 
 % 3) Scale the coefficients of the filter so that its 1s17 output has a a peak value of 18'H1FFFF, for the worst case input.
-% scaled_h = h * (1-2^-17)/peak_output;
-scaled_h = h * (safety_factor)/peak_output;
+scaled_h = h * (1-2^-17)/peak_output;
 
 % verify magnitude response of scaled impulse response is the same
 [H_scaled, w] = freqz(scaled_h,1); 
@@ -210,7 +206,7 @@ for i = 1:length(h_final)
 end
 
 % H_final was rounded up in its assignment
-if (comparison > 1-2^-17)
+if (comparison > 1)
     fprintf('\n\t\t\t!!!!ERROR!!!!\n\nMagnitude response of the filter given the worse case input is: %10.17f\n', comparison);
 else
     fprintf('\n\t\t\tNo issues with Filter design\n\nMagnitude response of the filter given the worse case input is: %10.17f\n', comparison);

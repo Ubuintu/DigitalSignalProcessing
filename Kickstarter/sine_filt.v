@@ -87,9 +87,11 @@ always @ (posedge clk)
     y = $signed(sum_level_4);
 
 	
-//always @ *	//<- Don't use this
+//always @ *	//<- Don't use this especially in modelsim
 initial
    begin
+/*
+//Part A
 b[0] = 18'sd4095;
 b[1] = 18'sd5901;
 b[2] = 18'sd3327;
@@ -101,6 +103,20 @@ b[7] = 18'sd14916;
 b[8] = 18'sd38992;
 b[9] = 18'sd59144;
 b[10] = 18'sd66992;
+*/
+
+//Part B
+b[0] = 18'sd2817;
+b[1] = 18'sd4060;
+b[2] = 18'sd2289;
+b[3] = -18'sd2373;
+b[4] = -18'sd7348;
+b[5] = -18'sd8574;
+b[6] = -18'sd2772;
+b[7] = 18'sd10263;
+b[8] = 18'sd26830;
+b[9] = 18'sd40696;
+b[10] = 18'sd46096;
    end
 
 /* for debugging
