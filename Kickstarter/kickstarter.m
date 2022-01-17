@@ -151,8 +151,8 @@ end
 fprintf('\ndecimal worth of the peak output given the worse case input: %10.17f\n\n',peak_output);
 
 % 3) Scale the coefficients of the filter so that its 1s17 output has a a peak value of 18'H1FFFF, for the worst case input.
-% scaled_h = h * (1-2^-17)/peak_output;
-scaled_h = h * (safety_factor)/peak_output;
+scaled_h = h * (1-2^-17)/peak_output;
+% scaled_h = h * (safety_factor)/peak_output;
 
 % verify magnitude response of scaled impulse response is the same
 [H_scaled, w] = freqz(scaled_h,1); 
@@ -169,7 +169,7 @@ H_scaled_max = max(abs(H_scaled));
 
 
 % convert the scaled IR to 18s0 format for Verilog
-h_signed_integer = floor(scaled_h * 2^18);
+h_signed_integer = round(scaled_h * 2^18);
 disp(['coefficients for filter given worse case input']);
 for i = 1:(length(h_signed_integer)/2)+1
     if (h_signed_integer(i) > 0)
@@ -200,7 +200,7 @@ axis([0.0,0.5,-50,10]);
 xlabel('frequency in cycles');
 ylabel('20  log ( | H_{final}(e^{j 2 pi f}) | )');
 title('Final filter');
-print -deps mag_response_with_practical_coefficients.eps
+% print -deps mag_response_with_practical_coefficients.eps
 peak_2 = max(20*log10(abs(H_final)));
 
 
