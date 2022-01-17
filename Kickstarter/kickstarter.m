@@ -48,7 +48,7 @@ H_max_sine = max(abs(H));
 
 % Now scale the coefficient to remove the headroom in the output
 % safety_factor = 1-2^-17; % used to ensure peak gain is less than 1
-safety_factor = 0.999; % used to ensure peak gain is less than 1
+safety_factor = 0.93; % used to ensure peak gain is less than 1
 h_sine_scaled= h * (1/H_max_sine) * safety_factor; 
 
 
@@ -68,7 +68,7 @@ title('magnitude response with headroom removed from the output')
 % ( which is an 18 bit signed decimal integer ). An 18 bit  signed decimal
 % integer can be entered into a Verilog HDL as "18'sd number" if "number" 
 %  is positive and  as "-18sd |number|" if "number" is negative
-h_signed_integer = floor(h_sine_scaled * 2^18);
+h_signed_integer = floor(h_sine_scaled * 2^16);
 disp(['coefficients for Sine input filter']);
 fprintf('\n');
 for i = 1:(length(h_signed_integer)/2)+1
@@ -82,7 +82,7 @@ end
 % Convert the 18 bit signed integer to a 1s17 format so that the actual
 % magnitude response (i.e. the magnitude response with coefficients
 % that have only 18 bits of precision) can be calculated
-h_final = h_signed_integer/2^18; 
+h_final = h_signed_integer/2^16; 
 % coefficients_in_18_bit_precision = h_final' % print h_final as a column  
                                             % vector in the command window
 
