@@ -20,9 +20,21 @@ begin
     end
 end
 
+integer file_in;
+
 initial begin
     reset = 0;
     x_in = 0;
+    
+    //for 1s17 sine input
+    file_in = $fopen("input_sine.txt","r");
+    
+    //for worse case input
+    //file_in = $fopen("input_worst.txt","r");
+    
+    //impulse response
+    //file_in = $fopen("input_ir.txt","r");
+    
     #(RESET_DELAY);
     reset = 1;
     #(RESET_LENGTH * PERIOD);
@@ -39,6 +51,15 @@ always @ (posedge clk)
     else
         x_in <= x_in + 18'sd1;
 */        
+
+always @ (posedge clk)
+    if(reset)
+        begin
+            x_in <= 18'sb0;
+        end
+    else
+        $fscanf(file_in,"%d\n",x_in);
+
 
 sine_filt DUT (
     .clk(clk),

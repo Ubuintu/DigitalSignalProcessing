@@ -48,7 +48,7 @@ H_max_sine = max(abs(H));
 
 % Now scale the coefficient to remove the headroom in the output
 % safety_factor = 1-2^-17; % used to ensure peak gain is less than 1
-safety_factor = 0.999; % used to ensure peak gain is less than 1
+safety_factor = 1-2^-16; % used to ensure peak gain is less than 1
 h_sine_scaled= h * (1/H_max_sine) * safety_factor; 
 
 
@@ -104,7 +104,16 @@ else
     fprintf('\n\t\t\tNo issues with Filter design\n\nMaximum magnitude response of the sine input SRRC filter is: %10.17f\n', H_final_max);
 end
 
-%write 
+% write 1s17 FS sinusoid to text for modelsim
+f = 0:0.001:1;
+FS1s17 = 2.^17*sin(2*pi*f);
+% FS1s17 = sin(2*pi*f);
+format long
+FS1s17 = round(FS1s17);
+fileID = fopen('input_sine.txt','w');
+fprintf(fileID,'%d\r\n',FS1s17);
+fclose(fileID);
+
 
 %% Part B Managing Headroom
 % 1) Find 21 sample input sequence that produces largest possible peak value
@@ -131,6 +140,10 @@ peak_output = 0;
 for i = 1:length(h)
     peak_output = peak_output + (worse_case(i)*h(i));
 end
+
+fileID = fopen('input_worst.txt','w');
+fprintf(fileID,'%d\r\n',worse_case);
+fclose(fileID);
 
 fprintf('\ndecimal worth of the peak output given the worse case input: %10.17f\n\n',peak_output);
 

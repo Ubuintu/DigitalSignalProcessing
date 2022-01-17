@@ -5,7 +5,7 @@ proc getScriptDirectory {} {
     set scriptFolder [file dirname $dispScriptFile]
     return $scriptFolder
 }
-set SIMULATION_LENGTH 100000ns
+set SIMULATION_LENGTH 1000ns
 set SOURCE_DIR [getScriptDirectory]
 #set TB_MODULE "filter_tb"
 set TB_MODULE "tb_filter"
