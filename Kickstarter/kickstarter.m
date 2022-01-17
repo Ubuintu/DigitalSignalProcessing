@@ -104,6 +104,8 @@ else
     fprintf('\n\t\t\tNo issues with Filter design\n\nMaximum magnitude response of the sine input SRRC filter is: %10.17f\n', H_final_max);
 end
 
+%write 
+
 %% Part B Managing Headroom
 % 1) Find 21 sample input sequence that produces largest possible peak value
 % in output. This 21 sample sequence is referred to as the worst case input

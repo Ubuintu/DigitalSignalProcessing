@@ -7,6 +7,7 @@ add wave -noupdate -radix decimal /tb_filter/DUT/x_in
 add wave -noupdate -radix decimal /tb_filter/DUT/y
 add wave -noupdate -radix decimal /tb_filter/DUT/x
 add wave -noupdate -radix decimal /tb_filter/DUT/sum_level_1
+add wave -noupdate -radix decimal /tb_filter/DUT/b
 add wave -noupdate -radix decimal /tb_filter/DUT/mult_out
 add wave -noupdate -radix decimal /tb_filter/DUT/sum_level_2
 add wave -noupdate -radix decimal /tb_filter/DUT/sum_level_3
@@ -28,4 +29,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {112 ns} {166 ns}
+WaveRestoreZoom {0 ns} {54 ns}

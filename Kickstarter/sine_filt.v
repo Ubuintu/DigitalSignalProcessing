@@ -1,5 +1,5 @@
 module sine_filt (
-          input clk,
+          input clk, reset,
 		   input signed [17:0] x_in,
 		   output reg signed [17:0] y   );
 			
@@ -26,8 +26,22 @@ reg signed [17:0]	x[20:0];
 
 //sign extend input to prevent overflow in sum_level_1
 always @ (posedge clk)
-	x[0] = $signed( {x_in[17], x_in[17:1]} ); 
-//	x[0] = x_in;
+    if (reset) begin
+        for (i=0; i<=20; i=i+1)
+            x[i] = 18'sd0;
+	for (i=0; i<=10; i=i+1)
+	    mult_out[i] = 36'sd0;
+	for (i=0; i<=10; i=i+1)
+	    sum_level_1[i] = 18'sd0;
+	for (i=0; i<=5; i=i+1)
+	    sum_level_2[i] = 18'sd0;
+	for (i=0; i<=2; i=i+1)
+	    sum_level_3[i] = 18'sd0;
+	sum_level_4 = 18'sd0;
+    end
+    else begin
+	    x[0] = $signed( {x_in[17], x_in[17:1]} ); 
+    end
 
 //x_in[i] is 2s16
 always @ (posedge clk)
@@ -73,7 +87,8 @@ always @ (posedge clk)
     y = $signed(sum_level_4);
 
 	
-always @ *
+//always @ *
+initial
    begin
 		b[0] = 18'sd4091;
 		b[1] = 18'sd5895;

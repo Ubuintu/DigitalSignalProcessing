@@ -1,3 +1,5 @@
+#/home/tob208/engr-ece/Documents/EE465/Kickstarter
+
 proc getScriptDirectory {} {
     set dispScriptFile [file normalize [info script]]
     set scriptFolder [file dirname $dispScriptFile]
@@ -7,6 +9,7 @@ set SIMULATION_LENGTH 1000ns
 set SOURCE_DIR [getScriptDirectory]
 #set TB_MODULE "filter_tb"
 set TB_MODULE "tb_filter"
+set MODULE "sine_filt"
 
 puts $SOURCE_DIR
 
@@ -23,7 +26,7 @@ vlib rtl_work
 
 vmap work rtl_work
 
-vlog -sv -work work ${SOURCE_DIR}/*.v
+vlog -sv -work work ${SOURCE_DIR}/${MODULE}.v
 vlog -sv -work work ${SOURCE_DIR}/${TB_MODULE}.sv
 
 puts ${TB_MODULE}

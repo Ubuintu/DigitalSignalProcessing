@@ -22,6 +22,7 @@ end
 
 initial begin
     reset = 0;
+    x_in = 0;
     #(RESET_DELAY);
     reset = 1;
     #(RESET_LENGTH * PERIOD);
@@ -29,7 +30,7 @@ initial begin
 end
 
 
-
+/*
 always @ (posedge clk)
     if(reset)
         begin
@@ -37,14 +38,16 @@ always @ (posedge clk)
         end
     else
         x_in <= x_in + 18'sd1;
-        
+*/        
 
 sine_filt DUT (
     .clk(clk),
+    .reset(reset),
     .x_in(x_in),
     .y(y)
 
     //.*
 );
+
 
 endmodule
