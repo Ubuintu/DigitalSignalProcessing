@@ -1,4 +1,4 @@
-module sine_filt (
+module sine_filt_A (
           input clk, reset,
 		   input signed [17:0] x_in,
 		   output reg signed [17:0] y   );
@@ -70,10 +70,10 @@ always @ *
 //Try sum_level_2 to 1s17 since mult_out will never be close to 1 from b[i]
 always @ *
     for(i=0;i<=4;i=i+1)
-        sum_level_2[i] = $signed( mult_out[2*i][34:17] ) + $signed( mult_out[2*i+1][34:17] );
+        sum_level_2[i] = $signed( mult_out[2*i][32:15] ) + $signed( mult_out[2*i+1][32:15] );			//filter a
 
 always @ *
-    sum_level_2[5] = $signed(mult_out[10][34:17]);
+    sum_level_2[5] = $signed(mult_out[10][32:15]);
 
 
 always @ *
@@ -104,7 +104,7 @@ initial
 //	b[9] = 18'sd59085;
 //	b[10] = 18'sd66925;
 */
-/*
+
 	b[0] = 18'sd952;
 	b[1] = 18'sd1372;
 	b[2] = 18'sd773;
@@ -116,9 +116,9 @@ initial
 	b[8] = 18'sd9065;
 	b[9] = 18'sd13751;
 	b[10] = 18'sd15575;
-*/
-//Part B
 
+//Part B
+/*
 	b[0] = 18'sd2817;
 	b[1] = 18'sd4060;
 	b[2] = 18'sd2289;
@@ -130,7 +130,7 @@ initial
 	b[8] = 18'sd26830;
 	b[9] = 18'sd40696;
 	b[10] = 18'sd46096;
-
+*/
    end
 
 /* for debugging

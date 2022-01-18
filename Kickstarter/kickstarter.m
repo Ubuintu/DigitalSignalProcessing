@@ -105,7 +105,7 @@ else
 end
 
 % write 1s17 FS sinusoid to text for modelsim
-f = 0:0.001:1;
+f = 0:0.001:2;
 FS1s17 = 2.^17*(0.999)*sin(2*pi*f);
 % FS1s17 = sin(2*pi*f);
 format long
@@ -151,7 +151,7 @@ end
 fprintf('\ndecimal worth of the peak output given the worse case input: %10.17f\n\n',peak_output);
 
 % 3) Scale the coefficients of the filter so that its 1s17 output has a a peak value of 18'H1FFFF, for the worst case input.
-scaled_h = h * (1-2^-17)/peak_output;
+scaled_h = h * (1-2^-18)/peak_output;
 % scaled_h = h * (safety_factor)/peak_output;
 
 % verify magnitude response of scaled impulse response is the same
