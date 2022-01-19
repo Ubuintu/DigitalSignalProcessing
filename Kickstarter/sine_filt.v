@@ -25,7 +25,8 @@ reg signed [17:0]	x[20:0];
 
 
 //sign extend input to prevent overflow in sum_level_1
-always @ (posedge clk)
+//always @ (posedge clk)    //for quartus
+always @ *  //for modelSim
     if (reset) begin
         for (i=0; i<=20; i=i+1)
             x[i] = 18'sd0;
@@ -104,19 +105,19 @@ initial
 //	b[9] = 18'sd59085;
 //	b[10] = 18'sd66925;
 */
-/*
-	b[0] = 18'sd4094;
-	b[1] = 18'sd5900;
-	b[2] = 18'sd3326;
-	b[3] = -18'sd3449;
-	b[4] = -18'sd10679;
-	b[5] = -18'sd12462;
-	b[6] = -18'sd4029;
-	b[7] = 18'sd14915;
-	b[8] = 18'sd38991;
-	b[9] = 18'sd59143;
-	b[10] = 18'sd66990;
-*/
+
+	//b[0] = 18'sd4094;
+	//b[1] = 18'sd5900;
+	//b[2] = 18'sd3326;
+	//b[3] = -18'sd3449;
+	//b[4] = -18'sd10679;
+	//b[5] = -18'sd12462;
+	//b[6] = -18'sd4029;
+	//b[7] = 18'sd14915;
+	//b[8] = 18'sd38991;
+	//b[9] = 18'sd59143;
+	//b[10] = 18'sd66990;
+
 //Part B
 
 	b[0] = 18'sd2817;

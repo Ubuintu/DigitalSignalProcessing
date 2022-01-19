@@ -169,6 +169,7 @@ fprintf('\ndecimal worth of the peak output given the worse case input: %10.17f\
 
 % 3) Scale the coefficients of the filter so that its 1s17 output has a a peak value of 18'H1FFFF, for the worst case input.
 scaled_h = h * (1-2^-18)/peak_output;
+% scaled_h = h * 1/peak_output;
 % scaled_h = h * (safety_factor)/peak_output;
 
 % verify magnitude response of scaled impulse response is the same
@@ -206,7 +207,7 @@ h_final = h_signed_integer/2^18;
 
 % Find the frequency response of the final filter, which has coefficients
 % with only 18 bits of precision
-w = [.5:1:1000]/1000*pi; % frequency vector in radians/sample
+w = [.5:0.1:1000]/1000*pi; % frequency vector in radians/sample
 H_final = freqz(h_final, 1, w);
 H_final_max = max(abs(H_final));
 format long
@@ -216,7 +217,7 @@ grid;
 axis([0.0,0.5,-50,10]);
 xlabel('frequency in cycles');
 ylabel('20  log ( | H_{final}(e^{j 2 pi f}) | )');
-title('Final filter');
+title('scaled SRRC filter for worst case input');
 % print -deps mag_response_with_practical_coefficients.eps
 peak_2 = max(20*log10(abs(H_final)));
 
@@ -235,3 +236,18 @@ if (comparison > 1-2^-17)
 else
     fprintf('\n\t\t\tNo issues with Filter design\n\nMagnitude response of the filter given the worse case input is: %10.17f\n', comparison);
 end
+
+%% Lab exam
+% 20*log10(abs(H_final(1985))); % use vector w, to estimate 1/16 mag resp
+% of filter
+
+% max value and index of a vector
+[val, idx] = max(abs(H_final));
+
+% headroom for part b
+theo = 10^((-3.642--3.247)/20);
+% meas = 10^((-4.127--3.790)/20);
+meas = 10^((-0.360)/20);
+
+%ratio = 10^(meas/10)/10^(theo/10);
+ratio = meas/theo;

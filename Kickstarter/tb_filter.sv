@@ -30,8 +30,8 @@ initial begin
     //file_in = $fopen("input_sine.txt","r");
     
     //for worse case input; check @ 635 ns or 425 ns
-    //file_in = $fopen("input_worst.txt","r");
-    file_in = $fopen("input_worst_neg.txt","r");
+    file_in = $fopen("input_worst.txt","r");
+    //file_in = $fopen("input_worst_neg.txt","r");
     //file_in = $fopen("input_A1.txt","r");
     
     //impulse response
