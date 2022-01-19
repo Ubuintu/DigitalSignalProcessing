@@ -33,7 +33,7 @@ h = rcosdesign(beta, span, Nsps, shape);
 [H,w] = freqz(h,1);
 
 % Plot impulse response
-% fvtool(h,'impulse');
+fvtool(h,'impulse');
 
 % Generate & plot the frequency response
 FR = figure('Name','Frequency Response');
@@ -148,22 +148,7 @@ end
 % fprintf(fileID,'%d\r\n',worse_case);
 % fclose(fileID);
 
-toWrite = zeros(length(h),1);
-
-for i = 1:length(worse_case)
-    if (worse_case(i) < 0)
-        toWrite(i) = 131071;
-    else
-        toWrite(i) = 131072;
-    end
-end
-
-% %For negative worse case sequence
-fileID = fopen('input_worst_neg.txt','w');
-fprintf(fileID,'%d\r\n',toWrite);
-fprintf(fileID,'%d\r\n',toWrite);
-fclose(fileID);
-
+for i = 1:len
 
 fprintf('\ndecimal worth of the peak output given the worse case input: %10.17f\n\n',peak_output);
 

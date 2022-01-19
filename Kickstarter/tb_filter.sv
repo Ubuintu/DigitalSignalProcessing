@@ -29,8 +29,9 @@ initial begin
     //for 1s17 sine input
     //file_in = $fopen("input_sine.txt","r");
     
-    //for worse case input
-    file_in = $fopen("input_worst.txt","r");
+    //for worse case input; check @ 635 ns or 425 ns
+    //file_in = $fopen("input_worst.txt","r");
+    file_in = $fopen("input_worst_neg.txt","r");
     //file_in = $fopen("input_A1.txt","r");
     
     //impulse response
