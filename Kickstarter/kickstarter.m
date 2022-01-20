@@ -1,5 +1,5 @@
 %% Part A: Sinusoidal Input
-% Design a length 21 Square-Root-Raised Cosine filter (an FIR filter with 21 coecients) that
+% Design a length 21 Square-Root-Raised Cosine filter (an FIR filter with 21 coefficients) that
 % has 4 samples per symbol and roll-off factor of ? = 0.25.
 % The filter must be designed so that a full scale 1s17 sinusoidal input produces a 1s17
 % sinusoidal output. Furthermore the coeffcients must be scaled so that the maximum of the
@@ -8,7 +8,7 @@ clear
 close all
 clc
 
-format long g
+format long
 
 % Stage 1: Filter coefficients
 
@@ -21,7 +21,7 @@ M = N-1;
 Nsps = 4;
 % length of the pulse
 span = M/Nsps;
-% ? or excess bandwidth
+% beta or excess bandwidth
 beta = 0.25;
 % shape of rcosdesign filter
 shape = 'sqrt';
@@ -36,13 +36,14 @@ h = rcosdesign(beta, span, Nsps, shape);
 % fvtool(h,'impulse');
 
 % Generate & plot the frequency response
-FR = figure('Name','Frequency Response');
+MR = figure('Name','Magnitude Response of SRRC filter');
 plot(w/(2*pi),20*log10(abs(H)));
-ylabel('20*log(|H(e^{j\omega})|)'); %Amplitude Response
-title('SRRC Magnitude Response for part A');
+ylabel('20*log(|H(e^{j\omega})|)'); 
+xlabel('\omega normalized to 2\pi');
+title('SRRC Magnitude Response');
 grid;
-datacursormode(FR,'on');
-peak_1 = max(20*log10(abs(H)));
+datacursormode(MR,'on');
+print -dpng ./ks_pics/mag_response_of_SRRC_filter.png
 
 H_max_sine = max(abs(H));
 
@@ -58,9 +59,10 @@ H_sine_scaled= freqz(h_sine_scaled, 1, w);
 figure(2); 
 plot (w/2/pi,20*log10(abs(H_sine_scaled))); % freq axis in cycles/sample
 grid; axis([0.0,0.5,-50,10]);
-xlabel('frequency in cycles'); 
+xlabel('Frequency (cycles/sample)')
 ylabel('20  log ( | H_{hd rm removed}(e^{j 2 pi f}) | )');
-title('magnitude response with headroom removed from the output')
+title('Magnitude Response of scaled SRRC filter to 1s17 output');
+print -dpng ./ks_pics/mag_response_of_scaled_SRRC_filter_A.png
 
 
 % Convert h_sine_scaled ( which has 0 integer bit with matlab precision 
@@ -69,8 +71,7 @@ title('magnitude response with headroom removed from the output')
 % integer can be entered into a Verilog HDL as "18'sd number" if "number" 
 %  is positive and  as "-18sd |number|" if "number" is negative
 h_signed_integer = floor(h_sine_scaled * 2^18);
-disp(['coefficients for Sine input filter']);
-fprintf('\n');
+fprintf('Coefficients for SRRC 1s17 filter\n\n');
 for i = 1:(length(h_signed_integer)/2)+1
     if (h_signed_integer(i) > 0)
         fprintf('\tb[%s] = 18''sd%s;\n',num2str(i-1),num2str(abs(h_signed_integer(i))) );
@@ -79,7 +80,7 @@ for i = 1:(length(h_signed_integer)/2)+1
     end
 end
 
-% Convert the 18 bit signed integer to a 1s17 format so that the actual
+% Convert the 18 bit signed integer to a 0s18 format so that the actual
 % magnitude response (i.e. the magnitude response with coefficients
 % that have only 18 bits of precision) can be calculated
 h_final = h_signed_integer/2^18; 
@@ -95,8 +96,10 @@ figure(3);
 plot (w/2/pi,20*log10(abs(H_final))); % freq axis in cycles/sample
 grid; 
 axis([0.0,0.5,-50,10]);
-xlabel('frequency in cycles');
+xlabel('frequency in cycles/samples');
 ylabel('20  log ( | H_{final}(e^{j 2 pi f}) | )');
+title('1s17 SRRC filter''s Magnitude Response w/final coefficients');
+print -dpng ./ks_pics/mag_response_of_1s17_SRRC_filter.png
 
 if (H_final_max > 1)
     fprintf('\n\t\t\t!!!!ERROR!!!!\n\nMaximum magnitude response of the sine input SRRC filter is: %10.17f\n', H_final_max);
@@ -113,6 +116,16 @@ FS1s17 = round(FS1s17);
 fileID = fopen('input_sine.txt','w');
 fprintf(fileID,'%d\r\n',FS1s17);
 fclose(fileID);
+
+figure();
+plot ( w/2/pi,20*log10(abs(H_final)),'--',w/2/pi,20*log10(abs(H_sine_scaled)),':' ); % freq axis in cycles/sample
+grid;
+axis([0.0,0.5,-50,10]);
+xlabel('frequency in cycles/samples');
+ylabel('20  log ( | H(e^{j 2 pi f}) | )');
+title('1s17 SRRC filter''s Magnitude Response comparison');
+legend('Scaled 1s17 Magnitude Response','Theoretical scaled Magnitude Response');
+print -dpng ./ks_pics/comparison_of_mag_response_for_1s17_SRRC_filter.png
 
 
 %% Part B Managing Headroom
@@ -172,13 +185,15 @@ scaled_h = h * (1-2^-18)/peak_output;
 % scaled_h = h * 1/peak_output;
 % scaled_h = h * (safety_factor)/peak_output;
 
+w = [.5:0.01:1000]/1000*pi; % frequency vector in radians/sample
 % verify magnitude response of scaled impulse response is the same
-[H_scaled, w] = freqz(scaled_h,1); 
+[H_scaled] = freqz(scaled_h,1, w); 
 
 sFR = figure('Name','Frequency Response of scaled');
 plot(w/(2*pi),20*log10(abs(H_scaled)));
 ylabel('20*log(|H(e^{j\omega})|)'); %Amplitude Response
-title('scaled SRRC Magnitude Response');
+xlabel('frequency in cycles/samples');
+title('scaled SRRC Magnitude Response for worst case input');
 grid;
 datacursormode(sFR,'on');
 
@@ -188,7 +203,7 @@ H_scaled_max = max(abs(H_scaled));
 
 % convert the scaled IR to 18s0 format for Verilog
 h_signed_integer = round(scaled_h * 2^18);
-disp(['coefficients for filter given worse case input']);
+fprintf('coefficients for filter given worse case input\n\n');
 for i = 1:(length(h_signed_integer)/2)+1
     if (h_signed_integer(i) > 0)
         fprintf('\tb[%s] = 18''sd%s;\n',num2str(i-1),num2str(abs(h_signed_integer(i))) );
@@ -207,7 +222,7 @@ h_final = h_signed_integer/2^18;
 
 % Find the frequency response of the final filter, which has coefficients
 % with only 18 bits of precision
-w = [.5:0.1:1000]/1000*pi; % frequency vector in radians/sample
+w = [.5:0.01:1000]/1000*pi; % frequency vector in radians/sample
 H_final = freqz(h_final, 1, w);
 H_final_max = max(abs(H_final));
 format long
@@ -215,11 +230,10 @@ figure(3);
 plot (w/2/pi,20*log10(abs(H_final))); % freq axis in cycles/sample
 grid; 
 axis([0.0,0.5,-50,10]);
-xlabel('frequency in cycles');
+xlabel('frequency in cycles/samples');
 ylabel('20  log ( | H_{final}(e^{j 2 pi f}) | )');
 title('scaled SRRC filter for worst case input');
-% print -deps mag_response_with_practical_coefficients.eps
-peak_2 = max(20*log10(abs(H_final)));
+print -dpng ./ks_pics/mag_response_of_1s17_SRRC_filter_given_worse_case.png
 
 
 
@@ -236,6 +250,15 @@ if (comparison > 1-2^-17)
 else
     fprintf('\n\t\t\tNo issues with Filter design\n\nMagnitude response of the filter given the worse case input is: %10.17f\n', comparison);
 end
+
+figure();
+plot ( w/2/pi,20*log10(abs(H_final)),'--',w/2/pi,20*log10(abs(H_scaled)),':' ); % freq axis in cycles/sample
+axis([0.0,0.5,-50,10]);
+xlabel('frequency in cycles/samples');
+ylabel('20  log ( | H(e^{j 2 pi f}) | )');
+grid;
+legend('Scaled 1s17 Magnitude Response','Theoretical scaled Magnitude Response');
+print -dpng ./ks_pics/comparison_of_worse_case_mag_response_for_1s17_SRRC_filter.png
 
 %% Lab exam
 % 20*log10(abs(H_final(1985))); % use vector w, to estimate 1/16 mag resp
