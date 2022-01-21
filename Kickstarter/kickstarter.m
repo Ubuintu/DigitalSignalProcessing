@@ -60,7 +60,7 @@ figure(2);
 plot (w/2/pi,20*log10(abs(H_sine_scaled))); % freq axis in cycles/sample
 grid; axis([0.0,0.5,-50,10]);
 xlabel('Frequency (cycles/sample)')
-ylabel('20  log ( | H_{hd rm removed}(e^{j 2 pi f}) | )');
+ylabel('20  log ( | H_{hd rm removed}(e^{j 2 \pi f}) | )');
 title('Magnitude Response of scaled SRRC filter to 1s17 output');
 print -dpng ./ks_pics/mag_response_of_scaled_SRRC_filter_A.png
 
@@ -97,7 +97,7 @@ plot (w/2/pi,20*log10(abs(H_final))); % freq axis in cycles/sample
 grid; 
 axis([0.0,0.5,-50,10]);
 xlabel('frequency in cycles/samples');
-ylabel('20  log ( | H_{final}(e^{j 2 pi f}) | )');
+ylabel('20  log ( | H_{final}(e^{j 2 \pi f}) | )');
 title('1s17 SRRC filter''s Magnitude Response w/final coefficients');
 print -dpng ./ks_pics/mag_response_of_1s17_SRRC_filter.png
 
@@ -122,7 +122,7 @@ plot ( w/2/pi,20*log10(abs(H_final)),'--',w/2/pi,20*log10(abs(H_sine_scaled)),':
 grid;
 axis([0.0,0.5,-50,10]);
 xlabel('frequency in cycles/samples');
-ylabel('20  log ( | H(e^{j 2 pi f}) | )');
+ylabel('20  log ( | H(e^{j 2 \pi f}) | )');
 title('1s17 SRRC filter''s Magnitude Response comparison');
 legend('Scaled 1s17 Magnitude Response','Theoretical scaled Magnitude Response');
 print -dpng ./ks_pics/comparison_of_mag_response_for_1s17_SRRC_filter.png
@@ -231,7 +231,7 @@ plot (w/2/pi,20*log10(abs(H_final))); % freq axis in cycles/sample
 grid; 
 axis([0.0,0.5,-50,10]);
 xlabel('frequency in cycles/samples');
-ylabel('20  log ( | H_{final}(e^{j 2 pi f}) | )');
+ylabel('20  log ( | H_{final}(e^{j 2 \pi f}) | )');
 title('scaled SRRC filter for worst case input');
 print -dpng ./ks_pics/mag_response_of_1s17_SRRC_filter_given_worse_case.png
 
@@ -255,13 +255,13 @@ figure();
 plot ( w/2/pi,20*log10(abs(H_final)),'--',w/2/pi,20*log10(abs(H_scaled)),':' ); % freq axis in cycles/sample
 axis([0.0,0.5,-50,10]);
 xlabel('frequency in cycles/samples');
-ylabel('20  log ( | H(e^{j 2 pi f}) | )');
+ylabel('20  log ( | H(e^{j 2 \pi f}) | )');
 grid;
 legend('Scaled 1s17 Magnitude Response','Theoretical scaled Magnitude Response');
 print -dpng ./ks_pics/comparison_of_worse_case_mag_response_for_1s17_SRRC_filter.png
 
 %% Lab exam
-% 20*log10(abs(H_final(1985))); % use vector w, to estimate 1/16 mag resp
+% 20*log10(abs(H_final(1939))); % use vector w, to estimate 1/16 mag resp
 % of filter
 
 % max value and index of a vector
