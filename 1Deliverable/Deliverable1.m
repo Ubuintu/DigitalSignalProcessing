@@ -131,6 +131,7 @@ h_TX = rcosdesign(beta,span,Nsps);
 
 
 h_srrc = h_TX.*wn.';
+% h_srrc = h_TX;  % Demo that find() verifies the stopband attenuation
 H_hat_srrc = freqz(h_srrc,1,w);
 
 
@@ -146,7 +147,7 @@ grid;
 datacursormode(TX_THEO,'on');
 print -dpng ./pics/mag_response_of_theoretical_SRRC_TX_filter.png
 % comment/uncomment below
-% close 'Magnitude Response of theoretical SRRC TX filter'
+close 'Magnitude Response of theoretical SRRC TX filter'
 
 DC = 20*log10(abs(H_hat_srrc(1)));
 
@@ -155,5 +156,6 @@ col = find(w/2/pi > 0.2);
 for i = 1:length(col)
     if ( abs(DC-20*log10(abs(H_hat_srrc(col(i))))) < 40 )
         fprintf('!!!ERROR IN TX FILTER!!!!\nindex: %d | Magnitude: %10.6f dB | %.6f cycles/sample\n', col(i), 20*log10(abs(H_hat_srrc(col(i)))), w(col(i))/2/pi );
+        return
     end
 end
