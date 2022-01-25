@@ -20,7 +20,7 @@ format long
 filepath = which('Deliverable1.m');
 
 %% Initial values
-% **Specifications**
+% **Specifications p.102-103**
 % -The sampling rate for the filters is Nsps = 4 times the symbol rate. The subscript sps in Nsps signifies samples-per-symbol.
 % -The coefficients in each filter must be scaled so that the maximum possible output of the filter fits into a 1s17 format.
 
@@ -118,6 +118,9 @@ end
 % Both implementations of the TX filter can have the same coeffs
 % -The first implementation of the TX filter may use up to 21 multipliers.
 % -The second implementation of the TX filter MUST use 0 multipliers.
+
+% a value in the mapper LUT can be chosen by us
+
 clc
 
 % 461 notes p.117 (windowing), 167 (ideal SRRC)
