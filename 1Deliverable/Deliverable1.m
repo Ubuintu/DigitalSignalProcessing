@@ -6,8 +6,8 @@
 % 3. One TX SRRC filter that does not use multipliers 
 
 % Three length 21 Square Root Raised Cosine (SRRC) filter are to be built: two alter-
-% native implementations of a TX lter, which is the filter in the transmitter, and
-% one implementation of an RCV lter, which is the filter in the receiver.
+% native implementations of a TX filter, which is the filter in the transmitter, and
+% one implementation of an RCV filter, which is the filter in the receiver.
 
 % **Questions**
 % Requirement on signal format(i.e. 1s17 input)?
@@ -22,6 +22,7 @@ filepath = which('Deliverable1.m');
 %% Initial values
 % **Specifications**
 % -The sampling rate for the filters is Nsps = 4 times the symbol rate. The subscript sps in Nsps signifies samples-per-symbol.
+% -The coefficients in each filter must be scaled so that the maximum possible output of the filter fits into a 1s17 format.
 
 % length of filter
 N = 21;
@@ -34,7 +35,7 @@ span = M/Nsps;
 % beta or excess bandwidth
 beta = 0.25;
 % Frequency vector (radians/sample)
-w = [.5:1:1000]/1000*pi;
+w = [.5:0.001:1000]/1000*pi;
 % default safety factor
 safety = 1-2^-17;
 
@@ -99,6 +100,16 @@ print -dpng ./pics/mag_response_of_cmp_SRRC_RCV_filter.png
 % comment/uncomment below
 close 'Magnitude Response of theoretical and implemented SRRC RCV filter'
 
+% Coefficiencts for SRRC 1s17 Rcv filter
+fprintf('Coefficients for SRRC 1s17 filter\n\n');
+for i = 1:(length(h_rcv_1s17)/2)+1
+    if (h_rcv_1s17(i) > 0)
+        fprintf('\tb[%s] = 18''sd%s;\n',num2str(i-1),num2str( abs(h_rcv_1s17(i)) ) );
+    else
+        fprintf('\tb[%s] = -18''sd%s;\n',num2str(i-1),num2str( abs(h_rcv_1s17(i)) ) );
+    end
+end
+
 %% *TX filter:
 % -The TX filter is limited to a length of 21.
 % -The stop band of the TX filter starts at 0.2 cycles/sample and runs to 0.5 cycles/sample.
@@ -159,3 +170,23 @@ for i = 1:length(col)
         return
     end
 end
+
+%% Textfiles
+clc
+
+IR = zeros(1,2*N);
+IR(5) = 131071;
+
+fileID = fopen('impulse_response.txt','w');
+fprintf(fileID,'%d\r\n',IR);
+fclose(fileID);
+
+% write 1s17 FS sinusoid to text for modelsim
+f = 0:0.001:2;
+FS1s17 = 2.^17*(0.999)*sin(2*pi*f);
+% FS1s17 = sin(2*pi*f);
+format long
+FS1s17 = round(FS1s17);
+fileID = fopen('input_sine.txt','w');
+fprintf(fileID,'%d\r\n',FS1s17);
+fclose(fileID);
