@@ -1,4 +1,4 @@
-%% Specification for Deliverable 1
+%% Specification for Deliverable 1 p.102-103
 
 % The list of deliverable are:
 % 1. One RCV SRRC filter 
