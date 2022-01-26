@@ -42,9 +42,10 @@ safety = 1-2^-17;
 %% RCV filter
 % -RCV filter is to have a roll-off factor of beta = 0.25.
 % -The impulse response of the RCV filter is to be the infinite SRRC response truncated to a length of 21.
+cBeta = char(hex2dec('03b2'));
 
 if beta ~= 0.25
-    fprintf('\t\tWARNING!\n\nwrong beta being used for RCV filter is: %.5f\n',beta);
+    fprintf('\t\tWARNING!\n\nwrong %s being used for RCV filter is: %.5f\n',cBeta,beta);
     return
 end
 
