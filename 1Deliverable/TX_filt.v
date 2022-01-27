@@ -1,4 +1,4 @@
-module RCV_filt (
+module TX_filt (
           input clk, reset,
 		   input signed [17:0] x_in,
 		   output reg signed [17:0] y   );
@@ -64,7 +64,7 @@ always @ *
 // always @ (posedge clk)
 always @ *
     for(i=0;i<=10; i=i+1)
-	 //should be 2s34 (2s16*0s18)
+	 //should be 2s34 (2s16*1s17)
         mult_out[i] = $signed(sum_level_1[i]) * $signed(b[i]);
 
 
@@ -91,47 +91,7 @@ always @ (posedge clk)
 //always @ *	//<- Don't use this especially in modelsim
 initial
    begin
-/*
-//Part A
-//	b[0] = 18'sd4090;
-//	b[1] = 18'sd5895;
-//	b[2] = 18'sd3323;
-//	b[3] = -18'sd3446;
-//	b[4] = -18'sd10669;
-//	b[5] = -18'sd12449;
-//	b[6] = -18'sd4025;
-//	b[7] = 18'sd14901;
-//	b[8] = 18'sd38953;
-//	b[9] = 18'sd59085;
-//	b[10] = 18'sd66925;
-*/
-
-	b[0] = 18'sd4094;
-	b[1] = 18'sd5900;
-	b[2] = 18'sd3326;
-	b[3] = -18'sd3449;
-	b[4] = -18'sd10679;
-	b[5] = -18'sd12462;
-	b[6] = -18'sd4029;
-	b[7] = 18'sd14915;
-	b[8] = 18'sd38991;
-	b[9] = 18'sd59143;
-	b[10] = 18'sd66990;
-
-//Part B
-
-	//b[0] = 18'sd2817;
-	//b[1] = 18'sd4060;
-	//b[2] = 18'sd2289;
-	//b[3] = -18'sd2373;
-	//b[4] = -18'sd7348;
-	//b[5] = -18'sd8574;
-	//b[6] = -18'sd2772;
-	//b[7] = 18'sd10263;
-	//b[8] = 18'sd26830;
-	//b[9] = 18'sd40696;
-	//b[10] = 18'sd46096;
-
+	
    end
 
 /* for debugging

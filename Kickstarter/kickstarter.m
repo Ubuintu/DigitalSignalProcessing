@@ -102,11 +102,11 @@ title('1s17 SRRC filter''s Magnitude Response w/final coefficients');
 print -dpng ./ks_pics/mag_response_of_1s17_SRRC_filter.png
 
 % Test to find freq in cycles/sample > 0.4
-row = find(w/2/pi > 0.4);
-fprintf('Testing to find specific indices of omega array\n\n');
-for i = 1:length(row)
-    fprintf('index: %d | Magnitude: %10.6f | %.6f cycles/sample\n', row(i), 20*log10(abs(H_final(row(i)))), w(row(i))/2/pi );
-end
+% row = find(w/2/pi > 0.4);
+% fprintf('Testing to find specific indices of omega array\n\n');
+% for i = 1:length(row)
+%     fprintf('index: %d | Magnitude: %10.6f | %.6f cycles/sample\n', row(i), 20*log10(abs(H_final(row(i)))), w(row(i))/2/pi );
+% end
 
 if (H_final_max > 1)
     fprintf('\n\t\t\t!!!!ERROR!!!!\n\nMaximum magnitude response of the sine input SRRC filter is: %10.17f\n', H_final_max);

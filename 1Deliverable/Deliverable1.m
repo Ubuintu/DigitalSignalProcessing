@@ -96,29 +96,29 @@ close 'Magnitude Response of SRRC RCV filter'
 
 % scale coeffs of RCV to be consistent w/TX (1s17)
 % safety = 1-2^-15; % should default value not work
-h_rcv_1s = h_rcv * safety/h_RCV_wc;
+h_rcv_0s = h_rcv * safety/h_RCV_wc;
 % compute FR of scaled RCV filter's IR
-H_rcv_1s = freqz(h_rcv_1s,1,w);
+H_rcv_0s = freqz(h_rcv_0s,1,w);
 
-if ( sum(abs(h_rcv_1s)) >= 1 )
-    fprintf('Error! Worst case input for scaled RCV filter is greater than 1\n\th_rcv_1s output given worst case input: %1.17f\n',sum(abs(h_rcv_1s)) )
+if ( sum(abs(h_rcv_0s)) >= 1 )
+    fprintf('Error! Worst case input for scaled RCV filter is greater than 1\n\th_rcv_1s output given worst case input: %1.17f\n',sum(abs(h_rcv_0s)) )
     return
 end
 
 % convert the theoretical scaled coefficients into a 18 bit signed number
 % for verilog implementation
-h_rcv_1s17 = round(h_rcv_1s * 2^17);
+h_rcv_0s18 = round(h_rcv_0s * 2^18);
 % compute FR
-H_rcv_1s17 = freqz( (h_rcv_1s17/2^17),1,w);
+H_rcv_0s18 = freqz( (h_rcv_0s18/2^18),1,w);
 
-if ( sum(abs(h_rcv_1s17/2^17)) > 1 )
-    fprintf('Error! Worst case input for scaled 1s17 RCV filter is greater than 1\n\th_rcv_1s17 output given worst case input: %1.17f\n',sum(abs(h_rcv_1s17/2^17)) )
+if ( sum(abs(h_rcv_0s18/2^18)) > 1 )
+    fprintf('Error! Worst case input for scaled 1s17 RCV filter is greater than 1\n\th_rcv_1s17 output given worst case input: %1.17f\n',sum(abs(h_rcv_0s18/2^17)) )
     return
 end
 
 % Plot and compare theoretical response with implemented response
 RCV_CMP = figure('Name','Magnitude Response of theoretical and implemented SRRC RCV filter');
-plot( w/2/pi,20*log10(abs(H_rcv_1s)),'--', w/2/pi,20*log10(abs(H_rcv_1s17)),':' );
+plot( w/2/pi,20*log10(abs(H_rcv_0s)),'--', w/2/pi,20*log10(abs(H_rcv_0s18)),':' );
 ylabel('20*log(|H_{rcv}(e^{j\omega})|)'); 
 xlabel('frequency (cycles/sample)');
 title('SRRC RCV filter''s Magnitude Response');
@@ -131,12 +131,12 @@ print -dpng ./pics/mag_response_of_cmp_SRRC_RCV_filter.png
 close 'Magnitude Response of theoretical and implemented SRRC RCV filter'
 
 % Coefficiencts for SRRC 1s17 Rcv filter
-fprintf('Coefficients for SRRC RCV 1s17 filter:\n\n');
-for i = 1:(length(h_rcv_1s17)/2)+1
-    if (h_rcv_1s17(i) > 0)
-        fprintf('\tb[%s] = 18''sd%s;\n',num2str(i-1),num2str( abs(h_rcv_1s17(i)) ) );
+fprintf('Coefficients for SRRC RCV 1s17 filter:\n');
+for i = 1:(length(h_rcv_0s18)/2)+1
+    if (h_rcv_0s18(i) > 0)
+        fprintf('\tb[%s] = 18''sd%s;\n',num2str(i-1),num2str( abs(h_rcv_0s18(i)) ) );
     else
-        fprintf('\tb[%s] = -18''sd%s;\n',num2str(i-1),num2str( abs(h_rcv_1s17(i)) ) );
+        fprintf('\tb[%s] = -18''sd%s;\n',num2str(i-1),num2str( abs(h_rcv_0s18(i)) ) );
     end
 end
 fprintf('\nEnd of Coefficients for SRRC RCV 1s17 filter\n\n');
@@ -262,6 +262,8 @@ H_TX_1s = freqz(h_TX_1s,1,w);
 
 % convert the theoretical scaled coefficients into a 18 bit signed number
 % for verilog implementation
+% NOTE: RCV is 0s18 whereas TX is 1s17 since TX's coeffs are larger than
+% 0s18 i.e. h_TX(11)
 h_TX_1s17 = round(h_TX_1s * 2^17);
 % compute FR
 H_TX_1s17 = freqz( (h_TX_1s17/2^17),1,w);
@@ -282,7 +284,7 @@ hold off
 ylabel('20*log(|H_{TX}(e^{j\omega})|)'); 
 xlabel('frequency (cycles/sample)');
 title('SRRC TX filter''s Magnitude Response');
-legend('Theoretical scaled Magnitude Response','Implemented Scaled 1s17 Magnitude Response');
+legend('Theoretical scaled Magnitude Response','Implemented Scaled 1s17 Magnitude Response','Required stopband attenuation');
 grid;
 axis([0.0,0.5,-100,10]);
 datacursormode(TX_CMP,'on');
@@ -291,7 +293,7 @@ print -dpng ./pics/mag_response_of_cmp_SRRC_TX_filter.png
 % close 'Magnitude Response of theoretical and implemented SRRC TX filter'
 
 % Coefficiencts for SRRC 1s17 Rcv filter
-fprintf('Coefficients for SRRC TX 1s17 filter:\n\n');
+fprintf('Coefficients for SRRC TX 1s17 filter:\n');
 for i = 1:(length(h_TX_1s17)/2)+1
     if (h_TX_1s17(i) > 0)
         fprintf('\tb[%s] = 18''sd%s;\n',num2str(i-1),num2str( abs(h_TX_1s17(i)) ) );
