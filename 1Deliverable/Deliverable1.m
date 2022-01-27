@@ -131,7 +131,7 @@ print -dpng ./pics/mag_response_of_cmp_SRRC_RCV_filter.png
 close 'Magnitude Response of theoretical and implemented SRRC RCV filter'
 
 % Coefficiencts for SRRC 1s17 Rcv filter
-fprintf('Coefficients for SRRC RCV 1s17 filter:\n');
+fprintf('0s18 Coefficients for SRRC RCV 1s17 filter:\n');
 for i = 1:(length(h_rcv_0s18)/2)+1
     if (h_rcv_0s18(i) > 0)
         fprintf('\tb[%s] = 18''sd%s;\n',num2str(i-1),num2str( abs(h_rcv_0s18(i)) ) );
@@ -139,7 +139,7 @@ for i = 1:(length(h_rcv_0s18)/2)+1
         fprintf('\tb[%s] = -18''sd%s;\n',num2str(i-1),num2str( abs(h_rcv_0s18(i)) ) );
     end
 end
-fprintf('End of Coefficients for SRRC RCV 1s17 filter\n\n');
+fprintf('End of 0s18 Coefficients for SRRC RCV 1s17 filter\n\n');
 
 %% *TX filter:
 % -The TX filter is limited to a length of 21.
@@ -267,20 +267,20 @@ H_TX_1s = freqz(h_TX_0s,1,w);
 % output, coeffs are much smaller than 2^-1
 h_TX_0s18 = round(h_TX_0s * 2^18);
 % compute FR
-H_TX_1s17 = freqz( (h_TX_0s18/2^18),1,w);
+H_TX_0s18 = freqz( (h_TX_0s18/2^18),1,w);
 
-% check if max possible output for filter is larger than 1
+% check if max possible output via dot product for filter is larger than 1
 if (h_TX_0s18/2^18 * worse_case_TX) >= 1
-    fprintf('Error! Max possible output for scaled SRRC 1s17 TX, h_TX_1s17 is: %1.17f',(h_TX_0s18/2^17 * worse_case_TX));
+    fprintf('Error! Max possible output for scaled SRRC 1s17 TX, h_TX_1s17 is: %1.17f',(h_TX_0s18/2^18 * worse_case_TX));
     return;
 end
 
 % Plot and compare theoretical response with implemented response
 TX_CMP = figure('Name','Magnitude Response of theoretical and implemented SRRC TX filter');
-plot( w/2/pi,20*log10(abs(H_TX_1s)),'--', w/2/pi,20*log10(abs(H_TX_1s17)),':' );
+plot( w/2/pi,20*log10(abs(H_TX_1s)),'--', w/2/pi,20*log10(abs(H_TX_0s18)),':' );
 hold on
-plot([0.2 0.2],[-100 20*log10(abs(H_TX_1s17(1)))-40],'--k');
-plot([0.2 0.5],[20*log10(abs(H_TX_1s17(1)))-40 20*log10(abs(H_TX_1s17(1)))-40],'--k');
+plot([0.2 0.2],[-100 20*log10(abs(H_TX_0s18(1)))-40],'--k');
+plot([0.2 0.5],[20*log10(abs(H_TX_0s18(1)))-40 20*log10(abs(H_TX_0s18(1)))-40],'--k');
 hold off
 ylabel('20*log(|H_{TX}(e^{j\omega})|)'); 
 xlabel('frequency (cycles/sample)');
@@ -294,7 +294,7 @@ print -dpng ./pics/mag_response_of_cmp_SRRC_TX_filter.png
 close 'Magnitude Response of theoretical and implemented SRRC TX filter'
 
 % Coefficiencts for SRRC 1s17 Rcv filter
-fprintf('Coefficients for SRRC TX 1s17 filter:\n');
+fprintf('0s18 Coefficients for SRRC TX 1s17 filter:\n');
 for i = 1:(length(h_TX_0s18)/2)+1
     if (h_TX_0s18(i) > 0)
         fprintf('\tb[%s] = 18''sd%s;\n',num2str(i-1),num2str( abs(h_TX_0s18(i)) ) );
@@ -302,17 +302,25 @@ for i = 1:(length(h_TX_0s18)/2)+1
         fprintf('\tb[%s] = -18''sd%s;\n',num2str(i-1),num2str( abs(h_TX_0s18(i)) ) );
     end
 end
-fprintf('End of Coefficients for SRRC TX 1s17 filter\n\n');
+fprintf('End of 0s18 Coefficients for SRRC TX 1s17 filter\n\n');
 
 %% TX Multipler Free
 
 % values for LUT 4-ASK mapper; ensure output of 4-ASK mapper is a 1s17
 % input to transmit filter
-a = safety/3;
+% a = safety/3;
+a = 1;    % to see possible inputs from LUT
 ASK_out = [-3*a -a a 3*a];
 
+in1 = ASK_out;
+in2 = ASK_out;
 
+% add row and column vectors to see possible combinations
+possible_inputs = in1 + in2';
+possible_inputs = unique(possible_inputs);
 
+% MF_coeff(row,col);
+MF_coeff = possible_inputs * h_TX_0s18;
 
 %% Textfiles
 

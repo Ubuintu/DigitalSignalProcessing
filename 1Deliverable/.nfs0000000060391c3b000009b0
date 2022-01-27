@@ -3,20 +3,15 @@
 #procedure call
 proc getScriptDirectory {} {
     set dispScriptFile [file normalize [info script]]
-    puts ${file}
-    puts ${dispScriptFile}
+    puts [info script]
     set scriptFolder [file dirname $dispScriptFile]
     return $scriptFolder
 }
 
-set SIM_LEN 20000ns
+set SIM_LEN 100000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "filter_tb"
-set MOD "TX_filt"
-
-puts [info script]
-puts "Hello world"
-puts [file normalize [info script]]
+set MOD "RCV_filt"
 
 onerror {resume}
 transcript on

@@ -269,7 +269,7 @@ h_TX_0s18 = round(h_TX_0s * 2^18);
 % compute FR
 H_TX_1s17 = freqz( (h_TX_0s18/2^18),1,w);
 
-% check if max possible output for filter is larger than 1
+% check if max possible output via dot product for filter is larger than 1
 if (h_TX_0s18/2^18 * worse_case_TX) >= 1
     fprintf('Error! Max possible output for scaled SRRC 1s17 TX, h_TX_1s17 is: %1.17f',(h_TX_0s18/2^17 * worse_case_TX));
     return;
@@ -308,11 +308,18 @@ fprintf('End of Coefficients for SRRC TX 1s17 filter\n\n');
 
 % values for LUT 4-ASK mapper; ensure output of 4-ASK mapper is a 1s17
 % input to transmit filter
-a = safety/3;
+% a = safety/3;
+% a = 1;    % to see possible 
 ASK_out = [-3*a -a a 3*a];
 
+% coeff = ASK_out' * h_TX_1s;
 
+in1 = ASK_out;
+in2 = ASK_out;
 
+% multiple row and column vectors to see possible combinations
+possible_inputs = in1 + in2';
+possible_inputs = unique(possible_inputs);
 
 %% Textfiles
 
@@ -335,8 +342,8 @@ fclose(fileID);
 
 toWrite = zeros( length(worse_case_RCV),1 );
 
-for i = 1:length(worse_case_RCV);
-    if worse_case_RCV == 1
+for i = 1:length(worse_case_RCV)
+    if worse_case_RCV(i)== 1
         toWrite(i) = 131071;
     else
         toWrite(i) = 131072;
@@ -344,5 +351,19 @@ for i = 1:length(worse_case_RCV);
 end
 
 fileID = fopen('worse_case_RCV.txt','w');
-fprintf(fileID,'%d\r\n',FS1s17);
+fprintf(fileID,'%d\r\n',toWrite);
+fclose(fileID);
+
+% worse case input sequence for TX
+
+for i = 1:length(worse_case_TX)
+    if worse_case_TX(i)== 1
+        toWrite(i) = 131071;
+    else
+        toWrite(i) = 131072;
+    end
+end
+
+fileID = fopen('worse_case_TX.txt','w');
+fprintf(fileID,'%d\r\n',toWrite);
 fclose(fileID);
