@@ -68,13 +68,13 @@ always @ *
         mult_out[i] = $signed(sum_level_1[i]) * $signed(b[i]);
 
 
-//Try sum_level_2 to 1s17 since mult_out will never be close to 1 from b[i]
+//coeffs are 1s17, x[i] is 2s16
 always @ *
     for(i=0;i<=4;i=i+1)
-        sum_level_2[i] = $signed( mult_out[2*i][34:17] ) + $signed( mult_out[2*i+1][34:17] );
+        sum_level_2[i] = $signed( mult_out[2*i][33:16] ) + $signed( mult_out[2*i+1][33:16] );
 
 always @ *
-    sum_level_2[5] = $signed(mult_out[10][34:17]);
+    sum_level_2[5] = $signed(mult_out[10][33:16]);
 
 
 always @ *
@@ -91,7 +91,17 @@ always @ (posedge clk)
 //always @ *	//<- Don't use this especially in modelsim
 initial
    begin
-	
+	b[0] = 18'sd299;
+	b[1] = 18'sd613;
+	b[2] = 18'sd414;
+	b[3] = -18'sd786;
+	b[4] = -18'sd2608;
+	b[5] = -18'sd3424;
+	b[6] = -18'sd1082;
+	b[7] = 18'sd5451;
+	b[8] = 18'sd14715;
+	b[9] = 18'sd22988;
+	b[10] = 18'sd26311;
    end
 
 /* for debugging
