@@ -253,7 +253,7 @@ h_TX_1s = h_TX_wn * safety/h_TX_wc;
 
 % check if max possible output for filter is larger than 1
 if (h_TX_1s * worse_case_TX) > 1
-    fprintf('Error! Max possible output for scaled theoretical SRRC TX, h_TX_1s is: %1.17f',(h_TX_1s * worse_case_TX));
+    fprintf('Error! Max possible output for scaled SRRC TX is: %1.17f',(h_TX_1s * worse_case_TX));
     return;
 end
 
@@ -268,38 +268,9 @@ H_TX_1s17 = freqz( (h_TX_1s17/2^17),1,w);
 
 % check if max possible output for filter is larger than 1
 if (h_TX_1s17/2^17 * worse_case_TX) > 1
-    fprintf('Error! Max possible output for scaled SRRC 1s17 TX, h_TX_1s17 is: %1.17f',(h_TX_1s17/2^17 * worse_case_TX));
+    fprintf('Error! Max possible output for scaled SRRC 1s17 TX is: %1.17f',(h_TX_1s * worse_case_TX));
     return;
 end
-
-% Plot and compare theoretical response with implemented response
-TX_CMP = figure('Name','Magnitude Response of theoretical and implemented SRRC TX filter');
-plot( w/2/pi,20*log10(abs(H_TX_1s)),'--', w/2/pi,20*log10(abs(H_TX_1s17)),':' );
-hold on
-plot([0.2 0.2],[-200 20*log10(abs(H_TX_1s17(1)))-40],'--k');
-plot([0.2 0.5],[20*log10(abs(H_TX_1s17(1)))-40 20*log10(abs(H_TX_1s17(1)))-40],'--k');
-hold off
-ylabel('20*log(|H_{TX}(e^{j\omega})|)'); 
-xlabel('frequency (cycles/sample)');
-title('SRRC TX filter''s Magnitude Response');
-legend('Theoretical scaled Magnitude Response','Implemented Scaled 1s17 Magnitude Response');
-grid;
-axis([0.0,0.5,-100,10]);
-datacursormode(TX_CMP,'on');
-print -dpng ./pics/mag_response_of_cmp_SRRC_TX_filter.png
-% comment/uncomment below
-% close 'Magnitude Response of theoretical and implemented SRRC TX filter'
-
-% Coefficiencts for SRRC 1s17 Rcv filter
-fprintf('Coefficients for SRRC TX 1s17 filter:\n\n');
-for i = 1:(length(h_TX_1s17)/2)+1
-    if (h_TX_1s17(i) > 0)
-        fprintf('\tb[%s] = 18''sd%s;\n',num2str(i-1),num2str( abs(h_TX_1s17(i)) ) );
-    else
-        fprintf('\tb[%s] = -18''sd%s;\n',num2str(i-1),num2str( abs(h_TX_1s17(i)) ) );
-    end
-end
-fprintf('\nEnd of Coefficients for SRRC TX 1s17 filter\n\n');
 
 
 
