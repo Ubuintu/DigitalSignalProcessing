@@ -335,8 +335,8 @@ fclose(fileID);
 
 toWrite = zeros( length(worse_case_RCV),1 );
 
-for i = 1:length(worse_case_RCV)
-    if worse_case_RCV(i)== 1
+for i = 1:length(worse_case_RCV);
+    if worse_case_RCV == 1
         toWrite(i) = 131071;
     else
         toWrite(i) = 131072;
@@ -344,19 +344,5 @@ for i = 1:length(worse_case_RCV)
 end
 
 fileID = fopen('worse_case_RCV.txt','w');
-fprintf(fileID,'%d\r\n',toWrite);
-fclose(fileID);
-
-% worse case input sequence for TX
-
-for i = 1:length(worse_case_TX)
-    if worse_case_TX(i)== 1
-        toWrite(i) = 131071;
-    else
-        toWrite(i) = 131072;
-    end
-end
-
-fileID = fopen('worse_case_TX.txt','w');
-fprintf(fileID,'%d\r\n',toWrite);
+fprintf(fileID,'%d\r\n',FS1s17);
 fclose(fileID);

@@ -66,16 +66,16 @@ always @ *
 always @ *
     if (reset) begin
 		 for(i=0;i<=10; i=i+1)
-		 //should be 3s33 (2s16*1s17)
+		 //should be 2s34 (2s16*0s18)
 			  mult_out[i] = 35'sd0;
     end
     else begin
 		 for(i=0;i<=10; i=i+1)
-		 //should be 3s33 (2s16*1s17)
+		 //should be 2s34 (2s16*0s18)
 			  mult_out[i] = $signed(sum_level_1[i]) * $signed(b[i]);
     end
 
-//coeffs are 1s17, x[i] is 2s16
+//coeffs are 0s17, x[i] is 2s16
 always @ *
     if (reset) begin
 		 for(i=0;i<=4;i=i+1)
@@ -83,15 +83,13 @@ always @ *
     end
     else begin
 		 for(i=0;i<=4;i=i+1)
-			  sum_level_2[i] = $signed( mult_out[2*i][33:16] ) + $signed( mult_out[2*i+1][33:16] );
+			  sum_level_2[i] = $signed( mult_out[2*i][34:17] ) + $signed( mult_out[2*i+1][34:17] );
     end
 
 always @ *
     if (reset) sum_level_2[5] = 18'sd0;
-	 else sum_level_2[5] = $signed(mult_out[10][33:16]);
+	 else sum_level_2[5] = $signed(mult_out[10][34:17]);
     
-
-
 always @ *
     if (reset) begin
 		 for(i=0;i<=2;i=i+1)
@@ -110,23 +108,24 @@ always @ *
 always @ (posedge clk)
     if (reset) y = 18'sd0;
 	 else y = $signed(sum_level_4);
-    
 
 	
 //always @ *	//<- Don't use this especially in modelsim
 initial
    begin
-	b[0] = 18'sd299;
-	b[1] = 18'sd613;
-	b[2] = 18'sd414;
-	b[3] = -18'sd786;
-	b[4] = -18'sd2608;
-	b[5] = -18'sd3424;
-	b[6] = -18'sd1082;
-	b[7] = 18'sd5451;
-	b[8] = 18'sd14715;
-	b[9] = 18'sd22988;
-	b[10] = 18'sd26311;
+	
+	b[0] = 18'sd597;
+	b[1] = 18'sd1226;
+	b[2] = 18'sd829;
+	b[3] = -18'sd1571;
+	b[4] = -18'sd5216;
+	b[5] = -18'sd6849;
+	b[6] = -18'sd2163;
+	b[7] = 18'sd10902;
+	b[8] = 18'sd29429;
+	b[9] = 18'sd45977;
+	b[10] = 18'sd52623;
+
    end
 
 /* for debugging
@@ -142,5 +141,4 @@ always@ *
 for (i=0; i<=15; i=i+1)
  b[i] =18'sd 8192; % value of 1/16
 */
-endmodule 
-
+endmodule
