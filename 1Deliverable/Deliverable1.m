@@ -139,7 +139,7 @@ for i = 1:(length(h_rcv_0s18)/2)+1
         fprintf('\tb[%s] = -18''sd%s;\n',num2str(i-1),num2str( abs(h_rcv_0s18(i)) ) );
     end
 end
-fprintf('\nEnd of Coefficients for SRRC RCV 1s17 filter\n\n');
+fprintf('End of Coefficients for SRRC RCV 1s17 filter\n\n');
 
 %% *TX filter:
 % -The TX filter is limited to a length of 21.
@@ -175,6 +175,8 @@ a = 1/3;
 ASK_out = [-3*a -a a 3*a];
 
 h_TX = rcosdesign(beta,span,Nsps);
+% Freq resp of non-windowed design
+H_TX = freqz(h_TX,1,w);
 
 
 h_TX_wn = h_TX.*wn.';
@@ -204,7 +206,7 @@ end
 
 TX_THEO = figure('Name','Magnitude Response of theoretical SRRC TX filter');
 % Magnitude Response
-plot( w/2/pi,20*log10(abs(H_TX_wn)) );
+plot( w/2/pi,20*log10(abs(H_TX_wn)), w/2/pi,20*log10(abs(H_TX)) );
 hold on
 plot([0.2 0.2],[-200 DC-40],'--k');
 plot([0.2 0.5],[DC-40 DC-40],'--k');
@@ -213,12 +215,12 @@ axis([0 0.5 -100 10]);
 ylabel('H_{hat}(\Omega) for RC and SRRC');
 xlabel('f (cycles/sample)');
 title('Magnitude response for finite-length SRRC TX filter');
-legend('SRRC TX response','Required stopband attenuation');
+legend('SRRC TX windowed','SRRC TX no window','Required stopband attenuation');
 grid;
 datacursormode(TX_THEO,'on');
 print -dpng ./pics/mag_response_of_theoretical_SRRC_TX_filter.png
 % comment/uncomment below
-% close 'Magnitude Response of theoretical SRRC TX filter'
+close 'Magnitude Response of theoretical SRRC TX filter'
 
 % "scale coefficients so that the maximum possible output of the filter fits
 % into a 1s17 format"? Constraints of "a" value from 4-ASK output? If I
@@ -271,7 +273,7 @@ h_TX_1s17 = round(h_TX_1s * 2^17);
 H_TX_1s17 = freqz( (h_TX_1s17/2^17),1,w);
 
 % check if max possible output for filter is larger than 1
-if (h_TX_1s17/2^17 * worse_case_TX) > 1
+if (h_TX_1s17/2^17 * worse_case_TX) >= 1
     fprintf('Error! Max possible output for scaled SRRC 1s17 TX, h_TX_1s17 is: %1.17f',(h_TX_1s17/2^17 * worse_case_TX));
     return;
 end
@@ -280,7 +282,7 @@ end
 TX_CMP = figure('Name','Magnitude Response of theoretical and implemented SRRC TX filter');
 plot( w/2/pi,20*log10(abs(H_TX_1s)),'--', w/2/pi,20*log10(abs(H_TX_1s17)),':' );
 hold on
-plot([0.2 0.2],[-200 20*log10(abs(H_TX_1s17(1)))-40],'--k');
+plot([0.2 0.2],[-100 20*log10(abs(H_TX_1s17(1)))-40],'--k');
 plot([0.2 0.5],[20*log10(abs(H_TX_1s17(1)))-40 20*log10(abs(H_TX_1s17(1)))-40],'--k');
 hold off
 ylabel('20*log(|H_{TX}(e^{j\omega})|)'); 
@@ -292,7 +294,7 @@ axis([0.0,0.5,-100,10]);
 datacursormode(TX_CMP,'on');
 print -dpng ./pics/mag_response_of_cmp_SRRC_TX_filter.png
 % comment/uncomment below
-% close 'Magnitude Response of theoretical and implemented SRRC TX filter'
+close 'Magnitude Response of theoretical and implemented SRRC TX filter'
 
 % Coefficiencts for SRRC 1s17 Rcv filter
 fprintf('Coefficients for SRRC TX 1s17 filter:\n');
@@ -303,7 +305,7 @@ for i = 1:(length(h_TX_1s17)/2)+1
         fprintf('\tb[%s] = -18''sd%s;\n',num2str(i-1),num2str( abs(h_TX_1s17(i)) ) );
     end
 end
-fprintf('\nEnd of Coefficients for SRRC TX 1s17 filter\n\n');
+fprintf('End of Coefficients for SRRC TX 1s17 filter\n\n');
 
 
 
