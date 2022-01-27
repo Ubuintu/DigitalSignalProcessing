@@ -163,7 +163,7 @@ fprintf('\nEnd of Coefficients for SRRC RCV 1s17 filter\n\n');
 % % beta or excess bandwidth
 beta = 0.21;
 % Stopband Attenuation
-A = 40;
+A = 40;   %Had to adjust for SA
 % beta for Kaiser window
 b = 0.5842*((A-21)^0.4)+0.07886*(A-21);
 % corner stopband frequency (cycles/sample)
@@ -193,8 +193,10 @@ col = find(w/2/pi >= 0.2);
 diff = DC - 20*log10(abs(H_TX_wn(col(1))));
 
 for i = 1:length(col)
-    if ( abs(DC-20*log10(abs(H_TX_wn(col(i))))) < 40 )
+    if ( DC-20*log10(abs(H_TX_wn(col(i)))) < 40 )
         fprintf('!!!ERROR IN TX FILTER!!!!\nindex: %d | Magnitude: %10.6f dB | %.6f cycles/sample\n', col(i), 20*log10(abs(H_TX_wn(col(i)))), w(col(i))/2/pi );
+        fprintf('Difference from DC is: %.6f dB\n',DC-20*log10(abs(H_TX_wn(col(i)))) );
+        fprintf('DC value: %.6f dB\n',DC);
         return
     end
 end
@@ -216,7 +218,7 @@ grid;
 datacursormode(TX_THEO,'on');
 print -dpng ./pics/mag_response_of_theoretical_SRRC_TX_filter.png
 % comment/uncomment below
-close 'Magnitude Response of theoretical SRRC TX filter'
+% close 'Magnitude Response of theoretical SRRC TX filter'
 
 % "scale coefficients so that the maximum possible output of the filter fits
 % into a 1s17 format"? Constraints of "a" value from 4-ASK output? If I
