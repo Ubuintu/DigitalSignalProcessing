@@ -308,8 +308,8 @@ fprintf('End of 0s18 Coefficients for SRRC TX 1s17 filter\n\n');
 
 % values for LUT 4-ASK mapper; ensure output of 4-ASK mapper is a 1s17
 % input to transmit filter
-% a = safety/3;
-a = 1;    % to see possible inputs from LUT
+a = safety/3;
+% a = 1;    % to see possible inputs from LUT
 ASK_out = [-3*a -a a 3*a];
 
 in1 = ASK_out;
@@ -317,10 +317,31 @@ in2 = ASK_out;
 
 % add row and column vectors to see possible combinations
 possible_inputs = in1 + in2';
-possible_inputs = unique(possible_inputs);
+possible_inputs = uniquetol(possible_inputs);
+% 1s17 input is truncated to 2s16 sum_level_1 in filter
+possible_inputs_verilog = round(possible_inputs*2^16);
 
-% MF_coeff(row,col);
-MF_coeff = possible_inputs * h_TX_0s18;
+% MF_coeff(row,col); same indexing in verilog
+% MF_LUT = possible_inputs * h_TX_0s18/2^18;
+MF_LUT = round(possible_inputs * h_TX_0s18);
+
+[rows, cols] = size(MF_LUT);
+fprintf('0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n');
+for i = 1:ceil(cols/2)
+    for j = 1:rows+1
+        if j == rows+1 && h_TX_0s18(i) > 0
+            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_TX_0s18(i)) ) );
+        elseif j == rows+1 && h_TX_0s18(i) < 0
+            fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_TX_0s18(i)) ) );
+        elseif MF_LUT(j,i) > 0
+            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
+        elseif MF_LUT(j,i) < 0
+            fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
+        end
+    end
+end
+fprintf('End of 0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n');
+
 
 %% Textfiles
 

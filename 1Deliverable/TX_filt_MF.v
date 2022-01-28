@@ -1,4 +1,4 @@
-module TX_filt (
+module TX_filt_MF (
           input clk, reset,
 		   input signed [17:0] x_in,
 		   output reg signed [17:0] y   );
@@ -12,16 +12,22 @@ reg signed [17:0] x0, x1, x2, x3, x4, x5, x6, x7, x8, x9,
 						X20, X21, X2, X2, X2, X2, X2, 
 						X2, X2, X2, 
 */
-integer i;	
+integer i,j;	
 //coeff is 0s18
-reg signed [17:0]	b[10:0];	
+//b array is 18 bits wide with 8 rows and 11 columns
+reg signed [17:0]	b[7:0][10:0];	
 //input is 1s17			 
 reg signed [17:0]	x[20:0];	
-(* noprune *) reg signed [35:0] mult_out[10:0];
+(* noprune *) reg signed [17:0] mult_out[10:0];
 (* noprune *) reg signed [17:0] sum_level_1[10:0];
 (* noprune *) reg signed [17:0] sum_level_2[5:0];
 (* noprune *) reg signed [17:0] sum_level_3[2:0];
-(* noprune *) reg signed [17:0] sum_level_4;
+(* noprune *) reg signed [17:0] sum_level_4, tol;
+
+//tolerance of 10% of center coeff i.e. h(11)*0.1*2^17
+initial begin
+    tol = 18'sd2631;
+end
 
 
 //sign extend input to prevent overflow in sum_level_1
@@ -67,12 +73,19 @@ always @ *
     if (reset) begin
 		 for(i=0;i<=10; i=i+1)
 		 //should be 2s34 (2s16*0s18)
-			  mult_out[i] = 35'sd0;
+			  mult_out[i] = 18'sd0;
     end
     else begin
-		 for(i=0;i<=10; i=i+1)
-		 //should be 2s34 (2s16*0s18)
-			  mult_out[i] = $signed(sum_level_1[i]) * $signed(b[i]);
+        for(i=0; i<=10; i=i+1)
+            if( sum_level_1[i] == 18'sd0 ) mult_out[i] = 18'sd0;
+            else if ( ( sum_level_1[i]>(-18'sd131072-tol) ) && ( sum_level_1[i]<(-18'sd131072+tol) ) mult_out[i] = b[0][i];
+            else if ( ( sum_level_1[i]>(-18'sd87381-tol) ) && ( sum_level_1[i]<(-18'sd87381+tol) ) mult_out[i] = b[1][i];
+            else if ( ( sum_level_1[i]>(-18'sd43690-tol) ) && ( sum_level_1[i]<(-18'sd43690+tol) ) mult_out[i] = b[2][i];
+            else if ( ( sum_level_1[i]>(18'sd0-tol) ) && ( sum_level_1[i]<(18'sd0+tol) ) mult_out[i] = b[3][i];
+            else if ( ( sum_level_1[i]>(18'sd43690-tol) ) && ( sum_level_1[i]<(18'sd43690+tol) ) mult_out[i] = b[4][i];
+            else if ( ( sum_level_1[i]>(18'sd87381-tol) ) && ( sum_level_1[i]<(18'sd87381+tol) ) mult_out[i] = b[5][i];
+            else if ( ( sum_level_1[i]>(18'sd131072-tol) ) && ( sum_level_1[i]<(18'sd131072+tol) ) mult_out[i] = b[6][i];
+            else mult_out[i] = b[7][i];
     end
 
 //coeffs are 0s17, x[i] is 2s16
