@@ -10,53 +10,27 @@ z2
 cModel Technology
 Z0 d/home/tob208/engr-ece/Documents/EE465/1Deliverable
 vfilter_tb
-Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1643322203
+DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1643409421
 !i10b 1
-!s100 n]CeCW;5E;CWCAF2B`W:_2
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IGghQ>>B?;QRASG]z88fQk2
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s100 _obIJ?bUkEOT_YEmJjY>`1
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+I7B1MJl>emJnAmHUOid:^^0
+VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1643321970
+w1643406113
 8./filter_tb.sv
 F./filter_tb.sv
 !i122 0
 L0 2 75
-Z5 OV;L;2020.1;71
+OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1643322203.000000
+!s108 1643409421.000000
 !s107 ./filter_tb.sv|
 !s90 -reportprogress|300|-sv|-work|work|./filter_tb.sv|
 !i113 1
-Z7 o-sv -work work
-Z8 tCvgOpt 0
-vTX_filt
-R1
-R2
-!i10b 1
-!s100 QF>M]McR]3a1o`=J7z6:i3
-R3
-ILM?91e7PCf99_Id@lazW23
-R4
-S1
-R0
-w1643314789
-8./TX_filt.v
-F./TX_filt.v
-!i122 1
-L0 1 144
-R5
-r1
-!s85 0
-31
-R6
-!s107 ./TX_filt.v|
-!s90 -reportprogress|300|-sv|-work|work|./TX_filt.v|
-!i113 1
-R7
-R8
-n@t@x_filt
+o-sv -work work
+tCvgOpt 0

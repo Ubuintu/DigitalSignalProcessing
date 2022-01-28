@@ -3,8 +3,6 @@
 #procedure call
 proc getScriptDirectory {} {
     set dispScriptFile [file normalize [info script]]
-    puts ${file}
-    puts ${dispScriptFile}
     set scriptFolder [file dirname $dispScriptFile]
     return $scriptFolder
 }
@@ -12,7 +10,7 @@ proc getScriptDirectory {} {
 set SIM_LEN 20000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "filter_tb"
-set MOD "TX_filt"
+set MOD "TX_filt_MF"
 
 puts [info script]
 puts "Hello world"
