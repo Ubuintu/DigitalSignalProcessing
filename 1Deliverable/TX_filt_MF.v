@@ -26,7 +26,7 @@ reg signed [17:0]	x[20:0];
 
 //tolerance of 10% of center coeff i.e. h(11)*0.1*2^17
 initial begin
-    tol = 18'sd5;
+    tol = 18'sd500;
 end
 
 
@@ -65,11 +65,11 @@ always @ *
 
 always @ *
     if (reset) sum_level_1[10] = 18'sd0;
-	 else sum_level_1[10] = $signed(x[10]);
+	else sum_level_1[10] = $signed(x[10]);
 
 
-always @ (posedge clk)
-//always @ *
+//always @ (posedge clk)
+always @ *
     if (reset) begin
 		 for(i=0;i<=10; i=i+1)
 		 //should be 2s34 (2s16*0s18)
@@ -79,8 +79,8 @@ always @ (posedge clk)
         for(i=0; i<=10; i=i+1)
             //if( sum_level_1[i] == 18'sd0 ) mult_out[i] = 18'sd0;
             /* Given that FS input scaled down to 65535 */
-            if( sum_level_1[i] == 18'sd65535 ) mult_out[i] = b[7][i];
-            else if ( ( sum_level_1[i]>(-18'sd131072-tol) ) && ( sum_level_1[i]<(-18'sd131072+tol) ) ) mult_out[i] = b[0][i];
+            //if( sum_level_1[i] == 18'sd65535 ) mult_out[i] = b[7][i];
+            if ( ( sum_level_1[i]>(-18'sd131072-tol) ) && ( sum_level_1[i]<(-18'sd131072+tol) ) ) mult_out[i] = b[0][i];
             else if ( ( sum_level_1[i]>(-18'sd87381-tol) ) && ( sum_level_1[i]<(-18'sd87381+tol) ) ) mult_out[i] = b[1][i];
             else if ( ( sum_level_1[i]>(-18'sd43690-tol) ) && ( sum_level_1[i]<(-18'sd43690+tol) ) ) mult_out[i] = b[2][i];
             else if ( ( sum_level_1[i]>(18'sd0-tol) ) && ( sum_level_1[i]<(18'sd0+tol) ) ) mult_out[i] = b[3][i];
@@ -106,7 +106,7 @@ always @ *
 
 always @ *
     if (reset) sum_level_2[5] = 18'sd0;
-	 else sum_level_2[5] = $signed(mult_out[10]);
+	else sum_level_2[5] = $signed(mult_out[10]);
     
 always @ *
     if (reset) begin
@@ -134,6 +134,7 @@ initial
 	b[0][0] = -18'sd1194;
 	b[1][0] = -18'sd796;
 	b[2][0] = -18'sd398;
+	b[3][0] = 18'sd0;
 	b[4][0] = 18'sd398;
 	b[5][0] = 18'sd796;
 	b[6][0] = 18'sd1194;
@@ -141,6 +142,7 @@ initial
 	b[0][1] = -18'sd2452;
 	b[1][1] = -18'sd1635;
 	b[2][1] = -18'sd817;
+	b[3][1] = 18'sd0;
 	b[4][1] = 18'sd817;
 	b[5][1] = 18'sd1635;
 	b[6][1] = 18'sd2452;
@@ -148,6 +150,7 @@ initial
 	b[0][2] = -18'sd1658;
 	b[1][2] = -18'sd1105;
 	b[2][2] = -18'sd553;
+	b[3][2] = 18'sd0;
 	b[4][2] = 18'sd553;
 	b[5][2] = 18'sd1105;
 	b[6][2] = 18'sd1658;
@@ -155,6 +158,7 @@ initial
 	b[0][3] = 18'sd3142;
 	b[1][3] = 18'sd2095;
 	b[2][3] = 18'sd1047;
+	b[3][3] = 18'sd0;
 	b[4][3] = -18'sd1047;
 	b[5][3] = -18'sd2095;
 	b[6][3] = -18'sd3142;
@@ -162,6 +166,7 @@ initial
 	b[0][4] = 18'sd10432;
 	b[1][4] = 18'sd6955;
 	b[2][4] = 18'sd3477;
+	b[3][4] = 18'sd0;
 	b[4][4] = -18'sd3477;
 	b[5][4] = -18'sd6955;
 	b[6][4] = -18'sd10432;
@@ -169,6 +174,7 @@ initial
 	b[0][5] = 18'sd13698;
 	b[1][5] = 18'sd9132;
 	b[2][5] = 18'sd4566;
+	b[3][5] = 18'sd0;
 	b[4][5] = -18'sd4566;
 	b[5][5] = -18'sd9132;
 	b[6][5] = -18'sd13698;
@@ -176,6 +182,7 @@ initial
 	b[0][6] = 18'sd4326;
 	b[1][6] = 18'sd2884;
 	b[2][6] = 18'sd1442;
+	b[3][6] = 18'sd0;
 	b[4][6] = -18'sd1442;
 	b[5][6] = -18'sd2884;
 	b[6][6] = -18'sd4326;
@@ -183,6 +190,7 @@ initial
 	b[0][7] = -18'sd21804;
 	b[1][7] = -18'sd14536;
 	b[2][7] = -18'sd7268;
+	b[3][7] = 18'sd0;
 	b[4][7] = 18'sd7268;
 	b[5][7] = 18'sd14536;
 	b[6][7] = 18'sd21804;
@@ -190,6 +198,7 @@ initial
 	b[0][8] = -18'sd58858;
 	b[1][8] = -18'sd39238;
 	b[2][8] = -18'sd19619;
+	b[3][8] = 18'sd0;
 	b[4][8] = 18'sd19619;
 	b[5][8] = 18'sd39238;
 	b[6][8] = 18'sd58858;
@@ -197,6 +206,7 @@ initial
 	b[0][9] = -18'sd91953;
 	b[1][9] = -18'sd61302;
 	b[2][9] = -18'sd30651;
+	b[3][9] = 18'sd0;
 	b[4][9] = 18'sd30651;
 	b[5][9] = 18'sd61302;
 	b[6][9] = 18'sd91953;
@@ -204,6 +214,7 @@ initial
 	b[0][10] = -18'sd105245;
 	b[1][10] = -18'sd70163;
 	b[2][10] = -18'sd35082;
+	b[3][10] = 18'sd0;
 	b[4][10] = 18'sd35082;
 	b[5][10] = 18'sd70163;
 	b[6][10] = 18'sd105245;

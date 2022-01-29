@@ -337,6 +337,8 @@ for i = 1:ceil(cols/2)
             fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
         elseif MF_LUT(j,i) < 0
             fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
+        else
+            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
         end
     end
 end

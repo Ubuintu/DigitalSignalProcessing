@@ -7,10 +7,12 @@ proc getScriptDirectory {} {
     return $scriptFolder
 }
 
-set SIM_LEN 20000ns
+set SIM_LEN 4000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "filter_tb"
 set MOD "TX_filt_MF"
+#set MOD "TX_filt"
+#set MOD "RCV_filt"
 
 puts [info script]
 puts "Hello world"
