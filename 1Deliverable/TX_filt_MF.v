@@ -26,7 +26,7 @@ reg signed [17:0]	x[20:0];
 
 //tolerance of 10% of center coeff i.e. h(11)*0.1*2^17
 initial begin
-    tol = 18'sd500;
+    tol = 18'sd5;
 end
 
 
@@ -44,11 +44,11 @@ always @ *  //for modelSim
 always @ (posedge clk)
     if (reset) begin
         for(i=1; i<21;i=i+1)
-            x[i] = 18'sd0;
+            x[i] <= 18'sd0;
     end
     else begin
         for(i=1; i<21;i=i+1)
-            x[i] = $signed( x[i-1] ); 
+            x[i] <= $signed( x[i-1] ); 
     end
 
 
@@ -77,19 +77,14 @@ always @ *
     end
     else begin
         for(i=0; i<=10; i=i+1)
-            //if( sum_level_1[i] == 18'sd0 ) mult_out[i] = 18'sd0;
-            /* Given that FS input scaled down to 65535 */
-            //if( sum_level_1[i] == 18'sd65535 ) mult_out[i] = b[7][i];
-            if ( ( sum_level_1[i]>(-18'sd131072-tol) ) && ( sum_level_1[i]<(-18'sd131072+tol) ) ) mult_out[i] = b[0][i];
+            if( sum_level_1[i] == 18'sd65535 ) mult_out[i] = b[7][i];
+            else if ( ( sum_level_1[i]>(-18'sd131072-tol) ) && ( sum_level_1[i]<(-18'sd131072+tol) ) ) mult_out[i] = b[0][i];
             else if ( ( sum_level_1[i]>(-18'sd87381-tol) ) && ( sum_level_1[i]<(-18'sd87381+tol) ) ) mult_out[i] = b[1][i];
             else if ( ( sum_level_1[i]>(-18'sd43690-tol) ) && ( sum_level_1[i]<(-18'sd43690+tol) ) ) mult_out[i] = b[2][i];
             else if ( ( sum_level_1[i]>(18'sd0-tol) ) && ( sum_level_1[i]<(18'sd0+tol) ) ) mult_out[i] = b[3][i];
             else if ( ( sum_level_1[i]>(18'sd43690-tol) ) && ( sum_level_1[i]<(18'sd43690+tol) ) ) mult_out[i] = b[4][i];
             else if ( ( sum_level_1[i]>(18'sd87381-tol) ) && ( sum_level_1[i]<(18'sd87381+tol) ) ) mult_out[i] = b[5][i];
             else if ( ( sum_level_1[i]>(18'sd131072-tol) ) && ( sum_level_1[i]<(18'sd131072+tol) ) ) mult_out[i] = b[6][i];
-            /* Old else statement */
-            //else mult_out[i] = b[7][i];
-            /* Default all none intended values to 0 */
             else mult_out[i] = 18'sd0;
     end
 
@@ -124,8 +119,8 @@ always @ *
     
 
 always @ (posedge clk)
-    if (reset) y = 18'sd0;
-	 else y = $signed(sum_level_4);
+    if (reset) y <= 18'sd0;
+	else y <= $signed(sum_level_4);
 
 	
 //always @ *	//<- Don't use this especially in modelsim
