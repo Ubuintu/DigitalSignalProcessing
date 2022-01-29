@@ -26,7 +26,7 @@ reg signed [17:0]	x[20:0];
 
 //tolerance of 10% of center coeff i.e. h(11)*0.1*2^17
 initial begin
-    tol = 18'sd2631;
+    tol = 18'sd5;
 end
 
 
@@ -44,11 +44,11 @@ always @ *  //for modelSim
 always @ (posedge clk)
     if (reset) begin
         for(i=1; i<21;i=i+1)
-            x[i] <= 18'sd0;
+            x[i] = 18'sd0;
     end
     else begin
         for(i=1; i<21;i=i+1)
-            x[i] <= $signed( x[i-1] ); 
+            x[i] = $signed( x[i-1] ); 
     end
 
 
@@ -68,9 +68,8 @@ always @ *
 	 else sum_level_1[10] = $signed(x[10]);
 
 
-// always @ (posedge clk)
+always @ (posedge clk)
 //always @ *
-forever begin
     if (reset) begin
 		 for(i=0;i<=10; i=i+1)
 		 //should be 2s34 (2s16*0s18)
@@ -93,8 +92,6 @@ forever begin
             /* Default all none intended values to 0 */
             else mult_out[i] = 18'sd0;
     end
-/* For forever begin statement */
-end
 
 //coeffs are 0s17, x[i] is 2s16
 always @ *
