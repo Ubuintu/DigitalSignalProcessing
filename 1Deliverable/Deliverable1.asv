@@ -291,7 +291,7 @@ hold on
 plot( w/2/pi,20*log10(abs(H_TX_1s)),'--', w/2/pi,20*log10(abs(H_TX_0s18)),':' );
 plot([0.2 0.2],[-100 20*log10(abs(H_TX_0s18(1)))-40],'--k');
 plot([0.2 0.5],[20*log10(abs(H_TX_0s18(1)))-40 20*log10(abs(H_TX_0s18(1)))-40],'--k');
-plot( w/2/pi, 20*log10(abs(H_TX_0s18)),'x','MarkerIndices',stop,'MarkerFaceColor','Red','MarkerSize',15 );
+plot( w/2/pi, 20*log10(abs(H_TX_0s18)),'x','MarkerIndices',stop,'MarkerFaceColor','Red','MarkerSize',10 );
 hold off
 ylabel('20*log(|H_{TX}(e^{j\omega})|)'); 
 xlabel('frequency (cycles/sample)');
@@ -304,7 +304,7 @@ axis([0.0,0.5,-100,10]);
 datacursormode(TX_CMP,'on');
 print -dpng ./pics/mag_response_of_cmp_SRRC_TX_filter.png
 % comment/uncomment below
-close 'Magnitude Response of theoretical and implemented SRRC TX filter'
+% close 'Magnitude Response of theoretical and implemented SRRC TX filter'
 
 % Coefficiencts for SRRC 1s17 Rcv filter
 fprintf('0s18 Coefficients for SRRC TX 1s17 filter:\n');
