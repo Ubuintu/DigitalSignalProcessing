@@ -40,6 +40,7 @@ initial begin
     //4-ASK input
     //file_in = $fopen("ASK_in.txt","r");
     file_in = $fopen("ASK_in_x0&20.txt","r");
+    //file_in = $fopen("ASK_in_x1&19.txt","r");
     
     #(RESET_DELAY);
     reset = 1;

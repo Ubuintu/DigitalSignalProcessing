@@ -429,4 +429,27 @@ fileID = fopen('ASK_in_x0&20.txt','w');
 fprintf(fileID,'%d\r\n',toWrite);
 fclose(fileID);
 
+% verify x1 & 19
+count = 0;
+delay = 17;
+
+for i = 1:delay*length(toWrite)
+    if count == 0 
+        toWrite(i) = 0;
+        count = count + 1;
+    else
+        if count >= delay
+            count = 0;
+            toWrite(i) = round(randsample(ASK_out,1)*2^17);
+        else
+            count = count + 1;
+            toWrite(i) = 0;
+        end
+    end
+end
+
+fileID = fopen('ASK_in_x1&19.txt','w');
+fprintf(fileID,'%d\r\n',toWrite);
+fclose(fileID);
+
 
