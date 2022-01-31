@@ -235,6 +235,7 @@ title('Magnitude response for finite-length SRRC TX filter');
 legend('SRRC TX windowed','SRRC TX no window','Required stopband attenuation');
 grid;
 datacursormode(TX_THEO,'on');
+TX_THEO.Position = [10 10 1000 900];
 print -dpng ./pics/mag_response_of_theoretical_SRRC_TX_filter.png
 % comment/uncomment below
 close 'Magnitude Response of theoretical SRRC TX filter'
@@ -317,6 +318,7 @@ st.Color = [102, 0, 102]/255;
 grid;
 axis([0.0,0.5,-100,10]);
 datacursormode(TX_CMP,'on');
+TX_CMP.Position = [10 10 1000 900];
 print -dpng ./pics/mag_response_of_cmp_SRRC_TX_filter.png
 % comment/uncomment below
 close 'Magnitude Response of theoretical and implemented SRRC TX filter'
