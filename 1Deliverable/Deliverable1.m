@@ -166,11 +166,11 @@ fprintf('End of 0s18 Coefficients for SRRC RCV 1s17 filter\n\n');
 % span = M/Nsps;
 % % beta or excess bandwidth
 % beta = 0.21; %beta prior to maximizing MER
-% BEST MER: b: 0.25 | A: 30
-beta = 0.25;
+% BEST MER: b: 0.40 | A: 28
+beta = 0.40;
 % Stopband Attenuation
 % A = 40;   %A prior to maximizing MER
-A = 30;   %Had to adjust for SA
+A = 28;   %Had to adjust for SA
 % beta for Kaiser window | 21 <= A <= 50
 b = 0.5842*((A-21)^0.4)+0.07886*(A-21);
 % stopband frequency (cycles/sample)
@@ -269,7 +269,7 @@ h_TX_0s = h_TX_wn * safety/h_TX_wc;
 % check if max possible output for filter is larger than 1
 if (h_TX_0s * worse_case_TX) > 1
     fprintf('Error! Max possible output for scaled theoretical SRRC TX, h_TX_1s is: %1.17f\n',(h_TX_0s * worse_case_TX));
-    return
+%     return
 end
 
 % compute FR of scaled TX filter's FR
@@ -286,7 +286,7 @@ H_TX_0s18 = freqz( (h_TX_0s18/2^18),1,w);
 % check if max possible output via dot product for filter is larger than 1
 if (h_TX_0s18/2^18 * worse_case_TX) >= 1
     fprintf('Error! Max possible output for scaled SRRC 1s17 TX, h_TX_1s17 is: %1.17f\n',(h_TX_0s18/2^18 * worse_case_TX));
-    return;
+%     return;
 end
 
 % Plot and compare theoretical response with implemented response
@@ -343,6 +343,8 @@ end
     
 MER_theo = 10*log10( num^2/sum(den.^2) );
 % MER_theo = 20*log10( num/sum(den) );
+
+fprintf('\n\nTheoretical MER is: %2.8f\n%s: %0.4f\nA: %2.2f\n\n',MER_theo,cBeta, beta, A);
 
 return
 
