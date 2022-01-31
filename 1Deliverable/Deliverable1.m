@@ -166,11 +166,12 @@ fprintf('End of 0s18 Coefficients for SRRC RCV 1s17 filter\n\n');
 % span = M/Nsps;
 % % beta or excess bandwidth
 % beta = 0.21; %beta prior to maximizing MER
-% BEST MER: b: 0.42 | A: 27.3
+% BEST MER: b: 0.42 | A: 27.1
+% PRACTICAL MER: b: 0.42 | A: 27.1 | RBW 62 kHz
 beta = 0.42;
 % Stopband Attenuation
 % A = 40;   %A prior to maximizing MER
-A = 27.3;   %Had to adjust for SA
+A = 27.1;   %Had to adjust for SA
 % beta for Kaiser window | 21 <= A <= 50
 b = 0.5842*((A-21)^0.4)+0.07886*(A-21);
 % stopband frequency (cycles/sample)
@@ -323,7 +324,7 @@ print -dpng ./pics/mag_response_of_cmp_SRRC_TX_filter.png
 % comment/uncomment below
 close 'Magnitude Response of theoretical and implemented SRRC TX filter'
 
-%% MER (Modulation Error Ratio)
+%% MER (Modulation Error Ratio) Theoretical
 % compute the MER BEFORE plotting and implementing the transmitter filter
 
 % convolve TX and RCV filter
@@ -356,10 +357,87 @@ end
 MER_theo = 10*log10( num^2/sum(den.^2) );
 % MER_theo = 20*log10( num/sum(den) );
 
-fprintf('\n\nTheoretical MER is: %2.8f\n%s: %0.4f\nA: %2.2f\n\n',MER_theo,cBeta, beta, A);
+fprintf('\n\nTheoretical MER is: %2.8f\n%s: %0.4f\nA: %2.2f\n',MER_theo,cBeta, beta, A);
 
-% For maximizing MER
-% return
+% Cascaded MER (Practical w/multipliers)
+% TX clocks in input as soon as it comes in, then outputs it on next CC;
+% same behaviour in RCV
+prac_coeffs = [0 6 18 16 -25 -105 -150 -37 312 808 1140 903 -96 -1560 -2648 -2285 230 4717 9976 14216 15838 ...
+    14216 9976 4717 230 -2285 -2648 -1560 -96 903 1140 808 312 -37 -150 -105 -25 16 18 6 0];
+
+if ( length(prac_coeffs) ~= 2*N-1 )
+    fprintf('ERROR! Length of cascade output is %d\n',length(prac_coeffs) );
+    return
+end
+
+for i = 1:ceil(length(prac_coeffs)/2)
+    if prac_coeffs(i) ~= prac_coeffs( length(prac_coeffs)+1-i )
+        fprintf('ERROR in practical coeffs!\n');
+        fprintf('idx: %d | val: %d\nidx: %d | val: %d\n', i, prac_coeffs(i), (length(prac_coeffs)+1-i), prac_coeffs(length(prac_coeffs)+1-i) );
+        return
+    end
+end
+
+num_p = max(prac_coeffs);
+den_p = zeros(floor(length(prac_coeffs)/4),1);
+cnt = 0;
+idx = 1;
+
+for i = 1:length(prac_coeffs)
+    if cnt == 0 && i ~= N
+        den_p(idx) = prac_coeffs(i);
+        cnt = cnt + 1;
+        idx = idx + 1;
+    elseif cnt >= 3
+        cnt = 0;
+    else
+        cnt = cnt + 1;
+    end
+end
+    
+MER_prac = 10*log10( num_p^2/sum(den_p.^2) );
+
+fprintf('Practical MER for TX w/Multipliers is: %2.8f\n',MER_prac);
+
+% Cascaded MER (Practical w/MF)
+prac_coeffs_MF = [0 14 38 36 -48 -205 -296 -71 628 1621 2286 1815 -185 -3116 -5288 -4563 466 9442 19960 28436 31684 ...
+    28436 19960 9442 466 -4563 -5288 -3116 -185 1815 2286 1621 628 -71 -296 -205 -48 36 38 14 0];
+
+if ( length(prac_coeffs_MF) ~= 2*N-1 )
+    fprintf('ERROR! Length of cascade output is %d\n',length(prac_coeffs_MF) );
+    return
+end
+
+for i = 1:ceil(length(prac_coeffs_MF)/2)
+    if prac_coeffs_MF(i) ~= prac_coeffs_MF( length(prac_coeffs_MF)+1-i )
+        fprintf('ERROR in practical coeffs!\n');
+        fprintf('idx: %d | val: %d\nidx: %d | val: %d\n', i, prac_coeffs_MF(i), (length(prac_coeffs_MF)+1-i), prac_coeffs_MF(length(prac_coeffs_MF)+1-i) );
+        return
+    end
+end
+
+num_p_MF = max(prac_coeffs_MF);
+den_p_MF = zeros(floor(length(prac_coeffs_MF)/4),1);
+cnt = 0;
+idx = 1;
+
+for i = 1:length(prac_coeffs_MF)
+    if cnt == 0 && i ~= N
+        den_p_MF(idx) = prac_coeffs_MF(i);
+        cnt = cnt + 1;
+        idx = idx + 1;
+    elseif cnt >= 3
+        cnt = 0;
+    else
+        cnt = cnt + 1;
+    end
+end
+    
+MER_prac_MF = 10*log10( num_p_MF^2/sum(den_p_MF.^2) );
+
+fprintf('Practical MER for TX w/o Multipliers is: %2.8f\n\n',MER_prac_MF);
+
+
 
 %% TX filter coefficient implementation
 % Use filter coefficients based on their MER
@@ -374,6 +452,9 @@ for i = 1:(length(h_TX_0s18)/2)+1
     end
 end
 fprintf('End of 0s18 Coefficients for SRRC TX 1s17 filter\n\n');
+
+% For maximizing MER
+% return
 
 %% TX Multipler Free
 

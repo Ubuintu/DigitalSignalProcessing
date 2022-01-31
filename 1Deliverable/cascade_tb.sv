@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
-module filter_tb;
+module cascade_tb;
 
 reg clk, reset;
 
 reg signed [17:0] x_in;
-wire signed [17:0] y;
+wire signed [17:0] y, cascade;
 
 localparam PERIOD = 10;
 localparam RESET_DELAY = 2;
@@ -35,11 +35,11 @@ initial begin
     //file_in = $fopen("input_A1.txt","r");
     
     //impulse response
-    //file_in = $fopen("impulse_response.txt","r");
+    file_in = $fopen("impulse_response.txt","r");
 
     //4-ASK input
     //file_in = $fopen("ASK_in.txt","r");
-    file_in = $fopen("ASK_in_x0&20.txt","r");
+    //file_in = $fopen("ASK_in_x0&20.txt","r");
     //file_in = $fopen("ASK_in_x1&19.txt","r");
     
     #(RESET_DELAY);
@@ -68,14 +68,21 @@ always @ (posedge clk)
         $fscanf(file_in,"%d\n",x_in);
 
 
-TX_filt_MF DUT (
+TX_filt_MF TX (
+//TX_filt TX (
     .clk(clk),
     .reset(reset),
     .x_in(x_in),
-    .y(y)
+    .y(cascade)
 
     //.*
 );
 
+RCV_filt RCV (
+    .clk(clk),
+    .reset(reset),
+    .x_in(cascade),
+    .y(y)
+);
 
 endmodule
