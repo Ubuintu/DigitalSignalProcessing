@@ -165,10 +165,13 @@ fprintf('End of 0s18 Coefficients for SRRC RCV 1s17 filter\n\n');
 % % length of the pulse
 % span = M/Nsps;
 % % beta or excess bandwidth
-beta = 0.21;
+% beta = 0.21; %beta prior to maximizing MER
+% BEST MER: b: 0.25 | A: 30
+beta = 0.25;
 % Stopband Attenuation
-A = 40;   %Had to adjust for SA
-% beta for Kaiser window
+% A = 40;   %A prior to maximizing MER
+A = 30;   %Had to adjust for SA
+% beta for Kaiser window | 21 <= A <= 50
 b = 0.5842*((A-21)^0.4)+0.07886*(A-21);
 % stopband frequency (cycles/sample)
 fs = 0.2;
@@ -200,7 +203,9 @@ for i = 1:length(col)
         fprintf('!!!ERROR IN TX FILTER!!!!\nindex: %d | Magnitude: %10.6f dB | %.6f cycles/sample\n', col(i), 20*log10(abs(H_TX_wn(col(i)))), w(col(i))/2/pi );
         fprintf('Difference from DC is: %.6f dB\n',DC-20*log10(abs(H_TX_wn(col(i)))) );
         fprintf('DC value: %.6f dB\n',DC);
-        return
+%         return
+% For maximizing MER
+    break
     end
 end
 
@@ -226,7 +231,7 @@ grid;
 datacursormode(TX_THEO,'on');
 print -dpng ./pics/mag_response_of_theoretical_SRRC_TX_filter.png
 % comment/uncomment below
-close 'Magnitude Response of theoretical SRRC TX filter'
+% close 'Magnitude Response of theoretical SRRC TX filter'
 
 % "scale coefficients so that the maximum possible output of the filter fits
 % into a 1s17 format"? Constraints of "a" value from 4-ASK output? If I
@@ -263,11 +268,11 @@ h_TX_0s = h_TX_wn * safety/h_TX_wc;
 
 % check if max possible output for filter is larger than 1
 if (h_TX_0s * worse_case_TX) > 1
-    fprintf('Error! Max possible output for scaled theoretical SRRC TX, h_TX_1s is: %1.17f',(h_TX_0s * worse_case_TX));
-    return;
+    fprintf('Error! Max possible output for scaled theoretical SRRC TX, h_TX_1s is: %1.17f\n',(h_TX_0s * worse_case_TX));
+    return
 end
 
-% compute FR of scaled RCV filter's FR
+% compute FR of scaled TX filter's FR
 H_TX_1s = freqz(h_TX_0s,1,w);
 
 % convert the theoretical scaled coefficients into a 18 bit signed number
@@ -280,7 +285,7 @@ H_TX_0s18 = freqz( (h_TX_0s18/2^18),1,w);
 
 % check if max possible output via dot product for filter is larger than 1
 if (h_TX_0s18/2^18 * worse_case_TX) >= 1
-    fprintf('Error! Max possible output for scaled SRRC 1s17 TX, h_TX_1s17 is: %1.17f',(h_TX_0s18/2^18 * worse_case_TX));
+    fprintf('Error! Max possible output for scaled SRRC 1s17 TX, h_TX_1s17 is: %1.17f\n',(h_TX_0s18/2^18 * worse_case_TX));
     return;
 end
 
@@ -304,7 +309,45 @@ axis([0.0,0.5,-100,10]);
 datacursormode(TX_CMP,'on');
 print -dpng ./pics/mag_response_of_cmp_SRRC_TX_filter.png
 % comment/uncomment below
-close 'Magnitude Response of theoretical and implemented SRRC TX filter'
+% close 'Magnitude Response of theoretical and implemented SRRC TX filter'
+
+%% MER (Modulation Error Ratio)
+% compute the MER BEFORE plotting and implementing the transmitter filter
+
+% convolve TX and RCV filter
+cascade = conv(h_TX_0s18/2^17, h_rcv_0s18/2^17);
+
+% FR
+% H_cascade = freqz(cascade, 1, w);
+% figure()
+% plot(w/2/pi, 20*log10(abs(H_cascade)));
+
+% Computer MER; center coeff/sum of every 4th coeff except center; MER in
+% dB
+num = cascade(N);
+den = zeros( floor(length(cascade)/4),1 );
+cnt = 0;
+idx = 1;
+
+for i = 1:length(cascade)
+    if cnt == 0 && i ~= N
+        den(idx) = cascade(i);
+        cnt = cnt + 1;
+        idx = idx + 1;
+    elseif cnt >= 3
+        cnt = 0;
+    else
+        cnt = cnt + 1;
+    end
+end
+    
+MER_theo = 10*log10( num^2/sum(den.^2) );
+% MER_theo = 20*log10( num/sum(den) );
+
+return
+
+%% TX filter coefficient implementation
+% Use filter coefficients based on their MER
 
 % Coefficiencts for SRRC 1s17 Rcv filter
 fprintf('0s18 Coefficients for SRRC TX 1s17 filter:\n');
@@ -356,6 +399,7 @@ for i = 1:ceil(cols/2)
     end
 end
 fprintf('End of 0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n\n');
+
 
 
 %% Textfiles
