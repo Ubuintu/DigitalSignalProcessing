@@ -501,7 +501,9 @@ fprintf('End of 0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n
 %% Textfiles
 
 IR = zeros(1,2*N);
-IR(5) = 131071;
+% IR(5) = 131071;
+% change input for IR just in case
+IR(5) = 13100;
 
 fileID = fopen('impulse_response.txt','w');
 fprintf(fileID,'%d\r\n',IR);
@@ -612,13 +614,13 @@ count = 0;
 delay = 21;
 
 for i = 1:delay*length(toWrite)
-    if count == 0 
-        toWrite(i) = 0;
+    if count == 0 | count == 2
+        toWrite(i) = round(randsample(ASK_out,1)*2^17);
         count = count + 1;
     else
         if count >= delay
             count = 0;
-            toWrite(i) = round(randsample(ASK_out,1)*2^17);
+            toWrite(i) = 0;
         else
             count = count + 1;
             toWrite(i) = 0;
@@ -626,7 +628,30 @@ for i = 1:delay*length(toWrite)
     end
 end
 
-fileID = fopen('ASK_in_x1&19.txt','w');
+fileID = fopen('ASK_in_x11&9.txt','w');
+fprintf(fileID,'%d\r\n',toWrite);
+fclose(fileID);
+
+% verify x10
+count = 0;
+delay = 21;
+
+for i = 1:delay*length(toWrite)
+    if count == 0 
+        toWrite(i) = round(randsample(ASK_out,1)*2^17);
+        count = count + 1;
+    else
+        if count >= delay
+            count = 0;
+            toWrite(i) = 0;
+        else
+            count = count + 1;
+            toWrite(i) = 0;
+        end
+    end
+end
+
+fileID = fopen('ASK_in_x11&9.txt','w');
 fprintf(fileID,'%d\r\n',toWrite);
 fclose(fileID);
 
