@@ -17,8 +17,6 @@ set MOD "TX_filt"
 puts [info script]
 puts "Hello world"
 puts [file normalize [info script]]
-set string "script is: compile.do"
-puts $string
 set string "MOD is: "
 append string ${MOD}
 puts $string

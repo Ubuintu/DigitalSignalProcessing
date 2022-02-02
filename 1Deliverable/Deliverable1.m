@@ -502,9 +502,9 @@ fprintf('End of 0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n
 
 IR = zeros(1,2*N);
 % *** For regular TX
-% IR(5) = 131071;
+IR(5) = 131071;
 % *** For MF
-IR(5) = 13100;
+% IR(5) = 13100;
 
 fileID = fopen('impulse_response.txt','w');
 fprintf(fileID,'%d\r\n',IR);

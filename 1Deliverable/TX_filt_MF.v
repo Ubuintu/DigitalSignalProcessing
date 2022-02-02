@@ -78,9 +78,9 @@ always @ *
     else begin
         for(i=0; i<=10; i=i+1)
             if( i<10 ) 
-                //if( sum_level_1[i] == 18'sd65535 ) mult_out[i] = b[7][i];
+                if( sum_level_1[i] == 18'sd65535 ) mult_out[i] = b[7][i];
                 /*For verifying taps*/
-                if( sum_level_1[i] == 18'sd65500 ) mult_out[i] = b[7][i];
+                //if( sum_level_1[i] == 18'sd65500 ) mult_out[i] = b[7][i];
                 else if ( ( sum_level_1[i]>(-18'sd131072-tol) ) && ( sum_level_1[i]<(-18'sd131072+tol) ) ) mult_out[i] = b[0][i];
                 else if ( ( sum_level_1[i]>(-18'sd87381-tol) ) && ( sum_level_1[i]<(-18'sd87381+tol) ) ) mult_out[i] = b[1][i];
                 else if ( ( sum_level_1[i]>(-18'sd43690-tol) ) && ( sum_level_1[i]<(-18'sd43690+tol) ) ) mult_out[i] = b[2][i];
@@ -91,9 +91,9 @@ always @ *
                 else mult_out[i] = 18'sd0;
             else
                 /*x10 is a special case; remember only 4 possible inputs*/
-                //if( sum_level_1[i] == 18'sd65535 ) mult_out[i] = b[7][i];
+                if( sum_level_1[i] == 18'sd65535 ) mult_out[i] = b[7][i];
                 /*For verifying taps*/
-                if( sum_level_1[i] == 18'sd65500 ) mult_out[i] = b[7][i];
+                //if( sum_level_1[i] == 18'sd65500 ) mult_out[i] = b[7][i];
                 else if ( ( sum_level_1[i]>(-18'sd65536-tol) ) && ( sum_level_1[i]<(-18'sd65536+tol) ) ) mult_out[i] = b[0][i];
                 else if ( ( sum_level_1[i]>(-18'sd21485-tol) ) && ( sum_level_1[i]<(-18'sd21485+tol) ) ) mult_out[i] = b[2][i];
                 else if ( ( sum_level_1[i]>(18'sd21485-tol) ) && ( sum_level_1[i]<(18'sd21485+tol) ) ) mult_out[i] = b[4][i];
