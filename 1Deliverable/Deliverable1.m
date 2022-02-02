@@ -132,7 +132,7 @@ axis([0.0,0.5,-50,10]);
 datacursormode(RCV_CMP,'on');
 print -dpng ./pics/mag_response_of_cmp_SRRC_RCV_filter.png
 % comment/uncomment below
-close 'Magnitude Response of theoretical and implemented SRRC RCV filter'
+% close 'Magnitude Response of theoretical and implemented SRRC RCV filter'
 
 % Coefficiencts for SRRC 1s17 Rcv filter
 fprintf('0s18 Coefficients for SRRC RCV 1s17 filter:\n');
@@ -501,7 +501,9 @@ fprintf('End of 0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n
 %% Textfiles
 
 IR = zeros(1,2*N);
-IR(5) = 131071;
+% IR(5) = 131071;
+% change input for IR just in case
+IR(5) = 13100;
 
 fileID = fopen('impulse_response.txt','w');
 fprintf(fileID,'%d\r\n',IR);
@@ -518,6 +520,7 @@ fprintf(fileID,'%d\r\n',FS1s17);
 fclose(fileID);
 
 toWrite = zeros( length(worse_case_RCV),1 );
+z = zeros( 10,1);
 
 for i = 1:length(worse_case_RCV)
     if worse_case_RCV(i)== 1
@@ -529,6 +532,7 @@ end
 
 fileID = fopen('worse_case_RCV.txt','w');
 fprintf(fileID,'%d\r\n',toWrite);
+fprintf(fileID,'%d\r\n',z);
 fclose(fileID);
 
 % worse case input sequence for TX
@@ -543,6 +547,7 @@ end
 
 fileID = fopen('worse_case_TX.txt','w');
 fprintf(fileID,'%d\r\n',toWrite);
+fprintf(fileID,'%d\r\n',z);
 fclose(fileID);
 
 % 4-ASK input
@@ -559,8 +564,7 @@ fclose(fileID);
 
 
 count = 0;
-% delay has to be 19 since filter delays output by 2 cc (x and y are
-% clocked)
+% delay has to be 19 since cascade delays output by 2 cc 
 delay = 19;
 
 for i = 1:delay*length(toWrite)
@@ -602,6 +606,29 @@ for i = 1:delay*length(toWrite)
 end
 
 fileID = fopen('ASK_in_x1&19.txt','w');
+fprintf(fileID,'%d\r\n',toWrite);
+fclose(fileID);
+
+% verify x9 & 11
+count = 0;
+delay = 21;
+
+for i = 1:delay*length(toWrite)
+    if count == 0 | count == 2
+        toWrite(i) = round(randsample(ASK_out,1)*2^17);
+        count = count + 1;
+    else
+        if count >= delay
+            count = 0;
+            toWrite(i) = 0;
+        else
+            count = count + 1;
+            toWrite(i) = 0;
+        end
+    end
+end
+
+fileID = fopen('ASK_in_x11&9.txt','w');
 fprintf(fileID,'%d\r\n',toWrite);
 fclose(fileID);
 

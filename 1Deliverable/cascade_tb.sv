@@ -35,12 +35,13 @@ initial begin
     //file_in = $fopen("input_A1.txt","r");
     
     //impulse response
-    file_in = $fopen("impulse_response.txt","r");
+    //file_in = $fopen("impulse_response.txt","r");
 
     //4-ASK input
     //file_in = $fopen("ASK_in.txt","r");
     //file_in = $fopen("ASK_in_x0&20.txt","r");
     //file_in = $fopen("ASK_in_x1&19.txt","r");
+    file_in = $fopen("ASK_in_x11&9.txt","r");
     
     #(RESET_DELAY);
     reset = 1;
