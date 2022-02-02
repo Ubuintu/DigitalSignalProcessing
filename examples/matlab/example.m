@@ -19,3 +19,12 @@ t.Color = [153/255 153/255 255/255];
 hold off
 legend('random plot [0:1]');
 print -dpng ./pics/test.png
+
+%% testing plot function
+
+x = [0:0.01:2]*pi;
+y = sin(x);
+string = 'My test plot';
+p_title = 'test_print';
+
+test = myplot(x,y,string,p_title);
