@@ -239,7 +239,7 @@ datacursormode(TX_THEO,'on');
 TX_THEO.Position = [10 10 1000 900];
 print -dpng ./pics/mag_response_of_theoretical_SRRC_TX_filter.png
 % comment/uncomment below
-close 'Magnitude Response of theoretical SRRC TX filter'
+% close 'Magnitude Response of theoretical SRRC TX filter'
 
 % "scale coefficients so that the maximum possible output of the filter fits
 % into a 1s17 format"? Constraints of "a" value from 4-ASK output? If I
@@ -359,7 +359,8 @@ MER_theo = 10*log10( num^2/sum(den.^2) );
 
 fprintf('\n\nTheoretical MER is: %2.8f\n%s: %0.4f\nA: %2.2f\n',MER_theo,cBeta, beta, A);
 
-% Cascaded MER (Practical w/multipliers)
+% Cascaded MER (Practical w/multipliers)sim:/cascade_tb/y
+
 % TX clocks in input as soon as it comes in, then outputs it on next CC;
 % same behaviour in RCV
 prac_coeffs = [0 6 18 16 -25 -105 -150 -37 312 808 1140 903 -96 -1560 -2648 -2285 230 4717 9976 14216 15838 ...

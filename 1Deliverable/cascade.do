@@ -10,8 +10,8 @@ proc getScriptDirectory {} {
 set SIM_LEN 8000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "cascade_tb"
-set TX "TX_filt_MF"
-#set TX "TX_filt"
+#set TX "TX_filt_MF"
+set TX "TX_filt"
 set RCV "RCV_filt"
 
 puts [info script]

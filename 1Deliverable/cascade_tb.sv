@@ -69,8 +69,8 @@ always @ (posedge clk)
         $fscanf(file_in,"%d\n",x_in);
 
 
-TX_filt_MF TX (
-//TX_filt TX (
+//TX_filt_MF TX (
+TX_filt TX (
     .clk(clk),
     .reset(reset),
     .x_in(x_in),
