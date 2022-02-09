@@ -1,0 +1,89 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/tob208/engr-ece/Documents/EE465/2Deliverable
+vLFSR_16
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1644437141
+!i10b 1
+!s100 Jb^b<mPGJ]_LlLAm]7@fR2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ID6_PlQSFB921elbiZ@9990
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1644436802
+Z6 8./LFSR.v
+Z7 F./LFSR.v
+!i122 1
+L0 23 17
+Z8 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z9 !s108 1644437141.000000
+!s107 ./LFSR.v|
+Z10 !s90 -reportprogress|300|-sv|-work|work|./LFSR.v|
+!i113 1
+Z11 o-sv -work work
+Z12 tCvgOpt 0
+n@l@f@s@r_16
+vLFSR_22
+R1
+R2
+!i10b 1
+!s100 U;5[9S7ZE_8AlIEDRoH[m3
+R3
+I>0ZiY7gEi<AckCAUH^g3V0
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 1
+L0 1 21
+R8
+r1
+!s85 0
+31
+R9
+Z13 !s107 ./LFSR.v|
+R10
+!i113 1
+R11
+R12
+n@l@f@s@r_22
+vLFSR_tb
+R1
+R2
+!i10b 1
+!s100 Z;j>mRcKPfghPNKz_7L[22
+R3
+Ioc]K808_O07<n?H5KShEM3
+R4
+S1
+R0
+w1644437138
+8./LFSR_tb.sv
+F./LFSR_tb.sv
+!i122 0
+L0 2 49
+R8
+r1
+!s85 0
+31
+R9
+!s107 ./LFSR_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|./LFSR_tb.sv|
+!i113 1
+R11
+R12
+n@l@f@s@r_tb
