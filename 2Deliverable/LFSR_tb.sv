@@ -1,9 +1,10 @@
-`timescale 1ns/1ps
+`timescale 1ns/1ns
 module LFSR_tb;
 
 reg clk, reset, load;
 integer i;
 wire signed [21:0] y;
+wire cycle;
 
 localparam PERIOD = 10;
 localparam RESET_DELAY = 2;
@@ -36,7 +37,7 @@ initial begin
     @(posedge clk);
     $fdisplay(file_out, $unsigned(y));
     $display("time = %0t | y = %p",$time, $unsigned(y));
-    repeat (20) @ (posedge clk);
+    repeat (4194303) @ (posedge clk);
     $fdisplay(file_out, $unsigned(y));
     $display("time = %0t | y = %p",$time, $unsigned(y));
     $fclose(file_out);

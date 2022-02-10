@@ -5,7 +5,7 @@ proc getScriptDirectory {} {
     return $scriptFolder
 }
 
-set SIM_LEN 90000ns
+set SIM_LEN 50000000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "LFSR_tb"
 set MOD "LFSR"
@@ -27,6 +27,11 @@ vlog -sv -work work ${SRC_DIR}/${MOD}.v
 
 vsim -t 1ns -L work ${TB_MOD}
 do wLFSR.do
+set string "MOD is: "
+append string ${MOD}
+puts $string
+set string "TB is: "
+append string ${TB_MOD}
 
 run ${SIM_LEN}
 

@@ -1,15 +1,25 @@
 module LFSR_22 (
     input clk, reset, load,
+    output reg cycle,
     output [21:0] out
     );
 
-(* noprune *) reg [21:0] x;
+(* noprune *) reg [21:0] x, cnt;
 
 //initial begin
 //    x = 22'd0;
 //    repeat (2) @(negedge reset)
 //    x[21] = 1'b1;
 //end
+
+always @ (posedge clk)
+    if (reset) cycle = 1'b0;
+    else if (cnt == 22'd4194303) cycle = 1'b1;
+    else cycle = 1'b0;
+
+always @ (posedge clk) 
+    if (reset) cnt = 22'd0;
+    else cnt = cnt + 22'd1;
 
 always @ (posedge clk)
     if (reset) x = 22'd0;
