@@ -239,7 +239,7 @@ datacursormode(TX_THEO,'on');
 TX_THEO.Position = [10 10 1000 900];
 print -dpng ./pics/mag_response_of_theoretical_SRRC_TX_filter.png
 % comment/uncomment below
-% close 'Magnitude Response of theoretical SRRC TX filter'
+close 'Magnitude Response of theoretical SRRC TX filter'
 
 % "scale coefficients so that the maximum possible output of the filter fits
 % into a 1s17 format"? Constraints of "a" value from 4-ASK output? If I
