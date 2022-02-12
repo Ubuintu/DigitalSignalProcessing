@@ -30,20 +30,39 @@ assign out = x;
 
 endmodule
 
-module LFSR_16 (
-    input clk,
-    output [15:0] out
+module LFSR_test #(parameter WIDTH = 4)(
+    input clk, reset, load,
+    output reg cycle,
+    output reg signed [WIDTH-1:0] out
     );
 
-(* noprune *) reg [15:0] x;
+(* noprune *) reg signed [WIDTH-1:0] x;
+(* noprune *) reg [WIDTH-1:0] cnt;
 
+//for MS NEED to initialize regs to 0
 initial begin
-    x = 16'd0;
+    x = {WIDTH{1'b0}};
+    cycle = 1'b0;
+    out = {WIDTH{1'b0}};
+    cnt = {WIDTH{1'b0}};
 end
 
 always @ (posedge clk)
-	x = { x[15:1], (x[15]^x[14]^x[12]^x[3]) };
+    if (reset) cycle = 1'b0;
+    else if (cnt == {WIDTH{1'b1}}) cycle = 1'b1;
+    else cycle = 1'b0;
 
-assign out = x;
+always @ (posedge clk) 
+    if (reset) cnt = {WIDTH{1'b0}};
+    else cnt = cnt + {{(WIDTH-1){1'b0}},1'b1};
+
+always @ (posedge clk)
+    if (reset) x = {WIDTH{1'b0}};
+    else if (load) x = { 2'b01,{WIDTH-2{1'b0}} };
+	else x = $signed({ x[3:1], (x[2]^x[3]) });
+
+always @ *
+    if (reset) out = {WIDTH{1'b0}};
+    else out = $signed(x);
 
 endmodule

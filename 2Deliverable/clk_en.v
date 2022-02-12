@@ -1,4 +1,4 @@
-module clk (
+module clk_en (
     input clk,
     output reg sys_clk, sam_clk_en, sym_clk_en
     );

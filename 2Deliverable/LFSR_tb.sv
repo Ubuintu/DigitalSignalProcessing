@@ -1,9 +1,9 @@
 `timescale 1ns/1ns
-module LFSR_tb;
+module LFSR_tb #(parameter WIDTH = 22);
 
 reg clk, reset, load;
 integer i;
-wire signed [21:0] y;
+wire signed [WIDTH-1:0] y;
 wire cycle;
 
 localparam PERIOD = 10;
@@ -44,6 +44,7 @@ initial begin
 end
 
 LFSR_22 DUT(
+//LFSR_test DUT(
     .*,
     .out(y)
 );
