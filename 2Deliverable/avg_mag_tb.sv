@@ -29,7 +29,8 @@ initial begin
    #(RESET_DELAY * PERIOD );
    reset = ~reset;
    load = ~load;
-   repeat(2)@(posedge clk);
+   //time load w/sam_clk
+   repeat(4)@(posedge clk);
    load = ~load;
 end
 
@@ -37,25 +38,18 @@ clk_en timing (
     .*
 );
 
-//LFSR_test drv(
-//    .clk(sym_clk_en),
-//    .reset(reset),
-//    .load(load),
-//    .cycle(cycle),
-//    .out(out)
-//);
-
 
 //LFSR_22 drv (
-LFSR_test drv (
-    //.clk(sym_clk_en),
+LFSR_test DRV_LFSR (
+    .clk(sam_clk_en),
     .*
 );
 
-avg_mag DUT (
+avg_mag #(.ACC_WID(20), .LFSR_WID(4)) DUT (
     .clr_acc(cycle),
     //.dec_var(out[17:0]),
-    .dec_var( $signed({{14{1'b0}},out}) ),
+    .dec_var( $signed({out,{14{1'b0}}}) ),
+    .clk(sys_clk),
     .*
 );
 

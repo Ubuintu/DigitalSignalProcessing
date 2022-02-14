@@ -58,8 +58,8 @@ always @ (posedge clk)
 
 always @ (posedge clk)
     if (reset) x = {WIDTH{1'b0}};
-    else if (load) x = { 2'b01,{WIDTH-2{1'b0}} };
-	else x = $signed({ x[3:1], (x[2]^x[3]) });
+    else if (load) x = {WIDTH{1'b1}};
+	else x = $signed({ x[2:0], (x[2]^x[3]) });
 
 always @ *
     if (reset) out = {WIDTH{1'b0}};

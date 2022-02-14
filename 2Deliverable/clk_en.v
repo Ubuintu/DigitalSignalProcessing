@@ -1,5 +1,5 @@
 module clk_en (
-    input clk,
+    input clk, reset,
     output reg sys_clk, sam_clk_en, sym_clk_en
     );
 
@@ -13,10 +13,12 @@ initial begin
 end
 
 always @ (posedge clk)
-    sys_clk = ~sys_clk;
+    if (reset) sys_clk = 1'b0;
+    else sys_clk = ~sys_clk;
 
 always @ (posedge sys_clk)
-    cnt = cnt + 4'b1;
+    if(reset) cnt = 4'b0;
+    else cnt = cnt + 4'b1;
 
 always @ (posedge sys_clk)
     //account for delay; checks for logic and performs op on next posedge
