@@ -13,7 +13,7 @@ module avg_mag #(parameter LFSR_WID = 22,parameter ACC_WID = 40)(
 initial begin
     ref_lvl = 18'd0;
     map_out_pwr = 18'd0;
-    acc_out = 18'd0;
+    acc_out = {ACC_WID{1'b0}};
     reg_out = 18'd0;
     square = 18'd0;
     abs = 18'd0;
@@ -35,6 +35,7 @@ always @ *
 
 always @ (posedge clk)
     if (reset || sig_edge) acc_out = {ACC_WID{1'b0}};
+    //if (reset || clr_acc) acc_out = {ACC_WID{1'b0}}; //fallin edge of clr_acc is on posedge clk, thus timing is missed; 
     else if (sym_clk_en) acc_out = acc_out + abs;
     else acc_out = acc_out;
 

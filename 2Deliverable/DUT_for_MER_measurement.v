@@ -27,14 +27,14 @@ module DUT_for_MER_measurement #(
 //  Declarations
 //------------------------------------------------------------
 
-  reg signed [DATA_WIDTH-1:0]         delay_reg          [2:0]; //delay registers
-  reg signed [DATA_WIDTH:0]           sum_level_one;           //Summation of first and third registers, 19 bits wide so that if a + 3a is ever added it can fit
-  reg signed [2*DATA_WIDTH:0]         isi_term_hp;             //multiplication of ISI_POWER and sum level one, 37 bits
-  reg signed [DATA_WIDTH-1:0]         isi_term_lp;             //multiplication if ISI_POWER and sum level one, 18 bits
+  (* noprune *) reg signed [DATA_WIDTH-1:0]         delay_reg          [2:0]; //delay registers
+  (* noprune *) reg signed [DATA_WIDTH:0]           sum_level_one;           //Summation of first and third registers, 19 bits wide so that if a + 3a is ever added it can fit
+  (* noprune *) reg signed [2*DATA_WIDTH:0]         isi_term_hp;             //multiplication of ISI_POWER and sum level one, 37 bits
+  (* noprune *) reg signed [DATA_WIDTH-1:0]         isi_term_lp;             //multiplication if ISI_POWER and sum level one, 18 bits
   
-  reg signed  [DATA_WIDTH-1:0]        decision_variable_temp;           //decision variable including the error
-  reg signed  [DATA_WIDTH-1:0]        errorless_decision_variable_temp; //decision variable without error
-  reg signed  [DATA_WIDTH-1:0]        error_temp;                       //error introduced by the system
+  (* noprune *) reg signed  [DATA_WIDTH-1:0]        decision_variable_temp;           //decision variable including the error
+  (* noprune *) reg signed  [DATA_WIDTH-1:0]        errorless_decision_variable_temp; //decision variable without error
+  (* noprune *) reg signed  [DATA_WIDTH-1:0]        error_temp;                       //error introduced by the system
   
 //************************************************************
 //  SHIFT REGISTERS
