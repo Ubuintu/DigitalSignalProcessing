@@ -39,12 +39,13 @@ clk_en timing (
 );
 
 
-//LFSR_22 drv (
+//LFSR_22 DRV_LFSR (
 LFSR_test DRV_LFSR (
     .*
 );
 
-avg_mag #(.ACC_WID(20), .LFSR_WID(4)) DUT (
+avg_mag #(.ACC_WID(20), .LFSR_WID(4)) DUT (   //4bit
+//avg_mag #() DUT ( //for 22 bit LFSR
     .clr_acc(cycle),
     //.dec_var(out[17:0]),
     .dec_var( $signed({out,{(18-LFSR_WID){1'b0}}}) ),

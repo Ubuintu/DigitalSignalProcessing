@@ -58,6 +58,12 @@ square1s17 = square/2^34;
 mult_out_2_2s16 = square1s17*1.25;
 mult_out_2 = mult_out_2_2s16 * 2^16;
 
+%% Mapper
+clear clc; format longG
+
+a = 1/3;
+mapper = round([-3*a -a a 3*a]*2^17);
+
 %% isi power calculation
 clear
 clc

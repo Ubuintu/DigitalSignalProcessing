@@ -5,7 +5,7 @@ proc getScriptDirectory {} {
     return $scriptFolder
 }
 
-#set SIM_LEN 50000000ns
+#set SIM_LEN 100000000ns
 set SIM_LEN 5000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "avg_mag_tb"
