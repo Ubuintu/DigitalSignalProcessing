@@ -55,7 +55,7 @@ else if (clk_en == 1'b1)
     delay_reg[2] <= delay_reg[1];
   end
 else
-  begin
+  begi
     delay_reg[0] <= delay_reg[0]; //otherwise registers hold their values
     delay_reg[1] <= delay_reg[1];
     delay_reg[2] <= delay_reg[2];

@@ -8,10 +8,10 @@ proc getScriptDirectory {} {
 #set SIM_LEN 50000000ns
 set SIM_LEN 5000ns
 set SRC_DIR [getScriptDirectory]
-set TB_MOD "avg_mag_tb"
+set TB_MOD "avg_err_tb"
 set LFSR "LFSR"
 set CLKEN "clk_en"
-set AVGMAG "avg_mag"
+set AVGERR "avg_err"
 
 puts [info script]
 
@@ -28,12 +28,10 @@ vmap work rtl_work
 vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
 vlog -sv -work work ${SRC_DIR}/${LFSR}.v
 vlog -sv -work work ${SRC_DIR}/${CLKEN}.v
-vlog -sv -work work ${SRC_DIR}/${AVGMAG}.v
+vlog -sv -work work ${SRC_DIR}/${AVGERR}.v
 
 vsim -t 1ns -L work ${TB_MOD}
-do wAVGMAG.do
-set string "testing average magnitude circuit "
-puts ${string}
+do wAVGERR.do
+set string "testing average error circuit "
 
 run ${SIM_LEN}
-

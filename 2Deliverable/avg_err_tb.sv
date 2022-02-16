@@ -1,9 +1,8 @@
 `timescale 1ns/1ns
-module avg_mag_tb #(LFSR_WID = 4);
+module avg_err_tb #(LFSR_WID = 4);
 
 reg clk, reset, load;
-//wire signed [21:0] out;
-wire signed [(LFSR_WID-1):0] out; //For testing
+wire signed [(LFSR_WID-1):0] LFSR_out; 
 wire cycle, sys_clk, sam_clk_en, sym_clk_en;
 wire signed [17:0] ref_lvl, map_out_pwr;
 
@@ -41,16 +40,9 @@ clk_en timing (
 
 //LFSR_22 drv (
 LFSR_test DRV_LFSR (
-    .*
-);
-
-avg_mag #(.ACC_WID(20), .LFSR_WID(4)) DUT (
-    .clr_acc(cycle),
-    //.dec_var(out[17:0]),
-    .dec_var( $signed({out,{(18-LFSR_WID){1'b0}}}) ),
-    .clk(sys_clk),
+    .clk(sam_clk_en),
+    .out(LFSR_out),
     .*
 );
 
 endmodule
-

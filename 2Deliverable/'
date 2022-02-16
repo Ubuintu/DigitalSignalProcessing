@@ -1,37 +1,32 @@
 module LFSR_22 (
-    input sys_clk, reset, load, sam_clk_en,
+    input clk, reset, load,
     output reg cycle,
-    output reg signed[21:0] out
+    output [21:0] out
     );
 
 (* noprune *) reg [21:0] x, cnt;
 
-initial begin
-    x = {22{1'b0}};
-    cycle = 1'b0;
-    out = {22{1'b0}};
-    cnt = 22'd1;
-end
+//initial begin
+//    x = 22'd0;
+//    repeat (2) @(negedge reset)
+//    x[21] = 1'b1;
+//end
 
-always @ (posedge sys_clk)
+always @ (posedge clk)
     if (reset) cycle = 1'b0;
-    else if (sam_clk_en && cnt == 22'd4194303) cycle = 1'b1;
+    else if (cnt == 22'd4194303) cycle = 1'b1;
     else cycle = 1'b0;
 
-always @ (posedge sys_clk) 
-    if (reset || sam_clk_en && cnt == 22'd4194303) cnt = 22'd1;
-    else if (sam_clk_en) cnt = cnt + 22'd1;
-    else cnt = cnt;
+always @ (posedge clk) 
+    if (reset) cnt = 22'd0;
+    else cnt = cnt + 22'd1;
 
-always @ (posedge sys_clk)
-    if (reset || (sam_clk_en && cnt == 22'd4194303) ) x = 22'd0;
+always @ (posedge clk)
+    if (reset) x = 22'd0;
     else if (load) x = { 1'b1,1'b0,{20{1'b1}} };
-	else if (sam_clk_en) x = $signed({ x[20:0],(x[21]^x[20]) });
-    else x = x;
+	else x = { x[20:0],(x[21]^x[20]) };
 
-always @ *
-    if (reset) out = {22{1'b0}};
-    else out = $signed(x);
+assign out = x;
 
 endmodule
 
@@ -54,11 +49,11 @@ end
 
 always @ (posedge sys_clk)
     if (reset) cycle = 1'b0;
-    else if (sam_clk_en && cnt == { {(WIDTH-1){1'b1}},1'b0 }) cycle = 1'b1;
+    else if (cnt == {(WIDTH){1'b1}}) cycle = 1'b1;
     else cycle = 1'b0;
 
 always @ (posedge sys_clk) 
-    if (reset || (sam_clk_en && cnt == { {(WIDTH-1){1'b1}},1'b0}) ) cnt = {WIDTH{1'b0}};
+    if (reset || { {(WIDTH-1){1'b1}},1'b0 } ) cnt = {WIDTH{1'b0}};
     else if (sam_clk_en) cnt = cnt + {{(WIDTH-1){1'b0}},1'b1};
     else cnt = cnt;
 

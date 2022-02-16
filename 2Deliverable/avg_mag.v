@@ -22,10 +22,12 @@ initial begin
     det_edge = 2'd0;
 end
 
-always @ *
-    det_edge = {det_edge[0], clr_acc};
+always @ (posedge clk)
+//always @ *
+    if (reset) det_edge = 2'd0;
+    else det_edge= {det_edge[0], clr_acc};
 
-assign sig_edge = (det_edge == 2'b10);
+assign sig_edge = (det_edge == 2'b01);
 
 always @ *
     if (reset) abs = 18'sd0;

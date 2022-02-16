@@ -9,6 +9,7 @@ set SIM_LEN 50000000ns
 #set SIM_LEN 50000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "LFSR_tb"
+set CLKEN "clk_en"
 set MOD "LFSR"
 
 puts [info script]
@@ -24,6 +25,7 @@ vlib rtl_work
 vmap work rtl_work
 
 vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
+vlog -sv -work work ${SRC_DIR}/${CLKEN}.v
 vlog -sv -work work ${SRC_DIR}/${MOD}.v
 
 vsim -t 1ns -L work ${TB_MOD}

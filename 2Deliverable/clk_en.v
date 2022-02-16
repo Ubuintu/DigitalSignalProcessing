@@ -22,13 +22,13 @@ always @ (posedge sys_clk)
 
 always @ (posedge sys_clk)
     //account for delay; checks for logic and performs op on next posedge
-    if ( (cnt+2)%4 == 0 )
+    if ( (cnt+1)%4 == 0 )
         sam_clk_en = 1'b1;
     else
         sam_clk_en = 1'b0;
         
 always @ (posedge sys_clk)
-    if ( cnt == 4'd14 )
+    if ( cnt == 4'd15 )
         sym_clk_en = 1'b1;
     else
         sym_clk_en = 1'b0;
