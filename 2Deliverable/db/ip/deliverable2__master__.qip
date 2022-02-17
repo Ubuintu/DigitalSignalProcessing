@@ -1,0 +1,2 @@
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) switch_led_emulator/switch_led_emulator.qip]
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) key_emulator/key_emulator.qip]

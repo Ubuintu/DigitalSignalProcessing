@@ -4,14 +4,15 @@ module LFSR_22 (
     output reg signed[21:0] out
     );
 
-(* noprune *) reg [21:0] x, cnt;
-
+(* preserve *) reg [21:0] x, cnt;
+/*
 initial begin
     x = {22{1'b0}};
     cycle = 1'b0;
     out = {22{1'b0}};
     cnt = 22'd1;
 end
+*/
 
 always @ (posedge sys_clk)
     if (reset) cycle = 1'b0;
@@ -24,9 +25,9 @@ always @ (posedge sys_clk)
     else cnt = cnt;
 
 always @ (posedge sys_clk)
-    if (reset || (sam_clk_en && cnt == 22'd4194303) ) x = 22'd0;
+    if (reset) x = 22'd0;
     else if (load) x = { 1'b1,1'b0,{20{1'b1}} };
-	else if (sam_clk_en) x = $signed({ x[20:0],(x[21]^x[20]) });
+	 else if (sam_clk_en) x = $signed({ x[20:0],(x[21]^x[20]) });
     else x = x;
 
 always @ *
@@ -41,8 +42,8 @@ module LFSR_test #(parameter WIDTH = 4)(
     output reg signed [WIDTH-1:0] out
     );
 
-(* noprune *) reg signed [WIDTH-1:0] x;
-(* noprune *) reg [WIDTH-1:0] cnt;
+(* preserve *) reg signed [WIDTH-1:0] x;
+(* preserve *) reg [WIDTH-1:0] cnt;
 
 //for MS NEED to initialize regs to 0
 initial begin
@@ -65,7 +66,7 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset) x = {WIDTH{1'b0}};
     else if (load) x = {WIDTH{1'b1}};
-	else if (sam_clk_en) x = $signed({ x[2:0], (x[2]^x[3]) });
+	 else if (sam_clk_en) x = $signed({ x[2:0], (x[2]^x[3]) });
     else x = x;
 
 always @ *

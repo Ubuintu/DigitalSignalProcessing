@@ -1,0 +1,16 @@
+module slicer (
+    input signed [17:0] dec_var, ref_lvl,
+    output reg [1:0] slice
+);
+
+always @ *
+    if ( dec_var < -$signed(ref_lvl)
+        slice = 2'b00;
+    else if ( -$signed(ref_lvl) <= dec_var <= 18'sd0 )
+        slice = 2'b01;
+    else if ( 18'sd0 < dec_var <= $signed(ref_lvl) )
+        slice = 2'b11;
+    else
+        slice = 2'b10;
+
+endmodule

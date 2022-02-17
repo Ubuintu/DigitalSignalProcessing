@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/home/tob208/engr-ece/Documents/EE465/2Deliverable
 vavg_mag
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1644978329
+Z2 !s110 1645068250
 !i10b 1
 !s100 DbUYQ?U>`GHOQ5jNa:mRI1
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1644978329.000000
+Z6 !s108 1645068250.000000
 !s107 ./avg_mag.v|
 !s90 -reportprogress|300|-sv|-work|work|./avg_mag.v|
 !i113 1
@@ -44,7 +44,7 @@ Io5lJj=k6V5VLGjha<TcmB1
 R4
 S1
 R0
-w1644978325
+w1645066317
 8./avg_mag_tb.sv
 F./avg_mag_tb.sv
 !i122 0
@@ -53,7 +53,7 @@ R5
 r1
 !s85 0
 31
-R6
+!s108 1645068249.000000
 !s107 ./avg_mag_tb.sv|
 !s90 -reportprogress|300|-sv|-work|work|./avg_mag_tb.sv|
 !i113 1
@@ -88,13 +88,13 @@ vLFSR_22
 R1
 R2
 !i10b 1
-!s100 U<Ek4L>VQL>LN@XPh5U=K0
+!s100 AkIWZI3U]NT?[Y071H1XW3
 R3
-I1`<O[f3c]bC^XYLm:17XV0
+I_fM2eU8]L]ok_g1hbh4Pg2
 R4
 S1
 R0
-Z10 w1644978197
+Z10 w1645068245
 Z11 8./LFSR.v
 Z12 F./LFSR.v
 !i122 1
@@ -114,9 +114,9 @@ vLFSR_test
 R1
 R2
 !i10b 1
-!s100 PV5z1SSV9zENh@dJ^2GeL3
+!s100 ILX6z;8LakdE_3a1NEbhR1
 R3
-IfT^^cemgRnOdGla9;4fV?3
+IH8GWcEKfa:=bT?KoaQ=oP0
 R4
 S1
 R0

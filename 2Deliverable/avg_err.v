@@ -5,10 +5,10 @@ module avg_err_squared #(parameter LFSR_WID = 22)(
     output reg signed [17:0] err_square
 );
 
-(* noprune *) reg signed [(LFSR_WID+18-1):0] acc_out
-(* noprune *) reg signed [35:0] mult_out;
-(* noprune *) reg [1:0] det_edge;
-(* noprune *) wire sig_edge;
+(* preserve *) reg signed [(LFSR_WID+18-1):0] acc_out;
+(* keep *) reg signed [35:0] mult_out;
+(* keep *) reg [1:0] det_edge;
+(* keep *) wire sig_edge;
 
 initial begin
     mult_out = 36'd0;
@@ -34,7 +34,7 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset) err_square = 18'sd0;
     //else if (clr_acc) err_square = $signed(acc_out >>> $clog2(LFSR_WID));
-    else if (clr_acc) err_square = acc_out >>> (LFSR_WID-18);
+    else if (clr_acc) err_square = acc_out[17:0] >>> (LFSR_WID-18);
     else err_square = err_square;
 
 endmodule
@@ -47,12 +47,11 @@ module avg_err #(parameter LFSR_WID = 22)(
     output reg signed [17:0] err_acc
 );
 
-(* noprune *) reg signed [(LFSR_WID+18-1):0] acc_out
-(* noprune *) reg [1:0] det_edge;
-(* noprune *) wire sig_edge;
+(* preserve *) reg signed [(LFSR_WID+18-1):0] acc_out;
+(* keep *) reg [1:0] det_edge;
+(* keep *) wire sig_edge;
 
 initial begin
-    mult_out = 36'd0;
     err_acc = 18'd0;
     acc_out = {(LFSR_WID+18){1'b0}};
     det_edge = 2'd0;
@@ -72,7 +71,7 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset) err_acc = 18'sd0;
     //else if (clr_acc) err_acc = $signed(acc_out >>> $clog2(LFSR_WID));
-    else if (clr_acc) err_acc = acc_out >>> (LFSR_WID-18);
+    else if (clr_acc) err_acc = acc_out[17:0] >>> (LFSR_WID-18);
     else err_acc = err_acc;
 
 endmodule

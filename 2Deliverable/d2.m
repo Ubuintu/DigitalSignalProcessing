@@ -59,10 +59,31 @@ mult_out_2_2s16 = square1s17*1.25;
 mult_out_2 = mult_out_2_2s16 * 2^16;
 
 %% Mapper
-clear clc; format longG
+clear 
+clc 
+format longG
 
-a = 1/3;
+a = 0.25;
 mapper = round([-3*a -a a 3*a]*2^17);
+
+const = 3*2^15;
+
+%4s32 | 3*.25
+mult_out4s32 = const*mapper(3);
+round(log2(mult_out4s32))   %32 bits; 4 MSB are 0
+
+% MS 4 bits are 0 so Matlab trims them; 32 bits are fractions; remember to
+% keep MSB to be 0 for sign number
+mult_out33s0b = de2bi(mult_out4s32);
+
+% MSB is trimmed but 0 for now
+mult_out18s0b = (mult_out33s0b(16:32));
+mult_out1s17 = bi2de(mult_out18s0b)/2^17;
+
+convert2Dec = wrev(mult_out33s0b(16:32));
+convert2Dec = [0, convert2Dec];
+string = num2str(convert2Dec);
+fprintf("%s\n", string(find(~isspace(string))) );
 
 %% isi power calculation
 clear
