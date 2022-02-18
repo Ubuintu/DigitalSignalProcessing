@@ -1,5 +1,5 @@
 EDA Netlist Writer report for deliverable2
-Thu Feb 17 19:33:36 2022
+Thu Feb 17 23:26:23 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Feb 17 19:33:36 2022 ;
+; EDA Netlist Writer Status ; Successful - Thu Feb 17 23:26:23 2022 ;
 ; Revision Name             ; deliverable2                          ;
 ; Top-level Entity Name     ; deliverable2                          ;
 ; Family                    ; Cyclone IV E                          ;
@@ -81,13 +81,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Thu Feb 17 19:33:34 2022
+    Info: Processing started: Thu Feb 17 23:26:21 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off deliverable2 -c deliverable2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file deliverable2.vo in folder "/home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 950 megabytes
-    Info: Processing ended: Thu Feb 17 19:33:36 2022
+    Info: Peak virtual memory: 967 megabytes
+    Info: Processing ended: Thu Feb 17 23:26:23 2022
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

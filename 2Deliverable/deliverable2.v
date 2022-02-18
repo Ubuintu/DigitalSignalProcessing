@@ -1,4 +1,5 @@
-module deliverable2(
+module deliverable2 #(parameter DELAY = 3)
+(
 			input CLOCK_50,
 			input [17:0] PHYS_SW,
 			input [3:0] PHYS_KEY,
@@ -106,13 +107,13 @@ module deliverable2(
 	//end setting up switches and LEDs
 
 	// instantiate the sweep generator	
-//		SweepGenerator sweep_gen_1(.clock(clk),
-//							  .sweep_rate_adj(3'b101),
-//							  .dwell_pulse(dwell_pulse),
-//							  .reset(~KEY[1]),
-//							  .lock_stop(~KEY[2]),
-//							  .lock_start(~KEY[3]),
-//							  .freq(sweep_gen_freq));
+		SweepGenerator sweep_gen_1(.clock(clk),
+							  .sweep_rate_adj(3'b101),
+							  .dwell_pulse(dwell_pulse),
+							  .reset(~KEY[1]),
+							  .lock_stop(~KEY[2]),
+							  .lock_start(~KEY[3]),
+							  .freq(sweep_gen_freq));
 	// dwell pulse is assigned to LEDG[3] elsewhere so that it is not optimized out
 	
 							  
@@ -124,17 +125,17 @@ module deliverable2(
 	
 	
 	// make data selector for phase_ref
-//	always @ (posedge clk)
-//	if (SW[0]==1'b0)
-//			NCO_freq = sweep_gen_freq[17:6];
-//	else  NCO_freq = {SW[17:14], 8'b0};
+	always @ (posedge clk)
+	if (SW[0]==1'b0)
+			NCO_freq = sweep_gen_freq[17:6];
+	else  NCO_freq = {SW[17:14], 8'b0};
 
 	// make the data selector for signal_to_DAC
-//	always @ *
-//	if (SW[1]==1'b0)
-//		signal_to_DAC = {NCO_1_out, 2'b0};
-//	else
-//	   signal_to_DAC = SUT_out[17:4];
+	always @ *
+	if (SW[1]==1'b0)
+		signal_to_DAC = {NCO_1_out, 2'b0};
+	else
+	   signal_to_DAC = SUT_out[17:4];
 		
 	// make the phase locked loop
 	always @ *
@@ -165,12 +166,12 @@ module deliverable2(
 	
 	// intantiate the phase-to-voltage ROM 
 	// for NCOs 1 and 2
-//	ROM_for_12_x_12_NCO NCO_ROM_1 (
-//		  .address_a(phase_ref),
-//		  .address_b(phase_to_ROM),
-//		  .clock(clk),
-//		  .q_a(NCO_1_out),
-//		  .q_b(NCO_2_out));
+	ROM_for_12_x_12_NCO NCO_ROM_1 (
+		  .address_a(phase_ref),
+		  .address_b(phase_to_ROM),
+		  .clock(clk),
+		  .q_a(NCO_1_out),
+		  .q_b(NCO_2_out));
 		  
 	// Instantiate the system under test
 /*	system_under_test SUT_1 (.clk(clk),
@@ -188,7 +189,7 @@ module deliverable2(
 (* keep *) reg reset;
 
 always @ *
-	if (SW[0]) reset = 1'b1;
+	if (!KEY[0]) reset = 1'b1;
 	else reset = 1'b0;
 
 wire sys_clk, sam_clk_en, sym_clk_en;
@@ -204,7 +205,7 @@ clk_en EN_CLK (
 (* keep *) reg load;
 
 always @ *
-	if (SW[1]) load = 1'b1;
+	if (!KEY[1]) load = 1'b1;
 	else load = 1'b0;
 	
 wire cycle;
@@ -220,23 +221,32 @@ LFSR_22 LFSR_GEN (
     .out(out)
 );
 //mapper in
-wire signed [17:0] map_out;
+wire signed [17:0] map_out, map_outQ;
 
 mapper_in SUT_input (
 	.LFSR(out[1:0]),
 	.map_out(map_out)
 );
+
+mapper_in SUT_inputQ (
+	.LFSR(out[3:2]),
+	.map_out(map_outQ)
+);
 //SYSTEM UNDER TEST
-(* keep *) wire signed [17:0] isi_power, dec_var, errorless_decision_variable, error_actual;
+(* keep *) wire signed [17:0] dec_var, errorless_decision_variable, error_actual, dec_varQ, errorless_decision_variableQ, error_actualQ;
+(* keep *) reg signed [17:0] isi_power;
 
 //20 dB
-assign isi_power = 18'sd9268;
+//assign isi_power = 18'sd9268;
 //30 dB
 //assign isi_power = 18'sd2931;
 //40 dB
 //assign isi_power = 18'sd927;
 //55 dB
 //assign isi_power = 18'sd165;
+
+always @ *
+	isi_power = SW;
 
 DUT_for_MER_measurement DUT (
 	.clk(sys_clk),
@@ -248,22 +258,43 @@ DUT_for_MER_measurement DUT (
 	.errorless_decision_variable(errorless_decision_variable),
 	.error(error_actual)
 );
+
+DUT_for_MER_measurement DUTQ (
+	.clk(sys_clk),
+	.clk_en(sym_clk_en),
+	.in_data(map_outQ),
+	.reset(~reset),
+	.isi_power(isi_power),
+	.decision_variable(dec_varQ),
+	.errorless_decision_variable(errorless_decision_variableQ),
+	.error(error_actualQ)
+);
 //SLICER
-wire [1:0] slice;
+wire [1:0] slice, sliceQ;
 slicer DECIDER (
 	.dec_var(dec_var),
 	.ref_lvl(ref_lvl),
 	.slice(slice)
 );
+slicer DECIDERQ (
+	.dec_var(dec_varQ),
+	.ref_lvl(ref_lvlQ),
+	.slice(sliceQ)
+);
 //Mapper_out
-wire signed [17:0] map_out_ref_lvl;
+wire signed [17:0] map_out_ref_lvl, map_out_ref_lvlQ;
 mapper_ref MAP_CMP (
 	.map_out(map_out_ref_lvl),
 	.slice(slice),
 	.ref_lvl(ref_lvl)
 );
+mapper_ref MAP_CMPQ (
+	.map_out(map_out_ref_lvlQ),
+	.slice(sliceQ),
+	.ref_lvl(ref_lvlQ)
+);
 //AVG_MAG
-wire signed [17:0] ref_lvl, map_out_pwr;
+wire signed [17:0] ref_lvl, map_out_pwr, ref_lvlQ, map_out_pwrQ;
 
 avg_mag AVG_MAG_DV (
 //avg_mag #(.ACC_WID(20), .LFSR_WID(4)) AVG_MAG_DV (
@@ -275,17 +306,32 @@ avg_mag AVG_MAG_DV (
 	.ref_lvl(ref_lvl),
 	.map_out_pwr(map_out_pwr)
 );
+
+avg_mag AVG_MAG_DVQ (
+//avg_mag #(.ACC_WID(20), .LFSR_WID(4)) AVG_MAG_DV (
+	.dec_var(dec_varQ),
+	.sym_clk_en(sym_clk_en),
+   .clr_acc(cycle),
+	.clk(sys_clk),
+	.reset(reset),
+	.ref_lvl(ref_lvlQ),
+	.map_out_pwr(map_out_pwrQ)
+);
 //ERROR
-(* preserve *) reg signed [17:0] error;
+(* preserve *) reg signed [17:0] error, errorQ;
 
 always @ (posedge sys_clk)
 	if (reset) error = 18'sd0;
 	else if (sym_clk_en) error = dec_var - map_out_ref_lvl;
 	else error = error;
+always @ (posedge sys_clk)
+	if (reset) errorQ = 18'sd0;
+	else if (sym_clk_en) errorQ = dec_varQ - map_out_ref_lvlQ;
+	else errorQ = errorQ;
 	
-wire signed [17:0] err_acc;
+wire signed [17:0] err_acc, err_accQ;
 //wire signed [17:0] err_square;	//for original err_Sqr circuit
-wire signed [55:0] err_square;
+wire signed [55:0] err_square, err_squareQ;
 	
 //avg_err_squared AVG_ER_SQR (
 avg_err_squared_55 AVG_ER_SQR (
@@ -296,6 +342,14 @@ avg_err_squared_55 AVG_ER_SQR (
 	.reset(reset),
 	.err_square(err_square)
 );
+avg_err_squared_55 AVG_ER_SQRQ (
+	.error(errorQ),
+	.sym_clk_en(sym_clk_en),
+   .clr_acc(cycle),
+	.sys_clk(sys_clk),
+	.reset(reset),
+	.err_square(err_squareQ)
+);
 
 avg_err AVG_ER (
 	.error(error),
@@ -305,6 +359,112 @@ avg_err AVG_ER (
 	.reset(reset),
 	.err_acc(err_acc)
 );
+
+avg_err AVG_ERQ (
+	.error(errorQ),
+	.sym_clk_en(sym_clk_en),
+   .clr_acc(cycle),
+	.sys_clk(sys_clk),
+	.reset(reset),
+	.err_acc(err_accQ)
+);
+// SYM COMPARE
+/*
+integer i;
+(* noprune *) reg [1:0] LFSR_IN_Delay [DELAY-1:0];
+always @ (posedge sym_clk_en)
+	if (reset) begin
+		for (i=0; i<DELAY; i=i+1)
+			LFSR_IN_Delay[i] <= 2'b0;
+	end
+	else begin
+		for (i=0; i< DELAY; i=i+1) 
+			if (i == 0)
+				LFSR_IN_Delay[i] = out[1:0];
+			else
+				LFSR_IN_Delay[i] = LFSR_IN_Delay[i-1];
+	end
+*/
+
+(* noprune *) reg [1:0] LFSR_IN_Delay [DELAY-1:0], LFSR_IN_DelayQ [DELAY-1:0];
+initial begin
+	LFSR_IN_Delay[0] = 2'd0;
+	LFSR_IN_Delay[1] = 2'd0;
+	LFSR_IN_Delay[2] = 2'd0;
+	LFSR_IN_DelayQ[0] = 2'd0;
+	LFSR_IN_DelayQ[1] = 2'd0;
+	LFSR_IN_DelayQ[2] = 2'd0;
+end
+always @ (posedge sys_clk)
+	if (sym_clk_en)
+		LFSR_IN_Delay[0] <= out[1:0];
+	else
+		LFSR_IN_Delay[0] <= LFSR_IN_Delay[0];
+always @ (posedge sys_clk)
+	if (sym_clk_en)
+		LFSR_IN_Delay[1] <= LFSR_IN_Delay[0];
+	else
+		LFSR_IN_Delay[1] <= LFSR_IN_Delay[1];
+always @ (posedge sys_clk)
+	if (sym_clk_en)
+		LFSR_IN_Delay[2] <= LFSR_IN_Delay[1];
+	else
+		LFSR_IN_Delay[2] <= LFSR_IN_Delay[2];
+
+//Q Phase
+always @ (posedge sys_clk)
+	if (sym_clk_en)
+		LFSR_IN_DelayQ[0] <= out[3:2];
+	else
+		LFSR_IN_DelayQ[0] <= LFSR_IN_DelayQ[0];
+always @ (posedge sys_clk)
+	if (sym_clk_en)
+		LFSR_IN_DelayQ[1] <= LFSR_IN_DelayQ[0];
+	else
+		LFSR_IN_DelayQ[1] <= LFSR_IN_DelayQ[1];
+always @ (posedge sys_clk)
+	if (sym_clk_en)
+		LFSR_IN_DelayQ[2] <= LFSR_IN_DelayQ[1];
+	else
+		LFSR_IN_DelayQ[2] <= LFSR_IN_DelayQ[2];
+	
+(* noprune *) reg equal, equalQ;
+always @ *
+	if(LFSR_IN_Delay[2] == slice)
+		equal = 1'b1;
+	else
+		equal = 1'b0;
+always @ *
+	if(LFSR_IN_DelayQ[2] == sliceQ)
+		equalQ = 1'b1;
+	else
+		equalQ = 1'b0;
+		
+(* noprune *) reg sym_cor, sym_err, sym_corQ, sym_errQ;
+always @ (posedge sys_clk)
+	if (sym_clk_en)
+		begin
+			sym_cor <= equal;
+			sym_err <= ~equal;
+		end
+	else
+		begin
+			sym_cor <= sym_cor;
+			sym_err <= sym_err;
+		end
+		
+always @ (posedge sys_clk)
+	if (sym_clk_en)
+		begin
+			sym_corQ <= equalQ;
+			sym_errQ <= ~equalQ;
+		end
+	else
+		begin
+			sym_corQ <= sym_corQ;
+			sym_errQ <= sym_errQ;
+		end
+			
 									 
 // ------------------------------------------------------------------------------
 // In-System Sources and Probes (ISSP) Code

@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Feb 17 19:32:49 2022
+Analysis & Synthesis Status : Successful - Thu Feb 17 23:25:25 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 Revision Name : deliverable2
 Top-level Entity Name : deliverable2
 Family : Cyclone IV E
-Total logic elements : 12,587
-    Total combinational functions : 4,430
-    Dedicated logic registers : 10,792
-Total registers : 10792
+Total logic elements : 15,385
+    Total combinational functions : 5,867
+    Dedicated logic registers : 12,915
+Total registers : 12915
 Total pins : 110
 Total virtual pins : 0
-Total memory bits : 831,488
-Embedded Multiplier 9-bit elements : 8
+Total memory bits : 1,022,976
+Embedded Multiplier 9-bit elements : 16
 Total PLLs : 0
