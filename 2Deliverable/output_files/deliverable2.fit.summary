@@ -1,16 +1,16 @@
-Fitter Status : Successful - Thu Feb 17 03:29:34 2022
+Fitter Status : Successful - Thu Feb 17 19:33:21 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 Revision Name : deliverable2
 Top-level Entity Name : deliverable2
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 7,053 / 114,480 ( 6 % )
-    Total combinational functions : 2,809 / 114,480 ( 2 % )
-    Dedicated logic registers : 6,235 / 114,480 ( 5 % )
-Total registers : 6235
+Total logic elements : 11,966 / 114,480 ( 10 % )
+    Total combinational functions : 4,435 / 114,480 ( 4 % )
+    Dedicated logic registers : 10,792 / 114,480 ( 9 % )
+Total registers : 10792
 Total pins : 110 / 529 ( 21 % )
 Total virtual pins : 0
-Total memory bits : 458,752 / 3,981,312 ( 12 % )
-Embedded Multiplier 9-bit elements : 6 / 532 ( 1 % )
+Total memory bits : 831,488 / 3,981,312 ( 21 % )
+Embedded Multiplier 9-bit elements : 8 / 532 ( 2 % )
 Total PLLs : 0 / 4 ( 0 % )

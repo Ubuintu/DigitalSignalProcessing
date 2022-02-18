@@ -1,4 +1,4 @@
-module avg_mag #(parameter LFSR_WID = 22,parameter ACC_WID = 40)( 
+module avg_mag #(parameter LFSR_WID = 22,parameter ACC_WID = 38)( 
     input signed [17:0] dec_var,
     input sym_clk_en, clr_acc, clk, reset, 
     output reg signed [17:0] ref_lvl, map_out_pwr
@@ -60,10 +60,10 @@ always @ *
 
 //AFTER
 always @ (posedge clk)
-    if (reset) reg_out = 40'sd0;
+    if (reset) reg_out = $signed({ACC_WID{1'b0}});
     //else if (clr_acc) reg_out = $signed(acc_out >>> $clog2(LFSR_WID));
     //else if (clr_acc) reg_out = acc_out >>> 2;
-    else if (clr_acc) reg_out = acc_out >>> (ACC_WID-20);
+    else if (clr_acc) reg_out = acc_out >>> (ACC_WID-18);
     //else if (clr_acc) reg_out = acc_out/18'sd4;
     else reg_out = reg_out;
 

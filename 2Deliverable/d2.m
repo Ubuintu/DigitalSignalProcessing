@@ -66,6 +66,8 @@ format longG
 a = 0.25;
 mapper = round([-3*a -a a 3*a]*2^17);
 
+% b = ~21800
+
 const = 3*2^15;
 
 %4s32 | 3*.25

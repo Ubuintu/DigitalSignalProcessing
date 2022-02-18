@@ -229,7 +229,14 @@ mapper_in SUT_input (
 //SYSTEM UNDER TEST
 (* keep *) wire signed [17:0] isi_power, dec_var, errorless_decision_variable, error_actual;
 
+//20 dB
 assign isi_power = 18'sd9268;
+//30 dB
+//assign isi_power = 18'sd2931;
+//40 dB
+//assign isi_power = 18'sd927;
+//55 dB
+//assign isi_power = 18'sd165;
 
 DUT_for_MER_measurement DUT (
 	.clk(sys_clk),
@@ -276,9 +283,12 @@ always @ (posedge sys_clk)
 	else if (sym_clk_en) error = dec_var - map_out_ref_lvl;
 	else error = error;
 	
-wire signed [17:0] err_square, err_acc;
+wire signed [17:0] err_acc;
+//wire signed [17:0] err_square;	//for original err_Sqr circuit
+wire signed [55:0] err_square;
 	
-avg_err_squared AVG_ER_SQR (
+//avg_err_squared AVG_ER_SQR (
+avg_err_squared_55 AVG_ER_SQR (
 	.error(error),
 	.sym_clk_en(sym_clk_en),
    .clr_acc(cycle),
