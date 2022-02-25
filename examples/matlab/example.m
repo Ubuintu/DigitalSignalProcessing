@@ -21,11 +21,14 @@ legend('random plot [0:1]');
 print -dpng ./pics/test.png
 close
 %% testing plot function
+clc
 
 x = [0:0.01:2]*pi;
 y = sin(x);
 string = 'My test plot';
 p_title = 'test_print';
 
-test = myplot(x,y,string,p_title);
-close(test);
+% test = myplot(x,y,string,p_title);
+test2 = superplot(x,y,'plotName',"My super plot",'figureName',"super_plot");
+% test3 = superplot(x,y);
+% close(test);
