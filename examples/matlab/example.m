@@ -25,10 +25,15 @@ clc
 
 x = [0:0.01:2]*pi;
 y = sin(x);
+yCmp = cos(x);
 string = 'My test plot';
 p_title = 'test_print';
 
 % test = myplot(x,y,string,p_title);
 test2 = superplot(x,y,'plotName',"My super plot",'figureName',"super_plot");
-% test3 = superplot(x,y);
+test3 = superplot(x,y,yCmp);
+legend('y','compare y');
 % close(test);
+
+testV = ones(1,1);
+testV(2) = 5;
