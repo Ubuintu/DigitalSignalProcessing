@@ -27,27 +27,14 @@ function [plot_out] = superplot(x,y,varargin)
     parse(p,x,y,varargin{:});
     
 %% Usage
-% disp("Total number of input arguments: " + nargin)
-% celldisp(varargin);
-% fprintf("%d\n",length(varargin));
+disp("Total number of input arguments: " + nargin)
+celldisp(varargin);
+fprintf("%d\n",length(varargin));
 
 if (length(varargin) == 0);
-    fprintf("--------------------------- superplot() usage ---------------------------\n");
-    fprintf("superplot parameters:\n\n");
-    fprintf("'x'               : required parameter to plot data in Y to corresponding values in X (vectors X and Y MUST have same length)\n");
-    fprintf("'y'               : required parameter to plot data in X to corresponding values in Y\n");
-    fprintf("'cmpY'            : optional parameter to compare plot of Y's data\n");
-    fprintf("'plotName'        : optional parameter to give plot a title\n");
-    fprintf("'figureName'      : optional parameter to name plot's figure\n");
-    fprintf("'plotAxis'        : optional parameter to change plot's axes\n");
-    fprintf("'xName'           : optional parameter to label x-axis\n");
-    fprintf("'yName'           : optional parameter to label y-axis\n");
-    fprintf("'yLegend'         : optional parameter to label y's plot with a legend\n");
-    fprintf("'cmpYLegend'      : optional parameter to label comparison's plot with a legend\n");
-    fprintf("\nExample usage: plot_variable = superplot(x,cos(x),'plotName',""cosine plot"");\n");
-    fprintf("plot is not normalized, will come out in future patch lol\n");
-    fprintf("\n--------------------------- superplot() usage ---------------------------\n");
-    plot_out = [];
+    fprintf("--------------------------- superplot() usage ---------------------------\n\n");
+    fprintf("superplot parameters:\n");
+    fprintf("'x': required parameter to plot data in 
     return
 end
     

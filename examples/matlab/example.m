@@ -23,17 +23,20 @@ close
 %% testing plot function
 clc
 
-x = [0:0.01:2]*pi;
+x = [0:0.01:2*pi];
 y = sin(x);
 yCmp = cos(x);
 string = 'My test plot';
 p_title = 'test_print';
+t="";
 
 % test = myplot(x,y,string,p_title);
 test2 = superplot(x,y,'plotName',"My super plot",'figureName',"super_plot");
-test3 = superplot(x,y,yCmp);
-legend('y','compare y');
-% close(test);
+test3 = superplot(x,y,'cmpYLegend',"cos(x)",'figureName',"cosxVsSinx",'cmpY',yCmp,'yLegend',"sin(x)",'yName',"Amplitude",'xName',"Samples NOT normalized to 2\pi", ...
+    'plotName',"Plotting cos(x) against sin(x)");
+close(test2);
+close(test3);
+test4 = superplot(x,y);
 
 testV = ones(1,1);
 testV(2) = 5;
