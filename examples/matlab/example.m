@@ -47,10 +47,16 @@ clc
 close all
 
 % Constants are double-precision by default
-vec = [50 55];
+vec = [61 69];
     
-for i = vec(1):vec(1)
-    fprintf("i is %d coefficients\n",i);
+% for i = vec(1):0.01:vec(1)
+%     fprintf("i is %d coefficients\n",i);
+% end
+    
+for i = 0:2:10
+    fprintf("i SHOULD be EVEN and is %d\n",i);
 end
 
-test = MER_opt('Nsps',4,'numCoeffs',vec,'betaR',[0 0.01 0.05]);
+%coefficients have to be even and divisible by span w/no remainder
+%beta MUST be greater than 0
+test = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.01 0.01 0.05],'betaRCV',[0.12 0.01 0.12]);

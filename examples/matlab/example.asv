@@ -47,10 +47,14 @@ clc
 close all
 
 % Constants are double-precision by default
-vec = [50 100];
+vec = [50 55];
     
-for i = vec(1):vec(1)
+for i = vec(1):0.01:vec(1)
+    fprintf("i is %d coefficients\n",i);
+end
+    
+for i = 0:2:10
     fprintf("i is %d coefficients\n",i);
 end
 
-test = MER_opt('Nsps',4,'numCoeffs',[50 100],'betaR',[0 0.01 0.12]);
+% test = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0 0.01 0.05],'betaRCV',[1.2 0.01 1.2]);
