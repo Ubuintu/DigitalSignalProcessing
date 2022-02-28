@@ -9,12 +9,13 @@ function [outputArg1] = MER_opt(varargin)
     
 %% Anonymous functions
     validPosInt = @(var) isnumeric(var) && (var > 0) && ( rem(var,1)==0);
-    validRange = @(var)
+    validRange = @(var) isvector(var) && (length(var)==2);
 
 %% Input Parser
     p = inputParser;
     addParameter(p,'Nsps',defaultNum,validPosInt);
-    addParameter(p,'numCoeffs',defaultRange,validPosInt);
+    addParameter(p,'numCoeffs',defaultRange,validRange);
+    addParameter(p,'betaR',defaultRange,validRange);
 
     parse(p,varargin{:});
 %% Usage
@@ -25,10 +26,17 @@ function [outputArg1] = MER_opt(varargin)
     end
 
 %% Functionality
-    
+% variables    
+    cnt = 0;
+    idx = 1;
+
     if (p.Results.Nsps ~= 0)
         fprintf("Valid Nsps value of %d was passed\n",p.Results.Nsps);
     end
+    
+    disp(p.Results.numCoeffs);
+    
+    for 
 
     outputArg1 = 0;
 end
