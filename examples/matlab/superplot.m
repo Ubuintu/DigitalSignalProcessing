@@ -31,7 +31,7 @@ function [plot_out] = superplot(x,y,varargin)
 % celldisp(varargin);
 % fprintf("%d\n",length(varargin));
 
-if (length(varargin) == 0);
+if (isempty(varargin))
     fprintf("--------------------------- superplot() usage ---------------------------\n");
     fprintf("superplot parameters:\n\n");
     fprintf("'x'               : required parameter to plot data in Y to corresponding values in X (vectors X and Y MUST have same length)\n");

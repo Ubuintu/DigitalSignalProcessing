@@ -40,3 +40,10 @@ test4 = superplot(x,y);
 
 testV = ones(1,1);
 testV(2) = 5;
+
+%% testing MER loop
+clear
+clc
+close all
+
+test = MER_opt('Nsps',4);
