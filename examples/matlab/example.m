@@ -42,8 +42,11 @@ testV = ones(1,1);
 testV(2) = 5;
 
 %% testing MER loop
-clear
+% clear
 clc
 close all
 
-test = MER_opt('Nsps',4);
+% Constants are double-precision by default
+vec = [50 100];
+
+test = MER_opt('Nsps',4,'numCoeffs',[50 100]);
