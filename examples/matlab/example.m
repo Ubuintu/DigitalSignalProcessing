@@ -47,10 +47,10 @@ clc
 close all
 
 % Constants are double-precision by default
-vec = [61 69];
+vec = [25 29];
 
 idx = 1;
-for i = 50:200
+for i = 10:200
     if ( rem((i-1)/4,1)==0 )
         validLen(idx) = i;
         idx = idx+1;

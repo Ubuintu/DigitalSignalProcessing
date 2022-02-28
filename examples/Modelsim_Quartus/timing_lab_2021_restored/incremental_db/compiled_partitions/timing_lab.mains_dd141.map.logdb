@@ -1,0 +1,9 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,antialiasing_filter_hb:I_anti1|lpm_mult:Mult0|mult_o9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,antialiasing_filter_hb:Q_anti1|lpm_mult:Mult0|mult_o9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,antialiasing_filter_hb:I_anti1|lpm_mult:Mult1|mult_u9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,antialiasing_filter_hb:Q_anti1|lpm_mult:Mult1|mult_u9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,antialiasing_filter_hb2:I_anti2|lpm_mult:Mult0|mult_o9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,antialiasing_filter_hb2:Q_anti2|lpm_mult:Mult0|mult_o9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,antialiasing_filter_hb2:I_anti2|lpm_mult:Mult1|mult_u9t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,antialiasing_filter_hb2:Q_anti2|lpm_mult:Mult1|mult_u9t:auto_generated|mac_out2,

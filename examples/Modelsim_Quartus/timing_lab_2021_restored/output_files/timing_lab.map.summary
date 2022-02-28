@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Feb 28 14:18:31 2022
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Standard Edition
+Revision Name : timing_lab
+Top-level Entity Name : timing_lab
+Family : Cyclone IV E
+Total logic elements : 1,577
+    Total combinational functions : 827
+    Dedicated logic registers : 1,217
+Total registers : 1217
+Total pins : 110
+Total virtual pins : 0
+Total memory bits : 100
+Embedded Multiplier 9-bit elements : 36
+Total PLLs : 0
