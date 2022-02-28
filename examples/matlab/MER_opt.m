@@ -48,6 +48,9 @@ format loose
     if (p.Results.Nsps ~= 0)
 %         fprintf("Valid Nsps value of %d was passed\n",p.Results.Nsps);
     end
+    if ( rem( (p.Results.numCoeffs(1)-1)/p.Results.Nsps,1 )~=0 | rem( (p.Results.numCoeffs(2)-1)/p.Results.Nsps,1 )~=0 )
+        error('coefficient range is not divisible by Nsps');
+    end
     
 %     disp(p.Results.numCoeffs);
     

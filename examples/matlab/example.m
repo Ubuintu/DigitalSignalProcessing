@@ -42,21 +42,32 @@ testV = ones(1,1);
 testV(2) = 5;
 
 %% testing MER loop
-% clear
+clear
 clc
 close all
 
 % Constants are double-precision by default
 vec = [61 69];
+
+idx = 1;
+for i = 50:200
+    if ( rem((i-1)/4,1)==0 )
+        validLen(idx) = i;
+        idx = idx+1;
+    end
+end
+
+% for i
     
 % for i = vec(1):0.01:vec(1)
 %     fprintf("i is %d coefficients\n",i);
 % end
     
-for i = 0:2:10
-    fprintf("i SHOULD be EVEN and is %d\n",i);
-end
+% for i = 0:2:10
+%     fprintf("i SHOULD be EVEN and is %d\n",i);
+% end
 
-%coefficients have to be even and divisible by span w/no remainder
+%coefficients have to be even and divisible by span w/no remainder LOOK
+%INTO THIS
 %beta MUST be greater than 0
 test = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.01 0.01 0.05],'betaRCV',[0.12 0.01 0.12]);
