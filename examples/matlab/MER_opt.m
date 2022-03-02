@@ -86,7 +86,9 @@ format loose
                 fprintf('Theoretical MER is: %2.4f | %s for TX: %1.4f | %s for RCV: %1.4f | # of coefficients: %d\n',...
                     MER_theo, cBeta,betaIdxTX, cBeta,betaIdxRCV, coeffIdx);
 %                 g = sprintf('%1.17f',h_RC);
-                fprintf("h_RC is: %1.17f \n",h_RC);
+%                 fprintf("h_RC is: %1.17f \n",h_RC);
+                fprintf("\t****Filter coefficients****\n");disp(h_RC); fprintf("peak: %1.17f\n",num); fprintf("denominator:\n");
+                disp(den');
             end
         end
     end

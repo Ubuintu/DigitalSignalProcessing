@@ -71,3 +71,71 @@ end
 %INTO THIS
 %beta MUST be greater than 0
 test = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.01 0.01 0.05],'betaRCV',[0.12 0.01 0.12]);
+
+%% Testing stuff
+close all
+clc
+clear
+
+% x=(-10:0.1:10);
+% xs=x(x>-4 & x<4);
+% slope = @(var) var+1
+% figure;
+% hold on;
+% % area(xs,normpdf(xs,0,3));
+% % plot(x,normpdf(x,0,3));
+% plot(x,slope(x));
+% area(xs,slope(xs));
+% ar = integral(slope,-4,4);
+% hold off
+
+samples = 100;
+% length of filter
+N = 21;
+% Order of filter
+M = N-1;
+% Number of symbols per sample OR Nsps
+Nsps = 4;
+% length of the pulse
+span = M/Nsps;
+% beta or excess bandwidth
+beta = 0.25;
+% Frequency vector (radians/sample)
+w = [0:1:samples]/samples*pi;
+% stopband frequency (cycles/sample)
+fs = 0.2;
+
+% compute IR
+h_rcv = rcosdesign(beta,span,Nsps);
+% FR
+H_rcv = freqz(h_rcv,1,w);
+abs_H = real(20*log10(abs(H_rcv)));
+fun = @(x) abs_H(x)-20*log10(min(abs(H_rcv))) ;
+funw = @(x) w(x);
+samp = find(w/2/pi >= fs);
+
+hold on
+plot( w/2/pi,20*log10(abs(H_rcv))-20*log10(min(abs(H_rcv))));
+% figure(2)
+area( funw(samp)/2/pi, abs_H(samp(1):samp(end))-20*log10(min(abs(H_rcv))) );
+hold off
+% % stopband frequency (cycles/sample)
+% fs = 0.2;
+Xs = 0:pi/5:pi;
+Ys = sin(Xs');
+wuut = Xs';
+% Q = cumtrapz(Xs,Ys)
+% zeropad = zeros( 
+% plot(funw(samp)/2/pi,fun)
+QQ = cumtrapz([0.2:0.5]*2*pi,abs_H-20*log10(min(abs(H_rcv))));
+
+%% MER calc
+clc
+clear all
+close all
+den = [-0.001473028462308   0.005666223150735  -0.019416661964618  -0.041188246018261   0.083990599017613  -0.169565530125065   0.900837427479342 ...
+    0.311842632473442  -0.140969388867244   0.099871376920441  -0.088049305611010   0.023834632003521  -0.009447343197004   0.002953619390284]
+
+pk = 0.99924965776672958;
+
+10*log10(pk^2/sum(den.^2));

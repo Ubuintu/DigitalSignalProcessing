@@ -42,14 +42,20 @@ testV = ones(1,1);
 testV(2) = 5;
 
 %% testing MER loop
-% clear
+clear
 clc
 close all
 
 % Constants are double-precision by default
-vec = [61 69];
+vec = [25 29];
 
-for i = 40:12
+idx = 1;
+for i = 10:200
+    if ( rem((i-1)/4,1)==0 )
+        validLen(idx) = i;
+        idx = idx+1;
+    end
+end
 
 % for i
     
@@ -65,3 +71,67 @@ for i = 40:12
 %INTO THIS
 %beta MUST be greater than 0
 test = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.01 0.01 0.05],'betaRCV',[0.12 0.01 0.12]);
+
+%% Testing stuff
+close all
+clc
+clear
+
+% x=(-10:0.1:10);
+% xs=x(x>-4 & x<4);
+% slope = @(var) var+1
+% figure;
+% hold on;
+% % area(xs,normpdf(xs,0,3));
+% % plot(x,normpdf(x,0,3));
+% plot(x,slope(x));
+% area(xs,slope(xs));
+% ar = integral(slope,-4,4);
+% hold off
+
+samples = 100;
+% length of filter
+N = 21;
+% Order of filter
+M = N-1;
+% Number of symbols per sample OR Nsps
+Nsps = 4;
+% length of the pulse
+span = M/Nsps;
+% beta or excess bandwidth
+beta = 0.25;
+% Frequency vector (radians/sample)
+w = [0:1:samples]/samples*pi;
+% stopband frequency (cycles/sample)
+fs = 0.2;
+
+% compute IR
+h_rcv = rcosdesign(beta,span,Nsps);
+% FR
+H_rcv = freqz(h_rcv,1,w);
+abs_H = real(20*log10(abs(H_rcv)));
+fun = @(x) abs_H(x)-20*log10(min(abs(H_rcv))) ;
+funw = @(x) w(x);
+samp = find(w/2/pi >= fs);
+
+hold on
+plot( w/2/pi,20*log10(abs(H_rcv))-20*log10(min(abs(H_rcv))));
+% figure(2)
+area( funw(samp)/2/pi, abs_H(samp(1):samp(end))-20*log10(min(abs(H_rcv))) );
+hold off
+% % stopband frequency (cycles/sample)
+% fs = 0.2;
+Xs = 0:pi/5:pi;
+Ys = sin(Xs');
+wuut = Xs';
+% Q = cumtrapz(Xs,Ys)
+% zeropad = zeros( 
+% plot(funw(samp)/2/pi,fun)
+QQ = cumtrapz([0.2:0.5]*2*pi,abs_H-20*log10(min(abs(H_rcv))));
+
+%% MER calc
+clc
+clear all
+close all
+den = [0.000020096091211   0.007078852480912  -0.024898558989863   0.097797283895332  -0.041105292694961   0.029029490086297   0.029029490086298 -0.041105292694961   0.097797283895332  -0.024898558989863   0.007078852480912   0.000020096091211]
+10*log10(0.99844285882485728^2/suden.^2);
