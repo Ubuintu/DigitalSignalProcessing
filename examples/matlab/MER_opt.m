@@ -1,4 +1,4 @@
-function [outputArg1] = MER_opt(varargin)
+function [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt(varargin)
 %% Documentation
 %MER_opt find the coefficients that meet the reqired MER
 %   Detailed explanation goes here
@@ -8,6 +8,11 @@ format loose
     defaultNum = 1;
     defaultRange = [10 20];
     defaultBRange = [0 0.01 0.1];
+    sze = 2000;
+    MER_out = zeros(1,sze);
+    betaTX_out = zeros(1,sze);
+    betaRCV_out = zeros(1,sze);
+    coeff_out = zeros(1,sze);
     
 %% Anonymous functions
     validPosInt = @(var) isnumeric(var) && (var > 0) && ( rem(var,1)==0);
@@ -22,19 +27,20 @@ format loose
     addParameter(p,'numCoeffs',defaultRange,validcoeffs);
     addParameter(p,'betaTX',defaultBRange ,validBetaRange);
     addParameter(p,'betaRCV',defaultBRange ,validBetaRange);
+    addParameter(p,'debug',0);
 
     parse(p,varargin{:});
 %% Usage
     if (isempty(varargin))
         fprintf("--------------------------- MER_opt() usage ---------------------------\n");
-        fprintf("'cmpYLegend'      : optional parameter to label comparison's plot with a legend\n");
         fprintf("'Nsps'            : optional parameter to label comparison's plot with a legend\n");
         fprintf("'MER'             : optional parameter to label comparison's plot with a legend\n");
         fprintf("'numCoeffs'       : optional parameter to label comparison's plot with a legend\n");
         fprintf("'betaTX'          : optional parameter to label comparison's plot with a legend\n");
-        fprintf("'betaRCV'          : optional parameter to label comparison's plot with a legend\n");
+        fprintf("'betaRCV'         : optional parameter to label comparison's plot with a legend\n");
+        fprintf("'debug'           : optional parameter to label comparison's plot with a legend\n");
+        fprintf("\nExample usage: [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',[25 77],'betaTX',[.11 0.01 .16],'betaRCV',[0.12 0.01 0.34],'MER',10);\n");
         fprintf("\n--------------------------- MER_opt() usage ---------------------------\n");
-        outputArg1 = 0;
         return
     end
 
@@ -43,6 +49,7 @@ format loose
     cnt = 0;
     idx = 1;
     cBeta = char(hex2dec('03b2'));
+    indx = 1;
     
 % Debugging
     if (p.Results.Nsps ~= 0)
@@ -83,19 +90,24 @@ format loose
                 end
 
                 MER_theo = 10*log10( num^2/sum(den.^2) );
-                fprintf('Theoretical MER is: %2.4f | %s for TX: %1.4f | %s for RCV: %1.4f | # of coefficients: %d\n',...
-                    MER_theo, cBeta,betaIdxTX, cBeta,betaIdxRCV, coeffIdx);
+%                 fprintf('Theoretical MER is: %2.4f | %s for TX: %1.4f | %s for RCV: %1.4f | # of coefficients: %d\n',...
+%                     MER_theo, cBeta,betaIdxTX, cBeta,betaIdxRCV, coeffIdx);
 %                 g = sprintf('%1.17f',h_RC);
 %                 fprintf("h_RC is: %1.17f \n",h_RC);
-                fprintf("\t****Filter coefficients****\n");disp(h_RC); fprintf("peak: %1.17f\n",num); fprintf("denominator:\n");
-                disp(den');
+%                 fprintf("\t****Filter coefficients****\n");disp(h_RC); fprintf("peak: %1.17f\n",num); fprintf("denominator:\n");
+%                 disp(den');
+                if MER_theo >= p.Results.MER
+%                     fprintf('Theoretical MER is: %2.4f | %s for TX: %1.6f | %s for RCV: %1.4f | # of coefficients: %d\n',...
+%                     MER_theo, cBeta,betaIdxTX, cBeta,betaIdxRCV, coeffIdx);
+                    MER_out(indx) = MER_theo; betaTX_out(indx) = betaIdxTX; betaRCV_out(indx) = betaIdxRCV; coeff_out(indx) = coeffIdx;
+                    indx = indx+1;
+                end
             end
         end
     end
 
     
     
-    
-    outputArg1 = 0;
+  
 end
 
