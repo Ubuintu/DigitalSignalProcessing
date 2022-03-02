@@ -1,5 +1,5 @@
 Analysis & Synthesis report for deliverable2
-Thu Feb 17 23:25:25 2022
+Wed Mar  2 13:49:53 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -111,7 +111,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb 17 23:25:25 2022           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar  2 13:49:53 2022           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Standard Edition ;
 ; Revision Name                      ; deliverable2                                    ;
 ; Top-level Entity Name              ; deliverable2                                    ;
@@ -1458,7 +1458,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +-----------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 ; Register Name                                 ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
 +-----------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-; LFSR_IN_Delay[2][1]                           ; yes                                                              ; yes                                        ;
 ; phase_out[0]                                  ; yes                                                              ; yes                                        ;
 ; phase_out[1]                                  ; yes                                                              ; yes                                        ;
 ; phase_out[2]                                  ; yes                                                              ; yes                                        ;
@@ -1471,15 +1470,16 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; phase_out[6]                                  ; yes                                                              ; yes                                        ;
 ; phase_out[7]                                  ; yes                                                              ; yes                                        ;
 ; sym_cor                                       ; yes                                                              ; yes                                        ;
+; LFSR_IN_Delay[0][1]                           ; yes                                                              ; yes                                        ;
+; LFSR_IN_Delay[2][1]                           ; yes                                                              ; yes                                        ;
+; LFSR_IN_Delay[2][0]                           ; yes                                                              ; yes                                        ;
+; LFSR_IN_Delay[1][1]                           ; yes                                                              ; yes                                        ;
 ; LFSR_IN_Delay[0][0]                           ; yes                                                              ; yes                                        ;
 ; LFSR_IN_Delay[1][0]                           ; yes                                                              ; yes                                        ;
-; LFSR_IN_Delay[2][0]                           ; yes                                                              ; yes                                        ;
 ; LFSR_IN_DelayQ[0][0]                          ; yes                                                              ; yes                                        ;
 ; LFSR_IN_DelayQ[1][0]                          ; yes                                                              ; yes                                        ;
 ; LFSR_IN_DelayQ[2][0]                          ; yes                                                              ; yes                                        ;
 ; sym_err                                       ; yes                                                              ; yes                                        ;
-; LFSR_IN_Delay[1][1]                           ; yes                                                              ; yes                                        ;
-; LFSR_IN_Delay[0][1]                           ; yes                                                              ; yes                                        ;
 ; phase_out[8]                                  ; yes                                                              ; yes                                        ;
 ; phase_out[9]                                  ; yes                                                              ; yes                                        ;
 ; phase_out[10]                                 ; yes                                                              ; yes                                        ;
@@ -2348,8 +2348,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +------------------------------+-------+------+-------------------------+
 ; Assignment                   ; Value ; From ; To                      ;
 +------------------------------+-------+------+-------------------------+
-; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[2][1]     ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[2][1]     ;
 ; PRESERVE_REGISTER            ; on    ; -    ; registered_ADC_A[0]     ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; registered_ADC_A[0]     ;
 ; PRESERVE_REGISTER            ; on    ; -    ; registered_ADC_B[0]     ;
@@ -2411,12 +2409,35 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sym_errQ                ;
 ; PRESERVE_REGISTER            ; on    ; -    ; error[3]                ;
 ; PRESERVE_REGISTER            ; on    ; -    ; errorQ[0]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[17]              ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[16]              ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[15]              ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[14]              ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[13]              ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[12]              ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[11]              ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[10]              ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[9]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[8]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[7]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[6]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[5]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[4]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[3]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[2]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; errorQ[1]               ;
+; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[0][1]     ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[0][1]     ;
+; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[2][1]     ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[2][1]     ;
+; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[2][0]     ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[2][0]     ;
+; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[1][1]     ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[1][1]     ;
 ; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[0][0]     ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[0][0]     ;
 ; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[1][0]     ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[1][0]     ;
-; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[2][0]     ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[2][0]     ;
 ; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_DelayQ[0][0]    ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_DelayQ[0][0]    ;
 ; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_DelayQ[1][0]    ;
@@ -2425,27 +2446,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_DelayQ[2][0]    ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sym_err                 ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sym_err                 ;
-; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[1][1]     ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[1][1]     ;
-; PRESERVE_REGISTER            ; on    ; -    ; LFSR_IN_Delay[0][1]     ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; LFSR_IN_Delay[0][1]     ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[1]               ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[2]               ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[3]               ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[4]               ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[5]               ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[6]               ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[7]               ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[8]               ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[9]               ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[10]              ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[11]              ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[12]              ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[13]              ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[14]              ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[15]              ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[16]              ;
-; PRESERVE_REGISTER            ; on    ; -    ; errorQ[17]              ;
 ; PRESERVE_REGISTER            ; on    ; -    ; error[4]                ;
 ; PRESERVE_REGISTER            ; on    ; -    ; error[5]                ;
 ; PRESERVE_REGISTER            ; on    ; -    ; error[6]                ;
@@ -7027,34 +7027,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Thu Feb 17 23:24:56 2022
+    Info: Processing started: Wed Mar  2 13:49:23 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off deliverable2 -c deliverable2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12248): Elaborating Platform Designer system entity "switch_led_emulator.qsys"
-Info (12250): 2022.02.17.23:25:02 Progress: Loading 2Deliverable/switch_led_emulator.qsys
-Info (12250): 2022.02.17.23:25:02 Progress: Reading input file
-Info (12250): 2022.02.17.23:25:02 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Info (12250): 2022.03.02.13:49:30 Progress: Loading 2Deliverable/switch_led_emulator.qsys
+Info (12250): 2022.03.02.13:49:30 Progress: Reading input file
+Info (12250): 2022.03.02.13:49:30 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
 Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
-Info (12250): 2022.02.17.23:25:02 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2022.02.17.23:25:02 Progress: Building connections
-Info (12250): 2022.02.17.23:25:02 Progress: Parameterizing connections
-Info (12250): 2022.02.17.23:25:02 Progress: Validating
-Info (12250): 2022.02.17.23:25:03 Progress: Done reading input file
+Info (12250): 2022.03.02.13:49:30 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2022.03.02.13:49:30 Progress: Building connections
+Info (12250): 2022.03.02.13:49:30 Progress: Parameterizing connections
+Info (12250): 2022.03.02.13:49:30 Progress: Validating
+Info (12250): 2022.03.02.13:49:30 Progress: Done reading input file
 Info (12250): Switch_led_emulator: Generating switch_led_emulator "switch_led_emulator" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "switch_led_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): Switch_led_emulator: Done "switch_led_emulator" with 2 modules, 2 files
 Info (12249): Finished elaborating Platform Designer system entity "switch_led_emulator.qsys"
 Info (12248): Elaborating Platform Designer system entity "key_emulator.qsys"
-Info (12250): 2022.02.17.23:25:05 Progress: Loading 2Deliverable/key_emulator.qsys
-Info (12250): 2022.02.17.23:25:06 Progress: Reading input file
-Info (12250): 2022.02.17.23:25:06 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Info (12250): 2022.03.02.13:49:33 Progress: Loading 2Deliverable/key_emulator.qsys
+Info (12250): 2022.03.02.13:49:33 Progress: Reading input file
+Info (12250): 2022.03.02.13:49:33 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
 Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
-Info (12250): 2022.02.17.23:25:06 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2022.02.17.23:25:06 Progress: Building connections
-Info (12250): 2022.02.17.23:25:06 Progress: Parameterizing connections
-Info (12250): 2022.02.17.23:25:06 Progress: Validating
-Info (12250): 2022.02.17.23:25:06 Progress: Done reading input file
+Info (12250): 2022.03.02.13:49:33 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2022.03.02.13:49:33 Progress: Building connections
+Info (12250): 2022.03.02.13:49:33 Progress: Parameterizing connections
+Info (12250): 2022.03.02.13:49:33 Progress: Validating
+Info (12250): 2022.03.02.13:49:33 Progress: Done reading input file
 Info (12250): Key_emulator: Generating key_emulator "key_emulator" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "key_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): Key_emulator: Done "key_emulator" with 2 modules, 2 files
@@ -7140,7 +7140,7 @@ Info (12128): Elaborating entity "mapper_ref" for hierarchy "mapper_ref:MAP_CMP"
 Info (12128): Elaborating entity "avg_mag" for hierarchy "avg_mag:AVG_MAG_DV" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 308
 Info (12128): Elaborating entity "avg_err_squared_55" for hierarchy "avg_err_squared_55:AVG_ER_SQR" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 344
 Info (12128): Elaborating entity "avg_err" for hierarchy "avg_err:AVG_ER" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 361
-Info (12128): Elaborating entity "switch_led_emulator" for hierarchy "switch_led_emulator:switch_led_emulator_inst" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 502
+Info (12128): Elaborating entity "switch_led_emulator" for hierarchy "switch_led_emulator:switch_led_emulator_inst" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 498
 Info (12128): Elaborating entity "altsource_probe_top" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/switch_led_emulator.v Line: 23
 Info (12128): Elaborating entity "altsource_probe" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 55
 Info (12130): Elaborated megafunction instantiation "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 55
@@ -7161,7 +7161,7 @@ Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy 
 Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe.v Line: 205
 Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 564
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 756
-Info (12128): Elaborating entity "key_emulator" for hierarchy "key_emulator:key_emulator_inst" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 522
+Info (12128): Elaborating entity "key_emulator" for hierarchy "key_emulator:key_emulator_inst" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 518
 Info (12128): Elaborating entity "altsource_probe_top" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/key_emulator.v Line: 21
 Info (12128): Elaborating entity "altsource_probe" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/submodules/altsource_probe_top.v Line: 55
 Info (12130): Elaborated megafunction instantiation "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/submodules/altsource_probe_top.v Line: 55
@@ -7179,7 +7179,7 @@ Info (12133): Instantiated megafunction "key_emulator:key_emulator_inst|altsourc
     Info (12134): Parameter "enable_metastability" = "NO"
 Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe.v Line: 243
 Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 536
-Info (12128): Elaborating entity "KeyCCT" for hierarchy "KeyCCT:k0" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 530
+Info (12128): Elaborating entity "KeyCCT" for hierarchy "KeyCCT:k0" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 526
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0e24.tdf
     Info (12023): Found entity 1: altsyncram_0e24 File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/altsyncram_0e24.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_psc.tdf
@@ -7202,7 +7202,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/cmpr_ngc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2022.02.17.23:25:16 Progress: Loading sld48291c47/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2022.03.02.13:49:43 Progress: Loading sld48291c47/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -7813,9 +7813,9 @@ Info (21057): Implemented 16874 device resources after synthesis - the final res
     Info (21064): Implemented 963 RAM segments
     Info (21062): Implemented 16 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 950 megabytes
-    Info: Processing ended: Thu Feb 17 23:25:25 2022
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:01:08
+    Info: Peak virtual memory: 951 megabytes
+    Info: Processing ended: Wed Mar  2 13:49:53 2022
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:01:02
 
 

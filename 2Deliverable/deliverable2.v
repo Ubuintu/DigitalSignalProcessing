@@ -395,21 +395,17 @@ initial begin
 	LFSR_IN_DelayQ[1] = 2'd0;
 	LFSR_IN_DelayQ[2] = 2'd0;
 end
+
+integer i;
 always @ (posedge sys_clk)
 	if (sym_clk_en)
-		LFSR_IN_Delay[0] <= out[1:0];
-	else
-		LFSR_IN_Delay[0] <= LFSR_IN_Delay[0];
+		LFSR_IN_Delay[0] = out[1:0];
+		
 always @ (posedge sys_clk)
 	if (sym_clk_en)
-		LFSR_IN_Delay[1] <= LFSR_IN_Delay[0];
-	else
-		LFSR_IN_Delay[1] <= LFSR_IN_Delay[1];
-always @ (posedge sys_clk)
-	if (sym_clk_en)
-		LFSR_IN_Delay[2] <= LFSR_IN_Delay[1];
-	else
-		LFSR_IN_Delay[2] <= LFSR_IN_Delay[2];
+		for (i=1; i<DELAY; i=i+1) 
+			LFSR_IN_Delay[i] <= LFSR_IN_Delay[i-1];
+	
 
 //Q Phase
 always @ (posedge sys_clk)

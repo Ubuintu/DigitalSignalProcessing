@@ -70,16 +70,16 @@ vec = [9 129];
 %coefficients have to be even and divisible by span w/no remainder LOOK
 %INTO THIS
 %beta MUST be greater than 0
-[MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0 0.0001 .16],'betaRCV',[0.12 0.01 0.12],'MER',50);
+% [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0 0.0001 .16],'betaRCV',[0.12 0.01 0.12],'MER',50);
 % [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',[25 77],'betaTX',[.01 0.01 .16],'betaRCV',[0.12 0.01 0.34],'MER',40);
 
-last = find(~MER_out,1);
-fileID = fopen('GSM_parameters.txt','w');
-cBeta = char(hex2dec('03b2'));
-fprintf(fileID,'%10s %10s %10s %10s\r\n','MER', 'betaTX', 'betaRCV', 'length');
-A = [MER_out(1:last-1); betaTX_out(1:last-1); betaRCV_out(1:last-1); coeff_out(1:last-1)];
-fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A);
-fclose(fileID);
+% last = find(~MER_out,1);
+% fileID = fopen('GSM_parameters.txt','w');
+% cBeta = char(hex2dec('03b2'));
+% fprintf(fileID,'%10s %10s %10s %10s\r\n','MER', 'betaTX', 'betaRCV', 'length');
+% A = [MER_out(1:last-1); betaTX_out(1:last-1); betaRCV_out(1:last-1); coeff_out(1:last-1)];
+% fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A);
+% fclose(fileID);
 
 DONE = ones(10,1);
 finish = sum(DONE(1:3));
@@ -96,58 +96,64 @@ finish = sum(DONE(1:3));
 % 10*log10(pk^2/sum(den.^2));
 
 %% Testing stuff
-% close all
-% clc
-% clear
+close all
+clc
+clear
 
-% x=(-10:0.1:10);
-% xs=x(x>-4 & x<4);
-% slope = @(var) var+1
-% figure;
-% hold on;
-% % area(xs,normpdf(xs,0,3));
-% % plot(x,normpdf(x,0,3));
-% plot(x,slope(x));
-% area(xs,slope(xs));
-% ar = integral(slope,-4,4);
-% hold off
+x=(-10:0.1:10);
+xs=x(x>-4 & x<4);
+slope = @(var) var+1
+figure;
+hold on;
+% area(xs,normpdf(xs,0,3));
+% plot(x,normpdf(x,0,3));
+plot(x,slope(x));
+area(xs,slope(xs));
+ar = integral(slope,-4,4);
+hold off
 
-% samples = 100;
-% % length of filter
-% N = 21;
-% % Order of filter
-% M = N-1;
-% % Number of symbols per sample OR Nsps
-% Nsps = 4;
-% % length of the pulse
-% span = M/Nsps;
-% % beta or excess bandwidth
-% beta = 0.25;
-% % Frequency vector (radians/sample)
-% w = [0:1:samples]/samples*pi;
+samples = 100;
+% length of filter
+N = 21;
+% Order of filter
+M = N-1;
+% Number of symbols per sample OR Nsps
+Nsps = 4;
+% length of the pulse
+span = M/Nsps;
+% beta or excess bandwidth
+beta = 0.25;
+% Frequency vector (radians/sample)
+w = [0:1:samples]/samples*pi;
+% stopband frequency (cycles/sample)
+fs = 0.2;
+
+% compute IR
+h_rcv = rcosdesign(beta,span,Nsps);
+% FR
+H_rcv = freqz(h_rcv,1,w);
+abs_H = real(20*log10(abs(H_rcv)));
+fun = @(x) abs_H(x)-20*log10(min(abs(H_rcv))) ;
+funw = @(x) w(x);
+samp = find(w/2/pi >= fs);
+
+figure(2);
+hold on
+plot( w/2/pi,20*log10(abs(H_rcv))-20*log10(min(abs(H_rcv))));
+% plot( w/2/pi,20*log10(abs(H_rcv)));
+% figure(2)
+area( funw(samp)/2/pi, abs_H(samp(1):samp(end))-20*log10(min(abs(H_rcv))) );
+hold off
 % % stopband frequency (cycles/sample)
 % fs = 0.2;
-% 
-% % compute IR
-% h_rcv = rcosdesign(beta,span,Nsps);
-% % FR
-% H_rcv = freqz(h_rcv,1,w);
-% abs_H = real(20*log10(abs(H_rcv)));
-% fun = @(x) abs_H(x)-20*log10(min(abs(H_rcv))) ;
-% funw = @(x) w(x);
-% samp = find(w/2/pi >= fs);
-% 
-% hold on
-% plot( w/2/pi,20*log10(abs(H_rcv))-20*log10(min(abs(H_rcv))));
-% % figure(2)
-% area( funw(samp)/2/pi, abs_H(samp(1):samp(end))-20*log10(min(abs(H_rcv))) );
-% hold off
-% % % stopband frequency (cycles/sample)
-% % fs = 0.2;
-% Xs = 0:pi/5:pi;
-% Ys = sin(Xs');
-% wuut = Xs';
-% % Q = cumtrapz(Xs,Ys)
-% % zeropad = zeros( 
-% % plot(funw(samp)/2/pi,fun)
-% QQ = cumtrapz([0.2:0.5]*2*pi,abs_H-20*log10(min(abs(H_rcv))));
+Xs = 0:pi/5:pi;
+Ys = sin(Xs');
+wuut = Xs';
+% Q = cumtrapz(Xs,Ys)
+% zeropad = zeros( 
+% plot(funw(samp)/2/pi,fun)
+QQ = cumtrapz([0.2:0.5]*2*pi,abs_H-20*log10(min(abs(H_rcv))));
+% QQ = cumtrapz([0.2:0.5]*2*pi,abs_H);
+
+% convert to linear units; sum them; convert back to dB
+sum( 10.^(0.1.*(20.*log10(abs(H_rcv(41:101)))) ))
