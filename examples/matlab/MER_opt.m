@@ -8,7 +8,7 @@ format loose
     defaultNum = 1;
     defaultRange = [10 20];
     defaultBRange = [0 0.01 0.1];
-    sze = 2000;
+    sze = 20000;
     MER_out = zeros(1,sze);
     betaTX_out = zeros(1,sze);
     betaRCV_out = zeros(1,sze);

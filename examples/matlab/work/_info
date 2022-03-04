@@ -1,0 +1,56 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dA:/School/EE465/EE465/examples/matlab
+vfilter_tb
+!s110 1646332162
+!i10b 1
+!s100 RRlhOkmDg<n6X7]_B5e_N2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IaaKgU>zN_[NLVM5MV6mPm2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1646331537
+8filter_tb.v
+Ffilter_tb.v
+!i122 6
+L0 35 7495
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z4 !s108 1646332161.000000
+!s107 filter_tb.v|
+!s90 -reportprogress|300|filter_tb.v|
+!i113 1
+Z5 tCvgOpt 0
+vtestSRRCdesigner
+!s110 1646332161
+!i10b 1
+!s100 Rd;AO2jVaFHKzEA7fO6gO0
+R1
+I8NA51DbK51Be<5C21OKZj2
+R2
+R0
+w1646331530
+8testSRRCdesigner.v
+FtestSRRCdesigner.v
+!i122 5
+L0 43 2551
+R3
+r1
+!s85 0
+31
+R4
+!s107 testSRRCdesigner.v|
+!s90 -reportprogress|300|testSRRCdesigner.v|
+!i113 1
+R5
+ntest@s@r@r@cdesigner

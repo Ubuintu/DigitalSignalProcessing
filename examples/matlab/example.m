@@ -70,19 +70,19 @@ vec = [9 129];
 %coefficients have to be even and divisible by span w/no remainder LOOK
 %INTO THIS
 %beta MUST be greater than 0
-% [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0 0.0001 .16],'betaRCV',[0.12 0.01 0.12],'MER',50);
+[MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0 0.0001 1],'betaRCV',[0.12 0.01 0.12],'MER',50);
 % [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',[25 77],'betaTX',[.01 0.01 .16],'betaRCV',[0.12 0.01 0.34],'MER',40);
 
-% last = find(~MER_out,1);
-% fileID = fopen('GSM_parameters.txt','w');
-% cBeta = char(hex2dec('03b2'));
-% fprintf(fileID,'%10s %10s %10s %10s\r\n','MER', 'betaTX', 'betaRCV', 'length');
-% A = [MER_out(1:last-1); betaTX_out(1:last-1); betaRCV_out(1:last-1); coeff_out(1:last-1)];
-% fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A);
-% fclose(fileID);
+last = find(~MER_out,1);
+fileID = fopen('GSM_parameters.txt','w');
+cBeta = char(hex2dec('03b2'));
+fprintf(fileID,'%10s %10s %10s %10s\r\n','MER', 'betaTX', 'betaRCV', 'length');
+A = [MER_out(1:last-1); betaTX_out(1:last-1); betaRCV_out(1:last-1); coeff_out(1:last-1)];
+fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A);
+fclose(fileID);
 
 DONE = ones(10,1);
-finish = sum(DONE(1:3));
+finish = sum(DONE(1:5));
 
 %% MER calc
 % clc
@@ -102,7 +102,7 @@ clear
 
 x=(-10:0.1:10);
 xs=x(x>-4 & x<4);
-slope = @(var) var+1
+slope = @(var) var+1;
 figure;
 hold on;
 % area(xs,normpdf(xs,0,3));
@@ -152,8 +152,87 @@ wuut = Xs';
 % Q = cumtrapz(Xs,Ys)
 % zeropad = zeros( 
 % plot(funw(samp)/2/pi,fun)
-QQ = cumtrapz([0.2:0.5]*2*pi,abs_H-20*log10(min(abs(H_rcv))));
+% QQ = cumtrapz([0.2:0.5]*2*pi,abs_H-20*log10(min(abs(H_rcv))));
 % QQ = cumtrapz([0.2:0.5]*2*pi,abs_H);
 
 % convert to linear units; sum them; convert back to dB
 sum( 10.^(0.1.*(20.*log10(abs(H_rcv(41:101)))) ))
+
+%% Measuring OOB requirements
+clear 
+close all
+clc
+
+beta = 0.146600;
+N = 65;
+Nsps = 4;
+span = (N-1)/4;
+% digital angular frequency, w (rads/sample)
+w = [0:0.001:1000]/1000*pi;
+
+tx_prac = rcosdesign(beta,span,Nsps);
+As = 63;
+b = 0.1102*(As-8.7);
+wn = kaiser(length(tx_prac), 12);
+h = tx_prac.*wn.';
+H = freqz(h,1,w);
+
+
+TX_MR = superplot(w/2/pi,20*log10(abs(H)),'plotName',"Magnitude Response of PPS",'figureName',"PracticalPSResp",'yName',"Magnitude (dB)",...
+    'xName',"Frequency (cycles/sample)",'yLegend',"Practical Pulse Shaping Response");
+
+mag_H = 20*log10(abs(H));
+baseband_ind = find( w/2/pi <= 0.14);
+OB1_ind = find(w/2/pi > 0.14 & w/2/pi <= 0.1752);
+OB2_ind = find(w/2/pi > 0.1752);
+
+conv2mW = @(x) 10.^(x/20);
+conv2dBm =  @(x) 20.*log10(x);
+
+% For power, do i need to account for limits of SA
+spec_mW = sum(conv2mW(mag_H));
+bb_mW = sum(conv2mW(mag_H(baseband_ind(1):baseband_ind(end))));
+OB1_mW = sum(conv2mW(mag_H(OB1_ind(1):OB1_ind(end))));
+OB2_mW = sum(conv2mW(mag_H(OB2_ind(1):OB2_ind(end))));
+
+spec_dBm = conv2dBm(spec_mW);
+bb_dBm = conv2dBm(bb_mW);
+OB1_dBm = conv2dBm(OB1_mW);
+OB2_dBm = conv2dBm(OB2_mW);
+
+OB1_58 = bb_dBm-OB1_dBm;
+OB2_60 = bb_dBm-OB2_dBm;
+
+if OB1_58 < 58
+    fprintf("Power transmiteed in OB1 is %2.6f dB and off by %2.6f dB from 58 dB requirement\n", OB1_58, 58-OB1_58);
+end
+
+if OB2_60 < 60
+    fprintf("Power transmiteed in OB2 is %2.6f dB and off by %2.6f dB from 60 dB requirement\n", OB2_60, 60-OB2_60);
+end
+
+
+
+
+%% Test cascade
+clear 
+close all
+clc
+
+coeff = 65;
+Nsps = 4;
+beta = 0.146600;
+
+span = (coeff-1)/Nsps;
+rcv = rcosdesign(beta, span, Nsps);
+
+% SR Nyquist filter
+bb = 0.2; spans = 25;
+M = spans*Nsps;
+fc = 1/(2*Nsps);fp=(1-beta)*fc; fs=(1+beta)*fc;
+fb = [0 fp fc fc fs .5]*2;
+a = [1 1 1/sqrt(2) 1/sqrt(2) 0 0];
+wght = [2.4535 1 1];
+h=firpm(M,fb,a,wght);
+
+% Too much theory to figure out MER for LPF
