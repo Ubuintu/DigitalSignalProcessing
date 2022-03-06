@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.03.06.00:33:15"
+ date="2022.03.06.13:49:05"
  outputDirectory="A:/School/EE465/EE465/2Deliverable/db/ip/switch_led_emulator/">
  <perimeter>
   <parameter
@@ -46,12 +46,12 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="switch_led_emulator:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1646548392,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:20.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=SW,probe_width=50,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=50)"
+   parameterizationKey="switch_led_emulator:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1646596143,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:20.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=SW,probe_width=50,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=50)"
    instancePathKey="switch_led_emulator"
    kind="switch_led_emulator"
    version="1.0"
    name="switch_led_emulator">
-  <parameter name="AUTO_GENERATION_ID" value="1646548392" />
+  <parameter name="AUTO_GENERATION_ID" value="1646596143" />
   <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
