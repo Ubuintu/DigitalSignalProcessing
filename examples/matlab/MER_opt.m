@@ -106,7 +106,11 @@ format loose
         end
     end
 
-    
+  last = find(~MER_out,1);
+  MER_out = MER_out(1:last-1);
+  betaTX_out = betaTX_out(1:last-1);
+  betaRCV_out = betaRCV_out(1:last-1);
+  coeff_out = coeff_out(1:last-1);
     
   
 end

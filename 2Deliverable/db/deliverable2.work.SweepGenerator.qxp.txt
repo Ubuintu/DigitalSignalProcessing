@@ -22,7 +22,7 @@ https://fpgasoftware.intel.com/eula.
 ; Case Sensitive   ;                                                                    ;
 ; QXP Source       ; SweepGenerator.qxp                                                 ;
 ; Software Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
-; Date             ; Fri Sep  5 09:45:42 2014                                           ;
+; Date             ; Fri Sep 05 09:45:42 2014                                           ;
 ; Contents         ; Netlist Only                                                       ;
 ; Family           ; EP4CE115F29C7                                                      ;
 ; Device           ; CYCLONEIVE6F780C7                                                  ;

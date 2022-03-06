@@ -39,7 +39,7 @@ if (isempty(varargin))
     fprintf("'cmpY'            : optional parameter to compare plot of Y's data\n");
     fprintf("'plotName'        : optional parameter to give plot a title\n");
     fprintf("'figureName'      : optional parameter to name plot's figure\n");
-    fprintf("'plotAxis'        : optional parameter to change plot's axes\n");
+    fprintf("'plotAxis'        : optional parameter to change plot's axes ex: [xmin, xmax, yMin, yMax]\n");
     fprintf("'xName'           : optional parameter to label x-axis\n");
     fprintf("'yName'           : optional parameter to label y-axis\n");
     fprintf("'yLegend'         : optional parameter to label y's plot with a legend\n");

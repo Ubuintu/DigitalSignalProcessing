@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.03.02.13:49:31"
- outputDirectory="/home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/">
+ date="2022.03.06.00:33:15"
+ outputDirectory="A:/School/EE465/EE465/2Deliverable/db/ip/switch_led_emulator/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -46,34 +46,33 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="switch_led_emulator:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1646250570,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:20.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=SW,probe_width=50,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=50)"
+   parameterizationKey="switch_led_emulator:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1646548392,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:20.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=SW,probe_width=50,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=50)"
    instancePathKey="switch_led_emulator"
    kind="switch_led_emulator"
    version="1.0"
    name="switch_led_emulator">
-  <parameter name="AUTO_GENERATION_ID" value="1646250570" />
+  <parameter name="AUTO_GENERATION_ID" value="1646548392" />
   <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="/home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/switch_led_emulator.v"
+       path="A:/School/EE465/EE465/2Deliverable/db/ip/switch_led_emulator/switch_led_emulator.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v"
+       path="A:/School/EE465/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file
-       path="/home/tob208/engr-ece/Documents/EE465/2Deliverable/switch_led_emulator.qsys" />
+   <file path="A:/School/EE465/EE465/2Deliverable/switch_led_emulator.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/opt/intelFPGA/20.1.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+       path="C:/intelfpga_lite/20.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Debug" culprit="switch_led_emulator">queue size: 0 starting:switch_led_emulator "switch_led_emulator"</message>
@@ -114,14 +113,14 @@
   <parameter name="gui_use_auto_index" value="true" />
   <generatedFiles>
    <file
-       path="/home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v"
+       path="A:/School/EE465/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles/>
   <sourceFiles>
    <file
-       path="/opt/intelFPGA/20.1.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+       path="C:/intelfpga_lite/20.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="switch_led_emulator" as="in_system_sources_probes_0" />
