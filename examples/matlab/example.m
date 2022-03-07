@@ -187,7 +187,7 @@ GSM = rcosdesign(beta,span,Nsps);
 As = 60;
 b = 0.1102*(As-8.7);
 
-% for bk = 2.06:0.001:2.2
+% for bk = 2.06:0.001:2.3
 for bk = 2.1:0.001:2.1
     wn = kaiser(length(GSM), bk);
     h_TX = GSM.*wn.';
@@ -245,7 +245,11 @@ for bk = 2.1:0.001:2.1
     OB2_60 = bb_dBm-OB2_dBm;
     OB3_63 = bb_dBm-OB3_dBm;
     
+    % can cascade firpm sqrt w/srrc, center coeff
+    % isn't one BUT even symmetric
     cascade = conv(h_pps,GSM);
+    cascade_SRRC = conv(GSM,GSM);
+    
     num = cascade(N);
     den = zeros(floor(length(cascade)/Nsps),1);
     idx = 1;
@@ -300,7 +304,7 @@ hold off
 
 %% Test cascade
 clear 
-close all
+% close all
 clc
 
 coeff = 65;
@@ -311,13 +315,33 @@ span = (coeff-1)/Nsps;
 rcv = rcosdesign(beta, span, Nsps);
 
 % SR Nyquist filter
-bb = 0.2; spans = 25;
-M = spans*Nsps;
-fc = 1/(2*Nsps);fp=(1-beta)*fc; fs=(1+beta)*fc;
+bb = 2.0; spans = 25;
+M = coeff-1;
+fc = 1/(2*Nsps);fp=(1-.12)*fc; fs=(1+.12)*fc;
 fb = [0 fp fc fc fs .5]*2;
 a = [1 1 1/sqrt(2) 1/sqrt(2) 0 0];
 wght = [2.4535 1 1];
 h_pps=firpm(M,fb,a,wght);
+w = [0:0.001:1000]/1000*pi;
+wnNorm=kaiser(coeff,2.0);
+wnGr=kaiser(coeff,3);
+wnLT=kaiser(coeff,1);
+
+H_pps = freqz(h_pps,1,w);
+H_ppsGrBk=freqz( conv(h_pps,wnGr),1,w );
+H_ppsNormBk=freqz( conv(h_pps,wnNorm),1,w );
+H_ppsLTBk=freqz( conv(h_pps,wnLT),1,w );
+
+figName="PPS_with_65coeffs";
+pps_plot = superplot(w/2/pi,20*log10(abs(H_pps)),'cmpY',20*log10(H_ppsNormBk),'figureName',figName,...
+    'plotAxis',[0 0.5 -100 40]);
+hold on
+plot(w/2/pi,20*log10(abs(H_ppsGrBk)),"-.g");
+plot(w/2/pi,20*log10(abs(H_ppsLTBk)),"--m");
+legend('beta=0','beta=2.0','beta=3','beta=1');
+hold off
+location = strcat('./pics/',figName,'.png');
+print(pps_plot, '-dpng', location);
 
 % Too much theory to figure out MER for LPF
 

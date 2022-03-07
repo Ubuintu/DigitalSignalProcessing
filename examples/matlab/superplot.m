@@ -70,7 +70,8 @@ end
         legend(p.Results.yLegend, p.Results.cmpYLegend);
     end
     datacursormode(plot_out,'on');
-    plot_out.Position = [10 10 1000 900];
+    plot_out.Position = [5 5 1500 900];
+%     plot_out.InnerPosition = [5 5 2000 1000];
     location = strcat('./pics/',p.Results.figureName,'.png');
     print(plot_out, '-dpng', location);
     hold off;
