@@ -168,6 +168,8 @@ sum( 10.^(0.1.*(20.*log10(abs(H_rcv(41:101)))) ))
 clear 
 close all
 clc
+
+format long
 % window designer from 0 to pi
 % load('KaisWin.mat');
 
@@ -187,8 +189,8 @@ GSM = rcosdesign(beta,span,Nsps);
 As = 60;
 b = 0.1102*(As-8.7);
 
-% for bk = 2.06:0.001:2.3
-for bk = 2.1:0.001:2.1
+% for bk = 2.057:0.0001:2.058
+for bk = 2.057:0.001:2.057
     wn = kaiser(length(GSM), bk);
     h_TX = GSM.*wn.';
     h_GSM = GSM;
@@ -284,7 +286,6 @@ end
 TX_MR = superplot(w/2/pi,20*log10(abs(H_pps)),'plotName',"Magnitude Response of PPS",'figureName',"PracticalPSResp",'yName',"Magnitude (dB)",...
     'xName',"Frequency (cycles/sample)",'yLegend',"SQRT FIRPM",'cmpY',20*log10(abs(H_srrc)),'cmpYLegend',"SRRC",...
     'plotAxis',[0 0.5 -100 20]);
-
 hold on
 % OOB requirement 1
 plot([0.14 0.14],[-200 -58],'--k');
@@ -300,6 +301,21 @@ plot([0.42 0.5],[-63 -63],'g');
 plot([0.5 0.5],[-200 -63],'g');
 legend('Sqrt firpm','SRRC','OB1','OB1','OB1','OB2','OB2','OB2','OB3','OB3','OB3');
 hold off
+location = strcat('./pics/','PracticalPSResp','.png');
+print(TX_MR, '-dpng', location);
+close(TX_MR);
+
+% scale desired coefficients
+maxi = sum(abs(h_pps));
+scaling = (1-2^-17)/maxi;
+
+h_pps_1s17= round(h_pps*scaling*2^17);
+if sum(abs(h_pps_1s17/2^17) > 1-2^-17)
+    fprintf("Error need to scaled down h_pps more\n");
+    return
+end
+
+h_pps_coeffs = unique(h_pps_1s17,'stable');
 
 
 %% Test cascade
