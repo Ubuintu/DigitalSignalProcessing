@@ -83,9 +83,9 @@ vec = [9 129];
 % fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A);
 % fclose(fileID);
 
-c_idx = find(coeff_out==121);
-max_121 = max(MER_out(c_idx(1):c_idx(end)));
-desired_121 = find(MER_out>=54.0679);
+% c_idx = find(coeff_out==121);
+% max_121 = max(MER_out(c_idx(1):c_idx(end)));
+% desired_121 = find(MER_out>=54.0679);
 
 DONE = ones(10,1);
 finish = sum(DONE(1:5));
@@ -100,69 +100,6 @@ finish = sum(DONE(1:5));
 % pk = 0.99924965776672958;
 % 
 % 10*log10(pk^2/sum(den.^2));
-
-%% Testing stuff
-close all
-clc
-clear
-
-x=(-10:0.1:10);
-xs=x(x>-4 & x<4);
-slope = @(var) var+1;
-figure;
-hold on;
-% area(xs,normpdf(xs,0,3));
-% plot(x,normpdf(x,0,3));
-plot(x,slope(x));
-area(xs,slope(xs));
-ar = integral(slope,-4,4);
-hold off
-
-samples = 100;
-% length of filter
-N = 21;
-% Order of filter
-M = N-1;
-% Number of symbols per sample OR Nsps
-Nsps = 4;
-% length of the pulse
-span = M/Nsps;
-% beta or excess bandwidth
-beta = 0.25;
-% Frequency vector (radians/sample)
-w = [0:1:samples]/samples*pi;
-% stopband frequency (cycles/sample)
-fs = 0.2;
-
-% compute IR
-h_rcv = rcosdesign(beta,span,Nsps);
-% FR
-H_rcv = freqz(h_rcv,1,w);
-abs_H = real(20*log10(abs(H_rcv)));
-fun = @(x) abs_H(x)-20*log10(min(abs(H_rcv))) ;
-funw = @(x) w(x);
-samp = find(w/2/pi >= fs);
-
-figure(2);
-hold on
-plot( w/2/pi,20*log10(abs(H_rcv))-20*log10(min(abs(H_rcv))));
-% plot( w/2/pi,20*log10(abs(H_rcv)));
-% figure(2)
-area( funw(samp)/2/pi, abs_H(samp(1):samp(end))-20*log10(min(abs(H_rcv))) );
-hold off
-% % stopband frequency (cycles/sample)
-% fs = 0.2;
-Xs = 0:pi/5:pi;
-Ys = sin(Xs');
-wuut = Xs';
-% Q = cumtrapz(Xs,Ys)
-% zeropad = zeros( 
-% plot(funw(samp)/2/pi,fun)
-% QQ = cumtrapz([0.2:0.5]*2*pi,abs_H-20*log10(min(abs(H_rcv))));
-% QQ = cumtrapz([0.2:0.5]*2*pi,abs_H);
-
-% convert to linear units; sum them; convert back to dB
-sum( 10.^(0.1.*(20.*log10(abs(H_rcv(41:101)))) ))
 
 %% Measuring OOB requirements
 clear 
@@ -189,8 +126,9 @@ GSM = rcosdesign(beta,span,Nsps);
 As = 60;
 b = 0.1102*(As-8.7);
 
-% for bk = 2.057:0.0001:2.058
-for bk = 2.057:0.001:2.057
+% for bk = 2.047:0.001:2.263
+% for bk = 2.057:0.001:2.057
+for bk = 2.202:0.001:2.202
     wn = kaiser(length(GSM), bk);
     h_TX = GSM.*wn.';
     h_GSM = GSM;
@@ -383,3 +321,18 @@ N = 4;
 C_text = textscan(fileID,formatSpec,N);
 C_data0 = textscan(fileID,'%f %f %f %f');
 fclose(fileID);
+
+%% Designing polyphase filter
+clear;close all;clc; load('validLen.mat');
+
+beta=0.12; N=21; Nsps=4; span=(N-1)/4;
+
+% rcv = rcosdesign(beta,span, Nsps);
+load('rcv.mat');
+worse_case_output = sum(abs(rcv));
+scaling = (1-2^-17)/worse_case_output;
+rcv_1s17=round( rcv*scaling*2^17 );tx=rcv;
+
+sym_mults=round(length(rcv)/2);
+poly_mults=sym_mults/Nsps;
+
