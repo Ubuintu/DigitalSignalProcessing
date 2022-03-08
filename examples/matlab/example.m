@@ -56,9 +56,9 @@ for i = 0:200
 end
 
 % Constants are double-precision by default
-vec = [85 121];
+vec = [97 97];
 
-% for i
+% for im
     
 % for i = vec(1):0.01:vec(1)
 %     fprintf("i is %d coefficients\n",i);
@@ -71,14 +71,14 @@ vec = [85 121];
 %coefficients have to be even and divisible by span w/no remainder LOOK
 %INTO THIS
 %beta MUST be greater than 0
-[MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.1 0.0001 0.2],'betaRCV',[0.1 0.0001 0.2],'MER',50);
+[MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.1 0.0001 0.13],'betaRCV',[0.1 0.0001 0.13],'MER',50);
 % [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',[25 77],'betaTX',[.01 0.01 .16],'betaRCV',[0.12 0.01 0.34],'MER',40);
 
-last = find(~MER_out,1);
+% last = find(~MER_out,1);
 fileID = fopen('GSM_parameters.txt','w');
 cBeta = char(hex2dec('03b2'));
 fprintf(fileID,'%10s %10s %10s %10s\r\n','MER', 'betaTX', 'betaRCV', 'length');
-A = [MER_out(1:last-1); betaTX_out(1:last-1); betaRCV_out(1:last-1); coeff_out(1:last-1)];
+% A = [MER_out(1:last-1); betaTX_out(1:last-1); betaRCV_out(1:last-1); coeff_out(1:last-1)];
 A = [MER_out; betaTX_out; betaRCV_out; coeff_out];
 fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A);
 fclose(fileID);
@@ -111,6 +111,16 @@ format long
 % load('KaisWin.mat');
 load('windowKais101.mat');
 
+fileID = fopen('GSM_parameters_89-121_B1-0.001-2.txt');
+formatSpec = '%s';
+N = 4;
+C_text = textscan(fileID,formatSpec,N);
+C_data0 = textscan(fileID,'%f %f %f %f');
+fclose(fileID);
+
+vTX_B=C_data0{1,2}.'; vRCV_B=C_data0{1,3}.'; vLen=C_data0{1,4}.';
+idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);
+
 % #TX&RCV length; RCV rolloff here
 % beta = 0.146600;  %trial 1
 % N = 65;
@@ -132,6 +142,8 @@ As = 60;
 b = 0.1102*(As-8.7);
 
 b_pps = 0.183000;
+
+%%
 
 for bk = 0:0.1:2
 % for bk = 1:0.1:1       %trial 6
