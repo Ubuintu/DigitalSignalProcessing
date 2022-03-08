@@ -45,7 +45,7 @@ testV(2) = 5;
 % clear
 clc
 close all
-% clear
+clear
 
 idx = 1;
 for i = 0:200
@@ -56,7 +56,7 @@ for i = 0:200
 end
 
 % Constants are double-precision by default
-vec = [9 129];
+vec = [85 121];
 
 % for i
     
@@ -71,17 +71,17 @@ vec = [9 129];
 %coefficients have to be even and divisible by span w/no remainder LOOK
 %INTO THIS
 %beta MUST be greater than 0
-% [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0 0.001 0.2],'betaRCV',[0.12 0.01 0.12],'MER',50);
+[MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.1 0.0001 0.2],'betaRCV',[0.1 0.0001 0.2],'MER',50);
 % [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',[25 77],'betaTX',[.01 0.01 .16],'betaRCV',[0.12 0.01 0.34],'MER',40);
 
-% last = find(~MER_out,1);
-% fileID = fopen('GSM_parameters.txt','w');
-% cBeta = char(hex2dec('03b2'));
-% fprintf(fileID,'%10s %10s %10s %10s\r\n','MER', 'betaTX', 'betaRCV', 'length');
-% % A = [MER_out(1:last-1); betaTX_out(1:last-1); betaRCV_out(1:last-1); coeff_out(1:last-1)];
-% A = [MER_out; betaTX_out; betaRCV_out; coeff_out];
-% fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A);
-% fclose(fileID);
+last = find(~MER_out,1);
+fileID = fopen('GSM_parameters.txt','w');
+cBeta = char(hex2dec('03b2'));
+fprintf(fileID,'%10s %10s %10s %10s\r\n','MER', 'betaTX', 'betaRCV', 'length');
+A = [MER_out(1:last-1); betaTX_out(1:last-1); betaRCV_out(1:last-1); coeff_out(1:last-1)];
+A = [MER_out; betaTX_out; betaRCV_out; coeff_out];
+fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A);
+fclose(fileID);
 
 % c_idx = find(coeff_out==121);
 % max_121 = max(MER_out(c_idx(1):c_idx(end)));
@@ -109,139 +109,153 @@ clc
 format long
 % window designer from 0 to pi
 % load('KaisWin.mat');
+load('windowKais101.mat');
 
+% #TX&RCV length; RCV rolloff here
 % beta = 0.146600;  %trial 1
 % N = 65;
 % beta = 0.116400;    %trial 2
 % N = 73;
-beta = 0.144400;   %trial 3
-N = 121;
+% beta = 0.144400;   %trial 3
+% N = 121;
+beta = 0.188000;     %trial 18 i stop counting bruh
+N = 101;
 
 Nsps = 4;
 span = (N-1)/4;
 % digital angular frequency, w (rads/sample)
-w = [0:0.001:1000]/1000*pi;
+% w = [0:0.001:1000]/1000*pi; %0-0.5
+w = [0:0.001:2000]/1000*pi; %one whole cycle
 
 GSM = rcosdesign(beta,span,Nsps);
 As = 60;
 b = 0.1102*(As-8.7);
 
-% for bk = 2.047:0.001:2.263
+b_pps = 0.183000;
+
+for bk = 0:0.1:2
+% for bk = 1:0.1:1       %trial 6
+% for bk = 0:0.1:2       %trial 6
 % for bk = 2.057:0.001:2.057
-for bk = 2.202:0.001:2.202
-    wn = kaiser(length(GSM), bk);
-    h_TX = GSM.*wn.';
-    h_GSM = GSM;
+% for bk = 2.202:0.001:2.202
+% *** b_nom is for TX filter ***
+%     for b_nom = 0.10:0.01:0.14    %trial 3
+%     for b_nom = 0.12:0.01:0.12    %trial 1-2
+%     for b_nom = 0.3:0.01:0.3    %trial 4
+%     for b_nom = 0.29:0.01:0.29    %trial 5
+%     for b_nom = 0.3:0.01:0.3    %trial 6
+    for b_nom = b_pps:0.01:b_pps   %trial 7
+        wn = kaiser(length(GSM), bk);
+%         wn = WinKaiser;
+%         h_TX = GSM.*wn.';
+        h_TX = rcosdesign(b_nom,span,Nsps).*wn.';
+        h_GSM = GSM;
 
-    % SRRC is a square root nyquist filter; firpm also
-    % creates a sqrt nyquist filter
-    M=N-1;
-    beta = 0.12; Nsps=4; span=M/Nsps;
-    fc=1/2/Nsps; fp=(1-beta)*fc; fs=(1+beta)*fc;
-    fb = [0 fp fc fc fs .5]*2;
-    a = [1 1 1/sqrt(2) 1/sqrt(2) 0 0];
-    % wght vector needs to 2.4535 for passband
-    wght = [2.4535 1 1];
-    h_pps = firpm(M,fb,a,wght);
+        % SRRC is a square root nyquist filter; firpm also
+        % creates a sqrt nyquist filter
+        M=N-1; Nsps=4; span=M/Nsps;
+        fc=1/2/Nsps; fp=(1-b_nom)*fc; fs=(1+b_nom)*fc;
+        fb = [0 fp fc fc fs .5]*2;
+        a = [1 1 1/sqrt(2) 1/sqrt(2) 0 0];
+        % wght vector needs to 2.4535 for passband
+        wght = [2.4535 1 1];
+        h_pps = firpm(M,fb,a,wght);
 
-    % window
-    h_pps = h_pps.*wn.';
-%     h_pps = h_pps;
+        % window
+        h_pps = h_pps.*wn.';
+    %     h_pps = h_pps;
 
-    % estimate order of SR Nyquist filter
-%     ford=fb(2:end-1);
-%     aord=[1 1/sqrt(2) 0];
-%     sb=10^(-58/20);
-%     dev=[sb 0.02 sb];
-%     M_est=firpmord(ford,aord,dev);
+        % estimate order of SR Nyquist filter
+    %     ford=fb(2:end-1);
+    %     aord=[1 1/sqrt(2) 0];
+    %     sb=10^(-58/20);
+    %     dev=[sb 0.02 sb];
+    %     M_est=firpmord(ford,aord,dev);
 
-    H_srrc = freqz(h_TX,1,w);
-    H_pps = freqz(h_pps,1,w);
+        H_srrc = freqz(h_TX,1,w);
+        H_pps = freqz(h_pps,1,w);
 
-    % mag_H = 20*log10(abs(H));
-    mag_H = 20*log10(abs(H_pps));
-    baseband_ind = find( w/2/pi <= 0.14);
-    OB1_ind = find(w/2/pi > 0.14 & w/2/pi <= 0.1752);
-    OB2_ind = find(w/2/pi > 0.1752 & w/2/pi <= 0.42);
-    OB3_ind = find(w/2/pi > 0.42);
+        % mag_H = 20*log10(abs(H));
+        sam_r8 = 6.25;
+        mag_H = 20*log10(abs(H_pps));
+        bb_bnd=(1+.12)/2/Nsps; OB1_bnd=bb_bnd+(.22/sam_r8); OB2_bnd=OB1_bnd+(1.53/sam_r8); OB3_bnd=OB2_bnd+(1.75/sam_r8);
+        baseband_ind = find( w/2/pi <= bb_bnd);
+        OB1_ind = find(w/2/pi>bb_bnd & w/2/pi<=OB1_bnd);
+        OB2_ind = find(w/2/pi > OB1_bnd & w/2/pi <= OB2_bnd);
+        OB3_ind = find(w/2/pi > OB2_bnd & w/2/pi <= OB3_bnd);
 
-    conv2mW = @(x) 10.^(x/20);
-    conv2dBm =  @(x) 20.*log10(x);
+        conv2mW = @(x) 10.^(x/20);
+        conv2dBm =  @(x) 20.*log10(x);
 
-    % For power, do i need to account for limits of SA
-    spec_mW = sum(conv2mW(mag_H));
-    bb_mW = sum(conv2mW(mag_H(baseband_ind(1):baseband_ind(end))));
-    OB1_mW = sum(conv2mW(mag_H(OB1_ind(1):OB1_ind(end))));
-    OB2_mW = sum(conv2mW(mag_H(OB2_ind(1):OB2_ind(end))));
-    OB3_mW = sum(conv2mW(mag_H(OB3_ind(1):OB3_ind(end))));
+        % For power, do i need to account for limits of SA
+        spec_mW = sum(conv2mW(mag_H));
+        bb_mW = sum(conv2mW(mag_H(baseband_ind(1):baseband_ind(end))));
+        OB1_mW = sum(conv2mW(mag_H(OB1_ind(1):OB1_ind(end))));
+        OB2_mW = sum(conv2mW(mag_H(OB2_ind(1):OB2_ind(end))));
+        OB3_mW = sum(conv2mW(mag_H(OB3_ind(1):OB3_ind(end))));
 
-    spec_dBm = conv2dBm(spec_mW);
-    bb_dBm = conv2dBm(bb_mW);
-    OB1_dBm = conv2dBm(OB1_mW);
-    OB2_dBm = conv2dBm(OB2_mW);
-    OB3_dBm = conv2dBm(OB3_mW);
+        spec_dBm = conv2dBm(spec_mW);
+        bb_dBm = conv2dBm(bb_mW);
+        OB1_dBm = conv2dBm(OB1_mW);
+        OB2_dBm = conv2dBm(OB2_mW);
+        OB3_dBm = conv2dBm(OB3_mW);
 
-    OB1_58 = bb_dBm-OB1_dBm;
-    OB2_60 = bb_dBm-OB2_dBm;
-    OB3_63 = bb_dBm-OB3_dBm;
-    
-    % can cascade firpm sqrt w/srrc, center coeff
-    % isn't one BUT even symmetric
-    cascade = conv(h_pps,GSM);
-    cascade_SRRC = conv(GSM,GSM);
-    
-    num = cascade(N);
-    den = zeros(floor(length(cascade)/Nsps),1);
-    idx = 1;
-    cnt = 0;
-    for i = 1:length(cascade)
-        if cnt == 0 && i ~= N
-            den(idx) = cascade(i);
-            cnt = cnt + 1;
-            idx = idx + 1;
-        elseif cnt >= Nsps-1
-            cnt = 0;
-        else
-            cnt = cnt + 1;
+        OB1_58 = bb_dBm-OB1_dBm;
+        OB2_60 = bb_dBm-OB2_dBm;
+        OB3_63 = bb_dBm-OB3_dBm;
+
+        % can cascade firpm sqrt w/srrc, center coeff
+        % isn't one BUT even symmetric
+        cascade = conv(h_pps,GSM);
+        cascade_SRRC = conv(GSM,GSM);
+
+        num = cascade(N);
+        den = zeros(floor(length(cascade)/Nsps),1);
+        idx = 1;
+        cnt = 0;
+        for i = 1:length(cascade)
+            if cnt == 0 && i ~= N
+                den(idx) = cascade(i);
+                cnt = cnt + 1;
+                idx = idx + 1;
+            elseif cnt >= Nsps-1
+                cnt = 0;
+            else
+                cnt = cnt + 1;
+            end
         end
-    end
-    MER_theo = 10*log10( num^2/sum(den.^2) );
-%     fprintf("Power transmitted in OB1 is %2.6f dB\n", OB1_58);
-%     fprintf("Power transmitted in OB2 is %2.6f dB\n", OB2_60);
-%     fprintf("Power transmitted in OB3 is %2.6f dB\n", OB3_63);
-%     fprintf("MER is %2.6f | beta for kaiser: %2.6f\n",MER_theo,bk);
-%     fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f\n",OB1_58,OB2_60,OB3_63,MER_theo,bk);
-%     fprintf("Bk: %2.4f\n",bk);
-    if OB1_58 > 58 && OB2_60 > 60 && OB3_63 > 63 && MER_theo >= 40
-        fprintf("*************MET SPEC*************************\n");
-        fprintf("Power transmitted in OB1 is %2.6f dB and greater by %2.6f dB from 58 dB requirement\n", OB1_58, OB1_58-58);
-        fprintf("Power transmitted in OB2 is %2.6f dB and greater by %2.6f dB from 60 dB requirement\n", OB2_60, OB2_60-60);
-        fprintf("Power transmitted in OB3 is %2.6f dB and greater by %2.6f dB from 63 dB requirement\n", OB3_63, OB3_63-63);
-        fprintf("MER is %2.6f | beta for kaiser: %2.6f\n",MER_theo,bk);
+        MER_theo = 10*log10( num^2/sum(den.^2) );
+        fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",OB1_58,OB2_60,OB3_63,MER_theo,bk, b_nom);
+        fprintf("baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f | OB3 bnd frequency: %2.4f |\n\n", bb_bnd, OB1_bnd, OB2_bnd, OB3_bnd);
+        if OB1_58 > 58 && OB2_60 > 60 && OB3_63 > 63 && MER_theo >= 40
+            fprintf("\n*************MET SPEC*************************\n");
+            fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f\n",OB1_58,OB2_60,OB3_63,MER_theo,bk);
+            fprintf("Beta nominal: %2.4f | baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f \n\n",b_nom, bb_bnd, OB1_bnd, OB2_bnd);
+        end
     end
 end
 
 TX_MR = superplot(w/2/pi,20*log10(abs(H_pps)),'plotName',"Magnitude Response of PPS",'figureName',"PracticalPSResp",'yName',"Magnitude (dB)",...
     'xName',"Frequency (cycles/sample)",'yLegend',"SQRT FIRPM",'cmpY',20*log10(abs(H_srrc)),'cmpYLegend',"SRRC",...
-    'plotAxis',[0 0.5 -100 20]);
+    'plotAxis',[0 w(end)/2/pi -150 10]);
 hold on
 % OOB requirement 1
-plot([0.14 0.14],[-200 -58],'--k');
-plot([0.14 0.1752],[-58 -58],'--k');
-plot([0.1752 0.1752],[-200 -58],'--k');
+plot([bb_bnd bb_bnd],[-200 -58],'--k');
+plot([bb_bnd OB1_bnd],[-58 -58],'--k');
+plot([OB1_bnd OB1_bnd],[-200 -58],'--k');
 % OOB requirement 2
-plot([0.1752 0.1752],[-200 -60],':R');
-plot([0.1752 0.42],[-60 -60],':R');
-plot([0.42 0.42],[-200 -60],':R');
+plot([OB1_bnd OB1_bnd],[-200 -60],':R');
+plot([OB1_bnd OB2_bnd],[-60 -60],':R');
+plot([OB2_bnd OB2_bnd],[-200 -60],':R');
 % OOB requirement 3
-plot([0.42 0.42],[-200 -63],'g');
-plot([0.42 0.5],[-63 -63],'g');
-plot([0.5 0.5],[-200 -63],'g');
+plot([OB2_bnd OB2_bnd],[-200 -63],'g');
+plot([OB2_bnd OB3_bnd],[-63 -63],'g');
+plot([OB3_bnd OB3_bnd],[-200 -63],'g');
 legend('Sqrt firpm','SRRC','OB1','OB1','OB1','OB2','OB2','OB2','OB3','OB3','OB3');
 hold off
 location = strcat('./pics/','PracticalPSResp','.png');
 print(TX_MR, '-dpng', location);
-close(TX_MR);
+% close(TX_MR);
 
 % scale desired coefficients
 maxi = sum(abs(h_pps));
@@ -336,3 +350,57 @@ rcv_1s17=round( rcv*scaling*2^17 );tx=rcv;
 sym_mults=round(length(rcv)/2);
 poly_mults=sym_mults/Nsps;
 
+%% Testing roll off cascaded
+clc; clear; close all;
+
+N=41; Nsps=4; span=(N-1)/4;
+
+rcv = rcosdesign(0.1,span, Nsps); tx = rcosdesign(0.08,span, Nsps);
+cascade=conv(rcv,tx);
+
+figure(1);
+hold on
+title('Different beta');
+stem(1:N,rcv);
+stem(1:N,tx)
+stem(1:2*N-1,cascade);
+legend('RCV','TX','Cascade'); grid;
+hold off
+
+figure(2);
+hold on
+title('Same beta');
+stem(1:N,rcv);
+stem(1:2*N-1,conv(rcv,rcv));
+legend('RCV','Cascade'); grid;
+hold off
+
+% SRRC is a square root nyquist filter; firpm also
+% creates a sqrt nyquist filter
+M=N-1; Nsps=4; span=M/Nsps; b_nom=0.1;
+fc=1/2/Nsps; fp=(1-b_nom)*fc; fs=(1+b_nom)*fc;
+fb = [0 fp fc fc fs .5]*2;
+a = [1 1 1/sqrt(2) 1/sqrt(2) 0 0];
+% wght vector needs to 2.4535 for passband
+wght = [2.4535 1 1];
+tx_pm = firpm(M,fb,a,wght);
+cascade_pm = conv(tx_pm,rcv);
+cascade_rcv = conv(rcv,rcv);
+
+figure(3);
+subplot(2,1,1);
+hold on
+stem(1:N,tx_pm);
+stem(1:2*N-1,cascade_pm);
+title('firpm');
+hold off
+subplot(2,1,2);
+hold on
+stem(1:N,rcv);
+stem(1:2*N-1,cascade_rcv);
+title('traditional RC');
+hold off
+% legend('RCV','TX','Cascade'); grid;
+
+figure(4)
+stem(1:31,rcosdesign(0.25,(31-1)/4,4));

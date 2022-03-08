@@ -1,0 +1,293 @@
+*************MET SPEC*************************
+Power transmitted in OB1 is 77.557767 dB | Power transmitted in OB2 is 60.805540 dB | Power transmitted in OB3 is 70.662747 dB
+MER is 51.535497 | beta for kaiser: 0.000000
+OB1: 77.557767 | OB2: 60.805540 | OB3: 70.662747 | MER: 51.535497 | Bk: 0.0000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 77.596968 dB | Power transmitted in OB2 is 60.827632 dB | Power transmitted in OB3 is 70.684520 dB
+MER is 51.497388 | beta for kaiser: 0.100000
+OB1: 77.596968 | OB2: 60.827632 | OB3: 70.684520 | MER: 51.497388 | Bk: 0.1000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 77.711943 dB | Power transmitted in OB2 is 60.893746 dB | Power transmitted in OB3 is 70.749675 dB
+MER is 51.382613 | beta for kaiser: 0.200000
+OB1: 77.711943 | OB2: 60.893746 | OB3: 70.749675 | MER: 51.382613 | Bk: 0.2000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 77.894804 dB | Power transmitted in OB2 is 61.003402 dB | Power transmitted in OB3 is 70.857733 dB
+MER is 51.190323 | beta for kaiser: 0.300000
+OB1: 77.894804 | OB2: 61.003402 | OB3: 70.857733 | MER: 51.190323 | Bk: 0.3000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 78.132437 dB | Power transmitted in OB2 is 61.155817 dB | Power transmitted in OB3 is 71.007909 dB
+MER is 50.920555 | beta for kaiser: 0.400000
+OB1: 78.132437 | OB2: 61.155817 | OB3: 71.007909 | MER: 50.920555 | Bk: 0.4000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 78.406696 dB | Power transmitted in OB2 is 61.349928 dB | Power transmitted in OB3 is 71.199143 dB
+MER is 50.575719 | beta for kaiser: 0.500000
+OB1: 78.406696 | OB2: 61.349928 | OB3: 71.199143 | MER: 50.575719 | Bk: 0.5000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 78.694965 dB | Power transmitted in OB2 is 61.584429 dB | Power transmitted in OB3 is 71.430126 dB
+MER is 50.161631 | beta for kaiser: 0.600000
+OB1: 78.694965 | OB2: 61.584429 | OB3: 71.430126 | MER: 50.161631 | Bk: 0.6000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 78.971304 dB | Power transmitted in OB2 is 61.857805 dB | Power transmitted in OB3 is 71.699343 dB
+MER is 49.687632 | beta for kaiser: 0.700000
+OB1: 78.971304 | OB2: 61.857805 | OB3: 71.699343 | MER: 49.687632 | Bk: 0.7000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 79.208332 dB | Power transmitted in OB2 is 62.168374 dB | Power transmitted in OB3 is 72.005114 dB
+MER is 49.165765 | beta for kaiser: 0.800000
+OB1: 79.208332 | OB2: 62.168374 | OB3: 72.005114 | MER: 49.165765 | Bk: 0.8000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 79.379711 dB | Power transmitted in OB2 is 62.514329 dB | Power transmitted in OB3 is 72.345629 dB
+MER is 48.609389 | beta for kaiser: 0.900000
+OB1: 79.379711 | OB2: 62.514329 | OB3: 72.345629 | MER: 48.609389 | Bk: 0.9000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 79.462462 dB | Power transmitted in OB2 is 62.893782 dB | Power transmitted in OB3 is 72.719000 dB
+MER is 48.031728 | beta for kaiser: 1.000000
+OB1: 79.462462 | OB2: 62.893782 | OB3: 72.719000 | MER: 48.031728 | Bk: 1.0000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 79.434653 dB | Power transmitted in OB2 is 63.304796 dB | Power transmitted in OB3 is 73.123291 dB
+MER is 47.444734 | beta for kaiser: 1.100000
+OB1: 79.434653 | OB2: 63.304796 | OB3: 73.123291 | MER: 47.444734 | Bk: 1.1000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 79.289437 dB | Power transmitted in OB2 is 63.745428 dB | Power transmitted in OB3 is 73.556558 dB
+MER is 46.858433 | beta for kaiser: 1.200000
+OB1: 79.289437 | OB2: 63.745428 | OB3: 73.556558 | MER: 46.858433 | Bk: 1.2000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 79.093118 dB | Power transmitted in OB2 is 64.213752 dB | Power transmitted in OB3 is 74.016875 dB
+MER is 46.280704 | beta for kaiser: 1.300000
+OB1: 79.093118 | OB2: 64.213752 | OB3: 74.016875 | MER: 46.280704 | Bk: 1.3000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 75.083694 dB | Power transmitted in OB2 is 60.389584 dB | Power transmitted in OB3 is 70.153983 dB
+MER is 44.243662 | beta for kaiser: 1.400000
+OB1: 75.083694 | OB2: 60.389584 | OB3: 70.153983 | MER: 44.243662 | Bk: 1.4000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 78.845355 dB | Power transmitted in OB2 is 64.707891 dB | Power transmitted in OB3 is 74.502364 dB
+MER is 45.717365 | beta for kaiser: 1.400000
+OB1: 78.845355 | OB2: 64.707891 | OB3: 74.502364 | MER: 45.717365 | Bk: 1.4000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 74.843107 dB | Power transmitted in OB2 is 60.906117 dB | Power transmitted in OB3 is 70.662311 dB
+MER is 43.788957 | beta for kaiser: 1.500000
+OB1: 74.843107 | OB2: 60.906117 | OB3: 70.662311 | MER: 43.788957 | Bk: 1.5000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 78.546589 dB | Power transmitted in OB2 is 65.226028 dB | Power transmitted in OB3 is 75.011210 dB
+MER is 45.172437 | beta for kaiser: 1.500000
+OB1: 78.546589 | OB2: 65.226028 | OB3: 75.011210 | MER: 45.172437 | Bk: 1.5000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 74.557772 dB | Power transmitted in OB2 is 61.444806 dB | Power transmitted in OB3 is 71.192227 dB
+MER is 43.344309 | beta for kaiser: 1.600000
+OB1: 74.557772 | OB2: 61.444806 | OB3: 71.192227 | MER: 43.344309 | Bk: 1.6000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 78.198998 dB | Power transmitted in OB2 is 65.766432 dB | Power transmitted in OB3 is 75.541679 dB
+MER is 44.648471 | beta for kaiser: 1.600000
+OB1: 78.198998 | OB2: 65.766432 | OB3: 75.541679 | MER: 44.648471 | Bk: 1.6000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 74.230101 dB | Power transmitted in OB2 is 62.004010 dB | Power transmitted in OB3 is 71.742088 dB
+MER is 42.912353 | beta for kaiser: 1.700000
+OB1: 74.230101 | OB2: 62.004010 | OB3: 71.742088 | MER: 42.912353 | Bk: 1.7000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 77.806180 dB | Power transmitted in OB2 is 66.327459 dB | Power transmitted in OB3 is 76.092131 dB
+MER is 44.146868 | beta for kaiser: 1.700000
+OB1: 77.806180 | OB2: 66.327459 | OB3: 76.092131 | MER: 44.146868 | Bk: 1.7000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 73.863542 dB | Power transmitted in OB2 is 62.582185 dB | Power transmitted in OB3 is 72.310351 dB
+MER is 42.494850 | beta for kaiser: 1.800000
+OB1: 73.863542 | OB2: 62.582185 | OB3: 72.310351 | MER: 42.494850 | Bk: 1.8000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 77.372703 dB | Power transmitted in OB2 is 66.907566 dB | Power transmitted in OB3 is 76.661021 dB
+MER is 43.668169 | beta for kaiser: 1.800000
+OB1: 77.372703 | OB2: 66.907566 | OB3: 76.661021 | MER: 43.668169 | Bk: 1.8000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 73.462207 dB | Power transmitted in OB2 is 63.177888 dB | Power transmitted in OB3 is 72.895573 dB
+MER is 42.092852 | beta for kaiser: 1.900000
+OB1: 73.462207 | OB2: 63.177888 | OB3: 72.895573 | MER: 42.092852 | Bk: 1.9000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 76.903526 dB | Power transmitted in OB2 is 67.505310 dB | Power transmitted in OB3 is 77.246908 dB
+MER is 43.212293 | beta for kaiser: 1.900000
+OB1: 76.903526 | OB2: 67.505310 | OB3: 77.246908 | MER: 43.212293 | Bk: 1.9000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 73.030414 dB | Power transmitted in OB2 is 63.789779 dB | Power transmitted in OB3 is 73.496415 dB
+MER is 41.706864 | beta for kaiser: 2.000000
+OB1: 73.030414 | OB2: 63.789779 | OB3: 73.496415 | MER: 41.706864 | Bk: 2.0000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 76.402885 dB | Power transmitted in OB2 is 68.119351 dB | Power transmitted in OB3 is 77.848452 dB
+MER is 42.778727 | beta for kaiser: 2.000000
+OB1: 76.402885 | OB2: 68.119351 | OB3: 77.848452 | MER: 42.778727 | Bk: 2.0000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 69.394757 dB | Power transmitted in OB2 is 60.275578 dB | Power transmitted in OB3 is 69.996535 dB
+MER is 40.536414 | beta for kaiser: 2.100000
+OB1: 69.394757 | OB2: 60.275578 | OB3: 69.996535 | MER: 40.536414 | Bk: 2.1000
+Beta nominal: 0.1200 | baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 72.571921 dB | Power transmitted in OB2 is 64.416620 dB | Power transmitted in OB3 is 74.111638 dB
+MER is 41.336978 | beta for kaiser: 2.100000
+OB1: 72.571921 | OB2: 64.416620 | OB3: 74.111638 | MER: 41.336978 | Bk: 2.1000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 75.866377 dB | Power transmitted in OB2 is 68.748447 dB | Power transmitted in OB3 is 78.464416 dB
+MER is 42.366668 | beta for kaiser: 2.100000
+OB1: 75.866377 | OB2: 68.748447 | OB3: 78.464416 | MER: 42.366668 | Bk: 2.1000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 68.978869 dB | Power transmitted in OB2 is 60.913516 dB | Power transmitted in OB3 is 70.623840 dB
+MER is 40.204209 | beta for kaiser: 2.200000
+OB1: 68.978869 | OB2: 60.913516 | OB3: 70.623840 | MER: 40.204209 | Bk: 2.2000
+Beta nominal: 0.1200 | baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 72.086486 dB | Power transmitted in OB2 is 65.057269 dB | Power transmitted in OB3 is 74.740102 dB
+MER is 40.982987 | beta for kaiser: 2.200000
+OB1: 72.086486 | OB2: 65.057269 | OB3: 74.740102 | MER: 40.982987 | Bk: 2.2000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 75.304886 dB | Power transmitted in OB2 is 69.391459 dB | Power transmitted in OB3 is 79.093660 dB
+MER is 41.975136 | beta for kaiser: 2.200000
+OB1: 75.304886 | OB2: 69.391459 | OB3: 79.093660 | MER: 41.975136 | Bk: 2.2000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 71.575174 dB | Power transmitted in OB2 is 65.710677 dB | Power transmitted in OB3 is 75.380762 dB
+MER is 40.644470 | beta for kaiser: 2.300000
+OB1: 71.575174 | OB2: 65.710677 | OB3: 75.380762 | MER: 40.644470 | Bk: 2.3000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 74.740818 dB | Power transmitted in OB2 is 70.047336 dB | Power transmitted in OB3 is 79.735137 dB
+MER is 41.603050 | beta for kaiser: 2.300000
+OB1: 74.740818 | OB2: 70.047336 | OB3: 79.735137 | MER: 41.603050 | Bk: 2.3000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 71.059637 dB | Power transmitted in OB2 is 66.375886 dB | Power transmitted in OB3 is 76.032658 dB
+MER is 40.320864 | beta for kaiser: 2.400000
+OB1: 71.059637 | OB2: 66.375886 | OB3: 76.032658 | MER: 40.320864 | Bk: 2.4000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 74.178354 dB | Power transmitted in OB2 is 70.715118 dB | Power transmitted in OB3 is 80.387890 dB
+MER is 41.249285 | beta for kaiser: 2.400000
+OB1: 74.178354 | OB2: 70.715118 | OB3: 80.387890 | MER: 41.249285 | Bk: 2.4000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 70.545723 dB | Power transmitted in OB2 is 67.052017 dB | Power transmitted in OB3 is 76.694916 dB
+MER is 40.011519 | beta for kaiser: 2.500000
+OB1: 70.545723 | OB2: 67.052017 | OB3: 76.694916 | MER: 40.011519 | Bk: 2.5000
+Beta nominal: 0.1300 | baseband bnd frequency: 0.1412 | OB1 bnd frequency: 0.1764 | OB2 bnd frequency: 0.4213 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 73.619746 dB | Power transmitted in OB2 is 71.393927 dB | Power transmitted in OB3 is 81.051046 dB
+MER is 40.912716 | beta for kaiser: 2.500000
+OB1: 73.619746 | OB2: 71.393927 | OB3: 81.051046 | MER: 40.912716 | Bk: 2.5000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 73.066580 dB | Power transmitted in OB2 is 72.082961 dB | Power transmitted in OB3 is 81.723807 dB
+MER is 40.592238 | beta for kaiser: 2.600000
+OB1: 73.066580 | OB2: 72.082961 | OB3: 81.723807 | MER: 40.592238 | Bk: 2.6000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
+
+*************MET SPEC*************************
+Power transmitted in OB1 is 72.520055 dB | Power transmitted in OB2 is 72.781489 dB | Power transmitted in OB3 is 82.405448 dB
+MER is 40.286792 | beta for kaiser: 2.700000
+OB1: 72.520055 | OB2: 72.781489 | OB3: 82.405448 | MER: 40.286792 | Bk: 2.7000
+Beta nominal: 0.1400 | baseband bnd frequency: 0.1425 | OB1 bnd frequency: 0.1777 | OB2 bnd frequency: 0.4225 
+
