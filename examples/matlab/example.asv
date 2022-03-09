@@ -141,9 +141,9 @@ span = (N-1)/4;
 w = [0:0.001:2000]/1000*pi; %one whole cycle
 
 
-for bk = 0:0.1:2
-% for bk = 2:0.1:2
-    for idx_TXnRCV = idx_93(1):(idx_93(end))
+% for bk = 0:0.1:2
+for bk = 2:0.1:2
+    for idx_TXnRCV = idx_97(1):(idx_97(end))
 %     for idx_TXnRCV = idx_97(1):(idx_97(1))
 %     for idx_TXnRCV = 1027:(idx_97(end))
         b_nom = vTX_B(idx_TXnRCV);
@@ -162,7 +162,7 @@ for bk = 0:0.1:2
         fb = [0 fp fc fc fs .5]*2;
         a = [1 1 1/sqrt(2) 1/sqrt(2) 0 0];
         % wght vector needs to 2.4535 for passband
-        wght = [2.4535 1 20];   %10 for N=97; 20 for N=91
+        wght = [2.4535 1 20];
         h_pps = firpm(M,fb,a,wght);
 
         % window
@@ -222,9 +222,9 @@ for bk = 0:0.1:2
             end
         end
         MER_theo = 10*log10( num^2/sum(den.^2) );
-%         fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);
-%         fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",OB1_58,OB2_60,OB3_63,MER_theo,bk, b_nom);
-%         fprintf("baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f | OB3 bnd frequency: %2.4f |\n\n", bb_bnd, OB1_bnd, OB2_bnd, OB3_bnd);
+        fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);
+        fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",OB1_58,OB2_60,OB3_63,MER_theo,bk, b_nom);
+        fprintf("baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f | OB3 bnd frequency: %2.4f |\n\n", bb_bnd, OB1_bnd, OB2_bnd, OB3_bnd);
         if OB1_58 > 58 && OB2_60 > 60 && OB3_63 > 63 && MER_theo >= 40
             fprintf("\n*************MET SPEC*************************\n");
             fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);
