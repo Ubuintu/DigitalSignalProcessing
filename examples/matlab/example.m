@@ -409,9 +409,9 @@ stem(1:31,rcosdesign(0.25,(31-1)/4,4));
 clear
 clc
 format longG
-srrc = round(rcosdesign(0.2,5,4).'*2^8);
+srrc = round(rcosdesign(0.2,(93-1)/4,4).'*2^17);
 
-N=25;
+N=47;
 a_sym_mults = round(N/2);
 a_poly_mults = round(a_sym_mults/4);
 a_time_share_mults = round(a_poly_mults/4); % use 4x faster clk to do operation
