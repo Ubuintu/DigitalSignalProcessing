@@ -21,7 +21,7 @@ reg signed [17:0]	x[20:0];
 (* noprune *) reg signed [17:0] sum_level_1[10:0];
 (* noprune *) reg signed [17:0] sum_level_2[5:0];
 (* noprune *) reg signed [17:0] sum_level_3[2:0];
-(* noprune *) reg signed [17:0] sum_level_4[1:1];
+(* noprune *) reg signed [17:0] sum_level_4[0:0];
 
 
 //sign extend input to prevent overflow in sum_level_1
@@ -101,13 +101,13 @@ always @ *
     end
 			
 always @ *
-    if (reset) sum_level_4[1] = 18'sd0;
-	else sum_level_4[1] = $signed(sum_level_3[0]) + $signed(sum_level_3[1]) + $signed(sum_level_3[2]);
+    if (reset) sum_level_4[0] = 18'sd0;
+	 else sum_level_4[0] = $signed(sum_level_3[0]) + $signed(sum_level_3[1]) + $signed(sum_level_3[2]);
     
 
 always @ (posedge clk)
     if (reset) y = 18'sd0;
-	 else y = $signed(sum_level_4[1]);
+	 else y = $signed(sum_level_4);
 
 	
 //always @ *	//<- Don't use this especially in modelsim

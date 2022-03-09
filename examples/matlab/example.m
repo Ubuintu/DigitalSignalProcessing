@@ -139,12 +139,12 @@ idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=fin
 % w = [0:0.001:1000]/1000*pi; %0-0.5
 w = [0:0.001:2000]/1000*pi; %one whole cycle
 
-N = 89;
+N = 101;
 Nsps = 4;
 span = (N-1)/4;
 for bk = 0:0.1:2
 % for bk = 2:0.1:2
-    for idx_TXnRCV = idx_89(1):(idx_89(end))
+    for idx_TXnRCV = idx_101(1):(idx_101(end))
 %     for idx_TXnRCV = idx_97(1):(idx_97(1))
 %     for idx_TXnRCV = 1027:(idx_97(end))
         b_nom = vTX_B(idx_TXnRCV);
