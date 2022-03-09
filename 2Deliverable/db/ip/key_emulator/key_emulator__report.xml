@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.03.06.13:58:05"
- outputDirectory="A:/School/EE465/EE465/2Deliverable/db/ip/key_emulator/">
+ date="2022.03.08.19:42:14"
+ outputDirectory="/home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -41,33 +41,34 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="key_emulator:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1646596682,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:20.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=KEYS,probe_width=0,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=F,source_width=4)"
+   parameterizationKey="key_emulator:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1646790133,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:20.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=KEYS,probe_width=0,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=F,source_width=4)"
    instancePathKey="key_emulator"
    kind="key_emulator"
    version="1.0"
    name="key_emulator">
-  <parameter name="AUTO_GENERATION_ID" value="1646596682" />
+  <parameter name="AUTO_GENERATION_ID" value="1646790133" />
   <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="A:/School/EE465/EE465/2Deliverable/db/ip/key_emulator/key_emulator.v"
+       path="/home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/key_emulator.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="A:/School/EE465/EE465/2Deliverable/db/ip/key_emulator/submodules/altsource_probe_top.v"
+       path="/home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="A:/School/EE465/EE465/2Deliverable/key_emulator.qsys" />
+   <file
+       path="/home/tob208/engr-ece/Documents/EE465/2Deliverable/key_emulator.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="C:/intelfpga_lite/20.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+       path="/opt/intelFPGA/20.1.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Debug" culprit="key_emulator">queue size: 0 starting:key_emulator "key_emulator"</message>
@@ -108,14 +109,14 @@
   <parameter name="gui_use_auto_index" value="true" />
   <generatedFiles>
    <file
-       path="A:/School/EE465/EE465/2Deliverable/db/ip/key_emulator/submodules/altsource_probe_top.v"
+       path="/home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles/>
   <sourceFiles>
    <file
-       path="C:/intelfpga_lite/20.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+       path="/opt/intelFPGA/20.1.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="key_emulator" as="in_system_sources_probes_0" />

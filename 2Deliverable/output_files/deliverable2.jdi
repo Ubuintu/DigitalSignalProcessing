@@ -264,13 +264,13 @@
   <sld_infos>
     <sld_info hpath="key_emulator:key_emulator_inst" name="key_emulator_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME key_emulator HAS_SOPCINFO 1 GENERATION_ID 1646596682"/>
+        <assignment_value text="QSYS_NAME key_emulator HAS_SOPCINFO 1 GENERATION_ID 1646790133"/>
       </assignment_values>
       <parameters/>
     </sld_info>
     <sld_info hpath="switch_led_emulator:switch_led_emulator_inst" name="switch_led_emulator_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME switch_led_emulator HAS_SOPCINFO 1 GENERATION_ID 1646596673"/>
+        <assignment_value text="QSYS_NAME switch_led_emulator HAS_SOPCINFO 1 GENERATION_ID 1646790127"/>
       </assignment_values>
       <parameters/>
     </sld_info>

@@ -132,18 +132,19 @@ idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=fin
 % beta_Rcv = 0.188000;     %trial 18 i stop counting bruh
 % N = 101;
 % beta_Rcv = vRCV_B;     %trial 18 i stop counting bruh
-N = 93;
+% N = 93;
 
-Nsps = 4;
-span = (N-1)/4;
+
 % digital angular frequency, w (rads/sample)
 % w = [0:0.001:1000]/1000*pi; %0-0.5
 w = [0:0.001:2000]/1000*pi; %one whole cycle
 
-
-% for bk = 0:0.1:2
-for bk = 2:0.1:2
-    for idx_TXnRCV = idx_97(1):(idx_97(end))
+N = 89;
+Nsps = 4;
+span = (N-1)/4;
+for bk = 0:0.1:2
+% for bk = 2:0.1:2
+    for idx_TXnRCV = idx_89(1):(idx_89(end))
 %     for idx_TXnRCV = idx_97(1):(idx_97(1))
 %     for idx_TXnRCV = 1027:(idx_97(end))
         b_nom = vTX_B(idx_TXnRCV);
@@ -162,7 +163,7 @@ for bk = 2:0.1:2
         fb = [0 fp fc fc fs .5]*2;
         a = [1 1 1/sqrt(2) 1/sqrt(2) 0 0];
         % wght vector needs to 2.4535 for passband
-        wght = [2.4535 1 20];
+        wght = [2.4535 1 20];   %10 for N=97; 20 for N=91
         h_pps = firpm(M,fb,a,wght);
 
         % window
@@ -222,9 +223,9 @@ for bk = 2:0.1:2
             end
         end
         MER_theo = 10*log10( num^2/sum(den.^2) );
-        fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);
-        fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",OB1_58,OB2_60,OB3_63,MER_theo,bk, b_nom);
-        fprintf("baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f | OB3 bnd frequency: %2.4f |\n\n", bb_bnd, OB1_bnd, OB2_bnd, OB3_bnd);
+%         fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);
+%         fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",OB1_58,OB2_60,OB3_63,MER_theo,bk, b_nom);
+%         fprintf("baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f | OB3 bnd frequency: %2.4f |\n\n", bb_bnd, OB1_bnd, OB2_bnd, OB3_bnd);
         if OB1_58 > 58 && OB2_60 > 60 && OB3_63 > 63 && MER_theo >= 40
             fprintf("\n*************MET SPEC*************************\n");
             fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);
@@ -403,3 +404,50 @@ hold off
 
 figure(4)
 stem(1:31,rcosdesign(0.25,(31-1)/4,4));
+
+%% Polyphase Time-SHaring Decimator design
+clear
+clc
+format longG
+srrc = round(rcosdesign(0.2,5,4).'*2^8);
+
+N=25;
+a_sym_mults = round(N/2);
+a_poly_mults = round(a_sym_mults/4);
+a_time_share_mults = round(a_poly_mults/4); % use 4x faster clk to do operation
+
+out_ds = zeros(N,N); out_ds(1,1)=1;
+
+% let row=sample & col=y_ds
+for row=1:N
+    for col=1:N
+%         fprintf("row: %d | col: %d | val: %d\n",row,col,row*col);
+%         out_ds(row,col)=row*col;
+        if row==col&&col==1
+%             fprintf("row: %d | col: %d | val: %d\n",row,col,1);
+            out_ds(row,col)=row*col;
+        elseif col==1&&row~=1
+%             fprintf("row: %d | col: %d | val: %d\n",row,col,out_ds(row-1,col)+1);
+            out_ds(row,col)=out_ds(row-1,col)+1;
+        else
+%             fprintf("row: %d | col: %d | val: %d\n",row,col,out_ds(row,col-1)-1);
+                if out_ds(row,col-1)-1>0
+                    out_ds(row,col)=out_ds(row,col-1)-1;
+                else
+                    out_ds(row,col)=0;
+                end
+        end
+    end
+end
+
+for row=1:N
+    for col=1:N
+        if out_ds(row,col)==0
+            N=N;
+        elseif out_ds(row,col)==1
+            fprintf("y%dh%d\n",row,out_ds(row,col));
+        else
+            fprintf("y%dh%d ",row,out_ds(row,col));
+        end
+    end
+end

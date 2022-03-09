@@ -132,18 +132,19 @@ idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=fin
 % beta_Rcv = 0.188000;     %trial 18 i stop counting bruh
 % N = 101;
 % beta_Rcv = vRCV_B;     %trial 18 i stop counting bruh
-N = 93;
+% N = 93;
 
-Nsps = 4;
-span = (N-1)/4;
+
 % digital angular frequency, w (rads/sample)
 % w = [0:0.001:1000]/1000*pi; %0-0.5
 w = [0:0.001:2000]/1000*pi; %one whole cycle
 
-
+N = 89;
+Nsps = 4;
+span = (N-1)/4;
 for bk = 0:0.1:2
 % for bk = 2:0.1:2
-    for idx_TXnRCV = idx_93(1):(idx_93(end))
+    for idx_TXnRCV = idx_89(1):(idx_89(end))
 %     for idx_TXnRCV = idx_97(1):(idx_97(1))
 %     for idx_TXnRCV = 1027:(idx_97(end))
         b_nom = vTX_B(idx_TXnRCV);
@@ -403,3 +404,50 @@ hold off
 
 figure(4)
 stem(1:31,rcosdesign(0.25,(31-1)/4,4));
+
+%% Polyphase Time-SHaring Decimator design
+clear
+clc
+format longG
+srrc = round(rcosdesign(0.2,5,4).'*2^8);
+
+N=25;
+a_sym_mults = round(N/2);
+a_poly_mults = round(a_sym_mults/4);
+a_time_share_mults = round(a_poly_mults/4); % use 4x faster clk to do operation
+
+out_ds = zeros(N,N); out_ds(1,1)=1;
+
+% let row=sample & col=y_ds
+for row=1:N
+    for col=1:N
+%         fprintf("row: %d | col: %d | val: %d\n",row,col,row*col);
+%         out_ds(row,col)=row*col;
+        if row==col&&col==1
+%             fprintf("row: %d | col: %d | val: %d\n",row,col,1);
+            out_ds(row,col)=row*col;
+        elseif col==1&&row~=1
+%             fprintf("row: %d | col: %d | val: %d\n",row,col,out_ds(row-1,col)+1);
+            out_ds(row,col)=out_ds(row-1,col)+1;
+        else
+%             fprintf("row: %d | col: %d | val: %d\n",row,col,out_ds(row,col-1)-1);
+                if out_ds(row,col-1)-1>0
+                    out_ds(row,col)=out_ds(row,col-1)-1;
+                else
+                    out_ds(row,col)=0;
+                end
+        end
+    end
+end
+
+for row=1:N
+    for col=1:N
+        if out_ds(row,col)==0
+            N=N;
+        elseif out_ds(row,col)==1
+            fprintf("y%dh%d\n",col,out_ds(row,col));
+        else
+            fprintf("y%dh%d ",col,out_ds(row,col));
+        end
+    end
+end
