@@ -438,7 +438,8 @@ MER_prac_MF = 10*log10( num_p_MF^2/sum(den_p_MF.^2) );
 
 fprintf('Practical MER for TX w/o Multipliers is: %2.8f\n\n',MER_prac_MF);
 
-
+num_of_sumLvls=1;
+for
 
 %% TX filter coefficient implementation
 % Use filter coefficients based on their MER

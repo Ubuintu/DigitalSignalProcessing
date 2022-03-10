@@ -1,9 +1,9 @@
 module GSPS_filt #(
     parameter WIDTH=18,
-    parameter SUM1WID=11,
-    parameter SUM2WID=6,
-    parameter SUM3WID=3,
-    parameter SUM4WID=1
+    parameter SUMLVL=6,
+    parameter LENGTH=93,
+    parameter POSSMAPPER=7,
+    parameter integer SUMLVLWID [SUMLVL-1:0]={46,23,11,5,2,1}
 )
 (
     input sys_clk, sam_clk_en, sym_clk_en, reset,

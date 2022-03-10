@@ -141,7 +141,7 @@ idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=fin
 % w = [0:0.001:1000]/1000*pi; %0-0.5
 w = [0:0.001:2000]/1000*pi; %one whole cycle
 
-N = 101;
+N = 89;
 Nsps = 4;
 span = (N-1)/4;
 for bk = 0:0.1:2
@@ -415,7 +415,7 @@ clc
 format longG
 srrc = round(rcosdesign(0.2,(93-1)/4,4).'*2^17);
 
-N=47;
+N=93;
 a_sym_mults = round(N/2);
 a_poly_mults = round(a_sym_mults/4);
 a_time_share_mults = round(a_poly_mults/4); % use 4x faster clk to do operation
@@ -446,7 +446,7 @@ end
 
 for row=1:N
     for col=1:N
-        if out_ds(row,col)==0
+        if out_ds(row,col)==0 || out_ds(row,col)>round(N/2)
             N=N;
         elseif out_ds(row,col)==1
             fprintf("y%dh%d\n",col,out_ds(row,col));

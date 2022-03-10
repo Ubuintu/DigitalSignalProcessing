@@ -1,0 +1,1772 @@
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1870 | idx TX & RCV: 139
+OB1: 60.074726 | OB2: 64.292946 | OB3: 63.130244 | MER: 40.143004 | Bk: 0.0000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1910 | idx TX & RCV: 140
+OB1: 60.074726 | OB2: 64.292946 | OB3: 63.130244 | MER: 40.514015 | Bk: 0.0000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1950 | idx TX & RCV: 141
+OB1: 60.074726 | OB2: 64.292946 | OB3: 63.130244 | MER: 40.905162 | Bk: 0.0000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1990 | idx TX & RCV: 142
+OB1: 60.074726 | OB2: 64.292946 | OB3: 63.130244 | MER: 41.315502 | Bk: 0.0000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.1960 | idx TX & RCV: 169
+OB1: 59.582995 | OB2: 65.417725 | OB3: 64.251163 | MER: 40.082575 | Bk: 0.0000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.2000 | idx TX & RCV: 170
+OB1: 59.582995 | OB2: 65.417725 | OB3: 64.251163 | MER: 40.512842 | Bk: 0.0000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1950 | idx TX & RCV: 179
+OB1: 59.329933 | OB2: 65.629601 | OB3: 64.461666 | MER: 40.264818 | Bk: 0.0000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1990 | idx TX & RCV: 180
+OB1: 59.329933 | OB2: 65.629601 | OB3: 64.461666 | MER: 40.696133 | Bk: 0.0000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1900 | idx TX & RCV: 188
+OB1: 59.079587 | OB2: 65.841356 | OB3: 64.672736 | MER: 40.041630 | Bk: 0.0000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1940 | idx TX & RCV: 189
+OB1: 59.079587 | OB2: 65.841356 | OB3: 64.672736 | MER: 40.447006 | Bk: 0.0000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1980 | idx TX & RCV: 190
+OB1: 59.079587 | OB2: 65.841356 | OB3: 64.672736 | MER: 40.879302 | Bk: 0.0000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1890 | idx TX & RCV: 198
+OB1: 58.831976 | OB2: 66.053159 | OB3: 64.883219 | MER: 40.222966 | Bk: 0.0000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1930 | idx TX & RCV: 199
+OB1: 58.831976 | OB2: 66.053159 | OB3: 64.883219 | MER: 40.629132 | Bk: 0.0000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1970 | idx TX & RCV: 200
+OB1: 58.831976 | OB2: 66.053159 | OB3: 64.883219 | MER: 41.062350 | Bk: 0.0000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1850 | RCV's β: 0.1990 | idx TX & RCV: 222
+OB1: 58.606788 | OB2: 66.971250 | OB3: 65.810171 | MER: 40.058430 | Bk: 0.0000 | Beta nominal: 0.1850 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1860 | RCV's β: 0.1980 | idx TX & RCV: 233
+OB1: 58.363813 | OB2: 67.181217 | OB3: 66.012940 | MER: 40.235389 | Bk: 0.0000 | Beta nominal: 0.1860 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1870 | RCV's β: 0.1970 | idx TX & RCV: 243
+OB1: 58.123588 | OB2: 67.391426 | OB3: 66.222304 | MER: 40.412054 | Bk: 0.0000 | Beta nominal: 0.1870 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1870 | idx TX & RCV: 139
+OB1: 60.045024 | OB2: 64.315241 | OB3: 63.150852 | MER: 40.150145 | Bk: 0.1000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1910 | idx TX & RCV: 140
+OB1: 60.045024 | OB2: 64.315241 | OB3: 63.150852 | MER: 40.520956 | Bk: 0.1000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1950 | idx TX & RCV: 141
+OB1: 60.045024 | OB2: 64.315241 | OB3: 63.150852 | MER: 40.911926 | Bk: 0.1000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1990 | idx TX & RCV: 142
+OB1: 60.045024 | OB2: 64.315241 | OB3: 63.150852 | MER: 41.322111 | Bk: 0.1000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.1960 | idx TX & RCV: 169
+OB1: 59.553763 | OB2: 65.440080 | OB3: 64.271712 | MER: 40.089811 | Bk: 0.1000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.2000 | idx TX & RCV: 170
+OB1: 59.553763 | OB2: 65.440080 | OB3: 64.271712 | MER: 40.520062 | Bk: 0.1000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1950 | idx TX & RCV: 179
+OB1: 59.301067 | OB2: 65.651954 | OB3: 64.482256 | MER: 40.272005 | Bk: 0.1000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1990 | idx TX & RCV: 180
+OB1: 59.301067 | OB2: 65.651954 | OB3: 64.482256 | MER: 40.703272 | Bk: 0.1000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1900 | idx TX & RCV: 188
+OB1: 59.051088 | OB2: 65.863707 | OB3: 64.693364 | MER: 40.048886 | Bk: 0.1000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1940 | idx TX & RCV: 189
+OB1: 59.051088 | OB2: 65.863707 | OB3: 64.693364 | MER: 40.454150 | Bk: 0.1000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1980 | idx TX & RCV: 190
+OB1: 59.051088 | OB2: 65.863707 | OB3: 64.693364 | MER: 40.886364 | Bk: 0.1000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1890 | idx TX & RCV: 198
+OB1: 58.803843 | OB2: 66.075510 | OB3: 64.903884 | MER: 40.230215 | Bk: 0.1000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1930 | idx TX & RCV: 199
+OB1: 58.803843 | OB2: 66.075510 | OB3: 64.903884 | MER: 40.636238 | Bk: 0.1000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1970 | idx TX & RCV: 200
+OB1: 58.803843 | OB2: 66.075510 | OB3: 64.903884 | MER: 41.069338 | Bk: 0.1000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1850 | RCV's β: 0.1990 | idx TX & RCV: 222
+OB1: 58.578888 | OB2: 66.993664 | OB3: 65.830745 | MER: 40.065745 | Bk: 0.1000 | Beta nominal: 0.1850 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1860 | RCV's β: 0.1980 | idx TX & RCV: 233
+OB1: 58.336290 | OB2: 67.203628 | OB3: 66.033554 | MER: 40.242666 | Bk: 0.1000 | Beta nominal: 0.1860 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1870 | RCV's β: 0.1970 | idx TX & RCV: 243
+OB1: 58.096438 | OB2: 67.413837 | OB3: 66.242957 | MER: 40.419297 | Bk: 0.1000 | Beta nominal: 0.1870 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1920 | idx TX & RCV: 131
+OB1: 60.215447 | OB2: 64.168344 | OB3: 63.000446 | MER: 40.348994 | Bk: 0.2000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1960 | idx TX & RCV: 132
+OB1: 60.215447 | OB2: 64.168344 | OB3: 63.000446 | MER: 40.738522 | Bk: 0.2000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.2000 | idx TX & RCV: 133
+OB1: 60.215447 | OB2: 64.168344 | OB3: 63.000446 | MER: 41.147414 | Bk: 0.2000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1870 | idx TX & RCV: 139
+OB1: 59.956444 | OB2: 64.381964 | OB3: 63.212513 | MER: 40.171089 | Bk: 0.2000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1910 | idx TX & RCV: 140
+OB1: 59.956444 | OB2: 64.381964 | OB3: 63.212513 | MER: 40.541269 | Bk: 0.2000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1950 | idx TX & RCV: 141
+OB1: 59.956444 | OB2: 64.381964 | OB3: 63.212513 | MER: 40.931664 | Bk: 0.2000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1990 | idx TX & RCV: 142
+OB1: 59.956444 | OB2: 64.381964 | OB3: 63.212513 | MER: 41.341336 | Bk: 0.2000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.1960 | idx TX & RCV: 169
+OB1: 59.466631 | OB2: 65.506985 | OB3: 64.333198 | MER: 40.111070 | Bk: 0.2000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.2000 | idx TX & RCV: 170
+OB1: 59.466631 | OB2: 65.506985 | OB3: 64.333198 | MER: 40.541233 | Bk: 0.2000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1950 | idx TX & RCV: 179
+OB1: 59.215036 | OB2: 65.718850 | OB3: 64.543862 | MER: 40.293106 | Bk: 0.2000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1990 | idx TX & RCV: 180
+OB1: 59.215036 | OB2: 65.718850 | OB3: 64.543862 | MER: 40.724187 | Bk: 0.2000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1900 | idx TX & RCV: 188
+OB1: 58.966157 | OB2: 65.930599 | OB3: 64.755087 | MER: 40.070218 | Bk: 0.2000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1940 | idx TX & RCV: 189
+OB1: 58.966157 | OB2: 65.930599 | OB3: 64.755087 | MER: 40.475107 | Bk: 0.2000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1980 | idx TX & RCV: 190
+OB1: 58.966157 | OB2: 65.930599 | OB3: 64.755087 | MER: 40.907032 | Bk: 0.2000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1890 | idx TX & RCV: 198
+OB1: 58.720010 | OB2: 66.142402 | OB3: 64.965720 | MER: 40.251515 | Bk: 0.2000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1930 | idx TX & RCV: 199
+OB1: 58.720010 | OB2: 66.142402 | OB3: 64.965720 | MER: 40.657068 | Bk: 0.2000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1970 | idx TX & RCV: 200
+OB1: 58.720010 | OB2: 66.142402 | OB3: 64.965720 | MER: 41.089773 | Bk: 0.2000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1850 | RCV's β: 0.1990 | idx TX & RCV: 222
+OB1: 58.495773 | OB2: 67.060741 | OB3: 65.892306 | MER: 40.087268 | Bk: 0.2000 | Beta nominal: 0.1850 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1860 | RCV's β: 0.1980 | idx TX & RCV: 233
+OB1: 58.254300 | OB2: 67.270701 | OB3: 66.095235 | MER: 40.264063 | Bk: 0.2000 | Beta nominal: 0.1860 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1870 | RCV's β: 0.1930 | idx TX & RCV: 242
+OB1: 58.015564 | OB2: 67.480910 | OB3: 66.304756 | MER: 40.007153 | Bk: 0.2000 | Beta nominal: 0.1870 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1870 | RCV's β: 0.1970 | idx TX & RCV: 243
+OB1: 58.015564 | OB2: 67.480910 | OB3: 66.304756 | MER: 40.440582 | Bk: 0.2000 | Beta nominal: 0.1870 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1880 | idx TX & RCV: 130
+OB1: 60.067859 | OB2: 64.279024 | OB3: 63.102485 | MER: 40.013242 | Bk: 0.3000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1920 | idx TX & RCV: 131
+OB1: 60.067859 | OB2: 64.279024 | OB3: 63.102485 | MER: 40.381541 | Bk: 0.3000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1960 | idx TX & RCV: 132
+OB1: 60.067859 | OB2: 64.279024 | OB3: 63.102485 | MER: 40.770173 | Bk: 0.3000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.2000 | idx TX & RCV: 133
+OB1: 60.067859 | OB2: 64.279024 | OB3: 63.102485 | MER: 41.178269 | Bk: 0.3000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1870 | idx TX & RCV: 139
+OB1: 59.810581 | OB2: 64.492634 | OB3: 63.314750 | MER: 40.204428 | Bk: 0.3000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1910 | idx TX & RCV: 140
+OB1: 59.810581 | OB2: 64.492634 | OB3: 63.314750 | MER: 40.573439 | Bk: 0.3000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1950 | idx TX & RCV: 141
+OB1: 59.810581 | OB2: 64.492634 | OB3: 63.314750 | MER: 40.962742 | Bk: 0.3000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1990 | idx TX & RCV: 142
+OB1: 59.810581 | OB2: 64.492634 | OB3: 63.314750 | MER: 41.371401 | Bk: 0.3000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.1960 | idx TX & RCV: 169
+OB1: 59.323297 | OB2: 65.617958 | OB3: 64.435142 | MER: 40.145024 | Bk: 0.3000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.2000 | idx TX & RCV: 170
+OB1: 59.323297 | OB2: 65.617958 | OB3: 64.435142 | MER: 40.574909 | Bk: 0.3000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1950 | idx TX & RCV: 179
+OB1: 59.073539 | OB2: 65.829809 | OB3: 64.646008 | MER: 40.326757 | Bk: 0.3000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1990 | idx TX & RCV: 180
+OB1: 59.073539 | OB2: 65.829809 | OB3: 64.646008 | MER: 40.757391 | Bk: 0.3000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1900 | idx TX & RCV: 188
+OB1: 58.826492 | OB2: 66.041550 | OB3: 64.857427 | MER: 40.104329 | Bk: 0.3000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1940 | idx TX & RCV: 189
+OB1: 58.826492 | OB2: 66.041550 | OB3: 64.857427 | MER: 40.508477 | Bk: 0.3000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1980 | idx TX & RCV: 190
+OB1: 58.826492 | OB2: 66.041550 | OB3: 64.857427 | MER: 40.939781 | Bk: 0.3000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1890 | idx TX & RCV: 198
+OB1: 58.582171 | OB2: 66.253353 | OB3: 65.068247 | MER: 40.285533 | Bk: 0.3000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1930 | idx TX & RCV: 199
+OB1: 58.582171 | OB2: 66.253353 | OB3: 65.068247 | MER: 40.690183 | Bk: 0.3000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1970 | idx TX & RCV: 200
+OB1: 58.582171 | OB2: 66.253353 | OB3: 65.068247 | MER: 41.122085 | Bk: 0.3000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1850 | RCV's β: 0.1990 | idx TX & RCV: 222
+OB1: 58.359188 | OB2: 67.172000 | OB3: 65.994376 | MER: 40.121754 | Bk: 0.3000 | Beta nominal: 0.1850 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1860 | RCV's β: 0.1980 | idx TX & RCV: 233
+OB1: 58.119579 | OB2: 67.381954 | OB3: 66.197505 | MER: 40.298304 | Bk: 0.3000 | Beta nominal: 0.1860 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1930 | idx TX & RCV: 123
+OB1: 60.122483 | OB2: 64.219103 | OB3: 63.031224 | MER: 40.232732 | Bk: 0.4000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1970 | idx TX & RCV: 124
+OB1: 60.122483 | OB2: 64.219103 | OB3: 63.031224 | MER: 40.619425 | Bk: 0.4000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1880 | idx TX & RCV: 130
+OB1: 59.864954 | OB2: 64.432870 | OB3: 63.244242 | MER: 40.057061 | Bk: 0.4000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1920 | idx TX & RCV: 131
+OB1: 59.864954 | OB2: 64.432870 | OB3: 63.244242 | MER: 40.423743 | Bk: 0.4000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1960 | idx TX & RCV: 132
+OB1: 59.864954 | OB2: 64.432870 | OB3: 63.244242 | MER: 40.810853 | Bk: 0.4000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.2000 | idx TX & RCV: 133
+OB1: 59.864954 | OB2: 64.432870 | OB3: 63.244242 | MER: 41.217527 | Bk: 0.4000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1870 | idx TX & RCV: 139
+OB1: 59.610121 | OB2: 64.646467 | OB3: 63.456783 | MER: 40.247880 | Bk: 0.4000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1910 | idx TX & RCV: 140
+OB1: 59.610121 | OB2: 64.646467 | OB3: 63.456783 | MER: 40.615018 | Bk: 0.4000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1950 | idx TX & RCV: 141
+OB1: 59.610121 | OB2: 64.646467 | OB3: 63.456783 | MER: 41.002517 | Bk: 0.4000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1990 | idx TX & RCV: 142
+OB1: 59.610121 | OB2: 64.646467 | OB3: 63.456783 | MER: 41.409441 | Bk: 0.4000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1790 | RCV's β: 0.1970 | idx TX & RCV: 160
+OB1: 59.376503 | OB2: 65.560677 | OB3: 64.370417 | MER: 40.008239 | Bk: 0.4000 | Beta nominal: 0.1790 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.1960 | idx TX & RCV: 169
+OB1: 59.126587 | OB2: 65.772214 | OB3: 64.576765 | MER: 40.189522 | Bk: 0.4000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.2000 | idx TX & RCV: 170
+OB1: 59.126587 | OB2: 65.772214 | OB3: 64.576765 | MER: 40.618751 | Bk: 0.4000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1950 | idx TX & RCV: 179
+OB1: 58.879396 | OB2: 65.984045 | OB3: 64.787913 | MER: 40.370749 | Bk: 0.4000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1990 | idx TX & RCV: 180
+OB1: 58.879396 | OB2: 65.984045 | OB3: 64.787913 | MER: 40.800483 | Bk: 0.4000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1900 | idx TX & RCV: 188
+OB1: 58.634907 | OB2: 66.195776 | OB3: 64.999604 | MER: 40.149121 | Bk: 0.4000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1940 | idx TX & RCV: 189
+OB1: 58.634907 | OB2: 66.195776 | OB3: 64.999604 | MER: 40.551992 | Bk: 0.4000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1980 | idx TX & RCV: 190
+OB1: 58.634907 | OB2: 66.195776 | OB3: 64.999604 | MER: 40.982141 | Bk: 0.4000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1890 | idx TX & RCV: 198
+OB1: 58.393128 | OB2: 66.407579 | OB3: 65.210686 | MER: 40.330113 | Bk: 0.4000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1930 | idx TX & RCV: 199
+OB1: 58.393128 | OB2: 66.407579 | OB3: 65.210686 | MER: 40.733253 | Bk: 0.4000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1970 | idx TX & RCV: 200
+OB1: 58.393128 | OB2: 66.407579 | OB3: 65.210686 | MER: 41.163737 | Bk: 0.4000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1850 | RCV's β: 0.1990 | idx TX & RCV: 222
+OB1: 58.172003 | OB2: 67.326658 | OB3: 66.136176 | MER: 40.167187 | Bk: 0.4000 | Beta nominal: 0.1850 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1930 | idx TX & RCV: 123
+OB1: 59.864874 | OB2: 64.415082 | OB3: 63.211272 | MER: 40.282399 | Bk: 0.5000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1970 | idx TX & RCV: 124
+OB1: 59.864874 | OB2: 64.415082 | OB3: 63.211272 | MER: 40.667060 | Bk: 0.5000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1880 | idx TX & RCV: 130
+OB1: 59.610507 | OB2: 64.628819 | OB3: 63.424658 | MER: 40.108195 | Bk: 0.5000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1920 | idx TX & RCV: 131
+OB1: 59.610507 | OB2: 64.628819 | OB3: 63.424658 | MER: 40.472421 | Bk: 0.5000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1960 | idx TX & RCV: 132
+OB1: 59.610507 | OB2: 64.628819 | OB3: 63.424658 | MER: 40.857139 | Bk: 0.5000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.2000 | idx TX & RCV: 133
+OB1: 59.610507 | OB2: 64.628819 | OB3: 63.424658 | MER: 41.261476 | Bk: 0.5000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1870 | idx TX & RCV: 139
+OB1: 59.358845 | OB2: 64.842398 | OB3: 63.637555 | MER: 40.298395 | Bk: 0.5000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1910 | idx TX & RCV: 140
+OB1: 59.358845 | OB2: 64.842398 | OB3: 63.637555 | MER: 40.662739 | Bk: 0.5000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1950 | idx TX & RCV: 141
+OB1: 59.358845 | OB2: 64.842398 | OB3: 63.637555 | MER: 41.047471 | Bk: 0.5000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1990 | idx TX & RCV: 142
+OB1: 59.358845 | OB2: 64.842398 | OB3: 63.637555 | MER: 41.451643 | Bk: 0.5000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1790 | RCV's β: 0.1970 | idx TX & RCV: 160
+OB1: 59.127039 | OB2: 65.757190 | OB3: 64.550292 | MER: 40.061212 | Bk: 0.5000 | Beta nominal: 0.1790 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.1960 | idx TX & RCV: 169
+OB1: 58.880419 | OB2: 65.968689 | OB3: 64.757011 | MER: 40.241683 | Bk: 0.5000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.2000 | idx TX & RCV: 170
+OB1: 58.880419 | OB2: 65.968689 | OB3: 64.757011 | MER: 40.669626 | Bk: 0.5000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1910 | idx TX & RCV: 178
+OB1: 58.636507 | OB2: 66.180495 | OB3: 64.968520 | MER: 40.021321 | Bk: 0.5000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1950 | idx TX & RCV: 179
+OB1: 58.636507 | OB2: 66.180495 | OB3: 64.968520 | MER: 40.422127 | Bk: 0.5000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1990 | idx TX & RCV: 180
+OB1: 58.636507 | OB2: 66.180495 | OB3: 64.968520 | MER: 40.850247 | Bk: 0.5000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1900 | idx TX & RCV: 188
+OB1: 58.395275 | OB2: 66.392214 | OB3: 65.180562 | MER: 40.201783 | Bk: 0.5000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1940 | idx TX & RCV: 189
+OB1: 58.395275 | OB2: 66.392214 | OB3: 65.180562 | MER: 40.602618 | Bk: 0.5000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1980 | idx TX & RCV: 190
+OB1: 58.395275 | OB2: 66.392214 | OB3: 65.180562 | MER: 41.030813 | Bk: 0.5000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1850 | idx TX & RCV: 197
+OB1: 58.156729 | OB2: 66.604016 | OB3: 65.391980 | MER: 40.008078 | Bk: 0.5000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1890 | idx TX & RCV: 198
+OB1: 58.156729 | OB2: 66.604016 | OB3: 65.391980 | MER: 40.382370 | Bk: 0.5000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1930 | idx TX & RCV: 199
+OB1: 58.156729 | OB2: 66.604016 | OB3: 65.391980 | MER: 40.783163 | Bk: 0.5000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1830 | RCV's β: 0.1970 | idx TX & RCV: 200
+OB1: 58.156729 | OB2: 66.604016 | OB3: 65.391980 | MER: 41.211342 | Bk: 0.5000 | Beta nominal: 0.1830 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1840 | RCV's β: 0.2000 | idx TX & RCV: 211
+OB1: 58.174591 | OB2: 67.314480 | OB3: 66.112250 | MER: 40.045150 | Bk: 0.5000 | Beta nominal: 0.1840 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1730 | RCV's β: 0.1990 | idx TX & RCV: 107
+OB1: 60.068920 | OB2: 64.225419 | OB3: 63.006905 | MER: 40.340878 | Bk: 0.6000 | Beta nominal: 0.1730 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1940 | idx TX & RCV: 115
+OB1: 59.813030 | OB2: 64.438398 | OB3: 63.216225 | MER: 40.146839 | Bk: 0.6000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1980 | idx TX & RCV: 116
+OB1: 59.813030 | OB2: 64.438398 | OB3: 63.216225 | MER: 40.528730 | Bk: 0.6000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1930 | idx TX & RCV: 123
+OB1: 59.559844 | OB2: 64.651858 | OB3: 63.428598 | MER: 40.335161 | Bk: 0.6000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1970 | idx TX & RCV: 124
+OB1: 59.559844 | OB2: 64.651858 | OB3: 63.428598 | MER: 40.716726 | Bk: 0.6000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1880 | idx TX & RCV: 130
+OB1: 59.309361 | OB2: 64.865560 | OB3: 63.642435 | MER: 40.163073 | Bk: 0.6000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1920 | idx TX & RCV: 131
+OB1: 59.309361 | OB2: 64.865560 | OB3: 63.642435 | MER: 40.523760 | Bk: 0.6000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1960 | idx TX & RCV: 132
+OB1: 59.309361 | OB2: 64.865560 | OB3: 63.642435 | MER: 40.904927 | Bk: 0.6000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.2000 | idx TX & RCV: 133
+OB1: 59.309361 | OB2: 64.865560 | OB3: 63.642435 | MER: 41.305681 | Bk: 0.6000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1830 | idx TX & RCV: 138
+OB1: 59.061577 | OB2: 65.079118 | OB3: 63.855765 | MER: 40.012423 | Bk: 0.6000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1870 | idx TX & RCV: 139
+OB1: 59.061577 | OB2: 65.079118 | OB3: 63.855765 | MER: 40.352306 | Bk: 0.6000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1910 | idx TX & RCV: 140
+OB1: 59.061577 | OB2: 65.079118 | OB3: 63.855765 | MER: 40.712685 | Bk: 0.6000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1950 | idx TX & RCV: 141
+OB1: 59.061577 | OB2: 65.079118 | OB3: 63.855765 | MER: 41.093394 | Bk: 0.6000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1990 | idx TX & RCV: 142
+OB1: 59.061577 | OB2: 65.079118 | OB3: 63.855765 | MER: 41.493458 | Bk: 0.6000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1790 | RCV's β: 0.1970 | idx TX & RCV: 160
+OB1: 58.832352 | OB2: 65.994619 | OB3: 64.767407 | MER: 40.118743 | Bk: 0.6000 | Beta nominal: 0.1790 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.1960 | idx TX & RCV: 169
+OB1: 58.589712 | OB2: 66.206073 | OB3: 64.974579 | MER: 40.298039 | Bk: 0.6000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.2000 | idx TX & RCV: 170
+OB1: 58.589712 | OB2: 66.206073 | OB3: 64.974579 | MER: 40.723765 | Bk: 0.6000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1910 | idx TX & RCV: 178
+OB1: 58.349749 | OB2: 66.417849 | OB3: 65.186530 | MER: 40.079203 | Bk: 0.6000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1950 | idx TX & RCV: 179
+OB1: 58.349749 | OB2: 66.417849 | OB3: 65.186530 | MER: 40.477333 | Bk: 0.6000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1990 | idx TX & RCV: 180
+OB1: 58.349749 | OB2: 66.417849 | OB3: 65.186530 | MER: 40.902820 | Bk: 0.6000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1900 | idx TX & RCV: 188
+OB1: 58.112431 | OB2: 66.629552 | OB3: 65.398999 | MER: 40.258928 | Bk: 0.6000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1940 | idx TX & RCV: 189
+OB1: 58.112431 | OB2: 66.629552 | OB3: 65.398999 | MER: 40.656703 | Bk: 0.6000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1820 | RCV's β: 0.1980 | idx TX & RCV: 190
+OB1: 58.112431 | OB2: 66.629552 | OB3: 65.398999 | MER: 41.081834 | Bk: 0.6000 | Beta nominal: 0.1820 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1730 | RCV's β: 0.1950 | idx TX & RCV: 106
+OB1: 59.713115 | OB2: 64.501615 | OB3: 63.258886 | MER: 40.014419 | Bk: 0.7000 | Beta nominal: 0.1730 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1730 | RCV's β: 0.1990 | idx TX & RCV: 107
+OB1: 59.713115 | OB2: 64.501615 | OB3: 63.258886 | MER: 40.393142 | Bk: 0.7000 | Beta nominal: 0.1730 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1940 | idx TX & RCV: 115
+OB1: 59.461814 | OB2: 64.714513 | OB3: 63.468772 | MER: 40.200525 | Bk: 0.7000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1980 | idx TX & RCV: 116
+OB1: 59.461814 | OB2: 64.714513 | OB3: 63.468772 | MER: 40.578492 | Bk: 0.7000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1890 | idx TX & RCV: 122
+OB1: 59.213206 | OB2: 64.927913 | OB3: 63.681693 | MER: 40.030296 | Bk: 0.7000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1930 | idx TX & RCV: 123
+OB1: 59.213206 | OB2: 64.927913 | OB3: 63.681693 | MER: 40.386871 | Bk: 0.7000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1970 | idx TX & RCV: 124
+OB1: 59.213206 | OB2: 64.927913 | OB3: 63.681693 | MER: 40.763980 | Bk: 0.7000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1880 | idx TX & RCV: 130
+OB1: 58.967285 | OB2: 65.141572 | OB3: 63.896062 | MER: 40.217705 | Bk: 0.7000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1920 | idx TX & RCV: 131
+OB1: 58.967285 | OB2: 65.141572 | OB3: 63.896062 | MER: 40.573511 | Bk: 0.7000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1960 | idx TX & RCV: 132
+OB1: 58.967285 | OB2: 65.141572 | OB3: 63.896062 | MER: 40.949670 | Bk: 0.7000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.2000 | idx TX & RCV: 133
+OB1: 58.967285 | OB2: 65.141572 | OB3: 63.896062 | MER: 41.345245 | Bk: 0.7000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1830 | idx TX & RCV: 138
+OB1: 58.724039 | OB2: 65.355106 | OB3: 64.109906 | MER: 40.070897 | Bk: 0.7000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1870 | idx TX & RCV: 139
+OB1: 58.724039 | OB2: 65.355106 | OB3: 64.109906 | MER: 40.405519 | Bk: 0.7000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1910 | idx TX & RCV: 140
+OB1: 58.724039 | OB2: 65.355106 | OB3: 64.109906 | MER: 40.760499 | Bk: 0.7000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1950 | idx TX & RCV: 141
+OB1: 58.724039 | OB2: 65.355106 | OB3: 64.109906 | MER: 41.135627 | Bk: 0.7000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1990 | idx TX & RCV: 142
+OB1: 58.724039 | OB2: 65.355106 | OB3: 64.109906 | MER: 41.529880 | Bk: 0.7000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1790 | RCV's β: 0.1970 | idx TX & RCV: 160
+OB1: 58.498250 | OB2: 66.271445 | OB3: 65.020254 | MER: 40.177035 | Bk: 0.7000 | Beta nominal: 0.1790 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.1960 | idx TX & RCV: 169
+OB1: 58.260209 | OB2: 66.482846 | OB3: 65.227961 | MER: 40.354697 | Bk: 0.7000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1800 | RCV's β: 0.2000 | idx TX & RCV: 170
+OB1: 58.260209 | OB2: 66.482846 | OB3: 65.227961 | MER: 40.776953 | Bk: 0.7000 | Beta nominal: 0.1800 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1910 | idx TX & RCV: 178
+OB1: 58.024798 | OB2: 66.694587 | OB3: 65.440434 | MER: 40.138146 | Bk: 0.7000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1950 | idx TX & RCV: 179
+OB1: 58.024798 | OB2: 66.694587 | OB3: 65.440434 | MER: 40.532380 | Bk: 0.7000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1810 | RCV's β: 0.1990 | idx TX & RCV: 180
+OB1: 58.024798 | OB2: 66.694587 | OB3: 65.440434 | MER: 40.953886 | Bk: 0.7000 | Beta nominal: 0.1810 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1730 | RCV's β: 0.1950 | idx TX & RCV: 106
+OB1: 59.320965 | OB2: 64.815422 | OB3: 63.544793 | MER: 40.065935 | Bk: 0.8000 | Beta nominal: 0.1730 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1730 | RCV's β: 0.1990 | idx TX & RCV: 107
+OB1: 59.320965 | OB2: 64.815422 | OB3: 63.544793 | MER: 40.439786 | Bk: 0.8000 | Beta nominal: 0.1730 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1940 | idx TX & RCV: 115
+OB1: 59.074895 | OB2: 65.028228 | OB3: 63.755330 | MER: 40.249442 | Bk: 0.8000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1980 | idx TX & RCV: 116
+OB1: 59.074895 | OB2: 65.028228 | OB3: 63.755330 | MER: 40.621932 | Bk: 0.8000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1890 | idx TX & RCV: 122
+OB1: 58.831486 | OB2: 65.241558 | OB3: 63.968886 | MER: 40.082495 | Bk: 0.8000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1930 | idx TX & RCV: 123
+OB1: 58.831486 | OB2: 65.241558 | OB3: 63.968886 | MER: 40.433190 | Bk: 0.8000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1970 | idx TX & RCV: 124
+OB1: 58.831486 | OB2: 65.241558 | OB3: 63.968886 | MER: 40.804196 | Bk: 0.8000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1880 | idx TX & RCV: 130
+OB1: 58.590725 | OB2: 65.455170 | OB3: 64.183868 | MER: 40.267899 | Bk: 0.8000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1920 | idx TX & RCV: 131
+OB1: 58.590725 | OB2: 65.455170 | OB3: 64.183868 | MER: 40.617239 | Bk: 0.8000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1960 | idx TX & RCV: 132
+OB1: 58.590725 | OB2: 65.455170 | OB3: 64.183868 | MER: 40.986648 | Bk: 0.8000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.2000 | idx TX & RCV: 133
+OB1: 58.590725 | OB2: 65.455170 | OB3: 64.183868 | MER: 41.375124 | Bk: 0.8000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1830 | idx TX & RCV: 138
+OB1: 58.352597 | OB2: 65.668677 | OB3: 64.398303 | MER: 40.125915 | Bk: 0.8000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1870 | idx TX & RCV: 139
+OB1: 58.352597 | OB2: 65.668677 | OB3: 64.398303 | MER: 40.453739 | Bk: 0.8000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1910 | idx TX & RCV: 140
+OB1: 58.352597 | OB2: 65.668677 | OB3: 64.398303 | MER: 40.801645 | Bk: 0.8000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1950 | idx TX & RCV: 141
+OB1: 58.352597 | OB2: 65.668677 | OB3: 64.398303 | MER: 41.169355 | Bk: 0.8000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1770 | RCV's β: 0.1990 | idx TX & RCV: 142
+OB1: 58.352597 | OB2: 65.668677 | OB3: 64.398303 | MER: 41.555772 | Bk: 0.8000 | Beta nominal: 0.1770 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1780 | RCV's β: 0.1980 | idx TX & RCV: 151
+OB1: 58.366641 | OB2: 66.374854 | OB3: 65.099613 | MER: 40.056557 | Bk: 0.8000 | Beta nominal: 0.1780 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1790 | RCV's β: 0.1970 | idx TX & RCV: 160
+OB1: 58.131127 | OB2: 66.585981 | OB3: 65.307160 | MER: 40.232071 | Bk: 0.8000 | Beta nominal: 0.1790 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1800 | idx TX & RCV: 93
+OB1: 58.898635 | OB2: 64.470400 | OB3: 63.188044 | MER: 40.255668 | Bk: 0.9000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1840 | idx TX & RCV: 94
+OB1: 58.898635 | OB2: 64.470400 | OB3: 63.188044 | MER: 40.531749 | Bk: 0.9000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1880 | idx TX & RCV: 95
+OB1: 58.898635 | OB2: 64.470400 | OB3: 63.188044 | MER: 40.820582 | Bk: 0.9000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1920 | idx TX & RCV: 96
+OB1: 58.898635 | OB2: 64.470400 | OB3: 63.188044 | MER: 41.120941 | Bk: 0.9000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1960 | idx TX & RCV: 97
+OB1: 58.898635 | OB2: 64.470400 | OB3: 63.188044 | MER: 41.430739 | Bk: 0.9000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.2000 | idx TX & RCV: 98
+OB1: 58.898635 | OB2: 64.470400 | OB3: 63.188044 | MER: 41.746729 | Bk: 0.9000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1730 | RCV's β: 0.1950 | idx TX & RCV: 106
+OB1: 58.899509 | OB2: 65.165024 | OB3: 63.862828 | MER: 40.109170 | Bk: 0.9000 | Beta nominal: 0.1730 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1730 | RCV's β: 0.1990 | idx TX & RCV: 107
+OB1: 58.899509 | OB2: 65.165024 | OB3: 63.862828 | MER: 40.476436 | Bk: 0.9000 | Beta nominal: 0.1730 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1940 | idx TX & RCV: 115
+OB1: 58.659209 | OB2: 65.377727 | OB3: 64.074105 | MER: 40.289393 | Bk: 0.9000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1980 | idx TX & RCV: 116
+OB1: 58.659209 | OB2: 65.377727 | OB3: 64.074105 | MER: 40.654609 | Bk: 0.9000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1890 | idx TX & RCV: 122
+OB1: 58.421514 | OB2: 65.590980 | OB3: 64.288378 | MER: 40.126737 | Bk: 0.9000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1930 | idx TX & RCV: 123
+OB1: 58.421514 | OB2: 65.590980 | OB3: 64.288378 | MER: 40.469846 | Bk: 0.9000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1750 | RCV's β: 0.1970 | idx TX & RCV: 124
+OB1: 58.421514 | OB2: 65.590980 | OB3: 64.288378 | MER: 40.832867 | Bk: 0.9000 | Beta nominal: 0.1750 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1880 | idx TX & RCV: 130
+OB1: 58.186409 | OB2: 65.804539 | OB3: 64.504055 | MER: 40.309506 | Bk: 0.9000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1920 | idx TX & RCV: 131
+OB1: 58.186409 | OB2: 65.804539 | OB3: 64.504055 | MER: 40.650592 | Bk: 0.9000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.1960 | idx TX & RCV: 132
+OB1: 58.186409 | OB2: 65.804539 | OB3: 64.504055 | MER: 41.011283 | Bk: 0.9000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1760 | RCV's β: 0.2000 | idx TX & RCV: 133
+OB1: 58.186409 | OB2: 65.804539 | OB3: 64.504055 | MER: 41.390483 | Bk: 0.9000 | Beta nominal: 0.1760 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1700 | RCV's β: 0.1860 | idx TX & RCV: 78
+OB1: 58.929725 | OB2: 64.424572 | OB3: 63.110590 | MER: 40.172559 | Bk: 1.0000 | Beta nominal: 0.1700 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1700 | RCV's β: 0.1900 | idx TX & RCV: 79
+OB1: 58.929725 | OB2: 64.424572 | OB3: 63.110590 | MER: 40.455582 | Bk: 1.0000 | Beta nominal: 0.1700 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1700 | RCV's β: 0.1940 | idx TX & RCV: 80
+OB1: 58.929725 | OB2: 64.424572 | OB3: 63.110590 | MER: 40.750614 | Bk: 1.0000 | Beta nominal: 0.1700 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1700 | RCV's β: 0.1980 | idx TX & RCV: 81
+OB1: 58.929725 | OB2: 64.424572 | OB3: 63.110590 | MER: 41.055726 | Bk: 1.0000 | Beta nominal: 0.1700 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1810 | idx TX & RCV: 85
+OB1: 58.690763 | OB2: 64.638313 | OB3: 63.325010 | MER: 40.091541 | Bk: 1.0000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1850 | idx TX & RCV: 86
+OB1: 58.690763 | OB2: 64.638313 | OB3: 63.325010 | MER: 40.358867 | Bk: 1.0000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1890 | idx TX & RCV: 87
+OB1: 58.690763 | OB2: 64.638313 | OB3: 63.325010 | MER: 40.638913 | Bk: 1.0000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1930 | idx TX & RCV: 88
+OB1: 58.690763 | OB2: 64.638313 | OB3: 63.325010 | MER: 40.930490 | Bk: 1.0000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1970 | idx TX & RCV: 89
+OB1: 58.690763 | OB2: 64.638313 | OB3: 63.325010 | MER: 41.231575 | Bk: 1.0000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1760 | idx TX & RCV: 92
+OB1: 58.454335 | OB2: 64.852548 | OB3: 63.538916 | MER: 40.029431 | Bk: 1.0000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1800 | idx TX & RCV: 93
+OB1: 58.454335 | OB2: 64.852548 | OB3: 63.538916 | MER: 40.281126 | Bk: 1.0000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1840 | idx TX & RCV: 94
+OB1: 58.454335 | OB2: 64.852548 | OB3: 63.538916 | MER: 40.545802 | Bk: 1.0000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1880 | idx TX & RCV: 95
+OB1: 58.454335 | OB2: 64.852548 | OB3: 63.538916 | MER: 40.822792 | Bk: 1.0000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1920 | idx TX & RCV: 96
+OB1: 58.454335 | OB2: 64.852548 | OB3: 63.538916 | MER: 41.110814 | Bk: 1.0000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.1960 | idx TX & RCV: 97
+OB1: 58.454335 | OB2: 64.852548 | OB3: 63.538916 | MER: 41.407748 | Bk: 1.0000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1720 | RCV's β: 0.2000 | idx TX & RCV: 98
+OB1: 58.454335 | OB2: 64.852548 | OB3: 63.538916 | MER: 41.710348 | Bk: 1.0000 | Beta nominal: 0.1720 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1730 | RCV's β: 0.1950 | idx TX & RCV: 106
+OB1: 58.454733 | OB2: 65.548523 | OB3: 64.211113 | MER: 40.140280 | Bk: 1.0000 | Beta nominal: 0.1730 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1730 | RCV's β: 0.1990 | idx TX & RCV: 107
+OB1: 58.454733 | OB2: 65.548523 | OB3: 64.211113 | MER: 40.499062 | Bk: 1.0000 | Beta nominal: 0.1730 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1940 | idx TX & RCV: 115
+OB1: 58.220645 | OB2: 65.761111 | OB3: 64.423214 | MER: 40.316490 | Bk: 1.0000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1740 | RCV's β: 0.1980 | idx TX & RCV: 116
+OB1: 58.220645 | OB2: 65.761111 | OB3: 64.423214 | MER: 40.672461 | Bk: 1.0000 | Beta nominal: 0.1740 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1680 | RCV's β: 0.1920 | idx TX & RCV: 63
+OB1: 58.929472 | OB2: 64.412661 | OB3: 63.058402 | MER: 40.094026 | Bk: 1.1000 | Beta nominal: 0.1680 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1680 | RCV's β: 0.1960 | idx TX & RCV: 64
+OB1: 58.929472 | OB2: 64.412661 | OB3: 63.058402 | MER: 40.384640 | Bk: 1.1000 | Beta nominal: 0.1680 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1680 | RCV's β: 0.2000 | idx TX & RCV: 65
+OB1: 58.929472 | OB2: 64.412661 | OB3: 63.058402 | MER: 40.685889 | Bk: 1.1000 | Beta nominal: 0.1680 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1690 | RCV's β: 0.1910 | idx TX & RCV: 71
+OB1: 58.692253 | OB2: 64.625315 | OB3: 63.272603 | MER: 40.270944 | Bk: 1.1000 | Beta nominal: 0.1690 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1690 | RCV's β: 0.1950 | idx TX & RCV: 72
+OB1: 58.692253 | OB2: 64.625315 | OB3: 63.272603 | MER: 40.557547 | Bk: 1.1000 | Beta nominal: 0.1690 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1690 | RCV's β: 0.1990 | idx TX & RCV: 73
+OB1: 58.692253 | OB2: 64.625315 | OB3: 63.272603 | MER: 40.854235 | Bk: 1.1000 | Beta nominal: 0.1690 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1700 | RCV's β: 0.1860 | idx TX & RCV: 78
+OB1: 58.457468 | OB2: 64.838681 | OB3: 63.488385 | MER: 40.177344 | Bk: 1.1000 | Beta nominal: 0.1700 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1700 | RCV's β: 0.1900 | idx TX & RCV: 79
+OB1: 58.457468 | OB2: 64.838681 | OB3: 63.488385 | MER: 40.448314 | Bk: 1.1000 | Beta nominal: 0.1700 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1700 | RCV's β: 0.1940 | idx TX & RCV: 80
+OB1: 58.457468 | OB2: 64.838681 | OB3: 63.488385 | MER: 40.730764 | Bk: 1.1000 | Beta nominal: 0.1700 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1700 | RCV's β: 0.1980 | idx TX & RCV: 81
+OB1: 58.457468 | OB2: 64.838681 | OB3: 63.488385 | MER: 41.022720 | Bk: 1.1000 | Beta nominal: 0.1700 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1810 | idx TX & RCV: 85
+OB1: 58.225150 | OB2: 65.052330 | OB3: 63.703657 | MER: 40.103962 | Bk: 1.1000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1850 | idx TX & RCV: 86
+OB1: 58.225150 | OB2: 65.052330 | OB3: 63.703657 | MER: 40.358942 | Bk: 1.1000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1890 | idx TX & RCV: 87
+OB1: 58.225150 | OB2: 65.052330 | OB3: 63.703657 | MER: 40.626140 | Bk: 1.1000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1930 | idx TX & RCV: 88
+OB1: 58.225150 | OB2: 65.052330 | OB3: 63.703657 | MER: 40.904307 | Bk: 1.1000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1710 | RCV's β: 0.1970 | idx TX & RCV: 89
+OB1: 58.225150 | OB2: 65.052330 | OB3: 63.703657 | MER: 41.191378 | Bk: 1.1000 | Beta nominal: 0.1710 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1670 | RCV's β: 0.1970 | idx TX & RCV: 57
+OB1: 58.673881 | OB2: 64.644586 | OB3: 63.246041 | MER: 40.189811 | Bk: 1.2000 | Beta nominal: 0.1670 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1680 | RCV's β: 0.1920 | idx TX & RCV: 63
+OB1: 58.440930 | OB2: 64.856951 | OB3: 63.460724 | MER: 40.077795 | Bk: 1.2000 | Beta nominal: 0.1680 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1680 | RCV's β: 0.1960 | idx TX & RCV: 64
+OB1: 58.440930 | OB2: 64.856951 | OB3: 63.460724 | MER: 40.355700 | Bk: 1.2000 | Beta nominal: 0.1680 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1680 | RCV's β: 0.2000 | idx TX & RCV: 65
+OB1: 58.440930 | OB2: 64.856951 | OB3: 63.460724 | MER: 40.643612 | Bk: 1.2000 | Beta nominal: 0.1680 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1690 | RCV's β: 0.1910 | idx TX & RCV: 71
+OB1: 58.210374 | OB2: 65.069422 | OB3: 63.675932 | MER: 40.248590 | Bk: 1.2000 | Beta nominal: 0.1690 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1690 | RCV's β: 0.1950 | idx TX & RCV: 72
+OB1: 58.210374 | OB2: 65.069422 | OB3: 63.675932 | MER: 40.521690 | Bk: 1.2000 | Beta nominal: 0.1690 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1690 | RCV's β: 0.1990 | idx TX & RCV: 73
+OB1: 58.210374 | OB2: 65.069422 | OB3: 63.675932 | MER: 40.804224 | Bk: 1.2000 | Beta nominal: 0.1690 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1660 | RCV's β: 0.1780 | idx TX & RCV: 45
+OB1: 58.185124 | OB2: 64.436273 | OB3: 63.016308 | MER: 40.045577 | Bk: 1.3000 | Beta nominal: 0.1660 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1660 | RCV's β: 0.1820 | idx TX & RCV: 46
+OB1: 58.185124 | OB2: 64.436273 | OB3: 63.016308 | MER: 40.216748 | Bk: 1.3000 | Beta nominal: 0.1660 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1660 | RCV's β: 0.1860 | idx TX & RCV: 47
+OB1: 58.185124 | OB2: 64.436273 | OB3: 63.016308 | MER: 40.393164 | Bk: 1.3000 | Beta nominal: 0.1660 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1660 | RCV's β: 0.1900 | idx TX & RCV: 48
+OB1: 58.185124 | OB2: 64.436273 | OB3: 63.016308 | MER: 40.573284 | Bk: 1.3000 | Beta nominal: 0.1660 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1660 | RCV's β: 0.1940 | idx TX & RCV: 49
+OB1: 58.185124 | OB2: 64.436273 | OB3: 63.016308 | MER: 40.754950 | Bk: 1.3000 | Beta nominal: 0.1660 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1660 | RCV's β: 0.1980 | idx TX & RCV: 50
+OB1: 58.185124 | OB2: 64.436273 | OB3: 63.016308 | MER: 40.935274 | Bk: 1.3000 | Beta nominal: 0.1660 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1670 | RCV's β: 0.1970 | idx TX & RCV: 57
+OB1: 58.180244 | OB2: 65.117063 | OB3: 63.671652 | MER: 40.145416 | Bk: 1.3000 | Beta nominal: 0.1670 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1640 | RCV's β: 0.1920 | idx TX & RCV: 35
+OB1: 58.143770 | OB2: 64.504100 | OB3: 63.029413 | MER: 40.142582 | Bk: 1.4000 | Beta nominal: 0.1640 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1640 | RCV's β: 0.1960 | idx TX & RCV: 36
+OB1: 58.143770 | OB2: 64.504100 | OB3: 63.029413 | MER: 40.322450 | Bk: 1.4000 | Beta nominal: 0.1640 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+
+*************MET SPEC*************************
+TX's β: 0.1640 | RCV's β: 0.2000 | idx TX & RCV: 37
+OB1: 58.143770 | OB2: 64.504100 | OB3: 63.029413 | MER: 40.502170 | Bk: 1.4000 | Beta nominal: 0.1640 | 
+baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+weight:    2.453500000000000   1.000000000000000  20.000000000000000
+
+>> 
