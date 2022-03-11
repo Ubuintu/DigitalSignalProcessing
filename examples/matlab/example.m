@@ -56,7 +56,7 @@ for i = 0:200
 end
 
 % Constants are double-precision by default; N=85 found nothing
-vec = [73 85];
+vec = [85 105];
 
 % for im
     
@@ -71,7 +71,7 @@ vec = [73 85];
 %coefficients have to be even and divisible by span w/no remainder LOOK
 %INTO THIS
 %beta MUST be greater than 0
-[MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.1 0.0001 0.13],'betaRCV',[0.1 0.0001 0.13],'MER',50);
+[MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.1 0.0001 0.2],'betaRCV',[0.1 0.0001 0.2],'MER',50);
 % [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',[25 77],'betaTX',[.01 0.01 .16],'betaRCV',[0.12 0.01 0.34],'MER',40);
 
 % last = find(~MER_out,1);
@@ -110,10 +110,11 @@ cBeta = char(hex2dec('03b2'));
 format long
 % window designer from 0 to pi
 % load('KaisWin.mat');
-load('windowKais101.mat');
+% load('windowKais101.mat');
 
-fileID = fopen('GSM_parameters_89-121_B1-0.001-2.txt'); %89-121.txt
+% fileID = fopen('GSM_parameters_89-121_B1-0.001-2.txt'); %89-121.txt
 % fileID = fopen('GSM_parameters_73-81.txt'); %73-81.txt
+fileID = fopen('GSM_parameters_85-105_B1-0.0001-2.txt'); %85-105_B1-0.0001-2.txt
 formatSpec = '%s';
 N = 4;
 C_text = textscan(fileID,formatSpec,N);
@@ -121,8 +122,9 @@ C_data0 = textscan(fileID,'%f %f %f %f');
 fclose(fileID);
 
 vTX_B=C_data0{1,2}.'; vRCV_B=C_data0{1,3}.'; vLen=C_data0{1,4}.';
-idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %89-121.txt
+% idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %89-121.txt
 % idx_73=find(vLen==73); idx_81=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %73-81.txt
+idx_85=find(vLen==85); idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %85-105_B1-0.0001-2.txt
 
 % #TX&RCV length; RCV rolloff here
 % beta = 0.146600;  %trial 1
@@ -141,12 +143,12 @@ idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=fin
 % w = [0:0.001:1000]/1000*pi; %0-0.5
 w = [0:0.001:2000]/1000*pi; %one whole cycle
 
-N = 89;
+N = 93;
 Nsps = 4;
 span = (N-1)/4;
-for bk = 0:0.1:2
+for bk = 0:0.01:2
 % for bk = 2:0.1:2
-    for idx_TXnRCV = idx_89(1):(idx_89(end))
+    for idx_TXnRCV = idx_93(1):(idx_93(end))
 %     for idx_TXnRCV = idx_97(1):(idx_97(1))
 %     for idx_TXnRCV = 1027:(idx_97(end))
         b_nom = vTX_B(idx_TXnRCV);
@@ -225,11 +227,7 @@ for bk = 0:0.1:2
             end
         end
         MER_theo = 10*log10( num^2/sum(den.^2) );
-%         fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);
-%         fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",OB1_58,OB2_60,OB3_63,MER_theo,bk, b_nom);
-%         fprintf("baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f | OB3 bnd frequency: %2.4f |\n", bb_bnd, OB1_bnd, OB2_bnd, OB3_bnd);
-%         fprintf("weight: ");disp(wght);
-        if OB1_58 > 58 && OB2_60 > 60 && OB3_63 > 63 && MER_theo >= 40
+==        if OB1_58 > 58 && OB2_60 > 60 && OB3_63 > 63 && MER_theo >= 40
             fprintf("\n*************MET SPEC*************************\n");
             fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);
             fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",OB1_58,OB2_60,OB3_63,MER_theo,bk, b_nom);

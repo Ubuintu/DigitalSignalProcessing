@@ -62,8 +62,9 @@ in2 = ASK_out;
 % add row and column vectors to see possible combinations
 possible_inputs = in1 + in2';
 possible_inputs = uniquetol(possible_inputs);
+POSSINPUT= combine(possible_inputs, ASK_out.'); POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
-possible_inputs_verilog = round(possible_inputs*2^16);
+possible_inputs_verilog = round(possible_inputs*2^16); 
 MF_PPS=round(possible_inputs*h_PPS_0s18); MF_GSPS=round(possible_inputs*h_GSPS_0s18);
 
 num_of_sumLvls=1; coeffs2reduce=N;

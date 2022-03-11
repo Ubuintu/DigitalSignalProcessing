@@ -12,7 +12,7 @@ reg signed [17:0] x0, x1, x2, x3, x4, x5, x6, x7, x8, x9,
 						X20, X21, X2, X2, X2, X2, X2, 
 						X2, X2, X2, 
 */
-integer i;	
+integer i,j;	
 //coeff is 0s18
 reg signed [17:0]	b[10:0];	
 //input is 1s17			 
@@ -23,6 +23,39 @@ reg signed [17:0]	x[20:0];
 (* noprune *) reg signed [17:0] sum_level_3[2:0];
 (* noprune *) reg signed [17:0] sum_level_4;
 
+/*		TESTING FOR D3			*/
+
+/*
+genvar ind;
+generate
+	for (ind=0;ind<6;ind=ind+1)
+		begin: generateSumLvl
+		(* keep *) reg signed [17:0] sum_lvl[6][2**(ind-1):0];
+	end
+endgenerate
+end
+*/
+
+(* noprune *) reg [17:0] sum_lvl[6][];
+
+initial begin
+	for (i=0; i<6; i=i+1)
+		sum_lvl[i][2**(i-1):0];
+	end
+
+always @ (posedge clk) begin
+	for (i=0;i<6;i=i+1)
+		for(j=0;j<(2**(i-1));j=j+1)
+			sum_lvl[i][j]=18'sd0;
+		end
+	end
+end
+
+
+
+
+
+/*		TESTING FOR D3			*/
 
 //sign extend input to prevent overflow in sum_level_1
 //always @ (posedge clk)    //for quartus
