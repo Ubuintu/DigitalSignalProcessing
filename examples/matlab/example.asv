@@ -228,7 +228,6 @@ for bk = 1:0.01:2
             end
         end
         MER_theo = 10*log10( num^2/sum(den.^2) );
-%         future considerations append to txtfile
         if OB1_58 > 58 && OB2_60 > 60 && OB3_63 > 63 && MER_theo >= 40
             fprintf("\n*************MET SPEC*************************\n");
             fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);

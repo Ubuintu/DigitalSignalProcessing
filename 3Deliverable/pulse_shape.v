@@ -1,20 +1,29 @@
 module GSPS_filt #(
+//Will have to manually adjust line 110 if statements based on len of filt & sum lvls required
     parameter WIDTH=18,
-    parameter SUMLVL=6,
+    parameter SUMLVL=7,
     parameter LENGTH=93,
+    //Matlab: N-sum(tapsPerlvl);
+    parameter OFFSET=2,
     parameter POSSMAPPER=7,
-    parameter integer SUMLVLWID [SUMLVL-1:0]={46,23,11,5,2,1},
+    parameter MAPSIZE=4,
+    /* 46:0 first lvl regs; (46+1):(46+1+23-1+1) 2nd lvl; numbers in array count sym regs*/
+    parameter integer SUMLVLWID [SUMLVL-1:0]={47,24,12,6,3,2,1},
     parameter [7:0] POSSINPUTS [(POSSMAPPER+4)-1:0]={-18'sd98303,-18'sd65536,-18'sd32768,18'sd0,18'sd32768,18'sd65536,18'sd98303,-18'sd49152,-18'sd16384,18'sd16384,18'sd49152}
 )
 (
-    input sys_clk, sam_clk_en, sym_clk_en, reset,
+    input sys_clk, 
+          sam_clk_en, 
+          //sym_clk_en, 
+          //clk, 
+          reset,
     input signed [WIDTH-1:0] x_in,
     output reg signed [WIDTH-1:0] y
 );
 /*      Register/variable Declaration    */
 //18 bits wide; 6 rows and SUMLVLWID[rows] # of cols; TODO: find multdimensional irregular register declaration
 //currently using 2D dynamic sum_lvl
-(* noprune *) reg signed [WIDTH-1:0] sum_lvl[NUMSUMREGS-1:0];
+(* noprune *) reg signed [WIDTH-1:0] sum_lvl[LENGTH+OFFSET-1:0];
 (* noprune *) reg signed [WIDTH-1:0] mult_out[(LENGTH-1)/2:0];
 (* noprune *) reg signed [WIDTH-1:0] tol;
 (* noprune *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
@@ -48,49 +57,74 @@ always @ (posedge sys_clk)
 //sum all sym taps
 always @ (posedge sys_clk)
     if (reset) begin
-        for(i=0; i<(SUMLVLWID[SUMLVL]-1); i=i+1)
+        for(i=0; i<(SUMLVLWID[SUMLVL]-2); i=i+1)
             sum_lvl[i]=18'sd0;
     end
     else begin
-        for(i=0; i<(SUMLVLWID[SUMLVL]-1); i=i+1)
+        for(i=0; i<(SUMLVLWID[SUMLVL]-2); i=i+1)
             sum_lvl[i]=$signed(x[i])+$signed(x[LENGTH-i]);
     end
 //sum last odd tap
 always @ (posedge sys_clk)
-    if (reset) sum_lvl[(SUMLVLWID[SUMLVL])]=18'sd0;
-    else sum_lvl[(SUMLVLWID[SUMLVL])]=$signed( x[(SUMLVLWID[SUMLVL])] );
+    if (reset) sum_lvl[(SUMLVLWID[SUMLVL])-1]=18'sd0;
+    else sum_lvl[(SUMLVLWID[SUMLVL])-1]=$signed( x[(SUMLVLWID[SUMLVL])-1] );
 
 //always @ (posedge sys_clk)
 always @ *
     if (reset) begin
-		 for(i=0;i<=SUMLVLWID[SUMLVL]; i=i+1)
+		 for(i=0;i<SUMLVLWID[SUMLVL]-1; i=i+1)
 		 //should be 2s34 (2s16*0s18)
 			  mult_out[i] = 18'sd0;
     end
     else begin
-        for (i=0; i<=SUMLVLWID[SUMLVL])]; i=i+1)
-            if ( sum_lvl[i]==18'sd65500 ) mult_out[i]=b[7][i]; //impulse response
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[0])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[0])+tol) ) ) mult_out[i] = $signed(b[0][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[1])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[1])+tol) ) ) mult_out[i] = $signed(b[1][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[2])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[2])+tol) ) ) mult_out[i] = $signed(b[2][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[3])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[3])+tol) ) ) mult_out[i] = $signed(b[3][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[4])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[4])+tol) ) ) mult_out[i] = $signed(b[4][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[5])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[5])+tol) ) ) mult_out[i] = $signed(b[5][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[6])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[6])+tol) ) ) mult_out[i] = $signed(b[6][i]);
-                else mult_out[i] = 18'sd0;
-            else
-                /*Center Tap*/
-                /*For verifying taps*/
-                if( sum_lvl[i] == 18'sd65500 ) mult_out[i] = $signed(b[7][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[7])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[7])+tol ) ) mult_out[i] = $signed(b[7][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[8])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[8])+tol ) ) mult_out[i] = $signed(b[8][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[9])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[9])+tol ) mult_out[i] = $signed(b[9][i]);
-                else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[10])-tol) ) && ( sum_lvl[i]<(18'sd65536+tol) ) ) mult_out[i] = b[6][i];
-                else mult_out[i] = 18'sd0;
+        //For N=93, should be 46 pairs of taps
+        for (i=0; i<SUMLVLWID[SUMLVL]-1)]; i=i+1) begin
+            //All taps besides center/odd tap
+            if(i<SUMLVLWID[SUMLVL]-2) begin
+                //Possible input to sym taps
+                for(j=0; j<POSSMAPPER; j=j+1) begin
+                    if ( $signed(sum_lvl[i])==18'sd65500 ) mult_out[i]=$signed(b[7][i]);
+                    else if ( $signed(sum_lvl[i])>($signed(POSSINPUTS[j])-tol) ) && ( $signed(sum_lvl[i])<$signed(POSSINPUTS[j])+tol) ) ) mult_out[i]=$signed(b[j][i]);
+                    else mult_out[i]=18'sd0;
+                end
+            end
+            //for last tap/center
+            else begin
+                for(j=0; j<MAPSIZE; j=j+1) begin
+                    if ( $signed(sum_lvl[i])==18'sd65500 ) mult_out[i]=$signed(b[j+POSSMAPPER][i]);
+                    else if ( $signed(sum_lvl[i])>($signed(POSSINPUTS[j+POSSMAPPER])-tol) ) && ( $signed(sum_lvl[i])<$signed(POSSINPUTS[j+POSSMAPPER])+tol) ) ) mult_out[i]=$signed(b[j+POSSMAPPER][i]);
+                    else mult_out[i]=18'sd0;
+                end
+            end
+        end
     end
             
-
-
+//coeffs 0s18; x 2s16
+always @ *
+   if (reset) begin
+        //sum(SUMLVLWID+SUMLVL)=total regs required
+        for (i=SUMLVLWID[SUMLVL-1];i<LENGTH;i=i+1)
+            sum_lvl[i]=18'sd0;
+   end
+   else begin
+        //Will have to manually adjust if statements based on len of filt & sum lvls required
+        
+        //for (i=SUMLVLWID[SUMLVL-1]; i<(LENGTH+OFFSET); i=i+1)
+        //    //sum_level_2
+        //    if (i>=SUMLVLWID[SUMLVL-1]&&i<(SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]))
+        //        sum_lvl[i]=$signed(mult_out[2*(i-SUMLVLWID[SUMLVL-1])])+$signed(mult_out[2*(i-SUMLVLWID[SUMLVL-1])+1]);
+        //    //sum lvl 2 center tap
+        //    else if (i==(SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]-1))
+        //        sum_lvl[i]=$signed(mult_out[SUMLVLWID[SUMLVL-1]]);
+        //    //sum lvl 3
+        //    else if(i>(SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2])&&i<(SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]))
+        //        sum_lvl[i]=$signed(
+        
+        //sum lvl 2
+        for (i=0; i<SUMLVLWID[SUMLVL-2]-2; i=i+1) begin
+            sum_lvl[i+SUMLVLWID[SUMLVL-1]] = $signed(
+            
+   end
 
 
 endmodule
