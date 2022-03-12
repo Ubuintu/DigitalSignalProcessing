@@ -74,7 +74,7 @@ for i=1:N
         break
     else
         num_of_sumLvls=num_of_sumLvls+1;coeffs2reduce=ceil(coeffs2reduce/2);
-        fprintf("reduce: %d\n",coeffs2reduce);
+        fprintf("sum level %d has %d registers\n",i,coeffs2reduce);
         tapsPerlvl(i,1)=coeffs2reduce;
     end
 end

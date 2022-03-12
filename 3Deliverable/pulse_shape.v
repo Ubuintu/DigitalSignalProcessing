@@ -120,11 +120,37 @@ always @ *
         //    else if(i>(SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2])&&i<(SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]))
         //        sum_lvl[i]=$signed(
         
-        //sum lvl 2
-        for (i=0; i<SUMLVLWID[SUMLVL-2]-2; i=i+1) begin
-            sum_lvl[i+SUMLVLWID[SUMLVL-1]] = $signed(
+        //sum lvl 2; multiple begin-ends work sequentially
+        for (i=0; i<SUMLVLWID[SUMLVL-2]-1; i=i+1) begin
+            if (i==SUMLVLWID[SUMLVL-2]-1)
+                sum_lvl[i+SUMLVLWID[SUMLVL-1]]=$signed(mult_out[2*i]);
+            else 
+                sum_lvl[i+SUMLVLWID[SUMLVL-1]]=$signed(mult_out[2*i])+$signed(mult_out[2*i+1]);
+        end
+        //sum lvl 3
+        for (i=0; i<SUMLVLWID[SUMLVL-3]-1; i=i+1) begin
+            sum_lvl[i+SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]]=$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+2*i])+$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+2*i+1]);
+        end
+        //sum lvl 4
+        for (i=0; i<SUMLVLWID[SUMLVL-4]-1; i=i+1) begin
+            sum_lvl[i+SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]]=$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]+2*i])+$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]++SUMLVLWID[SUMLVL-3]+2*i])2*i+1];
+        end
+        //sum lvl 4
+        for (i=0; i<SUMLVLWID[SUMLVL-5]-1; i=i+1) begin
+            sum_lvl[i+SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]]=$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]+2*i])+$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]++SUMLVLWID[SUMLVL-3]+2*i])2*i+1];
+        end
             
    end
 
 
 endmodule
+
+
+function automatic integer sum( input integer ar[6:0], N);
+    begin
+        integer toAdd=0;
+        for (i=0; i<N; i=i+1)
+            toAdd=ar[i]+toAdd;
+        sum=toAdd;
+    end
+endfunction

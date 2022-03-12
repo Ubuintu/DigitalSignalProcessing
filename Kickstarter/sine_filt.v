@@ -35,7 +35,7 @@ generate
 endgenerate
 end
 */
-
+/*
 (* noprune *) reg [17:0] sum_lvl[6][];
 
 initial begin
@@ -50,7 +50,7 @@ always @ (posedge clk) begin
 		end
 	end
 end
-
+*/
 
 
 
@@ -180,5 +180,20 @@ always@ *
 for (i=0; i<=15; i=i+1)
  b[i] =18'sd 8192; % value of 1/16
 */
+integer arr[6:0] = {47,24,12,6,3,2,1};
+function automatic integer sum(input integer ar [6:0],N);
+	begin
+		integer toAdd=0;
+		for (i=0; i<N; i=i+1)
+			toAdd=ar[i]+toAdd;
+		sum=toAdd;
+	end
+endfunction
+integer teest=0;
+initial begin
+	teest=sum(arr,7);
+	$display("val is %0d",teest);
+end
+
 endmodule 
 
