@@ -69,8 +69,8 @@ always @ (posedge sys_clk)
     if (reset) sum_lvl[(SUMLVLWID[SUMLVL])-1]=18'sd0;
     else sum_lvl[(SUMLVLWID[SUMLVL])-1]=$signed( x[(SUMLVLWID[SUMLVL])-1] );
 
-//always @ (posedge sys_clk)
-always @ *
+//always @ (posedge sys_clk)    //need <=
+always @ *    //use =
     if (reset) begin
 		 for(i=0;i<SUMLVLWID[SUMLVL]-1; i=i+1)
 		 //should be 2s34 (2s16*0s18)
