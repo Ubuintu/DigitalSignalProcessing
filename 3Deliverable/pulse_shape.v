@@ -122,7 +122,7 @@ always @ *
         //    else if(i>(SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2])&&i<(SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]))
         //        sum_lvl[i]=$signed(
         
-        //sum lvl 2; multiple begin-ends work sequentially
+        /*          sum lvl 2; multiple begin-ends work sequentially            */
         for (i=0; i<SUMLVLWID[SUMLVL-2]-1; i=i+1) begin
             if (i==SUMLVLWID[SUMLVL-2]-1)
                 sum_lvl[i+SUMLVLWID[SUMLVL-1]]=$signed(mult_out[2*i]);
@@ -138,14 +138,18 @@ always @ *
             sum_lvl[i+SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]]=$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]+2*i])+$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]+2*i+1])];
         end
         //sum lvl 5
-        ind=sum(SUMLVLWID,5);
-        index=sum(SUMLVLWID,4);
+        begin
+            ind=sum(SUMLVLWID,5);
+            index=sum(SUMLVLWID,4);
+        end
         for (i=0; i<SUMLVLWID[SUMLVL-5]-1; i=i+1) begin
             sum_lvl[i+ind]=$signed(sum_lvl[index+2*i])+$signed(sum_lvl[index+2*i+1])];
         end
         //sum lvl 6 (2ND LAST)
+        begin
         ind=sum(SUMLVLWID,6);
         index=sum(SUMLVLWID,5);
+        end
         for (i=0; i<SUMLVLWID[SUMLVL-6]-1; i=i+1) begin
             if(i==0)
                 sum_lvl[i+ind]=$signed(sum_lvl[index+2*i])+$signed(sum_lvl[index+2*i+1])];
@@ -153,17 +157,22 @@ always @ *
                 sum_lvl[i+ind]=$signed(sum_lvl[index+2*i])
         end
         //sum lvl 7 (FINAL)
-        ind=sum(SUMLVLWID,6);
-        index=sum(SUMLVLWID,5);
-        for (i=0; i<SUMLVLWID[SUMLVL-6]-1; i=i+1) begin
+        begin
+        ind=sum(SUMLVLWID,7);
+        index=sum(SUMLVLWID,6);
+        end
+        for (i=0; i<SUMLVLWID[SUMLVL-7]; i=i+1) begin
             if(i==0)
                 sum_lvl[i+ind]=$signed(sum_lvl[index+2*i])+$signed(sum_lvl[index+2*i+1]);
             else
                 sum_lvl[i+ind]=$signed(sum_lvl[index+2*i]);
         end
-            
    end
 
+    always @ (posedge sys_clk)
+        if (reset) y<= 18'sd0;
+        else if (sam_clk_en) y<=$signed( sum_lvl[sum(SUMLVLWID,7)] );
+        else y<=$signed(y);
 
 endmodule
 
