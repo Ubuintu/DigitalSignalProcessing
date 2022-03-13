@@ -98,7 +98,9 @@ always @ *
             end
         end
     end
-            
+        
+integer ind=0;
+integer index=0;
 //coeffs 0s18; x 2s16
 always @ *
    if (reset) begin
@@ -133,11 +135,31 @@ always @ *
         end
         //sum lvl 4
         for (i=0; i<SUMLVLWID[SUMLVL-4]-1; i=i+1) begin
-            sum_lvl[i+SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]]=$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]+2*i])+$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]++SUMLVLWID[SUMLVL-3]+2*i])2*i+1];
+            sum_lvl[i+SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]]=$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]+2*i])+$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]+2*i+1])];
         end
-        //sum lvl 4
+        //sum lvl 5
+        ind=sum(SUMLVLWID,5);
+        index=sum(SUMLVLWID,4);
         for (i=0; i<SUMLVLWID[SUMLVL-5]-1; i=i+1) begin
-            sum_lvl[i+SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]]=$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]+SUMLVLWID[SUMLVL-3]+2*i])+$signed(sum_lvl[SUMLVLWID[SUMLVL-1]+SUMLVLWID[SUMLVL-2]++SUMLVLWID[SUMLVL-3]+2*i])2*i+1];
+            sum_lvl[i+ind]=$signed(sum_lvl[index+2*i])+$signed(sum_lvl[index+2*i+1])];
+        end
+        //sum lvl 6 (2ND LAST)
+        ind=sum(SUMLVLWID,6);
+        index=sum(SUMLVLWID,5);
+        for (i=0; i<SUMLVLWID[SUMLVL-6]-1; i=i+1) begin
+            if(i==0)
+                sum_lvl[i+ind]=$signed(sum_lvl[index+2*i])+$signed(sum_lvl[index+2*i+1])];
+            else
+                sum_lvl[i+ind]=$signed(sum_lvl[index+2*i])
+        end
+        //sum lvl 7 (FINAL)
+        ind=sum(SUMLVLWID,6);
+        index=sum(SUMLVLWID,5);
+        for (i=0; i<SUMLVLWID[SUMLVL-6]-1; i=i+1) begin
+            if(i==0)
+                sum_lvl[i+ind]=$signed(sum_lvl[index+2*i])+$signed(sum_lvl[index+2*i+1]);
+            else
+                sum_lvl[i+ind]=$signed(sum_lvl[index+2*i]);
         end
             
    end
