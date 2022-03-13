@@ -1,9 +1,0 @@
-v1
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,avg_err_squared_55:AVG_ER_SQR|lpm_mult:Mult0|mult_c6t:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,avg_mag:AVG_MAG_DV|lpm_mult:Mult0|mult_edt:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,DUT_for_MER_measurement:DUT|lpm_mult:Mult0|mult_d6t:auto_generated|mac_out4,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,DUT_for_MER_measurement:DUT|lpm_mult:Mult0|mult_d6t:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,avg_err_squared_55:AVG_ER_SQRQ|lpm_mult:Mult0|mult_c6t:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,avg_mag:AVG_MAG_DVQ|lpm_mult:Mult0|mult_edt:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,DUT_for_MER_measurement:DUTQ|lpm_mult:Mult0|mult_d6t:auto_generated|mac_out4,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,DUT_for_MER_measurement:DUTQ|lpm_mult:Mult0|mult_d6t:auto_generated|mac_out2,
