@@ -1,5 +1,5 @@
 Analysis & Synthesis report for deliverable2
-Tue Mar  8 19:43:21 2022
+Sun Mar 13 17:34:08 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -88,6 +88,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
  80. Elapsed Time Per Partition
  81. Connections to In-System Debugging Instance "auto_signaltap_0"
  82. Analysis & Synthesis Messages
+ 83. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -114,7 +115,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar  8 19:43:20 2022           ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 13 17:34:07 2022           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Standard Edition ;
 ; Revision Name                      ; deliverable2                                    ;
 ; Top-level Entity Name              ; deliverable2                                    ;
@@ -256,6 +257,7 @@ https://fpgasoftware.intel.com/eula.
 ; SweepGenerator.qxp                                                                                            ; yes             ; User File                                    ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/SweepGenerator.qxp                                                 ;                     ;
 ; ROM_for_12_x_12_NCO.v                                                                                         ; yes             ; User Wizard-Generated File                   ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/ROM_for_12_x_12_NCO.v                                              ;                     ;
 ; KeyCCT.v                                                                                                      ; yes             ; User Verilog HDL File                        ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/KeyCCT.v                                                           ;                     ;
+; pulse_shape.v                                                                                                 ; yes             ; User Verilog HDL File                        ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/pulse_shape.v                                                      ;                     ;
 ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v ; yes             ; Auto-Found Verilog HDL File                  ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v         ; switch_led_emulator ;
 ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/switch_led_emulator.v            ; yes             ; Auto-Found Verilog HDL File                  ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/switch_led_emulator.v                    ; switch_led_emulator ;
 ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/key_emulator.v                          ; yes             ; Auto-Found Verilog HDL File                  ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/key_emulator.v                                  ; key_emulator        ;
@@ -5191,7 +5193,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------------------+--------------+
 ; Partition Name                 ; Elapsed Time ;
 +--------------------------------+--------------+
-; sld_signaltap:auto_signaltap_0 ; 00:00:27     ;
+; sld_signaltap:auto_signaltap_0 ; 00:00:23     ;
 ; Top                            ; 00:00:04     ;
 ; sld_hub:auto_hub               ; 00:00:01     ;
 +--------------------------------+--------------+
@@ -7146,34 +7148,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Tue Mar  8 19:41:54 2022
+    Info: Processing started: Sun Mar 13 17:32:49 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off deliverable2 -c deliverable2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12248): Elaborating Platform Designer system entity "switch_led_emulator.qsys"
-Info (12250): 2022.03.08.19:42:06 Progress: Loading 2Deliverable/switch_led_emulator.qsys
-Info (12250): 2022.03.08.19:42:06 Progress: Reading input file
-Info (12250): 2022.03.08.19:42:06 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Info (12250): 2022.03.13.17:33:00 Progress: Loading 2Deliverable/switch_led_emulator.qsys
+Info (12250): 2022.03.13.17:33:01 Progress: Reading input file
+Info (12250): 2022.03.13.17:33:01 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
 Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
-Info (12250): 2022.03.08.19:42:06 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2022.03.08.19:42:06 Progress: Building connections
-Info (12250): 2022.03.08.19:42:06 Progress: Parameterizing connections
-Info (12250): 2022.03.08.19:42:06 Progress: Validating
-Info (12250): 2022.03.08.19:42:07 Progress: Done reading input file
+Info (12250): 2022.03.13.17:33:01 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2022.03.13.17:33:01 Progress: Building connections
+Info (12250): 2022.03.13.17:33:01 Progress: Parameterizing connections
+Info (12250): 2022.03.13.17:33:01 Progress: Validating
+Info (12250): 2022.03.13.17:33:01 Progress: Done reading input file
 Info (12250): Switch_led_emulator: Generating switch_led_emulator "switch_led_emulator" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "switch_led_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): Switch_led_emulator: Done "switch_led_emulator" with 2 modules, 2 files
 Info (12249): Finished elaborating Platform Designer system entity "switch_led_emulator.qsys"
 Info (12248): Elaborating Platform Designer system entity "key_emulator.qsys"
-Info (12250): 2022.03.08.19:42:12 Progress: Loading 2Deliverable/key_emulator.qsys
-Info (12250): 2022.03.08.19:42:12 Progress: Reading input file
-Info (12250): 2022.03.08.19:42:12 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Info (12250): 2022.03.13.17:33:06 Progress: Loading 2Deliverable/key_emulator.qsys
+Info (12250): 2022.03.13.17:33:07 Progress: Reading input file
+Info (12250): 2022.03.13.17:33:07 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
 Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
-Info (12250): 2022.03.08.19:42:12 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2022.03.08.19:42:12 Progress: Building connections
-Info (12250): 2022.03.08.19:42:12 Progress: Parameterizing connections
-Info (12250): 2022.03.08.19:42:12 Progress: Validating
-Info (12250): 2022.03.08.19:42:12 Progress: Done reading input file
+Info (12250): 2022.03.13.17:33:07 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2022.03.13.17:33:07 Progress: Building connections
+Info (12250): 2022.03.13.17:33:07 Progress: Parameterizing connections
+Info (12250): 2022.03.13.17:33:07 Progress: Validating
+Info (12250): 2022.03.13.17:33:07 Progress: Done reading input file
 Info (12250): Key_emulator: Generating key_emulator "key_emulator" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "key_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): Key_emulator: Done "key_emulator" with 2 modules, 2 files
@@ -7204,6 +7206,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file ROM_for
     Info (12023): Found entity 1: ROM_for_12_x_12_NCO File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/ROM_for_12_x_12_NCO.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file KeyCCT.v
     Info (12023): Found entity 1: KeyCCT File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/KeyCCT.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pulse_shape.v
+    Info (12023): Found entity 1: GSPS_filt File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/pulse_shape.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/switch_led_emulator/submodules/altsource_probe_top.v
     Info (12023): Found entity 1: altsource_probe_top File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/switch_led_emulator/switch_led_emulator.v
@@ -7219,14 +7223,6 @@ Warning (10036): Verilog HDL or VHDL warning at deliverable2.v(78): object "regi
 Warning (10036): Verilog HDL or VHDL warning at deliverable2.v(79): object "registered_ADC_B" assigned a value but never read File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 79
 Warning (10030): Net "SUT_out" at deliverable2.v(39) has no driver or initial value, using a default initial value '0' File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 39
 Info (12128): Elaborating entity "SweepGenerator" for hierarchy "SweepGenerator:sweep_gen_1" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 116
-Warning (137006): Ignored assignment ENABLE_INCREMENTAL_REUSE -- assignment no longer supported
-Warning (137006): Ignored assignment REGISTER_PACKING_CYCLONE -- assignment no longer supported
-Warning (137006): Ignored assignment REGISTER_PACKING -- assignment no longer supported
-Warning (137006): Ignored assignment REGISTER_PACKING_NEW -- assignment no longer supported
-Warning (137006): Ignored assignment ENABLE_INCREMENTAL_REUSE -- assignment no longer supported
-Warning (137006): Ignored assignment REGISTER_PACKING_CYCLONE -- assignment no longer supported
-Warning (137006): Ignored assignment REGISTER_PACKING -- assignment no longer supported
-Warning (137006): Ignored assignment REGISTER_PACKING_NEW -- assignment no longer supported
 Info (12128): Elaborating entity "ROM_for_12_x_12_NCO" for hierarchy "ROM_for_12_x_12_NCO:NCO_ROM_1" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 174
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/ROM_for_12_x_12_NCO.v Line: 93
 Info (12130): Elaborated megafunction instantiation "ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/ROM_for_12_x_12_NCO.v Line: 93
@@ -7329,7 +7325,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/cmpr_ngc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2022.03.08.19:42:32 Progress: Loading sld48291c47/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2022.03.13.17:33:23 Progress: Loading sld48291c47/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -7633,6 +7629,7 @@ Info (286031): Timing-Driven Synthesis is running on partition "sld_signaltap:au
 Info (13000): Registers with preset signals will power-up high File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd Line: 386
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
+Info (144001): Generated suppressed messages file /home/tob208/engr-ece/Documents/EE465/2Deliverable/output_files/deliverable2.map.smsg
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 1779 of its 1935 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 156 missing sources or connections.
 Info (35026): Attempting to remove 182 I/O cell(s) that do not connect to top-level pins or have illegal connectivity
     Info (35027): Removed I/O cell "SweepGenerator:sweep_gen_1|phase_acc[0]~output"
@@ -7945,10 +7942,16 @@ Info (21057): Implemented 16876 device resources after synthesis - the final res
     Info (21061): Implemented 15782 logic cells
     Info (21064): Implemented 963 RAM segments
     Info (21062): Implemented 16 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 949 megabytes
-    Info: Processing ended: Tue Mar  8 19:43:21 2022
-    Info: Elapsed time: 00:01:27
-    Info: Total CPU time (on all processors): 00:02:35
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 946 megabytes
+    Info: Processing ended: Sun Mar 13 17:34:08 2022
+    Info: Elapsed time: 00:01:19
+    Info: Total CPU time (on all processors): 00:02:27
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/tob208/engr-ece/Documents/EE465/2Deliverable/output_files/deliverable2.map.smsg.
 
 

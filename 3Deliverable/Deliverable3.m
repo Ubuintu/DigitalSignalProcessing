@@ -67,7 +67,7 @@ POSSINPUT= combine(possible_inputs, ASK_out.'); POSS_IN=round(POSSINPUT.*2^16);
 possible_inputs_verilog = round(possible_inputs*2^16); 
 MF_PPS=round(possible_inputs*h_PPS_0s18); MF_GSPS=round(possible_inputs*h_GSPS_0s18);
 
-num_of_sumLvls=0; coeffs2reduce=101;
+num_of_sumLvls=0; coeffs2reduce=93;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
 for i=1:N
     if coeffs2reduce<=1
@@ -82,7 +82,8 @@ fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPer
 %% PPS coeffs
 clc
 [rows, cols] = size(MF_PPS);
-fprintf('0s18 Coefficients for PPS filter:\n');
+% fprintf('0s18 Coefficients for PPS filter:\n\n');
+fprintf("initial begin\n");
 for i = 1:ceil(cols/2)
     for j = 1:rows+1
         if j == rows+1 && h_PPS_0s18(i) > 0
@@ -98,7 +99,8 @@ for i = 1:ceil(cols/2)
         end
     end
 end
-fprintf('End of 0s18 Coefficients for PPS filter:\n\n');
+fprintf("end\n");
+% fprintf('\nEnd of 0s18 Coefficients for PPS filter:\n\n');
 %% GSPS coeffs
 clc
 [rows, cols] = size(MF_GSPS);

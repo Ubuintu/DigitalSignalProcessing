@@ -461,7 +461,7 @@ fprintf('End of 0s18 Coefficients for SRRC TX 1s17 filter\n\n');
 
 % values for LUT 4-ASK mapper; ensure output of 4-ASK mapper is a 1s17
 % input to transmit filter
-a = safety/3;
+a = 1/4;
 % a = 1;    % to see possible inputs from LUT
 ASK_out = [-3*a -a a 3*a];
 
@@ -476,26 +476,26 @@ possible_inputs_verilog = round(possible_inputs*2^16);
 
 % MF_coeff(row,col); same indexing in verilog
 % MF_LUT = possible_inputs * h_TX_0s18/2^18;
-MF_LUT = round(possible_inputs * h_TX_0s18);
+% MF_LUT = round(possible_inputs * h_TX_0s18);
 
-[rows, cols] = size(MF_LUT);
-fprintf('0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n');
-for i = 1:ceil(cols/2)
-    for j = 1:rows+1
-        if j == rows+1 && h_TX_0s18(i) > 0
-            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_TX_0s18(i)) ) );
-        elseif j == rows+1 && h_TX_0s18(i) < 0
-            fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_TX_0s18(i)) ) );
-        elseif MF_LUT(j,i) > 0
-            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
-        elseif MF_LUT(j,i) < 0
-            fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
-        else
-            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
-        end
-    end
-end
-fprintf('End of 0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n\n');
+% [rows, cols] = size(MF_LUT);
+% fprintf('0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n');
+% for i = 1:ceil(cols/2)
+%     for j = 1:rows+1
+%         if j == rows+1 && h_TX_0s18(i) > 0
+%             fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_TX_0s18(i)) ) );
+%         elseif j == rows+1 && h_TX_0s18(i) < 0
+%             fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_TX_0s18(i)) ) );
+%         elseif MF_LUT(j,i) > 0
+%             fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
+%         elseif MF_LUT(j,i) < 0
+%             fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
+%         else
+%             fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_LUT(j,i)) ) );
+%         end
+%     end
+% end
+% fprintf('End of 0s18 Coefficients for SRRC Multiplier-Free Transmitter filter:\n\n');
 
 
 
@@ -552,17 +552,19 @@ toWrite = zeros( length(worse_case_RCV),1 );
 % fprintf(fileID,'%d\r\n',z);
 % fclose(fileID);
 % 
-% % 4-ASK input
-% toWrite = zeros(2*N,1);
-% 
-% for i = 1:length(toWrite)
-%     %randsample(n,k) will returns k random values from n
-%     toWrite(i) = round(randsample(ASK_out,1)*2^17);
-% end
-% 
-% fileID = fopen('ASK_in.txt','w');
-% fprintf(fileID,'%d\r\n',toWrite);
-% fclose(fileID);
+%%
+% 4-ASK input
+toWrite = zeros(2*N,1);
+
+for i = 1:length(toWrite)
+    %randsample(n,k) will returns k random values from n
+    toWrite(i) = round(randsample(ASK_out,1)*2^16);
+end
+
+fileID = fopen('../3Deliverable/D3_ASK_in.txt','w');
+fprintf(fileID,'%d\r\n',toWrite);
+fclose(fileID);
+%%
 % 
 % 
 % count = 0;
@@ -635,26 +637,26 @@ toWrite = zeros( length(worse_case_RCV),1 );
 % fclose(fileID);
 
 % verify x10
-count = 0;
-delay = 21;
-
-for i = 1:delay*length(toWrite)
-    if count == 0 
-        toWrite(i) = round(randsample(ASK_out,1)*2^17);
-        count = count + 1;
-    else
-        if count >= delay
-            count = 0;
-            toWrite(i) = 0;
-        else
-            count = count + 1;
-            toWrite(i) = 0;
-        end
-    end
-end
-
-fileID = fopen('ASK_in_x10.txt','w');
-fprintf(fileID,'%d\r\n',toWrite);
-fclose(fileID);
+% count = 0;
+% delay = 21;
+% 
+% for i = 1:delay*length(toWrite)
+%     if count == 0 
+%         toWrite(i) = round(randsample(ASK_out,1)*2^17);
+%         count = count + 1;
+%     else
+%         if count >= delay
+%             count = 0;
+%             toWrite(i) = 0;
+%         else
+%             count = count + 1;
+%             toWrite(i) = 0;
+%         end
+%     end
+% end
+% 
+% fileID = fopen('ASK_in_x10.txt','w');
+% fprintf(fileID,'%d\r\n',toWrite);
+% fclose(fileID);
 
 

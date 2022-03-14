@@ -1,5 +1,5 @@
 Timing Analyzer report for deliverable2
-Tue Mar  8 19:45:54 2022
+Sun Mar 13 17:36:34 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -134,15 +134,15 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.49        ;
+; Average used               ; 1.48        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  18.7%      ;
-;     Processor 3            ;  13.6%      ;
+;     Processor 2            ;  17.0%      ;
+;     Processor 3            ;  12.4%      ;
 ;     Processor 4            ;   6.2%      ;
-;     Processors 5-8         ;   2.7%      ;
+;     Processors 5-8         ;   3.1%      ;
 +----------------------------+-------------+
 
 
@@ -151,7 +151,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------+--------+--------------------------+
 ; SDC File Path    ; Status ; Read at                  ;
 +------------------+--------+--------------------------+
-; deliverable2.sdc ; OK     ; Tue Mar  8 19:45:44 2022 ;
+; deliverable2.sdc ; OK     ; Sun Mar 13 17:36:25 2022 ;
 +------------------+--------+--------------------------+
 
 
@@ -362,12 +362,12 @@ HTML report is unavailable in plain text report export.
 ; 19.160 ; phase_out[1]                                                                                                                  ; staggered_phase_out[1]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.037     ; 0.791      ;
 ; 19.161 ; phase_out[7]                                                                                                                  ; staggered_phase_out[7]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.036     ; 0.791      ;
 ; 19.161 ; phase_out[2]                                                                                                                  ; staggered_phase_out[2]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.036     ; 0.791      ;
-; 19.163 ; phase_out[4]                                                                                                                  ; staggered_phase_out[4]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.034     ; 0.791      ;
 ; 19.163 ; phase_out[11]                                                                                                                 ; staggered_phase_out[11]                 ; sampling_clk ; sampling_clk ; 20.000       ; -0.034     ; 0.791      ;
+; 19.163 ; phase_out[4]                                                                                                                  ; staggered_phase_out[4]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.034     ; 0.791      ;
 ; 19.164 ; phase_out[6]                                                                                                                  ; staggered_phase_out[6]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.033     ; 0.791      ;
-; 19.164 ; phase_out[5]                                                                                                                  ; staggered_phase_out[5]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.033     ; 0.791      ;
 ; 19.164 ; phase_out[10]                                                                                                                 ; staggered_phase_out[10]                 ; sampling_clk ; sampling_clk ; 20.000       ; -0.033     ; 0.791      ;
 ; 19.164 ; phase_out[3]                                                                                                                  ; staggered_phase_out[3]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.033     ; 0.791      ;
+; 19.164 ; phase_out[5]                                                                                                                  ; staggered_phase_out[5]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.033     ; 0.791      ;
 ; 19.166 ; phase_out[0]                                                                                                                  ; staggered_phase_out[0]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.031     ; 0.791      ;
 ; 30.083 ; ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component|altsyncram_2t42:auto_generated|ram_block1a10~porta_address_reg0 ; DAC_DB[13]~reg0                         ; sampling_clk ; sampling_clk ; 40.000       ; -0.444     ; 9.461      ;
 ; 30.626 ; ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component|altsyncram_2t42:auto_generated|ram_block1a0~porta_address_reg0  ; DAC_DA[3]~reg0                          ; sampling_clk ; sampling_clk ; 40.000       ; -0.469     ; 8.893      ;
@@ -1899,8 +1899,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 19.230 ; phase_out[5]                                                                                                                  ; staggered_phase_out[5]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.047     ; 0.712      ;
 ; 19.231 ; phase_out[8]                                                                                                                  ; staggered_phase_out[8]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.046     ; 0.712      ;
 ; 19.231 ; phase_out[7]                                                                                                                  ; staggered_phase_out[7]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.046     ; 0.712      ;
-; 19.232 ; phase_out[11]                                                                                                                 ; staggered_phase_out[11]                 ; sampling_clk ; sampling_clk ; 20.000       ; -0.045     ; 0.712      ;
 ; 19.232 ; phase_out[6]                                                                                                                  ; staggered_phase_out[6]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.045     ; 0.712      ;
+; 19.232 ; phase_out[11]                                                                                                                 ; staggered_phase_out[11]                 ; sampling_clk ; sampling_clk ; 20.000       ; -0.045     ; 0.712      ;
 ; 19.232 ; phase_out[9]                                                                                                                  ; staggered_phase_out[9]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.045     ; 0.712      ;
 ; 19.232 ; phase_out[2]                                                                                                                  ; staggered_phase_out[2]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.045     ; 0.712      ;
 ; 19.232 ; phase_out[1]                                                                                                                  ; staggered_phase_out[1]                  ; sampling_clk ; sampling_clk ; 20.000       ; -0.045     ; 0.712      ;
@@ -3424,8 +3424,8 @@ Worst Case Available Settling Time: 90.642 ns
 +--------+-------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+--------------+--------------+--------------+------------+------------+
 ; 19.619 ; phase_out[7]                                                                                                                  ; staggered_phase_out[7]                  ; sampling_clk ; sampling_clk ; 20.000       ; 0.016      ; 0.374      ;
 ; 19.619 ; phase_out[5]                                                                                                                  ; staggered_phase_out[5]                  ; sampling_clk ; sampling_clk ; 20.000       ; 0.016      ; 0.374      ;
-; 19.620 ; phase_out[3]                                                                                                                  ; staggered_phase_out[3]                  ; sampling_clk ; sampling_clk ; 20.000       ; 0.017      ; 0.374      ;
 ; 19.620 ; phase_out[11]                                                                                                                 ; staggered_phase_out[11]                 ; sampling_clk ; sampling_clk ; 20.000       ; 0.017      ; 0.374      ;
+; 19.620 ; phase_out[3]                                                                                                                  ; staggered_phase_out[3]                  ; sampling_clk ; sampling_clk ; 20.000       ; 0.017      ; 0.374      ;
 ; 19.620 ; phase_out[9]                                                                                                                  ; staggered_phase_out[9]                  ; sampling_clk ; sampling_clk ; 20.000       ; 0.017      ; 0.374      ;
 ; 19.620 ; phase_out[2]                                                                                                                  ; staggered_phase_out[2]                  ; sampling_clk ; sampling_clk ; 20.000       ; 0.017      ; 0.374      ;
 ; 19.621 ; phase_out[10]                                                                                                                 ; staggered_phase_out[10]                 ; sampling_clk ; sampling_clk ; 20.000       ; 0.018      ; 0.374      ;
@@ -5256,7 +5256,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Tue Mar  8 19:45:42 2022
+    Info: Processing started: Sun Mar 13 17:36:23 2022
 Info: Command: quartus_sta deliverable2 -c deliverable2
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -5401,9 +5401,9 @@ Info (332114): Report Metastability: Found 401 synchronizer chains.
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1006 megabytes
-    Info: Processing ended: Tue Mar  8 19:45:54 2022
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Peak virtual memory: 1003 megabytes
+    Info: Processing ended: Sun Mar 13 17:36:34 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:14
 
 

@@ -121,6 +121,12 @@ C_text = textscan(fileID,formatSpec,N);
 C_data0 = textscan(fileID,'%f %f %f %f');
 fclose(fileID);
 
+
+fileID = fopen('MOAP.txt','A');
+cBeta = char(hex2dec('03b2'));
+% ********************** Comment this out after first run ***********
+fprintf(fileID,'%10s %10s %10s %10s %10s %10s %10s %10s %10s %10s \r\n','MER', 'betaTX', 'betaRCV', 'length', 'idx TX & RCV', 'OB1', 'OB2', 'OB3','b Kaiser','weight');
+
 vTX_B=C_data0{1,2}.'; vRCV_B=C_data0{1,3}.'; vLen=C_data0{1,4}.';
 % idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %89-121.txt
 % idx_73=find(vLen==73); idx_81=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %73-81.txt
@@ -146,12 +152,15 @@ w = [0:0.001:2000]/1000*pi; %one whole cycle
 N = 93;
 Nsps = 4;
 span = (N-1)/4;
-% for bk = 0:0.1:2
-for bk = 1:0.01:2
+for bk = 0:0.1:2
+% for bk = 0.3:0.1:0.3
+% for bk = 0:0.01:2
+% for bk = 1:1
 % for bk = 2:0.1:2
     for idx_TXnRCV = idx_93(1):(idx_93(end))
+%     for idx_TXnRCV = idx_93(4):(idx_93(5))
 %     for idx_TXnRCV = idx_97(1):(idx_97(1))
-%     for idx_TXnRCV = 1027:(idx_97(end))
+%     for idx_TXnRCV = 505:513
         b_nom = vTX_B(idx_TXnRCV);
         beta_Rcv = vRCV_B(idx_TXnRCV);
         GSM = rcosdesign(beta_Rcv,span,Nsps);
@@ -235,9 +244,13 @@ for bk = 1:0.01:2
             fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",OB1_58,OB2_60,OB3_63,MER_theo,bk, b_nom);
             fprintf("baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f | OB3 bnd frequency: %2.4f |\n", bb_bnd, OB1_bnd, OB2_bnd, OB3_bnd);
             fprintf("weight: ");disp(wght);
+%             fprintf('MER', 'betaTX', 'betaRCV', 'length', 'idx TX & RCV', 'OB1', 'OB2', 'OB3','beta Kaiser','weight');
+            A=[MER_theo, b_nom, beta_Rcv, N, idx_TXnRCV, OB1_58, OB2_60, OB3_63, bk, wght(3)];
+            fprintf(fileID,'%10.6f %10.6f %10.6f %10d %10d %10.6f %10.6f %10.6f %10.6f %10d \r\n',A);
         end
     end
 end
+fclose(fileID);
 
 TX_MR = superplot(w/2/pi,20*log10(abs(H_pps)),'plotName',"Magnitude Response of PPS",'figureName',"PracticalPSResp",'yName',"Magnitude (dB)",...
     'xName',"Frequency (cycles/sample)",'yLegend',"SQRT FIRPM",'cmpY',20*log10(abs(H_srrc)),'cmpYLegend',"SRRC",...
@@ -455,3 +468,15 @@ for row=1:N
         end
     end
 end
+
+%% Test append
+fileID = fopen('append.txt','A');
+cBeta = char(hex2dec('03b2'));
+fprintf(fileID,'%10s %10s %10s %10s\r\n','MER', 'betaTX', 'betaRCV', 'length');
+% A = [MER_out(1:last-1); betaTX_out(1:last-1); betaRCV_out(1:last-1); coeff_out(1:last-1)];
+MER_out=[1 2 3 4]; betaTX_out=1:4; betaRCV_out=1:4; coeff_out=1:4;
+A = [MER_out; betaTX_out; betaRCV_out; coeff_out];
+for i=1:4
+    fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A(i,i));
+end
+fclose(fileID);
