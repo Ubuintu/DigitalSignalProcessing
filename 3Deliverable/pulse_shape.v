@@ -215,33 +215,39 @@ always @ (posedge sys_clk)
             end
             
             //sum lvl 6 (2ND LAST)
-            for (i=0; i<(SUMLV6)-1; i=i+1) begin
-                if(i==0)
-                    sum_lvl[i+(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6)]<=$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5)+2*i])+$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5)+2*i+1]);
-                else
-                    sum_lvl[i+(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6)]<=$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5)+2*i]);
+            for (i=0; i<(SUMLV6); i=i+1) begin
+                if(i==0) begin
+                    sum_lvl[i+(LENGTH-1)]<=$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4)+2*i])+$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4)+2*i+1]);
+                    //$display("%t sum_lvl[%d]: %d | mult_out[%d]: %d | mult_out[%d]: %d",$time,(i+LENGTH-1),sum_lvl[i+LENGTH-1],
+                    //    (2*i+(SUMLV1+SUMLV2+SUMLV3+SUMLV4)),sum_lvl[2*i+(SUMLV1+SUMLV2+SUMLV3+SUMLV4)],(2*i+1+(SUMLV1+SUMLV2+SUMLV3+SUMLV4)),sum_lvl[2*i+1+(SUMLV1+SUMLV2+SUMLV3+SUMLV4)]);
+                end
+                else begin
+                    sum_lvl[i+(LENGTH-1)]<=$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4)+2*i]);
+                    //$display("%t sum_lvl[%d]: %d | mult_out[%d]: %d ",$time,(i+LENGTH-1),sum_lvl[i+LENGTH-1],
+                    //    (2*i+(SUMLV1+SUMLV2+SUMLV3+SUMLV4)),sum_lvl[2*i+(SUMLV1+SUMLV2+SUMLV3+SUMLV4)]);
+                end
             end
-/*
+
             //sum lvl 7 (FINAL)
             for (i=0; i<(SUMLV7); i=i+1) begin
                 if(i==0)
-                    sum_lvl[i+SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6+SUMLV7]<=$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6)+2*i])+$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6)+2*i+1]);
+                    sum_lvl[i+SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6]<=$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5)+2*i])+$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5)+2*i+1]);
                 else
-                    sum_lvl[i+SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6+SUMLV7]<=$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6)+2*i]);
+                    sum_lvl[i+SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6]<=$signed(sum_lvl[(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5)+2*i]);
             end
-            */
+            
         end
         else begin
             for (i=0; i<(SUMLV1+SUMLV2+SUMLV3+SUMLV4+SUMLV5+SUMLV6+SUMLV7); i=i+1)
                 sum_lvl[i]<=sum_lvl[i];
         end
    end
-/*
+
     always @ (posedge sys_clk)
         if (reset) y<= 18'sd0;
         else if (sam_clk_en) y<=$signed( sum_lvl[LENGTH+OFFSET-1] );
         else y<=$signed(y);
-*/
+
 initial begin
 	Hsys[0][0] = -18'sd31;
 	Hsys[1][0] = -18'sd21;
