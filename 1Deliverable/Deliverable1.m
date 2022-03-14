@@ -553,13 +553,12 @@ toWrite = zeros( length(worse_case_RCV),1 );
 % fclose(fileID);
 % 
 %%
-% 4-ASK input
+% 4-ASK input is 1s17
 toWrite = zeros(3*N,1);
-
 for i = 1:length(toWrite)
     %randsample(n,k) will returns k random values from n
 %     toWrite(i) = round(randsample(ASK_out,1)*2^16);
-    toWrite(i) = round(ASK_out(1)*2^16);
+    toWrite(i) = round(ASK_out(1)*2^17);
 end
 
 fileID = fopen('../3Deliverable/D3_ASK_in.txt','w');

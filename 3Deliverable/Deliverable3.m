@@ -62,10 +62,21 @@ in2 = ASK_out;
 % add row and column vectors to see possible combinations
 possible_inputs = in1 + in2';
 possible_inputs = uniquetol(possible_inputs);
-POSSINPUT= combine(possible_inputs, ASK_out.'); POSS_IN=round(POSSINPUT.*2^15);
+POSSINPUT= combine(possible_inputs, ASK_out.'); 
+POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
 possible_inputs_verilog = round(possible_inputs*2^16); 
 MF_PPS=round(POSSINPUT*h_PPS_0s18); MF_GSPS=round(POSSINPUT*h_GSPS_0s18);
+
+fprintf("2s16\n\n");
+for i=1:length(POSS_IN)
+    if (POSS_IN(i)<0)
+        fprintf("\tPOSSINPUTS[%d]=-18'sd%d;\n",i-1,abs(POSS_IN(i)) );
+    else
+        fprintf("\tPOSSINPUTS[%d]=18'sd%d;\n",i-1,POSS_IN(i));
+    end
+end
+fprintf("\n\n");
 
 num_of_sumLvls=0; coeffs2reduce=93;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
