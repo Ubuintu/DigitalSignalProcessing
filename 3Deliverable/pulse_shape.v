@@ -125,6 +125,7 @@ always @ (posedge sys_clk)    //need <=
         for (i=0; i<SUMLV1; i=i+1) begin
             //All taps besides center/odd tap
             if (i<=SUMLV1-2) begin
+                /*
                 //Possible input to sym taps. Note: for loop won't work here, overwriting issue
                 if( sum_lvl[i] == 18'sd65500 ) mult_out[i] <= Hsys[11][i];
                 //$display("%t poonis | Hsys: %d | mult_out: %d",$time,Hsys[11][i],mult_out[i]);
@@ -136,6 +137,16 @@ always @ (posedge sys_clk)    //need <=
                 else if ( ( sum_lvl[i]>(18'sd65536-tol) ) && ( sum_lvl[i]<(18'sd65536+tol) ) ) mult_out[i] <= Hsys[5][i];
                 else if ( ( sum_lvl[i]>(18'sd98303-tol) ) && ( sum_lvl[i]<(18'sd98303+tol) ) ) mult_out[i] <= Hsys[6][i];
                 else mult_out[i] <= 18'sd0;
+                */
+                for(j=0; j<POSSMAPPER; j=j+1) begin
+                    if ( $signed(sum_lvl[i])==18'sd65500 ) mult_out[i]<=$signed(Hsys[7][i]);
+                    else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[j])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[j])+tol) ) ) begin
+                        mult_out[i]<=$signed(Hsys[j][i]);
+                        i=i+POSSMAPPER;
+                    end
+                    else mult_out[i]<=18'sd0;
+                end
+
             end
             //for last tap/center
             else begin
