@@ -7,7 +7,7 @@ proc getScriptDirectory {} {
     return $scriptFolder
 }
 
-set SIM_LEN 10000ns
+set SIM_LEN 90000ns
 #set SIM_LEN 9000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "filter_TB"

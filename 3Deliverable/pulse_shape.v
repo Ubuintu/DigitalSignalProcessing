@@ -49,17 +49,17 @@ endfunction
 integer i,j;
 initial begin
      tol=18'sd10;
-	 POSSINPUTS[0]=-18'sd98303;
-	 POSSINPUTS[1]=-18'sd65536;
-	 POSSINPUTS[2]=-18'sd32768;
+	 POSSINPUTS[0]=-18'sd49152;
+	 POSSINPUTS[1]=-18'sd32768;
+	 POSSINPUTS[2]=-18'sd16384;
 	 POSSINPUTS[3]=18'sd0;
-	 POSSINPUTS[4]=18'sd32768;
-	 POSSINPUTS[5]=18'sd65536;
-	 POSSINPUTS[6]=18'sd98303;
-	 POSSINPUTS[7]=-18'sd49152;
-	 POSSINPUTS[8]=-18'sd16384;
-	 POSSINPUTS[9]=18'sd16384;
-	 POSSINPUTS[10]=18'sd49152;
+	 POSSINPUTS[4]=18'sd16384;
+	 POSSINPUTS[5]=18'sd32768;
+	 POSSINPUTS[6]=18'sd49152;
+	 POSSINPUTS[7]=-18'sd24576;
+	 POSSINPUTS[8]=-18'sd8192;
+	 POSSINPUTS[9]=18'sd8192;
+	 POSSINPUTS[10]=18'sd24576;
      for (i=0; i<OFFSET+LENGTH; i=i+1)
         sum_lvl[i]=18'sd0;
      for (i=0; i<SUMLV1; i=i+1)
@@ -138,19 +138,22 @@ always @ (posedge sys_clk)    //need <=
                 else if ( ( sum_lvl[i]>(18'sd98303-tol) ) && ( sum_lvl[i]<(18'sd98303+tol) ) ) mult_out[i] <= Hsys[6][i];
                 else mult_out[i] <= 18'sd0;
                 */
+                
                 for(j=0; j<POSSMAPPER; j=j+1) begin
                     if ( $signed(sum_lvl[i])==18'sd65500 ) mult_out[i]<=$signed(Hsys[7][i]);
                     else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[j])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[j])+tol) ) ) begin
                         mult_out[i]<=$signed(Hsys[j][i]);
-                        i=i+POSSMAPPER;
+                        j=j+POSSMAPPER; //Tried to force for loop to break, didn't work
+                        //$display("j is: %d",j);
                     end
                     else mult_out[i]<=18'sd0;
                 end
-
+                
             end
             //for last tap/center
             else begin
                 //$display("In center tap %t | x[center]=%d",$time,x[46]);
+                /*
                 if( ( sum_lvl[i]>(18'sd65500-tol) ) && ( sum_lvl[i]<(18'sd65500+tol) ) ) begin
                     mult_out[i] <= Hsys[11][i];
                     $display("In center tap %t | x[center]=%d | Hsys[11]: %d | i: %d",$time,x[46],Hsys[11][i],i);
@@ -161,7 +164,17 @@ always @ (posedge sys_clk)    //need <=
                 else if ( ( sum_lvl[i]>(18'sd49152-tol) ) && ( sum_lvl[i]<(18'sd49152+tol) ) ) mult_out[i] <= Hsys[10][i];
                 else begin
                     mult_out[i] <= 18'sd0;
-                    $display("In center tap, trapped in ELSE  %t | x[center]=%d | Hsys[11]: %d | i: %d | sum_lvl: %d",$time,x[46],Hsys[11][i],i,sum_lvl[i] );
+                    //$display("In center tap, trapped in ELSE  %t | x[center]=%d | Hsys[11]: %d | i: %d | sum_lvl: %d",$time,x[46],Hsys[11][i],i,sum_lvl[i] );
+                end
+                */
+                for(j=0; j<MAPSIZE; j=j+1) begin
+                    if ( $signed(sum_lvl[i])==18'sd65500 ) mult_out[i]<=$signed(Hsys[7][i]);
+                    else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[j+POSSMAPPER])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[j+POSSMAPPER])+tol) ) ) begin
+                        mult_out[i]<=$signed(Hsys[j][i]);
+                        j=j+POSSMAPPER; //Tried to force for loop to break, didn't work
+                        //$display("j is: %d",j);   //display doesn't work in MS
+                    end
+                    else mult_out[i]<=18'sd0;
                 end
             end
         end
