@@ -110,8 +110,8 @@ always @ (posedge sys_clk)
 //sum last odd tap
 always @ (posedge sys_clk)
     if (reset) sum_lvl[SUMLV1-1]<=18'sd0;
-    else if (sam_clk_en) sum_lvl[SUMLV1-1]<=$signed( x[(SUMLV1)-1] );
-    else sum_lvl[SUMLV1-1]<=$signed( sum_lvl[(SUMLV1)-1] );
+    else if (sam_clk_en) sum_lvl[SUMLV1-1]<=$signed( x[SUMLV1-1] );
+    else sum_lvl[SUMLV1-1]<=$signed( sum_lvl[SUMLV1-1] );
 
 always @ (posedge sys_clk)    //need <=
 //always @ *    //use =
@@ -126,13 +126,6 @@ always @ (posedge sys_clk)    //need <=
             //All taps besides center/odd tap
             if (i<=SUMLV1-2) begin
                 //Possible input to sym taps. Note: for loop won't work here, overwriting issue
-                /*
-                for(j=0; j<POSSMAPPER; j=j+1) begin
-                    if ( $signed(sum_lvl[i])==18'sd65500 ) mult_out[i]<=$signed(Hsys[7][i]);
-                    else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[j])-tol) ) && ( $signed(sum_lvl[i])<($signed(POSSINPUTS[j])+tol) ) ) mult_out[i]<=$signed(Hsys[j][i]);
-                    else mult_out[i]<=18'sd0;
-                end
-                */
                 if( sum_lvl[i] == 18'sd65500 ) mult_out[i] <= Hsys[11][i];
                 //$display("%t poonis | Hsys: %d | mult_out: %d",$time,Hsys[11][i],mult_out[i]);
                 else if ( ( sum_lvl[i]>(-18'sd98303-tol) ) && ( sum_lvl[i]<(-18'sd98303+tol) ) ) mult_out[i] <= Hsys[0][i];
@@ -147,13 +140,6 @@ always @ (posedge sys_clk)    //need <=
             //for last tap/center
             else begin
                 //$display("In center tap %t | x[center]=%d",$time,x[46]);
-                /*
-                for(j=0; j<MAPSIZE; j=j+1) begin
-                    if ( $signed(sum_lvl[i])==18'sd65500 ) mult_out[i]<=$signed(Hsys[7][i]);
-                    else if ( ( $signed(sum_lvl[i])>($signed(POSSINPUTS[j+POSSMAPPER])-tol) ) && ( $signed(sum_lvl[i])<$signed(POSSINPUTS[j+POSSMAPPER])+tol) ) mult_out[i]<=$signed(Hsys[j+POSSMAPPER][i]);
-                    else mult_out[i]<=18'sd0;
-                end
-                */
                 if( ( sum_lvl[i]>(18'sd65500-tol) ) && ( sum_lvl[i]<(18'sd65500+tol) ) ) begin
                     mult_out[i] <= Hsys[11][i];
                     $display("In center tap %t | x[center]=%d | Hsys[11]: %d | i: %d",$time,x[46],Hsys[11][i],i);
@@ -164,42 +150,38 @@ always @ (posedge sys_clk)    //need <=
                 else if ( ( sum_lvl[i]>(18'sd49152-tol) ) && ( sum_lvl[i]<(18'sd49152+tol) ) ) mult_out[i] <= Hsys[10][i];
                 else begin
                     mult_out[i] <= 18'sd0;
-                    $display("trapped in else");
-                    $display("In center tap %t | x[center]=%d | Hsys[11]: %d | i: %d",$time,x[46],Hsys[11][i],i);
+                    $display("In center tap, trapped in ELSE  %t | x[center]=%d | Hsys[11]: %d | i: %d | sum_lvl: %d",$time,x[46],Hsys[11][i],i,sum_lvl[i] );
                 end
             end
-            else 
-                for (i=0; i<SUMLV1; i=i+1)
-                    mult_out[i]<=$signed(mult_out[i]);
         end
     end
     else 
         for (i=0; i<SUMLV1; i=i+1)
             mult_out[i]<=$signed(mult_out[i]);
     
-        
+/*        
 integer ind=0;
 integer index=0;
 //coeffs 0s18; x 2s16
 always @ (posedge sys_clk)
    if (reset) begin
         //sum(SUMLVLWID+SUMLVL)=total regs required
-        for (i=SUMLV1-1;i<LENGTH;i=i+1)
+        for (i=SUMLV1;i<LENGTH+OFFSET;i=i+1)
             sum_lvl[i]=18'sd0;
    end
 	//Will have to manually adjust if statements based on len of filt & sum lvls required
    else begin
         if (sam_clk_en) begin
-            /*          sum lvl 2; multiple begin-ends work sequentially            */
+            //         sum lvl 2; multiple begin-ends work sequentially            
             for (i=0; i<(SUMLV2)-1; i=i+1) begin
                 if (i==(SUMLV1+SUMLV2)-1)
-                    sum_lvl[i+(SUMLV1)-1]<=$signed(mult_out[2*i]);
+                    sum_lvl[i+(SUMLV1)]<=$signed(mult_out[SUMLV1-1]);
                 else 
-                    sum_lvl[i+(SUMLV1)-1]<=$signed(mult_out[2*i])+$signed(mult_out[2*i+1]);
+                    sum_lvl[i+(SUMLV1)]<=$signed(mult_out[2*i])+$signed(mult_out[2*i+1]);
             end
             //sum lvl 3
             for (i=0; i<(SUMLV3)-1; i=i+1) begin
-                sum_lvl[i+(SUMLV1+SUMLV2+SUMLV3)]<=$signed(sum_lvl[(SUMLV1+SUMLV2)+2*i])+$signed(sum_lvl[(SUMLV1+SUMLV2)+2*i+1]);
+                sum_lvl[i+(SUMLV1+SUMLV2)]<=$signed(sum_lvl[2*i+(SUMLV1+SUMLV2)])+$signed(sum_lvl[(SUMLV1+SUMLV2)+2*i+1]);
             end
             //sum lvl 4
             for (i=0; i<(SUMLV4)-1; i=i+1) begin
@@ -234,7 +216,7 @@ always @ (posedge sys_clk)
         if (reset) y<= 18'sd0;
         else if (sam_clk_en) y<=$signed( sum_lvl[LENGTH+OFFSET-1] );
         else y<=$signed(y);
-
+*/
 initial begin
 	Hsys[0][0] = -18'sd31;
 	Hsys[1][0] = -18'sd21;

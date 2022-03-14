@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/home/tob208/engr-ece/Documents/EE465/3Deliverable
 vclk_en
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1647234666
+Z2 !s110 1647236195
 !i10b 1
 !s100 `h4ZXe`P[CM^gWUF[[m?L2
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -22,18 +22,18 @@ R0
 w1645156567
 8./clk_en.v
 F./clk_en.v
-!i122 1
+!i122 2
 L0 1 36
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1647234666.000000
+Z6 !s108 1647236195.000000
 !s107 ./clk_en.v|
 !s90 -reportprogress|300|-sv|-work|work|./clk_en.v|
 !i113 1
-Z6 o-sv -work work
-Z7 tCvgOpt 0
+Z7 o-sv -work work
+Z8 tCvgOpt 0
 vfilter_TB
 R1
 R2
@@ -44,7 +44,7 @@ I[_AVWK82WB15WXXT:knSS3
 R4
 S1
 R0
-w1647226494
+w1647236144
 8./filter_TB.sv
 F./filter_TB.sv
 !i122 0
@@ -53,10 +53,36 @@ R5
 r1
 !s85 0
 31
-!s108 1647234665.000000
+R6
 !s107 ./filter_TB.sv|
 !s90 -reportprogress|300|-sv|-work|work|./filter_TB.sv|
 !i113 1
-R6
 R7
+R8
 nfilter_@t@b
+vGSPS_filt
+R1
+R2
+!i10b 1
+!s100 X^Qec^V]U;<AZZ[3k`0=70
+R3
+IQI=32YVE;<:Bi0jf=]N>S2
+R4
+S1
+R0
+w1647236110
+8./pulse_shape.v
+F./pulse_shape.v
+!i122 1
+L0 1 787
+R5
+r1
+!s85 0
+31
+R6
+!s107 ./pulse_shape.v|
+!s90 -reportprogress|300|-sv|-work|work|./pulse_shape.v|
+!i113 1
+R7
+R8
+n@g@s@p@s_filt
