@@ -12,6 +12,9 @@ add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl
 #add wave -noupdate -radix decimal /filter_TB/DUT/i
 #add wave -noupdate -radix decimal /filter_TB/DUT/j
 add wave -noupdate -radix decimal /filter_TB/DUT/mult_out
+#add wave -noupdate -radix decimal /filter_TB/DUT/Hsys
 add wave -noupdate -radix decimal /filter_TB/DUT/y
 add wave -noupdate  /filter_TB/DUT/sum_lvl[46]
+add wave -noupdate  /filter_TB/DUT/x[46]
+add wave -noupdate  /filter_TB/DUT/sum_lvl[45]
 update

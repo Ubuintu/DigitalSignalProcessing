@@ -125,7 +125,7 @@ fclose(fileID);
 fileID = fopen('MOAP.txt','A');
 cBeta = char(hex2dec('03b2'));
 % ********************** Comment this out after first run ***********
-fprintf(fileID,'%10s %10s %10s %10s %10s %10s %10s %10s %10s %10s \r\n','MER', 'betaTX', 'betaRCV', 'length', 'idx TX & RCV', 'OB1', 'OB2', 'OB3','b Kaiser','weight');
+% fprintf(fileID,'%10s %10s %10s %10s %10s %10s %10s %10s %10s %10s \r\n','MER', 'betaTX', 'betaRCV', 'length', 'idx TX & RCV', 'OB1', 'OB2', 'OB3','b Kaiser','weight');
 
 vTX_B=C_data0{1,2}.'; vRCV_B=C_data0{1,3}.'; vLen=C_data0{1,4}.';
 % idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %89-121.txt
@@ -152,7 +152,7 @@ w = [0:0.001:2000]/1000*pi; %one whole cycle
 N = 93;
 Nsps = 4;
 span = (N-1)/4;
-for bk = 0:0.1:2
+for bk = 1:0.1:2
 % for bk = 0.3:0.1:0.3
 % for bk = 0:0.01:2
 % for bk = 1:1

@@ -65,7 +65,7 @@ possible_inputs = uniquetol(possible_inputs);
 POSSINPUT= combine(possible_inputs, ASK_out.'); POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
 possible_inputs_verilog = round(possible_inputs*2^16); 
-MF_PPS=round(possible_inputs*h_PPS_0s18); MF_GSPS=round(possible_inputs*h_GSPS_0s18);
+MF_PPS=round(POSSINPUT*h_PPS_0s18); MF_GSPS=round(POSSINPUT*h_GSPS_0s18);
 
 num_of_sumLvls=0; coeffs2reduce=93;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
@@ -79,6 +79,28 @@ for i=1:N
     end
 end
 fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
+%% GSPS coeffs
+clc
+[rows, cols] = size(MF_GSPS);
+fprintf('0s18 Coefficients for GSPS filter:\n');
+fprintf("\ninitial begin\n");
+for i = 1:ceil(cols/2)
+    for j = 1:rows+1
+        if j == rows+1 && h_GSPS_0s18(i) > 0
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_0s18(i)) ) );
+        elseif j == rows+1 && h_GSPS_0s18(i) < 0
+            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_0s18(i)) ) );
+        elseif MF_GSPS(j,i) > 0
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_GSPS(j,i)) ) );
+        elseif MF_GSPS(j,i) < 0
+            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_GSPS(j,i)) ) );
+        else
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_GSPS(j,i)) ) );
+        end
+    end
+end
+fprintf("end\n");
+fprintf('End of 0s18 Coefficients for GSPS filter:\n\n');
 %% PPS coeffs
 clc
 [rows, cols] = size(MF_PPS);
@@ -87,37 +109,17 @@ fprintf("initial begin\n");
 for i = 1:ceil(cols/2)
     for j = 1:rows+1
         if j == rows+1 && h_PPS_0s18(i) > 0
-            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
         elseif j == rows+1 && h_PPS_0s18(i) < 0
-            fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
+            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
         elseif MF_PPS(j,i) > 0
-            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_PPS(j,i)) ) );
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_PPS(j,i)) ) );
         elseif MF_PPS(j,i) < 0
-            fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_PPS(j,i)) ) );
+            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_PPS(j,i)) ) );
         else
-            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_PPS(j,i)) ) );
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_PPS(j,i)) ) );
         end
     end
 end
 fprintf("end\n");
 % fprintf('\nEnd of 0s18 Coefficients for PPS filter:\n\n');
-%% GSPS coeffs
-clc
-[rows, cols] = size(MF_GSPS);
-fprintf('0s18 Coefficients for PPS filter:\n');
-for i = 1:ceil(cols/2)
-    for j = 1:rows+1
-        if j == rows+1 && h_GSPS_0s18(i) > 0
-            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_0s18(i)) ) );
-        elseif j == rows+1 && h_GSPS_0s18(i) < 0
-            fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_0s18(i)) ) );
-        elseif MF_GSPS(j,i) > 0
-            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_GSPS(j,i)) ) );
-        elseif MF_GSPS(j,i) < 0
-            fprintf('\tb[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_GSPS(j,i)) ) );
-        else
-            fprintf('\tb[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_GSPS(j,i)) ) );
-        end
-    end
-end
-fprintf('End of 0s18 Coefficients for PPS filter:\n\n');
