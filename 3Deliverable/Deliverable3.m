@@ -66,7 +66,7 @@ POSSINPUT= combine(possible_inputs, ASK_out.');
 POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
 possible_inputs_verilog = round(possible_inputs*2^16); 
-MF_PPS=round(POSSINPUT*h_PPS_1s17); MF_GSPS=round(POSSINPUT*h_GSPS_1s17);
+MF_PPS=round(POSSINPUT*h_PPS.*2^17); MF_GSPS=round(POSSINPUT*h_GSPS_1s17);
 
 num_of_sumLvls=0; coeffs2reduce=93;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );

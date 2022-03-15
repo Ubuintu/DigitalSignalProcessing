@@ -1,7 +1,7 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /TB_filter/x_in
-add wave -noupdate /TB_filter/y
+add wave -noupdate -format Analog-Interpolated -height 84 -max 200000.00000000003 -min -20000.0 /TB_filter/y
 add wave -noupdate /TB_filter/rst
 add wave -noupdate /TB_filter/EN_CLK/clk
 add wave -noupdate /TB_filter/EN_CLK/reset
@@ -15,9 +15,12 @@ add wave -noupdate /TB_filter/DUT/sum_lvl_1
 add wave -noupdate /TB_filter/DUT/mult_out
 add wave -noupdate /TB_filter/DUT/sum_lvl_2
 add wave -noupdate /TB_filter/DUT/sum_lvl_3
+add wave -noupdate /TB_filter/DUT/sum_lvl_4
+add wave -noupdate /TB_filter/DUT/sum_lvl_5
+add wave -noupdate /TB_filter/DUT/sum_lvl_6
 add wave -noupdate /TB_filter/DUT/y
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {103 ns} 0}
+WaveRestoreCursors {{Cursor 1} {13583 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 178
 configure wave -valuecolwidth 383
@@ -33,4 +36,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {781 ns}
+WaveRestoreZoom {13464 ns} {14245 ns}

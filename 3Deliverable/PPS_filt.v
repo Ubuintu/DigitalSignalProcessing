@@ -162,6 +162,42 @@ always @ (posedge sys_clk)
             sum_lvl_3[i]<=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
     end
 
+/*          SUMLV4              */
+always @ (posedge sys_clk)
+    if (reset) begin
+        for (i=0; i<SUMLV4; i=i+1)
+            sum_lvl_4[i]=18'sd0;
+    end
+    else if (sam_clk_en) begin
+        for (i=0; i<SUMLV4; i=i+1)
+            sum_lvl_4[i]<=$signed(sum_lvl_3[2*i])+$signed(sum_lvl_3[2*i+1]);
+    end
+
+/*          SUMLV5              */
+always @ (posedge sys_clk)
+    if (reset) begin
+        for (i=0; i<SUMLV5; i=i+1)
+            sum_lvl_5[i]=18'sd0;
+    end
+    else if (sam_clk_en) begin
+        for (i=0; i<SUMLV5; i=i+1)
+            sum_lvl_5[i]<=$signed(sum_lvl_4[2*i])+$signed(sum_lvl_4[2*i+1]);
+    end
+
+/*          SUMLV6              */
+always @ (posedge sys_clk)
+    if (reset) begin
+        for (i=0; i<SUMLV6; i=i+1)
+            sum_lvl_6[i]=18'sd0;
+    end
+    else if (sam_clk_en) begin
+        for (i=0; i<SUMLV6; i=i+1)
+            if (i==SUMLV6-1)
+                sum_lvl_6[i]<=$signed(sum_lvl_5[SUMLV5-1]);
+            else
+                sum_lvl_6[i]<=$signed(sum_lvl_5[2*i])+$signed(sum_lvl_5[2*i+1]);
+    end
+
 /*always @ (posedge sys_clk)
     if (reset) sum_lvl_2[SUMLV2-1] <= 18'sd0;
     else if (sam_clk_en) sum_lvl_2[SUMLV2-1]<=$signed(mult_out[SUMLV1-1]);*/
