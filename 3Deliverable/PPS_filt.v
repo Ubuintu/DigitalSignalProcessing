@@ -113,28 +113,58 @@ always @ *
             if( i<SUMLV1-2 ) begin 
                 /*For verifying taps*/
                 if( sum_lvl_1[i] == 18'sd65500 ) begin
-                    mult_out[i] = Hsys[11][i];
+                    mult_out[i] <= Hsys[11][i];
                     //$display("%d %d",mult_out[i],Hsys[11][i]);
                 end
-                else if ( ( sum_lvl_1[i]>(-18'sd98303-tol) ) && ( sum_lvl_1[i]<(-18'sd98303+tol) ) ) mult_out[i] = Hsys[0][i];
-                else if ( ( sum_lvl_1[i]>(-18'sd65536-tol) ) && ( sum_lvl_1[i]<(-18'sd65536+tol) ) ) mult_out[i] = Hsys[1][i];
-                else if ( ( sum_lvl_1[i]>(-18'sd32768-tol) ) && ( sum_lvl_1[i]<(-18'sd32768+tol) ) ) mult_out[i] = Hsys[2][i];
-                else if ( ( sum_lvl_1[i]>(18'sd0-tol) ) && ( sum_lvl_1[i]<(18'sd0+tol) ) ) mult_out[i] = Hsys[3][i];
-                else if ( ( sum_lvl_1[i]>(18'sd32768-tol) ) && ( sum_lvl_1[i]<(18'sd32768+tol) ) ) mult_out[i] = Hsys[4][i];
-                else if ( ( sum_lvl_1[i]>(18'sd65536-tol) ) && ( sum_lvl_1[i]<(18'sd65536+tol) ) ) mult_out[i] = Hsys[5][i];
-                else if ( ( sum_lvl_1[i]>(18'sd131072-tol) ) && ( sum_lvl_1[i]<(18'sd131072+tol) ) ) mult_out[i] = Hsys[6][i];
+                else if ( ( sum_lvl_1[i]>(-18'sd98303-tol) ) && ( sum_lvl_1[i]<(-18'sd98303+tol) ) ) mult_out[i] <= Hsys[0][i];
+                else if ( ( sum_lvl_1[i]>(-18'sd65536-tol) ) && ( sum_lvl_1[i]<(-18'sd65536+tol) ) ) mult_out[i] <= Hsys[1][i];
+                else if ( ( sum_lvl_1[i]>(-18'sd32768-tol) ) && ( sum_lvl_1[i]<(-18'sd32768+tol) ) ) mult_out[i] <= Hsys[2][i];
+                else if ( ( sum_lvl_1[i]>(18'sd0-tol) ) && ( sum_lvl_1[i]<(18'sd0+tol) ) ) mult_out[i] <= Hsys[3][i];
+                else if ( ( sum_lvl_1[i]>(18'sd32768-tol) ) && ( sum_lvl_1[i]<(18'sd32768+tol) ) ) mult_out[i] <= Hsys[4][i];
+                else if ( ( sum_lvl_1[i]>(18'sd65536-tol) ) && ( sum_lvl_1[i]<(18'sd65536+tol) ) ) mult_out[i] <= Hsys[5][i];
+                else if ( ( sum_lvl_1[i]>(18'sd131072-tol) ) && ( sum_lvl_1[i]<(18'sd131072+tol) ) ) mult_out[i] <= Hsys[6][i];
                 else mult_out[i] = 18'sd0;
                 end
             else begin
                 /*For verifying taps*/
-                if( sum_lvl_1[i] == 18'sd65500 ) mult_out[i] = Hsys[11][i];
-                else if ( ( sum_lvl_1[i]>(-18'sd49152-tol) ) && ( sum_lvl_1[i]<(-18'sd49152+tol) ) ) mult_out[i] = Hsys[7][i];
-                else if ( ( sum_lvl_1[i]>(-18'sd16384-tol) ) && ( sum_lvl_1[i]<(-18'sd16384+tol) ) ) mult_out[i] = Hsys[8][i];
-                else if ( ( sum_lvl_1[i]>(18'sd16384-tol) ) && ( sum_lvl_1[i]<(18'sd16384+tol) ) ) mult_out[i] = Hsys[9][i];
-                else if ( ( sum_lvl_1[i]>(18'sd49152-tol) ) && ( sum_lvl_1[i]<(18'sd49152+tol) ) ) mult_out[i] = Hsys[10][i];
-                else mult_out[i] = 18'sd0;
+                if( sum_lvl_1[i] == 18'sd65500 ) mult_out[i] <= Hsys[11][i];
+                else if ( ( sum_lvl_1[i]>(-18'sd49152-tol) ) && ( sum_lvl_1[i]<(-18'sd49152+tol) ) ) mult_out[i] <= Hsys[7][i];
+                else if ( ( sum_lvl_1[i]>(-18'sd16384-tol) ) && ( sum_lvl_1[i]<(-18'sd16384+tol) ) ) mult_out[i] <= Hsys[8][i];
+                else if ( ( sum_lvl_1[i]>(18'sd16384-tol) ) && ( sum_lvl_1[i]<(18'sd16384+tol) ) ) mult_out[i] <= Hsys[9][i];
+                else if ( ( sum_lvl_1[i]>(18'sd49152-tol) ) && ( sum_lvl_1[i]<(18'sd49152+tol) ) ) mult_out[i] <= Hsys[10][i];
+                else mult_out[i] <= 18'sd0;
             end
     end
+
+/*          SUMLV2              */
+always @ (posedge sys_clk)
+    if (reset) begin
+        for (i=0; i<SUMLV2-1; i=i+1)
+            sum_lvl_2[i]=18'sd0;
+    end
+    else if (sam_clk_en) begin
+        for (i=0; i<SUMLV2-1; i=i+1)
+            sum_lvl_2[i]<=$signed(mult_out[2*i])+$signed(mult_out[2*i+1]);
+    end
+
+always @ (posedge sys_clk)
+    if (reset) sum_lvl_2[SUMLV2-1] <= 18'sd0;
+    else if (sam_clk_en) sum_lvl_2[SUMLV2-1]<=$signed(mult_out[SUMLV1-1]);
+
+/*          SUMLV3              */
+always @ (posedge sys_clk)
+    if (reset) begin
+        for (i=0; i<SUMLV3; i=i+1)
+            sum_lvl_3[i]=18'sd0;
+    end
+    else if (sam_clk_en) begin
+        for (i=0; i<SUMLV3; i=i+1)
+            sum_lvl_3[i]<=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
+    end
+
+/*always @ (posedge sys_clk)
+    if (reset) sum_lvl_2[SUMLV2-1] <= 18'sd0;
+    else if (sam_clk_en) sum_lvl_2[SUMLV2-1]<=$signed(mult_out[SUMLV1-1]);*/
 
 
 always @ (posedge sys_clk)

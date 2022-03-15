@@ -47,7 +47,7 @@ for i = 1:2*N-1
 end
 
 MER_GSPS=10*log10(numGSPS^2/sum(denGSPS.^2)); MER_GPPS=10*log10(numGPPS^2/sum(denGPPS.^2));
-h_PPS_0s18=round(h_PPS.*2^18); h_GSPS_0s18=round(h_GSPS*2.^18); h_GSM_0s18=round(h_GSM*2.^18);
+h_PPS_1s17=round(h_PPS.*2^17); h_GSPS_1s17=round(h_GSPS*2.^17); h_GSM_1s17=round(h_GSM*2.^17);
 
 % values for LUT 4-ASK mapper; ensure output of 4-ASK mapper is a 1s17
 % input to transmit filter
@@ -66,17 +66,7 @@ POSSINPUT= combine(possible_inputs, ASK_out.');
 POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
 possible_inputs_verilog = round(possible_inputs*2^16); 
-MF_PPS=round(POSSINPUT*h_PPS_0s18); MF_GSPS=round(POSSINPUT*h_GSPS_0s18);
-
-fprintf("2s16\n\n");
-for i=1:length(POSS_IN)
-    if (POSS_IN(i)<0)
-        fprintf("\tPOSSINPUTS[%d]=-18'sd%d;\n",i-1,abs(POSS_IN(i)) );
-    else
-        fprintf("\tPOSSINPUTS[%d]=18'sd%d;\n",i-1,POSS_IN(i));
-    end
-end
-fprintf("\n\n");
+MF_PPS=round(POSSINPUT*h_PPS_1s17); MF_GSPS=round(POSSINPUT*h_GSPS_1s17);
 
 num_of_sumLvls=0; coeffs2reduce=93;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
@@ -97,10 +87,10 @@ clc
 fprintf("initial begin\n");
 for i = 1:ceil(cols/2)
     for j = 1:rows+1
-        if j == rows+1 && h_PPS_0s18(i) > 0
-            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
-        elseif j == rows+1 && h_PPS_0s18(i) < 0
-            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
+        if j == rows+1 && h_PPS_1s17(i) > 0
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_1s17(i)) ) );
+        elseif j == rows+1 && h_PPS_1s17(i) < 0
+            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_1s17(i)) ) );
         elseif MF_PPS(j,i) > 0
             fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_PPS(j,i)) ) );
         elseif MF_PPS(j,i) < 0
@@ -119,10 +109,10 @@ clc
 fprintf("\ninitial begin\n");
 for i = 1:ceil(cols/2)
     for j = 1:rows+1
-        if j == rows+1 && h_GSPS_0s18(i) > 0
-            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_0s18(i)) ) );
-        elseif j == rows+1 && h_GSPS_0s18(i) < 0
-            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_0s18(i)) ) );
+        if j == rows+1 && h_GSPS_1s17(i) > 0
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_1s17(i)) ) );
+        elseif j == rows+1 && h_GSPS_1s17(i) < 0
+            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_1s17(i)) ) );
         elseif MF_GSPS(j,i) > 0
             fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_GSPS(j,i)) ) );
         elseif MF_GSPS(j,i) < 0
