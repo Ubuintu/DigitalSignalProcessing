@@ -117,7 +117,16 @@ wire [13:0] DAC_out;
 //			.sig_out(srrc_out) //output of SRRC filter 1s17
 //			);
 
-PPS_filt DUT (
+(* preserve *) reg [3:0] counter;
+
+always @ (posedge sys_clk)
+	counter <= counter+4'd1;
+	
+		
+	
+
+
+PPS_filt DUT_TX (
 //PPS_filt_101 DUT (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
@@ -125,7 +134,58 @@ PPS_filt DUT (
 	.x_in(srrc_input),
 	.y(srrc_out)
 	);
+
+//output of matched DS filter
+(* keep *) wire signed [17:0] dec_var;
 	
+//SLICER
+wire [1:0] slice;
+slicer DECIDER (
+	.dec_var(dec_var),
+	.ref_lvl(ref_lvl),
+	.slice(slice)
+);
+
+//Mapper_out
+wire signed [17:0] map_out_ref_lvl;
+mapper_ref MAP_CMP (
+	.map_out(map_out_ref_lvl),
+	.slice(slice),
+	.ref_lvl(ref_lvl)
+);
+//AVG_MAG
+wire signed [17:0] ref_lvl, map_out_pwr, ref_lvlQ, map_out_pwrQ;
+
+avg_mag AVG_MAG_DV (
+	.dec_var(dec_var),
+	.sym_clk_en(sym_clk_en),
+   .clr_acc(cycle),
+	.clk(sys_clk),
+	.reset(reset),
+	.ref_lvl(ref_lvl),
+	.map_out_pwr(map_out_pwr)
+);
+	
+wire signed [17:0] err_acc;
+//wire signed [17:0] err_square;	//for original err_Sqr circuit
+wire signed [55:0] err_square;
+avg_err_squared_55 AVG_ER_SQR (
+	.error(error),
+	.sym_clk_en(sym_clk_en),
+   .clr_acc(cycle),
+	.sys_clk(sys_clk),
+	.reset(reset),
+	.err_square(err_square)
+);
+
+avg_err AVG_ER (
+	.error(error),
+	.sym_clk_en(sym_clk_en),
+   .clr_acc(cycle),
+	.sys_clk(sys_clk),
+	.reset(reset),
+	.err_acc(err_acc)
+);
 
 
 endmodule
