@@ -126,8 +126,8 @@ always @ (posedge sys_clk)
 	
 
 
-PPS_filt DUT_TX (
-//PPS_filt_101 DUT (
+//PPS_filt DUT_TX (
+PPS_filt_101 DUT (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
@@ -137,6 +137,17 @@ PPS_filt DUT_TX (
 
 //output of matched DS filter
 (* keep *) wire signed [17:0] dec_var;
+
+wire signed [17:0] MF_out;
+
+//GSM
+GSM_noMult (
+	.sys_clk(sys_clk),
+	.sam_clk_en(sam_clk_ena),
+	.reset(~KEY[3]),
+	.x_in(srrc_out),
+	.y(MF_out)
+);
 	
 //SLICER
 wire [1:0] slice;

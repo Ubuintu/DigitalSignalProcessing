@@ -26,3 +26,5 @@ Warning (10268): Verilog HDL information at PPS_filt_101.v(132): always construc
 Warning (10268): Verilog HDL information at PPS_filt_101.v(147): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS_filt_101.v Line: 147
 Warning (10268): Verilog HDL information at PPS_filt_101.v(158): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS_filt_101.v Line: 158
 Warning (10268): Verilog HDL information at PPS_filt_101.v(175): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS_filt_101.v Line: 175
+Warning (10268): Verilog HDL information at PPS_filt_101.v(191): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS_filt_101.v Line: 191
+Warning (10268): Verilog HDL information at PPS_filt_101.v(204): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS_filt_101.v Line: 204

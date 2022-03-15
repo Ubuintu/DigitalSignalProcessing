@@ -5,7 +5,7 @@
 %     b) The sampling rate is 1/4 the rate of the system clock. The system clock, referred to as sys_clk, is to run at 25 Msamples/second 
 %        and the sampling rate is to be 6.25 Msamples/second.
 %     c) nominal roll-off factor for the pulse shaping is ? = 0.12
-%     d) The channel bandwidth at RF is (1+?)samples/symbol�sampling rate = (1+0.12)/4 �6.25 Msam/sec = 1.75 MHz. The channel bandwidth at 
+%     d) The channel bandwidth at RF is (1+?)samples/symbol×sampling rate = (1+0.12)/4 ×6.25 Msam/sec = 1.75 MHz. The channel bandwidth at 
 %        baseband is 1/2 the RF bandwidth, which isBW_baseband = 1.75/2 = 0.875 MHz
  
 % 2. A gold standard for the matched filter for a CATV 16-QAM modem. (Just need one - not building both I and Q.)
@@ -31,7 +31,17 @@ Nsps=4;
 
 %        MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3 b Kaiser     weight 
 %  42.020064   0.147900   0.192500        101     142581  64.080312  65.588531  64.251330   1.500000         20
-N=101; betaTx=0.1479; betaRcv=0.1925; betaK=.5;
+%  43.650844   0.161800   0.197800        101     156229  61.091355  70.368357  69.013668   1.500000         20
+%  41.065812   0.144700   0.181700        101     140722  64.752172  64.408597  63.071980   1.500000         20   
+%  41.823193   0.153500   0.182900        101     147321  62.792629  67.430605  66.091245   1.500000         20 
+% N=101; betaTx=0.153500; betaRcv=0.182900; betaK=1.5;
+
+
+% *************MET SPEC*************************
+% TX's β: 0.1430 | RCV's β: 0.1780 | idx TX & RCV: 1364
+% OB1: 64.634703 | OB2: 64.497576 | OB3: 63.146043 | MER: 40.334376 | Bk: 1.6000 | Beta nominal: 0.1430 | 
+% baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
+N=101; betaTx=0.1480; betaRcv=0.1690; betaK=1.6;
 
 M=N-1; span=M/Nsps; h_GSPS=rcosdesign(betaTx,span,Nsps); h_GSM=rcosdesign(betaRcv,span,Nsps); wn=kaiser(N,betaK);
 fc=1/2/Nsps; fp=(1-betaTx)*fc; fs=(1+betaTx)*fc; fb=[0 fp fc fc fs .5]*2; a=[1 1 1/sqrt(2) 1/sqrt(2) 0 0]; 
@@ -43,7 +53,7 @@ h_PPS=h_PPS.*wn.';
 wc_PPS=sum(abs(h_PPS)); 
 wc_GSPS=sum(abs(h_GSPS)); 
 wc_GSM=sum(abs(h_GSM));
-h_PPS=safety*h_PPS/wc_PPS; h_GSPS=safety*h_GSPS/wc_GSPS; h_GSM=safety*h_GSM/wc_GSM; %comment this to see if peak agrees
+% h_PPS=safety*h_PPS/wc_PPS; h_GSPS=safety*h_GSPS/wc_GSPS; h_GSM=safety*h_GSM/wc_GSM; %comment this to see if peak agrees
 h_GSMGSPS=conv(h_GSPS,h_GSM); h_GSMPPS=conv(h_PPS,h_GSM);
 
 numGSPS = h_GSMGSPS(N); denGSPS = zeros(floor(length(h_GSMGSPS)/Nsps),1);   %Gold Standard Pulse Shaping
@@ -81,9 +91,9 @@ POSSINPUT= combine(possible_inputs, ASK_out.');
 POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
 possible_inputs_verilog = round(possible_inputs*2^16); 
-MF_PPS=round(ASK_out.'*h_PPS.*2^17);    % 0s18 gives me smoothest stp; idk y
+MF_PPS=round(ASK_out.'*h_PPS.*2^17*safety);    % 0s18 gives me smoothest stp; idk y
 % MF_PPS=round(POSSINPUT*h_PPS.*2^16);    
-MF_GSPS=round(POSSINPUT*h_GSPS_0s18);
+MF_GSPS=round(ASK_out.'*h_GSPS_0s18);
 
 num_of_sumLvls=0; coeffs2reduce=N;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
@@ -104,7 +114,7 @@ clc
 fprintf("initial begin\n");
 for i = 1:cols
     for j = 1:rows+1
-        if j == rows+1 && h_PPS_0s18(i) > 0
+        if j == rows+1 && h_PPS_0s18(i) >= 0
             fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
         elseif j == rows+1 && h_PPS_0s18(i) < 0
             fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );

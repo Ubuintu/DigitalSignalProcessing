@@ -147,19 +147,19 @@ idx_85=find(vLen==85); idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find
 
 % digital angular frequency, w (rads/sample)
 % w = [0:0.001:1000]/1000*pi; %0-0.5
-w = [0:0.001:2000]/1000*pi; %one whole cycle
+w = [0:0.001:200]/100*pi; %one whole cycle
 
-N = 101;
+N = 97;
 Nsps = 4;
 span = (N-1)/4;
-for bk = 1.5:0.01:2
+% for bk = 1.5:0.01:2
 % for bk = 0.3:0.1:0.3
 % for bk = 0:0.01:2
-% for bk = 1:1
+for bk = 1:1
 % for bk = 2:0.1:2
-    for idx_TXnRCV = idx_101(1):(idx_101(end))
+%     for idx_TXnRCV = idx_105(1):(idx_105(end))
 %     for idx_TXnRCV = idx_93(4):(idx_93(5))
-%     for idx_TXnRCV = idx_97(1):(idx_97(1))
+    for idx_TXnRCV = idx_97(1):(idx_97(1))
 %     for idx_TXnRCV = 505:513
         b_nom = vTX_B(idx_TXnRCV);
         beta_Rcv = vRCV_B(idx_TXnRCV);
@@ -190,31 +190,33 @@ for bk = 1.5:0.01:2
         % mag_H = 20*log10(abs(H));
         sam_r8 = 6.25;
         mag_H = 20*log10(abs(H_pps));
-        bb_bnd=(1+.12)/2/Nsps; OB1_bnd=bb_bnd+(.22/sam_r8); OB2_bnd=OB1_bnd+(1.53/sam_r8); OB3_bnd=OB2_bnd+(1.75/sam_r8);
-        baseband_ind = find( w/2/pi <= bb_bnd);
-        OB1_ind = find(w/2/pi>bb_bnd & w/2/pi<=OB1_bnd);
-        OB2_ind = find(w/2/pi > OB1_bnd & w/2/pi <= OB2_bnd);
-        OB3_ind = find(w/2/pi > OB2_bnd & w/2/pi <= OB3_bnd);
+        bnd_BB=(1+.12)/Nsps/2; 
+        bnd_OB1=bnd_BB+(.22/sam_r8); 
+        bnd_OB2=bnd_OB1+(1.53/sam_r8); 
+        bnd_OB3=bnd_OB2+(1.75/sam_r8);
+        ind_BB = find( w/2/pi <= bnd_BB);
+        ind_OB1 = find(w/2/pi>bnd_BB & w/2/pi<=bnd_OB1);
+        ind_OB2 = find(w/2/pi>bnd_OB1 & w/2/pi<=bnd_OB2);
+        ind_OB3 = find(w/2/pi>bnd_OB2 & w/2/pi<=bnd_OB3);
 
-        conv2mW = @(x) 10.^(x/20);
-        conv2dBm =  @(x) 20.*log10(x);
+        conv2Lin = @(x) 10.^(x/20);
+        conv2dB =  @(x) 10.*log10(x);
+        
 
-        % For power, do i need to account for limits of SA
-        spec_mW = sum(conv2mW(mag_H));
-        bb_mW = sum(conv2mW(mag_H(baseband_ind(1):baseband_ind(end))));
-        OB1_mW = sum(conv2mW(mag_H(OB1_ind(1):OB1_ind(end))));
-        OB2_mW = sum(conv2mW(mag_H(OB2_ind(1):OB2_ind(end))));
-        OB3_mW = sum(conv2mW(mag_H(OB3_ind(1):OB3_ind(end))));
+        % Power is the ratio of 2 power quantities and can be referred to
+        % as gain in dB. Comparing power requires the integral, the
+        % integral can also be thought as the sum of the area as well;
+        % sum(magnitude^2) is integrating each power of each frequency
+        
+        pwr_BB=2*sum(mag_H(ind_BB(1):ind_BB(end))).^2;
+        pwr_OB1=sum(mag_H(ind_OB1(1):ind_OB1(end))).^2;
+        pwr_OB2=sum(mag_H(ind_OB2(1):ind_OB2(end))).^2;
+        pwr_OB3=sum(mag_H(ind_OB3(1):ind_OB3(end))).^2;
 
-        spec_dBm = conv2dBm(spec_mW);
-        bb_dBm = conv2dBm(bb_mW);
-        OB1_dBm = conv2dBm(OB1_mW);
-        OB2_dBm = conv2dBm(OB2_mW);
-        OB3_dBm = conv2dBm(OB3_mW);
-
-        OB1_58 = bb_dBm-OB1_dBm;
-        OB2_60 = bb_dBm-OB2_dBm;
-        OB3_63 = bb_dBm-OB3_dBm;
+        % calculate power ratio to signal to OB channels\
+        dB_OB1 = conv2dB(pwr_BB/pwr_OB1);
+        dB_OB2 = conv2dB(pwr_BB/pwr_OB2);
+        dB_OB3 = conv2dB(pwr_BB/pwr_OB3);
 
         % can cascade firpm sqrt w/srrc, center coeff
         % isn't one BUT even symmetric
@@ -238,16 +240,16 @@ for bk = 1.5:0.01:2
         end
         MER_theo = 10*log10( num^2/sum(den.^2) );
 %         future considerations append to txtfile
-        if OB1_58 > 58 && OB2_60 > 60 && OB3_63 > 63 && MER_theo >= 40
-            fprintf("\n*************MET SPEC*************************\n");
+%         if OB1_58 > 58 && OB2_60 > 60 && OB3_63 > 63 && MER_theo >= 40
+%             fprintf("\n*************MET SPEC*************************\n");
             fprintf("TX's %s: %1.4f | RCV's %s: %1.4f | idx TX & RCV: %d\n",cBeta,b_nom,cBeta,beta_Rcv,idx_TXnRCV);
-            fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",OB1_58,OB2_60,OB3_63,MER_theo,bk, b_nom);
-            fprintf("baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f | OB3 bnd frequency: %2.4f |\n", bb_bnd, OB1_bnd, OB2_bnd, OB3_bnd);
+            fprintf("OB1: %2.6f | OB2: %2.6f | OB3: %2.6f | MER: %2.6f | Bk: %2.4f | Beta nominal: %2.4f | \n",pwr_OB1,pwr_OB2,pwr_OB3,MER_theo,bk, b_nom);
+            fprintf("baseband bnd frequency: %2.4f | OB1 bnd frequency: %2.4f | OB2 bnd frequency: %2.4f | OB3 bnd frequency: %2.4f |\n", bnd_BB, bnd_OB1, bnd_OB2, bnd_OB3);
             fprintf("weight: ");disp(wght);
 %             fprintf('MER', 'betaTX', 'betaRCV', 'length', 'idx TX & RCV', 'OB1', 'OB2', 'OB3','beta Kaiser','weight');
-            A=[MER_theo, b_nom, beta_Rcv, N, idx_TXnRCV, OB1_58, OB2_60, OB3_63, bk, wght(3)];
-            fprintf(fileID,'%10.6f %10.6f %10.6f %10d %10d %10.6f %10.6f %10.6f %10.6f %10d \r\n',A);
-        end
+%             A=[MER_theo, b_nom, beta_Rcv, N, idx_TXnRCV, OB1_58, OB2_60, OB3_63, bk, wght(3)];
+%             fprintf(fileID,'%10.6f %10.6f %10.6f %10d %10d %10.6f %10.6f %10.6f %10.6f %10d \r\n',A);
+%         end
     end
 end
 fclose(fileID);
@@ -255,19 +257,20 @@ fclose(fileID);
 TX_MR = superplot(w/2/pi,20*log10(abs(H_pps)),'plotName',"Magnitude Response of PPS",'figureName',"PracticalPSResp",'yName',"Magnitude (dB)",...
     'xName',"Frequency (cycles/sample)",'yLegend',"SQRT FIRPM",'cmpY',20*log10(abs(H_srrc)),'cmpYLegend',"SRRC",...
     'plotAxis',[0 w(end)/2/pi -150 10]);
+
 hold on
 % OOB requirement 1
-plot([bb_bnd bb_bnd],[-200 -58],'--k');
-plot([bb_bnd OB1_bnd],[-58 -58],'--k');
-plot([OB1_bnd OB1_bnd],[-200 -58],'--k');
+plot([bnd_BB bnd_BB],[-200 -58],'--k');
+plot([bnd_BB bnd_OB1],[-58 -58],'--k');
+plot([bnd_OB1 bnd_OB1],[-200 -58],'--k');
 % OOB requirement 2
-plot([OB1_bnd OB1_bnd],[-200 -60],':R');
-plot([OB1_bnd OB2_bnd],[-60 -60],':R');
-plot([OB2_bnd OB2_bnd],[-200 -60],':R');
+plot([bnd_OB1 bnd_OB1],[-200 -60],':R');
+plot([bnd_OB1 bnd_OB2],[-60 -60],':R');
+plot([bnd_OB2 bnd_OB2],[-200 -60],':R');
 % OOB requirement 3
-plot([OB2_bnd OB2_bnd],[-200 -63],'g');
-plot([OB2_bnd OB3_bnd],[-63 -63],'g');
-plot([OB3_bnd OB3_bnd],[-200 -63],'g');
+plot([bnd_OB2 bnd_OB2],[-200 -63],'g');
+plot([bnd_OB2 bnd_OB3],[-63 -63],'g');
+plot([bnd_OB3 bnd_OB3],[-200 -63],'g');
 legend('Sqrt firpm','SRRC','OB1','OB1','OB1','OB2','OB2','OB2','OB3','OB3','OB3');
 hold off
 location = strcat('./pics/','PracticalPSResp','.png');
