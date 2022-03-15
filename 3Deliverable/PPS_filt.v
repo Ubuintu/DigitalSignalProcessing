@@ -135,7 +135,7 @@ always @ *
                 else mult_out[i] <= 18'sd0;
             end
     end
-
+//!!! SEE D3.m for structure of filter/center tap location !!!
 /*          SUMLV2              */
 always @ (posedge sys_clk)
     if (reset) begin
@@ -198,9 +198,12 @@ always @ (posedge sys_clk)
                 sum_lvl_6[i]<=$signed(sum_lvl_5[2*i])+$signed(sum_lvl_5[2*i+1]);
     end
 
-/*always @ (posedge sys_clk)
-    if (reset) sum_lvl_2[SUMLV2-1] <= 18'sd0;
-    else if (sam_clk_en) sum_lvl_2[SUMLV2-1]<=$signed(mult_out[SUMLV1-1]);*/
+
+/*          SUMLV7              */
+always @ (posedge sys_clk)
+    if (reset) sum_lvl_7 = 18'sd0;
+    else if (sam_clk_en) sum_lvl_7 <= $signed(sum_lvl_6[0])+$signed(sum_lvl_6[1]);
+
 
 
 always @ (posedge sys_clk)
