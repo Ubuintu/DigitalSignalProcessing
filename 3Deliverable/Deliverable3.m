@@ -77,8 +77,8 @@ POSSINPUT= combine(possible_inputs, ASK_out.');
 POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
 possible_inputs_verilog = round(possible_inputs*2^16); 
-% MF_PPS=round(POSSINPUT*h_PPS.*2^18);    % 0s18 gives me smoothest stp; idk y
-MF_PPS=round(ASK_out.'*h_PPS.*2^16);    
+MF_PPS=round(ASK_out.'*h_PPS.*2^17);    % 0s18 gives me smoothest stp; idk y
+% MF_PPS=round(POSSINPUT*h_PPS.*2^16);    
 MF_GSPS=round(POSSINPUT*h_GSPS_0s18);
 
 num_of_sumLvls=0; coeffs2reduce=N;
@@ -98,7 +98,7 @@ clc
 [rows, cols] = size(MF_PPS);
 % fprintf('0s18 Coefficients for PPS filter:\n\n');
 fprintf("initial begin\n");
-for i = 1:ceil(cols/2)
+for i = 1:cols
     for j = 1:rows+1
         if j == rows+1 && h_PPS_0s18(i) > 0
             fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
