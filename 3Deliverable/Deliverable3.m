@@ -93,7 +93,7 @@ fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPer
 %% GSPS coeffs
 clc
 [rows, cols] = size(MF_GSPS);
-fprintf('0s18 Coefficients for GSPS filter:\n');
+% fprintf('0s18 Coefficients for GSPS filter:\n');
 fprintf("\ninitial begin\n");
 for i = 1:ceil(cols/2)
     for j = 1:rows+1
@@ -111,7 +111,7 @@ for i = 1:ceil(cols/2)
     end
 end
 fprintf("end\n");
-fprintf('End of 0s18 Coefficients for GSPS filter:\n\n');
+% fprintf('End of 0s18 Coefficients for GSPS filter:\n\n');
 %% PPS coeffs
 clc
 [rows, cols] = size(MF_PPS);
@@ -134,3 +134,35 @@ for i = 1:ceil(cols/2)
 end
 fprintf("end\n");
 % fprintf('\nEnd of 0s18 Coefficients for PPS filter:\n\n');
+%% MER
+clc
+
+% For GSPS to GSM
+num = h_GSMGSPS(N); den = zeros(floor(length(h_GSMGSPS)/Nsps),1);
+
+% For PPS to GSM
+% num = h_GSMPPS(N); den = zeros(floor(length(h_GSMPPS)/Nsps),1);
+
+idx = 1;
+cnt = 0;
+for i = 1:length(h_GSMGSPS)
+    if cnt == 0 && i ~= N
+        
+        % GSPS to GSM
+        den(idx) = h_GSMGSPS(i);
+        
+        % PPS to GSM
+%         den(idx) = h_GSMPPS(i);
+        
+        
+        cnt = cnt + 1;
+        idx = idx + 1;
+    elseif cnt >= Nsps-1
+        cnt = 0;
+    else
+        cnt = cnt + 1;
+    end
+end
+MER_theo = 10*log10( num^2/sum(den.^2) );
+fprintf("MER: %2.6f \n",MER_theo);
+
