@@ -130,7 +130,7 @@ cBeta = char(hex2dec('03b2'));
 vTX_B=C_data0{1,2}.'; vRCV_B=C_data0{1,3}.'; vLen=C_data0{1,4}.';
 % idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %89-121.txt
 % idx_73=find(vLen==73); idx_81=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %73-81.txt
-idx_85=find(vLen==85); idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %85-105_B1-0.0001-2.txt
+idx_85=find(vLen==85); idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_105=find(vLen==105); idx_109=find(vLen==109);  %85-105_B1-0.0001-2.txt
 
 % #TX&RCV length; RCV rolloff here
 % beta = 0.146600;  %trial 1
@@ -149,15 +149,15 @@ idx_85=find(vLen==85); idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find
 % w = [0:0.001:1000]/1000*pi; %0-0.5
 w = [0:0.001:2000]/1000*pi; %one whole cycle
 
-N = 89;
+N = 101;
 Nsps = 4;
 span = (N-1)/4;
-for bk = 0:0.01:1
+for bk = 1.5:0.01:2
 % for bk = 0.3:0.1:0.3
 % for bk = 0:0.01:2
 % for bk = 1:1
 % for bk = 2:0.1:2
-    for idx_TXnRCV = idx_89(1):(idx_89(end))
+    for idx_TXnRCV = idx_101(1):(idx_101(end))
 %     for idx_TXnRCV = idx_93(4):(idx_93(5))
 %     for idx_TXnRCV = idx_97(1):(idx_97(1))
 %     for idx_TXnRCV = 505:513

@@ -24,8 +24,8 @@ integer file_in;
 initial begin
     rst=0;
     x_in=0;
-    file_in=$fopen("impulse_response.txt","r");
-    //file_in=$fopen("D3_ASK_in.txt","r");
+    //file_in=$fopen("impulse_response.txt","r");
+    file_in=$fopen("D3_ASK_in.txt","r");
 
     #(RSTDELAY*RSTLEN);
     rst=1;
@@ -48,6 +48,7 @@ clk_en EN_CLK( .clk(clk_50), .reset(rst), .sys_clk(sys_clk), .sam_clk_en(sam_clk
 //GSPS_filt #(.WIDTH(18), .SUMLVL(7), .LENGTH(93), .OFFSET(2), .POSSMAPPER(7), .MAPSIZE(4) ) DUT (
 //PPS_filt #(.WIDTH(18), .SUMLVL(7), .LENGTH(93), .OFFSET(2), .POSSMAPPER(7), .MAPSIZE(4) ) DUT (
 PPS_filt #(.WIDTH(18), .SUMLVL(7), .LENGTH(93), .OFFSET(2) ) DUT (
+//PPS_filt_101 #(.WIDTH(18), .SUMLVL(7) ) DUT (
     .sys_clk(sys_clk),
     .sam_clk_en(sam_clk_en),
     .reset(rst),

@@ -117,7 +117,8 @@ wire [13:0] DAC_out;
 //			.sig_out(srrc_out) //output of SRRC filter 1s17
 //			);
 
-PPS_filt_BAD DUT (
+PPS_filt DUT (
+//PPS_filt_101 DUT (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
