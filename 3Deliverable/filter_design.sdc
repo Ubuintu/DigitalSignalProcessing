@@ -90,7 +90,8 @@ set_false_path -from [get_ports {SW[0] SW[1] SW[2] SW[3] SW[4] SW[5] SW[6] SW[7]
 set_false_path -to [get_ports {ADC_CLK_A ADC_CLK_B DAC_CLK_A DAC_CLK_B DAC_DA[0] DAC_DA[1] DAC_DA[2] DAC_DA[3] DAC_DA[4] DAC_DA[5] DAC_DA[6] DAC_DA[7] DAC_DA[8] DAC_DA[9] DAC_DA[10] DAC_DA[11] DAC_DA[12] DAC_DA[13] DAC_DB[0] DAC_DB[1] DAC_DB[2] DAC_DB[3] DAC_DB[4] DAC_DB[5] DAC_DB[6] DAC_DB[7] DAC_DB[8] DAC_DB[9] DAC_DB[10] DAC_DB[11] DAC_DB[12] DAC_DB[13] DAC_WRT_A DAC_WRT_B LEDG[0] LEDG[1] LEDG[2] LEDG[3] LEDR[0] LEDR[1] LEDR[2] LEDR[3] LEDR[4] LEDR[5] LEDR[6] LEDR[7] LEDR[8] LEDR[9] LEDR[10] LEDR[11] LEDR[12] LEDR[13] LEDR[14] LEDR[15] LEDR[16] LEDR[17]}]
 
 
-
+set_false_path -from [get_ports {altera_reserved_tdi altera_reserved_tms}]
+set_false_path -to [get_ports {altera_reserved_tdo}]
 #**************************************************************
 # Set Multicycle Path
 #**************************************************************

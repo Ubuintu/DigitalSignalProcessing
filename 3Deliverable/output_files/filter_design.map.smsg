@@ -2,5 +2,5 @@ Warning (10268): Verilog HDL information at pulse_shape.v(74): always construct 
 Warning (10268): Verilog HDL information at pulse_shape.v(118): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/pulse_shape.v Line: 118
 Warning (10268): Verilog HDL information at pulse_shape.v(174): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/pulse_shape.v Line: 174
 Warning (10268): Verilog HDL information at PPS.v(74): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS.v Line: 74
-Warning (10268): Verilog HDL information at PPS.v(118): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS.v Line: 118
-Warning (10268): Verilog HDL information at PPS.v(174): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS.v Line: 174
+Warning (10268): Verilog HDL information at PPS.v(120): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS.v Line: 120
+Warning (10268): Verilog HDL information at PPS.v(171): always construct contains both blocking and non-blocking assignments File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/PPS.v Line: 171

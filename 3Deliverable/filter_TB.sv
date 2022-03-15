@@ -45,7 +45,8 @@ integer SUMLVLWID [7-1:0]={47,24,12,6,3,2,1};
 
 clk_en EN_CLK( .clk(clk_50), .reset(rst), .sys_clk(sys_clk), .sam_clk_en(sam_clk_en), .sym_clk_en(sym_clk_en) );
 
-GSPS_filt #(.WIDTH(18), .SUMLVL(7), .LENGTH(93), .OFFSET(2), .POSSMAPPER(7), .MAPSIZE(4) ) DUT (
+//GSPS_filt #(.WIDTH(18), .SUMLVL(7), .LENGTH(93), .OFFSET(2), .POSSMAPPER(7), .MAPSIZE(4) ) DUT (
+PPS_filt #(.WIDTH(18), .SUMLVL(7), .LENGTH(93), .OFFSET(2), .POSSMAPPER(7), .MAPSIZE(4) ) DUT (
     .sys_clk(sys_clk),
     .sam_clk_en(sam_clk_en),
     .reset(rst),

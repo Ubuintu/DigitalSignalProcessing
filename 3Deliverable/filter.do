@@ -12,7 +12,8 @@ set SIM_LEN 90000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "filter_TB"
 set EN "clk_en"
-set MOD "pulse_shape"
+#set MOD "pulse_shape"
+set MOD "PPS"
 
 puts [info script]
 puts "Hello world"
