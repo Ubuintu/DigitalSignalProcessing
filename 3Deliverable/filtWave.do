@@ -20,9 +20,8 @@ add wave -noupdate /TB_filter/DUT/sum_lvl_5
 add wave -noupdate /TB_filter/DUT/sum_lvl_6
 add wave -noupdate /TB_filter/DUT/sum_lvl_7
 add wave -noupdate /TB_filter/DUT/y
-add wave -noupdate /TB_filter/DUT/Hsys
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {103 ns} 0}
+WaveRestoreCursors {{Cursor 1} {19548 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 278
 configure wave -valuecolwidth 383
@@ -38,4 +37,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {356 ns}
+WaveRestoreZoom {19410 ns} {19766 ns}

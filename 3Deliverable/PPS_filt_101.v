@@ -31,7 +31,7 @@ module PPS_filt_101 #(
 (* noprune *) reg signed [WIDTH-1:0] sum_lvl_5[SUMLV5-1:0];
 (* noprune *) reg signed [WIDTH-1:0] sum_lvl_6[SUMLV6-1:0];
 (* noprune *) reg signed [WIDTH-1:0] sum_lvl_7;
-(* noprune *) reg signed [WIDTH-1:0] mult_out[(LENGTH-1)/2:0];
+(* noprune *) reg signed [WIDTH-1:0] mult_out[(LENGTH-1):0];
 (* noprune *) reg signed [WIDTH-1:0] tol;
 (* preserve *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
 (* noprune *) reg signed [WIDTH-1:0] Hsys[MAPSIZE:0][(LENGTH-1):0];
@@ -136,12 +136,12 @@ always @ (posedge sys_clk)
     end
     else if (sam_clk_en) begin
         for (i=0; i<SUMLV2-1; i=i+1)
-            sum_lvl_2[i]<=$signed(mult_out[2*i])+$signed(mult_out[2*i+1]);
+            sum_lvl_2[i]<=$signed(sum_lvl_1[2*i])+$signed(sum_lvl_1[2*i+1]);
     end
 //for center
 always @ (posedge sys_clk)
     if (reset) sum_lvl_2[SUMLV2-1] <= 18'sd0;
-    else if (sam_clk_en) sum_lvl_2[SUMLV2-1]<=$signed(mult_out[SUMLV1-1]);
+    else if (sam_clk_en) sum_lvl_2[SUMLV2-1]<=$signed(sum_lvl_1[SUMLV1-1]);
 
 /*          SUMLV3              */
 always @ (posedge sys_clk)
@@ -174,14 +174,18 @@ always @ (posedge sys_clk)
 /*          SUMLV5              */
 always @ (posedge sys_clk)
     if (reset) begin
-        for (i=0; i<SUMLV5; i=i+1)
+        for (i=0; i<SUMLV5-1; i=i+1)
             sum_lvl_5[i]=18'sd0;
     end
     else if (sam_clk_en) begin
-        for (i=0; i<SUMLV5; i=i+1)
+        for (i=0; i<SUMLV5-1; i=i+1)
             sum_lvl_5[i]<=$signed(sum_lvl_4[2*i])+$signed(sum_lvl_4[2*i+1]);
     end
 
+//for center
+always @ (posedge sys_clk)
+    if (reset) sum_lvl_5[SUMLV5-1] <= 18'sd0;
+    else if (sam_clk_en) sum_lvl_5[SUMLV5-1]<=$signed(sum_lvl_4[SUMLV4-1]);
 
 /*          SUMLV6              */
 always @ (posedge sys_clk)
@@ -193,6 +197,7 @@ always @ (posedge sys_clk)
         for (i=0; i<SUMLV6; i=i+1)
             sum_lvl_6[i]<=$signed(sum_lvl_5[2*i])+$signed(sum_lvl_5[2*i+1]);
     end
+
 
 
 /*          SUMLV7              */

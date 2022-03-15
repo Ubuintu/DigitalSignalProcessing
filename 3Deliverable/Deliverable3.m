@@ -24,14 +24,14 @@ format longG
 %% Deliverable Parameter's | idx TX & RCV: 474
 clc; close all;
 Nsps=4; 
-N=93; betaTx=0.173; betaRcv=0.198; betaK=0.5; % Not sure if too smoll; Best setting atm
+% N=93; betaTx=0.173; betaRcv=0.198; betaK=0.5; % Not sure if too smoll; Best setting atm
 % N=101; betaTx=0.167; betaRcv=0.178; betaK=1.5;
 % N=101; betaTx=0.158; betaRcv=0.199; betaK=1.8;
 % N=93; betaTx=0.174; betaRcv=0.197; betaK=0.5;
 
 %        MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3 b Kaiser     weight 
 %  42.020064   0.147900   0.192500        101     142581  64.080312  65.588531  64.251330   1.500000         20
-N=101; betaTx=0.1479; betaRcv=0.1925; betaK=1.5;
+N=101; betaTx=0.1479; betaRcv=0.1925; betaK=.5;
 
 M=N-1; span=M/Nsps; h_GSPS=rcosdesign(betaTx,span,Nsps); h_GSM=rcosdesign(betaRcv,span,Nsps); wn=kaiser(N,betaK);
 fc=1/2/Nsps; fp=(1-betaTx)*fc; fs=(1+betaTx)*fc; fb=[0 fp fc fc fs .5]*2; a=[1 1 1/sqrt(2) 1/sqrt(2) 0 0]; 
@@ -81,7 +81,7 @@ POSSINPUT= combine(possible_inputs, ASK_out.');
 POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
 possible_inputs_verilog = round(possible_inputs*2^16); 
-MF_PPS=round(ASK_out.'*h_PPS.*2^18);    % 0s18 gives me smoothest stp; idk y
+MF_PPS=round(ASK_out.'*h_PPS.*2^17);    % 0s18 gives me smoothest stp; idk y
 % MF_PPS=round(POSSINPUT*h_PPS.*2^16);    
 MF_GSPS=round(POSSINPUT*h_GSPS_0s18);
 
@@ -89,7 +89,7 @@ num_of_sumLvls=0; coeffs2reduce=N;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
 for i=1:N
     if coeffs2reduce<=1
-        break1G
+        break
     else
         num_of_sumLvls=num_of_sumLvls+1;coeffs2reduce=ceil(coeffs2reduce/2);
         fprintf("sum level %d has %d registers\n",i,coeffs2reduce);
