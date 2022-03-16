@@ -30,18 +30,15 @@ Nsps=4;
 % N=93; betaTx=0.174; betaRcv=0.197; betaK=0.5;
 
 %        MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3 b Kaiser     weight 
-%  42.020064   0.147900   0.192500        101     142581  64.080312  65.588531  64.251330   1.500000         20
-%  43.650844   0.161800   0.197800        101     156229  61.091355  70.368357  69.013668   1.500000         20
-%  41.065812   0.144700   0.181700        101     140722  64.752172  64.408597  63.071980   1.500000         20   
-%  41.823193   0.153500   0.182900        101     147321  62.792629  67.430605  66.091245   1.500000         20 
-% N=101; betaTx=0.153500; betaRcv=0.182900; betaK=1.5;
+%  42.017901   0.145500   0.182100        101     141106  60.037561  64.921997  64.304794   0.000000         20 
+N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;
 
 
 % *************MET SPEC*************************
 % TX's β: 0.1430 | RCV's β: 0.1780 | idx TX & RCV: 1364
 % OB1: 64.634703 | OB2: 64.497576 | OB3: 63.146043 | MER: 40.334376 | Bk: 1.6000 | Beta nominal: 0.1430 | 
 % baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
-N=101; betaTx=0.1480; betaRcv=0.1690; betaK=1.6;
+% N=101; betaTx=0.1480; betaRcv=0.1690; betaK=1.6;
 
 M=N-1; span=M/Nsps; h_GSPS=rcosdesign(betaTx,span,Nsps); h_GSM=rcosdesign(betaRcv,span,Nsps); wn=kaiser(N,betaK);
 fc=1/2/Nsps; fp=(1-betaTx)*fc; fs=(1+betaTx)*fc; fb=[0 fp fc fc fs .5]*2; a=[1 1 1/sqrt(2) 1/sqrt(2) 0 0]; 
