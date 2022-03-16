@@ -12,9 +12,9 @@ set SIM_LEN 20000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "TB_filter"
 set EN "clk_en"
-#set MOD "PPS_filt"
+set MOD "PPS_filt"
 #set MOD "PPS_filt_101"
-set MOD "GSM_noMult"
+#set MOD "GSM_noMult"
 
 puts [info script]
 puts "Hello world"
