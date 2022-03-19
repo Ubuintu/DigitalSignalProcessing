@@ -1,5 +1,5 @@
 Analysis & Synthesis report for deliverable2
-Sun Mar 13 17:34:08 2022
+Fri Mar 18 13:36:15 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -18,77 +18,73 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
  10. Analysis & Synthesis IP Cores Summary
  11. Registers Protected by Synthesis
  12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for SweepGenerator:sweep_gen_1
- 18. Source assignments for Top-level Entity: |deliverable2
- 19. Source assignments for ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component|altsyncram_2t42:auto_generated
- 20. Source assignments for clk_en:EN_CLK
- 21. Source assignments for LFSR_22:LFSR_GEN
- 22. Source assignments for DUT_for_MER_measurement:DUT
- 23. Source assignments for DUT_for_MER_measurement:DUTQ
- 24. Source assignments for mapper_ref:MAP_CMP
- 25. Source assignments for mapper_ref:MAP_CMPQ
- 26. Source assignments for avg_mag:AVG_MAG_DV
- 27. Source assignments for avg_mag:AVG_MAG_DVQ
- 28. Source assignments for avg_err_squared_55:AVG_ER_SQR
- 29. Source assignments for avg_err_squared_55:AVG_ER_SQRQ
- 30. Source assignments for avg_err:AVG_ER
- 31. Source assignments for avg_err:AVG_ERQ
- 32. Source assignments for switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst
- 33. Source assignments for key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst
- 34. Source assignments for sld_signaltap:auto_signaltap_0
- 35. Parameter Settings for User Entity Instance: Top-level Entity: |deliverable2
- 36. Parameter Settings for User Entity Instance: ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component
- 37. Parameter Settings for User Entity Instance: DUT_for_MER_measurement:DUT
- 38. Parameter Settings for User Entity Instance: DUT_for_MER_measurement:DUTQ
- 39. Parameter Settings for User Entity Instance: avg_mag:AVG_MAG_DV
- 40. Parameter Settings for User Entity Instance: avg_mag:AVG_MAG_DVQ
- 41. Parameter Settings for User Entity Instance: avg_err_squared_55:AVG_ER_SQR
- 42. Parameter Settings for User Entity Instance: avg_err_squared_55:AVG_ER_SQRQ
- 43. Parameter Settings for User Entity Instance: avg_err:AVG_ER
- 44. Parameter Settings for User Entity Instance: avg_err:AVG_ERQ
- 45. Parameter Settings for User Entity Instance: switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0
- 46. Parameter Settings for User Entity Instance: switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl
- 47. Parameter Settings for User Entity Instance: key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0
- 48. Parameter Settings for User Entity Instance: key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl
- 49. Parameter Settings for User Entity Instance: KeyCCT:k0
- 50. Parameter Settings for User Entity Instance: KeyCCT:k1
- 51. Parameter Settings for User Entity Instance: KeyCCT:k2
- 52. Parameter Settings for User Entity Instance: KeyCCT:k3
- 53. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 54. Parameter Settings for Inferred Entity Instance: DUT_for_MER_measurement:DUT|lpm_mult:Mult0
- 55. Parameter Settings for Inferred Entity Instance: avg_err_squared_55:AVG_ER_SQR|lpm_mult:Mult0
- 56. Parameter Settings for Inferred Entity Instance: avg_mag:AVG_MAG_DV|lpm_mult:Mult0
- 57. Parameter Settings for Inferred Entity Instance: DUT_for_MER_measurement:DUTQ|lpm_mult:Mult0
- 58. Parameter Settings for Inferred Entity Instance: avg_err_squared_55:AVG_ER_SQRQ|lpm_mult:Mult0
- 59. Parameter Settings for Inferred Entity Instance: avg_mag:AVG_MAG_DVQ|lpm_mult:Mult0
- 60. altsyncram Parameter Settings by Entity Instance
- 61. lpm_mult Parameter Settings by Entity Instance
- 62. Port Connectivity Checks: "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"
- 63. Port Connectivity Checks: "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0"
- 64. Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"
- 65. Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0"
- 66. Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst"
- 67. Port Connectivity Checks: "avg_err:AVG_ERQ"
- 68. Port Connectivity Checks: "avg_err:AVG_ER"
- 69. Port Connectivity Checks: "avg_err_squared_55:AVG_ER_SQRQ"
- 70. Port Connectivity Checks: "avg_err_squared_55:AVG_ER_SQR"
- 71. Port Connectivity Checks: "avg_mag:AVG_MAG_DVQ"
- 72. Port Connectivity Checks: "avg_mag:AVG_MAG_DV"
- 73. Port Connectivity Checks: "DUT_for_MER_measurement:DUTQ"
- 74. Port Connectivity Checks: "DUT_for_MER_measurement:DUT"
- 75. Port Connectivity Checks: "LFSR_22:LFSR_GEN"
- 76. Signal Tap Logic Analyzer Settings
- 77. Post-Synthesis Netlist Statistics for Top Partition
- 78. Post-Synthesis Netlist Statistics for Partition sld_signaltap:auto_signaltap_0
- 79. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
- 80. Elapsed Time Per Partition
- 81. Connections to In-System Debugging Instance "auto_signaltap_0"
- 82. Analysis & Synthesis Messages
- 83. Analysis & Synthesis Suppressed Messages
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for SweepGenerator:sweep_gen_1
+ 17. Source assignments for Top-level Entity: |deliverable2
+ 18. Source assignments for ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component|altsyncram_2t42:auto_generated
+ 19. Source assignments for clk_en:EN_CLK
+ 20. Source assignments for LFSR_22:LFSR_GEN
+ 21. Source assignments for DUT_for_MER_measurement:DUT
+ 22. Source assignments for DUT_for_MER_measurement:DUTQ
+ 23. Source assignments for mapper_ref:MAP_CMP
+ 24. Source assignments for mapper_ref:MAP_CMPQ
+ 25. Source assignments for avg_mag:AVG_MAG_DV
+ 26. Source assignments for avg_mag:AVG_MAG_DVQ
+ 27. Source assignments for avg_err_squared_55:AVG_ER_SQR
+ 28. Source assignments for avg_err_squared_55:AVG_ER_SQRQ
+ 29. Source assignments for avg_err:AVG_ER
+ 30. Source assignments for avg_err:AVG_ERQ
+ 31. Source assignments for switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst
+ 32. Source assignments for key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst
+ 33. Source assignments for sld_signaltap:auto_signaltap_0
+ 34. Parameter Settings for User Entity Instance: Top-level Entity: |deliverable2
+ 35. Parameter Settings for User Entity Instance: ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component
+ 36. Parameter Settings for User Entity Instance: DUT_for_MER_measurement:DUT
+ 37. Parameter Settings for User Entity Instance: DUT_for_MER_measurement:DUTQ
+ 38. Parameter Settings for User Entity Instance: avg_mag:AVG_MAG_DV
+ 39. Parameter Settings for User Entity Instance: avg_mag:AVG_MAG_DVQ
+ 40. Parameter Settings for User Entity Instance: avg_err_squared_55:AVG_ER_SQR
+ 41. Parameter Settings for User Entity Instance: avg_err_squared_55:AVG_ER_SQRQ
+ 42. Parameter Settings for User Entity Instance: avg_err:AVG_ER
+ 43. Parameter Settings for User Entity Instance: avg_err:AVG_ERQ
+ 44. Parameter Settings for User Entity Instance: switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0
+ 45. Parameter Settings for User Entity Instance: switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl
+ 46. Parameter Settings for User Entity Instance: key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0
+ 47. Parameter Settings for User Entity Instance: key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl
+ 48. Parameter Settings for User Entity Instance: KeyCCT:k0
+ 49. Parameter Settings for User Entity Instance: KeyCCT:k1
+ 50. Parameter Settings for User Entity Instance: KeyCCT:k2
+ 51. Parameter Settings for User Entity Instance: KeyCCT:k3
+ 52. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 53. Parameter Settings for Inferred Entity Instance: DUT_for_MER_measurement:DUT|lpm_mult:Mult0
+ 54. Parameter Settings for Inferred Entity Instance: avg_err_squared_55:AVG_ER_SQR|lpm_mult:Mult0
+ 55. Parameter Settings for Inferred Entity Instance: avg_mag:AVG_MAG_DV|lpm_mult:Mult0
+ 56. Parameter Settings for Inferred Entity Instance: DUT_for_MER_measurement:DUTQ|lpm_mult:Mult0
+ 57. Parameter Settings for Inferred Entity Instance: avg_err_squared_55:AVG_ER_SQRQ|lpm_mult:Mult0
+ 58. Parameter Settings for Inferred Entity Instance: avg_mag:AVG_MAG_DVQ|lpm_mult:Mult0
+ 59. altsyncram Parameter Settings by Entity Instance
+ 60. lpm_mult Parameter Settings by Entity Instance
+ 61. Port Connectivity Checks: "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"
+ 62. Port Connectivity Checks: "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0"
+ 63. Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"
+ 64. Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0"
+ 65. Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst"
+ 66. Port Connectivity Checks: "avg_err:AVG_ERQ"
+ 67. Port Connectivity Checks: "avg_err:AVG_ER"
+ 68. Port Connectivity Checks: "avg_err_squared_55:AVG_ER_SQRQ"
+ 69. Port Connectivity Checks: "avg_err_squared_55:AVG_ER_SQR"
+ 70. Port Connectivity Checks: "avg_mag:AVG_MAG_DVQ"
+ 71. Port Connectivity Checks: "avg_mag:AVG_MAG_DV"
+ 72. Port Connectivity Checks: "DUT_for_MER_measurement:DUTQ"
+ 73. Port Connectivity Checks: "DUT_for_MER_measurement:DUT"
+ 74. Port Connectivity Checks: "LFSR_22:LFSR_GEN"
+ 75. Signal Tap Logic Analyzer Settings
+ 76. Post-Synthesis Netlist Statistics for Top Partition
+ 77. Elapsed Time Per Partition
+ 78. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 79. Analysis & Synthesis Messages
 
 
 
@@ -115,7 +111,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 13 17:34:07 2022           ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 18 13:36:15 2022           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Standard Edition ;
 ; Revision Name                      ; deliverable2                                    ;
 ; Top-level Entity Name              ; deliverable2                                    ;
@@ -124,7 +120,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 5,869                                           ;
 ;     Dedicated logic registers      ; 12,915                                          ;
 ; Total registers                    ; 12915                                           ;
-; Total pins                         ; 110                                             ;
+; Total pins                         ; 113                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 1,022,976                                       ;
 ; Embedded Multiplier 9-bit elements ; 16                                              ;
@@ -257,7 +253,6 @@ https://fpgasoftware.intel.com/eula.
 ; SweepGenerator.qxp                                                                                            ; yes             ; User File                                    ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/SweepGenerator.qxp                                                 ;                     ;
 ; ROM_for_12_x_12_NCO.v                                                                                         ; yes             ; User Wizard-Generated File                   ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/ROM_for_12_x_12_NCO.v                                              ;                     ;
 ; KeyCCT.v                                                                                                      ; yes             ; User Verilog HDL File                        ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/KeyCCT.v                                                           ;                     ;
-; pulse_shape.v                                                                                                 ; yes             ; User Verilog HDL File                        ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/pulse_shape.v                                                      ;                     ;
 ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v ; yes             ; Auto-Found Verilog HDL File                  ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v         ; switch_led_emulator ;
 ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/switch_led_emulator.v            ; yes             ; Auto-Found Verilog HDL File                  ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/switch_led_emulator.v                    ; switch_led_emulator ;
 ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/key_emulator.v                          ; yes             ; Auto-Found Verilog HDL File                  ; /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/key_emulator.v                                  ; key_emulator        ;
@@ -352,14 +347,14 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 12915          ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
-; I/O pins                                    ; 110            ;
+; I/O pins                                    ; 113            ;
 ; Total memory bits                           ; 1022976        ;
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 16             ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 8694           ;
-; Total fan-out                               ; 77546          ;
+; Total fan-out                               ; 77552          ;
 ; Average fan-out                             ; 3.88           ;
 +---------------------------------------------+----------------+
 
@@ -369,7 +364,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+---------------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                      ; Entity Name                       ; Library Name        ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+---------------------+
-; |deliverable2                                                                                                                           ; 5869 (153)          ; 12915 (153)               ; 1022976     ; 16           ; 0       ; 8         ; 110  ; 0            ; |deliverable2                                                                                                                                                                                                                                                                                                                                            ; deliverable2                      ; work                ;
+; |deliverable2                                                                                                                           ; 5869 (153)          ; 12915 (153)               ; 1022976     ; 16           ; 0       ; 8         ; 113  ; 0            ; |deliverable2                                                                                                                                                                                                                                                                                                                                            ; deliverable2                      ; work                ;
 ;    |DUT_for_MER_measurement:DUTQ|                                                                                                       ; 123 (106)           ; 72 (72)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |deliverable2|DUT_for_MER_measurement:DUTQ                                                                                                                                                                                                                                                                                                               ; DUT_for_MER_measurement           ; work                ;
 ;       |lpm_mult:Mult0|                                                                                                                  ; 17 (0)              ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |deliverable2|DUT_for_MER_measurement:DUTQ|lpm_mult:Mult0                                                                                                                                                                                                                                                                                                ; lpm_mult                          ; work                ;
 ;          |mult_d6t:auto_generated|                                                                                                      ; 17 (17)             ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |deliverable2|DUT_for_MER_measurement:DUTQ|lpm_mult:Mult0|mult_d6t:auto_generated                                                                                                                                                                                                                                                                        ; mult_d6t                          ; work                ;
@@ -2145,51 +2140,18 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +-----------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                                          ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                                                                          ; Reason for Removal                                                                                                                                                                                 ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; DAC_DA[0]~reg0                                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; DAC_DB[0]~reg0                                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; DAC_DB[1]~reg0                                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; DAC_DA[1]~reg0                                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; PLL_acc[0..35]                                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; Total Number of Removed Registers = 40                                                                                                                                                 ;                                                                                                                                                                                                    ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|segment_shift_clk_ena                                                      ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_enable_delayed                                                ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[0] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[0] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[1] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[1] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[2] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[2] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[3] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[3] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[4] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[4] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[5] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[5] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[6] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[6] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[7] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[7] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[8] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[8] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[9] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[9] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[0]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[0]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[1]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[1]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[2]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[2]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[3]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[3]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[4]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[4]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[5]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[5]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[6]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[6]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[7]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[7]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[8]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[8]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[9]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[9]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[13..15]                       ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; Total Number of Removed Registers = 24                                                                                                                                                 ;                                                                                                                                                                                                    ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                                                              ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                                                ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                        ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[15] ; Stuck at GND              ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[14], ;
-;                                                                                                                                                              ; due to stuck port data_in ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[13]  ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; DAC_DA[0]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; DAC_DB[0]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; DAC_DB[1]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; DAC_DA[1]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; PLL_acc[0..35]                         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 40 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -2229,54 +2191,33 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |deliverable2|avg_mag:AVG_MAG_DVQ|acc_out[3]                                                                                                                                                                                                                                                                                                                           ;
-; 3:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |deliverable2|avg_mag:AVG_MAG_DV|acc_out[1]                                                                                                                                                                                                                                                                                                                            ;
-; 3:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |deliverable2|avg_err:AVG_ER|acc_out[9]                                                                                                                                                                                                                                                                                                                                ;
-; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |deliverable2|avg_err_squared_55:AVG_ER_SQR|acc_out[38]                                                                                                                                                                                                                                                                                                                ;
-; 3:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |deliverable2|avg_err:AVG_ERQ|acc_out[27]                                                                                                                                                                                                                                                                                                                              ;
-; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |deliverable2|avg_err_squared_55:AVG_ER_SQRQ|acc_out[4]                                                                                                                                                                                                                                                                                                                ;
-; 3:1                ; 148 bits  ; 296 LEs       ; 148 LEs              ; 148 LEs                ; Yes        ; |deliverable2|avg_err_squared_55:AVG_ER_SQR|err_int[51]                                                                                                                                                                                                                                                                                                                ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |deliverable2|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|shift_reg[2]                                                                                                                             ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |deliverable2|LFSR_22:LFSR_GEN|x[8]                                                                                                                                                                                                                                                                                                                                    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|word_counter[0]                                                                    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|word_counter[0]                                                                                ;
-; 5:1                ; 28 bits   ; 84 LEs        ; 56 LEs               ; 28 LEs                 ; Yes        ; |deliverable2|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|shift_reg[34]                                                                                                                ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 44 LEs               ; 22 LEs                 ; Yes        ; |deliverable2|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|shift_reg[17]                                                                                                                ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; Yes        ; |deliverable2|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|WORD_SR[2]                                                                         ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |deliverable2|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|WORD_SR[0]                                                                                     ;
-; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |deliverable2|errorQ[0]                                                                                                                                                                                                                                                                                                                                                ;
-; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |deliverable2|avg_mag:AVG_MAG_DV|reg_out[3]                                                                                                                                                                                                                                                                                                                            ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |deliverable2|mapper_ref:MAP_CMPQ|Mux12                                                                                                                                                                                                                                                                                                                                ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |deliverable2|mapper_ref:MAP_CMP|Mux7                                                                                                                                                                                                                                                                                                                                  ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |deliverable2|avg_mag:AVG_MAG_DVQ|abs                                                                                                                                                                                                                                                                                                                                  ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |deliverable2|avg_mag:AVG_MAG_DV|abs                                                                                                                                                                                                                                                                                                                                   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |deliverable2|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|tdo_crc_val_shift_reg[15]                                                                                                                                                                                                                    ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |deliverable2|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|tdo_crc_val_shift_reg[11]                                                                                                                                                                                                                    ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |deliverable2|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[11]                                                                                                                                                                                             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |deliverable2|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|tdo_crc_len_reg[11]                                                                                                                                                                                                                          ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|word_counter[1]                                                                                                                                                                                                        ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |deliverable2|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|counter[0]                                                                                                                                                                                        ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |deliverable2|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|WORD_SR[3]                                                                                                                                                                                                             ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |deliverable2|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|offset_count                                                                                                                                                                                      ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[1][0]                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[2][0]                    ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[3][9]                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[1]                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][0]                           ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[2][0]                           ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[3][0]                           ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[4] ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[0]              ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[9]                             ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[3]                             ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[2]                      ;
-; 36:1               ; 4 bits    ; 96 LEs        ; 56 LEs               ; 40 LEs                 ; Yes        ; |deliverable2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[3]      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |deliverable2|avg_mag:AVG_MAG_DVQ|acc_out[3]                                                                                                                                                                                                                                                        ;
+; 3:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |deliverable2|avg_mag:AVG_MAG_DV|acc_out[1]                                                                                                                                                                                                                                                         ;
+; 3:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |deliverable2|avg_err:AVG_ER|acc_out[9]                                                                                                                                                                                                                                                             ;
+; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |deliverable2|avg_err_squared_55:AVG_ER_SQR|acc_out[38]                                                                                                                                                                                                                                             ;
+; 3:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |deliverable2|avg_err:AVG_ERQ|acc_out[27]                                                                                                                                                                                                                                                           ;
+; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |deliverable2|avg_err_squared_55:AVG_ER_SQRQ|acc_out[4]                                                                                                                                                                                                                                             ;
+; 3:1                ; 148 bits  ; 296 LEs       ; 148 LEs              ; 148 LEs                ; Yes        ; |deliverable2|avg_err_squared_55:AVG_ER_SQR|err_int[51]                                                                                                                                                                                                                                             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |deliverable2|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|shift_reg[2]                                                          ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |deliverable2|LFSR_22:LFSR_GEN|x[8]                                                                                                                                                                                                                                                                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|word_counter[0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |deliverable2|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|word_counter[0]             ;
+; 5:1                ; 28 bits   ; 84 LEs        ; 56 LEs               ; 28 LEs                 ; Yes        ; |deliverable2|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|shift_reg[34]                                             ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 44 LEs               ; 22 LEs                 ; Yes        ; |deliverable2|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|shift_reg[17]                                             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; Yes        ; |deliverable2|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|WORD_SR[2]      ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |deliverable2|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|WORD_SR[0]                  ;
+; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |deliverable2|errorQ[0]                                                                                                                                                                                                                                                                             ;
+; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |deliverable2|avg_mag:AVG_MAG_DV|reg_out[3]                                                                                                                                                                                                                                                         ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |deliverable2|mapper_ref:MAP_CMPQ|Mux12                                                                                                                                                                                                                                                             ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |deliverable2|mapper_ref:MAP_CMP|Mux7                                                                                                                                                                                                                                                               ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |deliverable2|avg_mag:AVG_MAG_DVQ|abs                                                                                                                                                                                                                                                               ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |deliverable2|avg_mag:AVG_MAG_DV|abs                                                                                                                                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -5098,7 +5039,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------------------+--------------------+
 ; blackbox                       ; 1                  ;
 ;     SweepGenerator:sweep_gen_1 ; 1                  ;
-; boundary_port                  ; 1024               ;
+; boundary_port                  ; 1027               ;
 ; cycloneiii_ff                  ; 979                ;
 ;     CLR                        ; 2                  ;
 ;     CLR SLD                    ; 1                  ;
@@ -5128,75 +5069,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------------------+--------------------+
 
 
-+--------------------------------------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Partition sld_signaltap:auto_signaltap_0 ;
-+-----------------------+--------------------------------------------------------+
-; Type                  ; Count                                                  ;
-+-----------------------+--------------------------------------------------------+
-; boundary_port         ; 4839                                                   ;
-; cycloneiii_ff         ; 11747                                                  ;
-;     CLR               ; 997                                                    ;
-;     ENA               ; 124                                                    ;
-;     ENA CLR           ; 2925                                                   ;
-;     ENA SCLR SLD      ; 36                                                     ;
-;     ENA SLD           ; 11                                                     ;
-;     SLD               ; 15                                                     ;
-;     plain             ; 7639                                                   ;
-; cycloneiii_lcell_comb ; 3516                                                   ;
-;     arith             ; 84                                                     ;
-;         2 data inputs ; 83                                                     ;
-;         3 data inputs ; 1                                                      ;
-;     normal            ; 3432                                                   ;
-;         0 data inputs ; 6                                                      ;
-;         1 data inputs ; 5                                                      ;
-;         2 data inputs ; 38                                                     ;
-;         3 data inputs ; 1052                                                   ;
-;         4 data inputs ; 2331                                                   ;
-; cycloneiii_ram_block  ; 951                                                    ;
-;                       ;                                                        ;
-; Max LUT depth         ; 6.00                                                   ;
-; Average LUT depth     ; 1.41                                                   ;
-+-----------------------+--------------------------------------------------------+
-
-
-+------------------------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
-+-----------------------+------------------------------------------+
-; Type                  ; Count                                    ;
-+-----------------------+------------------------------------------+
-; boundary_port         ; 239                                      ;
-; cycloneiii_ff         ; 120                                      ;
-;     CLR               ; 5                                        ;
-;     ENA               ; 16                                       ;
-;     ENA CLR           ; 61                                       ;
-;     ENA SCLR          ; 6                                        ;
-;     ENA SLD           ; 9                                        ;
-;     SCLR              ; 7                                        ;
-;     plain             ; 16                                       ;
-; cycloneiii_lcell_comb ; 198                                      ;
-;     arith             ; 9                                        ;
-;         2 data inputs ; 9                                        ;
-;     normal            ; 189                                      ;
-;         0 data inputs ; 1                                        ;
-;         1 data inputs ; 6                                        ;
-;         2 data inputs ; 28                                       ;
-;         3 data inputs ; 67                                       ;
-;         4 data inputs ; 87                                       ;
-;                       ;                                          ;
-; Max LUT depth         ; 4.00                                     ;
-; Average LUT depth     ; 1.93                                     ;
-+-----------------------+------------------------------------------+
-
-
-+-----------------------------------------------+
-; Elapsed Time Per Partition                    ;
-+--------------------------------+--------------+
-; Partition Name                 ; Elapsed Time ;
-+--------------------------------+--------------+
-; sld_signaltap:auto_signaltap_0 ; 00:00:23     ;
-; Top                            ; 00:00:04     ;
-; sld_hub:auto_hub               ; 00:00:01     ;
-+--------------------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -7148,34 +7027,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Sun Mar 13 17:32:49 2022
+    Info: Processing started: Fri Mar 18 13:35:42 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off deliverable2 -c deliverable2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12248): Elaborating Platform Designer system entity "switch_led_emulator.qsys"
-Info (12250): 2022.03.13.17:33:00 Progress: Loading 2Deliverable/switch_led_emulator.qsys
-Info (12250): 2022.03.13.17:33:01 Progress: Reading input file
-Info (12250): 2022.03.13.17:33:01 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Info (12250): 2022.03.18.13:35:49 Progress: Loading 2Deliverable/switch_led_emulator.qsys
+Info (12250): 2022.03.18.13:35:49 Progress: Reading input file
+Info (12250): 2022.03.18.13:35:49 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
 Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
-Info (12250): 2022.03.13.17:33:01 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2022.03.13.17:33:01 Progress: Building connections
-Info (12250): 2022.03.13.17:33:01 Progress: Parameterizing connections
-Info (12250): 2022.03.13.17:33:01 Progress: Validating
-Info (12250): 2022.03.13.17:33:01 Progress: Done reading input file
+Info (12250): 2022.03.18.13:35:49 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2022.03.18.13:35:49 Progress: Building connections
+Info (12250): 2022.03.18.13:35:49 Progress: Parameterizing connections
+Info (12250): 2022.03.18.13:35:49 Progress: Validating
+Info (12250): 2022.03.18.13:35:49 Progress: Done reading input file
 Info (12250): Switch_led_emulator: Generating switch_led_emulator "switch_led_emulator" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "switch_led_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): Switch_led_emulator: Done "switch_led_emulator" with 2 modules, 2 files
 Info (12249): Finished elaborating Platform Designer system entity "switch_led_emulator.qsys"
 Info (12248): Elaborating Platform Designer system entity "key_emulator.qsys"
-Info (12250): 2022.03.13.17:33:06 Progress: Loading 2Deliverable/key_emulator.qsys
-Info (12250): 2022.03.13.17:33:07 Progress: Reading input file
-Info (12250): 2022.03.13.17:33:07 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Info (12250): 2022.03.18.13:35:52 Progress: Loading 2Deliverable/key_emulator.qsys
+Info (12250): 2022.03.18.13:35:52 Progress: Reading input file
+Info (12250): 2022.03.18.13:35:52 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
 Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
-Info (12250): 2022.03.13.17:33:07 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2022.03.13.17:33:07 Progress: Building connections
-Info (12250): 2022.03.13.17:33:07 Progress: Parameterizing connections
-Info (12250): 2022.03.13.17:33:07 Progress: Validating
-Info (12250): 2022.03.13.17:33:07 Progress: Done reading input file
+Info (12250): 2022.03.18.13:35:52 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2022.03.18.13:35:52 Progress: Building connections
+Info (12250): 2022.03.18.13:35:52 Progress: Parameterizing connections
+Info (12250): 2022.03.18.13:35:52 Progress: Validating
+Info (12250): 2022.03.18.13:35:52 Progress: Done reading input file
 Info (12250): Key_emulator: Generating key_emulator "key_emulator" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "key_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): Key_emulator: Done "key_emulator" with 2 modules, 2 files
@@ -7206,8 +7085,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file ROM_for
     Info (12023): Found entity 1: ROM_for_12_x_12_NCO File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/ROM_for_12_x_12_NCO.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file KeyCCT.v
     Info (12023): Found entity 1: KeyCCT File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/KeyCCT.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file pulse_shape.v
-    Info (12023): Found entity 1: GSPS_filt File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/pulse_shape.v Line: 1
+Warning (12019): Can't analyze file -- file pulse_shape.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/switch_led_emulator/submodules/altsource_probe_top.v
     Info (12023): Found entity 1: altsource_probe_top File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/switch_led_emulator/switch_led_emulator.v
@@ -7217,13 +7095,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/ip/k
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/key_emulator/submodules/altsource_probe_top.v
     Info (12023): Found entity 1: altsource_probe_top File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/submodules/altsource_probe_top.v Line: 14
 Info (12127): Elaborating entity "deliverable2" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at deliverable2.v(32): object "staggered_phase_out" assigned a value but never read File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 32
-Warning (10858): Verilog HDL warning at deliverable2.v(39): object SUT_out used but never assigned File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 39
-Warning (10036): Verilog HDL or VHDL warning at deliverable2.v(78): object "registered_ADC_A" assigned a value but never read File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 78
-Warning (10036): Verilog HDL or VHDL warning at deliverable2.v(79): object "registered_ADC_B" assigned a value but never read File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 79
-Warning (10030): Net "SUT_out" at deliverable2.v(39) has no driver or initial value, using a default initial value '0' File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 39
-Info (12128): Elaborating entity "SweepGenerator" for hierarchy "SweepGenerator:sweep_gen_1" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 116
-Info (12128): Elaborating entity "ROM_for_12_x_12_NCO" for hierarchy "ROM_for_12_x_12_NCO:NCO_ROM_1" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 174
+Warning (10036): Verilog HDL or VHDL warning at deliverable2.v(33): object "staggered_phase_out" assigned a value but never read File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 33
+Warning (10858): Verilog HDL warning at deliverable2.v(40): object SUT_out used but never assigned File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 40
+Warning (10036): Verilog HDL or VHDL warning at deliverable2.v(79): object "registered_ADC_A" assigned a value but never read File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 79
+Warning (10036): Verilog HDL or VHDL warning at deliverable2.v(80): object "registered_ADC_B" assigned a value but never read File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 80
+Warning (10030): Net "SUT_out" at deliverable2.v(40) has no driver or initial value, using a default initial value '0' File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 40
+Info (12128): Elaborating entity "SweepGenerator" for hierarchy "SweepGenerator:sweep_gen_1" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 117
+Info (12128): Elaborating entity "ROM_for_12_x_12_NCO" for hierarchy "ROM_for_12_x_12_NCO:NCO_ROM_1" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 175
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/ROM_for_12_x_12_NCO.v Line: 93
 Info (12130): Elaborated megafunction instantiation "ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/ROM_for_12_x_12_NCO.v Line: 93
 Info (12133): Instantiated megafunction "ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component" with the following parameter: File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/ROM_for_12_x_12_NCO.v Line: 93
@@ -7254,16 +7132,16 @@ Info (12133): Instantiated megafunction "ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncra
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2t42.tdf
     Info (12023): Found entity 1: altsyncram_2t42 File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/altsyncram_2t42.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_2t42" for hierarchy "ROM_for_12_x_12_NCO:NCO_ROM_1|altsyncram:altsyncram_component|altsyncram_2t42:auto_generated" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "clk_en" for hierarchy "clk_en:EN_CLK" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 203
-Info (12128): Elaborating entity "LFSR_22" for hierarchy "LFSR_22:LFSR_GEN" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 222
-Info (12128): Elaborating entity "mapper_in" for hierarchy "mapper_in:SUT_input" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 229
-Info (12128): Elaborating entity "DUT_for_MER_measurement" for hierarchy "DUT_for_MER_measurement:DUT" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 260
-Info (12128): Elaborating entity "slicer" for hierarchy "slicer:DECIDER" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 278
-Info (12128): Elaborating entity "mapper_ref" for hierarchy "mapper_ref:MAP_CMP" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 290
-Info (12128): Elaborating entity "avg_mag" for hierarchy "avg_mag:AVG_MAG_DV" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 308
-Info (12128): Elaborating entity "avg_err_squared_55" for hierarchy "avg_err_squared_55:AVG_ER_SQR" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 344
-Info (12128): Elaborating entity "avg_err" for hierarchy "avg_err:AVG_ER" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 361
-Info (12128): Elaborating entity "switch_led_emulator" for hierarchy "switch_led_emulator:switch_led_emulator_inst" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 498
+Info (12128): Elaborating entity "clk_en" for hierarchy "clk_en:EN_CLK" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 204
+Info (12128): Elaborating entity "LFSR_22" for hierarchy "LFSR_22:LFSR_GEN" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 223
+Info (12128): Elaborating entity "mapper_in" for hierarchy "mapper_in:SUT_input" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 230
+Info (12128): Elaborating entity "DUT_for_MER_measurement" for hierarchy "DUT_for_MER_measurement:DUT" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 261
+Info (12128): Elaborating entity "slicer" for hierarchy "slicer:DECIDER" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 279
+Info (12128): Elaborating entity "mapper_ref" for hierarchy "mapper_ref:MAP_CMP" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 291
+Info (12128): Elaborating entity "avg_mag" for hierarchy "avg_mag:AVG_MAG_DV" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 309
+Info (12128): Elaborating entity "avg_err_squared_55" for hierarchy "avg_err_squared_55:AVG_ER_SQR" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 345
+Info (12128): Elaborating entity "avg_err" for hierarchy "avg_err:AVG_ER" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 362
+Info (12128): Elaborating entity "switch_led_emulator" for hierarchy "switch_led_emulator:switch_led_emulator_inst" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 499
 Info (12128): Elaborating entity "altsource_probe_top" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/switch_led_emulator.v Line: 23
 Info (12128): Elaborating entity "altsource_probe" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 55
 Info (12130): Elaborated megafunction instantiation "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 55
@@ -7284,7 +7162,7 @@ Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy 
 Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe.v Line: 205
 Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 564
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 756
-Info (12128): Elaborating entity "key_emulator" for hierarchy "key_emulator:key_emulator_inst" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 518
+Info (12128): Elaborating entity "key_emulator" for hierarchy "key_emulator:key_emulator_inst" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 519
 Info (12128): Elaborating entity "altsource_probe_top" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/key_emulator.v Line: 21
 Info (12128): Elaborating entity "altsource_probe" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/submodules/altsource_probe_top.v Line: 55
 Info (12130): Elaborated megafunction instantiation "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/ip/key_emulator/submodules/altsource_probe_top.v Line: 55
@@ -7302,7 +7180,7 @@ Info (12133): Instantiated megafunction "key_emulator:key_emulator_inst|altsourc
     Info (12134): Parameter "enable_metastability" = "NO"
 Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe.v Line: 243
 Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst" File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 536
-Info (12128): Elaborating entity "KeyCCT" for hierarchy "KeyCCT:k0" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 526
+Info (12128): Elaborating entity "KeyCCT" for hierarchy "KeyCCT:k0" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 527
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0e24.tdf
     Info (12023): Found entity 1: altsyncram_0e24 File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/altsyncram_0e24.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_psc.tdf
@@ -7325,7 +7203,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/db/cmpr_ngc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2022.03.13.17:33:23 Progress: Loading sld48291c47/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2022.03.18.13:36:05 Progress: Loading sld48291c47/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -7399,10 +7277,10 @@ Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity
 Info (13014): Ignored 102 buffer(s)
     Info (13019): Ignored 102 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "DAC_DA[0]" is stuck at GND File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 61
-    Warning (13410): Pin "DAC_DA[1]" is stuck at GND File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 61
-    Warning (13410): Pin "DAC_DB[0]" is stuck at GND File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 67
-    Warning (13410): Pin "DAC_DB[1]" is stuck at GND File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 67
+    Warning (13410): Pin "DAC_DA[0]" is stuck at GND File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 62
+    Warning (13410): Pin "DAC_DA[1]" is stuck at GND File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 62
+    Warning (13410): Pin "DAC_DB[0]" is stuck at GND File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 68
+    Warning (13410): Pin "DAC_DB[1]" is stuck at GND File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 68
     Warning (13410): Pin "ADC_OEB_A" is stuck at VCC File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 16
     Warning (13410): Pin "ADC_OEB_B" is stuck at VCC File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 17
     Warning (13410): Pin "DAC_MODE" is stuck at VCC File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 22
@@ -7461,24 +7339,24 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "avg_mag:AVG_MAG_DVQ|mult_out_2[24]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/avg_mag.v Line: 11
     Info (17048): Logic cell "avg_mag:AVG_MAG_DVQ|mult_out_2[25]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/avg_mag.v Line: 11
     Info (17048): Logic cell "avg_mag:AVG_MAG_DVQ|mult_out_2[26]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/avg_mag.v Line: 11
-    Info (17048): Logic cell "dec_var[0]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[10]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[11]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[12]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[13]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[14]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[15]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[16]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[17]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[1]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[2]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[3]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[4]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[5]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[6]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[7]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[8]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_var[9]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
+    Info (17048): Logic cell "dec_var[0]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[10]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[11]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[12]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[13]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[14]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[15]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[16]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[17]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[1]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[2]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[3]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[4]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[5]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[6]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[7]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[8]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_var[9]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
     Info (17048): Logic cell "avg_mag:AVG_MAG_DV|mult_out_2[17]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/avg_mag.v Line: 11
     Info (17048): Logic cell "avg_mag:AVG_MAG_DV|mult_out_2[27]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/avg_mag.v Line: 11
     Info (17048): Logic cell "avg_mag:AVG_MAG_DV|mult_out_2[28]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/avg_mag.v Line: 11
@@ -7515,24 +7393,24 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "avg_mag:AVG_MAG_DV|square[7]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/avg_mag.v Line: 10
     Info (17048): Logic cell "avg_mag:AVG_MAG_DV|square[8]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/avg_mag.v Line: 10
     Info (17048): Logic cell "avg_mag:AVG_MAG_DV|square[9]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/avg_mag.v Line: 10
-    Info (17048): Logic cell "dec_varQ[17]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[16]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[15]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[14]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[13]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[12]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[11]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[10]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[9]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[8]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[7]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[6]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[5]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[4]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[3]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[2]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[1]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
-    Info (17048): Logic cell "dec_varQ[0]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 236
+    Info (17048): Logic cell "dec_varQ[17]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[16]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[15]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[14]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[13]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[12]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[11]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[10]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[9]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[8]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[7]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[6]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[5]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[4]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[3]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[2]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[1]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
+    Info (17048): Logic cell "dec_varQ[0]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/deliverable2.v Line: 237
     Info (17048): Logic cell "mapper_ref:MAP_CMP|mult_out[15]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/mapper.v Line: 28
     Info (17048): Logic cell "mapper_ref:MAP_CMP|mult_out[25]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/mapper.v Line: 28
     Info (17048): Logic cell "mapper_ref:MAP_CMP|mult_out[24]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/mapper.v Line: 28
@@ -7623,13 +7501,6 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "mapper_ref:MAP_CMPQ|mult_out[17]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/mapper.v Line: 28
     Info (17048): Logic cell "mapper_ref:MAP_CMPQ|mult_out[16]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/mapper.v Line: 28
     Info (17048): Logic cell "mapper_ref:MAP_CMPQ|mult_out[15]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/mapper.v Line: 28
-Info (13000): Registers with preset signals will power-up high File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/sld_buffer_manager.vhd Line: 356
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286031): Timing-Driven Synthesis is running on partition "sld_signaltap:auto_signaltap_0"
-Info (13000): Registers with preset signals will power-up high File: /opt/intelFPGA/20.1.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd Line: 386
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
-Info (144001): Generated suppressed messages file /home/tob208/engr-ece/Documents/EE465/2Deliverable/output_files/deliverable2.map.smsg
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 1779 of its 1935 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 156 missing sources or connections.
 Info (35026): Attempting to remove 182 I/O cell(s) that do not connect to top-level pins or have illegal connectivity
     Info (35027): Removed I/O cell "SweepGenerator:sweep_gen_1|phase_acc[0]~output"
@@ -7936,22 +7807,16 @@ Info (35003): Optimize away 276 nodes that do not fanout to OUTPUT or BIDIR pins
     Info (35004): Node: "SweepGenerator:sweep_gen_1|ROM_waveform:SG_ROM|altsyncram:altsyncram_component|altsyncram_ahc1:auto_generated|decode_k8a:rden_decode|w_anode499w[3]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/SweepGenerator.qxp Line: -1
     Info (35004): Node: "SweepGenerator:sweep_gen_1|ROM_waveform:SG_ROM|altsyncram:altsyncram_component|altsyncram_ahc1:auto_generated|decode_k8a:rden_decode|w_anode470w[3]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/SweepGenerator.qxp Line: -1
     Info (35004): Node: "SweepGenerator:sweep_gen_1|ROM_waveform:SG_ROM|altsyncram:altsyncram_component|altsyncram_ahc1:auto_generated|decode_k8a:rden_decode|w_anode510w[3]" File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/SweepGenerator.qxp Line: -1
-Info (21057): Implemented 16876 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 16879 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 54 input pins
-    Info (21059): Implemented 60 output pins
+    Info (21059): Implemented 63 output pins
     Info (21061): Implemented 15782 logic cells
     Info (21064): Implemented 963 RAM segments
     Info (21062): Implemented 16 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 946 megabytes
-    Info: Processing ended: Sun Mar 13 17:34:08 2022
-    Info: Elapsed time: 00:01:19
-    Info: Total CPU time (on all processors): 00:02:27
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in /home/tob208/engr-ece/Documents/EE465/2Deliverable/output_files/deliverable2.map.smsg.
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 921 megabytes
+    Info: Processing ended: Fri Mar 18 13:36:15 2022
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:01:05
 
 

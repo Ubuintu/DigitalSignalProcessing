@@ -1,0 +1,336 @@
+# reading /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project MER_circuit
+ls
+# deliverable2_modelsim.xrf
+# deliverable2.sft
+# deliverable2_testbench.v
+# deliverable2.vo
+# MER_circuit.mpf
+# transcript
+# wave.do
+# work
+do wave.do
+# Compile of deliverable2.vo was successful.
+# Compile of deliverable2_testbench.v was successful.
+# 2 compiles, 0 failed with no errors.
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.deliverable2_testbench 
+# Start time: 13:42:24 on Mar 18,2022
+# Loading work.deliverable2_testbench
+# Loading work.deliverable2
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_jtag
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'MER_circuit'.  Expected 25, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /deliverable2_testbench/MER_circuit File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v Line: 19
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'PHYS_SW'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'PHYS_KEY'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_DA'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_DB'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'LEDG'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'LEDR'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_DA'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_DB'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_CLK_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_CLK_B'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_OEB_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_OEB_B'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_CLK_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_CLK_B'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_MODE'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_WRT_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_WRT_B'.
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Warning: Design size of 74606 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Error: Error: Illegal widget path to WinfoTopFrame: 
+# Executing ONERROR command at macro ./wave.do line 5
+add wave -position insertpoint  \
+sim:/deliverable2_testbench/MER_circuit/CLOCK_50
+add wave -position insertpoint  \
+sim:/deliverable2_testbench/MER_circuit/sys_clk \
+sim:/deliverable2_testbench/MER_circuit/sam_clk_en \
+sim:/deliverable2_testbench/MER_circuit/sym_clk_en
+# Break key hit
+# Simulation stop requested.
+do wave.do
+# Compile of deliverable2.vo was successful.
+# Compile of deliverable2_testbench.v was successful.
+# 2 compiles, 0 failed with no errors.
+# End time: 13:44:25 on Mar 18,2022, Elapsed time: 0:02:01
+# Errors: 1, Warnings: 29
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.deliverable2_testbench 
+# Start time: 13:44:25 on Mar 18,2022
+# Loading work.deliverable2_testbench
+# Loading work.deliverable2
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_jtag
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'MER_circuit'.  Expected 25, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /deliverable2_testbench/MER_circuit File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v Line: 19
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'PHYS_SW'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'PHYS_KEY'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_DA'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_DB'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'LEDG'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'LEDR'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_DA'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_DB'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_CLK_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_CLK_B'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_OEB_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_OEB_B'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_CLK_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_CLK_B'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_MODE'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_WRT_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_WRT_B'.
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Warning: Design size of 74606 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** UI-Msg: (vish-4014) No objects found matching '/final_exam_testbench/CLOCK_50'.
+# Executing ONERROR command at macro ./wave.do line 5
+# ** UI-Msg: (vish-4014) No objects found matching '/final_exam_testbench/sys_clk'.
+# Executing ONERROR command at macro ./wave.do line 6
+# ** UI-Msg: (vish-4014) No objects found matching '/final_exam_testbench/sam_clk_en'.
+# Executing ONERROR command at macro ./wave.do line 7
+# ** UI-Msg: (vish-4014) No objects found matching '/final_exam_testbench/sym_clk_en'.
+# Executing ONERROR command at macro ./wave.do line 8
+# Break key hit
+# Break in Module cycloneive_ram_block at $MODEL_TECH/../altera/verilog/src/cycloneive_atoms.v line 5468
+# Error opening /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/altera/verilog/src/cycloneive_atoms.v
+# Path name '/home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/altera/verilog/src/cycloneive_atoms.v' doesn't exist.
+do wave.do
+# Compile of deliverable2.vo was successful.
+# Compile of deliverable2_testbench.v was successful.
+# 2 compiles, 0 failed with no errors.
+# End time: 13:45:09 on Mar 18,2022, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 25
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.deliverable2_testbench 
+# Start time: 13:45:09 on Mar 18,2022
+# Loading work.deliverable2_testbench
+# Loading work.deliverable2
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_jtag
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'MER_circuit'.  Expected 25, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /deliverable2_testbench/MER_circuit File: /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v Line: 19
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'PHYS_SW'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'PHYS_KEY'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_DA'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_DB'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'LEDG'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'LEDR'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_DA'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_DB'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_CLK_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_CLK_B'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_OEB_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'ADC_OEB_B'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_CLK_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_CLK_B'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_MODE'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_WRT_A'.
+# ** Warning: (vsim-3722) /home/tob208/engr-ece/Documents/EE465/2Deliverable/simulation/modelsim/deliverable2_testbench.v(19): [TFMPC] - Missing connection for port 'DAC_WRT_B'.
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Warning: Design size of 74606 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** UI-Msg: (vish-4014) No objects found matching '/deliverable2_testbench/CLOCK_50'.
+# Executing ONERROR command at macro ./wave.do line 5
+# Unknown option: 500
+# ** UI-Msg: (vsim-4005) Invalid argument '-500'.
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
+# Executing ONERROR command at macro ./wave.do line 11
+run
+run
+quit -sim
+# End time: 15:10:45 on Mar 18,2022, Elapsed time: 1:25:36
+# Errors: 0, Warnings: 24
+# reading /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project timing_analysis
+do wave.do
+# Compile of deliverable2.vo was successful.
+# Compile of deliverable2_testbench.v was successful.
+# 2 compiles, 0 failed with no errors.
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.deliverable2_testbench 
+# Start time: 15:12:40 on Mar 18,2022
+# Loading work.deliverable2_testbench
+# Loading work.deliverable2_TA
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** UI-Msg: (vish-4014) No objects found matching '/deliverable2_testbench/CLOCK_50'.
+# Executing ONERROR command at macro ./wave.do line 5
+# Unknown option: 500
+# ** UI-Msg: (vsim-4005) Invalid argument '-500'.
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
+# Executing ONERROR command at macro ./wave.do line 11
+do wave.do
+# Compile of deliverable2.vo was successful.
+# Compile of deliverable2_testbench.v was successful.
+# 2 compiles, 0 failed with no errors.
+# End time: 15:13:02 on Mar 18,2022, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 6
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.deliverable2_testbench 
+# Start time: 15:13:02 on Mar 18,2022
+# Loading work.deliverable2_testbench
+# Loading work.deliverable2_TA
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading altera_ver.PRIM_GDFF_LOW
+# Unknown option: 500
+# ** UI-Msg: (vsim-4005) Invalid argument '-500'.
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
+# Executing ONERROR command at macro ./wave.do line 11
+do wave.do
+# Compile of deliverable2.vo was successful.
+# Compile of deliverable2_testbench.v was successful.
+# 2 compiles, 0 failed with no errors.
+# End time: 15:13:14 on Mar 18,2022, Elapsed time: 0:00:12
+# Errors: 0, Warnings: 2
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.deliverable2_testbench 
+# Start time: 15:13:14 on Mar 18,2022
+# Loading work.deliverable2_testbench
+# Loading work.deliverable2_TA
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading altera_ver.PRIM_GDFF_LOW
+# Break key hit
+# Simulation stop requested.
+do wave.do
+# Compile of deliverable2.vo was successful.
+# Compile of deliverable2_testbench.v was successful.
+# 2 compiles, 0 failed with no errors.
+# End time: 15:13:37 on Mar 18,2022, Elapsed time: 0:00:23
+# Errors: 0, Warnings: 2
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.deliverable2_testbench 
+# Start time: 15:13:37 on Mar 18,2022
+# Loading work.deliverable2_testbench
+# Loading work.deliverable2_TA
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading altera_ver.PRIM_GDFF_LOW
+# Break key hit
+# Simulation stop requested.
+do wave.do
+# Compile of deliverable2.vo was successful.
+# Compile of deliverable2_testbench.v was successful.
+# 2 compiles, 0 failed with no errors.
+# End time: 15:16:33 on Mar 18,2022, Elapsed time: 0:02:56
+# Errors: 0, Warnings: 2
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.deliverable2_testbench 
+# Start time: 15:16:33 on Mar 18,2022
+# Loading work.deliverable2_testbench
+# Loading work.deliverable2_TA
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading altera_ver.PRIM_GDFF_LOW
+# Break key hit
+# Simulation stop requested.
+# End time: 15:16:57 on Mar 18,2022, Elapsed time: 0:00:24
+# Errors: 0, Warnings: 1

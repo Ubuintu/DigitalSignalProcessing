@@ -109,6 +109,9 @@ DAC_CLK_B <= clk.DB_MAX_OUTPUT_PORT_TYPE
 DAC_MODE <= <VCC>
 DAC_WRT_A <= clk.DB_MAX_OUTPUT_PORT_TYPE
 DAC_WRT_B <= clk.DB_MAX_OUTPUT_PORT_TYPE
+sys_clk <= sys_clk.DB_MAX_OUTPUT_PORT_TYPE
+sam_clk_en <= sam_clk_en.DB_MAX_OUTPUT_PORT_TYPE
+sym_clk_en <= sym_clk_en.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |deliverable2|SweepGenerator:sweep_gen_1

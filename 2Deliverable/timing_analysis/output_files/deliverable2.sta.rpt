@@ -1,0 +1,1280 @@
+Timing Analyzer report for deliverable2
+Fri Mar 18 15:09:20 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow 1200mV 85C Model Fmax Summary
+  7. Timing Closure Recommendations
+  8. Slow 1200mV 85C Model Setup Summary
+  9. Slow 1200mV 85C Model Hold Summary
+ 10. Slow 1200mV 85C Model Recovery Summary
+ 11. Slow 1200mV 85C Model Removal Summary
+ 12. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 13. Slow 1200mV 85C Model Setup: 'CLOCK_50'
+ 14. Slow 1200mV 85C Model Setup: 'clk_en:EN_CLK|sys_clk'
+ 15. Slow 1200mV 85C Model Hold: 'clk_en:EN_CLK|sys_clk'
+ 16. Slow 1200mV 85C Model Hold: 'CLOCK_50'
+ 17. Slow 1200mV 85C Model Metastability Summary
+ 18. Slow 1200mV 0C Model Fmax Summary
+ 19. Slow 1200mV 0C Model Setup Summary
+ 20. Slow 1200mV 0C Model Hold Summary
+ 21. Slow 1200mV 0C Model Recovery Summary
+ 22. Slow 1200mV 0C Model Removal Summary
+ 23. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 24. Slow 1200mV 0C Model Setup: 'CLOCK_50'
+ 25. Slow 1200mV 0C Model Setup: 'clk_en:EN_CLK|sys_clk'
+ 26. Slow 1200mV 0C Model Hold: 'clk_en:EN_CLK|sys_clk'
+ 27. Slow 1200mV 0C Model Hold: 'CLOCK_50'
+ 28. Slow 1200mV 0C Model Metastability Summary
+ 29. Fast 1200mV 0C Model Setup Summary
+ 30. Fast 1200mV 0C Model Hold Summary
+ 31. Fast 1200mV 0C Model Recovery Summary
+ 32. Fast 1200mV 0C Model Removal Summary
+ 33. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 34. Fast 1200mV 0C Model Setup: 'CLOCK_50'
+ 35. Fast 1200mV 0C Model Setup: 'clk_en:EN_CLK|sys_clk'
+ 36. Fast 1200mV 0C Model Hold: 'clk_en:EN_CLK|sys_clk'
+ 37. Fast 1200mV 0C Model Hold: 'CLOCK_50'
+ 38. Fast 1200mV 0C Model Metastability Summary
+ 39. Multicorner Timing Analysis Summary
+ 40. Board Trace Model Assignments
+ 41. Input Transition Times
+ 42. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 43. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 44. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 45. Setup Transfers
+ 46. Hold Transfers
+ 47. Report TCCS
+ 48. Report RSKM
+ 49. Unconstrained Paths Summary
+ 50. Clock Status Summary
+ 51. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                         ;
++-----------------------+---------------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                  ;
+; Revision Name         ; deliverable2                                            ;
+; Device Family         ; Cyclone IV E                                            ;
+; Device Name           ; EP4CE115F29C7                                           ;
+; Timing Models         ; Final                                                   ;
+; Delay Model           ; Combined                                                ;
+; Rise/Fall Delays      ; Enabled                                                 ;
++-----------------------+---------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.08        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   1.8%      ;
+;     Processor 3            ;   1.1%      ;
+;     Processor 4            ;   1.0%      ;
+;     Processors 5-8         ;   1.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; SDC1.sdc      ; OK     ; Fri Mar 18 15:09:19 2022 ;
++---------------+--------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                         ;
++-----------------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------+
+; Clock Name            ; Type ; Period  ; Frequency ; Rise  ; Fall    ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                   ;
++-----------------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------+
+; clk_en:EN_CLK|sys_clk ; Base ; 40.000  ; 25.0 MHz  ; 0.000 ; 20.000  ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_en:EN_CLK|sys_clk } ;
+; CLOCK_50              ; Base ; 20.000  ; 50.0 MHz  ; 0.000 ; 10.000  ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }              ;
+; sam_clk_en            ; Base ; 160.000 ; 6.25 MHz  ; 0.000 ; 80.000  ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sam_clk_en }            ;
+; sym_clk_en            ; Base ; 640.000 ; 1.56 MHz  ; 0.000 ; 320.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sym_clk_en }            ;
+; sys_clk               ; Base ; 40.000  ; 25.0 MHz  ; 0.000 ; 20.000  ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sys_clk }               ;
++-----------------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------+
+
+
++------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                         ;
++-----------+-----------------+-----------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name            ; Note ;
++-----------+-----------------+-----------------------+------+
+; 67.44 MHz ; 67.44 MHz       ; clk_en:EN_CLK|sys_clk ;      ;
++-----------+-----------------+-----------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary            ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; CLOCK_50              ; 18.695 ; 0.000         ;
+; clk_en:EN_CLK|sys_clk ; 25.171 ; 0.000         ;
++-----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary            ;
++-----------------------+-------+---------------+
+; Clock                 ; Slack ; End Point TNS ;
++-----------------------+-------+---------------+
+; clk_en:EN_CLK|sys_clk ; 0.402 ; 0.000         ;
+; CLOCK_50              ; 0.730 ; 0.000         ;
++-----------------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-----------------------+---------+-----------------+
+; Clock                 ; Slack   ; End Point TNS   ;
++-----------------------+---------+-----------------+
+; CLOCK_50              ; 9.723   ; 0.000           ;
+; clk_en:EN_CLK|sys_clk ; 19.749  ; 0.000           ;
+; sys_clk               ; 35.790  ; 0.000           ;
+; sam_clk_en            ; 155.790 ; 0.000           ;
+; sym_clk_en            ; 635.790 ; 0.000           ;
++-----------------------+---------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLOCK_50'                                                                                               ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; 18.695 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 20.000       ; 1.997      ; 3.552      ;
+; 18.778 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 20.000       ; 1.997      ; 3.469      ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk_en:EN_CLK|sys_clk'                                                                                                                                                 ;
++--------+-----------------------------------------------+----------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                            ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+----------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 25.171 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.764     ;
+; 25.303 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.632     ;
+; 25.322 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.613     ;
+; 25.435 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.500     ;
+; 25.454 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.481     ;
+; 25.483 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.452     ;
+; 25.490 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 14.450     ;
+; 25.615 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.320     ;
+; 25.622 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 14.318     ;
+; 25.634 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.301     ;
+; 25.641 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 14.299     ;
+; 25.747 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.188     ;
+; 25.754 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 14.186     ;
+; 25.766 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.169     ;
+; 25.773 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 14.167     ;
+; 25.778 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 14.163     ;
+; 25.813 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.122     ;
+; 25.892 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 14.049     ;
+; 25.906 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 14.029     ;
+; 25.910 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 14.031     ;
+; 25.929 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 14.012     ;
+; 25.945 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.990     ;
+; 25.964 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.971     ;
+; 25.978 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.963     ;
+; 25.988 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.953     ;
+; 26.006 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.935     ;
+; 26.020 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.915     ;
+; 26.024 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.917     ;
+; 26.027 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.914     ;
+; 26.038 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.897     ;
+; 26.042 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.899     ;
+; 26.043 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.898     ;
+; 26.048 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.893     ;
+; 26.051 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.884     ;
+; 26.057 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.878     ;
+; 26.061 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.880     ;
+; 26.077 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.858     ;
+; 26.096 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.839     ;
+; 26.103 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 13.837     ;
+; 26.110 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.831     ;
+; 26.114 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.827     ;
+; 26.115 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.826     ;
+; 26.120 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.821     ;
+; 26.129 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.812     ;
+; 26.138 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.803     ;
+; 26.139 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.802     ;
+; 26.156 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.785     ;
+; 26.157 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.784     ;
+; 26.159 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.782     ;
+; 26.170 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.765     ;
+; 26.175 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.766     ;
+; 26.178 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.763     ;
+; 26.180 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.761     ;
+; 26.181 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.760     ;
+; 26.183 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.752     ;
+; 26.189 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.746     ;
+; 26.199 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.742     ;
+; 26.202 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.733     ;
+; 26.235 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 13.705     ;
+; 26.242 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.699     ;
+; 26.246 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.695     ;
+; 26.247 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.694     ;
+; 26.250 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.685     ;
+; 26.252 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.689     ;
+; 26.254 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 13.686     ;
+; 26.261 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.680     ;
+; 26.265 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.676     ;
+; 26.266 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.675     ;
+; 26.270 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.671     ;
+; 26.271 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.670     ;
+; 26.289 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.652     ;
+; 26.291 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.650     ;
+; 26.294 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][13] ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.641     ;
+; 26.310 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.631     ;
+; 26.312 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.629     ;
+; 26.313 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.628     ;
+; 26.314 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.627     ;
+; 26.315 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.620     ;
+; 26.331 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.610     ;
+; 26.332 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.609     ;
+; 26.332 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.603     ;
+; 26.334 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.601     ;
+; 26.339 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 13.601     ;
+; 26.367 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 13.573     ;
+; 26.378 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.563     ;
+; 26.379 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.562     ;
+; 26.382 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.553     ;
+; 26.386 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.078     ; 13.554     ;
+; 26.397 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.544     ;
+; 26.398 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.543     ;
+; 26.398 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.543     ;
+; 26.401 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.534     ;
+; 26.426 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][13] ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.509     ;
+; 26.444 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.079     ; 13.495     ;
+; 26.445 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][13] ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.490     ;
+; 26.445 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.496     ;
+; 26.446 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.495     ;
+; 26.464 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.477     ;
+; 26.465 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.077     ; 13.476     ;
+; 26.484 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[11] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.083     ; 13.451     ;
++--------+-----------------------------------------------+----------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clk_en:EN_CLK|sys_clk'                                                                                                                                            ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 0.402 ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.669      ;
+; 0.407 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.674      ;
+; 0.428 ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.695      ;
+; 0.430 ; avg_mag:AVG_MAG_DVQ|det_edge[0]               ; avg_mag:AVG_MAG_DVQ|det_edge[1]               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.696      ;
+; 0.431 ; LFSR_IN_Delay[0][0]                           ; LFSR_IN_Delay[1][0]                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.696      ;
+; 0.438 ; LFSR_22:LFSR_GEN|x[1]                         ; DUT_for_MER_measurement:DUT|delay_reg[0][16]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.703      ;
+; 0.443 ; LFSR_22:LFSR_GEN|x[3]                         ; DUT_for_MER_measurement:DUTQ|delay_reg[0][16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.708      ;
+; 0.450 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.717      ;
+; 0.450 ; avg_mag:AVG_MAG_DVQ|acc_out[22]               ; avg_mag:AVG_MAG_DVQ|reg_out[2]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.717      ;
+; 0.451 ; avg_mag:AVG_MAG_DVQ|acc_out[32]               ; avg_mag:AVG_MAG_DVQ|reg_out[12]               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.717      ;
+; 0.451 ; avg_mag:AVG_MAG_DVQ|acc_out[28]               ; avg_mag:AVG_MAG_DVQ|reg_out[8]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.717      ;
+; 0.451 ; avg_mag:AVG_MAG_DVQ|acc_out[21]               ; avg_mag:AVG_MAG_DVQ|reg_out[1]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.718      ;
+; 0.451 ; avg_mag:AVG_MAG_DV|acc_out[29]                ; avg_mag:AVG_MAG_DV|reg_out[9]                 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.717      ;
+; 0.452 ; avg_mag:AVG_MAG_DVQ|acc_out[37]               ; avg_mag:AVG_MAG_DVQ|reg_out[17]               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.719      ;
+; 0.452 ; avg_mag:AVG_MAG_DV|acc_out[28]                ; avg_mag:AVG_MAG_DV|reg_out[8]                 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.718      ;
+; 0.453 ; avg_mag:AVG_MAG_DVQ|acc_out[20]               ; avg_mag:AVG_MAG_DVQ|reg_out[0]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.720      ;
+; 0.453 ; avg_mag:AVG_MAG_DV|acc_out[37]                ; avg_mag:AVG_MAG_DV|reg_out[17]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.719      ;
+; 0.454 ; avg_mag:AVG_MAG_DVQ|acc_out[24]               ; avg_mag:AVG_MAG_DVQ|reg_out[4]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.721      ;
+; 0.543 ; LFSR_IN_Delay[2][1]                           ; sym_err                                       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.809      ;
+; 0.551 ; LFSR_22:LFSR_GEN|x[20]                        ; LFSR_22:LFSR_GEN|x[0]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.816      ;
+; 0.556 ; LFSR_22:LFSR_GEN|x[16]                        ; LFSR_22:LFSR_GEN|x[17]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.821      ;
+; 0.556 ; LFSR_22:LFSR_GEN|x[9]                         ; LFSR_22:LFSR_GEN|x[10]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.821      ;
+; 0.557 ; LFSR_22:LFSR_GEN|x[12]                        ; LFSR_22:LFSR_GEN|x[13]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.822      ;
+; 0.558 ; LFSR_22:LFSR_GEN|x[15]                        ; LFSR_22:LFSR_GEN|x[16]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.823      ;
+; 0.558 ; LFSR_22:LFSR_GEN|x[4]                         ; LFSR_22:LFSR_GEN|x[5]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.823      ;
+; 0.562 ; LFSR_22:LFSR_GEN|x[2]                         ; DUT_for_MER_measurement:DUTQ|delay_reg[0][16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.827      ;
+; 0.564 ; LFSR_22:LFSR_GEN|x[20]                        ; LFSR_22:LFSR_GEN|x[21]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.829      ;
+; 0.564 ; LFSR_22:LFSR_GEN|x[0]                         ; DUT_for_MER_measurement:DUT|delay_reg[0][16]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.829      ;
+; 0.570 ; LFSR_22:LFSR_GEN|x[0]                         ; LFSR_22:LFSR_GEN|x[1]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.835      ;
+; 0.571 ; LFSR_22:LFSR_GEN|x[0]                         ; LFSR_IN_Delay[0][0]                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.836      ;
+; 0.571 ; LFSR_22:LFSR_GEN|x[2]                         ; LFSR_22:LFSR_GEN|x[3]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.836      ;
+; 0.572 ; LFSR_22:LFSR_GEN|x[2]                         ; LFSR_IN_DelayQ[0][0]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.837      ;
+; 0.579 ; avg_mag:AVG_MAG_DV|acc_out[20]                ; avg_mag:AVG_MAG_DV|reg_out[0]                 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.845      ;
+; 0.599 ; avg_mag:AVG_MAG_DV|det_edge[0]                ; avg_mag:AVG_MAG_DV|det_edge[1]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.865      ;
+; 0.600 ; LFSR_IN_Delay[1][1]                           ; LFSR_IN_Delay[2][1]                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.866      ;
+; 0.601 ; LFSR_IN_DelayQ[0][1]                          ; LFSR_IN_DelayQ[1][1]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.867      ;
+; 0.601 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][16] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.867      ;
+; 0.601 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][2]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.867      ;
+; 0.601 ; DUT_for_MER_measurement:DUT|delay_reg[1][2]   ; DUT_for_MER_measurement:DUT|delay_reg[2][2]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.867      ;
+; 0.601 ; DUT_for_MER_measurement:DUT|delay_reg[1][1]   ; DUT_for_MER_measurement:DUT|delay_reg[2][1]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.867      ;
+; 0.602 ; LFSR_IN_DelayQ[0][0]                          ; LFSR_IN_DelayQ[1][0]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.867      ;
+; 0.603 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][12] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.869      ;
+; 0.622 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][17] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.888      ;
+; 0.622 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][12] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.888      ;
+; 0.622 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][9]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.888      ;
+; 0.622 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][6]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.888      ;
+; 0.623 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][8]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.889      ;
+; 0.623 ; DUT_for_MER_measurement:DUT|delay_reg[0][12]  ; DUT_for_MER_measurement:DUT|delay_reg[1][12]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.889      ;
+; 0.624 ; DUT_for_MER_measurement:DUT|delay_reg[0][14]  ; DUT_for_MER_measurement:DUT|delay_reg[1][14]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.890      ;
+; 0.624 ; DUT_for_MER_measurement:DUT|delay_reg[0][9]   ; DUT_for_MER_measurement:DUT|delay_reg[1][9]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.890      ;
+; 0.625 ; DUT_for_MER_measurement:DUT|delay_reg[0][10]  ; DUT_for_MER_measurement:DUT|delay_reg[1][10]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 0.891      ;
+; 0.644 ; LFSR_22:LFSR_GEN|cnt[17]                      ; LFSR_22:LFSR_GEN|cnt[17]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.909      ;
+; 0.647 ; LFSR_22:LFSR_GEN|cnt[19]                      ; LFSR_22:LFSR_GEN|cnt[19]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.912      ;
+; 0.650 ; LFSR_22:LFSR_GEN|cnt[20]                      ; LFSR_22:LFSR_GEN|cnt[20]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.915      ;
+; 0.650 ; LFSR_22:LFSR_GEN|cnt[18]                      ; LFSR_22:LFSR_GEN|cnt[18]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.915      ;
+; 0.662 ; LFSR_22:LFSR_GEN|cnt[21]                      ; LFSR_22:LFSR_GEN|cnt[21]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.927      ;
+; 0.664 ; avg_mag:AVG_MAG_DV|acc_out[32]                ; avg_mag:AVG_MAG_DV|reg_out[12]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.929      ;
+; 0.666 ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.933      ;
+; 0.668 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.935      ;
+; 0.695 ; LFSR_22:LFSR_GEN|x[14]                        ; LFSR_22:LFSR_GEN|x[15]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.960      ;
+; 0.695 ; LFSR_22:LFSR_GEN|x[8]                         ; LFSR_22:LFSR_GEN|x[9]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.960      ;
+; 0.696 ; LFSR_22:LFSR_GEN|x[5]                         ; LFSR_22:LFSR_GEN|x[6]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.961      ;
+; 0.698 ; LFSR_22:LFSR_GEN|x[17]                        ; LFSR_22:LFSR_GEN|x[18]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.963      ;
+; 0.698 ; LFSR_22:LFSR_GEN|x[7]                         ; LFSR_22:LFSR_GEN|x[8]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.963      ;
+; 0.699 ; LFSR_22:LFSR_GEN|x[13]                        ; LFSR_22:LFSR_GEN|x[14]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.964      ;
+; 0.699 ; LFSR_22:LFSR_GEN|x[11]                        ; LFSR_22:LFSR_GEN|x[12]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.964      ;
+; 0.700 ; LFSR_22:LFSR_GEN|x[1]                         ; LFSR_IN_Delay[0][1]                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.965      ;
+; 0.700 ; LFSR_22:LFSR_GEN|x[19]                        ; LFSR_22:LFSR_GEN|x[20]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.965      ;
+; 0.700 ; LFSR_22:LFSR_GEN|x[6]                         ; LFSR_22:LFSR_GEN|x[7]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.965      ;
+; 0.701 ; LFSR_22:LFSR_GEN|x[10]                        ; LFSR_22:LFSR_GEN|x[11]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.966      ;
+; 0.712 ; LFSR_22:LFSR_GEN|x[21]                        ; LFSR_22:LFSR_GEN|x[0]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.977      ;
+; 0.716 ; LFSR_22:LFSR_GEN|x[1]                         ; LFSR_22:LFSR_GEN|x[2]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 0.981      ;
+; 0.724 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 0.991      ;
+; 0.766 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][14] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 1.031      ;
+; 0.768 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][0]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 1.034      ;
+; 0.769 ; DUT_for_MER_measurement:DUT|delay_reg[1][11]  ; DUT_for_MER_measurement:DUT|delay_reg[2][11]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 1.034      ;
+; 0.769 ; DUT_for_MER_measurement:DUT|delay_reg[0][8]   ; DUT_for_MER_measurement:DUT|delay_reg[1][8]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 1.035      ;
+; 0.769 ; DUT_for_MER_measurement:DUT|delay_reg[1][6]   ; DUT_for_MER_measurement:DUT|delay_reg[2][6]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 1.034      ;
+; 0.772 ; DUT_for_MER_measurement:DUT|delay_reg[1][5]   ; DUT_for_MER_measurement:DUT|delay_reg[2][5]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 1.038      ;
+; 0.775 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][15] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 1.041      ;
+; 0.775 ; DUT_for_MER_measurement:DUT|delay_reg[0][2]   ; DUT_for_MER_measurement:DUT|delay_reg[1][2]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 1.041      ;
+; 0.778 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][10] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 1.044      ;
+; 0.783 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][3]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 1.050      ;
+; 0.793 ; DUT_for_MER_measurement:DUT|delay_reg[1][8]   ; DUT_for_MER_measurement:DUT|delay_reg[2][8]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 1.060      ;
+; 0.796 ; DUT_for_MER_measurement:DUT|delay_reg[1][0]   ; DUT_for_MER_measurement:DUT|delay_reg[2][0]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 1.062      ;
+; 0.802 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][4]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 1.067      ;
+; 0.803 ; DUT_for_MER_measurement:DUT|delay_reg[1][7]   ; DUT_for_MER_measurement:DUT|delay_reg[2][7]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 1.068      ;
+; 0.806 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][17] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 1.071      ;
+; 0.806 ; DUT_for_MER_measurement:DUT|delay_reg[1][4]   ; DUT_for_MER_measurement:DUT|delay_reg[2][4]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 1.071      ;
+; 0.810 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][7]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 1.075      ;
+; 0.813 ; DUT_for_MER_measurement:DUT|delay_reg[0][11]  ; DUT_for_MER_measurement:DUT|delay_reg[1][11]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 1.080      ;
+; 0.821 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][1]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 1.087      ;
+; 0.831 ; LFSR_22:LFSR_GEN|cnt[16]                      ; LFSR_22:LFSR_GEN|cnt[16]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.079      ; 1.096      ;
+; 0.839 ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.081      ; 1.106      ;
+; 0.888 ; avg_mag:AVG_MAG_DVQ|acc_out[29]               ; avg_mag:AVG_MAG_DVQ|reg_out[9]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.084      ; 1.158      ;
+; 0.889 ; LFSR_IN_Delay[2][1]                           ; sym_cor                                       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.080      ; 1.155      ;
+; 0.940 ; avg_mag:AVG_MAG_DVQ|acc_out[23]               ; avg_mag:AVG_MAG_DVQ|reg_out[3]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 1.198      ;
+; 0.957 ; avg_mag:AVG_MAG_DVQ|acc_out[31]               ; avg_mag:AVG_MAG_DVQ|reg_out[11]               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 1.214      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLOCK_50'                                                                                               ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; 0.730 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 0.000        ; 2.070      ; 3.218      ;
+; 0.844 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 0.000        ; 2.070      ; 3.332      ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                          ;
++-----------+-----------------+-----------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name            ; Note ;
++-----------+-----------------+-----------------------+------+
+; 74.43 MHz ; 74.43 MHz       ; clk_en:EN_CLK|sys_clk ;      ;
++-----------+-----------------+-----------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary             ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; CLOCK_50              ; 18.836 ; 0.000         ;
+; clk_en:EN_CLK|sys_clk ; 26.565 ; 0.000         ;
++-----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary             ;
++-----------------------+-------+---------------+
+; Clock                 ; Slack ; End Point TNS ;
++-----------------------+-------+---------------+
+; clk_en:EN_CLK|sys_clk ; 0.353 ; 0.000         ;
+; CLOCK_50              ; 0.622 ; 0.000         ;
++-----------------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-----------------------+---------+----------------+
+; Clock                 ; Slack   ; End Point TNS  ;
++-----------------------+---------+----------------+
+; CLOCK_50              ; 9.712   ; 0.000          ;
+; clk_en:EN_CLK|sys_clk ; 19.694  ; 0.000          ;
+; sys_clk               ; 35.790  ; 0.000          ;
+; sam_clk_en            ; 155.790 ; 0.000          ;
+; sym_clk_en            ; 635.790 ; 0.000          ;
++-----------------------+---------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLOCK_50'                                                                                                ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; 18.836 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 20.000       ; 1.852      ; 3.248      ;
+; 18.935 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 20.000       ; 1.852      ; 3.149      ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk_en:EN_CLK|sys_clk'                                                                                                                                                  ;
++--------+-----------------------------------------------+----------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                            ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+----------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 26.565 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 13.380     ;
+; 26.681 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 13.264     ;
+; 26.710 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 13.235     ;
+; 26.797 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 13.148     ;
+; 26.812 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 13.137     ;
+; 26.826 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 13.119     ;
+; 26.874 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 13.071     ;
+; 26.928 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 13.021     ;
+; 26.957 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.992     ;
+; 26.990 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.955     ;
+; 27.019 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.926     ;
+; 27.044 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.905     ;
+; 27.073 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.876     ;
+; 27.106 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.839     ;
+; 27.133 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.812     ;
+; 27.135 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.810     ;
+; 27.144 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.805     ;
+; 27.239 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.710     ;
+; 27.247 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.698     ;
+; 27.249 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.696     ;
+; 27.260 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.689     ;
+; 27.278 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.667     ;
+; 27.289 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.660     ;
+; 27.312 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.633     ;
+; 27.313 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.636     ;
+; 27.324 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.625     ;
+; 27.339 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.610     ;
+; 27.355 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.594     ;
+; 27.358 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.591     ;
+; 27.363 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.582     ;
+; 27.365 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.580     ;
+; 27.376 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.573     ;
+; 27.376 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.573     ;
+; 27.380 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.565     ;
+; 27.384 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.565     ;
+; 27.392 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.553     ;
+; 27.394 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.551     ;
+; 27.405 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.544     ;
+; 27.428 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.521     ;
+; 27.429 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.520     ;
+; 27.433 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.516     ;
+; 27.439 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.510     ;
+; 27.440 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.509     ;
+; 27.455 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.494     ;
+; 27.458 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.491     ;
+; 27.469 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.480     ;
+; 27.471 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.478     ;
+; 27.474 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.475     ;
+; 27.479 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.466     ;
+; 27.484 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.465     ;
+; 27.492 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.457     ;
+; 27.493 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.456     ;
+; 27.496 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.449     ;
+; 27.500 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.449     ;
+; 27.503 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.446     ;
+; 27.508 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.437     ;
+; 27.521 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.428     ;
+; 27.525 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.420     ;
+; 27.544 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.405     ;
+; 27.545 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.404     ;
+; 27.549 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.400     ;
+; 27.555 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.390     ;
+; 27.555 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.394     ;
+; 27.556 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.393     ;
+; 27.559 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.390     ;
+; 27.571 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.378     ;
+; 27.573 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.376     ;
+; 27.574 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.375     ;
+; 27.578 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.371     ;
+; 27.584 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.365     ;
+; 27.585 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.364     ;
+; 27.590 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.359     ;
+; 27.596 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][13] ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.349     ;
+; 27.600 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.349     ;
+; 27.608 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.341     ;
+; 27.609 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.340     ;
+; 27.610 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.339     ;
+; 27.612 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.333     ;
+; 27.619 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.330     ;
+; 27.621 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.324     ;
+; 27.637 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.312     ;
+; 27.638 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.311     ;
+; 27.641 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.304     ;
+; 27.660 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.289     ;
+; 27.665 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.284     ;
+; 27.671 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.274     ;
+; 27.671 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.278     ;
+; 27.683 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.266     ;
+; 27.689 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.260     ;
+; 27.694 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.255     ;
+; 27.700 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.245     ;
+; 27.700 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.249     ;
+; 27.712 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][13] ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.233     ;
+; 27.725 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.071     ; 12.223     ;
+; 27.725 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.224     ;
+; 27.726 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.223     ;
+; 27.741 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][13] ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.074     ; 12.204     ;
+; 27.754 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.195     ;
+; 27.755 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.070     ; 12.194     ;
+; 27.766 ; DUT_for_MER_measurement:DUT|delay_reg[0][6]   ; DUT_for_MER_measurement:DUT|decision_variable[17]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.071     ; 12.182     ;
++--------+-----------------------------------------------+----------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clk_en:EN_CLK|sys_clk'                                                                                                                                                 ;
++-------+-----------------------------------------------+---------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                           ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+---------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 0.353 ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|cnt[3]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 0.597      ;
+; 0.353 ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|cnt[2]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 0.597      ;
+; 0.353 ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|cnt[1]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 0.597      ;
+; 0.364 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[0]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 0.608      ;
+; 0.388 ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|cnt[3]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 0.632      ;
+; 0.395 ; LFSR_22:LFSR_GEN|x[1]                         ; DUT_for_MER_measurement:DUT|delay_reg[0][16]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.637      ;
+; 0.397 ; LFSR_IN_Delay[0][0]                           ; LFSR_IN_Delay[1][0]                               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.639      ;
+; 0.398 ; avg_mag:AVG_MAG_DVQ|det_edge[0]               ; avg_mag:AVG_MAG_DVQ|det_edge[1]                   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.640      ;
+; 0.401 ; LFSR_22:LFSR_GEN|x[3]                         ; DUT_for_MER_measurement:DUTQ|delay_reg[0][16]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.643      ;
+; 0.408 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[2]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 0.652      ;
+; 0.415 ; avg_mag:AVG_MAG_DVQ|acc_out[32]               ; avg_mag:AVG_MAG_DVQ|reg_out[12]                   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.658      ;
+; 0.415 ; avg_mag:AVG_MAG_DVQ|acc_out[28]               ; avg_mag:AVG_MAG_DVQ|reg_out[8]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.658      ;
+; 0.417 ; avg_mag:AVG_MAG_DVQ|acc_out[22]               ; avg_mag:AVG_MAG_DVQ|reg_out[2]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.659      ;
+; 0.417 ; avg_mag:AVG_MAG_DVQ|acc_out[21]               ; avg_mag:AVG_MAG_DVQ|reg_out[1]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.659      ;
+; 0.418 ; avg_mag:AVG_MAG_DVQ|acc_out[37]               ; avg_mag:AVG_MAG_DVQ|reg_out[17]                   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.660      ;
+; 0.418 ; avg_mag:AVG_MAG_DV|acc_out[29]                ; avg_mag:AVG_MAG_DV|reg_out[9]                     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.659      ;
+; 0.419 ; avg_mag:AVG_MAG_DVQ|acc_out[20]               ; avg_mag:AVG_MAG_DVQ|reg_out[0]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.661      ;
+; 0.419 ; avg_mag:AVG_MAG_DV|acc_out[37]                ; avg_mag:AVG_MAG_DV|reg_out[17]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.660      ;
+; 0.419 ; avg_mag:AVG_MAG_DV|acc_out[28]                ; avg_mag:AVG_MAG_DV|reg_out[8]                     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.660      ;
+; 0.421 ; avg_mag:AVG_MAG_DVQ|acc_out[24]               ; avg_mag:AVG_MAG_DVQ|reg_out[4]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.663      ;
+; 0.493 ; LFSR_IN_Delay[2][1]                           ; sym_err                                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.735      ;
+; 0.499 ; LFSR_22:LFSR_GEN|x[20]                        ; LFSR_22:LFSR_GEN|x[0]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.741      ;
+; 0.508 ; LFSR_22:LFSR_GEN|x[2]                         ; DUT_for_MER_measurement:DUTQ|delay_reg[0][16]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.750      ;
+; 0.509 ; LFSR_22:LFSR_GEN|x[0]                         ; DUT_for_MER_measurement:DUT|delay_reg[0][16]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.751      ;
+; 0.510 ; LFSR_22:LFSR_GEN|x[9]                         ; LFSR_22:LFSR_GEN|x[10]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.751      ;
+; 0.511 ; LFSR_22:LFSR_GEN|x[16]                        ; LFSR_22:LFSR_GEN|x[17]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.752      ;
+; 0.512 ; LFSR_22:LFSR_GEN|x[15]                        ; LFSR_22:LFSR_GEN|x[16]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.753      ;
+; 0.512 ; LFSR_22:LFSR_GEN|x[12]                        ; LFSR_22:LFSR_GEN|x[13]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.753      ;
+; 0.512 ; LFSR_22:LFSR_GEN|x[4]                         ; LFSR_22:LFSR_GEN|x[5]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.753      ;
+; 0.517 ; LFSR_22:LFSR_GEN|x[20]                        ; LFSR_22:LFSR_GEN|x[21]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.759      ;
+; 0.522 ; LFSR_22:LFSR_GEN|x[0]                         ; LFSR_22:LFSR_GEN|x[1]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.764      ;
+; 0.522 ; LFSR_22:LFSR_GEN|x[2]                         ; LFSR_22:LFSR_GEN|x[3]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.764      ;
+; 0.523 ; LFSR_22:LFSR_GEN|x[0]                         ; LFSR_IN_Delay[0][0]                               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.765      ;
+; 0.524 ; LFSR_22:LFSR_GEN|x[2]                         ; LFSR_IN_DelayQ[0][0]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.766      ;
+; 0.533 ; avg_mag:AVG_MAG_DV|acc_out[20]                ; avg_mag:AVG_MAG_DV|reg_out[0]                     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.774      ;
+; 0.549 ; LFSR_IN_Delay[1][1]                           ; LFSR_IN_Delay[2][1]                               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.791      ;
+; 0.549 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][16] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][16]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.792      ;
+; 0.549 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][2]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.792      ;
+; 0.550 ; LFSR_IN_DelayQ[0][0]                          ; LFSR_IN_DelayQ[1][0]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.792      ;
+; 0.550 ; LFSR_IN_DelayQ[0][1]                          ; LFSR_IN_DelayQ[1][1]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.792      ;
+; 0.550 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][12] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][12]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.793      ;
+; 0.550 ; DUT_for_MER_measurement:DUT|delay_reg[1][2]   ; DUT_for_MER_measurement:DUT|delay_reg[2][2]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.792      ;
+; 0.550 ; DUT_for_MER_measurement:DUT|delay_reg[1][1]   ; DUT_for_MER_measurement:DUT|delay_reg[2][1]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.792      ;
+; 0.556 ; avg_mag:AVG_MAG_DV|det_edge[0]                ; avg_mag:AVG_MAG_DV|det_edge[1]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.798      ;
+; 0.567 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][12] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][12]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.810      ;
+; 0.568 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][17] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][17]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.810      ;
+; 0.569 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][9]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.811      ;
+; 0.569 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][6]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.811      ;
+; 0.569 ; DUT_for_MER_measurement:DUT|delay_reg[0][12]  ; DUT_for_MER_measurement:DUT|delay_reg[1][12]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.812      ;
+; 0.569 ; DUT_for_MER_measurement:DUT|delay_reg[0][9]   ; DUT_for_MER_measurement:DUT|delay_reg[1][9]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.812      ;
+; 0.570 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][8]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.812      ;
+; 0.571 ; DUT_for_MER_measurement:DUT|delay_reg[0][14]  ; DUT_for_MER_measurement:DUT|delay_reg[1][14]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.813      ;
+; 0.571 ; DUT_for_MER_measurement:DUT|delay_reg[0][10]  ; DUT_for_MER_measurement:DUT|delay_reg[1][10]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.814      ;
+; 0.590 ; LFSR_22:LFSR_GEN|cnt[17]                      ; LFSR_22:LFSR_GEN|cnt[17]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.831      ;
+; 0.593 ; LFSR_22:LFSR_GEN|cnt[19]                      ; LFSR_22:LFSR_GEN|cnt[19]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.834      ;
+; 0.594 ; LFSR_22:LFSR_GEN|cnt[18]                      ; LFSR_22:LFSR_GEN|cnt[18]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.835      ;
+; 0.595 ; LFSR_22:LFSR_GEN|cnt[20]                      ; LFSR_22:LFSR_GEN|cnt[20]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.836      ;
+; 0.607 ; LFSR_22:LFSR_GEN|cnt[21]                      ; LFSR_22:LFSR_GEN|cnt[21]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.848      ;
+; 0.608 ; avg_mag:AVG_MAG_DV|acc_out[32]                ; avg_mag:AVG_MAG_DV|reg_out[12]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.850      ;
+; 0.609 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[3]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 0.853      ;
+; 0.609 ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|cnt[2]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 0.853      ;
+; 0.633 ; LFSR_22:LFSR_GEN|x[8]                         ; LFSR_22:LFSR_GEN|x[9]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.874      ;
+; 0.634 ; LFSR_22:LFSR_GEN|x[14]                        ; LFSR_22:LFSR_GEN|x[15]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.875      ;
+; 0.634 ; LFSR_22:LFSR_GEN|x[5]                         ; LFSR_22:LFSR_GEN|x[6]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.875      ;
+; 0.637 ; LFSR_22:LFSR_GEN|x[17]                        ; LFSR_22:LFSR_GEN|x[18]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.878      ;
+; 0.637 ; LFSR_22:LFSR_GEN|x[7]                         ; LFSR_22:LFSR_GEN|x[8]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.878      ;
+; 0.638 ; LFSR_22:LFSR_GEN|x[1]                         ; LFSR_IN_Delay[0][1]                               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.880      ;
+; 0.639 ; LFSR_22:LFSR_GEN|x[13]                        ; LFSR_22:LFSR_GEN|x[14]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.880      ;
+; 0.639 ; LFSR_22:LFSR_GEN|x[11]                        ; LFSR_22:LFSR_GEN|x[12]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.880      ;
+; 0.640 ; LFSR_22:LFSR_GEN|x[10]                        ; LFSR_22:LFSR_GEN|x[11]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.881      ;
+; 0.640 ; LFSR_22:LFSR_GEN|x[6]                         ; LFSR_22:LFSR_GEN|x[7]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.881      ;
+; 0.644 ; LFSR_22:LFSR_GEN|x[19]                        ; LFSR_22:LFSR_GEN|x[20]                            ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.886      ;
+; 0.652 ; LFSR_22:LFSR_GEN|x[21]                        ; LFSR_22:LFSR_GEN|x[0]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.894      ;
+; 0.658 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[1]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 0.902      ;
+; 0.658 ; LFSR_22:LFSR_GEN|x[1]                         ; LFSR_22:LFSR_GEN|x[2]                             ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.900      ;
+; 0.712 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][14] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][14]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.954      ;
+; 0.713 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][0]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.956      ;
+; 0.714 ; DUT_for_MER_measurement:DUT|delay_reg[0][8]   ; DUT_for_MER_measurement:DUT|delay_reg[1][8]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.957      ;
+; 0.715 ; DUT_for_MER_measurement:DUT|delay_reg[1][11]  ; DUT_for_MER_measurement:DUT|delay_reg[2][11]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.957      ;
+; 0.716 ; DUT_for_MER_measurement:DUT|delay_reg[1][6]   ; DUT_for_MER_measurement:DUT|delay_reg[2][6]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.957      ;
+; 0.717 ; DUT_for_MER_measurement:DUT|delay_reg[1][5]   ; DUT_for_MER_measurement:DUT|delay_reg[2][5]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.959      ;
+; 0.720 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][15] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][15]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.962      ;
+; 0.720 ; DUT_for_MER_measurement:DUT|delay_reg[0][2]   ; DUT_for_MER_measurement:DUT|delay_reg[1][2]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.962      ;
+; 0.722 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][10]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.964      ;
+; 0.728 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][3]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.971      ;
+; 0.738 ; DUT_for_MER_measurement:DUT|delay_reg[1][8]   ; DUT_for_MER_measurement:DUT|delay_reg[2][8]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 0.981      ;
+; 0.741 ; DUT_for_MER_measurement:DUT|delay_reg[1][0]   ; DUT_for_MER_measurement:DUT|delay_reg[2][0]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.983      ;
+; 0.749 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][4]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.991      ;
+; 0.750 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][17] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][17]     ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.992      ;
+; 0.751 ; DUT_for_MER_measurement:DUT|delay_reg[1][7]   ; DUT_for_MER_measurement:DUT|delay_reg[2][7]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.992      ;
+; 0.752 ; DUT_for_MER_measurement:DUT|delay_reg[1][4]   ; DUT_for_MER_measurement:DUT|delay_reg[2][4]       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 0.993      ;
+; 0.755 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][7]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 0.997      ;
+; 0.757 ; DUT_for_MER_measurement:DUT|delay_reg[0][11]  ; DUT_for_MER_measurement:DUT|delay_reg[1][11]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 1.000      ;
+; 0.762 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][1]      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.072      ; 1.005      ;
+; 0.770 ; LFSR_22:LFSR_GEN|cnt[16]                      ; LFSR_22:LFSR_GEN|cnt[16]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.070      ; 1.011      ;
+; 0.778 ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|cnt[3]                              ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.073      ; 1.022      ;
+; 0.810 ; avg_mag:AVG_MAG_DVQ|acc_out[29]               ; avg_mag:AVG_MAG_DVQ|reg_out[9]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.075      ; 1.056      ;
+; 0.811 ; LFSR_IN_Delay[2][1]                           ; sym_cor                                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 1.053      ;
+; 0.857 ; avg_mag:AVG_MAG_DVQ|acc_out[23]               ; avg_mag:AVG_MAG_DVQ|reg_out[3]                    ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.063      ; 1.091      ;
+; 0.867 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[2] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.071      ; 1.109      ;
++-------+-----------------------------------------------+---------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLOCK_50'                                                                                                ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; 0.622 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 0.000        ; 1.917      ; 2.923      ;
+; 0.744 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 0.000        ; 1.917      ; 3.045      ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary             ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; CLOCK_50              ; 19.425 ; 0.000         ;
+; clk_en:EN_CLK|sys_clk ; 32.654 ; 0.000         ;
++-----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary             ;
++-----------------------+-------+---------------+
+; Clock                 ; Slack ; End Point TNS ;
++-----------------------+-------+---------------+
+; clk_en:EN_CLK|sys_clk ; 0.181 ; 0.000         ;
+; CLOCK_50              ; 0.319 ; 0.000         ;
++-----------------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-----------------------+---------+----------------+
+; Clock                 ; Slack   ; End Point TNS  ;
++-----------------------+---------+----------------+
+; CLOCK_50              ; 9.483   ; 0.000          ;
+; clk_en:EN_CLK|sys_clk ; 19.690  ; 0.000          ;
+; sys_clk               ; 36.000  ; 0.000          ;
+; sam_clk_en            ; 156.000 ; 0.000          ;
+; sym_clk_en            ; 636.000 ; 0.000          ;
++-----------------------+---------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLOCK_50'                                                                                                ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; 19.425 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 20.000       ; 1.024      ; 1.711      ;
+; 19.442 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 20.000       ; 1.024      ; 1.694      ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk_en:EN_CLK|sys_clk'                                                                                                                                                  ;
++--------+-----------------------------------------------+----------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                            ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+----------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 32.654 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 7.308      ;
+; 32.658 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 7.304      ;
+; 32.722 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 7.240      ;
+; 32.726 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 7.236      ;
+; 32.790 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 7.172      ;
+; 32.837 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 7.125      ;
+; 32.841 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 7.121      ;
+; 32.859 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 7.109      ;
+; 32.863 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 7.105      ;
+; 32.905 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 7.057      ;
+; 32.909 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 7.053      ;
+; 32.927 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 7.041      ;
+; 32.931 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 7.037      ;
+; 32.972 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.990      ;
+; 32.973 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.989      ;
+; 32.995 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 6.973      ;
+; 33.012 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.950      ;
+; 33.016 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.946      ;
+; 33.022 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.947      ;
+; 33.026 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.943      ;
+; 33.063 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.043     ; 6.901      ;
+; 33.067 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.043     ; 6.897      ;
+; 33.080 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.882      ;
+; 33.080 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.889      ;
+; 33.084 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.878      ;
+; 33.084 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.885      ;
+; 33.090 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.879      ;
+; 33.094 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.875      ;
+; 33.130 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.839      ;
+; 33.131 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.043     ; 6.833      ;
+; 33.131 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.838      ;
+; 33.134 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.835      ;
+; 33.135 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.043     ; 6.829      ;
+; 33.135 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.834      ;
+; 33.142 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.827      ;
+; 33.146 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.823      ;
+; 33.148 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.814      ;
+; 33.148 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.814      ;
+; 33.148 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.821      ;
+; 33.152 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.810      ;
+; 33.152 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.817      ;
+; 33.152 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.817      ;
+; 33.155 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.807      ;
+; 33.156 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.813      ;
+; 33.158 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.811      ;
+; 33.162 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.807      ;
+; 33.166 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.803      ;
+; 33.177 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|decision_variable[12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 6.791      ;
+; 33.188 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 6.780      ;
+; 33.192 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 6.776      ;
+; 33.194 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.775      ;
+; 33.196 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.773      ;
+; 33.198 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.771      ;
+; 33.198 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.771      ;
+; 33.199 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][11] ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.043     ; 6.765      ;
+; 33.199 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.770      ;
+; 33.200 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.769      ;
+; 33.202 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.767      ;
+; 33.203 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.766      ;
+; 33.210 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.759      ;
+; 33.214 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.755      ;
+; 33.216 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.746      ;
+; 33.216 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.753      ;
+; 33.220 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.742      ;
+; 33.220 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.749      ;
+; 33.224 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.745      ;
+; 33.230 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.739      ;
+; 33.230 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.739      ;
+; 33.234 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.735      ;
+; 33.234 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.735      ;
+; 33.255 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.707      ;
+; 33.256 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 6.712      ;
+; 33.258 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[11] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.704      ;
+; 33.259 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.703      ;
+; 33.260 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 6.708      ;
+; 33.262 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[10] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.700      ;
+; 33.262 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.707      ;
+; 33.264 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.705      ;
+; 33.266 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.703      ;
+; 33.266 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.703      ;
+; 33.267 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.702      ;
+; 33.268 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][2]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.701      ;
+; 33.274 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][13] ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.688      ;
+; 33.278 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][13] ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.684      ;
+; 33.278 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.691      ;
+; 33.284 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.678      ;
+; 33.286 ; DUT_for_MER_measurement:DUT|delay_reg[0][6]   ; DUT_for_MER_measurement:DUT|decision_variable[17]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.040     ; 6.681      ;
+; 33.288 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.681      ;
+; 33.290 ; DUT_for_MER_measurement:DUT|delay_reg[0][6]   ; DUT_for_MER_measurement:DUT|decision_variable[16]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.040     ; 6.677      ;
+; 33.298 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.671      ;
+; 33.298 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][3]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.671      ;
+; 33.299 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.670      ;
+; 33.302 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][5]  ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.667      ;
+; 33.303 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.666      ;
+; 33.323 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.639      ;
+; 33.324 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][7]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.039     ; 6.644      ;
+; 33.326 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[9]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.636      ;
+; 33.327 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|decision_variable[14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.045     ; 6.635      ;
+; 33.328 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[8]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.047     ; 6.632      ;
+; 33.330 ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; DUT_for_MER_measurement:DUTQ|decision_variable[13] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 40.000       ; -0.038     ; 6.639      ;
++--------+-----------------------------------------------+----------------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clk_en:EN_CLK|sys_clk'                                                                                                                                             ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 0.181 ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.307      ;
+; 0.188 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.314      ;
+; 0.190 ; LFSR_IN_Delay[0][0]                           ; LFSR_IN_Delay[1][0]                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.314      ;
+; 0.190 ; avg_mag:AVG_MAG_DVQ|det_edge[0]               ; avg_mag:AVG_MAG_DVQ|det_edge[1]               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.314      ;
+; 0.194 ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.320      ;
+; 0.199 ; avg_mag:AVG_MAG_DVQ|acc_out[32]               ; avg_mag:AVG_MAG_DVQ|reg_out[12]               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.325      ;
+; 0.199 ; avg_mag:AVG_MAG_DVQ|acc_out[28]               ; avg_mag:AVG_MAG_DVQ|reg_out[8]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.325      ;
+; 0.199 ; avg_mag:AVG_MAG_DVQ|acc_out[22]               ; avg_mag:AVG_MAG_DVQ|reg_out[2]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.325      ;
+; 0.199 ; avg_mag:AVG_MAG_DVQ|acc_out[21]               ; avg_mag:AVG_MAG_DVQ|reg_out[1]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.325      ;
+; 0.200 ; avg_mag:AVG_MAG_DVQ|acc_out[37]               ; avg_mag:AVG_MAG_DVQ|reg_out[17]               ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.326      ;
+; 0.200 ; LFSR_22:LFSR_GEN|x[1]                         ; DUT_for_MER_measurement:DUT|delay_reg[0][16]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.324      ;
+; 0.201 ; avg_mag:AVG_MAG_DVQ|acc_out[20]               ; avg_mag:AVG_MAG_DVQ|reg_out[0]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.327      ;
+; 0.201 ; avg_mag:AVG_MAG_DV|acc_out[29]                ; avg_mag:AVG_MAG_DV|reg_out[9]                 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.325      ;
+; 0.201 ; LFSR_22:LFSR_GEN|x[3]                         ; DUT_for_MER_measurement:DUTQ|delay_reg[0][16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.325      ;
+; 0.202 ; avg_mag:AVG_MAG_DV|acc_out[37]                ; avg_mag:AVG_MAG_DV|reg_out[17]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.326      ;
+; 0.202 ; avg_mag:AVG_MAG_DV|acc_out[28]                ; avg_mag:AVG_MAG_DV|reg_out[8]                 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.326      ;
+; 0.203 ; avg_mag:AVG_MAG_DVQ|acc_out[24]               ; avg_mag:AVG_MAG_DVQ|reg_out[4]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.329      ;
+; 0.205 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.331      ;
+; 0.248 ; LFSR_IN_Delay[2][1]                           ; sym_err                                       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.372      ;
+; 0.248 ; LFSR_22:LFSR_GEN|x[9]                         ; LFSR_22:LFSR_GEN|x[10]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.372      ;
+; 0.249 ; LFSR_22:LFSR_GEN|x[16]                        ; LFSR_22:LFSR_GEN|x[17]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.373      ;
+; 0.249 ; LFSR_22:LFSR_GEN|x[12]                        ; LFSR_22:LFSR_GEN|x[13]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.373      ;
+; 0.250 ; LFSR_22:LFSR_GEN|x[15]                        ; LFSR_22:LFSR_GEN|x[16]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.374      ;
+; 0.251 ; LFSR_22:LFSR_GEN|x[4]                         ; LFSR_22:LFSR_GEN|x[5]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.375      ;
+; 0.252 ; LFSR_22:LFSR_GEN|x[20]                        ; LFSR_22:LFSR_GEN|x[0]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.376      ;
+; 0.254 ; LFSR_22:LFSR_GEN|x[20]                        ; LFSR_22:LFSR_GEN|x[21]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.378      ;
+; 0.257 ; LFSR_22:LFSR_GEN|x[0]                         ; LFSR_22:LFSR_GEN|x[1]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.381      ;
+; 0.257 ; LFSR_22:LFSR_GEN|x[2]                         ; LFSR_22:LFSR_GEN|x[3]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.381      ;
+; 0.258 ; LFSR_22:LFSR_GEN|x[0]                         ; LFSR_IN_Delay[0][0]                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.382      ;
+; 0.258 ; LFSR_22:LFSR_GEN|x[2]                         ; DUT_for_MER_measurement:DUTQ|delay_reg[0][16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.382      ;
+; 0.259 ; LFSR_22:LFSR_GEN|x[2]                         ; LFSR_IN_DelayQ[0][0]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.383      ;
+; 0.260 ; LFSR_22:LFSR_GEN|x[0]                         ; DUT_for_MER_measurement:DUT|delay_reg[0][16]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.384      ;
+; 0.262 ; avg_mag:AVG_MAG_DV|acc_out[20]                ; avg_mag:AVG_MAG_DV|reg_out[0]                 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.386      ;
+; 0.262 ; avg_mag:AVG_MAG_DV|det_edge[0]                ; avg_mag:AVG_MAG_DV|det_edge[1]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.386      ;
+; 0.263 ; LFSR_IN_DelayQ[0][1]                          ; LFSR_IN_DelayQ[1][1]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.388      ;
+; 0.263 ; LFSR_IN_Delay[1][1]                           ; LFSR_IN_Delay[2][1]                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.387      ;
+; 0.263 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][16] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][16] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.388      ;
+; 0.263 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][2]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][2]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.388      ;
+; 0.263 ; DUT_for_MER_measurement:DUT|delay_reg[1][2]   ; DUT_for_MER_measurement:DUT|delay_reg[2][2]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.388      ;
+; 0.263 ; DUT_for_MER_measurement:DUT|delay_reg[1][1]   ; DUT_for_MER_measurement:DUT|delay_reg[2][1]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.388      ;
+; 0.264 ; LFSR_IN_DelayQ[0][0]                          ; LFSR_IN_DelayQ[1][0]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.388      ;
+; 0.265 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][12] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.390      ;
+; 0.273 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][17] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.398      ;
+; 0.273 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][12] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][12] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.398      ;
+; 0.273 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][6]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][6]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.398      ;
+; 0.274 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][9]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][9]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.399      ;
+; 0.274 ; DUT_for_MER_measurement:DUT|delay_reg[0][12]  ; DUT_for_MER_measurement:DUT|delay_reg[1][12]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.399      ;
+; 0.275 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][8]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][8]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.400      ;
+; 0.275 ; DUT_for_MER_measurement:DUT|delay_reg[0][14]  ; DUT_for_MER_measurement:DUT|delay_reg[1][14]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.400      ;
+; 0.275 ; DUT_for_MER_measurement:DUT|delay_reg[0][9]   ; DUT_for_MER_measurement:DUT|delay_reg[1][9]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.400      ;
+; 0.276 ; DUT_for_MER_measurement:DUT|delay_reg[0][10]  ; DUT_for_MER_measurement:DUT|delay_reg[1][10]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.401      ;
+; 0.294 ; LFSR_22:LFSR_GEN|cnt[19]                      ; LFSR_22:LFSR_GEN|cnt[19]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.419      ;
+; 0.294 ; LFSR_22:LFSR_GEN|cnt[17]                      ; LFSR_22:LFSR_GEN|cnt[17]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.419      ;
+; 0.295 ; LFSR_22:LFSR_GEN|cnt[18]                      ; LFSR_22:LFSR_GEN|cnt[18]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.420      ;
+; 0.296 ; LFSR_22:LFSR_GEN|cnt[20]                      ; LFSR_22:LFSR_GEN|cnt[20]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.421      ;
+; 0.302 ; LFSR_22:LFSR_GEN|cnt[21]                      ; LFSR_22:LFSR_GEN|cnt[21]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.427      ;
+; 0.304 ; avg_mag:AVG_MAG_DV|acc_out[32]                ; avg_mag:AVG_MAG_DV|reg_out[12]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.429      ;
+; 0.305 ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|cnt[2]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.431      ;
+; 0.307 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.433      ;
+; 0.319 ; LFSR_22:LFSR_GEN|x[14]                        ; LFSR_22:LFSR_GEN|x[15]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.443      ;
+; 0.319 ; LFSR_22:LFSR_GEN|x[8]                         ; LFSR_22:LFSR_GEN|x[9]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.443      ;
+; 0.319 ; LFSR_22:LFSR_GEN|x[5]                         ; LFSR_22:LFSR_GEN|x[6]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.443      ;
+; 0.320 ; LFSR_22:LFSR_GEN|x[17]                        ; LFSR_22:LFSR_GEN|x[18]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.444      ;
+; 0.320 ; LFSR_22:LFSR_GEN|x[7]                         ; LFSR_22:LFSR_GEN|x[8]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.444      ;
+; 0.321 ; LFSR_22:LFSR_GEN|x[19]                        ; LFSR_22:LFSR_GEN|x[20]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.445      ;
+; 0.321 ; LFSR_22:LFSR_GEN|x[13]                        ; LFSR_22:LFSR_GEN|x[14]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.445      ;
+; 0.321 ; LFSR_22:LFSR_GEN|x[11]                        ; LFSR_22:LFSR_GEN|x[12]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.445      ;
+; 0.322 ; LFSR_22:LFSR_GEN|x[6]                         ; LFSR_22:LFSR_GEN|x[7]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.446      ;
+; 0.323 ; LFSR_22:LFSR_GEN|x[1]                         ; LFSR_IN_Delay[0][1]                           ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.447      ;
+; 0.323 ; LFSR_22:LFSR_GEN|x[10]                        ; LFSR_22:LFSR_GEN|x[11]                        ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.447      ;
+; 0.324 ; LFSR_22:LFSR_GEN|x[21]                        ; LFSR_22:LFSR_GEN|x[0]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.448      ;
+; 0.330 ; LFSR_22:LFSR_GEN|x[1]                         ; LFSR_22:LFSR_GEN|x[2]                         ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.454      ;
+; 0.331 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][0]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][0]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.456      ;
+; 0.332 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][14] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][14] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.456      ;
+; 0.332 ; DUT_for_MER_measurement:DUT|delay_reg[0][8]   ; DUT_for_MER_measurement:DUT|delay_reg[1][8]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.457      ;
+; 0.333 ; DUT_for_MER_measurement:DUT|delay_reg[1][5]   ; DUT_for_MER_measurement:DUT|delay_reg[2][5]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.458      ;
+; 0.334 ; DUT_for_MER_measurement:DUT|delay_reg[1][6]   ; DUT_for_MER_measurement:DUT|delay_reg[2][6]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.039      ; 0.457      ;
+; 0.334 ; DUT_for_MER_measurement:DUT|delay_reg[0][2]   ; DUT_for_MER_measurement:DUT|delay_reg[1][2]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.459      ;
+; 0.335 ; clk_en:EN_CLK|cnt[0]                          ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.461      ;
+; 0.335 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][15] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][15] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.460      ;
+; 0.335 ; DUT_for_MER_measurement:DUT|delay_reg[1][11]  ; DUT_for_MER_measurement:DUT|delay_reg[2][11]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.039      ; 0.458      ;
+; 0.337 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][10] ; DUT_for_MER_measurement:DUTQ|delay_reg[1][10] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.462      ;
+; 0.338 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][3]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][3]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.464      ;
+; 0.340 ; DUT_for_MER_measurement:DUT|delay_reg[1][8]   ; DUT_for_MER_measurement:DUT|delay_reg[2][8]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.466      ;
+; 0.342 ; DUT_for_MER_measurement:DUT|delay_reg[1][0]   ; DUT_for_MER_measurement:DUT|delay_reg[2][0]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.467      ;
+; 0.345 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][4]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][4]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.469      ;
+; 0.347 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][17] ; DUT_for_MER_measurement:DUTQ|delay_reg[2][17] ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.471      ;
+; 0.347 ; DUT_for_MER_measurement:DUT|delay_reg[1][7]   ; DUT_for_MER_measurement:DUT|delay_reg[2][7]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.039      ; 0.470      ;
+; 0.348 ; DUT_for_MER_measurement:DUT|delay_reg[1][4]   ; DUT_for_MER_measurement:DUT|delay_reg[2][4]   ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.039      ; 0.471      ;
+; 0.349 ; DUT_for_MER_measurement:DUT|delay_reg[0][11]  ; DUT_for_MER_measurement:DUT|delay_reg[1][11]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.043      ; 0.476      ;
+; 0.350 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][7]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][7]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.474      ;
+; 0.355 ; DUT_for_MER_measurement:DUTQ|delay_reg[0][1]  ; DUT_for_MER_measurement:DUTQ|delay_reg[1][1]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.480      ;
+; 0.371 ; LFSR_22:LFSR_GEN|cnt[16]                      ; LFSR_22:LFSR_GEN|cnt[16]                      ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.496      ;
+; 0.376 ; clk_en:EN_CLK|cnt[1]                          ; clk_en:EN_CLK|cnt[3]                          ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.042      ; 0.502      ;
+; 0.402 ; avg_mag:AVG_MAG_DVQ|acc_out[29]               ; avg_mag:AVG_MAG_DVQ|reg_out[9]                ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.045      ; 0.531      ;
+; 0.405 ; LFSR_IN_Delay[2][1]                           ; sym_cor                                       ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.040      ; 0.529      ;
+; 0.424 ; DUT_for_MER_measurement:DUTQ|delay_reg[1][1]  ; DUT_for_MER_measurement:DUTQ|delay_reg[2][1]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.041      ; 0.549      ;
+; 0.426 ; DUT_for_MER_measurement:DUT|delay_reg[1][13]  ; DUT_for_MER_measurement:DUT|delay_reg[2][13]  ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 0.000        ; 0.039      ; 0.549      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLOCK_50'                                                                                                ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; 0.319 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 0.000        ; 1.062      ; 1.570      ;
+; 0.356 ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; CLOCK_50    ; 0.000        ; 1.062      ; 1.607      ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                ;
++------------------------+--------+-------+----------+---------+---------------------+
+; Clock                  ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack       ; 18.695 ; 0.181 ; N/A      ; N/A     ; 9.483               ;
+;  CLOCK_50              ; 18.695 ; 0.319 ; N/A      ; N/A     ; 9.483               ;
+;  clk_en:EN_CLK|sys_clk ; 25.171 ; 0.181 ; N/A      ; N/A     ; 19.690              ;
+;  sam_clk_en            ; N/A    ; N/A   ; N/A      ; N/A     ; 155.790             ;
+;  sym_clk_en            ; N/A    ; N/A   ; N/A      ; N/A     ; 635.790             ;
+;  sys_clk               ; N/A    ; N/A   ; N/A      ; N/A     ; 35.790              ;
+; Design-wide TNS        ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  CLOCK_50              ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  clk_en:EN_CLK|sys_clk ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  sam_clk_en            ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  sym_clk_en            ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  sys_clk               ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
++------------------------+--------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; sys_clk       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; sam_clk_en    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; sym_clk_en    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; CLOCK_50                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; sys_clk       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; sam_clk_en    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; sym_clk_en    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; sys_clk       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; sam_clk_en    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; sym_clk_en    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; sys_clk       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; sam_clk_en    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; sym_clk_en    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                           ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; From Clock            ; To Clock              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 891029   ; 0        ; 0        ; 0        ;
+; clk_en:EN_CLK|sys_clk ; CLOCK_50              ; 1        ; 1        ; 0        ; 0        ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                            ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; From Clock            ; To Clock              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; 891029   ; 0        ; 0        ; 0        ;
+; clk_en:EN_CLK|sys_clk ; CLOCK_50              ; 1        ; 1        ; 0        ; 0        ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 0     ; 0    ;
+; Unconstrained Output Port Paths ; 0     ; 0    ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------------------------+
+; Clock Status Summary                                               ;
++-----------------------+-----------------------+------+-------------+
+; Target                ; Clock                 ; Type ; Status      ;
++-----------------------+-----------------------+------+-------------+
+; CLOCK_50              ; CLOCK_50              ; Base ; Constrained ;
+; clk_en:EN_CLK|sys_clk ; clk_en:EN_CLK|sys_clk ; Base ; Constrained ;
+; sam_clk_en            ; sam_clk_en            ; Base ; Constrained ;
+; sym_clk_en            ; sym_clk_en            ; Base ; Constrained ;
+; sys_clk               ; sys_clk               ; Base ; Constrained ;
++-----------------------+-----------------------+------+-------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
+    Info: Processing started: Fri Mar 18 15:09:19 2022
+Info: Command: quartus_sta deliverable2 -c deliverable2
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'SDC1.sdc'
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Rise) to CLOCK_50 (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Fall) to CLOCK_50 (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Rise) to clk_en:EN_CLK|sys_clk (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Fall) to clk_en:EN_CLK|sys_clk (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Rise) to clk_en:EN_CLK|sys_clk (Fall) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Fall) to clk_en:EN_CLK|sys_clk (Fall) (setup and hold)
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Info (332146): Worst-case setup slack is 18.695
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    18.695               0.000 CLOCK_50 
+    Info (332119):    25.171               0.000 clk_en:EN_CLK|sys_clk 
+Info (332146): Worst-case hold slack is 0.402
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.402               0.000 clk_en:EN_CLK|sys_clk 
+    Info (332119):     0.730               0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.723
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.723               0.000 CLOCK_50 
+    Info (332119):    19.749               0.000 clk_en:EN_CLK|sys_clk 
+    Info (332119):    35.790               0.000 sys_clk 
+    Info (332119):   155.790               0.000 sam_clk_en 
+    Info (332119):   635.790               0.000 sym_clk_en 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Rise) to CLOCK_50 (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Fall) to CLOCK_50 (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Rise) to clk_en:EN_CLK|sys_clk (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Fall) to clk_en:EN_CLK|sys_clk (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Rise) to clk_en:EN_CLK|sys_clk (Fall) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Fall) to clk_en:EN_CLK|sys_clk (Fall) (setup and hold)
+Info (332146): Worst-case setup slack is 18.836
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    18.836               0.000 CLOCK_50 
+    Info (332119):    26.565               0.000 clk_en:EN_CLK|sys_clk 
+Info (332146): Worst-case hold slack is 0.353
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.353               0.000 clk_en:EN_CLK|sys_clk 
+    Info (332119):     0.622               0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.712
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.712               0.000 CLOCK_50 
+    Info (332119):    19.694               0.000 clk_en:EN_CLK|sys_clk 
+    Info (332119):    35.790               0.000 sys_clk 
+    Info (332119):   155.790               0.000 sam_clk_en 
+    Info (332119):   635.790               0.000 sym_clk_en 
+Info: Analyzing Fast 1200mV 0C Model
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Rise) to CLOCK_50 (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Fall) to CLOCK_50 (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Rise) to clk_en:EN_CLK|sys_clk (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Fall) to clk_en:EN_CLK|sys_clk (Rise) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Rise) to clk_en:EN_CLK|sys_clk (Fall) (setup and hold)
+    Critical Warning (332169): From clk_en:EN_CLK|sys_clk (Fall) to clk_en:EN_CLK|sys_clk (Fall) (setup and hold)
+Info (332146): Worst-case setup slack is 19.425
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    19.425               0.000 CLOCK_50 
+    Info (332119):    32.654               0.000 clk_en:EN_CLK|sys_clk 
+Info (332146): Worst-case hold slack is 0.181
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.181               0.000 clk_en:EN_CLK|sys_clk 
+    Info (332119):     0.319               0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.483
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.483               0.000 CLOCK_50 
+    Info (332119):    19.690               0.000 clk_en:EN_CLK|sys_clk 
+    Info (332119):    36.000               0.000 sys_clk 
+    Info (332119):   156.000               0.000 sam_clk_en 
+    Info (332119):   636.000               0.000 sym_clk_en 
+Info (332101): Design is fully constrained for setup requirements
+Info (332101): Design is fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 856 megabytes
+    Info: Processing ended: Fri Mar 18 15:09:20 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

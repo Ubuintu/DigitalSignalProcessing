@@ -92,6 +92,7 @@ module filter_design(
 						
 
 wire sys_clk, sam_clk, sam_clk_ena, sym_clk_ena, sym_clk, q1;
+integer i,j;
 					
 
 wire signed [17:0]srrc_out, srrc_input;
@@ -117,17 +118,29 @@ wire [13:0] DAC_out;
 //			.sig_out(srrc_out) //output of SRRC filter 1s17
 //			);
 
-(* preserve *) reg [3:0] counter;
+/* keep for combinational; preserve for registers; noprune for fan out*/
+(* preserve *) reg [21:0] counter;
+(* preserve *) reg cycle;
 
+//Wait for DUT to be driven with 2^20 symbols
 always @ (posedge sys_clk)
-	counter <= counter+4'd1;
-	
+	if (~KEY[3] || counter >= 22'd4194303)
+		counter=22'd0;
+	else if (sam_clk_ena)
+		counter = counter+22'd1;
+	else
+		counter = counter;
 		
+always @ (posedge sys_clk)
+	if (~KEY[3]) 
+		cycle = 1'b0;
+	else if (sam_clk_ena & counter >= 22'd4194303)
+		cycle=1'b1;
+	else
+		cycle=1'b0;
 	
-
-
 //PPS_filt DUT_TX (
-PPS_filt_101 DUT (
+PPS_filt_101 DUT_TX (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
@@ -141,13 +154,46 @@ PPS_filt_101 DUT (
 wire signed [17:0] MF_out;
 
 //GSM
-GSM_noMult (
+//GSM_noMult (
+GSM_101Mults DUT_RCV (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
 	.x_in(srrc_out),
 	.y(MF_out)
 );
+
+//delay outputs for MUX @ sample clk
+reg signed [17:0] MDELAY [3:0]; 
+
+always @ (posedge sys_clk)
+	if (~KEY[3]) 
+		MDELAY[0]=18'sd0;
+	else if (sam_clk_ena)
+		MDELAY[0]=MF_out;
+	else
+		MDELAY[0]=$signed(MDELAY[0]);
+		
+always @ (posedge sys_clk)
+	if (sam_clk_ena)
+		for(i=1; i<4; i=i+1)
+			MDELAY[i]<=$signed(MDELAY[i-1]);
+
+//MUX for cor symbol
+(* preserve *) reg signed [17:0] MUX_out;
+
+always @ (posedge sys_clk)
+	if (sym_clk_ena) begin
+		case(SW[17:16])
+			2'd1		:	MUX_out=MDELAY[1];
+			2'd2		:	MUX_out=MDELAY[2];
+			2'd3		:	MUX_out=MDELAY[3];
+			default	:	MUX_out=MDELAY[0];
+		endcase
+	end
+	
+assign dec_var=$signed(MUX_out);
+	
 	
 //SLICER
 wire [1:0] slice;
@@ -169,32 +215,40 @@ wire signed [17:0] ref_lvl, map_out_pwr, ref_lvlQ, map_out_pwrQ;
 
 avg_mag AVG_MAG_DV (
 	.dec_var(dec_var),
-	.sym_clk_en(sym_clk_en),
+	.sym_clk_en(sym_clk_ena),
    .clr_acc(cycle),
 	.clk(sys_clk),
-	.reset(reset),
+	.reset(~KEY[3]),
 	.ref_lvl(ref_lvl),
 	.map_out_pwr(map_out_pwr)
 );
+
+//ERROR
+(* preserve *) reg signed [17:0] error;
+
+always @ (posedge sys_clk)
+	if (~KEY[3]) error = 18'sd0;
+	else if (sym_clk_ena) error = dec_var - map_out_ref_lvl;
+	else error = error;
 	
 wire signed [17:0] err_acc;
 //wire signed [17:0] err_square;	//for original err_Sqr circuit
 wire signed [55:0] err_square;
 avg_err_squared_55 AVG_ER_SQR (
 	.error(error),
-	.sym_clk_en(sym_clk_en),
+	.sym_clk_en(sym_clk_ena),
    .clr_acc(cycle),
 	.sys_clk(sys_clk),
-	.reset(reset),
+	.reset(~KEY[3]),
 	.err_square(err_square)
 );
 
 avg_err AVG_ER (
 	.error(error),
-	.sym_clk_en(sym_clk_en),
+	.sym_clk_en(sym_clk_ena),
    .clr_acc(cycle),
 	.sys_clk(sys_clk),
-	.reset(reset),
+	.reset(~KEY[3]),
 	.err_acc(err_acc)
 );
 

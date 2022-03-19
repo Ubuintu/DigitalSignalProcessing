@@ -212,6 +212,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "sys_clk",
+					"strict" : false
+				},
+				{
+					"name" : "sam_clk_en",
+					"strict" : false
+				},
+				{
+					"name" : "sym_clk_en",
+					"strict" : false
+				},
+				{
 					"name" : "ADC_DA[0]",
 					"strict" : false
 				},

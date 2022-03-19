@@ -21,7 +21,8 @@ module deliverable2 #(parameter DELAY = 3)
 			output	DAC_CLK_B,
 			output	DAC_MODE,
 			output	DAC_WRT_A,
-			output	DAC_WRT_B
+			output	DAC_WRT_B,
+			output sys_clk, sam_clk_en, sym_clk_en
 			// ,input 	OSC_SMA_ADC4,
 			// input 	SMA_DAC4
 			 );
@@ -192,7 +193,7 @@ always @ *
 	if (!KEY[0]) reset = 1'b1;
 	else reset = 1'b0;
 
-wire sys_clk, sam_clk_en, sym_clk_en;
+//wire sys_clk, sam_clk_en, sym_clk_en;
 
 clk_en EN_CLK (
 	.clk(CLOCK_50),

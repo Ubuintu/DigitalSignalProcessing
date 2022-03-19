@@ -52,8 +52,8 @@ initial begin
      for (i=0; i<SUMLV6; i=i+1)
         sum_lvl_6[i]=18'sd0;
      sum_lvl_7=18'sd0;
-     for (i=0; i<SUMLV1; i=i+1)
-        mult_out[i]=18'sd0;
+//     for (i=0; i<SUMLV1; i=i+1)
+//        mult_out[i]=18'sd0;
      for (i=0; i<LENGTH; i=i+1)
         x[i]=18'sd0;
      y = 18'sd0;

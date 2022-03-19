@@ -31,7 +31,7 @@ Nsps=4;
 
 %        MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3 b Kaiser     weight 
 %  42.017901   0.145500   0.182100        101     141106  60.037561  64.921997  64.304794   0.000000         20 
-N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;
+N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;  %Amplitude on SA might changed since coeffs are adjusted to 1s17 (2^18 before)
 
 
 % *************MET SPEC*************************
@@ -47,10 +47,12 @@ safety=1-2^-17;
 wght=[2.4535 1 20]; 
 h_PPS=firpm(M,fb,a,wght); 
 h_PPS=h_PPS.*wn.'; 
-wc_PPS=sum(abs(h_PPS)); 
-wc_GSPS=sum(abs(h_GSPS)); 
-wc_GSM=sum(abs(h_GSM));
-% h_PPS=safety*h_PPS/wc_PPS; h_GSPS=safety*h_GSPS/wc_GSPS; h_GSM=safety*h_GSM/wc_GSM; %comment this to see if peak agrees
+wc_PPS=sum(abs(h_PPS)*.75); 
+wc_GSPS=sum(abs(h_GSPS)*.75); 
+wc_GSM=sum(abs(h_GSM)*.75)*safety;
+wc_GSM=sum(abs(h_GSM)*.75)*safety;
+% h_PPS=safety*h_PPS/wc_PPS; h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
+h_GSM=safety*h_GSM/wc_GSM;
 h_GSMGSPS=conv(h_GSPS,h_GSM); h_GSMPPS=conv(h_PPS,h_GSM);
 
 numGSPS = h_GSMGSPS(N); denGSPS = zeros(floor(length(h_GSMGSPS)/Nsps),1);   %Gold Standard Pulse Shaping
@@ -69,6 +71,7 @@ for i = 1:2*N-1
 end
 
 MER_GSPS=10*log10(numGSPS^2/sum(denGSPS.^2)); MER_GPPS=10*log10(numGPPS^2/sum(denGPPS.^2));
+% !!! COEFFS ARE SMALL ENOUGH FOR 0s17
 h_PPS_0s18=round(h_PPS.*2^18); h_GSPS_0s18=round(h_GSPS*2.^18); h_GSM_0s18=round(h_GSM*2.^18);
 
 % values for LUT 4-ASK mapper; ensure output of 4-ASK mapper is a 1s17
