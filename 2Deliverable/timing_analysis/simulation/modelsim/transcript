@@ -1,7 +1,19 @@
 # reading /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/../modelsim.ini
 # Loading project timing_analysis
-cd /home/tob208/engr-ece/Documents/EE465/3Deliverable
+cd /home/tob208/engr-ece/Documents/EE465/3Deliverable/simulation/modelsim
 # reading /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/../modelsim.ini
+ls
+# filter_design_modelsim.xrf
+# filter_design.sft
+# filter_design.vo
+ls
+# filter_design_modelsim.xrf
+# filter_design.sft
+# filter_design.vo
+cd ..
+ls
+# modelsim
+cd ..
 # reading modelsim.ini
 ls
 # 4._Deliverable_3.pdf
@@ -11,8 +23,10 @@ ls
 # compileFilt.do
 # D3_ASK_in.txt
 # D3_coeff_attempts
+# D3.stp
 # db
 # Deliverable3.m
+# Deliverable3.m~
 # EE465_clocks_LEDs_and_switches_pins.csv
 # EE465_DAC_ADC_pins.csv
 # EE465_filter_test.qarlog
@@ -31,6 +45,7 @@ ls
 # filter_TB.sv
 # Filter Test files.zip
 # filtWave.do
+# GSM_101Mults.v
 # GSM_noMult_101.v
 # GSM_noMult_101.v.bak
 # GSM_noMult.v
@@ -55,16 +70,17 @@ ls
 # slicer.v
 # TB_filter.sv
 # vsim.wlf
+# wave.do
 # wFilter_93.do
 do compileFilt.do
 # 20000ns
 # .
 # TB_filter
 # clk_en
-# GSM_noMult_101
+# GSM_101Mults
 # script is: compileFilt.do
 # MOD is: 
-# MOD is: GSM_noMult_101
+# MOD is: GSM_101Mults
 # TB is: 
 # TB is: TB_filter
 # 
@@ -80,42 +96,42 @@ do compileFilt.do
 # 
 # vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:13:09 on Mar 18,2022
+# Start time: 20:58:42 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
 # -- Compiling module TB_filter
 # 
 # Top level modules:
 # 	TB_filter
-# End time: 20:13:09 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 20:58:42 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:13:09 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_noMult_101.v 
-# -- Compiling module GSM_noMult_101
+# Start time: 20:58:42 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
+# -- Compiling module GSM_101Mults
 # 
 # Top level modules:
-# 	GSM_noMult_101
-# End time: 20:13:10 on Mar 18,2022, Elapsed time: 0:00:01
+# 	GSM_101Mults
+# End time: 20:58:43 on Mar 21,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${EN}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:13:10 on Mar 18,2022
+# Start time: 20:58:43 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./clk_en.v 
 # -- Compiling module clk_en
 # 
 # Top level modules:
 # 	clk_en
-# End time: 20:13:10 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 20:58:43 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ns -L work ${TB_MOD}
 # vsim -t 1ns -L work TB_filter 
-# Start time: 20:13:10 on Mar 18,2022
+# Start time: 20:58:43 on Mar 21,2022
 # Loading sv_std.std
 # Loading work.TB_filter
 # Loading work.clk_en
-# Loading work.GSM_noMult_101
+# Loading work.GSM_101Mults
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
 #    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
 # do filtWave.do
@@ -161,16 +177,140 @@ do compileFilt.do
 # WaveRestoreZoom {19410 ns} {19766 ns}
 # 
 # run ${SIM_LEN}
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:      48
+# index:           2 | y:      -5
+# index:           2 | y:     -59
+# index:           2 | y:     -67
+# index:           2 | y:     -15
+# index:           2 | y:      57
+# index:           2 | y:      90
+# index:           2 | y:      50
+# index:           2 | y:     -40
+# index:           2 | y:    -112
+# index:           2 | y:    -102
+# index:           2 | y:      -8
+# index:           2 | y:     103
+# index:           2 | y:     145
+# index:           2 | y:      76
+# index:           2 | y:     -58
+# index:           2 | y:    -157
+# index:           2 | y:    -137
+# index:           2 | y:      -6
+# index:           2 | y:     134
+# index:           2 | y:     167
+# index:           2 | y:      55
+# index:           2 | y:    -116
+# index:           2 | y:    -198
+# index:           2 | y:     -99
+# index:           2 | y:     122
+# index:           2 | y:     283
+# index:           2 | y:     212
+# index:           2 | y:     -94
+# index:           2 | y:    -426
+# index:           2 | y:    -487
+# index:           2 | y:    -132
+# index:           2 | y:     469
+# index:           2 | y:     885
+# index:           2 | y:     704
+# index:           2 | y:    -119
+# index:           2 | y:   -1124
+# index:           2 | y:   -1565
+# index:           2 | y:    -913
+# index:           2 | y:     675
+# index:           2 | y:    2271
+# index:           2 | y:    2646
+# index:           2 | y:    1083
+# index:           2 | y:   -1942
+# index:           2 | y:   -4704
+# index:           2 | y:   -4967
+# index:           2 | y:   -1197
+# index:           2 | y:    6393
+# index:           2 | y:   15626
+# index:           2 | y:   23180
+# index:           2 | y:   26091
+# index:           2 | y:   23180
+# index:           2 | y:   15626
+# index:           2 | y:    6393
+# index:           2 | y:   -1197
+# index:           2 | y:   -4967
+# index:           2 | y:   -4704
+# index:           2 | y:   -1942
+# index:           2 | y:    1083
+# index:           2 | y:    2646
+# index:           2 | y:    2271
+# index:           2 | y:     675
+# index:           2 | y:    -913
+# index:           2 | y:   -1565
+# index:           2 | y:   -1124
+# index:           2 | y:    -119
+# index:           2 | y:     704
+# index:           2 | y:     885
+# index:           2 | y:     469
+# index:           2 | y:    -132
+# index:           2 | y:    -487
+# index:           2 | y:    -426
+# index:           2 | y:     -94
+# index:           2 | y:     212
+# index:           2 | y:     283
+# index:           2 | y:     122
+# index:           2 | y:     -99
+# index:           2 | y:    -198
+# index:           2 | y:    -116
+# index:           2 | y:      55
+# index:           2 | y:     167
+# index:           2 | y:     134
+# index:           2 | y:      -6
+# index:           2 | y:    -137
+# index:           2 | y:    -157
+# index:           2 | y:     -58
+# index:           2 | y:      76
+# index:           2 | y:     145
+# index:           2 | y:     103
+# index:           2 | y:      -8
+# index:           2 | y:    -102
+# index:           2 | y:    -112
+# index:           2 | y:     -40
+# index:           2 | y:      50
+# index:           2 | y:      90
+# index:           2 | y:      57
+# index:           2 | y:     -15
+# index:           2 | y:     -67
+# index:           2 | y:     -59
+# index:           2 | y:      -5
+# index:           2 | y:      48
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
 # 
 do compileFilt.do
 # 20000ns
 # .
 # TB_filter
 # clk_en
-# GSM_noMult_101
+# PPS_filt_101
 # script is: compileFilt.do
 # MOD is: 
-# MOD is: GSM_noMult_101
+# MOD is: PPS_filt_101
 # TB is: 
 # TB is: TB_filter
 # 
@@ -186,44 +326,145 @@ do compileFilt.do
 # 
 # vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:18:33 on Mar 18,2022
+# Start time: 21:03:21 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
 # -- Compiling module TB_filter
 # 
 # Top level modules:
 # 	TB_filter
-# End time: 20:18:33 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:03:21 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:18:33 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_noMult_101.v 
-# -- Compiling module GSM_noMult_101
+# Start time: 21:03:21 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./PPS_filt_101.v 
+# -- Compiling module PPS_filt_101
 # 
 # Top level modules:
-# 	GSM_noMult_101
-# End time: 20:18:33 on Mar 18,2022, Elapsed time: 0:00:00
+# 	PPS_filt_101
+# End time: 21:03:21 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${EN}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:18:33 on Mar 18,2022
+# Start time: 21:03:21 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./clk_en.v 
 # -- Compiling module clk_en
 # 
 # Top level modules:
 # 	clk_en
-# End time: 20:18:33 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:03:21 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ns -L work ${TB_MOD}
-# End time: 20:18:34 on Mar 18,2022, Elapsed time: 0:05:24
+# End time: 21:03:21 on Mar 21,2022, Elapsed time: 0:04:38
 # Errors: 0, Warnings: 1
 # vsim -t 1ns -L work TB_filter 
-# Start time: 20:18:34 on Mar 18,2022
+# Start time: 21:03:21 on Mar 21,2022
 # Loading sv_std.std
 # Loading work.TB_filter
 # Loading work.clk_en
-# Loading work.GSM_noMult_101
+# ** Error: (vsim-3033) Instantiation of 'GSM_101Mults' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 51
+#         Searched libraries:
+#             /home/tob208/engr-ece/Documents/EE465/3Deliverable/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compileFilt.do PAUSED at line 47
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/3Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "TB_filter"
+# TB_filter
+# set EN "clk_en"
+# clk_en
+#set MOD "PPS_filt"
+# set MOD "PPS_filt_101"
+# PPS_filt_101
+#set MOD "GSM_noMult"
+#set MOD "GSM_noMult_101"
+#set MOD "GSM_101Mults"
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: PPS_filt_101
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: TB_filter
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:03:39 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
+# -- Compiling module TB_filter
+# 
+# Top level modules:
+# 	TB_filter
+# End time: 21:03:39 on Mar 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:03:39 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./PPS_filt_101.v 
+# -- Compiling module PPS_filt_101
+# 
+# Top level modules:
+# 	PPS_filt_101
+# End time: 21:03:39 on Mar 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:03:39 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 21:03:39 on Mar 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_MOD}
+# vsim -t 1ns -L work TB_filter 
+# Start time: 21:03:21 on Mar 21,2022
+# Loading sv_std.std
+# Loading work.TB_filter
+# Loading work.clk_en
+# Loading work.PPS_filt_101
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
 #    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
 # do filtWave.do
@@ -271,16 +512,50 @@ do compileFilt.do
 # run ${SIM_LEN}
 # 
 do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/3Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
 # 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
 # .
+# set TB_MOD "TB_filter"
 # TB_filter
+# set EN "clk_en"
 # clk_en
-# GSM_noMult_101
+#set MOD "PPS_filt"
+# set MOD "PPS_filt_101"
+# PPS_filt_101
+#set MOD "GSM_noMult"
+#set MOD "GSM_noMult_101"
+#set MOD "GSM_101Mults"
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
 # script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
 # MOD is: 
-# MOD is: GSM_noMult_101
+# append string ${MOD}
+# MOD is: PPS_filt_101
+# puts $string
+# set string "TB is: "
 # TB is: 
+# append string $TB_MOD
 # TB is: TB_filter
+# puts $string
+# 
+# onerror {resume}
+# transcript on
 # 
 # if {[file exists rtl_work]} {
 #     vdel -lib rtl_work -all
@@ -294,348 +569,44 @@ do compileFilt.do
 # 
 # vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:23:03 on Mar 18,2022
+# Start time: 21:14:00 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
 # -- Compiling module TB_filter
 # 
 # Top level modules:
 # 	TB_filter
-# End time: 20:23:03 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:14:00 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:23:03 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_noMult_101.v 
-# -- Compiling module GSM_noMult_101
-# ** Error: (vlog-13069) ./GSM_noMult_101.v(301): near ">>": syntax error, unexpected >>.
-# End time: 20:23:03 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
-# Executing ONERROR command at macro ./compileFilt.do line 43
+# Start time: 21:14:00 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./PPS_filt_101.v 
+# -- Compiling module PPS_filt_101
+# 
+# Top level modules:
+# 	PPS_filt_101
+# End time: 21:14:00 on Mar 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${EN}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:23:03 on Mar 18,2022
+# Start time: 21:14:00 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./clk_en.v 
 # -- Compiling module clk_en
 # 
 # Top level modules:
 # 	clk_en
-# End time: 20:23:03 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:14:00 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ns -L work ${TB_MOD}
-# End time: 20:23:04 on Mar 18,2022, Elapsed time: 0:04:30
+# End time: 21:14:00 on Mar 21,2022, Elapsed time: 0:10:39
 # Errors: 1, Warnings: 1
 # vsim -t 1ns -L work TB_filter 
-# Start time: 20:23:04 on Mar 18,2022
+# Start time: 21:14:00 on Mar 21,2022
 # Loading sv_std.std
 # Loading work.TB_filter
 # Loading work.clk_en
-# ** Error: (vsim-3033) Instantiation of 'GSM_101Mults' failed. The design unit was not found.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 51
-#         Searched libraries:
-#             /home/tob208/engr-ece/Documents/EE465/3Deliverable/rtl_work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./compileFilt.do PAUSED at line 46
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:23:55 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 20:23:55 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:23:55 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# ** Error: ./GSM_101Mults.v(97): (vlog-2990) Illegal operation on unpacked type.
-# ** Error (suppressible): ./GSM_101Mults.v(97): (vlog-13215) Cannot assign an unpacked type '<unknown>' to a packed type 'reg signed[WIDTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(208): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(209): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(210): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(211): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(212): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(213): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(214): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(215): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(216): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(217): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(218): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(219): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(220): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(221): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(222): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(223): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(224): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(225): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(226): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(227): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(228): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(229): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(230): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(231): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(232): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(233): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(234): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(235): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(236): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(237): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(238): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(239): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(240): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(241): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(242): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(243): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(244): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(245): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(246): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(247): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(248): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(249): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(250): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(251): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(252): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(253): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(254): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(255): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(256): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(257): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(258): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(259): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(260): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(261): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(262): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(263): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(264): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(265): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(266): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(267): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(268): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(269): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(270): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(271): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(272): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(273): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(274): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(275): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(276): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(277): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(278): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(279): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(280): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(281): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(282): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(283): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(284): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(285): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(286): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(287): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(288): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(289): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(290): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(291): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(292): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(293): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(294): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(295): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(296): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(297): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(298): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(299): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(300): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(301): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(302): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(303): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(304): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(305): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(306): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(307): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# ** Error (suppressible): ./GSM_101Mults.v(308): (vlog-2997) Cannot assign a packed type 'bit signed[17:0]' to an unpacked type 'reg signed[WIDTH-1:0] $[LENGTH-1:0]'.
-# End time: 20:23:55 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 103, Warnings: 0
-# ** Error: /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
-# Executing ONERROR command at macro ./compileFilt.do line 44
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:23:55 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 20:23:55 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# vsim -t 1ns -L work TB_filter 
-# Start time: 20:23:04 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# ** Error: (vsim-3033) Instantiation of 'GSM_101Mults' failed. The design unit was not found.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 51
-#         Searched libraries:
-#             /home/tob208/engr-ece/Documents/EE465/3Deliverable/rtl_work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./compileFilt.do PAUSED at line 47
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:24:37 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 20:24:37 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:24:37 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# 
-# Top level modules:
-# 	GSM_101Mults
-# End time: 20:24:37 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:24:37 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 20:24:37 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# vsim -t 1ns -L work TB_filter 
-# Start time: 20:23:04 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# Loading work.GSM_101Mults
+# Loading work.PPS_filt_101
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
 #    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
 # do filtWave.do
@@ -702,11 +673,11 @@ do compileFilt.do
 # set EN "clk_en"
 # clk_en
 #set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
+# set MOD "PPS_filt_101"
+# PPS_filt_101
 #set MOD "GSM_noMult"
 #set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
+#set MOD "GSM_101Mults"
 # 
 # puts [info script]
 # puts "Hello world"
@@ -717,7 +688,7 @@ do compileFilt.do
 # set string "MOD is: "
 # MOD is: 
 # append string ${MOD}
-# MOD is: GSM_101Mults
+# MOD is: PPS_filt_101
 # puts $string
 # set string "TB is: "
 # TB is: 
@@ -740,186 +711,44 @@ do compileFilt.do
 # 
 # vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:25:29 on Mar 18,2022
+# Start time: 21:32:56 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
 # -- Compiling module TB_filter
 # 
 # Top level modules:
 # 	TB_filter
-# End time: 20:25:29 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:32:56 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:25:29 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
+# Start time: 21:32:56 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./PPS_filt_101.v 
+# -- Compiling module PPS_filt_101
 # 
 # Top level modules:
-# 	GSM_101Mults
-# End time: 20:25:29 on Mar 18,2022, Elapsed time: 0:00:00
+# 	PPS_filt_101
+# End time: 21:32:56 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${EN}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:25:29 on Mar 18,2022
+# Start time: 21:32:56 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./clk_en.v 
 # -- Compiling module clk_en
 # 
 # Top level modules:
 # 	clk_en
-# End time: 20:25:29 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:32:56 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ns -L work ${TB_MOD}
-# End time: 20:25:30 on Mar 18,2022, Elapsed time: 0:02:26
-# Errors: 3, Warnings: 1
-# vsim -t 1ns -L work TB_filter 
-# Start time: 20:25:30 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# Loading work.GSM_101Mults
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
-# do filtWave.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /TB_filter/x_in
-# add wave -noupdate -format Analog-Interpolated -height 84 -max 200000.00000000003 -min -20000.0 /TB_filter/y
-# add wave -noupdate /TB_filter/rst
-# add wave -noupdate /TB_filter/EN_CLK/clk
-# add wave -noupdate /TB_filter/EN_CLK/reset
-# add wave -noupdate /TB_filter/clk_50
-# add wave -noupdate /TB_filter/EN_CLK/sys_clk
-# add wave -noupdate /TB_filter/EN_CLK/sam_clk_en
-# add wave -noupdate /TB_filter/EN_CLK/sym_clk_en
-# add wave -noupdate /TB_filter/DUT/x
-# add wave -noupdate /TB_filter/DUT/x_in
-# add wave -noupdate /TB_filter/DUT/mult_out
-# add wave -noupdate /TB_filter/DUT/sum_lvl_1
-# add wave -noupdate /TB_filter/DUT/sum_lvl_2
-# add wave -noupdate /TB_filter/DUT/sum_lvl_3
-# add wave -noupdate /TB_filter/DUT/sum_lvl_4
-# add wave -noupdate /TB_filter/DUT/sum_lvl_5
-# add wave -noupdate /TB_filter/DUT/sum_lvl_6
-# add wave -noupdate /TB_filter/DUT/sum_lvl_7
-# add wave -noupdate /TB_filter/DUT/y
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {19548 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 278
-# configure wave -valuecolwidth 383
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {19410 ns} {19766 ns}
-# 
-# run ${SIM_LEN}
-# 
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:30:52 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 20:30:52 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:30:52 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# 
-# Top level modules:
-# 	GSM_101Mults
-# End time: 20:30:52 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:30:52 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 20:30:52 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 20:30:53 on Mar 18,2022, Elapsed time: 0:05:23
+# End time: 21:32:57 on Mar 21,2022, Elapsed time: 0:18:57
 # Errors: 0, Warnings: 1
 # vsim -t 1ns -L work TB_filter 
-# Start time: 20:30:53 on Mar 18,2022
+# Start time: 21:32:57 on Mar 21,2022
 # Loading sv_std.std
 # Loading work.TB_filter
 # Loading work.clk_en
-# Loading work.GSM_101Mults
+# Loading work.PPS_filt_101
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
 #    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
 # do filtWave.do
@@ -986,11 +815,11 @@ do compileFilt.do
 # set EN "clk_en"
 # clk_en
 #set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
+# set MOD "PPS_filt_101"
+# PPS_filt_101
 #set MOD "GSM_noMult"
 #set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
+#set MOD "GSM_101Mults"
 # 
 # puts [info script]
 # puts "Hello world"
@@ -1001,7 +830,7 @@ do compileFilt.do
 # set string "MOD is: "
 # MOD is: 
 # append string ${MOD}
-# MOD is: GSM_101Mults
+# MOD is: PPS_filt_101
 # puts $string
 # set string "TB is: "
 # TB is: 
@@ -1024,44 +853,44 @@ do compileFilt.do
 # 
 # vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:34:27 on Mar 18,2022
+# Start time: 21:34:19 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
 # -- Compiling module TB_filter
 # 
 # Top level modules:
 # 	TB_filter
-# End time: 20:34:27 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:34:19 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:34:27 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
+# Start time: 21:34:19 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./PPS_filt_101.v 
+# -- Compiling module PPS_filt_101
 # 
 # Top level modules:
-# 	GSM_101Mults
-# End time: 20:34:27 on Mar 18,2022, Elapsed time: 0:00:00
+# 	PPS_filt_101
+# End time: 21:34:19 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${EN}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:34:27 on Mar 18,2022
+# Start time: 21:34:19 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./clk_en.v 
 # -- Compiling module clk_en
 # 
 # Top level modules:
 # 	clk_en
-# End time: 20:34:27 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:34:19 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ns -L work ${TB_MOD}
-# End time: 20:34:28 on Mar 18,2022, Elapsed time: 0:03:35
+# End time: 21:34:19 on Mar 21,2022, Elapsed time: 0:01:22
 # Errors: 0, Warnings: 1
 # vsim -t 1ns -L work TB_filter 
-# Start time: 20:34:28 on Mar 18,2022
+# Start time: 21:34:19 on Mar 21,2022
 # Loading sv_std.std
 # Loading work.TB_filter
 # Loading work.clk_en
-# Loading work.GSM_101Mults
+# Loading work.PPS_filt_101
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
 #    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
 # do filtWave.do
@@ -1107,6 +936,130 @@ do compileFilt.do
 # WaveRestoreZoom {19410 ns} {19766 ns}
 # 
 # run ${SIM_LEN}
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:      66
+# index:           2 | y:       2
+# index:           2 | y:     -69
+# index:           2 | y:    -167
+# index:           2 | y:    -237
+# index:           2 | y:    -219
+# index:           2 | y:     -92
+# index:           2 | y:     102
+# index:           2 | y:     262
+# index:           2 | y:     282
+# index:           2 | y:     120
+# index:           2 | y:    -160
+# index:           2 | y:    -400
+# index:           2 | y:    -435
+# index:           2 | y:    -197
+# index:           2 | y:     216
+# index:           2 | y:     570
+# index:           2 | y:     626
+# index:           2 | y:     291
+# index:           2 | y:    -290
+# index:           2 | y:    -787
+# index:           2 | y:    -864
+# index:           2 | y:    -400
+# index:           2 | y:     395
+# index:           2 | y:    1063
+# index:           2 | y:    1154
+# index:           2 | y:     518
+# index:           2 | y:    -548
+# index:           2 | y:   -1424
+# index:           2 | y:   -1513
+# index:           2 | y:    -638
+# index:           2 | y:     786
+# index:           2 | y:    1918
+# index:           2 | y:    1978
+# index:           2 | y:     751
+# index:           2 | y:   -1174
+# index:           2 | y:   -2655
+# index:           2 | y:   -2637
+# index:           2 | y:    -850
+# index:           2 | y:    1874
+# index:           2 | y:    3917
+# index:           2 | y:    3752
+# index:           2 | y:     926
+# index:           2 | y:   -3400
+# index:           2 | y:   -6753
+# index:           2 | y:   -6446
+# index:           2 | y:    -975
+# index:           2 | y:    8991
+# index:           2 | y:   20599
+# index:           2 | y:   29876
+# index:           2 | y:   33414
+# index:           2 | y:   29876
+# index:           2 | y:   20599
+# index:           2 | y:    8991
+# index:           2 | y:    -975
+# index:           2 | y:   -6446
+# index:           2 | y:   -6753
+# index:           2 | y:   -3400
+# index:           2 | y:     926
+# index:           2 | y:    3752
+# index:           2 | y:    3917
+# index:           2 | y:    1874
+# index:           2 | y:    -850
+# index:           2 | y:   -2637
+# index:           2 | y:   -2655
+# index:           2 | y:   -1174
+# index:           2 | y:     751
+# index:           2 | y:    1978
+# index:           2 | y:    1918
+# index:           2 | y:     786
+# index:           2 | y:    -638
+# index:           2 | y:   -1513
+# index:           2 | y:   -1424
+# index:           2 | y:    -548
+# index:           2 | y:     518
+# index:           2 | y:    1154
+# index:           2 | y:    1063
+# index:           2 | y:     395
+# index:           2 | y:    -400
+# index:           2 | y:    -864
+# index:           2 | y:    -787
+# index:           2 | y:    -290
+# index:           2 | y:     291
+# index:           2 | y:     626
+# index:           2 | y:     570
+# index:           2 | y:     216
+# index:           2 | y:    -197
+# index:           2 | y:    -435
+# index:           2 | y:    -400
+# index:           2 | y:    -160
+# index:           2 | y:     120
+# index:           2 | y:     282
+# index:           2 | y:     262
+# index:           2 | y:     102
+# index:           2 | y:     -92
+# index:           2 | y:    -219
+# index:           2 | y:    -237
+# index:           2 | y:    -167
+# index:           2 | y:     -69
+# index:           2 | y:       2
+# index:           2 | y:      66
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
 # 
 do compileFilt.do
 #/home/tob208/engr-ece/Documents/EE465/3Deliverable
@@ -1128,11 +1081,11 @@ do compileFilt.do
 # set EN "clk_en"
 # clk_en
 #set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
+# set MOD "PPS_filt_101"
+# PPS_filt_101
 #set MOD "GSM_noMult"
 #set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
+#set MOD "GSM_101Mults"
 # 
 # puts [info script]
 # puts "Hello world"
@@ -1143,7 +1096,7 @@ do compileFilt.do
 # set string "MOD is: "
 # MOD is: 
 # append string ${MOD}
-# MOD is: GSM_101Mults
+# MOD is: PPS_filt_101
 # puts $string
 # set string "TB is: "
 # TB is: 
@@ -1166,44 +1119,44 @@ do compileFilt.do
 # 
 # vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:44:08 on Mar 18,2022
+# Start time: 21:37:06 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
 # -- Compiling module TB_filter
 # 
 # Top level modules:
 # 	TB_filter
-# End time: 20:44:08 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:37:06 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:44:08 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
+# Start time: 21:37:06 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./PPS_filt_101.v 
+# -- Compiling module PPS_filt_101
 # 
 # Top level modules:
-# 	GSM_101Mults
-# End time: 20:44:08 on Mar 18,2022, Elapsed time: 0:00:00
+# 	PPS_filt_101
+# End time: 21:37:06 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${EN}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:44:08 on Mar 18,2022
+# Start time: 21:37:06 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./clk_en.v 
 # -- Compiling module clk_en
 # 
 # Top level modules:
 # 	clk_en
-# End time: 20:44:08 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:37:07 on Mar 21,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ns -L work ${TB_MOD}
-# End time: 20:44:09 on Mar 18,2022, Elapsed time: 0:09:41
+# End time: 21:37:07 on Mar 21,2022, Elapsed time: 0:02:48
 # Errors: 0, Warnings: 1
 # vsim -t 1ns -L work TB_filter 
-# Start time: 20:44:09 on Mar 18,2022
+# Start time: 21:37:07 on Mar 21,2022
 # Loading sv_std.std
 # Loading work.TB_filter
 # Loading work.clk_en
-# Loading work.GSM_101Mults
+# Loading work.PPS_filt_101
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
 #    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
 # do filtWave.do
@@ -1249,6 +1202,130 @@ do compileFilt.do
 # WaveRestoreZoom {19410 ns} {19766 ns}
 # 
 # run ${SIM_LEN}
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:      66
+# index:           2 | y:       2
+# index:           2 | y:     -69
+# index:           2 | y:    -167
+# index:           2 | y:    -237
+# index:           2 | y:    -219
+# index:           2 | y:     -92
+# index:           2 | y:     102
+# index:           2 | y:     262
+# index:           2 | y:     282
+# index:           2 | y:     120
+# index:           2 | y:    -160
+# index:           2 | y:    -400
+# index:           2 | y:    -435
+# index:           2 | y:    -197
+# index:           2 | y:     216
+# index:           2 | y:     570
+# index:           2 | y:     626
+# index:           2 | y:     291
+# index:           2 | y:    -290
+# index:           2 | y:    -787
+# index:           2 | y:    -864
+# index:           2 | y:    -400
+# index:           2 | y:     395
+# index:           2 | y:    1063
+# index:           2 | y:    1154
+# index:           2 | y:     518
+# index:           2 | y:    -548
+# index:           2 | y:   -1424
+# index:           2 | y:   -1513
+# index:           2 | y:    -638
+# index:           2 | y:     786
+# index:           2 | y:    1918
+# index:           2 | y:    1978
+# index:           2 | y:     751
+# index:           2 | y:   -1174
+# index:           2 | y:   -2655
+# index:           2 | y:   -2637
+# index:           2 | y:    -850
+# index:           2 | y:    1874
+# index:           2 | y:    3917
+# index:           2 | y:    3752
+# index:           2 | y:     926
+# index:           2 | y:   -3400
+# index:           2 | y:   -6753
+# index:           2 | y:   -6446
+# index:           2 | y:    -975
+# index:           2 | y:    8991
+# index:           2 | y:   20599
+# index:           2 | y:   29876
+# index:           2 | y:   33414
+# index:           2 | y:   29876
+# index:           2 | y:   20599
+# index:           2 | y:    8991
+# index:           2 | y:    -975
+# index:           2 | y:   -6446
+# index:           2 | y:   -6753
+# index:           2 | y:   -3400
+# index:           2 | y:     926
+# index:           2 | y:    3752
+# index:           2 | y:    3917
+# index:           2 | y:    1874
+# index:           2 | y:    -850
+# index:           2 | y:   -2637
+# index:           2 | y:   -2655
+# index:           2 | y:   -1174
+# index:           2 | y:     751
+# index:           2 | y:    1978
+# index:           2 | y:    1918
+# index:           2 | y:     786
+# index:           2 | y:    -638
+# index:           2 | y:   -1513
+# index:           2 | y:   -1424
+# index:           2 | y:    -548
+# index:           2 | y:     518
+# index:           2 | y:    1154
+# index:           2 | y:    1063
+# index:           2 | y:     395
+# index:           2 | y:    -400
+# index:           2 | y:    -864
+# index:           2 | y:    -787
+# index:           2 | y:    -290
+# index:           2 | y:     291
+# index:           2 | y:     626
+# index:           2 | y:     570
+# index:           2 | y:     216
+# index:           2 | y:    -197
+# index:           2 | y:    -435
+# index:           2 | y:    -400
+# index:           2 | y:    -160
+# index:           2 | y:     120
+# index:           2 | y:     282
+# index:           2 | y:     262
+# index:           2 | y:     102
+# index:           2 | y:     -92
+# index:           2 | y:    -219
+# index:           2 | y:    -237
+# index:           2 | y:    -167
+# index:           2 | y:     -69
+# index:           2 | y:       2
+# index:           2 | y:      66
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
+# index:           2 | y:       0
 # 
 do compileFilt.do
 #/home/tob208/engr-ece/Documents/EE465/3Deliverable
@@ -1270,11 +1347,11 @@ do compileFilt.do
 # set EN "clk_en"
 # clk_en
 #set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
+# set MOD "PPS_filt_101"
+# PPS_filt_101
 #set MOD "GSM_noMult"
 #set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
+#set MOD "GSM_101Mults"
 # 
 # puts [info script]
 # puts "Hello world"
@@ -1285,7 +1362,7 @@ do compileFilt.do
 # set string "MOD is: "
 # MOD is: 
 # append string ${MOD}
-# MOD is: GSM_101Mults
+# MOD is: PPS_filt_101
 # puts $string
 # set string "TB is: "
 # TB is: 
@@ -1308,44 +1385,44 @@ do compileFilt.do
 # 
 # vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:46:03 on Mar 18,2022
+# Start time: 21:38:27 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
 # -- Compiling module TB_filter
 # 
 # Top level modules:
 # 	TB_filter
-# End time: 20:46:03 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:38:27 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:46:03 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
+# Start time: 21:38:28 on Mar 21,2022
+# vlog -reportprogress 300 -sv -work work ./PPS_filt_101.v 
+# -- Compiling module PPS_filt_101
 # 
 # Top level modules:
-# 	GSM_101Mults
-# End time: 20:46:03 on Mar 18,2022, Elapsed time: 0:00:00
+# 	PPS_filt_101
+# End time: 21:38:28 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${EN}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:46:03 on Mar 18,2022
+# Start time: 21:38:28 on Mar 21,2022
 # vlog -reportprogress 300 -sv -work work ./clk_en.v 
 # -- Compiling module clk_en
 # 
 # Top level modules:
 # 	clk_en
-# End time: 20:46:03 on Mar 18,2022, Elapsed time: 0:00:00
+# End time: 21:38:28 on Mar 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ns -L work ${TB_MOD}
-# End time: 20:46:03 on Mar 18,2022, Elapsed time: 0:01:54
+# End time: 21:38:28 on Mar 21,2022, Elapsed time: 0:01:21
 # Errors: 0, Warnings: 1
 # vsim -t 1ns -L work TB_filter 
-# Start time: 20:46:03 on Mar 18,2022
+# Start time: 21:38:28 on Mar 21,2022
 # Loading sv_std.std
 # Loading work.TB_filter
 # Loading work.clk_en
-# Loading work.GSM_101Mults
+# Loading work.PPS_filt_101
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
 #    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
 # do filtWave.do
@@ -1391,1681 +1468,128 @@ do compileFilt.do
 # WaveRestoreZoom {19410 ns} {19766 ns}
 # 
 # run ${SIM_LEN}
-# 
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/tob208/engr-ece/Documents/EE465/3Deliverable/wave.do
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:53:24 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 20:53:24 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:53:24 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# 
-# Top level modules:
-# 	GSM_101Mults
-# End time: 20:53:24 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:53:24 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 20:53:24 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 20:53:25 on Mar 18,2022, Elapsed time: 0:07:22
-# Errors: 0, Warnings: 1
-# vsim -t 1ns -L work TB_filter 
-# Start time: 20:53:25 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# Loading work.GSM_101Mults
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
-# do filtWave.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /TB_filter/x_in
-# add wave -noupdate -format Analog-Interpolated -height 84 -max 200000.00000000003 -min -20000.0 /TB_filter/y
-# add wave -noupdate /TB_filter/rst
-# add wave -noupdate /TB_filter/EN_CLK/clk
-# add wave -noupdate /TB_filter/EN_CLK/reset
-# add wave -noupdate /TB_filter/clk_50
-# add wave -noupdate /TB_filter/EN_CLK/sys_clk
-# add wave -noupdate /TB_filter/EN_CLK/sam_clk_en
-# add wave -noupdate /TB_filter/EN_CLK/sym_clk_en
-# add wave -noupdate /TB_filter/DUT/x
-# add wave -noupdate /TB_filter/DUT/x_in
-# add wave -noupdate /TB_filter/DUT/mult_out
-# add wave -noupdate /TB_filter/DUT/sum_lvl_1
-# add wave -noupdate /TB_filter/DUT/sum_lvl_2
-# add wave -noupdate /TB_filter/DUT/sum_lvl_3
-# add wave -noupdate /TB_filter/DUT/sum_lvl_4
-# add wave -noupdate /TB_filter/DUT/sum_lvl_5
-# add wave -noupdate /TB_filter/DUT/sum_lvl_6
-# add wave -noupdate /TB_filter/DUT/sum_lvl_7
-# add wave -noupdate /TB_filter/DUT/y
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {19548 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 278
-# configure wave -valuecolwidth 383
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {19410 ns} {19766 ns}
-# 
-# run ${SIM_LEN}
-# 
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:54:35 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 20:54:35 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:54:35 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# ** Error (suppressible): ./GSM_101Mults.v(198): (vlog-2388) 'i' already declared in this scope (GSM_101Mults) at ./GSM_101Mults.v(39).
-# End time: 20:54:35 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
-# Executing ONERROR command at macro ./compileFilt.do line 44
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:54:35 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 20:54:35 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 20:54:36 on Mar 18,2022, Elapsed time: 0:01:11
-# Errors: 1, Warnings: 1
-# vsim -t 1ns -L work TB_filter 
-# Start time: 20:54:36 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# ** Error: (vsim-3033) Instantiation of 'GSM_101Mults' failed. The design unit was not found.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 51
-#         Searched libraries:
-#             /home/tob208/engr-ece/Documents/EE465/3Deliverable/rtl_work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./compileFilt.do PAUSED at line 47
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:54:57 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 20:54:57 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:54:57 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# ** Error: (vlog-13069) ./GSM_101Mults.v(198): near "int": syntax error, unexpected "SystemVerilog keyword 'int'", expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
-# ** Error: (vlog-13069) ./GSM_101Mults.v(205): near "int": syntax error, unexpected "SystemVerilog keyword 'int'", expecting "SystemVerilog keyword 'new'".
-# ** Error: ./GSM_101Mults.v(206): Illegal declaration after the statement near line '204'.  Declarations must precede statements.  Look for stray semicolons.
-# End time: 20:54:57 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 0
-# ** Error: /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
-# Executing ONERROR command at macro ./compileFilt.do line 44
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:54:57 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 20:54:57 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# vsim -t 1ns -L work TB_filter 
-# Start time: 20:54:36 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# ** Error: (vsim-3033) Instantiation of 'GSM_101Mults' failed. The design unit was not found.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 51
-#         Searched libraries:
-#             /home/tob208/engr-ece/Documents/EE465/3Deliverable/rtl_work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./compileFilt.do PAUSED at line 47
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:55:13 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 20:55:13 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:55:13 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# 
-# Top level modules:
-# 	GSM_101Mults
-# End time: 20:55:13 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:55:13 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 20:55:13 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# vsim -t 1ns -L work TB_filter 
-# Start time: 20:54:36 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# Loading work.GSM_101Mults
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
-# do filtWave.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /TB_filter/x_in
-# add wave -noupdate -format Analog-Interpolated -height 84 -max 200000.00000000003 -min -20000.0 /TB_filter/y
-# add wave -noupdate /TB_filter/rst
-# add wave -noupdate /TB_filter/EN_CLK/clk
-# add wave -noupdate /TB_filter/EN_CLK/reset
-# add wave -noupdate /TB_filter/clk_50
-# add wave -noupdate /TB_filter/EN_CLK/sys_clk
-# add wave -noupdate /TB_filter/EN_CLK/sam_clk_en
-# add wave -noupdate /TB_filter/EN_CLK/sym_clk_en
-# add wave -noupdate /TB_filter/DUT/x
-# add wave -noupdate /TB_filter/DUT/x_in
-# add wave -noupdate /TB_filter/DUT/mult_out
-# add wave -noupdate /TB_filter/DUT/sum_lvl_1
-# add wave -noupdate /TB_filter/DUT/sum_lvl_2
-# add wave -noupdate /TB_filter/DUT/sum_lvl_3
-# add wave -noupdate /TB_filter/DUT/sum_lvl_4
-# add wave -noupdate /TB_filter/DUT/sum_lvl_5
-# add wave -noupdate /TB_filter/DUT/sum_lvl_6
-# add wave -noupdate /TB_filter/DUT/sum_lvl_7
-# add wave -noupdate /TB_filter/DUT/y
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {19548 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 278
-# configure wave -valuecolwidth 383
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {19410 ns} {19766 ns}
-# 
-# run ${SIM_LEN}
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:      96
-# index:           2 | y:     -10
-# index:           2 | y:    -118
-# index:           2 | y:    -133
-# index:           2 | y:     -30
-# index:           2 | y:     115
-# index:           2 | y:     181
-# index:           2 | y:     100
-# index:           2 | y:     -80
-# index:           2 | y:    -223
-# index:           2 | y:    -204
-# index:           2 | y:     -16
-# index:           2 | y:     207
-# index:           2 | y:     291
-# index:           2 | y:     153
-# index:           2 | y:    -116
-# index:           2 | y:    -313
-# index:           2 | y:    -273
-# index:           2 | y:     -12
-# index:           2 | y:     268
-# index:           2 | y:     334
-# index:           2 | y:     111
-# index:           2 | y:    -231
-# index:           2 | y:    -395
-# index:           2 | y:    -198
-# index:           2 | y:     244
-# index:           2 | y:     567
-# index:           2 | y:     425
-# index:           2 | y:    -187
-# index:           2 | y:    -851
-# index:           2 | y:    -974
-# index:           2 | y:    -264
-# index:           2 | y:     939
-# index:           2 | y:    1771
-# index:           2 | y:    1409
-# index:           2 | y:    -237
-# index:           2 | y:   -2247
-# index:           2 | y:   -3130
-# index:           2 | y:   -1825
-# index:           2 | y:    1350
-# index:           2 | y:    4543
-# index:           2 | y:    5293
-# index:           2 | y:    2167
-# index:           2 | y:   -3883
-# index:           2 | y:   -9408
-# index:           2 | y:   -9934
-# index:           2 | y:   -2394
-# index:           2 | y:   12786
-# index:           2 | y:   31253
-# index:           2 | y:  125249
-# index:           2 | y:       0
-# index:           2 | y:   46360
-# index:           2 | y:   31253
-# index:           2 | y:   12786
-# index:           2 | y:   -2394
-# index:           2 | y:   -9934
-# index:           2 | y:   -9408
-# index:           2 | y:   -3883
-# index:           2 | y:    2167
-# index:           2 | y:    5293
-# index:           2 | y:    4543
-# index:           2 | y:    1350
-# index:           2 | y:   -1825
-# index:           2 | y:   -3130
-# index:           2 | y:   -2247
-# index:           2 | y:    -237
-# index:           2 | y:    1409
-# index:           2 | y:    1771
-# index:           2 | y:     939
-# index:           2 | y:    -264
-# index:           2 | y:    -974
-# index:           2 | y:    -851
-# index:           2 | y:    -187
-# index:           2 | y:     425
-# index:           2 | y:     567
-# index:           2 | y:     244
-# index:           2 | y:    -198
-# index:           2 | y:    -395
-# index:           2 | y:    -231
-# index:           2 | y:     111
-# index:           2 | y:     334
-# index:           2 | y:     268
-# index:           2 | y:     -12
-# index:           2 | y:    -273
-# index:           2 | y:    -313
-# index:           2 | y:    -116
-# index:           2 | y:     153
-# index:           2 | y:     291
-# index:           2 | y:     207
-# index:           2 | y:     -16
-# index:           2 | y:    -204
-# index:           2 | y:    -223
-# index:           2 | y:     -80
-# index:           2 | y:     100
-# index:           2 | y:     181
-# index:           2 | y:     115
-# index:           2 | y:     -30
-# index:           2 | y:    -133
-# index:           2 | y:    -118
-# index:           2 | y:     -10
-# index:           2 | y:      96
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# 
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:00:38 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 21:00:39 on Mar 18,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:00:39 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# 
-# Top level modules:
-# 	GSM_101Mults
-# End time: 21:00:39 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:00:39 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 21:00:39 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 21:00:39 on Mar 18,2022, Elapsed time: 0:06:03
-# Errors: 3, Warnings: 1
-# vsim -t 1ns -L work TB_filter 
-# Start time: 21:00:39 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# Loading work.GSM_101Mults
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
-# do filtWave.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /TB_filter/x_in
-# add wave -noupdate -format Analog-Interpolated -height 84 -max 200000.00000000003 -min -20000.0 /TB_filter/y
-# add wave -noupdate /TB_filter/rst
-# add wave -noupdate /TB_filter/EN_CLK/clk
-# add wave -noupdate /TB_filter/EN_CLK/reset
-# add wave -noupdate /TB_filter/clk_50
-# add wave -noupdate /TB_filter/EN_CLK/sys_clk
-# add wave -noupdate /TB_filter/EN_CLK/sam_clk_en
-# add wave -noupdate /TB_filter/EN_CLK/sym_clk_en
-# add wave -noupdate /TB_filter/DUT/x
-# add wave -noupdate /TB_filter/DUT/x_in
-# add wave -noupdate /TB_filter/DUT/mult_out
-# add wave -noupdate /TB_filter/DUT/sum_lvl_1
-# add wave -noupdate /TB_filter/DUT/sum_lvl_2
-# add wave -noupdate /TB_filter/DUT/sum_lvl_3
-# add wave -noupdate /TB_filter/DUT/sum_lvl_4
-# add wave -noupdate /TB_filter/DUT/sum_lvl_5
-# add wave -noupdate /TB_filter/DUT/sum_lvl_6
-# add wave -noupdate /TB_filter/DUT/sum_lvl_7
-# add wave -noupdate /TB_filter/DUT/y
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {19548 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 278
-# configure wave -valuecolwidth 383
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {19410 ns} {19766 ns}
-# 
-# run ${SIM_LEN}
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:      96
-# index:           2 | y:     -10
-# index:           2 | y:    -118
-# index:           2 | y:    -133
-# index:           2 | y:     -30
-# index:           2 | y:     115
-# index:           2 | y:     181
-# index:           2 | y:     100
-# index:           2 | y:     -80
-# index:           2 | y:    -223
-# index:           2 | y:    -204
-# index:           2 | y:     -16
-# index:           2 | y:     207
-# index:           2 | y:     291
-# index:           2 | y:     153
-# index:           2 | y:    -116
-# index:           2 | y:    -313
-# index:           2 | y:    -273
-# index:           2 | y:     -12
-# index:           2 | y:     268
-# index:           2 | y:     334
-# index:           2 | y:     111
-# index:           2 | y:    -231
-# index:           2 | y:    -395
-# index:           2 | y:    -198
-# index:           2 | y:     244
-# index:           2 | y:     567
-# index:           2 | y:     425
-# index:           2 | y:    -187
-# index:           2 | y:    -851
-# index:           2 | y:    -974
-# index:           2 | y:    -264
-# index:           2 | y:     939
-# index:           2 | y:    1771
-# index:           2 | y:    1409
-# index:           2 | y:    -237
-# index:           2 | y:   -2247
-# index:           2 | y:   -3130
-# index:           2 | y:   -1825
-# index:           2 | y:    1350
-# index:           2 | y:    4543
-# index:           2 | y:    5293
-# index:           2 | y:    2167
-# index:           2 | y:   -3883
-# index:           2 | y:   -9408
-# index:           2 | y:   -9934
-# index:           2 | y:   -2394
-# index:           2 | y:   12786
-# index:           2 | y:   31253
-# index:           2 | y:   98542
-# index:           2 | y:       0
-# index:           2 | y:   46360
-# index:           2 | y:   31253
-# index:           2 | y:   12786
-# index:           2 | y:   -2394
-# index:           2 | y:   -9934
-# index:           2 | y:   -9408
-# index:           2 | y:   -3883
-# index:           2 | y:    2167
-# index:           2 | y:    5293
-# index:           2 | y:    4543
-# index:           2 | y:    1350
-# index:           2 | y:   -1825
-# index:           2 | y:   -3130
-# index:           2 | y:   -2247
-# index:           2 | y:    -237
-# index:           2 | y:    1409
-# index:           2 | y:    1771
-# index:           2 | y:     939
-# index:           2 | y:    -264
-# index:           2 | y:    -974
-# index:           2 | y:    -851
-# index:           2 | y:    -187
-# index:           2 | y:     425
-# index:           2 | y:     567
-# index:           2 | y:     244
-# index:           2 | y:    -198
-# index:           2 | y:    -395
-# index:           2 | y:    -231
-# index:           2 | y:     111
-# index:           2 | y:     334
-# index:           2 | y:     268
-# index:           2 | y:     -12
-# index:           2 | y:    -273
-# index:           2 | y:    -313
-# index:           2 | y:    -116
-# index:           2 | y:     153
-# index:           2 | y:     291
-# index:           2 | y:     207
-# index:           2 | y:     -16
-# index:           2 | y:    -204
-# index:           2 | y:    -223
-# index:           2 | y:     -80
-# index:           2 | y:     100
-# index:           2 | y:     181
-# index:           2 | y:     115
-# index:           2 | y:     -30
-# index:           2 | y:    -133
-# index:           2 | y:    -118
-# index:           2 | y:     -10
-# index:           2 | y:      96
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# 
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:05:21 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 21:05:21 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:05:21 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# 
-# Top level modules:
-# 	GSM_101Mults
-# End time: 21:05:21 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:05:21 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 21:05:22 on Mar 18,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 21:05:22 on Mar 18,2022, Elapsed time: 0:04:43
-# Errors: 0, Warnings: 1
-# vsim -t 1ns -L work TB_filter 
-# Start time: 21:05:22 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# Loading work.GSM_101Mults
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
-# do filtWave.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /TB_filter/x_in
-# add wave -noupdate -format Analog-Interpolated -height 84 -max 200000.00000000003 -min -20000.0 /TB_filter/y
-# add wave -noupdate /TB_filter/rst
-# add wave -noupdate /TB_filter/EN_CLK/clk
-# add wave -noupdate /TB_filter/EN_CLK/reset
-# add wave -noupdate /TB_filter/clk_50
-# add wave -noupdate /TB_filter/EN_CLK/sys_clk
-# add wave -noupdate /TB_filter/EN_CLK/sam_clk_en
-# add wave -noupdate /TB_filter/EN_CLK/sym_clk_en
-# add wave -noupdate /TB_filter/DUT/x
-# add wave -noupdate /TB_filter/DUT/x_in
-# add wave -noupdate /TB_filter/DUT/mult_out
-# add wave -noupdate /TB_filter/DUT/sum_lvl_1
-# add wave -noupdate /TB_filter/DUT/sum_lvl_2
-# add wave -noupdate /TB_filter/DUT/sum_lvl_3
-# add wave -noupdate /TB_filter/DUT/sum_lvl_4
-# add wave -noupdate /TB_filter/DUT/sum_lvl_5
-# add wave -noupdate /TB_filter/DUT/sum_lvl_6
-# add wave -noupdate /TB_filter/DUT/sum_lvl_7
-# add wave -noupdate /TB_filter/DUT/y
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {19548 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 278
-# configure wave -valuecolwidth 383
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {19410 ns} {19766 ns}
-# 
-# run ${SIM_LEN}
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# index:           2 | y:       x
-# 
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:05:46 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 21:05:46 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:05:46 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# 
-# Top level modules:
-# 	GSM_101Mults
-# End time: 21:05:46 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:05:46 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 21:05:46 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 21:05:47 on Mar 18,2022, Elapsed time: 0:00:25
-# Errors: 0, Warnings: 1
-# vsim -t 1ns -L work TB_filter 
-# Start time: 21:05:47 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# Loading work.GSM_101Mults
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
-# do filtWave.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /TB_filter/x_in
-# add wave -noupdate -format Analog-Interpolated -height 84 -max 200000.00000000003 -min -20000.0 /TB_filter/y
-# add wave -noupdate /TB_filter/rst
-# add wave -noupdate /TB_filter/EN_CLK/clk
-# add wave -noupdate /TB_filter/EN_CLK/reset
-# add wave -noupdate /TB_filter/clk_50
-# add wave -noupdate /TB_filter/EN_CLK/sys_clk
-# add wave -noupdate /TB_filter/EN_CLK/sam_clk_en
-# add wave -noupdate /TB_filter/EN_CLK/sym_clk_en
-# add wave -noupdate /TB_filter/DUT/x
-# add wave -noupdate /TB_filter/DUT/x_in
-# add wave -noupdate /TB_filter/DUT/mult_out
-# add wave -noupdate /TB_filter/DUT/sum_lvl_1
-# add wave -noupdate /TB_filter/DUT/sum_lvl_2
-# add wave -noupdate /TB_filter/DUT/sum_lvl_3
-# add wave -noupdate /TB_filter/DUT/sum_lvl_4
-# add wave -noupdate /TB_filter/DUT/sum_lvl_5
-# add wave -noupdate /TB_filter/DUT/sum_lvl_6
-# add wave -noupdate /TB_filter/DUT/sum_lvl_7
-# add wave -noupdate /TB_filter/DUT/y
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {19548 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 278
-# configure wave -valuecolwidth 383
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {19410 ns} {19766 ns}
-# 
-# run ${SIM_LEN}
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:      96
-# index:           2 | y:     -10
-# index:           2 | y:    -118
-# index:           2 | y:    -133
-# index:           2 | y:     -30
-# index:           2 | y:     115
-# index:           2 | y:     181
-# index:           2 | y:     100
-# index:           2 | y:     -80
-# index:           2 | y:    -223
-# index:           2 | y:    -204
-# index:           2 | y:     -16
-# index:           2 | y:     207
-# index:           2 | y:     291
-# index:           2 | y:     153
-# index:           2 | y:    -116
-# index:           2 | y:    -313
-# index:           2 | y:    -273
-# index:           2 | y:     -12
-# index:           2 | y:     268
-# index:           2 | y:     334
-# index:           2 | y:     111
-# index:           2 | y:    -231
-# index:           2 | y:    -395
-# index:           2 | y:    -198
-# index:           2 | y:     244
-# index:           2 | y:     567
-# index:           2 | y:     425
-# index:           2 | y:    -187
-# index:           2 | y:    -851
-# index:           2 | y:    -974
-# index:           2 | y:    -264
-# index:           2 | y:     939
-# index:           2 | y:    1771
-# index:           2 | y:    1409
-# index:           2 | y:    -237
-# index:           2 | y:   -2247
-# index:           2 | y:   -3130
-# index:           2 | y:   -1825
-# index:           2 | y:    1350
-# index:           2 | y:    4543
-# index:           2 | y:    5293
-# index:           2 | y:    2167
-# index:           2 | y:   -3883
-# index:           2 | y:   -9408
-# index:           2 | y:   -9934
-# index:           2 | y:   -2394
-# index:           2 | y:   12786
-# index:           2 | y:   31253
-# index:           2 | y:   98542
-# index:           2 | y:       0
-# index:           2 | y:   46360
-# index:           2 | y:   31253
-# index:           2 | y:   12786
-# index:           2 | y:   -2394
-# index:           2 | y:   -9934
-# index:           2 | y:   -9408
-# index:           2 | y:   -3883
-# index:           2 | y:    2167
-# index:           2 | y:    5293
-# index:           2 | y:    4543
-# index:           2 | y:    1350
-# index:           2 | y:   -1825
-# index:           2 | y:   -3130
-# index:           2 | y:   -2247
-# index:           2 | y:    -237
-# index:           2 | y:    1409
-# index:           2 | y:    1771
-# index:           2 | y:     939
-# index:           2 | y:    -264
-# index:           2 | y:    -974
-# index:           2 | y:    -851
-# index:           2 | y:    -187
-# index:           2 | y:     425
-# index:           2 | y:     567
-# index:           2 | y:     244
-# index:           2 | y:    -198
-# index:           2 | y:    -395
-# index:           2 | y:    -231
-# index:           2 | y:     111
-# index:           2 | y:     334
-# index:           2 | y:     268
-# index:           2 | y:     -12
-# index:           2 | y:    -273
-# index:           2 | y:    -313
-# index:           2 | y:    -116
-# index:           2 | y:     153
-# index:           2 | y:     291
-# index:           2 | y:     207
-# index:           2 | y:     -16
-# index:           2 | y:    -204
-# index:           2 | y:    -223
-# index:           2 | y:     -80
-# index:           2 | y:     100
-# index:           2 | y:     181
-# index:           2 | y:     115
-# index:           2 | y:     -30
-# index:           2 | y:    -133
-# index:           2 | y:    -118
-# index:           2 | y:     -10
-# index:           2 | y:      96
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# 
-do compileFilt.do
-#/home/tob208/engr-ece/Documents/EE465/3Deliverable
-# 
-#procedure call
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 20000ns
-# 20000ns
-#set SIM_LEN 9000ns
-# set SRC_DIR [getScriptDirectory]
-# .
-# set TB_MOD "TB_filter"
-# TB_filter
-# set EN "clk_en"
-# clk_en
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_noMult"
-#set MOD "GSM_noMult_101"
-# set MOD "GSM_101Mults"
-# GSM_101Mults
-# 
-# puts [info script]
-# puts "Hello world"
-# puts [file normalize [info script]]
-# set string "script is: compileFilt.do"
-# script is: compileFilt.do
-# puts $string
-# set string "MOD is: "
-# MOD is: 
-# append string ${MOD}
-# MOD is: GSM_101Mults
-# puts $string
-# set string "TB is: "
-# TB is: 
-# append string $TB_MOD
-# TB is: TB_filter
-# puts $string
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:13:31 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./TB_filter.sv 
-# -- Compiling module TB_filter
-# 
-# Top level modules:
-# 	TB_filter
-# End time: 21:13:31 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${MOD}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:13:31 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./GSM_101Mults.v 
-# -- Compiling module GSM_101Mults
-# 
-# Top level modules:
-# 	GSM_101Mults
-# End time: 21:13:31 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${EN}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:13:31 on Mar 18,2022
-# vlog -reportprogress 300 -sv -work work ./clk_en.v 
-# -- Compiling module clk_en
-# 
-# Top level modules:
-# 	clk_en
-# End time: 21:13:31 on Mar 18,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 21:13:31 on Mar 18,2022, Elapsed time: 0:07:44
-# Errors: 0, Warnings: 1
-# vsim -t 1ns -L work TB_filter 
-# Start time: 21:13:31 on Mar 18,2022
-# Loading sv_std.std
-# Loading work.TB_filter
-# Loading work.clk_en
-# Loading work.GSM_101Mults
-# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_filter File: ./TB_filter.sv Line: 39
-# do filtWave.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /TB_filter/x_in
-# add wave -noupdate -format Analog-Interpolated -height 84 -max 200000.00000000003 -min -20000.0 /TB_filter/y
-# add wave -noupdate /TB_filter/rst
-# add wave -noupdate /TB_filter/EN_CLK/clk
-# add wave -noupdate /TB_filter/EN_CLK/reset
-# add wave -noupdate /TB_filter/clk_50
-# add wave -noupdate /TB_filter/EN_CLK/sys_clk
-# add wave -noupdate /TB_filter/EN_CLK/sam_clk_en
-# add wave -noupdate /TB_filter/EN_CLK/sym_clk_en
-# add wave -noupdate /TB_filter/DUT/x
-# add wave -noupdate /TB_filter/DUT/x_in
-# add wave -noupdate /TB_filter/DUT/mult_out
-# add wave -noupdate /TB_filter/DUT/sum_lvl_1
-# add wave -noupdate /TB_filter/DUT/sum_lvl_2
-# add wave -noupdate /TB_filter/DUT/sum_lvl_3
-# add wave -noupdate /TB_filter/DUT/sum_lvl_4
-# add wave -noupdate /TB_filter/DUT/sum_lvl_5
-# add wave -noupdate /TB_filter/DUT/sum_lvl_6
-# add wave -noupdate /TB_filter/DUT/sum_lvl_7
-# add wave -noupdate /TB_filter/DUT/y
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {19548 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 278
-# configure wave -valuecolwidth 383
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {19410 ns} {19766 ns}
-# 
-# run ${SIM_LEN}
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:      96
-# index:           2 | y:     -10
-# index:           2 | y:    -118
-# index:           2 | y:    -133
-# index:           2 | y:     -30
-# index:           2 | y:     115
-# index:           2 | y:     181
-# index:           2 | y:     100
-# index:           2 | y:     -80
-# index:           2 | y:    -223
-# index:           2 | y:    -204
-# index:           2 | y:     -16
-# index:           2 | y:     207
-# index:           2 | y:     291
-# index:           2 | y:     153
-# index:           2 | y:    -116
-# index:           2 | y:    -313
-# index:           2 | y:    -273
-# index:           2 | y:     -12
-# index:           2 | y:     268
-# index:           2 | y:     334
-# index:           2 | y:     111
-# index:           2 | y:    -231
-# index:           2 | y:    -395
-# index:           2 | y:    -198
-# index:           2 | y:     244
-# index:           2 | y:     567
-# index:           2 | y:     425
-# index:           2 | y:    -187
-# index:           2 | y:    -851
-# index:           2 | y:    -974
-# index:           2 | y:    -264
-# index:           2 | y:     939
-# index:           2 | y:    1771
-# index:           2 | y:    1409
-# index:           2 | y:    -237
-# index:           2 | y:   -2247
-# index:           2 | y:   -3130
-# index:           2 | y:   -1825
-# index:           2 | y:    1350
-# index:           2 | y:    4543
-# index:           2 | y:    5293
-# index:           2 | y:    2167
-# index:           2 | y:   -3883
-# index:           2 | y:   -9408
-# index:           2 | y:   -9934
-# index:           2 | y:   -2394
-# index:           2 | y:   12786
-# index:           2 | y:   31253
-# index:           2 | y:   46360
-# index:           2 | y:   52182
-# index:           2 | y:   46360
-# index:           2 | y:   31253
-# index:           2 | y:   12786
-# index:           2 | y:   -2394
-# index:           2 | y:   -9934
-# index:           2 | y:   -9408
-# index:           2 | y:   -3883
-# index:           2 | y:    2167
-# index:           2 | y:    5293
-# index:           2 | y:    4543
-# index:           2 | y:    1350
-# index:           2 | y:   -1825
-# index:           2 | y:   -3130
-# index:           2 | y:   -2247
-# index:           2 | y:    -237
-# index:           2 | y:    1409
-# index:           2 | y:    1771
-# index:           2 | y:     939
-# index:           2 | y:    -264
-# index:           2 | y:    -974
-# index:           2 | y:    -851
-# index:           2 | y:    -187
-# index:           2 | y:     425
-# index:           2 | y:     567
-# index:           2 | y:     244
-# index:           2 | y:    -198
-# index:           2 | y:    -395
-# index:           2 | y:    -231
-# index:           2 | y:     111
-# index:           2 | y:     334
-# index:           2 | y:     268
-# index:           2 | y:     -12
-# index:           2 | y:    -273
-# index:           2 | y:    -313
-# index:           2 | y:    -116
-# index:           2 | y:     153
-# index:           2 | y:     291
-# index:           2 | y:     207
-# index:           2 | y:     -16
-# index:           2 | y:    -204
-# index:           2 | y:    -223
-# index:           2 | y:     -80
-# index:           2 | y:     100
-# index:           2 | y:     181
-# index:           2 | y:     115
-# index:           2 | y:     -30
-# index:           2 | y:    -133
-# index:           2 | y:    -118
-# index:           2 | y:     -10
-# index:           2 | y:      96
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
-# index:           2 | y:       0
+# time:                  170 | y:       0
+# time:                  330 | y:       0
+# time:                  490 | y:       0
+# time:                  650 | y:       0
+# time:                  810 | y:       0
+# time:                  970 | y:       0
+# time:                 1130 | y:       0
+# time:                 1290 | y:       0
+# time:                 1450 | y:       0
+# time:                 1610 | y:       0
+# time:                 1770 | y:       0
+# time:                 1930 | y:       0
+# time:                 2090 | y:       0
+# time:                 2250 | y:       0
+# time:                 2410 | y:      66
+# time:                 2570 | y:       2
+# time:                 2730 | y:     -69
+# time:                 2890 | y:    -167
+# time:                 3050 | y:    -237
+# time:                 3210 | y:    -219
+# time:                 3370 | y:     -92
+# time:                 3530 | y:     102
+# time:                 3690 | y:     262
+# time:                 3850 | y:     282
+# time:                 4010 | y:     120
+# time:                 4170 | y:    -160
+# time:                 4330 | y:    -400
+# time:                 4490 | y:    -435
+# time:                 4650 | y:    -197
+# time:                 4810 | y:     216
+# time:                 4970 | y:     570
+# time:                 5130 | y:     626
+# time:                 5290 | y:     291
+# time:                 5450 | y:    -290
+# time:                 5610 | y:    -787
+# time:                 5770 | y:    -864
+# time:                 5930 | y:    -400
+# time:                 6090 | y:     395
+# time:                 6250 | y:    1063
+# time:                 6410 | y:    1154
+# time:                 6570 | y:     518
+# time:                 6730 | y:    -548
+# time:                 6890 | y:   -1424
+# time:                 7050 | y:   -1513
+# time:                 7210 | y:    -638
+# time:                 7370 | y:     786
+# time:                 7530 | y:    1918
+# time:                 7690 | y:    1978
+# time:                 7850 | y:     751
+# time:                 8010 | y:   -1174
+# time:                 8170 | y:   -2655
+# time:                 8330 | y:   -2637
+# time:                 8490 | y:    -850
+# time:                 8650 | y:    1874
+# time:                 8810 | y:    3917
+# time:                 8970 | y:    3752
+# time:                 9130 | y:     926
+# time:                 9290 | y:   -3400
+# time:                 9450 | y:   -6753
+# time:                 9610 | y:   -6446
+# time:                 9770 | y:    -975
+# time:                 9930 | y:    8991
+# time:                10090 | y:   20599
+# time:                10250 | y:   29876
+# time:                10410 | y:   33414
+# time:                10570 | y:   29876
+# time:                10730 | y:   20599
+# time:                10890 | y:    8991
+# time:                11050 | y:    -975
+# time:                11210 | y:   -6446
+# time:                11370 | y:   -6753
+# time:                11530 | y:   -3400
+# time:                11690 | y:     926
+# time:                11850 | y:    3752
+# time:                12010 | y:    3917
+# time:                12170 | y:    1874
+# time:                12330 | y:    -850
+# time:                12490 | y:   -2637
+# time:                12650 | y:   -2655
+# time:                12810 | y:   -1174
+# time:                12970 | y:     751
+# time:                13130 | y:    1978
+# time:                13290 | y:    1918
+# time:                13450 | y:     786
+# time:                13610 | y:    -638
+# time:                13770 | y:   -1513
+# time:                13930 | y:   -1424
+# time:                14090 | y:    -548
+# time:                14250 | y:     518
+# time:                14410 | y:    1154
+# time:                14570 | y:    1063
+# time:                14730 | y:     395
+# time:                14890 | y:    -400
+# time:                15050 | y:    -864
+# time:                15210 | y:    -787
+# time:                15370 | y:    -290
+# time:                15530 | y:     291
+# time:                15690 | y:     626
+# time:                15850 | y:     570
+# time:                16010 | y:     216
+# time:                16170 | y:    -197
+# time:                16330 | y:    -435
+# time:                16490 | y:    -400
+# time:                16650 | y:    -160
+# time:                16810 | y:     120
+# time:                16970 | y:     282
+# time:                17130 | y:     262
+# time:                17290 | y:     102
+# time:                17450 | y:     -92
+# time:                17610 | y:    -219
+# time:                17770 | y:    -237
+# time:                17930 | y:    -167
+# time:                18090 | y:     -69
+# time:                18250 | y:       2
+# time:                18410 | y:      66
+# time:                18570 | y:       0
+# time:                18730 | y:       0
+# time:                18890 | y:       0
+# time:                19050 | y:       0
+# time:                19210 | y:       0
+# time:                19370 | y:       0
+# time:                19530 | y:       0
+# time:                19690 | y:       0
+# time:                19850 | y:       0
 # 

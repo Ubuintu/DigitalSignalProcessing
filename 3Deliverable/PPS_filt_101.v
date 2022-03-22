@@ -207,10 +207,22 @@ always @ (posedge sys_clk)
 
 
 
+//always @ (posedge sys_clk)
+//    if (reset) y<= 18'sd0;
+//    //else if (sam_clk_en) y<=$signed( {sum_lvl[LENGTH+OFFSET-1][16:0],1'b0} );
+//    else if (sam_clk_en) y<=$signed(sum_lvl_7);
+//    else y<=$signed(y);
+	 
+integer inte=0;
 always @ (posedge sys_clk)
     if (reset) y<= 18'sd0;
     //else if (sam_clk_en) y<=$signed( {sum_lvl[LENGTH+OFFSET-1][16:0],1'b0} );
-    else if (sam_clk_en) y<=$signed(sum_lvl_7);
+    else if (sam_clk_en) begin
+		y<=$signed(sum_lvl_7);
+//		$display("index: %d | y: %d",i,y);
+		$display("time: %t | y: %d",$time,y);
+		inte=inte+1;
+    end
     else y<=$signed(y);
 
 initial begin

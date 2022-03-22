@@ -47,14 +47,22 @@ safety=1-2^-17;
 wght=[2.4535 1 20]; 
 h_PPS=firpm(M,fb,a,wght); 
 h_PPS=h_PPS.*wn.'; 
-wc_PPS=sum(abs(h_PPS)*.75); 
+
+% **scale coeffs to be 1s17 where scaling is based on wc 1s17 input OR wc input from mapper**
+% wc_PPS=sum(abs(h_PPS)*.75); 
+wc_PPS=sum(abs(h_PPS)); 
 wc_GSPS=sum(abs(h_GSPS)*.75); 
-wc_GSM=sum(abs(h_GSM)*.75)*safety;
-wc_GSM=sum(abs(h_GSM)*.75)*safety;
-% h_PPS=safety*h_PPS/wc_PPS; h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
+wc_GSM=sum(abs(h_GSM))*safety;
+% wc_GSM=sum(abs(h_GSM)*.75)*safety;
+
+% uncomment to scale to 1s17 WC/comment for noscale
+% h_PPS=safety*h_PPS/wc_PPS; 
+% h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
 h_GSM=safety*h_GSM/wc_GSM;
+
 h_GSMGSPS=conv(h_GSPS,h_GSM); h_GSMPPS=conv(h_PPS,h_GSM);
 
+%MER for GS & Practical conv
 numGSPS = h_GSMGSPS(N); denGSPS = zeros(floor(length(h_GSMGSPS)/Nsps),1);   %Gold Standard Pulse Shaping
 numGPPS = h_GSMPPS(N); denGPPS = zeros(floor(length(h_GSMPPS)/Nsps),1);     %Practical Pulse Shaping
 
@@ -129,6 +137,17 @@ for i = 1:cols
 end
 fprintf("end\n");
 % fprintf('\nEnd of 0s18 Coefficients for PPS filter:\n\n');
+
+%% Debug coeff
+clc
+for i=1:round(length(h_PPS_0s18)/2)
+    if (h_PPS_0s18(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(i-1),abs(h_PPS_0s18(i)) );
+    else
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(i-1),abs(h_PPS_0s18(i)) );
+    end
+end
+
 %% GSPS coeffs
 clc
 [rows, cols] = size(MF_GSPS);
@@ -152,6 +171,8 @@ end
 fprintf("end\n");
 % fprintf('End of 0s18 Coefficients for GSPS filter:\n\n');
 
+
+
 %% GSM
 clc
 fprintf("initial begin\n")
@@ -163,3 +184,15 @@ for i=1:round(length(h_GSM_0s18)/2)
     end
 end
 fprintf("end\n")
+
+%% MER calculation from circuit
+clear
+clc
+% example
+% mapOutPwr=5116;
+% avgSqErr=4716353999;
+
+mapOutPwr= 332;
+avgSqErr= 9000573573675;
+
+MER=10*log10(2^38*mapOutPwr/avgSqErr);

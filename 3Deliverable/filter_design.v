@@ -121,10 +121,17 @@ wire [13:0] DAC_out;
 /* keep for combinational; preserve for registers; noprune for fan out*/
 (* preserve *) reg [21:0] counter;
 (* preserve *) reg cycle;
+	
+wire signed [17:0] err_acc;
+//wire signed [17:0] err_square;	//for original err_Sqr circuit
+wire signed [55:0] err_square;
+
+//output of matched DS filter
+(* keep *) wire signed [17:0] dec_var;
 
 //Wait for DUT to be driven with 2^20 symbols
 always @ (posedge sys_clk)
-	if (~KEY[3] || counter >= 22'd4194303)
+	if (~KEY[3] || counter > 22'd4194303)
 		counter=22'd0;
 	else if (sam_clk_ena)
 		counter = counter+22'd1;
@@ -148,10 +155,7 @@ PPS_filt_101 DUT_TX (
 	.y(srrc_out)
 	);
 
-//output of matched DS filter
-(* keep *) wire signed [17:0] dec_var;
-
-wire signed [17:0] MF_out;
+(* keep *) wire signed [17:0] MF_out;
 
 //GSM
 //GSM_noMult (
@@ -173,6 +177,7 @@ always @ (posedge sys_clk)
 		MDELAY[0]=MF_out;
 	else
 		MDELAY[0]=$signed(MDELAY[0]);
+	
 		
 always @ (posedge sys_clk)
 	if (sam_clk_ena)
@@ -188,7 +193,7 @@ always @ (posedge sys_clk)
 			2'd1		:	MUX_out=MDELAY[1];
 			2'd2		:	MUX_out=MDELAY[2];
 			2'd3		:	MUX_out=MDELAY[3];
-			default	:	MUX_out=MDELAY[0];
+			default	:	MUX_out=MF_out;
 		endcase
 	end
 	
@@ -231,9 +236,6 @@ always @ (posedge sys_clk)
 	else if (sym_clk_ena) error = dec_var - map_out_ref_lvl;
 	else error = error;
 	
-wire signed [17:0] err_acc;
-//wire signed [17:0] err_square;	//for original err_Sqr circuit
-wire signed [55:0] err_square;
 avg_err_squared_55 AVG_ER_SQR (
 	.error(error),
 	.sym_clk_en(sym_clk_ena),

@@ -1,16 +1,16 @@
-/home/tob208/engr-ece/Documents/EE465/2Deliverable/timing_analysis/simulation/modelsim/deliverable2_testbench.v {1 {vlog -work work -stats=none /home/tob208/engr-ece/Documents/EE465/2Deliverable/timing_analysis/simulation/modelsim/deliverable2_testbench.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module deliverable2_testbench
-
-Top level modules:
-	deliverable2_testbench
-
-} {} {}} /home/tob208/engr-ece/Documents/EE465/2Deliverable/timing_analysis/simulation/modelsim/deliverable2.vo {1 {vlog -work work -stats=none /home/tob208/engr-ece/Documents/EE465/2Deliverable/timing_analysis/simulation/modelsim/deliverable2.vo
+/home/tob208/engr-ece/Documents/EE465/2Deliverable/timing_analysis/simulation/modelsim/deliverable2.vo {1 {vlog -work work -stats=none /home/tob208/engr-ece/Documents/EE465/2Deliverable/timing_analysis/simulation/modelsim/deliverable2.vo
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module deliverable2_TA
 -- Compiling module hard_block
 
 Top level modules:
 	deliverable2_TA
+
+} {} {}} /home/tob208/engr-ece/Documents/EE465/2Deliverable/timing_analysis/simulation/modelsim/deliverable2_testbench.v {1 {vlog -work work -stats=none /home/tob208/engr-ece/Documents/EE465/2Deliverable/timing_analysis/simulation/modelsim/deliverable2_testbench.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module deliverable2_testbench
+
+Top level modules:
+	deliverable2_testbench
 
 } {} {}}
