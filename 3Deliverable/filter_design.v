@@ -148,6 +148,7 @@ always @ (posedge sys_clk)
 	
 //PPS_filt DUT_TX (
 PPS_filt_101 DUT_TX (
+//GSM_101Mults DUT_TX (	//debug MER circuit
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
@@ -167,7 +168,7 @@ GSM_101Mults DUT_RCV (
 	.y(MF_out)
 );
 
-//delay outputs for MUX @ sample clk
+//delay outputs for MUX @ sample clk. output of MF should come out w/e AND then needs to be sample by sam_clk & sym_clk sequentially
 reg signed [17:0] MDELAY [3:0]; 
 
 always @ (posedge sys_clk)
@@ -193,7 +194,7 @@ always @ (posedge sys_clk)
 			2'd1		:	MUX_out=MDELAY[1];
 			2'd2		:	MUX_out=MDELAY[2];
 			2'd3		:	MUX_out=MDELAY[3];
-			default	:	MUX_out=MF_out;
+			default	:	MUX_out=MF_out;	//MF_out is pipelined @ sam_clk
 		endcase
 	end
 	
@@ -216,7 +217,7 @@ mapper_ref MAP_CMP (
 	.ref_lvl(ref_lvl)
 );
 //AVG_MAG
-wire signed [17:0] ref_lvl, map_out_pwr, ref_lvlQ, map_out_pwrQ;
+wire signed [17:0] ref_lvl, map_out_pwr;
 
 avg_mag AVG_MAG_DV (
 	.dec_var(dec_var),
@@ -233,7 +234,7 @@ avg_mag AVG_MAG_DV (
 
 always @ (posedge sys_clk)
 	if (~KEY[3]) error = 18'sd0;
-	else if (sym_clk_ena) error = dec_var - map_out_ref_lvl;
+	else if (sym_clk_ena) error = $signed(dec_var) - $signed(map_out_ref_lvl);
 	else error = error;
 	
 avg_err_squared_55 AVG_ER_SQR (

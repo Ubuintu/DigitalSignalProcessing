@@ -43,33 +43,41 @@ N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;  %Amplitude on SA might chang
 M=N-1; span=M/Nsps; h_GSPS=rcosdesign(betaTx,span,Nsps); h_GSM=rcosdesign(betaRcv,span,Nsps); wn=kaiser(N,betaK);
 fc=1/2/Nsps; fp=(1-betaTx)*fc; fs=(1+betaTx)*fc; fb=[0 fp fc fc fs .5]*2; a=[1 1 1/sqrt(2) 1/sqrt(2) 0 0]; 
 % safety=1-2^-17; %best scaling atm 
-safety=1-2^-17; 
+safety=1-2^-16; 
 wght=[2.4535 1 20]; 
 h_PPS=firpm(M,fb,a,wght); 
 h_PPS=h_PPS.*wn.'; 
 
 % **scale coeffs to be 1s17 where scaling is based on wc 1s17 input OR wc input from mapper**
-% wc_PPS=sum(abs(h_PPS)*.75); 
-wc_PPS=sum(abs(h_PPS)); 
-wc_GSPS=sum(abs(h_GSPS)*.75); 
+% wc_PPS=sum(abs(h_PPS));
+wc_PPS=sum(abs(h_PPS)*.75);  
 wc_GSM=sum(abs(h_GSM))*safety;
 % wc_GSM=sum(abs(h_GSM)*.75)*safety;
+wc_GSPS=sum(abs(h_GSPS)*.75); 
 
-% uncomment to scale to 1s17 WC/comment for noscale
+% uncomment to scale to 1s17 WC/comment for noscale; NEED to scale for
+% headroom
 % h_PPS=safety*h_PPS/wc_PPS; 
+% h_PPS=safety*h_PPS/max(abs(h_PPS));     %scale headroom so that pk is less than 1s17
+h_PPS=safety*h_PPS/max(abs(h_PPS))/2;     %scale headroom so that peak of conv is ~1
 % h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
-h_GSM=safety*h_GSM/wc_GSM;
+% h_GSM=safety*h_GSM/wc_GSM;
+h_GSM=safety*h_GSM/max(abs(h_GSM))/1.888;
 
-h_GSMGSPS=conv(h_GSPS,h_GSM); h_GSMPPS=conv(h_PPS,h_GSM);
+h_GSMGSPS=conv(h_GSPS,h_GSM); 
+h_GSMPPS=conv(h_PPS,h_GSM);
+h_GSMGSM=conv(h_GSM,h_GSM); %for debugging GSM
 
 %MER for GS & Practical conv
 numGSPS = h_GSMGSPS(N); denGSPS = zeros(floor(length(h_GSMGSPS)/Nsps),1);   %Gold Standard Pulse Shaping
 numGPPS = h_GSMPPS(N); denGPPS = zeros(floor(length(h_GSMPPS)/Nsps),1);     %Practical Pulse Shaping
+numGSGS = h_GSMGSM(N); denGSGS = zeros(floor(length(h_GSMGSM)/Nsps),1);     %Practical Pulse Shaping
 
 idx = 1;cnt = 0;
 for i = 1:2*N-1
     if cnt == 0 && i ~= N
         denGSPS(idx)=h_GSMGSPS(i); denGPPS(idx)=h_GSMPPS(i);
+        denGSGS(idx)=h_GSMGSM(i);
         cnt = cnt + 1;idx = idx + 1;
     elseif cnt >= Nsps-1
         cnt = 0;
@@ -79,8 +87,13 @@ for i = 1:2*N-1
 end
 
 MER_GSPS=10*log10(numGSPS^2/sum(denGSPS.^2)); MER_GPPS=10*log10(numGPPS^2/sum(denGPPS.^2));
-% !!! COEFFS ARE SMALL ENOUGH FOR 0s17
-h_PPS_0s18=round(h_PPS.*2^18); h_GSPS_0s18=round(h_GSPS*2.^18); h_GSM_0s18=round(h_GSM*2.^18);
+MER_GSGS=10*log10(numGSGS^2/sum(denGSGS.^2));
+% !!! COEFFS ARE SMALL ENOUGH FOR 0s18 BUT should be 1s17 for consistent
+% format thruout
+h_PPS_1s17=round(h_PPS.*2^17); 
+h_GSPS_1s17=round(h_GSPS*2.^17);
+% GSM w/o reduction
+h_GSM_0s18=round(h_GSM*2.^18);
 
 % values for LUT 4-ASK mapper; ensure output of 4-ASK mapper is a 1s17
 % input to transmit filter
@@ -99,9 +112,10 @@ POSSINPUT= combine(possible_inputs, ASK_out.');
 POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
 possible_inputs_verilog = round(possible_inputs*2^16); 
+% coeffs of PPS are less
 MF_PPS=round(ASK_out.'*h_PPS.*2^17*safety);    % 0s18 gives me smoothest stp; idk y
 % MF_PPS=round(POSSINPUT*h_PPS.*2^16);    
-MF_GSPS=round(ASK_out.'*h_GSPS_0s18);
+MF_GSPS=round(ASK_out.'*h_GSPS_1s17);
 
 num_of_sumLvls=0; coeffs2reduce=N;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
@@ -122,10 +136,10 @@ clc
 fprintf("initial begin\n");
 for i = 1:cols
     for j = 1:rows+1
-        if j == rows+1 && h_PPS_0s18(i) >= 0
-            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
-        elseif j == rows+1 && h_PPS_0s18(i) < 0
-            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_0s18(i)) ) );
+        if j == rows+1 && h_PPS_1s17(i) >= 0
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_1s17(i)) ) );
+        elseif j == rows+1 && h_PPS_1s17(i) < 0
+            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_PPS_1s17(i)) ) );
         elseif MF_PPS(j,i) > 0
             fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_PPS(j,i)) ) );
         elseif MF_PPS(j,i) < 0
@@ -138,13 +152,13 @@ end
 fprintf("end\n");
 % fprintf('\nEnd of 0s18 Coefficients for PPS filter:\n\n');
 
-%% Debug coeff
+%% Debug PPS coeff
 clc
-for i=1:round(length(h_PPS_0s18)/2)
-    if (h_PPS_0s18(i)<0)
-        fprintf("\tHsys[%d] = -18'sd%d;\n",(i-1),abs(h_PPS_0s18(i)) );
+for i=1:round(length(h_PPS_1s17)/2)
+    if (h_PPS_1s17(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(i-1),abs(h_PPS_1s17(i)) );
     else
-        fprintf("\tHsys[%d] = 18'sd%d;\n",(i-1),abs(h_PPS_0s18(i)) );
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(i-1),abs(h_PPS_1s17(i)) );
     end
 end
 
@@ -155,10 +169,10 @@ clc
 fprintf("\ninitial begin\n");
 for i = 1:ceil(cols/2)
     for j = 1:rows+1
-        if j == rows+1 && h_GSPS_0s18(i) > 0
-            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_0s18(i)) ) );
-        elseif j == rows+1 && h_GSPS_0s18(i) < 0
-            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_0s18(i)) ) );
+        if j == rows+1 && h_GSPS_1s17(i) > 0
+            fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_1s17(i)) ) );
+        elseif j == rows+1 && h_GSPS_1s17(i) < 0
+            fprintf('\tHsys[%d][%d] = -18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_1s17(i)) ) );
         elseif MF_GSPS(j,i) > 0
             fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(MF_GSPS(j,i)) ) );
         elseif MF_GSPS(j,i) < 0
@@ -173,7 +187,7 @@ fprintf("end\n");
 
 
 
-%% GSM
+%% GSM no reduction Coeff
 clc
 fprintf("initial begin\n")
 for i=1:round(length(h_GSM_0s18)/2)
@@ -188,11 +202,11 @@ fprintf("end\n")
 %% MER calculation from circuit
 clear
 clc
-% example
+% example; should give MER of 55 dB from D2
 % mapOutPwr=5116;
 % avgSqErr=4716353999;
 
-mapOutPwr= 332;
-avgSqErr= 9000573573675;
+mapOutPwr= 3642;
+avgSqErr= 55084625528822;
 
 MER=10*log10(2^38*mapOutPwr/avgSqErr);

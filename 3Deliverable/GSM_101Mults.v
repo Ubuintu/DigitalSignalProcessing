@@ -64,7 +64,7 @@ always @ (posedge sys_clk)
     if (reset) 
         x[0]=18'sd0;
     else if (sam_clk_en) begin
-        x[0]<=$signed( {x_in[17],x_in[17:1]} );
+        x[0]<=$signed( {x_in[17],x_in[17:1]} );	//format input to 2s16 to prevent overflow
         //x[0]<=$signed(x_in );	// for IR
     end
     else
@@ -112,7 +112,8 @@ always @ *
     end
     else begin
         for(i=0; i<SUMLV1; i=i+1)
-		mult_out[i] = $signed(Hsys[i])*$signed(sum_lvl_1[i]);
+				//mult_out (2s34) = 0s18 * 2s16
+				mult_out[i] = $signed(Hsys[i])*$signed(sum_lvl_1[i]);
     end
 
 //!!! SEE D3.m for structure of filter/center tap location !!!
@@ -124,7 +125,7 @@ always @ (posedge sys_clk)
     end
     else if (sam_clk_en) begin
         for (i=0; i<SUMLV2-1; i=i+1)
-	    //mult_out (2s34) -> sum_lvl_2 1s17
+				//mult_out (2s34) -> sum_lvl_2 1s17
             sum_lvl_2[i]<=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
     end
 //for center
@@ -207,57 +208,57 @@ always @ (posedge sys_clk)
     else y<=$signed(y);
 
 initial begin
-	Hsys[0] = 18'sd73;
-	Hsys[1] = -18'sd7;
-	Hsys[2] = -18'sd89;
-	Hsys[3] = -18'sd99;
-	Hsys[4] = -18'sd22;
-	Hsys[5] = 18'sd87;
-	Hsys[6] = 18'sd137;
-	Hsys[7] = 18'sd76;
-	Hsys[8] = -18'sd60;
-	Hsys[9] = -18'sd167;
-	Hsys[10] = -18'sd153;
-	Hsys[11] = -18'sd12;
-	Hsys[12] = 18'sd156;
-	Hsys[13] = 18'sd219;
-	Hsys[14] = 18'sd116;
-	Hsys[15] = -18'sd87;
-	Hsys[16] = -18'sd235;
-	Hsys[17] = -18'sd205;
-	Hsys[18] = -18'sd9;
-	Hsys[19] = 18'sd201;
-	Hsys[20] = 18'sd251;
-	Hsys[21] = 18'sd84;
-	Hsys[22] = -18'sd173;
-	Hsys[23] = -18'sd297;
-	Hsys[24] = -18'sd149;
-	Hsys[25] = 18'sd184;
-	Hsys[26] = 18'sd426;
-	Hsys[27] = 18'sd320;
-	Hsys[28] = -18'sd141;
-	Hsys[29] = -18'sd639;
-	Hsys[30] = -18'sd731;
-	Hsys[31] = -18'sd198;
-	Hsys[32] = 18'sd705;
-	Hsys[33] = 18'sd1329;
-	Hsys[34] = 18'sd1057;
-	Hsys[35] = -18'sd178;
-	Hsys[36] = -18'sd1686;
-	Hsys[37] = -18'sd2348;
-	Hsys[38] = -18'sd1369;
-	Hsys[39] = 18'sd1014;
-	Hsys[40] = 18'sd3408;
-	Hsys[41] = 18'sd3971;
-	Hsys[42] = 18'sd1626;
-	Hsys[43] = -18'sd2912;
-	Hsys[44] = -18'sd7056;
-	Hsys[45] = -18'sd7450;
-	Hsys[46] = -18'sd1796;
-	Hsys[47] = 18'sd9590;
-	Hsys[48] = 18'sd23440;
-	Hsys[49] = 18'sd34770;
-	Hsys[50] = 18'sd39137;
+	Hsys[0] = 18'sd257;
+	Hsys[1] = -18'sd26;
+	Hsys[2] = -18'sd311;
+	Hsys[3] = -18'sd349;
+	Hsys[4] = -18'sd78;
+	Hsys[5] = 18'sd305;
+	Hsys[6] = 18'sd480;
+	Hsys[7] = 18'sd267;
+	Hsys[8] = -18'sd211;
+	Hsys[9] = -18'sd588;
+	Hsys[10] = -18'sd537;
+	Hsys[11] = -18'sd42;
+	Hsys[12] = 18'sd548;
+	Hsys[13] = 18'sd769;
+	Hsys[14] = 18'sd406;
+	Hsys[15] = -18'sd306;
+	Hsys[16] = -18'sd825;
+	Hsys[17] = -18'sd719;
+	Hsys[18] = -18'sd32;
+	Hsys[19] = 18'sd708;
+	Hsys[20] = 18'sd882;
+	Hsys[21] = 18'sd294;
+	Hsys[22] = -18'sd609;
+	Hsys[23] = -18'sd1042;
+	Hsys[24] = -18'sd523;
+	Hsys[25] = 18'sd647;
+	Hsys[26] = 18'sd1498;
+	Hsys[27] = 18'sd1124;
+	Hsys[28] = -18'sd494;
+	Hsys[29] = -18'sd2245;
+	Hsys[30] = -18'sd2569;
+	Hsys[31] = -18'sd696;
+	Hsys[32] = 18'sd2478;
+	Hsys[33] = 18'sd4671;
+	Hsys[34] = 18'sd3718;
+	Hsys[35] = -18'sd624;
+	Hsys[36] = -18'sd5926;
+	Hsys[37] = -18'sd8253;
+	Hsys[38] = -18'sd4812;
+	Hsys[39] = 18'sd3564;
+	Hsys[40] = 18'sd11983;
+	Hsys[41] = 18'sd13960;
+	Hsys[42] = 18'sd5717;
+	Hsys[43] = -18'sd10238;
+	Hsys[44] = -18'sd24808;
+	Hsys[45] = -18'sd26193;
+	Hsys[46] = -18'sd6313;
+	Hsys[47] = 18'sd33716;
+	Hsys[48] = 18'sd82410;
+	Hsys[49] = 18'sd122244;
+	Hsys[50] = 18'sd137596;
 end
 
 endmodule 
