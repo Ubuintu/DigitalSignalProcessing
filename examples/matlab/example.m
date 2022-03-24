@@ -157,7 +157,7 @@ span = (N-1)/4;
 for bk = 0:0.1:0
 % for bk = 1:1
 % for bk = 2:0.1:2
-    for idx_TXnRCV = idx_101(1):(idx_101(end))
+    for idx_TXnRCV = idx_101(1):(idx_101(1))
 %     for idx_TXnRCV = idx_101():(idx_101(end))
 %     for idx_TXnRCV = idx_93(4):(idx_93(5))
 %     for idx_TXnRCV = idx_97(1):(idx_97(1))
@@ -196,9 +196,9 @@ for bk = 0:0.1:0
         bnd_OB2=bnd_OB1+(1.53/sam_r8); 
         bnd_OB3=bnd_OB2+(1.75/sam_r8);
         ind_BB = find( w/2/pi <= bnd_BB);
-        ind_OB1 = find(w/2/pi>bnd_BB & w/2/pi<=bnd_OB1);
-        ind_OB2 = find(w/2/pi>bnd_OB1 & w/2/pi<=bnd_OB2);
-        ind_OB3 = find(w/2/pi>bnd_OB2 & w/2/pi<=bnd_OB3);
+        ind_OB1 = find(w/2/pi>=bnd_BB & w/2/pi<=bnd_OB1);
+        ind_OB2 = find(w/2/pi>=bnd_OB1 & w/2/pi<=bnd_OB2);
+        ind_OB3 = find(w/2/pi>=bnd_OB2 & w/2/pi<=bnd_OB3);
 
         conv2Lin = @(x) 10.^(x/20);
         conv2dB =  @(x) 10.*log10(x);
@@ -206,9 +206,9 @@ for bk = 0:0.1:0
         % Power is the ratio of 2 power quantities and can be referred to
         % as gain in dB. Comparing power requires the integral, the
         % integral can also be thought as the sum of the area as well;
-        % sum(magnitude^2) is integrating each power of each frequency
+        % sum(magnitude in linear units^2) is integrating each power of each frequency
         
-        pwr_BB=2*sum(mag_H(ind_BB(1):ind_BB(end)).^2);
+        pwr_BB=2*sum( mag_H(ind_BB(1):ind_BB(end)).^2 );
         pwr_OB1=sum(mag_H(ind_OB1(1):ind_OB1(end)).^2);
         pwr_OB2=sum(mag_H(ind_OB2(1):ind_OB2(end)).^2);
         pwr_OB3=sum(mag_H(ind_OB3(1):ind_OB3(end)).^2);
@@ -217,31 +217,6 @@ for bk = 0:0.1:0
         dB_OB1 = conv2dB(pwr_BB/pwr_OB1);
         dB_OB2 = conv2dB(pwr_BB/pwr_OB2);
         dB_OB3 = conv2dB(pwr_BB/pwr_OB3);
-        
-%         cs=w/(2*pi); % freq in cycles per sample
-% 
-%         % find the ranges of the bands
-%         % signal 0 --> .14
-%         sigl=find(cs<.14, 1 );
-%         sigu=find(cs<.14, 1, 'last' );
-%         % OB1 .14 --> .1752
-%         ob1l=find(cs>.14 & cs<.1752, 1 );
-%         ob1u=find(cs>.14 & cs<.1752, 1, 'last' );
-%         % OB2 .1752 --> .42
-%         ob2l=find(cs>.1752 & cs<.42, 1 );
-%         ob2u=max(find(cs>.1752 & cs<.42));
-%         % OB3 .42 --> .7
-%         ob3l=min(find(cs>.42 & cs<.7));
-%         ob3u=max(find(cs>.42 & cs<.7));
-% 
-%         power_sig=sum(abs(H_pps(sigl:sigu)).^2)*2;
-%         power_ob1=sum(abs(H_pps(ob1l:ob1u)).^2);
-%         power_ob2=sum(abs(H_pps(ob2l:ob2u)).^2);
-%         power_ob3=sum(abs(H_pps(ob3l:ob3u)).^2);
-% 
-%         a=10*log10(power_sig/power_ob1);
-%         b=10*log10(power_sig/power_ob2);
-%         c=10*log10(power_sig/power_ob3);
 
         % can cascade firpm sqrt w/srrc, center coeff
         % isn't one BUT even symmetric

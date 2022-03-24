@@ -10521,3 +10521,14 @@
  41.678347   0.149500   0.197000         97      83281  58.024468  65.338577  64.746258   0.100000         20 
  41.702335   0.149500   0.197400         97      83282  58.024468  65.338577  64.746258   0.100000         20 
        MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3   b Kaiser     weight 
+       MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3   b Kaiser     weight 
+ 40.538409   0.142500   0.177500        101     140045  61.449877  64.120305  63.504564   0.000000         20 
+       MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3   b Kaiser     weight 
+ 40.538409   0.142500   0.177500        101     140045  61.421606  64.120138  63.504564   0.000000         20 
+       MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3   b Kaiser     weight 
+ 40.538409   0.142500   0.177500        101     140045  61.421606  64.120138  63.504564   0.000000         20 
+       MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3   b Kaiser     weight 
+ 40.538409   0.142500   0.177500        101     140045  61.421606  64.120138  63.504564   0.000000         20 
+       MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3   b Kaiser     weight 
+ 40.538409   0.142500   0.177500        101     140045  61.421606  64.120138  63.504564   0.000000         20 
+       MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3   b Kaiser     weight 

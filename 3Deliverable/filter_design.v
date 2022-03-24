@@ -175,9 +175,9 @@ always @ (posedge sys_clk)
 	if (~KEY[3]) 
 		MDELAY[0]=18'sd0;
 	else if (sam_clk_ena)
-		MDELAY[0]=MF_out;
+		MDELAY[0]<=MF_out;
 	else
-		MDELAY[0]=$signed(MDELAY[0]);
+		MDELAY[0]<=$signed(MDELAY[0]);
 	
 		
 always @ (posedge sys_clk)
@@ -191,10 +191,10 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
 	if (sym_clk_ena) begin
 		case(SW[17:16])
-			2'd1		:	MUX_out=MDELAY[1];
-			2'd2		:	MUX_out=MDELAY[2];
-			2'd3		:	MUX_out=MDELAY[3];
-			default	:	MUX_out=MF_out;	//MF_out is pipelined @ sam_clk
+			2'd1		:	MUX_out<=$signed(MDELAY[1]);
+			2'd2		:	MUX_out<=$signed(MDELAY[2]);
+			2'd3		:	MUX_out<=$signed(MDELAY[3]);
+			default	:	MUX_out<=$signed(MF_out);	//MF_out is pipelined @ sam_clk
 		endcase
 	end
 	
