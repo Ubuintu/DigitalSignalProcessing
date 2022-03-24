@@ -48,6 +48,8 @@ wght=[2.4535 1 20];
 h_PPS=firpm(M,fb,a,wght); 
 h_PPS=h_PPS.*wn.'; 
 
+
+
 % **scale coeffs to be 1s17 where scaling is based on wc 1s17 input OR wc input from mapper**
 % wc_PPS=sum(abs(h_PPS));
 wc_PPS=sum(abs(h_PPS)*.75);  
@@ -59,10 +61,16 @@ wc_GSPS=sum(abs(h_GSPS)*.75);
 % headroom
 % h_PPS=safety*h_PPS/wc_PPS; 
 % h_PPS=safety*h_PPS/max(abs(h_PPS));     %scale headroom so that pk is less than 1s17
-h_PPS=safety*h_PPS/max(abs(h_PPS))/2;     %scale headroom so that peak of conv is ~1
+h_PPS=safety*h_PPS/max(abs(h_PPS));     %scale headroom so that peak of conv is ~1
 % h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
 % h_GSM=safety*h_GSM/wc_GSM;
-h_GSM=safety*h_GSM/max(abs(h_GSM))/1.888;
+h_GSM=safety*h_GSM/max(abs(h_GSM));
+
+%% Change Coeff
+load('h_PPS.mat');
+h_PPS = h_pps/2^17;
+
+%%
 
 h_GSMGSPS=conv(h_GSPS,h_GSM); 
 h_GSMPPS=conv(h_PPS,h_GSM);
@@ -93,7 +101,7 @@ MER_GSGS=10*log10(numGSGS^2/sum(denGSGS.^2));
 h_PPS_1s17=round(h_PPS.*2^17); 
 h_GSPS_1s17=round(h_GSPS*2.^17);
 % GSM w/o reduction
-h_GSM_0s18=round(h_GSM*2.^18);
+h_GSM_1s17=round(h_GSM*2.^17);
 
 % values for LUT 4-ASK mapper; ensure output of 4-ASK mapper is a 1s17
 % input to transmit filter
@@ -129,6 +137,7 @@ for i=1:N
     end
 end
 fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
+
 %% PPS coeffs
 clc
 [rows, cols] = size(MF_PPS);
@@ -190,11 +199,11 @@ fprintf("end\n");
 %% GSM no reduction Coeff
 clc
 fprintf("initial begin\n")
-for i=1:round(length(h_GSM_0s18)/2)
-    if (h_GSM_0s18(i)<0)
-        fprintf("\tHsys[%d] = -18'sd%d;\n",(i-1),abs(h_GSM_0s18(i)) );
+for i=1:round(length(h_GSM_1s17)/2)
+    if (h_GSM_1s17(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(i-1),abs(h_GSM_1s17(i)) );
     else
-        fprintf("\tHsys[%d] = 18'sd%d;\n",(i-1),abs(h_GSM_0s18(i)) );
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(i-1),abs(h_GSM_1s17(i)) );
     end
 end
 fprintf("end\n")
@@ -206,7 +215,7 @@ clc
 % mapOutPwr=5116;
 % avgSqErr=4716353999;
 
-mapOutPwr= 3642;
-avgSqErr= 55084625528822;
+mapOutPwr= 316;
+avgSqErr= 5878014247640;
 
 MER=10*log10(2^38*mapOutPwr/avgSqErr);

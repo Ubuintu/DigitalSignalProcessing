@@ -149,15 +149,16 @@ idx_85=find(vLen==85); idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find
 % w = [0:0.001:1000]/1000*pi; %0-0.5
 w = [0:0.001:200]/100*pi; %one whole cycle
 
-N = 97;
+N = 101;
 Nsps = 4;
 span = (N-1)/4;
 % for bk = 1.5:0.01:2
 % for bk = 0.3:0.1:0.3
-for bk = 0:0.1:2
+for bk = 0:0.1:0
 % for bk = 1:1
 % for bk = 2:0.1:2
-    for idx_TXnRCV = idx_93(1):(idx_93(end))
+    for idx_TXnRCV = idx_101(1):(idx_101(end))
+%     for idx_TXnRCV = idx_101():(idx_101(end))
 %     for idx_TXnRCV = idx_93(4):(idx_93(5))
 %     for idx_TXnRCV = idx_97(1):(idx_97(1))
 %     for idx_TXnRCV = 505:513
