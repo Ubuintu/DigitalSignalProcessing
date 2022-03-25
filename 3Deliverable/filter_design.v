@@ -147,8 +147,8 @@ always @ (posedge sys_clk)
 		cycle<=1'b0;
 	
 //PPS_filt DUT_TX (
-//PPS_filt_101 DUT_TX (
-GSM_101Mults DUT_TX (	//debug MER circuit
+PPS_filt_101 DUT_TX (
+//GSM_101Mults DUT_TX (	//debug MER circuit
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
