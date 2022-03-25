@@ -62,10 +62,10 @@ end
 //scale 1s17->2s16 for summing
 always @ (posedge sys_clk)
     if (reset) 
-        x[0]=18'sd0;
+        x[0]<=18'sd0;
     else if (sam_clk_en) begin
         //x[0]<=$signed( {x_in[17],x_in[17:1]} );
-        x[0]<=$signed(x_in );
+        x[0]<=$signed(x_in);
     end
     else
         x[0]<=$signed(x[0]);
@@ -90,19 +90,19 @@ always @ *
     if (reset) begin
 		 for(i=0;i<LENGTH; i=i+1)
 		 //should be 2s34 (2s16*0s18)
-			  mult_out[i] = 18'sd0;
+			  mult_out[i] <= 18'sd0;
     end
     else begin
         for(i=0; i<LENGTH; i=i+1)
 				 /*For verifying taps*/
 				 if( x[i] == 18'sd131008 ) begin
-					  mult_out[i] = Hsys[4][i];
+					  mult_out[i] <= Hsys[4][i];
 					  //$display("%d %d",mult_out[i],Hsys[11][i]);
 				 end
-				 else if ( ( x[i]>(-18'sd98303-tol) ) && ( x[i]<(-18'sd98303+tol) ) ) mult_out[i] = Hsys[0][i];
-				 else if ( ( x[i]>(-18'sd65536-tol) ) && ( x[i]<(-18'sd65536+tol) ) ) mult_out[i] = Hsys[1][i];
-				 else if ( ( x[i]>(18'sd32768-tol) ) && ( x[i]<(18'sd32768+tol) ) ) mult_out[i] = Hsys[2][i];
-				 else if ( ( x[i]>(18'sd98303-tol) ) && ( x[i]<(18'sd98303+tol) ) ) mult_out[i] = Hsys[3][i];
+				 else if ( ( x[i]>(-18'sd98303-tol) ) && ( x[i]<(-18'sd98303+tol) ) ) mult_out[i] <= Hsys[0][i];
+				 else if ( ( x[i]>(-18'sd65536-tol) ) && ( x[i]<(-18'sd65536+tol) ) ) mult_out[i] <= Hsys[1][i];
+				 else if ( ( x[i]>(18'sd32768-tol) ) && ( x[i]<(18'sd32768+tol) ) ) mult_out[i] <= Hsys[2][i];
+				 else if ( ( x[i]>(18'sd98303-tol) ) && ( x[i]<(18'sd98303+tol) ) ) mult_out[i] <= Hsys[3][i];
 				 else mult_out[i] = 18'sd0;
     end
 
@@ -114,7 +114,7 @@ always @ *
 always @ (posedge sys_clk)
     if (reset) begin
 		 for(i=0;i<SUMLV1-1;i=i+1)
-			  sum_lvl_1[i] = 18'sd0;
+			  sum_lvl_1[i] <= 18'sd0;
     end
     else if (sam_clk_en) begin
 		 for(i=0;i<SUMLV1-1;i=i+1)
@@ -132,7 +132,7 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset) begin
         for (i=0; i<SUMLV2-1; i=i+1)
-            sum_lvl_2[i]=18'sd0;
+            sum_lvl_2[i]<=18'sd0;
     end
     else if (sam_clk_en) begin
         for (i=0; i<SUMLV2-1; i=i+1)
@@ -147,7 +147,7 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset) begin
         for (i=0; i<SUMLV3; i=i+1)
-            sum_lvl_3[i]=18'sd0;
+            sum_lvl_3[i]<=18'sd0;
     end
     else if (sam_clk_en) begin
         for (i=0; i<SUMLV3; i=i+1)
@@ -158,7 +158,7 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset) begin
         for (i=0; i<SUMLV4-1; i=i+1)
-            sum_lvl_4[i]=18'sd0;
+            sum_lvl_4[i]<=18'sd0;
     end
     else if (sam_clk_en) begin
         for (i=0; i<SUMLV4-1; i=i+1)
@@ -175,7 +175,7 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset) begin
         for (i=0; i<SUMLV5-1; i=i+1)
-            sum_lvl_5[i]=18'sd0;
+            sum_lvl_5[i]<=18'sd0;
     end
     else if (sam_clk_en) begin
         for (i=0; i<SUMLV5-1; i=i+1)
@@ -191,7 +191,7 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset) begin
         for (i=0; i<SUMLV6; i=i+1)
-            sum_lvl_6[i]=18'sd0;
+            sum_lvl_6[i]<=18'sd0;
     end
     else if (sam_clk_en) begin
         for (i=0; i<SUMLV6; i=i+1)
@@ -202,7 +202,7 @@ always @ (posedge sys_clk)
 
 /*          SUMLV7              */
 always @ (posedge sys_clk)
-    if (reset) sum_lvl_7 = 18'sd0;
+    if (reset) sum_lvl_7 <= 18'sd0;
     else if (sam_clk_en) sum_lvl_7 <= $signed(sum_lvl_6[0])+$signed(sum_lvl_6[1]);
 
 

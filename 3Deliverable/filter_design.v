@@ -132,23 +132,23 @@ wire signed [55:0] err_square;
 //Wait for DUT to be driven with 2^20 symbols
 always @ (posedge sys_clk)
 	if (~KEY[3] || counter > 22'd4194303)
-		counter=22'd0;
+		counter<=22'd0;
 	else if (sam_clk_ena)
-		counter = counter+22'd1;
+		counter <= counter+22'd1;
 	else
-		counter = counter;
+		counter <= counter;
 		
 always @ (posedge sys_clk)
 	if (~KEY[3]) 
-		cycle = 1'b0;
+		cycle <= 1'b0;
 	else if (sam_clk_ena & counter >= 22'd4194303)
-		cycle=1'b1;
+		cycle<=1'b1;
 	else
-		cycle=1'b0;
+		cycle<=1'b0;
 	
 //PPS_filt DUT_TX (
-PPS_filt_101 DUT_TX (
-//GSM_101Mults DUT_TX (	//debug MER circuit
+//PPS_filt_101 DUT_TX (
+GSM_101Mults DUT_TX (	//debug MER circuit
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
@@ -169,11 +169,11 @@ GSM_101Mults DUT_RCV (
 );
 
 //delay outputs for MUX @ sample clk. output of MF should come out w/e AND then needs to be sample by sam_clk & sym_clk sequentially
-reg signed [17:0] MDELAY [3:0]; 
+(* preserve *) reg signed [17:0] MDELAY [3:0]; 
 
 always @ (posedge sys_clk)
 	if (~KEY[3]) 
-		MDELAY[0]=18'sd0;
+		MDELAY[0]<=18'sd0;
 	else if (sam_clk_ena)
 		MDELAY[0]<=MF_out;
 	else
@@ -204,7 +204,8 @@ assign dec_var=$signed(MUX_out);
 //SLICER
 wire [1:0] slice;
 slicer DECIDER (
-	.dec_var(dec_var),
+//	.dec_var(dec_var),
+	.dec_var(MUX_out),
 	.ref_lvl(ref_lvl),
 	.slice(slice)
 );
@@ -220,7 +221,8 @@ mapper_ref MAP_CMP (
 wire signed [17:0] ref_lvl, map_out_pwr;
 
 avg_mag AVG_MAG_DV (
-	.dec_var(dec_var),
+//	.dec_var(dec_var),
+	.dec_var(MUX_out),
 	.sym_clk_en(sym_clk_ena),
    .clr_acc(cycle),
 	.clk(sys_clk),
@@ -233,9 +235,9 @@ avg_mag AVG_MAG_DV (
 (* preserve *) reg signed [17:0] error;
 
 always @ (posedge sys_clk)
-	if (~KEY[3]) error = 18'sd0;
-	else if (sym_clk_ena) error = $signed(dec_var) - $signed(map_out_ref_lvl);
-	else error = error;
+	if (~KEY[3]) error <= 18'sd0;
+	else if (sym_clk_ena) error <= $signed(dec_var) - $signed(map_out_ref_lvl);
+	else error <= error;
 	
 avg_err_squared_55 AVG_ER_SQR (
 	.error(error),

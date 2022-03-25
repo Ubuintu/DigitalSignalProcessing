@@ -928,7 +928,7 @@
             <node data_index="185" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="counter[0]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="185" tap_mode="classic" trigger_index="185" type="unknown"/>
           </node>
           <node data_index="207" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="rising edge" name="cycle" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="207" tap_mode="classic" trigger_index="207" type="unknown"/>
-          <node is_selected="true" level-0="alt_or" name="avg_mag:AVG_MAG_DV|map_out_pwr[17..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
+          <node is_selected="false" level-0="alt_or" name="avg_mag:AVG_MAG_DV|map_out_pwr[17..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
             <node data_index="157" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="avg_mag:AVG_MAG_DV|map_out_pwr[17]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="157" tap_mode="classic" trigger_index="157" type="unknown"/>
             <node data_index="156" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="avg_mag:AVG_MAG_DV|map_out_pwr[16]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="156" tap_mode="classic" trigger_index="156" type="unknown"/>
             <node data_index="155" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="avg_mag:AVG_MAG_DV|map_out_pwr[15]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="155" tap_mode="classic" trigger_index="155" type="unknown"/>
@@ -1200,7 +1200,7 @@
             <net data_index="185" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="counter[0]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="185" tap_mode="classic" trigger_index="185" type="unknown"/>
           </bus>
           <net data_index="207" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="rising edge" name="cycle" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="207" tap_mode="classic" trigger_index="207" type="unknown"/>
-          <bus is_selected="true" level-0="alt_or" name="avg_mag:AVG_MAG_DV|map_out_pwr[17..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
+          <bus is_selected="false" level-0="alt_or" name="avg_mag:AVG_MAG_DV|map_out_pwr[17..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
             <net data_index="157" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="avg_mag:AVG_MAG_DV|map_out_pwr[17]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="157" tap_mode="classic" trigger_index="157" type="unknown"/>
             <net data_index="156" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="avg_mag:AVG_MAG_DV|map_out_pwr[16]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="156" tap_mode="classic" trigger_index="156" type="unknown"/>
             <net data_index="155" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="avg_mag:AVG_MAG_DV|map_out_pwr[15]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="155" tap_mode="classic" trigger_index="155" type="unknown"/>
@@ -1472,7 +1472,7 @@
             <net data_index="185" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="counter[0]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="185" tap_mode="classic" trigger_index="185" type="unknown"/>
           </bus>
           <net data_index="207" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="rising edge" name="cycle" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="207" tap_mode="classic" trigger_index="207" type="unknown"/>
-          <bus is_selected="true" level-0="alt_or" name="avg_mag:AVG_MAG_DV|map_out_pwr[17..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
+          <bus is_selected="false" level-0="alt_or" name="avg_mag:AVG_MAG_DV|map_out_pwr[17..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="combinatorial">
             <net data_index="157" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="avg_mag:AVG_MAG_DV|map_out_pwr[17]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="157" tap_mode="classic" trigger_index="157" type="unknown"/>
             <net data_index="156" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="avg_mag:AVG_MAG_DV|map_out_pwr[16]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="156" tap_mode="classic" trigger_index="156" type="unknown"/>
             <net data_index="155" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="avg_mag:AVG_MAG_DV|map_out_pwr[15]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="155" tap_mode="classic" trigger_index="155" type="unknown"/>
@@ -1574,7 +1574,7 @@
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="11B9FC50" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2022/03/21 22:00:09  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+      <trigger CRC="11B9FC50" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2022/03/21 22:00:09  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">'cycle' == rising edge
@@ -1607,14 +1607,14 @@
     </signal_set>
     <position_info>
       <single attribute="active tab" value="0"/>
-      <single attribute="data horizontal scroll position" value="98"/>
+      <single attribute="data horizontal scroll position" value="106"/>
       <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
       <single attribute="setup vertical scroll position" value="0"/>
       <single attribute="zoom level denominator" value="1"/>
-      <single attribute="zoom level numerator" value="8"/>
+      <single attribute="zoom level numerator" value="16"/>
       <single attribute="zoom offset denominator" value="1"/>
-      <single attribute="zoom offset numerator" value="16256"/>
+      <single attribute="zoom offset numerator" value="8128"/>
       <multi attribute="timebars" size="1" value="128"/>
     </position_info>
   </instance>

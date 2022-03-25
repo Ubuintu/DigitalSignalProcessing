@@ -22,21 +22,21 @@ always @ *
 
 //for detecting falling edge
 always @ (posedge sys_clk)
-    if (reset) det_edge = 2'd0;
-    else det_edge= {det_edge[0], clr_acc};
+    if (reset) det_edge <= 2'd0;
+    else det_edge <= {det_edge[0], clr_acc};
 
 assign sig_edge = (det_edge == 2'b01);
 
 always @ (posedge sys_clk)
-    if (reset || sig_edge) acc_out = {(LFSR_WID+18){1'b0}};
-    else if (sym_clk_en) acc_out = acc_out + mult_out[34:17];
-    else acc_out = acc_out;
+    if (reset || sig_edge) acc_out <= {(LFSR_WID+18){1'b0}};
+    else if (sym_clk_en) acc_out <= acc_out + mult_out[34:17];
+    else acc_out <= acc_out;
 
 always @ (posedge sys_clk)
-    if (reset) err_int = {(LFSR_WID+18){1'b0}};
+    if (reset) err_int <= {(LFSR_WID+18){1'b0}};
     //else if (clr_acc) err_int = $signed(acc_out >>> $clog2(LFSR_WID));
-    else if (clr_acc) err_int = acc_out >>> (LFSR_WID);
-    else err_int = err_int;
+    else if (clr_acc) err_int <= acc_out >>> (LFSR_WID);
+    else err_int <= err_int;
 
 always @ *
     if (reset) err_square = 18'sd0;
@@ -68,21 +68,21 @@ always @ *
     det_edge = {det_edge[0], clr_acc};
 */
 always @ (posedge sys_clk)
-    if (reset) det_edge = 2'd0;
-    else det_edge= {det_edge[0], clr_acc};
+    if (reset) det_edge <= 2'd0;
+    else det_edge <= {det_edge[0], clr_acc};
 
 assign sig_edge = (det_edge == 2'b01);
 
 always @ (posedge sys_clk)
-    if (reset || sig_edge) acc_out = {(LFSR_WID+18){1'b0}};
-    else if (sym_clk_en) acc_out = acc_out + error;
-    else acc_out = acc_out;
+    if (reset || sig_edge) acc_out <= {(LFSR_WID+18){1'b0}};
+    else if (sym_clk_en) acc_out <= acc_out + error;
+    else acc_out <= acc_out;
 
 always @ (posedge sys_clk)
-    if (reset) err_int = {(LFSR_WID+18){1'b0}};
+    if (reset) err_int <= {(LFSR_WID+18){1'b0}};
     //else if (clr_acc) err_int = $signed(acc_out >>> $clog2(LFSR_WID));
-    else if (clr_acc) err_int = acc_out >>> (LFSR_WID);
-    else err_int = err_int;
+    else if (clr_acc) err_int <= acc_out >>> (LFSR_WID);
+    else err_int <= err_int;
 
 always @ *
     if (reset) err_acc = 18'sd0;
@@ -114,21 +114,21 @@ always @ *
 
 //for detecting falling edge
 always @ (posedge sys_clk)
-    if (reset) det_edge = 2'd0;
-    else det_edge= {det_edge[0], clr_acc};
+    if (reset) det_edge <= 2'd0;
+    else det_edge <= {det_edge[0], clr_acc};
 
 assign sig_edge = (det_edge == 2'b01);
 
 always @ (posedge sys_clk)
-    if (reset || sig_edge) acc_out = {(LFSR_WID){1'b0}};
-    else if (sym_clk_en) acc_out = acc_out + mult_out;
-    else acc_out = acc_out;
+    if (reset || sig_edge) acc_out <= {(LFSR_WID){1'b0}};
+    else if (sym_clk_en) acc_out <= acc_out + mult_out;
+    else acc_out <= acc_out;
 
 always @ (posedge sys_clk)
-    if (reset) err_int = {(LFSR_WID){1'b0}};
+    if (reset) err_int <= {(LFSR_WID){1'b0}};
     //else if (clr_acc) err_int = $signed(acc_out >>> $clog2(LFSR_WID));
-    else if (clr_acc) err_int = acc_out;
-    else err_int = err_int;
+    else if (clr_acc) err_int <= acc_out;
+    else err_int <= err_int;
 
 always @ *
     if (reset) err_square = {(LFSR_WID){1'b0}};

@@ -26,8 +26,8 @@ end
 
 always @ (posedge clk)
 //always @ *
-    if (reset) det_edge = 2'd0;
-    else det_edge= {det_edge[0], clr_acc};
+    if (reset) det_edge <= 2'd0;
+    else det_edge <= {det_edge[0], clr_acc};
 
 //assign sig_edge = (det_edge == 2'b10);
 assign sig_edge = (det_edge == 2'b01);
@@ -39,10 +39,10 @@ always @ *
     else abs = dec_var;
 
 always @ (posedge clk)
-    if (reset || sig_edge) acc_out = {ACC_WID{1'b0}};
+    if (reset || sig_edge) acc_out <= {ACC_WID{1'b0}};
     //if (reset || clr_acc) acc_out = {ACC_WID{1'b0}}; //fallin edge of clr_acc is on posedge clk, thus timing is missed; 
-    else if (sym_clk_en) acc_out = acc_out + abs;
-    else acc_out = acc_out;
+    else if (sym_clk_en) acc_out <= acc_out + abs;
+    else acc_out <= acc_out;
 /*
 //BEFORE
 always @ (posedge clk)
@@ -60,12 +60,12 @@ always @ *
 
 //AFTER
 always @ (posedge clk)
-    if (reset) reg_out = $signed({ACC_WID{1'b0}});
+    if (reset) reg_out <= $signed({ACC_WID{1'b0}});
     //else if (clr_acc) reg_out = $signed(acc_out >>> $clog2(LFSR_WID));
     //else if (clr_acc) reg_out = acc_out >>> 2;
-    else if (clr_acc) reg_out = acc_out >>> (ACC_WID-18);
+    else if (clr_acc) reg_out <= acc_out >>> (ACC_WID-18);
     //else if (clr_acc) reg_out = acc_out/18'sd4;
-    else reg_out = reg_out;
+    else reg_out <= reg_out;
 
 always @ *
     if (reset) ref_lvl = 18'sd0;
@@ -85,6 +85,7 @@ always @ *
     //Ask Rory about this
     //else mult_out <= reg_out * reg_out * 18'sd81920;
     else mult_out = reg_out[17:0] * reg_out[17:0];
+	 
 always @ *
     square = $signed(mult_out[34:17]);
 

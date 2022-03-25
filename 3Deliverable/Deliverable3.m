@@ -61,16 +61,15 @@ wc_GSPS=sum(abs(h_GSPS)*.75);
 % headroom
 % h_PPS=safety*h_PPS/wc_PPS; 
 % h_PPS=safety*h_PPS/max(abs(h_PPS));     %scale headroom so that pk is less than 1s17
-h_PPS=safety*h_PPS/max(abs(h_PPS));     %scale headroom so that peak of conv is ~1
+% h_PPS=safety*h_PPS/max(abs(h_PPS));     %scale headroom so that peak of conv is ~1
 % h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
 % h_GSM=safety*h_GSM/wc_GSM;
-h_GSM=safety*h_GSM/max(abs(h_GSM));
+% h_GSM=safety*h_GSM/max(abs(h_GSM));
 
-%% Change Coeff
-load('h_PPS.mat');
-h_PPS = h_pps/2^17;
+% Change Coeff
+% load('h_PPS.mat');
+% h_PPS = h_pps/2^17;
 
-%%
 
 h_GSMGSPS=conv(h_GSPS,h_GSM); 
 h_GSMPPS=conv(h_PPS,h_GSM);
@@ -215,7 +214,7 @@ clc
 % mapOutPwr=5116;
 % avgSqErr=4716353999;
 
-mapOutPwr= 316;
-avgSqErr= 5878014247640;
+mapOutPwr= 20491;
+avgSqErr= 35657948656;
 
-MER=10*log10(2^38*mapOutPwr/avgSqErr);
+MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);
