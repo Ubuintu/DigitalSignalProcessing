@@ -17,12 +17,8 @@
 %     b) p.107 pt.6
 %     c) p.108 pt.8-9
 
-clc
-clear
-close all
-format longG
 %% Deliverable Parameter's | idx TX & RCV: 474
-clc; close all;
+clc; clear; close all; format longG
 Nsps=4; 
 % N=93; betaTx=0.173; betaRcv=0.198; betaK=0.5; % Not sure if too smoll; Best setting atm
 % N=101; betaTx=0.167; betaRcv=0.178; betaK=1.5;
@@ -53,17 +49,17 @@ h_PPS=h_PPS.*wn.';
 % **scale coeffs to be 1s17 where scaling is based on wc 1s17 input OR wc input from mapper**
 % wc_PPS=sum(abs(h_PPS));
 % wc_PPS=sum(abs(h_PPS)*.75);  
-% wc_GSM=sum(abs(h_GSM))*safety;
-wc_GSM=sum(abs(h_GSM)*.75)*safety;
-wc_GSPS=sum(abs(h_GSPS)*.75); 
+wc_GSM=sum(abs(h_GSM))*safety;
+% wc_GSM=sum(abs(h_GSM)*.75)*safety;
+% wc_GSPS=sum(abs(h_GSPS)*.75); 
 
 % ** worse case input upsampled **
 % not sure if this works since pk is 0
 wc_input=ones(1,ceil(N/4));
-wc_input0=upsample(wc_input.*.75,Nsps);
-wc_input1=upsample(wc_input.*.75,Nsps,1);
-wc_input2=upsample(wc_input.*.75,Nsps,2);
-wc_input3=upsample(wc_input.*.75,Nsps,3);
+wc_input0=upsample(wc_input.*.75,Nsps);  %worse case input?
+% wc_input1=upsample(wc_input.*.75,Nsps,1);
+% wc_input2=upsample(wc_input.*.75,Nsps,2);
+% wc_input3=upsample(wc_input.*.75,Nsps,3);
 
 wc_PPS0=abs(h_PPS).*wc_input0(1:101);
 wc_PPS_0=sum(wc_PPS0);
@@ -74,12 +70,19 @@ wc_PPS_2=sum(wc_PPS2);
 wc_PPS3=abs(h_PPS).*wc_input3(1:101);
 wc_PPS_3=sum(wc_PPS3);
 
+% find wc output w/convolution
+% wc0_h_PPS = conv(h_PPS,wc_input0);
+% wc_pk0=sum(abs(wc0_h_PPS));
+% wc1_h_PPS = conv(h_PPS,wc_input1);
+% wc_pk1=sum(abs(wc1_h_PPS));
+% wc2_h_PPS = conv(h_PPS,wc_input2);
+% wc_pk2=sum(abs(wc2_h_PPS));
+
 % uncomment to scale to 1s17 WC/comment for noscale; NEED to scale for
 % headroom
 % h_PPS=safety*h_PPS/wc_PPS; 
 % h_PPS=safety*h_PPS/max(abs(h_PPS));     %scale headroom so that pk is less than 1s17
 h_PPS=safety.*h_PPS/wc_PPS_0;     %scale headroom so that peak of conv is ~1
-scale_PPS=sum(abs(h_PPS));
 % h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
 % h_GSM=safety*h_GSM*.8;
 % h_GSM=safety*h_GSM/max(abs(h_GSM));
@@ -88,6 +91,7 @@ scale_PPS=sum(abs(h_PPS));
 % Change Coeff
 % load('h_PPS.mat');
 % h_PPS = h_pps/2^17;
+scale_GSM=sum(abs(h_PPS));
 
 
 h_GSMGSPS=conv(h_GSPS,h_GSM); 
