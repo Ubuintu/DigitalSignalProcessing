@@ -1,0 +1,205 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "srrc_input[0]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[1]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[2]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[3]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[4]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[5]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[6]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[7]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[8]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[9]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[10]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[11]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[12]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[13]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[14]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[15]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[16]",
+					"strict" : false
+				},
+				{
+					"name" : "srrc_input[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sym_clk_ena",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50",
+					"strict" : false
+				},
+				{
+					"name" : "counter[0]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[1]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[2]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[3]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[4]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[5]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[6]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[7]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[8]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[9]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[10]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[11]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[12]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[13]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[14]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[15]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[16]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[17]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[18]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[19]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[20]",
+					"strict" : false
+				},
+				{
+					"name" : "counter[21]",
+					"strict" : false
+				},
+				{
+					"name" : "cycle",
+					"strict" : false
+				},
+				{
+					"name" : "sys_clk",
+					"strict" : false
+				},
+				{
+					"name" : "sam_clk_ena",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
