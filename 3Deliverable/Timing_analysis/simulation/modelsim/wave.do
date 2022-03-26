@@ -9,7 +9,6 @@ add wave -noupdate -radix binary /filter_TB/sym_clk_en
 add wave -noupdate -radix decimal /filter_TB/x_in
 add wave -noupdate -format Analog-Interpolated -height 74 -max 50000.0 -min -10000.0 -radix decimal /filter_TB/y
 add wave -noupdate -radix decimal /filter_TB/DUT/y
-add wave -noupdate -radix decimal /filter_TB/DUT/x_in
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {6855967 ps} 0}
 quietly wave cursor active 1
