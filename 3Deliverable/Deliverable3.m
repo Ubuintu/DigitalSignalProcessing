@@ -50,44 +50,40 @@ h_PPS=h_PPS.*wn.';
 
 
 
-% **scale coeffs to be 1s17 where scaling is based on wc 1s17 input OR wc input from mapper**
-% wc_PPS=sum(abs(h_PPS));
-% wc_PPS=sum(abs(h_PPS)*.75);  
-% wc_GSM=sum(abs(h_GSM))*safety;
-wc_GSM=sum(abs(h_GSM)*.75)*safety;
-wc_GSPS=sum(abs(h_GSPS)*.75); 
-
+% **scale coeffs to be 1s17 where scaling is based on wc input from mapper**
 % ** worse case input upsampled **
-% not sure if this works since pk is 0
 wc_input=ones(1,ceil(N/4));
 wc_input0=upsample(wc_input.*.75,Nsps);
-wc_input1=upsample(wc_input.*.75,Nsps,1);
-wc_input2=upsample(wc_input.*.75,Nsps,2);
-wc_input3=upsample(wc_input.*.75,Nsps,3);
+% wc_input1=upsample(wc_input.*.75,Nsps,1);
+% wc_input2=upsample(wc_input.*.75,Nsps,2);
+% wc_input3=upsample(wc_input.*.75,Nsps,3);
 
 wc_PPS0=abs(h_PPS).*wc_input0(1:101);
 wc_PPS_0=sum(wc_PPS0);
-wc_PPS1=abs(h_PPS).*wc_input1(1:101);
-wc_PPS_1=sum(wc_PPS1);
-wc_PPS2=abs(h_PPS).*wc_input2(1:101);
-wc_PPS_2=sum(wc_PPS2);
-wc_PPS3=abs(h_PPS).*wc_input3(1:101);
-wc_PPS_3=sum(wc_PPS3);
+% wc_PPS1=abs(h_PPS).*wc_input1(1:101);
+% wc_PPS_1=sum(wc_PPS1);
+% wc_PPS2=abs(h_PPS).*wc_input2(1:101);
+% wc_PPS_2=sum(wc_PPS2);
+% wc_PPS3=abs(h_PPS).*wc_input3(1:101);
+% wc_PPS_3=sum(wc_PPS3);
 
 % uncomment to scale to 1s17 WC/comment for noscale; NEED to scale for
-% headroom
-% h_PPS=safety*h_PPS/wc_PPS; 
-% h_PPS=safety*h_PPS/max(abs(h_PPS));     %scale headroom so that pk is less than 1s17
-h_PPS=safety.*h_PPS/wc_PPS_0;     %scale headroom so that peak of conv is ~1
-scale_PPS=sum(abs(h_PPS));
-% h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
-% h_GSM=safety*h_GSM*.8;
-% h_GSM=safety*h_GSM/max(abs(h_GSM));
-% h_GSM=safety*h_GSM*.7;
+% headroom    %scale headroom so that pk is less than 1s17
+% h_PPS=safety.*h_PPS/wc_PPS_0;     %scale headroom so that peak of conv is ~1
+% h_PPS=safety.*h_PPS/max(h_PPS)*.7;
+% scale_PPS=sum(abs(h_PPS));
 
-% Change Coeff
-% load('h_PPS.mat');
-% h_PPS = h_pps/2^17;
+% out of alternatives
+h_PPS=h_PPS.*2;
+
+% Find wc scaling factor for GSM
+% theo_GSM = conv(wc_PPS_0,h_GSM);
+% scale_GSM = sum(abs(theo_GSM));
+% h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
+% h_GSM=safety*h_GSM/wc_GSM;
+% h_GSM=.85*h_GSM/scale_GSM;
+% h_GSM=safety*h_GSM/max(abs(h_GSM));
+h_GSM=h_GSM.*.7;
 
 
 h_GSMGSPS=conv(h_GSPS,h_GSM); 
@@ -238,7 +234,7 @@ clc
 % avgSqErr= 35657948656;
 
 % PS to GSM
-mapOutPwr= 9118;
-avgSqErr= 246445199447682;
+mapOutPwr= 10038;
+avgSqErr= 175172015032;
 
 MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);

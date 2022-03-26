@@ -43,47 +43,19 @@ always @ (posedge clk)
     //if (reset || clr_acc) acc_out = {ACC_WID{1'b0}}; //fallin edge of clr_acc is on posedge clk, thus timing is missed; 
     else if (sym_clk_en) acc_out <= acc_out + abs;
     else acc_out <= acc_out;
-/*
-//BEFORE
-always @ (posedge clk)
-    if (reset) reg_out = 18'sd0;
-    //else if (clr_acc) reg_out = $signed(acc_out >>> $clog2(LFSR_WID));
-    //else if (clr_acc) reg_out = acc_out >>> 2;
-    else if (clr_acc) reg_out = acc_out >>> (ACC_WID-18);
-    //else if (clr_acc) reg_out = acc_out/18'sd4;
-    else reg_out = reg_out;
 
-always @ *
-    if (reset) ref_lvl = 18'sd0;
-    else ref_lvl = reg_out;
-*/
-
-//AFTER
 always @ (posedge clk)
     if (reset) reg_out <= $signed({ACC_WID{1'b0}});
-    //else if (clr_acc) reg_out = $signed(acc_out >>> $clog2(LFSR_WID));
-    //else if (clr_acc) reg_out = acc_out >>> 2;
     else if (clr_acc) reg_out <= acc_out >>> (ACC_WID-18);
-    //else if (clr_acc) reg_out = acc_out/18'sd4;
     else reg_out <= reg_out;
 
 always @ *
     if (reset) ref_lvl = 18'sd0;
     else ref_lvl = reg_out[17:0];
-/*
-//BEFORE
-always @ *
-    if (reset) mult_out = 18'sd0;
-    //Ask Rory about this
-    //else mult_out <= reg_out * reg_out * 18'sd81920;
-    else mult_out = reg_out * reg_out;
-*/
 
 //AFTER
 always @ *
     if (reset) mult_out = 18'sd0;
-    //Ask Rory about this
-    //else mult_out <= reg_out * reg_out * 18'sd81920;
     else mult_out = reg_out[17:0] * reg_out[17:0];
 	 
 always @ *

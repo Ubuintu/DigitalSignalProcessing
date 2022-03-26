@@ -199,14 +199,14 @@ always @ (posedge sys_clk)
     else if (sam_clk_en) sum_lvl_7 <= $signed(sum_lvl_6[0])+$signed(sum_lvl_6[1]);
 
 
-integer inte=0;
+//integer inte=0;
 always @ (posedge sys_clk)
     if (reset) y<= 18'sd0;
     //else if (sam_clk_en) y<=$signed( {sum_lvl[LENGTH+OFFSET-1][16:0],1'b0} );
     else if (sam_clk_en) begin
 	y<=$signed(sum_lvl_7);
-	$display("index: %d | y: %d",i,y);
-	inte=inte+1;
+//	$display("index: %d | y: %d",i,y);
+//	inte=inte+1;
     end
     else y<=$signed(y);
 
@@ -256,12 +256,12 @@ initial begin
 	Hsys[42] = 18'sd2001;
 	Hsys[43] = -18'sd3583;
 	Hsys[44] = -18'sd8683;
-	Hsys[45] = -18'sd9167;
+	Hsys[45] = -18'sd9168;
 	Hsys[46] = -18'sd2210;
-	Hsys[47] = 18'sd11800;
-	Hsys[48] = 18'sd28843;
+	Hsys[47] = 18'sd11801;
+	Hsys[48] = 18'sd28844;
 	Hsys[49] = 18'sd42785;
-	Hsys[50] = 18'sd48158;
+	Hsys[50] = 18'sd48159;
 end
 
 endmodule 

@@ -1,0 +1,30 @@
+# do filter_design_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/tob208/engr-ece/Documents/EE465/3Deliverable {/home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:36:19 on Mar 25,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tob208/engr-ece/Documents/EE465/3Deliverable" /home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v 
+# -- Compiling module filter_design
+# ** Error: /home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v(52): (vlog-2730) Undefined variable: 'sys_clk'.
+# ** Error: /home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v(73): (vlog-2730) Undefined variable: 'DAC_out'.
+# ** Error (suppressible): /home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v(94): (vlog-2388) 'sys_clk' already declared in this scope (filter_design) at /home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v(52).
+# ** Error (suppressible): /home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v(99): (vlog-2388) 'DAC_out' already declared in this scope (filter_design) at /home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v(73).
+# ** Error (suppressible): /home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v(221): (vlog-2388) 'ref_lvl' already declared in this scope (filter_design) at /home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_design.v(209).
+# End time: 17:36:19 on Mar 25,2022, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# ** Error: /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./filter_design_run_msim_rtl_verilog.do line 8
+# /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+/home/tob208/engr-ece/Documents/EE465/3Deliverable {/home/tob208/engr-ece/Documents/EE465/3Deliverable/filter_de..."
+# 
+# stdin: <EOF>
