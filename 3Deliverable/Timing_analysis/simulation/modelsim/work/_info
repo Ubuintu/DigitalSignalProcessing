@@ -1,0 +1,105 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/20.1
+vclk_en
+Z0 !s110 1648279205
+!i10b 1
+!s100 o@^fdDTENlG>h6[;mc>nA3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IPFifi_m?]V>>bGaPUdQ[a1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim
+w1647276720
+8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
+FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
+!i122 34
+L0 1 36
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1648279205.000000
+!s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v|
+!s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vfilter_TB
+R0
+!i10b 1
+!s100 0D[1GjH2oa82f<LZVIBoB0
+R1
+IAgX2<>44_5jGTUDdR`izJ3
+R2
+R3
+w1648275512
+8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v
+FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v
+!i122 33
+L0 2 52
+R4
+r1
+!s85 0
+31
+R5
+!s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v|
+!i113 1
+R6
+R7
+nfilter_@t@b
+vGSM_101Mults
+Z8 !s110 1648279204
+!i10b 1
+!s100 Ck:`:<`ziUgbXZgUIe]M30
+R1
+Ij2C[J1G]K7n:<h?R0<J=W0
+R2
+R3
+Z9 w1648274419
+Z10 8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
+Z11 FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
+!i122 32
+L0 32 175858
+R4
+r1
+!s85 0
+31
+Z12 !s108 1648279203.000000
+Z13 !s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
+Z14 !s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
+!i113 1
+R6
+R7
+n@g@s@m_101@mults
+vhard_block
+R8
+!i10b 1
+!s100 z@D:_AA2k`eX[I_@8GCjj2
+R1
+I4Z;gDWmJNJGSaM]XBJNoO3
+R2
+R3
+R9
+R10
+R11
+!i122 32
+L0 175891 34
+R4
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 1
+R6
+R7
