@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Mar 26 17:12:05 2022
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : MER_circuit
+Top-level Entity Name : MER_circuit
+Family : Cyclone IV E
+Total logic elements : 16,070
+    Total combinational functions : 15,611
+    Dedicated logic registers : 7,823
+Total registers : 7823
+Total pins : 286
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 106
+Total PLLs : 0

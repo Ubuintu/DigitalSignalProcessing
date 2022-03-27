@@ -10,96 +10,96 @@ z2
 cModel Technology
 dC:/intelFPGA_lite/20.1
 vclk_en
-Z0 !s110 1648280422
+!s110 1648325307
 !i10b 1
 !s100 o@^fdDTENlG>h6[;mc>nA3
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IPFifi_m?]V>>bGaPUdQ[a1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim
 w1647276720
 8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
 FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
-!i122 37
+!i122 40
 L0 1 36
-Z4 OV;L;2020.1;71
+Z3 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1648280422.000000
+!s108 1648325307.000000
 !s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v|
 !s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v|
 !i113 1
-Z6 o-work work
-Z7 tCvgOpt 0
+Z4 o-work work
+Z5 tCvgOpt 0
 vfilter_TB
-R0
+Z6 !s110 1648325306
 !i10b 1
 !s100 0D[1GjH2oa82f<LZVIBoB0
-R1
+R0
 IAgX2<>44_5jGTUDdR`izJ3
+R1
 R2
-R3
 w1648275512
 8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v
 FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v
-!i122 36
+!i122 39
 L0 2 52
-R4
+R3
 r1
 !s85 0
 31
-R5
+!s108 1648325306.000000
 !s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v|
 !i113 1
-R6
-R7
+R4
+R5
 nfilter_@t@b
 vGSM_101Mults
-R0
+R6
 !i10b 1
 !s100 FRCM^[ZaO_DaRfQVLF=M11
-R1
+R0
 IZBmFXgW1d_HS=:nR5`_RU2
+R1
 R2
-R3
-Z8 w1648280342
-Z9 8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
-Z10 FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
-!i122 35
+Z7 w1648280342
+Z8 8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
+Z9 FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
+!i122 38
 L0 32 175966
-R4
+R3
 r1
 !s85 0
 31
-Z11 !s108 1648280421.000000
-Z12 !s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
-Z13 !s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
+Z10 !s108 1648325305.000000
+Z11 !s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
 !i113 1
-R6
-R7
+R4
+R5
 n@g@s@m_101@mults
 vhard_block
-R0
+R6
 !i10b 1
 !s100 oYnK84:Mgi5c40oA4QcJ41
-R1
+R0
 IN^aBTa[Y86fd2R49ci9f]2
+R1
 R2
-R3
+R7
 R8
 R9
-R10
-!i122 35
+!i122 38
 L0 175999 34
-R4
+R3
 r1
 !s85 0
 31
+R10
 R11
 R12
-R13
 !i113 1
-R6
-R7
+R4
+R5
