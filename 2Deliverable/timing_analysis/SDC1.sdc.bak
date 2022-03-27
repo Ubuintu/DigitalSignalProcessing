@@ -1,7 +1,0 @@
-# Clock constraints
-
-create_clock -name {CLOCK_50} -period 20.000ns [get_ports {CLOCK_50}]
-# made this clock below
-create_generated_clock -name {sys_clk} -source [get_ports {CLOCK_50}] -divide_by 2 -master_clock {CLOCK_50} [get_registers {clk_en:EN_CLK|sys_clk}]
-create_generated_clock -name {sam_clk_en} -source [get_ports {CLOCK_50}] -divide_by 8 -master_clock {CLOCK_50} [get_registers {clk_en:EN_CLK|sam_clk_en}]
-create_generated_clock -name {sym_clk_en} -source [get_ports {CLOCK_50}] -divide_by 8 -master_clock {CLOCK_50} [get_registers {clk_en:EN_CLK|sym_clk_en}]
