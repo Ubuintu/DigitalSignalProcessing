@@ -1,0 +1,105 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim
+vclk_en
+Z1 !s110 1648451612
+!i10b 1
+!s100 o@^fdDTENlG>h6[;mc>nA3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IPFifi_m?]V>>bGaPUdQ[a1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1647276720
+8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
+FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
+!i122 5
+L0 1 36
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1648451612.000000
+!s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v|
+!s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vfilter_TB
+R1
+!i10b 1
+!s100 fij=8E^0HU0Pbd>g4]0z83
+R2
+IIlzQfmKi6g=AH2=WcQTQN3
+R3
+R0
+w1648451145
+8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v
+FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v
+!i122 4
+L0 2 52
+R4
+r1
+!s85 0
+31
+Z7 !s108 1648451611.000000
+!s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v|
+!i113 1
+R5
+R6
+nfilter_@t@b
+vGSM_101Mults
+Z8 !s110 1648451611
+!i10b 1
+!s100 l8OYe[HmmjGcN;g6Ui0b52
+R2
+Ia609Ja;7RXAdoZXJa8:l<0
+R3
+R0
+Z9 w1648449183
+Z10 8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
+Z11 FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
+!i122 3
+L0 32 122423
+R4
+r1
+!s85 0
+31
+R7
+Z12 !s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
+Z13 !s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
+!i113 1
+R5
+R6
+n@g@s@m_101@mults
+vhard_block
+R8
+!i10b 1
+!s100 OiRMjje23cFS?GnRQ39JR3
+R2
+I:i?VN=EBJiOI]1IMj@WYH2
+R3
+R0
+R9
+R10
+R11
+!i122 3
+L0 122456 34
+R4
+r1
+!s85 0
+31
+R7
+R12
+R13
+!i113 1
+R5
+R6

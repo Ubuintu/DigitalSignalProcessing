@@ -238,6 +238,31 @@ for i=1:round(length(h_GSM_1s17)/2)
 end
 fprintf("end\n")
 
+%% GSM Time-sharing
+clc
+
+% ceil to account for odd tap
+numCoeffs=ceil(N/2);
+numMults=ceil(numCoeffs/4);
+
+num_of_sumLvls=0; coeffs2reduce=N;
+tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
+for i=1:N
+    if coeffs2reduce<=1
+        break
+    elseif i==2
+        num_of_sumLvls=num_of_sumLvls+1;coeffs2reduce=ceil(coeffs2reduce/4);
+        fprintf("sum level %d has %d registers\n",i,coeffs2reduce);
+        tapsPerlvl(i,1)=coeffs2reduce;
+    else
+        num_of_sumLvls=num_of_sumLvls+1;coeffs2reduce=ceil(coeffs2reduce/2);
+        fprintf("sum level %d has %d registers\n",i,coeffs2reduce);
+        tapsPerlvl(i,1)=coeffs2reduce;
+    end
+end
+fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
+
+
 %% MER calculation from circuit
 clear
 clc
