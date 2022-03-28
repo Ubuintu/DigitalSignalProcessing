@@ -106,7 +106,7 @@ always @ (posedge sys_clk)
 
 /*      Time-sharing Lvl        */
 //multiplier input
-always @ (cnt)	// delayed in ModelSim
+//always @ (cnt)	// delayed in ModelSim
 always @ *
     for (i=0;i<SUMLV2-1;i=i+1) begin
         case (cnt)
