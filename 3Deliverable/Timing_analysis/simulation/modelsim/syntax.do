@@ -14,10 +14,9 @@ add wave -noupdate /filter_TB/DUT/sum_lvl_2
 add wave -noupdate /filter_TB/DUT/sum_lvl_3
 add wave -noupdate /filter_TB/DUT/sum_lvl_4
 add wave -noupdate /filter_TB/DUT/sum_lvl_5
-add wave -noupdate /filter_TB/DUT/y
-#add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+WaveRestoreCursors {{Cursor 1} {1551 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 237
 configure wave -valuecolwidth 316
@@ -33,4 +32,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {959 ns}
+WaveRestoreZoom {1425 ns} {2383 ns}

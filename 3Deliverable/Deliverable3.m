@@ -254,6 +254,8 @@ for i=1:N
         break
     elseif i==2
         num_of_sumLvls=num_of_sumLvls+1;coeffs2reduce=ceil(coeffs2reduce/4);
+        fprintf("\tMixer required: %d \n",coeffs2reduce);
+        coeffs2reduce=ceil(coeffs2reduce/2);
         fprintf("sum level %d has %d registers\n",i,coeffs2reduce);
         tapsPerlvl(i,1)=coeffs2reduce;
     else
