@@ -49,7 +49,7 @@ h_PPS=h_PPS.*wn.';
 % **scale coeffs to be 1s17 where scaling is based on wc input from mapper**
 % wc_PPS=sum(abs(h_PPS));
 % wc_PPS=sum(abs(h_PPS)*.75);  
-wc_GSM=sum(abs(h_GSM))*safety;
+wc_GSM=sum(abs(h_GSM));
 % wc_GSM=sum(abs(h_GSM)*.75)*safety;
 % wc_GSPS=sum(abs(h_GSPS)*.75); 
 
@@ -91,10 +91,10 @@ h_PPS=h_PPS.*2;
 % scale_GSM = sum(abs(theo_GSM));
 
 % h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
-% h_GSM=safety*h_GSM/wc_GSM;
+h_GSM=safety*h_GSM/wc_GSM;  % scaling down coeffs of GSM to wc 1s17 reduce MER by a decimal of a dB
 % h_GSM=.85*h_GSM/scale_GSM;
 % h_GSM=safety*h_GSM/max(abs(h_GSM));
-h_GSM=h_GSM.*.7;
+% h_GSM=h_GSM.*.7;
 
 % Change Coeff
 % load('h_PPS.mat');
@@ -132,6 +132,8 @@ h_PPS_1s17=round(h_PPS.*2^17);
 h_GSPS_1s17=round(h_GSPS*2.^17);
 % GSM w/o reduction
 h_GSM_1s17=round(h_GSM*2.^17);
+% GSM Time-Share
+h_GSM_0s18=round(h_GSM*2.^18);
 
 % values for LUT 4-ASK mapper; ensure output of 4-ASK mapper is a 1s17
 % input to transmit filter
@@ -226,7 +228,7 @@ fprintf("end\n");
 
 
 
-%% GSM no reduction Coeff
+%% GSM no reduction Coeff (1s17)
 clc
 fprintf("initial begin\n")
 for i=1:round(length(h_GSM_1s17)/2)
@@ -263,6 +265,20 @@ end
 fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
 
 
+
+%% GSM Time-sharing Coeff (0s18)
+clc
+fprintf("initial begin\n")
+for i=1:round(length(h_GSM_0s18)/2)
+    if (h_GSM_0s18(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(i-1),abs(h_GSM_0s18(i)) );
+    else
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(i-1),abs(h_GSM_0s18(i)) );
+    end
+end
+fprintf("end\n")
+
+
 %% MER calculation from circuit
 clear
 clc
@@ -275,7 +291,7 @@ clc
 % avgSqErr= 35657948656;
 
 % PS to GSM
-mapOutPwr= 10038;
-avgSqErr= 175172015032;
+mapOutPwr= 1656;
+avgSqErr= 29582259657;
 
 MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);

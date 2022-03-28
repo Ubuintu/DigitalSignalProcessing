@@ -7,6 +7,8 @@ add wave -noupdate /filter_TB/DUT/x_in
 add wave -noupdate /filter_TB/DUT/sum_lvl_1
 add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
 add wave -noupdate /filter_TB/DUT/mult_in
+add wave -noupdate /filter_TB/DUT/mult_coeff
+add wave -noupdate /filter_TB/DUT/mult_out
 add wave -noupdate /filter_TB/DUT/y
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {130 ns} 0}
