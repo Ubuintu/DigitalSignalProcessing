@@ -1,17 +1,65 @@
 ls
-# GSM_101Mults.sft           compileFilt.do      impulse_response.txt  
-# GSM_101Mults.vo            filtWave.do         rtl_work              
-# GSM_101Mults_modelsim.xrf  filter_TB.cr.mti    transcript            
-# GSM_tb.v                   filter_TB.mpf       vsim.wlf              
-# GSM_tb.v.bak               filter_tb.v.cr.mti  wave.do               
-# clk_en.v                   filter_tb.v.mpf     work                  
-ls
-# GSM_101Mults.sft           compileFilt.do      impulse_response.txt  
-# GSM_101Mults.vo            filtWave.do         rtl_work              
-# GSM_101Mults_modelsim.xrf  filter_TB.cr.mti    transcript            
-# GSM_tb.v                   filter_TB.mpf       vsim.wlf              
-# GSM_tb.v.bak               filter_tb.v.cr.mti  wave.do               
-# clk_en.v                   filter_tb.v.mpf     work                  
+# GSM_101Mults.sft           compileFilt.do        modelsim.ini  
+# GSM_101Mults.vo            filtWave.do           rtl_work      
+# GSM_101Mults_modelsim.xrf  filter_TB.cr.mti      syntax.do     
+# GSM_tb.v                   filter_TB.mpf         transcript    
+# GSM_tb.v.bak               filter_tb.v.cr.mti    vsim.wlf      
+# TimeSim.do                 filter_tb.v.mpf       work          
+# clk_en.v                   impulse_response.txt                
+cat compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/3Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# set TB_MOD "GSM_tb"
+# set TB_Nam "filter_TB"
+# set EN "clk_en"
+#set MOD "PPS_filt"
+#set MOD "PPS_filt_101"
+#set MOD "GSM_TS"
+#set MOD "GSM_noMult_101"
+# set MOD "GSM_101Mults"
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# puts $string
+# set string "MOD is: "
+# append string ${MOD}
+# puts $string
+# set string "TB is: "
+# append string $TB_MOD
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# vlog -sv -work work ${SRC_DIR}/${EN}.v
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# do filtWave.do
+# 
+# run ${SIM_LEN}
+# 
+# 
 do compileFilt.do
 # 20000ns
 # .
@@ -43,39 +91,39 @@ do compileFilt.do
 # 
 # vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:39:35 on Mar 28,2022
+# Start time: 23:54:04 on Mar 28,2022
 # vlog -reportprogress 300 -sv -work work ./GSM_tb.v 
 # -- Compiling module filter_TB
 # 
 # Top level modules:
 # 	filter_TB
-# End time: 12:39:35 on Mar 28,2022, Elapsed time: 0:00:00
+# End time: 23:54:04 on Mar 28,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:39:35 on Mar 28,2022
+# Start time: 23:54:04 on Mar 28,2022
 # vlog -reportprogress 300 -sv -work work ./../../GSM_101Mults.v 
 # -- Compiling module GSM_101Mults
-# ** Error: (vlog-13069) ./../../GSM_101Mults.v(110): near "always": syntax error, unexpected always.
-# ** Error: ./../../GSM_101Mults.v(111): (vlog-13205) Syntax error found in the scope following 'i'. Is there a missing '::'?
-# End time: 12:39:35 on Mar 28,2022, Elapsed time: 0:00:00
+# ** Error: ./../../GSM_101Mults.v(232): (vlog-2730) Undefined variable: 'clk'.
+# ** Error: ./../../GSM_101Mults.v(242): (vlog-2730) Undefined variable: 'sym_clk_en'.
+# End time: 23:54:04 on Mar 28,2022, Elapsed time: 0:00:00
 # Errors: 2, Warnings: 0
 # ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vlog failed.
 # Executing ONERROR command at macro ./compileFilt.do line 45
 # vlog -sv -work work ${SRC_DIR}/${EN}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:39:35 on Mar 28,2022
+# Start time: 23:54:04 on Mar 28,2022
 # vlog -reportprogress 300 -sv -work work ./clk_en.v 
 # -- Compiling module clk_en
 # 
 # Top level modules:
 # 	clk_en
-# End time: 12:39:35 on Mar 28,2022, Elapsed time: 0:00:00
+# End time: 23:54:04 on Mar 28,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ns -L work ${TB_Nam}
 # vsim -t 1ns -L work filter_TB 
-# Start time: 12:39:36 on Mar 28,2022
+# Start time: 23:54:04 on Mar 28,2022
 # Loading sv_std.std
 # Loading work.filter_TB
 # Loading work.clk_en
@@ -153,38 +201,38 @@ do compileFilt.do
 # 
 # vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:42:28 on Mar 28,2022
+# Start time: 23:56:52 on Mar 28,2022
 # vlog -reportprogress 300 -sv -work work ./GSM_tb.v 
 # -- Compiling module filter_TB
 # 
 # Top level modules:
 # 	filter_TB
-# End time: 12:42:28 on Mar 28,2022, Elapsed time: 0:00:00
+# End time: 23:56:52 on Mar 28,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:42:28 on Mar 28,2022
+# Start time: 23:56:52 on Mar 28,2022
 # vlog -reportprogress 300 -sv -work work ./../../GSM_101Mults.v 
 # -- Compiling module GSM_101Mults
 # 
 # Top level modules:
 # 	GSM_101Mults
-# End time: 12:42:28 on Mar 28,2022, Elapsed time: 0:00:00
+# End time: 23:56:52 on Mar 28,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work ${SRC_DIR}/${EN}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:42:28 on Mar 28,2022
+# Start time: 23:56:52 on Mar 28,2022
 # vlog -reportprogress 300 -sv -work work ./clk_en.v 
 # -- Compiling module clk_en
 # 
 # Top level modules:
 # 	clk_en
-# End time: 12:42:29 on Mar 28,2022, Elapsed time: 0:00:01
+# End time: 23:56:52 on Mar 28,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ns -L work ${TB_Nam}
 # vsim -t 1ns -L work filter_TB 
-# Start time: 12:39:36 on Mar 28,2022
+# Start time: 23:54:04 on Mar 28,2022
 # Loading sv_std.std
 # Loading work.filter_TB
 # Loading work.clk_en
@@ -197,11 +245,19 @@ do compileFilt.do
 # add wave -noupdate /filter_TB/EN_CLK/sys_clk
 # add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
 # add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
 # add wave -noupdate /filter_TB/DUT/x_in
-# add wave -noupdate /filter_TB/DUT/sum_lvl_1
 # add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
 # add wave -noupdate /filter_TB/DUT/mult_in
+# add wave -noupdate /filter_TB/DUT/mult_coeff
+# add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/sum_lvl_2
+# add wave -noupdate /filter_TB/DUT/sum_lvl_3
+# add wave -noupdate /filter_TB/DUT/sum_lvl_4
+# add wave -noupdate /filter_TB/DUT/sum_lvl_5
 # add wave -noupdate /filter_TB/DUT/y
+#add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
 # TreeUpdate [SetDefaultTree]
 # WaveRestoreCursors {{Cursor 1} {130 ns} 0}
 # quietly wave cursor active 1
@@ -223,3 +279,601 @@ do compileFilt.do
 # 
 # run ${SIM_LEN}
 # 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/3Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "GSM_tb"
+# GSM_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+#set MOD "PPS_filt"
+#set MOD "PPS_filt_101"
+#set MOD "GSM_TS"
+#set MOD "GSM_noMult_101"
+# set MOD "GSM_101Mults"
+# GSM_101Mults
+# 
+# puts [info script]
+# 
+# puts "Hello world"
+# Hello world
+# puts [file normalize [info script]]
+# 
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# script is: compileFilt.do
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: GSM_101Mults
+# puts $string
+# MOD is: GSM_101Mults
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: GSM_tb
+# puts $string
+# TB is: GSM_tb
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/filter_TB.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:58:53 on Mar 28,2022
+# vlog -reportprogress 300 -sv -work work ./GSM_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 23:58:54 on Mar 28,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:58:54 on Mar 28,2022
+# vlog -reportprogress 300 -sv -work work ./../../GSM_101Mults.v 
+# -- Compiling module GSM_101Mults
+# 
+# Top level modules:
+# 	GSM_101Mults
+# End time: 23:58:54 on Mar 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:58:54 on Mar 28,2022
+# vlog -reportprogress 300 -sv -work work ./clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 23:58:54 on Mar 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 23:58:55 on Mar 28,2022, Elapsed time: 0:04:51
+# Errors: 1, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 23:58:55 on Mar 28,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.GSM_101Mults
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./GSM_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+# add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+# add wave -noupdate /filter_TB/DUT/mult_coeff
+# add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/sum_lvl_2
+# add wave -noupdate /filter_TB/DUT/sum_lvl_3
+# add wave -noupdate /filter_TB/DUT/sum_lvl_4
+# add wave -noupdate /filter_TB/DUT/sum_lvl_5
+# add wave -noupdate /filter_TB/DUT/det_edge
+# add wave -noupdate /filter_TB/DUT/sig_edge
+# add wave -noupdate /filter_TB/DUT/acc_out
+# add wave -noupdate /filter_TB/DUT/y
+#add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/3Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "GSM_tb"
+# GSM_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+#set MOD "PPS_filt"
+#set MOD "PPS_filt_101"
+#set MOD "GSM_TS"
+#set MOD "GSM_noMult_101"
+# set MOD "GSM_101Mults"
+# GSM_101Mults
+# 
+# puts [info script]
+# 
+# puts "Hello world"
+# Hello world
+# puts [file normalize [info script]]
+# 
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# script is: compileFilt.do
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: GSM_101Mults
+# puts $string
+# MOD is: GSM_101Mults
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: GSM_tb
+# puts $string
+# TB is: GSM_tb
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/filter_TB.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:59:48 on Mar 28,2022
+# vlog -reportprogress 300 -sv -work work ./GSM_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 23:59:48 on Mar 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:59:48 on Mar 28,2022
+# vlog -reportprogress 300 -sv -work work ./../../GSM_101Mults.v 
+# -- Compiling module GSM_101Mults
+# 
+# Top level modules:
+# 	GSM_101Mults
+# End time: 23:59:48 on Mar 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:59:48 on Mar 28,2022
+# vlog -reportprogress 300 -sv -work work ./clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 23:59:48 on Mar 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 23:59:49 on Mar 28,2022, Elapsed time: 0:00:54
+# Errors: 0, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 23:59:49 on Mar 28,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.GSM_101Mults
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./GSM_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+# add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+# add wave -noupdate /filter_TB/DUT/mult_coeff
+# add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/sum_lvl_2
+# add wave -noupdate /filter_TB/DUT/sum_lvl_3
+# add wave -noupdate /filter_TB/DUT/sum_lvl_4
+# add wave -noupdate /filter_TB/DUT/sum_lvl_5
+# add wave -noupdate /filter_TB/DUT/det_edge
+# add wave -noupdate /filter_TB/DUT/sig_edge
+# add wave -noupdate /filter_TB/DUT/acc_out
+# add wave -noupdate /filter_TB/DUT/y
+#add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/3Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "GSM_tb"
+# GSM_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+#set MOD "PPS_filt"
+#set MOD "PPS_filt_101"
+#set MOD "GSM_TS"
+#set MOD "GSM_noMult_101"
+# set MOD "GSM_101Mults"
+# GSM_101Mults
+# 
+# puts [info script]
+# 
+# puts "Hello world"
+# Hello world
+# puts [file normalize [info script]]
+# 
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# script is: compileFilt.do
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: GSM_101Mults
+# puts $string
+# MOD is: GSM_101Mults
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: GSM_tb
+# puts $string
+# TB is: GSM_tb
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/filter_TB.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:02:57 on Mar 29,2022
+# vlog -reportprogress 300 -sv -work work ./GSM_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 00:02:57 on Mar 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:02:57 on Mar 29,2022
+# vlog -reportprogress 300 -sv -work work ./../../GSM_101Mults.v 
+# -- Compiling module GSM_101Mults
+# 
+# Top level modules:
+# 	GSM_101Mults
+# End time: 00:02:57 on Mar 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:02:57 on Mar 29,2022
+# vlog -reportprogress 300 -sv -work work ./clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 00:02:57 on Mar 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 00:02:58 on Mar 29,2022, Elapsed time: 0:03:09
+# Errors: 0, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 00:02:58 on Mar 29,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.GSM_101Mults
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./GSM_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+# add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+# add wave -noupdate /filter_TB/DUT/mult_coeff
+# add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/sum_lvl_2
+# add wave -noupdate /filter_TB/DUT/sum_lvl_3
+# add wave -noupdate /filter_TB/DUT/sum_lvl_4
+# add wave -noupdate /filter_TB/DUT/sum_lvl_5
+# add wave -noupdate /filter_TB/DUT/det_edge
+# add wave -noupdate -radix binary /filter_TB/DUT/sig_edge
+# add wave -noupdate /filter_TB/DUT/acc_out
+# add wave -noupdate /filter_TB/DUT/y
+#add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/3Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "GSM_tb"
+# GSM_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+#set MOD "PPS_filt"
+#set MOD "PPS_filt_101"
+#set MOD "GSM_TS"
+#set MOD "GSM_noMult_101"
+# set MOD "GSM_101Mults"
+# GSM_101Mults
+# 
+# puts [info script]
+# 
+# puts "Hello world"
+# Hello world
+# puts [file normalize [info script]]
+# 
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# script is: compileFilt.do
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: GSM_101Mults
+# puts $string
+# MOD is: GSM_101Mults
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: GSM_tb
+# puts $string
+# TB is: GSM_tb
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/filter_TB.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:03:49 on Mar 29,2022
+# vlog -reportprogress 300 -sv -work work ./GSM_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 00:03:50 on Mar 29,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:03:50 on Mar 29,2022
+# vlog -reportprogress 300 -sv -work work ./../../GSM_101Mults.v 
+# -- Compiling module GSM_101Mults
+# 
+# Top level modules:
+# 	GSM_101Mults
+# End time: 00:03:50 on Mar 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:03:50 on Mar 29,2022
+# vlog -reportprogress 300 -sv -work work ./clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 00:03:50 on Mar 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 00:03:51 on Mar 29,2022, Elapsed time: 0:00:53
+# Errors: 0, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 00:03:51 on Mar 29,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.GSM_101Mults
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./GSM_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+# add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+# add wave -noupdate /filter_TB/DUT/mult_coeff
+# add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/sum_lvl_2
+# add wave -noupdate /filter_TB/DUT/sum_lvl_3
+# add wave -noupdate /filter_TB/DUT/sum_lvl_4
+# add wave -noupdate /filter_TB/DUT/sum_lvl_5
+# add wave -noupdate /filter_TB/DUT/det_edge
+# add wave -noupdate -radix binary /filter_TB/DUT/sig_edge
+# add wave -noupdate /filter_TB/DUT/acc_out
+# add wave -noupdate /filter_TB/DUT/y
+#add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+# End time: 00:05:36 on Mar 29,2022, Elapsed time: 0:01:45
+# Errors: 0, Warnings: 2

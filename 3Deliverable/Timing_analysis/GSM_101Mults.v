@@ -222,19 +222,37 @@ always @ (posedge sys_clk)
         sum_lvl_5 <= $signed(sum_lvl_4[0])+$signed(sum_lvl_4[1]);
 
 
-/*---------------Final Tap---------------*/
+/*---------------Accumulator---------------*/
+(* keep *) reg [1:0] det_edge;
+(* keep *) wire sig_edge;
+//coeffs scaled down for wc 1s17 input
+(* preserve *) reg signed [WIDTH-1:0] acc_out;
+
+initial begin
+    acc_out = 18'sd0;
+    det_edge = 2'd0;
+end
+
+always @ (posedge sys_clk)
+//always @ *
+    if (reset) det_edge <= 2'd0;
+    else det_edge <= {det_edge[0], &cnt};
+
+//assign sig_edge = (det_edge == 2'b10);
+assign sig_edge = (det_edge == 2'b01);
+
+always @ (posedge sys_clk)
+    if (reset || sig_edge) 
+        acc_out <= $signed(sum_lvl_5);
+    else 
+        acc_out <= acc_out + $signed(sum_lvl_5);
+
+/*---------------Final Reg---------------*/
 always @ (posedge sys_clk)
     if (reset) y<= 18'sd0;
     //else if (sam_clk_en) y<=$signed( {sum_lvl[LENGTH+OFFSET-1][16:0],1'b0} );
     else begin
-        
-        y<=$signed(sum_lvl_5);
-    	//$display("index: %d | y: %d",i,y);
-    	//inte=inte+1;
-        
-        //debugging
-//        for (i=0; i<SUMLV2;i=i+1)
-//            y<=$signed(y);
+        y<=$signed(acc_out);
     end
 
 initial begin

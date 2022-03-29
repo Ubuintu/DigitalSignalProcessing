@@ -1,9 +1,9 @@
-A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v {1 {vlog -work work -stats=none A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_tb.v
+A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v {1 {vlog -work work -stats=none A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module filter_TB
+-- Compiling module clk_en
 
 Top level modules:
-	filter_TB
+	clk_en
 
 } {} {}} A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo {1 {vlog -work work -stats=none A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -12,12 +12,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	GSM_101Mults
-
-} {} {}} A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v {1 {vlog -work work -stats=none A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module clk_en
-
-Top level modules:
-	clk_en
 
 } {} {}}
