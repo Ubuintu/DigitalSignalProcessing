@@ -24,8 +24,8 @@ end
 initial begin
     rst=0;
     x_in=0;
-    //file_in=$fopen("impulse_response.txt","r");
-    file_in=$fopen("../../../D3_ASK_in.txt","r");
+    file_in=$fopen("impulse_response.txt","r");
+    //file_in=$fopen("../../../D3_ASK_in.txt","r");
     #(RSTDELAY*RSTLEN);
     rst=1;
     #(RSTLEN*RSTLEN*10);

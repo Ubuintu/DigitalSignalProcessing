@@ -14,10 +14,10 @@ add wave -noupdate /filter_TB/DUT/sum_lvl_2
 add wave -noupdate /filter_TB/DUT/sum_lvl_3
 add wave -noupdate /filter_TB/DUT/sum_lvl_4
 add wave -noupdate /filter_TB/DUT/sum_lvl_5
-add wave -noupdate /filter_TB/DUT/det_edge
-add wave -noupdate -radix binary /filter_TB/DUT/sig_edge
 add wave -noupdate /filter_TB/DUT/acc_out
 add wave -noupdate /filter_TB/DUT/y
+add wave -noupdate /filter_TB/DUT/det_edge
+add wave -noupdate -radix binary /filter_TB/DUT/sig_edge
 #add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {130 ns} 0}

@@ -7,8 +7,19 @@ add wave -noupdate -radix binary /filter_TB/sys_clk
 add wave -noupdate -radix binary /filter_TB/sam_clk_en
 add wave -noupdate -radix binary /filter_TB/sym_clk_en
 add wave -noupdate -radix decimal /filter_TB/x_in
-add wave -noupdate -format Analog-Interpolated -height 74 -max 50000.0 -min -10000.0 -radix decimal /filter_TB/y
+add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl_1
+add wave -noupdate -radix decimal /filter_TB/DUT/mult_in
+add wave -noupdate -radix decimal /filter_TB/DUT/mult_coeff
+add wave -noupdate -radix decimal /filter_TB/DUT/mult_out
+add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl_2
+add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl_3
+add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl_4
+add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl_5
+add wave -noupdate -radix decimal /filter_TB/DUT/acc_out
 add wave -noupdate -radix decimal /filter_TB/DUT/y
+add wave -noupdate -radix binary /filter_TB/DUT/det_edge
+add wave -noupdate -format Analog-Interpolated -height 74 -max 50000.0 -min -10000.0 -radix decimal /filter_TB/y
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {6855967 ps} 0}
 quietly wave cursor active 1

@@ -56,7 +56,7 @@ end
 //counter
 always @ (posedge sys_clk)
     if (reset)
-        cnt=2'd3;   //offset for pipeline
+        cnt=2'd0;   //offset for pipeline
     else
         cnt=cnt+2'd1;
 
