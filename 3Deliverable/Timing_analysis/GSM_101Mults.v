@@ -251,9 +251,12 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset) y<= 18'sd0;
     //else if (sam_clk_en) y<=$signed( {sum_lvl[LENGTH+OFFSET-1][16:0],1'b0} );
-    else begin
+    else if (sam_clk_en) begin
         y<=$signed(acc_out);
     end
+	else
+        y<=$signed(y);
+		
 
 initial begin
 	Hsys[0] = 18'sd73;
