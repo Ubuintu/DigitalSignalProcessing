@@ -38,11 +38,11 @@ initial begin
 //     tol=18'sd10;
      for (i=0; i<SUMLV1; i=i+1)
         sum_lvl_1[i]=18'sd0;
-     for (i=0; i<SUMLV2; i=i+1)
-        sum_lvl_2[i]=18'sd0;
      for (i=0; i<SUMLV3; i=i+1)
-        sum_lvl_3[i]=18'sd0;
+        sum_lvl_2[i]=18'sd0;
      for (i=0; i<SUMLV4; i=i+1)
+        sum_lvl_3[i]=18'sd0;
+     for (i=0; i<SUMLV5; i=i+1)
         sum_lvl_4[i]=18'sd0;
     sum_lvl_5=18'sd0;
      for (i=0; i<SUMLV2; i=i+1)
@@ -85,22 +85,39 @@ always @ (posedge sys_clk)
             x[i]<=$signed(x[i]);
     end
 
+///*      SUMLV1      */
+//always @ (posedge sys_clk)
+//    if (reset) begin
+//		 for(i=0;i<SUMLV1-1;i=i+1)
+//			  sum_lvl_1[i] <= 18'sd0;
+//    end
+//    else if (sam_clk_en) begin
+//		 for(i=0;i<SUMLV1-1;i=i+1)
+//			  sum_lvl_1[i] <= $signed(x[i])+$signed(x[LENGTH-1-i]);
+//    end
+//
+////cntr
+//always @ (posedge sys_clk)
+//    if (reset) sum_lvl_1[SUMLV1-1] <= 18'sd0;
+//	else if (sam_clk_en) sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
+//	else sum_lvl_1[SUMLV1-1] <= $signed(sum_lvl_1[SUMLV1-1]);
+
+
 /*      SUMLV1      */
-always @ (posedge sys_clk)
+always @ *
     if (reset) begin
 		 for(i=0;i<SUMLV1-1;i=i+1)
-			  sum_lvl_1[i] <= 18'sd0;
+			  sum_lvl_1[i] = 18'sd0;
     end
-    else if (sam_clk_en) begin
+    else begin
 		 for(i=0;i<SUMLV1-1;i=i+1)
-			  sum_lvl_1[i] <= $signed(x[i])+$signed(x[LENGTH-1-i]);
+			  sum_lvl_1[i] = $signed(x[i])+$signed(x[LENGTH-1-i]);
     end
 
 //cntr
-always @ (posedge sys_clk)
+always @ *
     if (reset) sum_lvl_1[SUMLV1-1] <= 18'sd0;
-	else if (sam_clk_en) sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
-	else sum_lvl_1[SUMLV1-1] <= $signed(sum_lvl_1[SUMLV1-1]);
+	else sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
 
 
 /*      Time-sharing Lvl        */
@@ -110,22 +127,23 @@ always @ (posedge sys_clk)
 always @ *
     for (i=0;i<SUMLV2-1;i=i+1) begin
         case (cnt)
-            2'd0    :   mult_in[i]<=$signed(sum_lvl_1[4*i]); 
-            2'd1    :   mult_in[i]<=$signed(sum_lvl_1[4*i+1]); 
-            2'd2    :   mult_in[i]<=$signed(sum_lvl_1[4*i+2]); 
-            default    :   mult_in[i]<=$signed(sum_lvl_1[4*i+3]); 
+            2'd0    :   mult_in[i]=$signed(sum_lvl_1[4*i]); 
+            2'd1    :   mult_in[i]=$signed(sum_lvl_1[4*i+1]); 
+            2'd2    :   mult_in[i]=$signed(sum_lvl_1[4*i+2]); 
+            default    :   mult_in[i]=$signed(sum_lvl_1[4*i+3]); 
         endcase
     end
 
 //cntr
+//always @ (cnt)	// delayed in ModelSim
 always @ *
 	begin
-        case (cnt)
-            2'd0    :   mult_in[SUMLV2-1]<=$signed(sum_lvl_1[48]); 
-            2'd1    :   mult_in[SUMLV2-1]<=$signed(sum_lvl_1[49]); 
-            2'd2    :   mult_in[SUMLV2-1]<=$signed(sum_lvl_1[50]); 
-            default    :   mult_in[SUMLV2-1]<=18'sd0; 
-        endcase
+	case (cnt)
+	    2'd0    :   mult_in[SUMLV2-1]=$signed(sum_lvl_1[48]); 
+	    2'd1    :   mult_in[SUMLV2-1]=$signed(sum_lvl_1[49]); 
+	    2'd2    :   mult_in[SUMLV2-1]=$signed(sum_lvl_1[50]); 
+	    default    :   mult_in[SUMLV2-1]=18'sd0; 
+	endcase
     end
 
 //multiplier coeff (0s18)
@@ -133,10 +151,10 @@ always @ *
 always @ *
     for (i=0;i<SUMLV2-1;i=i+1) begin
         case (cnt)
-            2'd0    :   mult_coeff[i]<=$signed(Hsys[4*i]); 
-            2'd1    :   mult_coeff[i]<=$signed(Hsys[4*i+1]); 
-            2'd2    :   mult_coeff[i]<=$signed(Hsys[4*i+2]); 
-            default    :   mult_coeff[i]<=$signed(Hsys[4*i+3]); 
+            2'd0    :   mult_coeff[i]=$signed(Hsys[4*i]); 
+            2'd1    :   mult_coeff[i]=$signed(Hsys[4*i+1]); 
+            2'd2    :   mult_coeff[i]=$signed(Hsys[4*i+2]); 
+            default    :   mult_coeff[i]=$signed(Hsys[4*i+3]); 
         endcase
     end
 
@@ -144,10 +162,10 @@ always @ *
 always @ *
 	begin
         case (cnt)
-            2'd0    :   mult_coeff[SUMLV2-1]<=$signed(Hsys[48]); 
-            2'd1    :   mult_coeff[SUMLV2-1]<=$signed(Hsys[49]); 
-            2'd2    :   mult_coeff[SUMLV2-1]<=$signed(Hsys[50]); 
-            default    :   mult_coeff[SUMLV2-1]<=18'sd0; 
+            2'd0    :   mult_coeff[SUMLV2-1]=$signed(Hsys[48]); 
+            2'd1    :   mult_coeff[SUMLV2-1]=$signed(Hsys[49]); 
+            2'd2    :   mult_coeff[SUMLV2-1]=$signed(Hsys[50]); 
+            default    :   mult_coeff[SUMLV2-1]=18'sd0; 
         endcase
     end
 
@@ -158,67 +176,81 @@ always @ *
 
 /*---------------SUMLV2---------------*/
 // remove pipeline to time logic
-always @ (posedge sys_clk)
-//always @ *
+//always @ (posedge sys_clk)
+always @ *
     if (reset) begin
         for (i=0; i<SUMLV3-1; i=i+1)
-            sum_lvl_2[i]<=18'sd0;
-//            sum_lvl_2[i]=18'sd0;
+//            sum_lvl_2[i]<=18'sd0;
+            sum_lvl_2[i]=18'sd0;
     end
 //    else if (sam_clk_en) begin
     else begin
         for (i=0; i<SUMLV3-1; i=i+1)
 			//mult_out (2s34) -> sum_lvl_2 1s17
-            sum_lvl_2[i]<=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
-//            sum_lvl_2[i]=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
+//            sum_lvl_2[i]<=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
+            sum_lvl_2[i]=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
 //            $display("index: %d | SL2: %d",i,sum_lvl_2[i]);
 //            inte=inte+1;
     end
 
 //cntr
-//always @ *
-always @ (posedge sys_clk)
+always @ *
+//always @ (posedge sys_clk)
     if (reset)
-        sum_lvl_2[SUMLV3-1]<=18'sd0;
+//        sum_lvl_2[SUMLV3-1]<=18'sd0;
+        sum_lvl_2[SUMLV3-1]=18'sd0;
     else
-        sum_lvl_2[SUMLV3-1]<=$signed(mult_out[SUMLV2-1][34:17]);
+//        sum_lvl_2[SUMLV3-1]<=$signed(mult_out[SUMLV2-1][34:17]);
+        sum_lvl_2[SUMLV3-1]=$signed(mult_out[SUMLV2-1][34:17]);
 
 /*---------------SUMLV3---------------*/
 //pipeline w/sys_clk to avoid timing issues
-always @ (posedge sys_clk)
+//always @ (posedge sys_clk)
+always @ *
     if (reset) begin
         for (i=0; i<SUMLV4-1; i=i+1)
-            sum_lvl_3[i]<=18'sd0;
+//            sum_lvl_3[i]<=18'sd0;
+            sum_lvl_3[i]=18'sd0;
     end
     else begin
         for (i=0; i<SUMLV4-1; i=i+1)
-            sum_lvl_3[i]<=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
+//            sum_lvl_3[i]<=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
+            sum_lvl_3[i]=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
     end
 
 //center
-always @ (posedge sys_clk)
+//always @ (posedge sys_clk)
+always @ *
     if (reset) 
-        sum_lvl_3[SUMLV4-1] <= 18'sd0;
+//        sum_lvl_3[SUMLV4-1] <= 18'sd0;
+        sum_lvl_3[SUMLV4-1] = 18'sd0;
     else 
-        sum_lvl_3[SUMLV4-1]<=$signed(sum_lvl_2[SUMLV3-1]);
+//        sum_lvl_3[SUMLV4-1]<=$signed(sum_lvl_2[SUMLV3-1]);
+        sum_lvl_3[SUMLV4-1]=$signed(sum_lvl_2[SUMLV3-1]);
 
 /*---------------SUMLV4---------------*/
-always @ (posedge sys_clk)
+//always @ (posedge sys_clk)
+always @ *
     if (reset) begin
         //SUMLV3=4 -> SUMLV4=2
         for (i=0; i<SUMLV5; i=i+1)
-            sum_lvl_4[i]<=18'sd0;
+//            sum_lvl_4[i]<=18'sd0;
+            sum_lvl_4[i]=18'sd0;
     end
     else begin
         for (i=0; i<SUMLV5; i=i+1)
-            sum_lvl_4[i]<=$signed(sum_lvl_3[2*i])+$signed(sum_lvl_3[2*i+1]);
+//            sum_lvl_4[i]<=$signed(sum_lvl_3[2*i])+$signed(sum_lvl_3[2*i+1]);
+            sum_lvl_4[i]=$signed(sum_lvl_3[2*i])+$signed(sum_lvl_3[2*i+1]);
     end
 
 /*---------------SUMLV5---------------*/
-always @ (posedge sys_clk)
+//always @ (posedge sys_clk)
+always @ *
     if (reset) 
-        sum_lvl_5 <= 18'sd0;
+//        sum_lvl_5 <= 18'sd0;
+        sum_lvl_5 = 18'sd0;
     else 
+//        sum_lvl_5 = $signed(sum_lvl_4[0])+$signed(sum_lvl_4[1]);
         sum_lvl_5 <= $signed(sum_lvl_4[0])+$signed(sum_lvl_4[1]);
 
 

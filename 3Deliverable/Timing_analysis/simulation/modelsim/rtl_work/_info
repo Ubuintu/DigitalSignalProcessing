@@ -8,98 +8,81 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim
+Z0 d/home/tob208/engr-ece/Documents/EE465/3Deliverable/Timing_analysis/simulation/modelsim
 vclk_en
-!s110 1648572749
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1648588412
 !i10b 1
-!s100 o@^fdDTENlG>h6[;mc>nA3
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IPFifi_m?]V>>bGaPUdQ[a1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 `h4ZXe`P[CM^gWUF[[m?L2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IJbm<COQ[>2Ca2e[C7OhY00
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
 R0
-w1647276720
-8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
-FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v
-!i122 14
+w1648495623
+8./clk_en.v
+F./clk_en.v
+!i122 2
 L0 1 36
-Z3 OV;L;2020.1;71
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1648572749.000000
-!s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v|
-!s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/clk_en.v|
+Z6 !s108 1648588412.000000
+!s107 ./clk_en.v|
+!s90 -reportprogress|300|-sv|-work|work|./clk_en.v|
 !i113 1
-Z4 o-work work
-Z5 tCvgOpt 0
+Z7 o-sv -work work
+Z8 tCvgOpt 0
 vfilter_TB
-Z6 !s110 1648572748
-!i10b 1
-!s100 0D[1GjH2oa82f<LZVIBoB0
 R1
-I`MXflT^TO:B;8ENoAObDi0
 R2
+!i10b 1
+!s100 ?;6oBdea>LI1JR3O3HGX@0
+R3
+I[T:0d5V4RO_0NKZOQDS=n2
+R4
+S1
 R0
-w1648568027
-8A:\School\EE465\EE465\3Deliverable\Timing_analysis\simulation\modelsim\GSM_tb.v
-FA:\School\EE465\EE465\3Deliverable\Timing_analysis\simulation\modelsim\GSM_tb.v
-!i122 13
+w1648516113
+8./GSM_tb.v
+F./GSM_tb.v
+!i122 0
 L0 2 52
-R3
+R5
 r1
 !s85 0
 31
-!s108 1648572748.000000
-!s107 A:\School\EE465\EE465\3Deliverable\Timing_analysis\simulation\modelsim\GSM_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|A:\School\EE465\EE465\3Deliverable\Timing_analysis\simulation\modelsim\GSM_tb.v|
-!i113 1
-R4
-R5
-nfilter_@t@b
-vGSM_101Mults
 R6
-!i10b 1
-!s100 BP2;RL`ogGTAF_Ue?:JQ=1
-R1
-IW3@K<S?Ogo:8fj@=18Xlh1
-R2
-R0
-Z7 w1648567753
-Z8 8A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
-Z9 FA:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo
-!i122 12
-L0 32 147376
-R3
-r1
-!s85 0
-31
-Z10 !s108 1648572747.000000
-Z11 !s107 A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
-Z12 !s90 -reportprogress|300|-work|work|-stats=none|A:/School/EE465/EE465/3Deliverable/Timing_analysis/simulation/modelsim/GSM_101Mults.vo|
+!s107 ./GSM_tb.v|
+!s90 -reportprogress|300|-sv|-work|work|./GSM_tb.v|
 !i113 1
-R4
-R5
-n@g@s@m_101@mults
-vhard_block
-R6
-!i10b 1
-!s100 0T];:XCAOV^z6A=9MNa@U2
-R1
-ImnSShU5FYM>h:[6LnoKU43
-R2
-R0
 R7
 R8
-R9
-!i122 12
-L0 147409 34
+nfilter_@t@b
+vGSM_101Mults
+R1
+R2
+!i10b 1
+!s100 5TJGK4WBf?N1e7mnl;jHI2
 R3
+I87NG;aULQliMN<OnkE_>Z3
+R4
+S1
+R0
+w1648588383
+8./../../GSM_101Mults.v
+F./../../GSM_101Mults.v
+!i122 1
+L0 1 347
+R5
 r1
 !s85 0
 31
-R10
-R11
-R12
+R6
+!s107 ./../../GSM_101Mults.v|
+!s90 -reportprogress|300|-sv|-work|work|./../../GSM_101Mults.v|
 !i113 1
-R4
-R5
+R7
+R8
+n@g@s@m_101@mults

@@ -293,7 +293,7 @@ clc
 % avgSqErr= 35657948656;
 
 % PS to GSM
-mapOutPwr= 1656;
-avgSqErr= 29582259657;
+mapOutPwr= 1526;
+avgSqErr= 2723626152962;
 
 MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);

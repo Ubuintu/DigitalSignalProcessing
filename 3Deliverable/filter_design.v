@@ -148,32 +148,24 @@ always @ (posedge sys_clk)
 	
 //PPS_filt DUT_TX (
 PPS_filt_101 DUT_TX (
-//ps_filter DUT_TX (
 //GSM_101Mults DUT_TX (	//debug MER circuit
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
 	.x_in(srrc_input),
 	.y(srrc_out)
-//	.sym_clk_en(sym_clk_ena),	//DEBUGGING
-//	.SW(SW[0]),
-//	.x_in(srrc_input),	//DEBUGGING
-//	.y_ps(srrc_out)
 	);
 
 (* keep *) wire signed [17:0] MF_out;
 
 //GSM
-GSM_101Mults DUT_RCV (
-//gs_matched_filter_mult DUT_RCV (
+//GSM_101Mults DUT_RCV (
+GSM_TS DUT_RCV (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
-//	.sym_clk_en(sym_clk_ena),	//DEBUGGING
 	.reset(~KEY[3]),
 	.x_in(srrc_out),
 	.y(MF_out)
-//	.x_in(srrc_out),	//DEBUGGING
-//	.y_gs(MF_out)
 );
 
 //delay outputs for MUX @ sample clk. output of MF should come out w/e AND then needs to be sample by sam_clk & sym_clk sequentially

@@ -2,14 +2,14 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /filter_TB/EN_CLK/sys_clk
 add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
-add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
 add wave -noupdate /filter_TB/rst
 add wave -noupdate /filter_TB/DUT/x_in
 add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
 add wave -noupdate /filter_TB/DUT/sum_lvl_1
 add wave -noupdate /filter_TB/DUT/mult_in
-add wave -noupdate /filter_TB/DUT/mult_coeff
-add wave -noupdate /filter_TB/DUT/mult_out
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
 add wave -noupdate /filter_TB/DUT/sum_lvl_2
 add wave -noupdate /filter_TB/DUT/sum_lvl_3
 add wave -noupdate /filter_TB/DUT/sum_lvl_4
