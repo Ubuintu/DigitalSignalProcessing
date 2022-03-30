@@ -292,8 +292,11 @@ clc
 % mapOutPwr= 20491;
 % avgSqErr= 35657948656;
 
-% PS to GSM
-mapOutPwr= 1526;
-avgSqErr= 2723626152962;
+% PS to GSM % Reset is super jank; need to time it right; reset until
+% map_out_pwr is ~1.5k & err_square is 36235604970566
+% mapOutPwr= 1658;
+% avgSqErr= 29470551389;
+mapOutPwr= 1658;
+avgSqErr= 29470551389;
 
 MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);
