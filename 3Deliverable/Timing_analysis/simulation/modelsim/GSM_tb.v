@@ -28,7 +28,7 @@ initial begin
     //file_in=$fopen("../../../D3_ASK_in.txt","r");
     #(RSTDELAY*RSTLEN);
     rst=1;
-    #(RSTLEN*RSTLEN*10);
+    #(RSTLEN*RSTLEN*100);
     rst=0;
 end
 

@@ -13,10 +13,6 @@ set SRC_DIR [getScriptDirectory]
 set TB_MOD "GSM_tb"
 set TB_Nam "filter_TB"
 set EN "clk_en"
-#set MOD "PPS_filt"
-#set MOD "PPS_filt_101"
-#set MOD "GSM_TS"
-#set MOD "GSM_noMult_101"
 set MOD "GSM_101Mults"
 
 puts [info script]

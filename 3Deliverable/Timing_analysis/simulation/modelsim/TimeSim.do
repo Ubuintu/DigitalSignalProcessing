@@ -6,6 +6,7 @@ add wave -noupdate -radix binary /filter_TB/clk_50
 add wave -noupdate -radix binary /filter_TB/sys_clk
 add wave -noupdate -radix binary /filter_TB/sam_clk_en
 add wave -noupdate -radix binary /filter_TB/sym_clk_en
+add wave -noupdate -radix binary /filter_TB/rstdo
 add wave -noupdate -radix decimal /filter_TB/x_in
 add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
 add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl_1

@@ -17,18 +17,18 @@ module GSM_101Mults #(
     output reg signed [WIDTH-1:0] y
 );
 
-(* noprune *) reg signed [WIDTH-1:0] sum_lvl_1[SUMLV1-1:0];
-(* noprune *) reg signed [WIDTH-1:0] sum_lvl_2[SUMLV3-1:0];
-(* noprune *) reg signed [WIDTH-1:0] sum_lvl_3[SUMLV4-1:0];
-(* noprune *) reg signed [WIDTH-1:0] sum_lvl_4[SUMLV5-1:0];
-(* noprune *) reg signed [WIDTH-1:0] sum_lvl_5;
-(* noprune *) reg signed [2*WIDTH-1:0] mult_out[SUMLV2-1:0];
-(* noprune *) reg signed [WIDTH-1:0] mult_in[SUMLV2-1:0];
-(* noprune *) reg signed [WIDTH-1:0] mult_coeff[SUMLV2-1:0];
+(* preserve *) reg signed [WIDTH-1:0] sum_lvl_1[SUMLV1-1:0];
+(* preserve *) reg signed [WIDTH-1:0] sum_lvl_2[SUMLV3-1:0];
+(* preserve *) reg signed [WIDTH-1:0] sum_lvl_3[SUMLV4-1:0];
+(* preserve *) reg signed [WIDTH-1:0] sum_lvl_4[SUMLV5-1:0];
+(* preserve *) reg signed [WIDTH-1:0] sum_lvl_5;
+(* keep *) reg signed [2*WIDTH-1:0] mult_out[SUMLV2-1:0];
+(* preserve *) reg signed [WIDTH-1:0] mult_in[SUMLV2-1:0];
+(* preserve *) reg signed [WIDTH-1:0] mult_coeff[SUMLV2-1:0];
 (* preserve *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
 //0s18 coeffs
-(* noprune *) reg signed [WIDTH-1:0] Hsys[(LENGTH-1)/2:0];
-(* noprune *) reg [1:0] cnt;
+(* keep *) reg signed [WIDTH-1:0] Hsys[(LENGTH-1)/2:0];
+(* preserve *) reg [1:0] cnt;
 
 //debugging
 integer inte=0;
@@ -56,7 +56,7 @@ end
 //counter
 always @ (posedge sys_clk)
     if (reset)
-        cnt=2'd0;   //offset for pipeline
+        cnt=2'd0;  
     else
         cnt=cnt+2'd1;
 
@@ -85,45 +85,26 @@ always @ (posedge sys_clk)
             x[i]<=$signed(x[i]);
     end
 
-///*      SUMLV1      */
-//always @ (posedge sys_clk)
-//    if (reset) begin
-//		 for(i=0;i<SUMLV1-1;i=i+1)
-//			  sum_lvl_1[i] <= 18'sd0;
-//    end
-//    else if (sam_clk_en) begin
-//		 for(i=0;i<SUMLV1-1;i=i+1)
-//			  sum_lvl_1[i] <= $signed(x[i])+$signed(x[LENGTH-1-i]);
-//    end
-//
-////cntr
-//always @ (posedge sys_clk)
-//    if (reset) sum_lvl_1[SUMLV1-1] <= 18'sd0;
-//	else if (sam_clk_en) sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
-//	else sum_lvl_1[SUMLV1-1] <= $signed(sum_lvl_1[SUMLV1-1]);
-
-
 /*      SUMLV1      */
-always @ *
+always @ (posedge sys_clk)
     if (reset) begin
 		 for(i=0;i<SUMLV1-1;i=i+1)
-			  sum_lvl_1[i] = 18'sd0;
+			  sum_lvl_1[i] <= 18'sd0;
     end
-    else begin
+    else if (sam_clk_en) begin
 		 for(i=0;i<SUMLV1-1;i=i+1)
-			  sum_lvl_1[i] = $signed(x[i])+$signed(x[LENGTH-1-i]);
+			  sum_lvl_1[i] <= $signed(x[i])+$signed(x[LENGTH-1-i]);
     end
 
 //cntr
-always @ *
+always @ (posedge sys_clk)
     if (reset) sum_lvl_1[SUMLV1-1] <= 18'sd0;
-	else sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
-
+	else if (sam_clk_en) sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
+	else sum_lvl_1[SUMLV1-1] <= $signed(sum_lvl_1[SUMLV1-1]);
 
 /*      Time-sharing Lvl        */
 
 //multiplier input (2s16)
-//always @ (cnt)	// delayed in ModelSim
 always @ *
     for (i=0;i<SUMLV2-1;i=i+1) begin
         case (cnt)
@@ -135,7 +116,6 @@ always @ *
     end
 
 //cntr
-//always @ (cnt)	// delayed in ModelSim
 always @ *
 	begin
 	case (cnt)
@@ -176,81 +156,65 @@ always @ *
 
 /*---------------SUMLV2---------------*/
 // remove pipeline to time logic
-//always @ (posedge sys_clk)
-always @ *
+always @ (posedge sys_clk)
     if (reset) begin
         for (i=0; i<SUMLV3-1; i=i+1)
-//            sum_lvl_2[i]<=18'sd0;
-            sum_lvl_2[i]=18'sd0;
+            sum_lvl_2[i]<=18'sd0;
     end
 //    else if (sam_clk_en) begin
     else begin
         for (i=0; i<SUMLV3-1; i=i+1)
 			//mult_out (2s34) -> sum_lvl_2 1s17
-//            sum_lvl_2[i]<=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
-            sum_lvl_2[i]=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
+            sum_lvl_2[i]<=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
 //            $display("index: %d | SL2: %d",i,sum_lvl_2[i]);
 //            inte=inte+1;
     end
 
 //cntr
-always @ *
-//always @ (posedge sys_clk)
+always @ (posedge sys_clk)
     if (reset)
-//        sum_lvl_2[SUMLV3-1]<=18'sd0;
-        sum_lvl_2[SUMLV3-1]=18'sd0;
+        sum_lvl_2[SUMLV3-1]<=18'sd0;
     else
-//        sum_lvl_2[SUMLV3-1]<=$signed(mult_out[SUMLV2-1][34:17]);
-        sum_lvl_2[SUMLV3-1]=$signed(mult_out[SUMLV2-1][34:17]);
+        sum_lvl_2[SUMLV3-1]<=$signed(mult_out[SUMLV2-1][34:17]);
 
 /*---------------SUMLV3---------------*/
 //pipeline w/sys_clk to avoid timing issues
-//always @ (posedge sys_clk)
-always @ *
+always @ (posedge sys_clk)
     if (reset) begin
         for (i=0; i<SUMLV4-1; i=i+1)
-//            sum_lvl_3[i]<=18'sd0;
-            sum_lvl_3[i]=18'sd0;
+            sum_lvl_3[i]<=18'sd0;
     end
     else begin
         for (i=0; i<SUMLV4-1; i=i+1)
-//            sum_lvl_3[i]<=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
-            sum_lvl_3[i]=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
+            sum_lvl_3[i]<=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
     end
 
 //center
-//always @ (posedge sys_clk)
-always @ *
+always @ (posedge sys_clk)
     if (reset) 
-//        sum_lvl_3[SUMLV4-1] <= 18'sd0;
-        sum_lvl_3[SUMLV4-1] = 18'sd0;
+        sum_lvl_3[SUMLV4-1] <= 18'sd0;
     else 
-//        sum_lvl_3[SUMLV4-1]<=$signed(sum_lvl_2[SUMLV3-1]);
-        sum_lvl_3[SUMLV4-1]=$signed(sum_lvl_2[SUMLV3-1]);
+        sum_lvl_3[SUMLV4-1]<=$signed(sum_lvl_2[SUMLV3-1]);
 
 /*---------------SUMLV4---------------*/
-//always @ (posedge sys_clk)
-always @ *
+always @ (posedge sys_clk)
+//always @ *
     if (reset) begin
         //SUMLV3=4 -> SUMLV4=2
         for (i=0; i<SUMLV5; i=i+1)
-//            sum_lvl_4[i]<=18'sd0;
-            sum_lvl_4[i]=18'sd0;
+            sum_lvl_4[i]<=18'sd0;
     end
     else begin
         for (i=0; i<SUMLV5; i=i+1)
-//            sum_lvl_4[i]<=$signed(sum_lvl_3[2*i])+$signed(sum_lvl_3[2*i+1]);
-            sum_lvl_4[i]=$signed(sum_lvl_3[2*i])+$signed(sum_lvl_3[2*i+1]);
+            sum_lvl_4[i]<=$signed(sum_lvl_3[2*i])+$signed(sum_lvl_3[2*i+1]);
     end
 
 /*---------------SUMLV5---------------*/
 //always @ (posedge sys_clk)
 always @ *
     if (reset) 
-//        sum_lvl_5 <= 18'sd0;
-        sum_lvl_5 = 18'sd0;
+        sum_lvl_5 <= 18'sd0;
     else 
-//        sum_lvl_5 = $signed(sum_lvl_4[0])+$signed(sum_lvl_4[1]);
         sum_lvl_5 <= $signed(sum_lvl_4[0])+$signed(sum_lvl_4[1]);
 
 
@@ -268,7 +232,8 @@ end
 always @ (posedge sys_clk)
 //always @ *
     if (reset) det_edge <= 2'd0;
-    else det_edge <= {det_edge[0], &cnt};
+//    else det_edge <= {det_edge[0], &cnt};	//for Func Sim
+    else det_edge <= {det_edge[0], (cnt==2'b10)};	//for Time Sim
 
 //assign sig_edge = (det_edge == 2'b10);
 assign sig_edge = (det_edge == 2'b01);
@@ -281,8 +246,8 @@ always @ (posedge sys_clk)
 
 /*---------------Final Reg---------------*/
 always @ (posedge sys_clk)
-    if (reset) y<= 18'sd0;
-    //else if (sam_clk_en) y<=$signed( {sum_lvl[LENGTH+OFFSET-1][16:0],1'b0} );
+    if (reset) 
+		  y<= 18'sd0;
     else if (sam_clk_en) begin
         y<=$signed(acc_out);
     end
@@ -345,3 +310,7 @@ initial begin
 end
 
 endmodule
+
+
+	
+

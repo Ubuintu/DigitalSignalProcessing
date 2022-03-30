@@ -240,7 +240,7 @@ for i=1:round(length(h_GSM_1s17)/2)
 end
 fprintf("end\n")
 
-%% GSM Time-sharing
+%% GSM Time-sharing structure
 clc
 
 % ceil to account for odd tap

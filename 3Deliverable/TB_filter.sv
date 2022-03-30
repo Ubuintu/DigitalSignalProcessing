@@ -47,8 +47,8 @@ clk_en EN_CLK( .clk(clk_50), .reset(rst), .sys_clk(sys_clk), .sam_clk_en(sam_clk
 //GSPS_filt #(.WIDTH(18), .SUMLVL(7), .LENGTH(93), .OFFSET(2), .POSSMAPPER(7), .MAPSIZE(4) ) DUT (
 //PPS_filt #(.WIDTH(18), .SUMLVL(7), .LENGTH(93), .OFFSET(2), .POSSMAPPER(7), .MAPSIZE(4) ) DUT (
 //PPS_filt #(.WIDTH(18), .SUMLVL(7), .LENGTH(93), .OFFSET(2) ) DUT (
-PPS_filt_101 #(.WIDTH(18), .SUMLVL(7) ) DUT (
-//GSM_101Mults #(.WIDTH(18), .SUMLVL(7) ) DUT (
+//PPS_filt_101 #(.WIDTH(18), .SUMLVL(7) ) DUT (
+GSM_101Mults #(.WIDTH(18), .SUMLVL(7) ) DUT (
 //GSM_noMult #(.WIDTH(18), .SUMLVL(7) ) DUT (
     .sys_clk(sys_clk),
     .sam_clk_en(sam_clk_en),
