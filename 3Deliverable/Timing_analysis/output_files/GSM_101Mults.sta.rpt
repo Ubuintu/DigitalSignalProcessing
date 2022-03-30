@@ -1,5 +1,5 @@
 Timing Analyzer report for GSM_101Mults
-Tue Mar 29 23:30:40 2022
+Wed Mar 30 00:40:39 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -100,15 +100,15 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 24          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.78        ;
+; Average used               ; 1.76        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  22.6%      ;
-;     Processor 3            ;  15.1%      ;
-;     Processor 4            ;   5.6%      ;
-;     Processors 5-16        ;   2.9%      ;
+;     Processor 2            ;  24.9%      ;
+;     Processor 3            ;   7.9%      ;
+;     Processor 4            ;   6.1%      ;
+;     Processors 5-16        ;   3.1%      ;
 +----------------------------+-------------+
 
 
@@ -117,7 +117,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------+--------+--------------------------+
 ; SDC File Path    ; Status ; Read at                  ;
 +------------------+--------+--------------------------+
-; GSM_101Mults.sdc ; OK     ; Tue Mar 29 23:30:37 2022 ;
+; GSM_101Mults.sdc ; OK     ; Wed Mar 30 00:40:37 2022 ;
 +------------------+--------+--------------------------+
 
 
@@ -1269,7 +1269,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 29 23:30:36 2022
+    Info: Processing started: Wed Mar 30 00:40:36 2022
 Info: Command: quartus_sta GSM_101Mults -c GSM_101Mults
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1343,9 +1343,9 @@ Info (332146): Worst-case minimum pulse width slack is 19.436
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 5046 megabytes
-    Info: Processing ended: Tue Mar 29 23:30:40 2022
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 5039 megabytes
+    Info: Processing ended: Wed Mar 30 00:40:39 2022
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:04
 
 

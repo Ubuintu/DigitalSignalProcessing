@@ -213,9 +213,9 @@ always @ (posedge sys_clk)
 //always @ (posedge sys_clk)
 always @ *
     if (reset) 
-        sum_lvl_5 <= 18'sd0;
+        sum_lvl_5 = 18'sd0;
     else 
-        sum_lvl_5 <= $signed(sum_lvl_4[0])+$signed(sum_lvl_4[1]);
+        sum_lvl_5 = $signed(sum_lvl_4[0])+$signed(sum_lvl_4[1]);
 
 
 /*---------------Accumulator---------------*/
@@ -232,8 +232,8 @@ end
 always @ (posedge sys_clk)
 //always @ *
     if (reset) det_edge <= 2'd0;
-//    else det_edge <= {det_edge[0], &cnt};	//for Func Sim
-    else det_edge <= {det_edge[0], (cnt==2'b10)};	//for Time Sim
+    else det_edge <= {det_edge[0], &cnt};	//for Func Sim
+//    else det_edge <= {det_edge[0], (cnt==2'b10)};	//for Time Sim
 
 //assign sig_edge = (det_edge == 2'b10);
 assign sig_edge = (det_edge == 2'b01);
