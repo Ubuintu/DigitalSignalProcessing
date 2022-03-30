@@ -13,8 +13,12 @@ initial begin
 end
 
 always @ (posedge clk)
+/*
+	//need to verify this works b4 removing
     if (reset) sys_clk = 1'b0;
     else sys_clk = ~sys_clk;
+*/
+    sys_clk = ~sys_clk;
 
 always @ (posedge sys_clk)
     if(reset) cnt = 4'b0;
