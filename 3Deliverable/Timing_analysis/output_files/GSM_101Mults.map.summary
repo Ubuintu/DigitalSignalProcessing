@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Mar 30 00:40:06 2022
+Analysis & Synthesis Status : Successful - Wed Mar 30 23:39:43 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : GSM_101Mults
 Top-level Entity Name : GSM_101Mults
 Family : Cyclone IV E
-Total logic elements : 5,137
-    Total combinational functions : 5,118
-    Dedicated logic registers : 3,010
-Total registers : 3010
+Total logic elements : 5,133
+    Total combinational functions : 5,114
+    Dedicated logic registers : 3,008
+Total registers : 3008
 Total pins : 39
 Total virtual pins : 0
 Total memory bits : 0

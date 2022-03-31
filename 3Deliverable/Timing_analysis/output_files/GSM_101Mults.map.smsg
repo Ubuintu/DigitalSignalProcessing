@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at GSM_101Mults.v(394): always construct contains both blocking and non-blocking assignments File: A:/School/EE465/EE465/3Deliverable/Timing_analysis/GSM_101Mults.v Line: 394

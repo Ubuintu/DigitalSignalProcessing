@@ -53,7 +53,7 @@ initial begin
      cnt=2'd0;
 end
 
-//counter
+//cnt
 always @ (posedge sys_clk)
     if (reset)
         cnt=2'd0;  
@@ -239,7 +239,7 @@ always @ (posedge sys_clk)
 assign sig_edge = (det_edge == 2'b01);
 
 always @ (posedge sys_clk)
-    if (reset || sig_edge) 
+    if (reset || sam_clk_en) 
         acc_out <= $signed(sum_lvl_5);
     else 
         acc_out <= acc_out + $signed(sum_lvl_5);
@@ -310,7 +310,6 @@ initial begin
 end
 
 endmodule
-
 
 	
 

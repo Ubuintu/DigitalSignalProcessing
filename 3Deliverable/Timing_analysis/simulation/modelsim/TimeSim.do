@@ -1,3 +1,18 @@
+#look into https://www.microsemi.com/document-portal/doc_view/130758-modelsim-simulation-frequently-asked-questions
+#or SDF file
+
+if {[file exists work]} {
+    vdel -lib work -all
+}
+#A directory that contains compiled design units, such as modules. There are two types of libraries: Resource Library and Working Library. The default working library in ModelSim is named work and is predefined in the ModelSim compiler.
+vlib work
+vmap work work
+vlib cycloneive_ver
+vlib altera_mf_ver
+vlib altera_ver
+vmap cycloneive_ver 
+vmap altera_mf_ver 
+vmap altera_ver
 project compileall
 vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.filter_TB
 onerror {resume}
@@ -43,3 +58,9 @@ view wave
 WaveCollapseAll -1
 wave clipboard restore
 run 20000000
+
+proc printMsg { msg } {
+  global now
+  variable timeUnits
+  echo $now $timeUnits: $msg
+}
