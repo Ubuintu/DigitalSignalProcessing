@@ -25,6 +25,7 @@ Nsps=4;
 % N=101; betaTx=0.158; betaRcv=0.199; betaK=1.8;
 % N=93; betaTx=0.174; betaRcv=0.197; betaK=0.5;
 
+% line 1063 in MOAP
 %        MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3 b Kaiser     weight 
 %  42.017901   0.145500   0.182100        101     141106  60.037561  64.921997  64.304794   0.000000         20 
 N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;  %Amplitude on SA might changed since coeffs are adjusted to 1s17 (2^18 before)
@@ -142,20 +143,10 @@ a = safety/4;
 % a = 1;    % to see possible inputs from LUT
 ASK_out = [-3*a -a a 3*a];
 
-in1 = ASK_out;
-in2 = ASK_out;
-
-% add row and column vectors to see possible combinations
-possible_inputs = in1 + in2';
-possible_inputs = uniquetol(possible_inputs);
-POSSINPUT= combine(possible_inputs, ASK_out.'); 
-POSS_IN=round(POSSINPUT.*2^16);
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
-possible_inputs_verilog = round(possible_inputs*2^16); 
 % coeffs of PPS are less
-MF_PPS=round(ASK_out.'*h_PPS.*2^17*safety);    % 0s18 gives me smoothest stp; idk y
-% MF_PPS=round(POSSINPUT*h_PPS.*2^16);    
-MF_GSPS=round(ASK_out.'*h_GSPS_1s17);
+MF_PPS=round(ASK_out.'*h_PPS.*2^17*safety);
+MF_GSPS=round(ASK_out.'*h_GSPS.*2^17*safety);
 
 num_of_sumLvls=0; coeffs2reduce=N;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
@@ -208,7 +199,7 @@ clc
 [rows, cols] = size(MF_GSPS);
 % fprintf('0s18 Coefficients for GSPS filter:\n');
 fprintf("\ninitial begin\n");
-for i = 1:ceil(cols/2)
+for i = 1:cols
     for j = 1:rows+1
         if j == rows+1 && h_GSPS_1s17(i) > 0
             fprintf('\tHsys[%d][%d] = 18''sd%s;\n',(j-1),(i-1),num2str( abs(h_GSPS_1s17(i)) ) );
@@ -225,6 +216,16 @@ for i = 1:ceil(cols/2)
 end
 fprintf("end\n");
 % fprintf('End of 0s18 Coefficients for GSPS filter:\n\n');
+
+%% Debug GSPS coeff
+clc
+for i=1:round(length(h_GSPS_1s17)/2)
+    if (h_PPS_1s17(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(i-1),abs(h_GSPS_1s17(i)) );
+    else
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(i-1),abs(h_GSPS_1s17(i)) );
+    end
+end
 
 
 
@@ -292,11 +293,13 @@ clc
 % mapOutPwr= 20491;
 % avgSqErr= 35657948656;
 
-% PS to GSM % Reset is super jank; need to time it right; reset until
+% PPS to GSM % Reset is super jank; need to time it right; reset until
 % map_out_pwr is ~1.5k & err_square is 36235604970566
-% mapOutPwr= 1658;
-% avgSqErr= 29470551389;
 mapOutPwr= 1658;
-avgSqErr= 29470551389;
+avgSqErr= 29455612887;
+
+% GSPS to GSM % 
+% mapOutPwr= 1653;
+% avgSqErr= 4437263996;
 
 MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);
