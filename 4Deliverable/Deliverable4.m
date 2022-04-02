@@ -1,15 +1,13 @@
-%% Upconversion block based on Halfband filts
+%% Halfband filter Design
 % upsampling COMPRESSES freq spectrum; remember
 % this for Fpk_stop
 
 % consider Firpm for LPF design as well as
 % polyphase from 461
-% close all; clear; clc; format longG
+close all; clear; clc; format longG
 
 % call functions like superplot from other directories
-Current_Folder=pwd;
-Function_folder='../examples/matlab';
-addpath(genpath(Function_folder));
+Current_Folder=pwd; Function_folder='../examples/matlab'; addpath(genpath(Function_folder));
 
 % digital angular frequency, w (rads/sample)
 % w = [0:0.001:1000]/1000*pi; % half cycle
@@ -20,6 +18,7 @@ w = [0:0.001:200]/100*pi; %one whole cycle
 Fs = 12.5;  % Sampling Frequency
 
 Fpass = 0.4375;          % Passband Frequency
+% currently gives 5 coeffs; more if you decrease ripple
 Dpass = 0.00000057501127785;  % Passband Ripple
 
 % Calculate the coefficients using the FIRPM function.
@@ -53,10 +52,20 @@ h_halfband_PM=firpm(M,fb,a,wght);   %calculate M+1 IR coefficients for vector b
 
 H_halfband_PM = freqz(h_halfband_PM,1,w);
 
+% hold on 
 MR_halfband_pm_vs_Des=superplot(w/2/pi, 20*log10(abs(H_halfband_1)),'plotName',"Comparision between designer & FIRPM",'figureName',"Halfband_cmp",'yName',"Magnitude (dB)",...
     'xName',"frequency (cycles/sample)",'yLegend',"filtDesigner",'cmpY',20*log10(abs(H_halfband_PM)),'cmpYLegend',"FIRPM",...
     'plotAxis',[0 w(end)/2/pi -150 10]);
-% close(MR_halfband_pm_vs_Des);
+text(0.02,-10,['{\delta_p} of filter Design: ',num2str(Dpass)]);
+% hold off
+close(MR_halfband_pm_vs_Des);
 
 % filterDesigner atm gives me 3 mults per LPF; center coeff can be a bit shift
+
+%% Theoretical upconv/upsampling
+clc
+
+impulse = [0 0 1 0 0];
+
+
     
