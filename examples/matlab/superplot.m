@@ -50,6 +50,11 @@ if (isempty(varargin))
     plot_out = [];
     return
 end
+
+%% Directory setup
+if isfolder('pics') == 0
+    mkdir('pics')
+end
     
 %% Plotting
     plot_out = figure('name',p.Results.figureName);
