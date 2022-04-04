@@ -20,7 +20,7 @@ module DUT #(
 (* noprune *) reg signed [WIDTH-1:0] sum_lvl_4;
 (* preserve *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
 //0s18 coeffs
-(* keep *) reg signed [WIDTH-1:0] Hsys[SUMLV1:0];
+(* keep *) reg signed [WIDTH-1:0] Hsys[SUMLV1-1:0];
 
 
 integer i;
@@ -129,7 +129,7 @@ initial begin
 	Hsys[4] = -18'sd15925;
 	Hsys[5] = 18'sd0;
 	Hsys[6] = 18'sd78535;
-	Hsys[7] = 18'sd131072;
+	Hsys[7] = 18'sd131071;
 end
 
 endmodule

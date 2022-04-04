@@ -92,8 +92,8 @@ LPF_out_2nd=conv(up2,h_halfband_filtDes_2nd);
 clc
 
 % Find coeffs
-safety=(2^-1)-(2^-18);  %0s18
-h_halfband_filtDes_0s18=round(h_halfband_filtDes*2^18);
+safety=(2^-0)-(2^-17);  %0s18
+h_halfband_filtDes_0s18=round(h_halfband_filtDes*2^18*safety);
 
 idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16

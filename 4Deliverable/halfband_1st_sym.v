@@ -20,7 +20,7 @@ module halfband_1st_sym #(
 (* noprune *) reg signed [WIDTH-1:0] sum_lvl_4;
 (* preserve *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
 //0s18 coeffs
-(* keep *) reg signed [WIDTH-1:0] Hsys[SUMLV1:0];
+(* keep *) reg signed [WIDTH-1:0] Hsys[SUMLV1-1:0];
 
 
 integer i;

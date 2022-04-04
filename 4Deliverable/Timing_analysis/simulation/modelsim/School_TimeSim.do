@@ -19,6 +19,7 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -radix binary /filter_TB/clk_50
 add wave -noupdate -radix binary /filter_TB/sys_clk
+add wave -noupdate -radix binary /filter_TB/sys_clk2_en
 add wave -noupdate -radix binary /filter_TB/sam_clk_en
 add wave -noupdate -radix binary /filter_TB/sym_clk_en
 add wave -noupdate -radix binary /filter_TB/rstdo

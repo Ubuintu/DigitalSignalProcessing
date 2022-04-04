@@ -1,10 +1,105 @@
 m255
 K4
 z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-d/home/tob208/engr-ece
+Z0 d/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim
+vclk_en
+Z1 !s110 1649105667
+!i10b 1
+!s100 ]X_Ii:PJ3c_7i=a2fbL^d0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IJ_N@:;P12U<_d`Pb@GPTk3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1649052905
+8/home/tob208/engr-ece/Documents/EE465/4Deliverable/clk_en.v
+F/home/tob208/engr-ece/Documents/EE465/4Deliverable/clk_en.v
+!i122 2
+L0 1 42
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1649105667.000000
+!s107 /home/tob208/engr-ece/Documents/EE465/4Deliverable/clk_en.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tob208/engr-ece/Documents/EE465/4Deliverable/clk_en.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vDUT
+R1
+!i10b 1
+!s100 RW<31CUWLN[fEFTNgTc2U1
+R2
+IH<6aMjG8LCbQKoKzXH;e[0
+R3
+R0
+Z8 w1649105562
+Z9 8/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo
+Z10 F/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo
+!i122 0
+L0 32 30436
+R4
+r1
+!s85 0
+31
+R5
+Z11 !s107 /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo|
+!i113 1
+R6
+R7
+n@d@u@t
+vfilter_TB
+R1
+!i10b 1
+!s100 OMWhI27YoZd2MeM;fFnig2
+R2
+IAlDd^=LX]4ZkFhL9:[JH^2
+R3
+R0
+w1649039948
+8/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v
+F/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v
+!i122 1
+L0 2 62
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v|
+!i113 1
+R6
+R7
+nfilter_@t@b
+vhard_block
+R1
+!i10b 1
+!s100 mBCaCkmVfVYImB`4zSGD;3
+R2
+I>Nz511McDdEQ]W96i<4lE3
+R3
+R0
+R8
+R9
+R10
+!i122 0
+L0 30469 34
+R4
+r1
+!s85 0
+31
+R5
+R11
+R12
+!i113 1
+R6
+R7

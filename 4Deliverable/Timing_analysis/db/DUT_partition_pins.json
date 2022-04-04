@@ -76,7 +76,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "sys_clk2_en",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
@@ -84,11 +84,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
+					"name" : "sys_clk2_en",
 					"strict" : false
 				},
 				{
