@@ -1,52 +1,33 @@
 module GSM_101Mults #(
 //Will have to manually adjust line 110 if statements based on len of filt & sum lvls required
     parameter WIDTH=18,
-    parameter LENGTH=101,
-    //Matlab: N-sum(tapsPerlvl);
-    parameter OFFSET=2,
-    parameter SUMLV1=51,
-    parameter SUMLV2=13, //num of taps for mixers
-    parameter SUMLV3=7, //taps for sumLv2
-    parameter SUMLV4=4,
-    parameter SUMLV5=2,
-    parameter SUMLV6=1
+    parameter LENGTH=15,
+    parameter SUMLV1=4
 )
 (
-    input sys_clk, sam_clk_en, reset,
+    input sys_clk, sam_clk_en, reset, clk, sys_clk2_en,
     input signed [WIDTH-1:0] x_in,
     output reg signed [WIDTH-1:0] y
 );
 
+//E0(z)
 (* preserve *) reg signed [WIDTH-1:0] sum_lvl_1[SUMLV1-1:0];
-(* preserve *) reg signed [WIDTH-1:0] sum_lvl_2[SUMLV3-1:0];
-(* preserve *) reg signed [WIDTH-1:0] sum_lvl_3[SUMLV4-1:0];
-(* preserve *) reg signed [WIDTH-1:0] sum_lvl_4[SUMLV5-1:0];
-(* preserve *) reg signed [WIDTH-1:0] sum_lvl_5;
-(* keep *) reg signed [2*WIDTH-1:0] mult_out[SUMLV2-1:0];
-(* preserve *) reg signed [WIDTH-1:0] mult_in[SUMLV2-1:0];
-(* preserve *) reg signed [WIDTH-1:0] mult_coeff[SUMLV2-1:0];
+//E0 & E1
+(* keep *) reg signed [2*WIDTH-1:0] mult_out;
+(* preserve *) reg signed [WIDTH-1:0] mult_in;
+(* preserve *) reg signed [WIDTH-1:0] mult_coeff;
 (* preserve *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
 //0s18 coeffs
 (* keep *) reg signed [WIDTH-1:0] Hsys[(LENGTH-1)/2:0];
+//run @ 50 MHz
 (* preserve *) reg [1:0] cnt;
 
-//debugging
-integer inte=0;
 
-integer i,j;
+integer i;
 initial begin
-//     tol=18'sd10;
      for (i=0; i<SUMLV1; i=i+1)
         sum_lvl_1[i]=18'sd0;
-     for (i=0; i<SUMLV3; i=i+1)
-        sum_lvl_2[i]=18'sd0;
-     for (i=0; i<SUMLV4; i=i+1)
-        sum_lvl_3[i]=18'sd0;
-     for (i=0; i<SUMLV5; i=i+1)
-        sum_lvl_4[i]=18'sd0;
-    sum_lvl_5=18'sd0;
-     for (i=0; i<SUMLV2; i=i+1)
-        mult_out[i]=36'sd0;
+     mult_out=36'sd0;
      for (i=0; i<LENGTH; i=i+1)
         x[i]=18'sd0;
      y = 18'sd0;
@@ -54,7 +35,7 @@ initial begin
 end
 
 //cnt
-always @ (posedge sys_clk)
+always @ (posedge clk)
     if (reset)
         cnt=2'd0;  
     else

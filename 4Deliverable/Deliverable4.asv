@@ -95,18 +95,13 @@ clc
 safety=(2^-1)-(2^-18);  %0s18
 h_halfband_filtDes_0s18=round(h_halfband_filtDes*2^18);
 
-idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16
 fprintf("initial begin\n");
-for i=1:length(round(h_halfband_filtDes_0s18/2))
-    if h_halfband_filtDes_0s18(i)==0 || idx>4
-        safety=safety;
-    elseif (h_halfband_filtDes_0s18(i)<0)
-        fprintf("\tHsys[%d] = -18'sd%d;\n",(idx),abs(h_halfband_filtDes_0s18(i)) );
-        idx=idx+1;
+for i=1:round(length(h_halfband_filtDes_0s18)/2)
+    if (h_halfband_filtDes_0s18(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(i-1),abs(h_halfband_filtDes_0s18(i)) );
     else
-        fprintf("\tHsys[%d] = 18'sd%d;\n",(idx),abs(h_halfband_filtDes_0s18(i)) );
-        idx=idx+1;
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(i-1),abs(h_halfband_filtDes_0s18(i)) );
     end
 end
 fprintf("end\n");

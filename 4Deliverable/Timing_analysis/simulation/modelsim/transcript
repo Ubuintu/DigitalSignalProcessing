@@ -1,0 +1,2304 @@
+# reading /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project DUT_TA_school
+do compileFilt.do
+# 20000ns
+# .
+# DUT_tb
+# filter_TB
+# clk_en
+# DUT
+# script is: compileFilt.do
+# MOD is: 
+# MOD is: DUT
+# TB is: 
+# TB is: DUT_tb
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:12 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:11:12 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:12 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:11:12 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:12 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# ** Error: (vlog-13069) ./../../../clk_en.v(17): near "else": syntax error, unexpected else.
+# End time: 19:11:12 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
+# Executing ONERROR command at macro ./compileFilt.do line 42
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:11:12 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# ** Error: (vsim-3033) Instantiation of 'clk_en' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 43
+#         Searched libraries:
+#             /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/rtl_work
+# ** Error: (vsim-3033) Instantiation of 'GSM_101Mults' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 45
+#         Searched libraries:
+#             /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compileFilt.do PAUSED at line 44
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:49 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:11:49 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:49 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:11:49 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:49 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:11:49 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:11:12 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# ** Error: (vsim-3033) Instantiation of 'GSM_101Mults' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 45
+#         Searched libraries:
+#             /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compileFilt.do PAUSED at line 44
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:13:19 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:13:19 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:13:19 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:13:20 on Apr 03,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:13:20 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:13:20 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:11:12 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# ** Error: (vsim-3033) Instantiation of 'GSM_101Mults' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 45
+#         Searched libraries:
+#             /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compileFilt.do PAUSED at line 44
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:13:53 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:13:53 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:13:53 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:13:53 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:13:53 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:13:53 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:11:12 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'EN_CLK'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/EN_CLK File: ./DUT_tb.v Line: 43
+# ** Warning: (vsim-3722) ./DUT_tb.v(43): [TFMPC] - Missing connection for port 'sys_clk2_en'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 7, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/DUT File: ./DUT_tb.v Line: 45
+# ** Warning: (vsim-3722) ./DUT_tb.v(45): [TFMPC] - Missing connection for port 'clk'.
+# ** Warning: (vsim-3722) ./DUT_tb.v(45): [TFMPC] - Missing connection for port 'sys_clk2_en'.
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:15:45 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:15:45 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:15:45 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:15:45 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:15:45 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:15:45 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 19:15:45 on Apr 03,2022, Elapsed time: 0:04:33
+# Errors: 4, Warnings: 10
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:15:45 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'EN_CLK'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/EN_CLK File: ./DUT_tb.v Line: 43
+# ** Warning: (vsim-3722) ./DUT_tb.v(43): [TFMPC] - Missing connection for port 'sys_clk2_en'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/DUT File: ./DUT_tb.v Line: 45
+# ** Warning: (vsim-3722) ./DUT_tb.v(45): [TFMPC] - Missing connection for port 'clk'.
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:27:52 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:27:53 on Apr 03,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:27:53 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:27:53 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:27:53 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:27:53 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 19:27:53 on Apr 03,2022, Elapsed time: 0:12:08
+# Errors: 0, Warnings: 6
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:27:53 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'EN_CLK'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/EN_CLK File: ./DUT_tb.v Line: 43
+# ** Warning: (vsim-3722) ./DUT_tb.v(43): [TFMPC] - Missing connection for port 'sys_clk2_en'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/DUT File: ./DUT_tb.v Line: 45
+# ** Warning: (vsim-3722) ./DUT_tb.v(45): [TFMPC] - Missing connection for port 'clk'.
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:47:59 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:47:59 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:47:59 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:47:59 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:48:00 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:48:00 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 19:48:00 on Apr 03,2022, Elapsed time: 0:20:07
+# Errors: 0, Warnings: 6
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:48:00 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'EN_CLK'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/EN_CLK File: ./DUT_tb.v Line: 43
+# ** Warning: (vsim-3722) ./DUT_tb.v(43): [TFMPC] - Missing connection for port 'sys_clk2_en'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/DUT File: ./DUT_tb.v Line: 45
+# ** Warning: (vsim-3722) ./DUT_tb.v(45): [TFMPC] - Missing connection for port 'clk'.
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:49:21 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:49:21 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:49:21 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:49:21 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:49:21 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:49:21 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 19:49:21 on Apr 03,2022, Elapsed time: 0:01:21
+# Errors: 0, Warnings: 6
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:49:21 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'EN_CLK'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/EN_CLK File: ./DUT_tb.v Line: 43
+# ** Warning: (vsim-3722) ./DUT_tb.v(43): [TFMPC] - Missing connection for port 'sys_clk2_en'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/DUT File: ./DUT_tb.v Line: 45
+# ** Warning: (vsim-3722) ./DUT_tb.v(45): [TFMPC] - Missing connection for port 'clk'.
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:51:08 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:51:09 on Apr 03,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:51:09 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:51:09 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:51:09 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:51:09 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 19:51:09 on Apr 03,2022, Elapsed time: 0:01:48
+# Errors: 0, Warnings: 6
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:51:09 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB/DUT File: ./DUT_tb.v Line: 52
+# ** Warning: (vsim-3722) ./DUT_tb.v(52): [TFMPC] - Missing connection for port 'clk'.
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:52:12 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:52:12 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:52:12 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:52:12 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:52:12 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:52:12 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 19:52:12 on Apr 03,2022, Elapsed time: 0:01:03
+# Errors: 0, Warnings: 4
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:52:12 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:55:19 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 19:55:19 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:55:19 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 19:55:19 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:55:19 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 19:55:19 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 19:55:20 on Apr 03,2022, Elapsed time: 0:03:08
+# Errors: 0, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 19:55:20 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:00:49 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 20:00:49 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:00:49 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# ** Error: (vlog-13069) ./../../DUT.v(47): near ">=": syntax error, unexpected >=.
+# End time: 20:00:49 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/intelFPGA/20.1.1/modelsim_ase/linuxaloem/vlog failed.
+# Executing ONERROR command at macro ./compileFilt.do line 41
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:00:49 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 20:00:49 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 20:00:50 on Apr 03,2022, Elapsed time: 0:05:30
+# Errors: 1, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 20:00:50 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# ** Error: (vsim-3033) Instantiation of 'DUT' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 52
+#         Searched libraries:
+#             /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compileFilt.do PAUSED at line 44
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:02 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 20:01:02 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:02 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 20:01:02 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:02 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 20:01:02 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# vsim -t 1ns -L work filter_TB 
+# Start time: 20:00:50 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:55 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 20:01:55 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:55 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 20:01:55 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:55 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 20:01:55 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 20:01:55 on Apr 03,2022, Elapsed time: 0:01:05
+# Errors: 1, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 20:01:55 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:06:17 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 20:06:17 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:06:17 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 20:06:17 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:06:17 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 20:06:17 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 20:06:17 on Apr 03,2022, Elapsed time: 0:04:22
+# Errors: 0, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 20:06:17 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:08:16 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 20:08:16 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:08:16 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 20:08:16 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:08:16 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 20:08:16 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 20:08:16 on Apr 03,2022, Elapsed time: 0:01:59
+# Errors: 0, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 20:08:16 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:10:18 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 20:10:18 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:10:18 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 20:10:18 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:10:18 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 20:10:18 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 20:10:19 on Apr 03,2022, Elapsed time: 0:02:03
+# Errors: 0, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 20:10:19 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+#add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 
+do compileFilt.do
+#/home/tob208/engr-ece/Documents/EE465/4Deliverable
+# 
+#procedure call
+# proc getScriptDirectory {} {
+#     set dispScriptFile [file normalize [info script]]
+#     set scriptFolder [file dirname $dispScriptFile]
+#     return $scriptFolder
+# }
+# 
+# set SIM_LEN 20000ns
+# 20000ns
+#set SIM_LEN 9000ns
+# set SRC_DIR [getScriptDirectory]
+# .
+# set TB_MOD "DUT_tb"
+# DUT_tb
+# set TB_Nam "filter_TB"
+# filter_TB
+# set EN "clk_en"
+# clk_en
+# set MOD "DUT"
+# DUT
+# 
+# puts [info script]
+# puts "Hello world"
+# puts [file normalize [info script]]
+# set string "script is: compileFilt.do"
+# script is: compileFilt.do
+# puts $string
+# set string "MOD is: "
+# MOD is: 
+# append string ${MOD}
+# MOD is: DUT
+# puts $string
+# set string "TB is: "
+# TB is: 
+# append string $TB_MOD
+# TB is: DUT_tb
+# puts $string
+# 
+# onerror {resume}
+# transcript on
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_TA_school.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:11:04 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 20:11:04 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:11:04 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 20:11:04 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:11:04 on Apr 03,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 20:11:04 on Apr 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 20:11:05 on Apr 03,2022, Elapsed time: 0:00:46
+# Errors: 0, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 20:11:05 on Apr 03,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 39
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_in
+# add wave -noupdate /filter_TB/DUT/mult_coeff
+# add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/x_Delay
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ns} {959 ns}
+# 
+# run ${SIM_LEN}
+# 

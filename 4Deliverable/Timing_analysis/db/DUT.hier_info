@@ -1,0 +1,44 @@
+|DUT
+sys_clk => ~NO_FANOUT~
+sam_clk_en => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+clk => ~NO_FANOUT~
+sys_clk2_en => ~NO_FANOUT~
+x_in[0] => ~NO_FANOUT~
+x_in[1] => ~NO_FANOUT~
+x_in[2] => ~NO_FANOUT~
+x_in[3] => ~NO_FANOUT~
+x_in[4] => ~NO_FANOUT~
+x_in[5] => ~NO_FANOUT~
+x_in[6] => ~NO_FANOUT~
+x_in[7] => ~NO_FANOUT~
+x_in[8] => ~NO_FANOUT~
+x_in[9] => ~NO_FANOUT~
+x_in[10] => ~NO_FANOUT~
+x_in[11] => ~NO_FANOUT~
+x_in[12] => ~NO_FANOUT~
+x_in[13] => ~NO_FANOUT~
+x_in[14] => ~NO_FANOUT~
+x_in[15] => ~NO_FANOUT~
+x_in[16] => ~NO_FANOUT~
+x_in[17] => ~NO_FANOUT~
+y[0] <= <GND>
+y[1] <= <GND>
+y[2] <= <GND>
+y[3] <= <GND>
+y[4] <= <GND>
+y[5] <= <GND>
+y[6] <= <GND>
+y[7] <= <GND>
+y[8] <= <GND>
+y[9] <= <GND>
+y[10] <= <GND>
+y[11] <= <GND>
+y[12] <= <GND>
+y[13] <= <GND>
+y[14] <= <GND>
+y[15] <= <GND>
+y[16] <= <GND>
+y[17] <= <GND>
+
+
