@@ -87,4 +87,51 @@ Dpass = 0.00000057501127785;  % Passband Ripple
 h_halfband_filtDes_2nd  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';
 
 LPF_out_2nd=conv(up2,h_halfband_filtDes_2nd);
+
+%% First halfband coeff
+clc
+
+% Find coeffs
+safety=(2^-1)-(2^-18);  %0s18
+h_halfband_filtDes_0s18=round(h_halfband_filtDes*2^18);
+
+idx=0;
+% halfband coeffs are 0s18 to account for sum_lvls being 2s16
+fprintf("initial begin\n");
+for i=1:round(length(h_halfband_filtDes_0s18)/2)
+    if (h_halfband_filtDes_0s18(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(idx),abs(h_halfband_filtDes_0s18(i)) );
+        idx=idx+1;
+    else
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(idx),abs(h_halfband_filtDes_0s18(i)) );
+        idx=idx+1;
+    end
+end
+fprintf("end\n");
+
+%% halfband Time-sharing structure
+clc
+
+% ceil to account for odd tap
+numCoeffs=ceil(length(h_halfband_filtDes_0s18)/2);
+numMults=ceil(numCoeffs/4);
+
+num_of_sumLvls=0; coeffs2reduce=length(h_halfband_filtDes_0s18);
+tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
+for i=1:length(h_halfband_filtDes_0s18)
+    if coeffs2reduce<=1
+        break
+    elseif i==2
+        num_of_sumLvls=num_of_sumLvls+1;coeffs2reduce=ceil(coeffs2reduce/4);
+        fprintf("\tMixer required: %d \n",coeffs2reduce);
+        coeffs2reduce=ceil(coeffs2reduce/2);
+        fprintf("sum level %d has %d registers\n",i,coeffs2reduce);
+        tapsPerlvl(i,1)=coeffs2reduce;
+    else
+        num_of_sumLvls=num_of_sumLvls+1;coeffs2reduce=ceil(coeffs2reduce/2);
+        fprintf("sum level %d has %d registers\n",i,coeffs2reduce);
+        tapsPerlvl(i,1)=coeffs2reduce;
+    end
+end
+fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
     

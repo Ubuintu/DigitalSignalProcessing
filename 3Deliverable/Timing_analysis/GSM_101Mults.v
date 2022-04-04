@@ -23,7 +23,7 @@ module GSM_101Mults #(
 (* preserve *) reg signed [WIDTH-1:0] sum_lvl_4[SUMLV5-1:0];
 (* preserve *) reg signed [WIDTH-1:0] sum_lvl_5;
 (* keep *) reg signed [2*WIDTH-1:0] mult_out[SUMLV2-1:0];
-(* preserve *) reg signed [WIDTH-1:0] mult_in[SUMLV2-1:0];
+(* keep *) reg signed [WIDTH-1:0] mult_in[SUMLV2-1:0];
 (* preserve *) reg signed [WIDTH-1:0] mult_coeff[SUMLV2-1:0];
 (* preserve *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
 //0s18 coeffs
@@ -31,9 +31,10 @@ module GSM_101Mults #(
 (* preserve *) reg [1:0] cnt;
 
 //debugging
-integer inte=0;
+//integer inte=0;
 
 integer i,j;
+/*
 initial begin
 //     tol=18'sd10;
      for (i=0; i<SUMLV1; i=i+1)
@@ -52,13 +53,14 @@ initial begin
      y = 18'sd0;
      cnt=2'd0;
 end
+*/
 
-//cnt
+//counter
 always @ (posedge sys_clk)
     if (reset)
-        cnt=2'd0;  
+        cnt<=2'd0;  
     else
-        cnt=cnt+2'd1;
+        cnt<=cnt+2'd1;
 
 /*  scale 1s17->2s16 for summing    */
 always @ (posedge sys_clk)
@@ -98,9 +100,12 @@ always @ (posedge sys_clk)
 
 //cntr
 always @ (posedge sys_clk)
-    if (reset) sum_lvl_1[SUMLV1-1] <= 18'sd0;
-	else if (sam_clk_en) sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
-	else sum_lvl_1[SUMLV1-1] <= $signed(sum_lvl_1[SUMLV1-1]);
+    if (reset) 
+			sum_lvl_1[SUMLV1-1] <= 18'sd0;
+    else if (sam_clk_en) 
+			sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
+    else 
+			sum_lvl_1[SUMLV1-1] <= $signed(sum_lvl_1[SUMLV1-1]);
 
 /*      Time-sharing Lvl        */
 
@@ -115,6 +120,17 @@ always @ *
         endcase
     end
 
+/*
+always @ (posedge sys_clk)
+	 for (i=0;i<SUMLV2-1;i=i+1) begin
+		  case (cnt)
+				2'd0    :   mult_in[i]<=$signed(sum_lvl_1[4*i]); 
+				2'd1    :   mult_in[i]<=$signed(sum_lvl_1[4*i+1]); 
+				2'd2    :   mult_in[i]<=$signed(sum_lvl_1[4*i+2]); 
+				default    :   mult_in[i]<=$signed(sum_lvl_1[4*i+3]); 
+		  endcase
+    end
+*/
 //cntr
 always @ *
 	begin
@@ -232,8 +248,8 @@ end
 always @ (posedge sys_clk)
 //always @ *
     if (reset) det_edge <= 2'd0;
-    else det_edge <= {det_edge[0], &cnt};	//for Func Sim
-//    else det_edge <= {det_edge[0], (cnt==2'b10)};	//for Time Sim
+//    else det_edge <= {det_edge[0], &cnt};	//for Func Sim
+    else det_edge <= {det_edge[0], (cnt==2'b10)};	//for Time Sim
 
 //assign sig_edge = (det_edge == 2'b10);
 assign sig_edge = (det_edge == 2'b01);
@@ -309,7 +325,4 @@ initial begin
 	Hsys[50] = 18'sd39137;
 end
 
-endmodule
-
-	
-
+endmodule 
