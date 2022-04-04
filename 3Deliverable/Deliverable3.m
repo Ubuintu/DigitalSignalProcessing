@@ -71,8 +71,8 @@ wc_PPS_0=sum(wc_PPS0);
 % wc_PPS_3=sum(wc_PPS3);
 
 % find wc output w/convolution
-% wc0_h_PPS = conv(h_PPS,wc_input0);
-% wc_pk0=sum(abs(wc0_h_PPS));
+wc0_h_PPS = conv(h_PPS,wc_input0);
+wc_pk0=sum(abs(wc0_h_PPS));
 % wc1_h_PPS = conv(h_PPS,wc_input1);
 % wc_pk1=sum(abs(wc1_h_PPS));
 % wc2_h_PPS = conv(h_PPS,wc_input2);
