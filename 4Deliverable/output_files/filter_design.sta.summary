@@ -2,76 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'system_clk'
-Slack : 12.998
-TNS   : 0.000
-
 Type  : Slow 1200mV 85C Model Setup 'input_clock'
-Slack : 16.596
+Slack : 18.560
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'system_clk'
-Slack : 0.350
+Type  : Slow 1200mV 85C Model Setup 'clk_en:EN_clk|sys_clk'
+Slack : 24.492
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_en:EN_clk|sys_clk'
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'input_clock'
-Slack : 0.387
+Slack : 0.892
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'input_clock'
-Slack : 9.755
+Slack : 9.720
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'system_clk'
-Slack : 19.534
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'system_clk'
-Slack : 13.464
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_en:EN_clk|sys_clk'
+Slack : 19.786
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'input_clock'
-Slack : 16.855
+Slack : 18.713
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk_en:EN_clk|sys_clk'
+Slack : 25.844
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_en:EN_clk|sys_clk'
+Slack : 0.353
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'input_clock'
-Slack : 0.345
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'system_clk'
-Slack : 0.354
+Slack : 0.800
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'input_clock'
-Slack : 9.776
+Slack : 9.724
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'system_clk'
-Slack : 19.563
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'system_clk'
-Slack : 16.174
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_en:EN_clk|sys_clk'
+Slack : 19.778
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'input_clock'
-Slack : 18.238
+Slack : 19.345
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'system_clk'
-Slack : 0.140
+Type  : Fast 1200mV 0C Model Setup 'clk_en:EN_clk|sys_clk'
+Slack : 31.965
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_en:EN_clk|sys_clk'
+Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'input_clock'
-Slack : 0.169
+Slack : 0.362
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'input_clock'
-Slack : 9.438
+Slack : 9.457
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'system_clk'
-Slack : 19.708
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_en:EN_clk|sys_clk'
+Slack : 19.767
 TNS   : 0.000
 
 ------------------------------------------------------------

@@ -61,7 +61,7 @@ wc_input0=upsample(wc_input.*.75,Nsps);
 % wc_input2=upsample(wc_input.*.75,Nsps,2);
 % wc_input3=upsample(wc_input.*.75,Nsps,3);
 
-wc_PPS0=abs(h_PPS).*wc_input0(1:101);
+wc_PPS0=conv(abs(h_PPS),wc_input0(1:101));
 wc_PPS_0=sum(wc_PPS0);
 % wc_PPS1=abs(h_PPS).*wc_input1(1:101);
 % wc_PPS_1=sum(wc_PPS1);
@@ -84,8 +84,9 @@ wc_pk0=sum(abs(wc0_h_PPS));
 % h_PPS=safety.*h_PPS/max(h_PPS)*.7;
 % scale_PPS=sum(abs(h_PPS));
 
-% out of alternatives
-h_PPS=h_PPS.*2;
+% scale headroom to 0s18
+% h_PPS=h_PPS.*2;   %since wc nvr happens, can scale a bit more
+h_PPS=h_PPS/max(h_PPS)/2;
 
 % Find wc scaling factor for GSM
 % theo_GSM = conv(wc_PPS_0,h_GSM);
@@ -148,7 +149,9 @@ ASK_out = [-3*a -a a 3*a];
 MF_PPS=round(ASK_out.'*h_PPS.*2^17*safety);
 MF_GSPS=round(ASK_out.'*h_GSPS.*2^17*safety);
 
-num_of_sumLvls=0; coeffs2reduce=N;
+num_of_sumLvls=0; 
+% coeffs2reduce=N;  % for typical sym filt
+coeffs2reduce=15;  % for halfBand sym    
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
 for i=1:N
     if coeffs2reduce<=1
@@ -295,8 +298,12 @@ clc
 
 % PPS to GSM % Reset is super jank; need to time it right; reset until
 % map_out_pwr is ~1.5k & err_square is 36235604970566
-mapOutPwr= 1658;
-avgSqErr= 29455612887;
+% mapOutPwr= 1658;    %scale over; MER 41.8956
+% avgSqErr= 29455612887;
+mapOutPwr= 1561;  %scale to hdroom; MER 41.8927 BUT this has better OB1; no other coeffs met theo
+avgSqErr= 27750420549;
+% mapOutPwr= 414;   %no scale; MER 41.5913
+% avgSqErr= 7888850297;
 
 % GSPS to GSM % 
 % mapOutPwr= 1653;

@@ -1,8 +1,8 @@
 |filter_design
 clock_50 => clock_50.IN1
-SW[0] => SW[0].IN1
-SW[1] => SW[1].IN1
-SW[2] => SW[2].IN1
+SW[0] => LEDR[0].DATAIN
+SW[1] => LEDR[1].DATAIN
+SW[2] => LEDR[2].DATAIN
 SW[3] => LEDR[3].DATAIN
 SW[4] => LEDR[4].DATAIN
 SW[5] => LEDR[5].DATAIN
@@ -191,67 +191,16 @@ DAC_WRT_A << sys_clk.DB_MAX_OUTPUT_PORT_TYPE
 DAC_WRT_B << sys_clk.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|filter_design|EE465_filter_test:SRRC_test
-clock_50 => ~NO_FANOUT~
-reset => ~NO_FANOUT~
-output_from_filter_1s17[0] => ~NO_FANOUT~
-output_from_filter_1s17[1] => ~NO_FANOUT~
-output_from_filter_1s17[2] => ~NO_FANOUT~
-output_from_filter_1s17[3] => ~NO_FANOUT~
-output_from_filter_1s17[4] => ~NO_FANOUT~
-output_from_filter_1s17[5] => ~NO_FANOUT~
-output_from_filter_1s17[6] => ~NO_FANOUT~
-output_from_filter_1s17[7] => ~NO_FANOUT~
-output_from_filter_1s17[8] => ~NO_FANOUT~
-output_from_filter_1s17[9] => ~NO_FANOUT~
-output_from_filter_1s17[10] => ~NO_FANOUT~
-output_from_filter_1s17[11] => ~NO_FANOUT~
-output_from_filter_1s17[12] => ~NO_FANOUT~
-output_from_filter_1s17[13] => ~NO_FANOUT~
-output_from_filter_1s17[14] => ~NO_FANOUT~
-output_from_filter_1s17[15] => ~NO_FANOUT~
-output_from_filter_1s17[16] => ~NO_FANOUT~
-output_from_filter_1s17[17] => ~NO_FANOUT~
-filter_input_scale[0] => ~NO_FANOUT~
-filter_input_scale[1] => ~NO_FANOUT~
-filter_input_scale[2] => ~NO_FANOUT~
-input_to_filter_1s17[0] <= <GND>
-input_to_filter_1s17[1] <= <GND>
-input_to_filter_1s17[2] <= <GND>
-input_to_filter_1s17[3] <= <GND>
-input_to_filter_1s17[4] <= <GND>
-input_to_filter_1s17[5] <= <GND>
-input_to_filter_1s17[6] <= <GND>
-input_to_filter_1s17[7] <= <GND>
-input_to_filter_1s17[8] <= <GND>
-input_to_filter_1s17[9] <= <GND>
-input_to_filter_1s17[10] <= <GND>
-input_to_filter_1s17[11] <= <GND>
-input_to_filter_1s17[12] <= <GND>
-input_to_filter_1s17[13] <= <GND>
-input_to_filter_1s17[14] <= <GND>
-input_to_filter_1s17[15] <= <GND>
-input_to_filter_1s17[16] <= <GND>
-input_to_filter_1s17[17] <= <GND>
-lfsr_value[0] <= <GND>
-lfsr_value[1] <= <GND>
-symbol_clk_ena <= <GND>
-sample_clk_ena <= <GND>
-system_clk <= <GND>
-output_to_DAC[0] <= <GND>
-output_to_DAC[1] <= <GND>
-output_to_DAC[2] <= <GND>
-output_to_DAC[3] <= <GND>
-output_to_DAC[4] <= <GND>
-output_to_DAC[5] <= <GND>
-output_to_DAC[6] <= <GND>
-output_to_DAC[7] <= <GND>
-output_to_DAC[8] <= <GND>
-output_to_DAC[9] <= <GND>
-output_to_DAC[10] <= <GND>
-output_to_DAC[11] <= <GND>
-output_to_DAC[12] <= <GND>
-output_to_DAC[13] <= <GND>
+|filter_design|clk_en:EN_clk
+clk => sys_clk~reg0.CLK
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+sys_clk <= sys_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sam_clk_en <= sam_clk_en~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sym_clk_en <= sym_clk_en~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sys_clk2_en <= sys_clk2_en~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |filter_design|PPS_filt_101:DUT_TX
@@ -18968,7 +18917,7 @@ sam_clk_en => sum_lvl_1.OUTPUTSELECT
 sam_clk_en => sum_lvl_1.OUTPUTSELECT
 sam_clk_en => sum_lvl_1.OUTPUTSELECT
 sam_clk_en => sum_lvl_1.OUTPUTSELECT
-sam_clk_en => always17.IN0
+sam_clk_en => always16.IN0
 sam_clk_en => y.OUTPUTSELECT
 sam_clk_en => y.OUTPUTSELECT
 sam_clk_en => y.OUTPUTSELECT
@@ -21977,7 +21926,7 @@ reset => sum_lvl_5[3].OUTPUTSELECT
 reset => sum_lvl_5[2].OUTPUTSELECT
 reset => sum_lvl_5[1].OUTPUTSELECT
 reset => sum_lvl_5[0].OUTPUTSELECT
-reset => always17.IN1
+reset => always16.IN1
 reset => y.OUTPUTSELECT
 reset => y.OUTPUTSELECT
 reset => y.OUTPUTSELECT

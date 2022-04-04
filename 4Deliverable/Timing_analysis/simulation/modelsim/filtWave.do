@@ -23,6 +23,9 @@ add wave -noupdate /filter_TB/DUT/mult_in
 #add wave -noupdate /filter_TB/DUT/mult_coeff
 add wave -noupdate /filter_TB/DUT/mult_out
 add wave -noupdate -radix decimal /filter_TB/DUT/mult_out[34:17]
+add wave -noupdate /filter_TB/DUT/sum_lvl_2
+add wave -noupdate /filter_TB/DUT/sum_lvl_3
+add wave -noupdate /filter_TB/DUT/sum_lvl_4
 add wave -noupdate /filter_TB/DUT/acc
 add wave -noupdate /filter_TB/DUT/odd_out
 add wave -noupdate /filter_TB/DUT/y

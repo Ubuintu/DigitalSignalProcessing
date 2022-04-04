@@ -91,13 +91,15 @@ module filter_design(
 						registered_ADC_B <= ADC_DB;
 						
 
-wire sys_clk, sam_clk, sam_clk_ena, sym_clk_ena, sym_clk, q1;
+wire sys_clk, sam_clk, sam_clk_ena, sym_clk_ena, sym_clk, q1, sys_clk2_en;
 integer i,j;
 					
 
-wire signed [17:0]srrc_out, srrc_input;
+wire signed [17:0] srrc_out;
+//wire signed [17:0] srrc_input;
 wire [13:0] DAC_out;
 
+/*
  EE465_filter_test SRRC_test(
 						   .clock_50(clock_50),
 							.reset(~KEY[3]),
@@ -110,6 +112,16 @@ wire [13:0] DAC_out;
 							.system_clk(sys_clk),
 							.output_to_DAC(DAC_out)
 							);
+*/
+						
+clk_en EN_clk (
+	.clk(clock_50),
+	.reset(~KEY[3]),
+	.sys_clk(sys_clk),
+	.sam_clk_en(sam_clk_ena),
+	.sym_clk_en(sym_clk_ena),
+	.sys_clk2_en(sys_clk2_en)
+	);
 			  
 //ee465_gold_standard_srrc filly(
 //			.sys_clk(sys_clk), //system clock, your design may not use this
@@ -120,7 +132,6 @@ wire [13:0] DAC_out;
 
 /* keep for combinational; preserve for registers; noprune for fan out*/
 (* preserve *) reg [21:0] counter;
-(* preserve *) reg cycle;
 	
 wire signed [17:0] err_acc;
 //wire signed [17:0] err_square;	//for original err_Sqr circuit
@@ -130,6 +141,7 @@ wire signed [55:0] err_square;
 (* keep *) wire signed [17:0] dec_var;
 
 //Wait for DUT to be driven with 2^20 symbols
+/*
 always @ (posedge sys_clk)
 	if (~KEY[3] || counter > 22'd4194303)
 		counter<=22'd0;
@@ -145,7 +157,42 @@ always @ (posedge sys_clk)
 		cycle<=1'b1;
 	else
 		cycle<=1'b0;
-	
+*/
+(* keep *) wire signed [21:0] out;
+(* preserve *) wire cycle;
+
+LFSR_22 LFSR_GEN (
+    .sys_clk(sys_clk), 
+	 .reset(~KEY[3]), 
+	 .load(load), 
+	 .sam_clk_en(sam_clk_ena),
+    .cycle(cycle),
+    .out(out)
+);
+
+wire signed [17:0] map_out;
+mapper_in SUT_input (
+	.LFSR(out[1:0]),
+	.map_out(map_out)
+);
+
+(* preserve *) reg [1:0] samCnt;
+
+always @ (posedge sys_clk)
+	if (~KEY[3])
+		samCnt<=2'd0;
+	else
+		samCnt<=samCnt+2'd1;
+		
+//Make sure to uncomment srrc wires above
+(* keep *) reg signed [17:0] srrc_input;		
+
+always @ * begin
+	case(samCnt)
+		2'd0 : srrc_input=$signed(map_out);
+		default : srrc_input=18'sd0;
+	endcase
+end
 
 PPS_filt_101 DUT_TX (
 //GSM_101Mults DUT_TX (	//debug MER circuit
@@ -163,6 +210,73 @@ PPS_filt_101 DUT_TX (
 //	.x_in(srrc_input),
 //	.y(srrc_out)
 //	);
+
+/*------------Upsample b4 1st LPF------------*/
+(* preserve *) reg halfSysCnt;
+
+always @ (posedge sys_clk)
+	if (~KEY[3])
+		halfSysCnt<=1'd0;
+	else
+		halfSysCnt<=halfSysCnt+1'd1;
+		
+(* keep *) reg signed [17:0] UpSam1;
+
+always @ * begin
+	case (halfSysCnt)
+		1'd0 : UpSam1=$signed(srrc_out);
+		default : UpSam1=18'sd0;
+	endcase
+end
+		
+/*------------First halfband LPF------------*/
+wire signed [17:0] halfOut1;
+
+halfband_1st_sym HB1 (
+	.x_in(UpSam1),
+	.y(halfOut1),
+	.sys_clk(sys_clk),
+	.sam_clk_en(sam_clk_ena),
+	.reset(~KEY[3]),
+	.clk(clock_50),
+	.sys_clk2_en(sys_clk2_en)
+	);
+
+/*------------Upsample b4 2nd LPF------------*/
+/*
+(* preserve *) reg halfSysCnt;
+
+always @ (posedge sys_clk)
+	if (~KEY[3])
+		halfSysCnt<=1'd0;
+	else
+		halfSysCnt<=halfSysCnt+1'd1;
+*/
+(* keep *) reg signed [17:0] UpSam2;
+
+always @ * begin
+	case (halfSysCnt)
+		1'd0 : UpSam2=$signed(halfOut1);
+		default : UpSam2=18'sd0;
+	endcase
+end
+		
+/*------------Second halfband LPF------------*/
+wire signed [17:0] halfOut2;
+
+halfband_2nd_sym HB2 (
+	.x_in(UpSam2),
+	.y(halfOut2),
+	.sys_clk(sys_clk),
+	.sam_clk_en(sam_clk_ena),
+	.reset(~KEY[3]),
+	.clk(clock_50),
+	.sys_clk2_en(sys_clk2_en)
+	);
+
+/*------------Upconverter------------*/
+
+		
 
 
 (* keep *) wire signed [17:0] MF_out;

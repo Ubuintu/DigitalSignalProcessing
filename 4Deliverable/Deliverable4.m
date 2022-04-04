@@ -88,7 +88,7 @@ h_halfband_filtDes_2nd  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';
 
 LPF_out_2nd=conv(up2,h_halfband_filtDes_2nd);
 
-%% First halfband coeff
+%% First halfband coeff in 0s18
 clc
 
 % Find coeffs
@@ -98,7 +98,8 @@ h_halfband_filtDes_0s18=round(h_halfband_filtDes*2^18);
 idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16
 fprintf("initial begin\n");
-for i=1:round(length(h_halfband_filtDes_0s18)/2)
+for i=1:round(length(h_halfband_filtDes_0s18)/2)  %for sym
+% for i=1:round(length(h_halfband_filtDes_0s18))  %no reduc
     if (h_halfband_filtDes_0s18(i)<0)
         fprintf("\tHsys[%d] = -18'sd%d;\n",(idx),abs(h_halfband_filtDes_0s18(i)) );
         idx=idx+1;
@@ -134,4 +135,26 @@ for i=1:length(h_halfband_filtDes_0s18)
     end
 end
 fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
+
+%% Second halfband coeff in 0s18
+clc
+
+% Find coeffs
+safety=(2^-1)-(2^-18);  %0s18
+h_halfband_filtDes_2nd_0s18=round(h_halfband_filtDes_2nd*2^18);
+
+idx=0;
+% halfband coeffs are 0s18 to account for sum_lvls being 2s16
+fprintf("initial begin\n");
+for i=1:round(length(h_halfband_filtDes_2nd_0s18)/2)  %for sym
+% for i=1:round(length(h_halfband_filtDes_0s18))  %no reduc
+    if (h_halfband_filtDes_2nd_0s18(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(idx),abs(h_halfband_filtDes_2nd_0s18(i)) );
+        idx=idx+1;
+    else
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(idx),abs(h_halfband_filtDes_2nd_0s18(i)) );
+        idx=idx+1;
+    end
+end
+fprintf("end\n");
     

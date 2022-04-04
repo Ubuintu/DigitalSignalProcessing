@@ -238,12 +238,6 @@ always @ *
 //coeffs scaled down for wc 1s17 input
 (* preserve *) reg signed [WIDTH-1:0] acc_out;
 
-initial begin
-    acc_out = 18'sd0;
-    det_edge = 2'd0;
-end
-assign sig_edge = (det_edge == 2'b01);
-
 always @ (posedge sys_clk)
     if (reset || sam_clk_en) 
         acc_out <= $signed(sum_lvl_5);

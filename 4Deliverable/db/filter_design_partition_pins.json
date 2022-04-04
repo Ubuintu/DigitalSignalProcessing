@@ -4,10 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "clock_50",
-					"strict" : false
-				},
-				{
 					"name" : "LEDG[0]",
 					"strict" : false
 				},
@@ -149,62 +145,6 @@
 				},
 				{
 					"name" : "DAC_DA[13]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[0]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[1]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[2]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[3]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[4]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[5]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[6]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[7]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[8]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[9]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[10]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[11]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[12]",
-					"strict" : false
-				},
-				{
-					"name" : "DAC_DB[13]",
 					"strict" : false
 				},
 				{
@@ -429,6 +369,10 @@
 				},
 				{
 					"name" : "ADC_DA[13]",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50",
 					"strict" : false
 				}
 			]

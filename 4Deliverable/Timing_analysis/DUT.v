@@ -3,7 +3,9 @@ module DUT #(
     parameter WIDTH=18,
     parameter LENGTH=15,
     parameter DELAY=4,
-    parameter SUMLV1=8
+    parameter SUMLV1=8,
+    parameter SUMLV2=4,
+    parameter SUMLV3=2
 )
 (
     input sys_clk, sam_clk_en, reset, clk, sys_clk2_en,
@@ -12,36 +14,29 @@ module DUT #(
 );
 
 (* preserve *) reg signed [WIDTH-1:0] sum_lvl_1[SUMLV1-1:0];
-(* keep *) reg signed [2*WIDTH-1:0] mult_out;
-(* preserve *) reg signed [WIDTH-1:0] mult_in;
-(* preserve *) reg signed [WIDTH-1:0] mult_coeff;
-(* preserve *) reg signed [WIDTH-1:0] odd_out;
+(* keep *) reg signed [2*WIDTH-1:0] mult_out[SUMLV1-1:0];
+(* noprune *) reg signed [WIDTH-1:0] sum_lvl_2[SUMLV2-1:0];
+(* noprune *) reg signed [WIDTH-1:0] sum_lvl_3[SUMLV3-1:0];
+(* noprune *) reg signed [WIDTH-1:0] sum_lvl_4;
 (* preserve *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
 //0s18 coeffs
 (* keep *) reg signed [WIDTH-1:0] Hsys[SUMLV1:0];
-//run @ 50 MHz
-(* preserve *) reg [1:0] cnt;
 
 
 integer i;
 initial begin
      for (i=0; i<SUMLV1; i=i+1)
         sum_lvl_1[i]=18'sd0;
-     mult_out=36'sd0;
-     mult_in=18'sd0;
-     mult_coeff=18'sd0;
+     for (i=0; i<SUMLV1; i=i+1)
+        mult_out[i]=36'sd0;
      for (i=0; i<LENGTH; i=i+1)
         x[i]=18'sd0;
+     for (i=0; i<SUMLV3; i=i+1)
+        sum_lvl_3[i]=18'sd0;
+     sum_lvl_4 = 18'sd0;
      y = 18'sd0;
-     cnt=2'd0;
 end
 
-//cnt
-always @ (posedge clk)
-    if (reset)
-        cnt<=2'd1;
-    else
-        cnt<=cnt+2'd1;
 
 /*-----------x[n]-----------*/
 always @ (posedge sys_clk)
@@ -66,61 +61,64 @@ always @ (posedge sys_clk)
 /*-----------sum_lvl_1-----------*/
 always @ (posedge sys_clk)
     if (reset) begin
-		 for(i=0;i<SUMLV1;i=i+1)
+		 for(i=0;i<SUMLV1-1;i=i+1)
 			  sum_lvl_1[i] <= 18'sd0;
     end
     else if (sys_clk2_en) begin
-		 for(i=0;i<SUMLV1;i=i+1)
-            if (i==7)
-                sum_lvl_1[7]<=$signed(x[7]);
-            else
+		 for(i=0;i<SUMLV1-1;i=i+1)
 			  sum_lvl_1[i] <= $signed(x[i])+$signed(x[LENGTH-1-i]);
     end
 
-/*-----------Mult_in (2s16)-----------*/
-always @ * begin
-    case (cnt)
-        2'd0: mult_in=$signed(sum_lvl_1[0]);
-        2'd1: mult_in=$signed(sum_lvl_1[2]);
-        2'd2: mult_in=$signed(sum_lvl_1[4]);
-        2'd3: mult_in=$signed(sum_lvl_1[6]);
-    endcase
-end
+//cntr
+always @ (posedge sys_clk)
+    if (reset) sum_lvl_1[SUMLV1-1] <= 18'sd0;
+    else if (sys_clk2_en) sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
+    else sum_lvl_1[SUMLV1-1] <= $signed(sum_lvl_1[SUMLV1-1]);
 
-/*-----------Mult_coeff (0s18)-----------*/
-always @ * begin
-    case (cnt)
-        2'd0: mult_coeff=$signed(Hsys[0]);
-        2'd1: mult_coeff=$signed(Hsys[2]);
-        2'd2: mult_coeff=$signed(Hsys[4]);
-        2'd3: mult_coeff=$signed(Hsys[6]);
-    endcase
-end
-
-/*-----------Mult_out for even taps (2s34)-----------*/
+/*-----------Mult_out (2s34)-----------*/
 always @ *
-    mult_out<=$signed(mult_coeff)*$signed(mult_in);
+	for(i=0; i<SUMLV1; i=i+1)
+				//mult_out (2s34) = 0s18 * 2s16
+				mult_out[i] = $signed(Hsys[i])*$signed(sum_lvl_1[i]);
 
-/*-----------Accumulator for mult-----------*/
-(* preserve *) reg signed [WIDTH-1:0] acc;
-always @ (posedge clk)
-    if (reset || cnt==2'd0)
-        acc<=$signed(mult_out[34:17]);
-    else
-        acc<=acc+$signed(mult_out[34:17]);
-/*-----------odd_out 1s17-----------*/
-//pk of halfband is always 0.5 so bitshift instead of mult
-always @ * begin
-    case (cnt)
-        2'd0: odd_out=(18'sd0);
-        2'd1: odd_out=(18'sd0);
-        2'd2: odd_out=(18'sd0);
-        2'd3: odd_out=$signed(sum_lvl_1[7]);
-    endcase
-end
+/*-----------SUMLV2-----------*/
+always @ (posedge sys_clk)
+    if (reset) begin
+        for (i=0; i<SUMLV2; i=i+1)
+            sum_lvl_2[i]<=18'sd0;
+    end
+    else if (sys_clk2_en) begin
+        for (i=0; i<SUMLV2; i=i+1)				
+	    //mult_out (2s34) -> sum_lvl_2 1s17
+            sum_lvl_2[i]<=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
+    end
 
-always @ (sys_clk)
-    y<=$signed(odd_out)+$signed(acc);
+/*-----------SUMLV3-----------*/
+always @ (posedge sys_clk)
+    if (reset) begin
+        for (i=0; i<SUMLV3; i=i+1)
+            sum_lvl_3[i]<=18'sd0;
+    end
+    else if (sys_clk2_en) begin
+        for (i=0; i<SUMLV3; i=i+1)
+            sum_lvl_3[i]<=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
+    end
+
+/*-----------SUMLV4-----------*/
+always @ (posedge sys_clk)
+    if (reset)
+       sum_lvl_4<=18'sd0;
+    else if (sys_clk2_en)
+       sum_lvl_4<=$signed(sum_lvl_3[0])+$signed(sum_lvl_3[1]);
+
+/*-----------Output-----------*/
+always @ (posedge sys_clk)
+    if (reset) 
+	y<= 18'sd0;
+    else if (sys_clk2_en)
+	y<=$signed(sum_lvl_4);
+    else 
+	y<=$signed(y);
 
 /*-----------coeffs 0s18-----------*/
 initial begin
