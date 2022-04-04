@@ -17,7 +17,10 @@ always @ (posedge clk)
     sys_clk = ~sys_clk;
 
 always @ (posedge sys_clk)
-        sys_clk2_en = ~sys_clk2_en;
+    if (cnt[0]==1'd0)
+        sys_clk2_en = 1'd1;
+    else
+        sys_clk2_en = 1'd0;
 
 always @ (posedge sys_clk)
     if(reset) cnt = 4'b0;
