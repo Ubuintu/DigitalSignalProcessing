@@ -1,5 +1,5 @@
 Fitter report for filter_design
-Thu Mar 31 12:43:29 2022
+Fri Apr  1 12:18:29 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Mar 31 12:43:29 2022           ;
+; Fitter Status                      ; Successful - Fri Apr  1 12:18:29 2022           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Standard Edition ;
 ; Revision Name                      ; filter_design                                   ;
 ; Top-level Entity Name              ; filter_design                                   ;
@@ -161,18 +161,18 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.20        ;
+; Average used               ; 1.19        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.6%      ;
-;     Processor 3            ;   3.0%      ;
-;     Processor 4            ;   2.9%      ;
-;     Processor 5            ;   2.8%      ;
-;     Processor 6            ;   2.7%      ;
-;     Processor 7            ;   2.6%      ;
-;     Processor 8            ;   2.6%      ;
+;     Processor 2            ;   3.4%      ;
+;     Processor 3            ;   2.9%      ;
+;     Processor 4            ;   2.7%      ;
+;     Processor 5            ;   2.6%      ;
+;     Processor 6            ;   2.6%      ;
+;     Processor 7            ;   2.5%      ;
+;     Processor 8            ;   2.4%      ;
 +----------------------------+-------------+
 
 
@@ -10775,7 +10775,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "OSC_SMA_ADC4" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SMA_DAC4" is assigned to location or region, but does not exist in design
     Warning (15706): Node "clock_27" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:15
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:17
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:04
@@ -10788,20 +10788,20 @@ Info (170195): Router estimated average interconnect usage is 5% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:10
-Info (11888): Total time spent on timing analysis during the Fitter is 8.36 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:09
+Info (11888): Total time spent on timing analysis during the Fitter is 8.26 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:05
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:06
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file /home/tob208/engr-ece/Documents/EE465/3Deliverable/output_files/filter_design.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 2124 megabytes
-    Info: Processing ended: Thu Mar 31 12:43:32 2022
-    Info: Elapsed time: 00:01:02
-    Info: Total CPU time (on all processors): 00:02:01
+    Info: Peak virtual memory: 2131 megabytes
+    Info: Processing ended: Fri Apr  1 12:18:32 2022
+    Info: Elapsed time: 00:01:05
+    Info: Total CPU time (on all processors): 00:02:03
 
 
 +----------------------------+

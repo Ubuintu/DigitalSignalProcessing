@@ -1,4 +1,4 @@
-%% Example: Lowpass Filter Design Using Equiripple (Parks-McClellan) Method
+   %% Example: Lowpass Filter Design Using Equiripple (Parks-McClellan) Method
 %
 close all
 clear all

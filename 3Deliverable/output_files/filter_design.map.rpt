@@ -1,5 +1,5 @@
 Analysis & Synthesis report for filter_design
-Thu Mar 31 12:42:29 2022
+Fri Apr  1 12:17:26 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -85,7 +85,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 31 12:42:29 2022           ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr  1 12:17:26 2022           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Standard Edition ;
 ; Revision Name                      ; filter_design                                   ;
 ; Top-level Entity Name              ; filter_design                                   ;
@@ -22024,7 +22024,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Thu Mar 31 12:41:54 2022
+    Info: Processing started: Fri Apr  1 12:16:51 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off filter_design -c filter_design
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -22091,7 +22091,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: /home/tob208/engr-ece/Documents/EE465/3Deliverable/db/cmpr_ngc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2022.03.31.12:42:08 Progress: Loading sld9d03860e/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2022.04.01.12:17:05 Progress: Loading sld9d03860e/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -23581,9 +23581,9 @@ Info (21057): Implemented 22365 device resources after synthesis - the final res
     Info (21064): Implemented 296 RAM segments
     Info (21062): Implemented 48 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 925 megabytes
-    Info: Processing ended: Thu Mar 31 12:42:30 2022
+    Info: Peak virtual memory: 921 megabytes
+    Info: Processing ended: Fri Apr  1 12:17:27 2022
     Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:00:54
+    Info: Total CPU time (on all processors): 00:00:56
 
 

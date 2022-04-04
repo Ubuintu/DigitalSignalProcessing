@@ -24,6 +24,7 @@ function [plot_out] = superplot(x,y,varargin)
     addParameter(p,'yName',defaultString,@isstring);
     addParameter(p,'yLegend',defaultString,@isstring);
     addParameter(p,'cmpYLegend',emptyString);
+    addParameter(p,'txt',emptyString);
     parse(p,x,y,varargin{:});
     
 %% Usage
@@ -49,6 +50,11 @@ if (isempty(varargin))
     fprintf("\n--------------------------- superplot() usage ---------------------------\n");
     plot_out = [];
     return
+end
+
+%% Directory setup
+if isfolder('pics') == 0
+    mkdir('pics')
 end
     
 %% Plotting
