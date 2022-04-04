@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim
 vclk_en
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1649041823
+Z2 !s110 1649046229
 !i10b 1
 !s100 4L70C9ehZUDX]Ai_J5WkK0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1649041823.000000
+Z6 !s108 1649046229.000000
 !s107 ./../../../clk_en.v|
 !s90 -reportprogress|300|-sv|-work|work|./../../../clk_en.v|
 !i113 1
@@ -38,17 +38,17 @@ vDUT
 R1
 R2
 !i10b 1
-!s100 O8U04RkQ8FIa_77MO7>Z63
+!s100 e^6dl`]ZL3SOIda68C9NQ1
 R3
-I?<AOMRJZE99G4UjnS^E:[2
+I>DQj:?Iil`OkW^[f346H>2
 R4
 S1
 R0
-w1649041794
+w1649046211
 8./../../DUT.v
 F./../../DUT.v
 !i122 1
-L0 1 149
+L0 1 175
 R5
 r1
 !s85 0

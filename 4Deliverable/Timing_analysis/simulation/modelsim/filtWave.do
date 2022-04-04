@@ -21,9 +21,11 @@ add wave -noupdate /filter_TB/DUT/sum_lvl_1
 add wave -noupdate /filter_TB/DUT/mult_in
 #add wave -noupdate /filter_TB/DUT/mult_coeff
 add wave -noupdate /filter_TB/DUT/mult_out
+add wave -noupdate -radix unsigned /filter_TB/DUT/cntUp
+#add wave -noupdate /filter_TB/DUT/multOut_D
 add wave -noupdate /filter_TB/DUT/up1
 #add wave -noupdate /filter_TB/DUT/x_Delay
-#add wave -noupdate /filter_TB/DUT/y
+add wave -noupdate /filter_TB/DUT/y
 #add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {130 ns} 0}

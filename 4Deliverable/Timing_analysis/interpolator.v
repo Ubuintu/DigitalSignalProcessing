@@ -2,6 +2,7 @@ module DUT #(
 //Will have to manually adjust line 110 if statements based on len of filt & sum lvls required
     parameter WIDTH=18,
     parameter LENGTH=15,
+    parameter DELAY=4,
     parameter SUMLV1=4
 )
 (
@@ -34,13 +35,13 @@ initial begin
      for (i=0; i<LENGTH; i=i+1)
         x[i]=18'sd0;
      y = 18'sd0;
-     cnt=2'd1;
+     cnt=2'd0;
 end
 
 //cnt
 always @ (posedge sys_clk)
     if (reset)
-        cnt<=2'd1;
+        cnt<=2'd0;
     else
         cnt<=cnt+2'd1;
 
@@ -96,14 +97,32 @@ always @ * begin
 end
 
 always @ *
-    mult_out=$signed(mult_coeff)*$signed(mult_in);
+    mult_out<=$signed(mult_coeff)*$signed(mult_in);
 
 (* perserve *) reg signed [WIDTH-1:0] up1;
+(* noprune *) reg signed [WIDTH-1:0] multOut_D[DELAY-1:0];
+(* perserve *) reg cntUp;
+
+
+always @ (posedge sys_clk)
+    if (reset)
+        cntUp<=1'd0;
+    else if (sys_clk2_en)
+        cntUp<=cntUp+1'd1;
+/*
+always @ (posedge sys_clk)
+    multOut_D[0]<=$signed(mult_out[34:17]);
+
+always @ (posedge sys_clk)
+    for (i=1; i<DELAY; i=i+1)
+        multOut_D[i]<=$signed(multOut_D[i-1]);
+*/
 
 always @ * begin
-    case (sys_clk2_en)
-        2'd0: up1=$signed(mult_out[34:17]);
-        2'd1: up1=0;
+    case (cntUp)
+        2'd0: up1=18'sd0;
+        //2'd1: up1=$signed(multOut_D[DELAY-1]);
+        2'd1: up1=$signed(mult_out[34:17]);
     endcase
 end
 
@@ -138,6 +157,13 @@ always @ (posedge sys_clk)
             x[i]<=$signed(x[i-2]);
     end
 */	 
+
+always @ (posedge sys_clk)
+    if (reset)
+        y<=18'sd0;
+    else if (sys_clk2_en)
+        y<=$signed(up1);
+
 initial begin
 	Hsys[0] = -18'sd348;
 	Hsys[1] = 18'sd3274;
