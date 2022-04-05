@@ -13,6 +13,8 @@ set SRC_DIR [getScriptDirectory]
 set TB_MOD "DUT_tb"
 set TB_Nam "filter_TB"
 set EN "clk_en"
+set HB1 "halfband_1st_sym"
+set HB2 "halfband_2nd_sym"
 set MOD "DUT"
 
 puts [info script]
@@ -20,7 +22,7 @@ puts "Hello world"
 puts [file normalize [info script]]
 set string "script is: compileFilt.do"
 puts $string
-set string "MOD is: "
+set string "DUT is: "
 append string ${MOD}
 puts $string
 set string "TB is: "

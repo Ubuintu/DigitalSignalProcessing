@@ -8,10 +8,10 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim
+Z0 dA:/School/EE465/EE465/4Deliverable/Timing_analysis/simulation/modelsim
 vclk_en
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1649122354
+Z2 !s110 1649178938
 !i10b 1
 !s100 VO;2bdUDH=?6Fi9QfJefc1
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -19,7 +19,7 @@ IhzEB>]n_7ll>1;F[`0@9Y1
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1649121384
+w1649132480
 8./../../../clk_en.v
 F./../../../clk_en.v
 !i122 2
@@ -28,7 +28,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1649122354.000000
+Z6 !s108 1649178938.000000
 !s107 ./../../../clk_en.v|
 !s90 -reportprogress|300|-sv|-work|work|./../../../clk_en.v|
 !i113 1
@@ -38,24 +38,24 @@ vDUT
 R1
 R2
 !i10b 1
-!s100 a>d9aF`IPHE`KRQT:Pe0G2
+!s100 <3Ch3I:?0YHDg<740jlaA2
 R3
-IN@g5Uzd6]mdP>aiT?NcKF0
+IdaW:<hG`bR5>CY@aOjHkK3
 R4
 S1
 R0
-w1649121559
-8./../../DUT.v
-F./../../DUT.v
+Z9 w1649178929
+Z10 8./../../DUT.v
+Z11 F./../../DUT.v
 !i122 1
-L0 1 129
+L0 1 93
 R5
 r1
 !s85 0
 31
 R6
-!s107 ./../../DUT.v|
-!s90 -reportprogress|300|-sv|-work|work|./../../DUT.v|
+Z12 !s107 ./../../DUT.v|
+Z13 !s90 -reportprogress|300|-sv|-work|work|./../../DUT.v|
 !i113 1
 R7
 R8
@@ -64,13 +64,13 @@ vfilter_TB
 R1
 R2
 !i10b 1
-!s100 ;]nkME02AIPQNgo<Jz`7W1
+!s100 W8_kjo5bic3Z=GD5<:jfO2
 R3
-I6CXT5goX9OCKGmOBIBlo63
+IgYhAYW]Q<>Nd2Z`zZS_=F1
 R4
 S1
 R0
-w1649122294
+w1649178205
 8./DUT_tb.v
 F./DUT_tb.v
 !i122 0
@@ -86,3 +86,53 @@ R6
 R7
 R8
 nfilter_@t@b
+vhalfband_1st_sym
+R1
+R2
+!i10b 1
+!s100 kJi4>DNjBBCkMP00z<?AO1
+R3
+IU9]3F:9P3l@m[1e=OT@<M2
+R4
+S1
+R0
+R9
+R10
+R11
+!i122 1
+L0 96 135
+R5
+r1
+!s85 0
+31
+R6
+R12
+R13
+!i113 1
+R7
+R8
+vhalfband_2nd_sym
+R1
+R2
+!i10b 1
+!s100 E0Y:X9k5ZLMGE_PZVWNWV1
+R3
+IEXDiGRRBf3:IW9DNLIG361
+R4
+S1
+R0
+R9
+R10
+R11
+!i122 1
+L0 233 129
+R5
+r1
+!s85 0
+31
+R6
+R12
+R13
+!i113 1
+R7
+R8

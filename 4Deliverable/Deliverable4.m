@@ -62,23 +62,6 @@ close(MR_halfband_pm_vs_Des);
 
 % filterDesigner atm gives me 3 mults per LPF; center coeff can be a bit shift
 
-%% Theoretical upconv/upsampling
-%------Clean up workspace-------
-clc;
-clear Current_Folder deltap deltas Dpass fb Fcutoff Fpass Fstop Function_folder Fs Gp Gs H_halfband_filtDes h_halfband_PM H_halfband_PM M M_firpmord MR_halfband_pm_vs_Des tw wght wp ws
-clear w;
-
-%------Upsample & filter-------
-impulse = [0 0 1 0 0].'; up1=upsample(impulse,2);
-LPF_out_1st=conv(up1,h_halfband_filtDes);
-
-% digital angular frequency, w (rads/sample)
-% w = [0:0.001:1000]/1000*pi; % half cycle
-w = [0:0.001:200]/100*pi; %one whole cycle
-
-%------Upsample & filter-------
-up2=upsample(LPF_out_1st,2);
-
 % ------ Using FilterDesigner ------
 % All frequency values are in MHz.
 Fs = 25;  % Sampling Frequency
@@ -86,7 +69,30 @@ Fpass = 0.21875; % Passband Frequency; width of signal is compressed again by 2
 Dpass = 0.00000057501127785;  % Passband Ripple
 h_halfband_filtDes_2nd  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';
 
+%% Theoretical upconv/upsampling
+%------Clean up workspace-------
+clc;
+clear Current_Folder deltap deltas Dpass fb Fcutoff Fpass Fstop Function_folder Fs Gp Gs H_halfband_filtDes h_halfband_PM H_halfband_PM M M_firpmord MR_halfband_pm_vs_Des tw wght wp ws
+clear w;
+
+%------Upsample & filter-------
+impulse = [0 1 0].'; up1=upsample(impulse,2);
+LPF_out_1st=conv(up1,h_halfband_filtDes);
+fprintf("Expected impulse response of upsample then filt block\n");
+fprintf('\t%1.6f\n',LPF_out_1st);
+fprintf("End of  impulse response of upsample then filt block\n\n");
+
+% digital angular frequency, w (rads/sample)
+% w = [0:0.001:1000]/1000*pi; % half cycle
+w = [0:0.001:200]/100*pi; %one whole cycle
+
+%------Upsample & filter-------
+up2=upsample(LPF_out_1st,2);
 LPF_out_2nd=conv(up2,h_halfband_filtDes_2nd);
+fprintf("Expected impulse response of conversion block\n");
+expected_ir_out = LPF_out_2nd;
+
+fprintf('\t%1.6f\n',expected_ir_out);
 
 %% First halfband coeff in 0s18
 clc
@@ -157,4 +163,3 @@ for i=1:round(length(h_halfband_filtDes_2nd_0s18)/2)  %for sym
     end
 end
 fprintf("end\n");
-    
