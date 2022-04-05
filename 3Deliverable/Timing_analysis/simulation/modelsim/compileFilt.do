@@ -15,6 +15,7 @@ set TB_Nam "filter_TB"
 set EN "clk_en"
 set MOD "GSM_101Mults"
 
+pwd
 puts [info script]
 puts "Hello world"
 puts [file normalize [info script]]

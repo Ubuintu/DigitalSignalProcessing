@@ -46,9 +46,9 @@ create_clock -name {clk_en:EN_clk|sys_clk} -period 40.000 [get_registers {clk_en
 # Create Generated Clock
 #**************************************************************
 
-create_generated_clock -name {system_clk} -source [get_ports {clock_50}] -divide_by 2 -master_clock {input_clock} [get_registers {EE465_filter_test:SRRC_test|clock_box:cb1|counter[0]}] 
-create_generated_clock -name {symbol_clk} -source [get_ports {clock_50}] -divide_by 32 -master_clock {input_clock} [get_registers {EE465_filter_test:SRRC_test|clock_box:cb1|counter[4]}]
-create_generated_clock -name {sample_clk} -source [get_ports {clock_50}] -divide_by 8 -master_clock {input_clock} [get_registers {EE465_filter_test:SRRC_test|clock_box:cb1|counter[2]}]
+#create_generated_clock -name {system_clk} -source [get_ports {clock_50}] -divide_by 2 -master_clock {input_clock} [get_registers {EE465_filter_test:SRRC_test|clock_box:cb1|counter[0]}] 
+#create_generated_clock -name {symbol_clk} -source [get_ports {clock_50}] -divide_by 32 -master_clock {input_clock} [get_registers {EE465_filter_test:SRRC_test|clock_box:cb1|counter[4]}]
+#create_generated_clock -name {sample_clk} -source [get_ports {clock_50}] -divide_by 8 -master_clock {input_clock} [get_registers {EE465_filter_test:SRRC_test|clock_box:cb1|counter[2]}]
 
 #**************************************************************
 # Set Clock Latency

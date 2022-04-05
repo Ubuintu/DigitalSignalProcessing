@@ -5,7 +5,7 @@ reg clk_50, rst;
 
 reg signed [17:0] x_in;
 wire signed [17:0] y;
-wire sys_clk, sam_clk_en, sym_clk_en, sys_clk2_en;
+wire sys_clk, sam_clk_en, sym_clk_en;
 
 localparam PERIOD=20; 
 localparam RSTDELAY=2; 
@@ -32,28 +32,27 @@ initial begin
     rst=0;
 end
 
-always @ (posedge sys_clk)
+//always @ (posedge sys_clk)
+always @ (posedge clk_50) //2nd halfband
     if(rst)
         x_in <=18'sd0;
-//    else if (sam_clk_en)
+/*
+    //for others
+    else if (sam_clk_en)
+        $fscanf(file_in,"%d\n",x_in);
     else if (sys_clk2_en) //for halfband
         $fscanf(file_in,"%d\n",x_in);
     else
         x_in<=x_in;
+*/
+    //2nd halfband
+    else
+        $fscanf(file_in,"%d\n",x_in);
 
-clk_en EN_CLK( 
-	.clk(clk_50), 
-	.reset(rst), 
-	.sys_clk(sys_clk),
-	.sys_clk2_en(sys_clk2_en),
-	.sam_clk_en(sam_clk_en), 
-	.sym_clk_en(sym_clk_en) 
-);
+clk_en EN_CLK( .clk(clk_50), .reset(rst), .sys_clk(sys_clk), .sam_clk_en(sam_clk_en), .sym_clk_en(sym_clk_en) );
 
 DUT DUT (
-    .clk(clk_50),
     .sys_clk(sys_clk),
-    .sys_clk2_en(sys_clk2_en),
     .sam_clk_en(sam_clk_en),
     .reset(rst),
     .x_in(x_in),

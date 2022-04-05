@@ -5,7 +5,7 @@ reg clk_50, rst;
 
 reg signed [17:0] x_in;
 wire signed [17:0] y;
-wire sys_clk, sam_clk_en, sym_clk_en;
+wire sys_clk, sam_clk_en, sym_clk_en, sys_clk2_en;
 
 localparam PERIOD=20; 
 localparam RSTDELAY=2; 
@@ -40,10 +40,19 @@ always @ (posedge sys_clk)
     else
         x_in<=x_in;
 
-clk_en EN_CLK( .clk(clk_50), .reset(rst), .sys_clk(sys_clk), .sam_clk_en(sam_clk_en), .sym_clk_en(sym_clk_en) );
+clk_en EN_CLK( 
+	.clk(clk_50), 
+	.reset(rst), 
+	.sys_clk(sys_clk),
+	.sys_clk2_en(sys_clk2_en),
+	.sam_clk_en(sam_clk_en), 
+	.sym_clk_en(sym_clk_en) 
+);
 
-GSM_101Mults DUT (
+DUT DUT (
+    .clk(clk_50),
     .sys_clk(sys_clk),
+    .sys_clk2_en(sys_clk2_en),
     .sam_clk_en(sam_clk_en),
     .reset(rst),
     .x_in(x_in),

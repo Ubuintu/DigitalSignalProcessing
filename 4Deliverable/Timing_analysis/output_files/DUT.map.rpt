@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DUT
-Mon Apr  4 14:52:30 2022
+Mon Apr  4 19:46:29 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -16,21 +16,20 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
   8. Analysis & Synthesis DSP Block Usage Summary
   9. Registers Protected by Synthesis
  10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for Top-level Entity: |DUT
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |DUT
- 14. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult6
- 15. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult7
- 16. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult4
- 17. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult5
- 18. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2
- 19. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult3
- 20. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
- 21. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
- 22. lpm_mult Parameter Settings by Entity Instance
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 11. Source assignments for Top-level Entity: |DUT
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |DUT
+ 13. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult6
+ 14. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult7
+ 15. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult4
+ 16. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult5
+ 17. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2
+ 18. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult3
+ 19. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 20. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
+ 21. lpm_mult Parameter Settings by Entity Instance
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -57,13 +56,13 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr  4 14:52:30 2022           ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr  4 19:46:28 2022           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Standard Edition ;
 ; Revision Name                      ; DUT                                             ;
 ; Top-level Entity Name              ; DUT                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 973                                             ;
-;     Total combinational functions  ; 954                                             ;
+; Total logic elements               ; 972                                             ;
+;     Total combinational functions  ; 953                                             ;
 ;     Dedicated logic registers      ; 558                                             ;
 ; Total registers                    ; 558                                             ;
 ; Total pins                         ; 41                                              ;
@@ -199,36 +198,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimated Total logic elements              ; 973        ;
-;                                             ;            ;
-; Total combinational functions               ; 954        ;
-; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 0          ;
-;     -- 3 input functions                    ; 238        ;
-;     -- <=2 input functions                  ; 716        ;
-;                                             ;            ;
-; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 716        ;
-;     -- arithmetic mode                      ; 238        ;
-;                                             ;            ;
-; Total registers                             ; 558        ;
-;     -- Dedicated logic registers            ; 558        ;
-;     -- I/O registers                        ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 41         ;
-;                                             ;            ;
-; Embedded Multiplier 9-bit elements          ; 16         ;
-;                                             ;            ;
-; Maximum fan-out node                        ; x[4][14]~0 ;
-; Maximum fan-out                             ; 558        ;
-; Total fan-out                               ; 3869       ;
-; Average fan-out                             ; 2.40       ;
-+---------------------------------------------+------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 972           ;
+;                                             ;               ;
+; Total combinational functions               ; 953           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 0             ;
+;     -- 3 input functions                    ; 238           ;
+;     -- <=2 input functions                  ; 715           ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 715           ;
+;     -- arithmetic mode                      ; 238           ;
+;                                             ;               ;
+; Total registers                             ; 558           ;
+;     -- Dedicated logic registers            ; 558           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 41            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 16            ;
+;                                             ;               ;
+; Maximum fan-out node                        ; sys_clk~input ;
+; Maximum fan-out                             ; 558           ;
+; Total fan-out                               ; 3309          ;
+; Average fan-out                             ; 2.06          ;
++---------------------------------------------+---------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -236,7 +235,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name ; Library Name ;
 +---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-------------+--------------+
-; |DUT                            ; 954 (954)           ; 558 (558)                 ; 0           ; 16           ; 0       ; 8         ; 41   ; 0            ; |DUT                                        ; DUT         ; work         ;
+; |DUT                            ; 953 (953)           ; 558 (558)                 ; 0           ; 16           ; 0       ; 8         ; 41   ; 0            ; |DUT                                        ; DUT         ; work         ;
 ;    |lpm_mult:Mult0|             ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |DUT|lpm_mult:Mult0                         ; lpm_mult    ; work         ;
 ;       |mult_c6t:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |DUT|lpm_mult:Mult0|mult_c6t:auto_generated ; mult_c6t    ; work         ;
 ;    |lpm_mult:Mult1|             ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |DUT|lpm_mult:Mult1                         ; lpm_mult    ; work         ;
@@ -280,6 +279,16 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 ; Register Name                              ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
 +--------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; sum_lvl_2[3][17]                           ; yes                                                              ; yes                                        ;
+; sum_lvl_2[3][16]                           ; yes                                                              ; yes                                        ;
+; sum_lvl_2[3][15]                           ; yes                                                              ; yes                                        ;
+; sum_lvl_2[3][14]                           ; yes                                                              ; yes                                        ;
+; sum_lvl_2[3][13]                           ; yes                                                              ; yes                                        ;
+; sum_lvl_2[3][12]                           ; yes                                                              ; yes                                        ;
+; sum_lvl_2[3][11]                           ; yes                                                              ; yes                                        ;
+; sum_lvl_2[3][10]                           ; yes                                                              ; yes                                        ;
+; sum_lvl_2[3][9]                            ; yes                                                              ; yes                                        ;
+; sum_lvl_2[3][8]                            ; yes                                                              ; yes                                        ;
 ; sum_lvl_2[3][7]                            ; yes                                                              ; yes                                        ;
 ; sum_lvl_2[3][6]                            ; yes                                                              ; yes                                        ;
 ; sum_lvl_2[3][5]                            ; yes                                                              ; yes                                        ;
@@ -396,16 +405,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; sum_lvl_2[0][0]                            ; yes                                                              ; yes                                        ;
 ; sum_lvl_3[0][0]                            ; yes                                                              ; yes                                        ;
 ; sum_lvl_4[0]                               ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][8]                            ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][9]                            ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][10]                           ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][11]                           ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][12]                           ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][13]                           ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][14]                           ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][15]                           ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][16]                           ; yes                                                              ; yes                                        ;
-; sum_lvl_2[3][17]                           ; yes                                                              ; yes                                        ;
 ; sum_lvl_1[6][0]                            ; yes                                                              ; yes                                        ;
 ; sum_lvl_1[6][1]                            ; yes                                                              ; yes                                        ;
 ; sum_lvl_1[6][2]                            ; yes                                                              ; yes                                        ;
@@ -834,19 +833,9 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 558   ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 414 bits  ; 828 LEs       ; 414 LEs              ; 414 LEs                ; Yes        ; |DUT|x[4][14]              ;
-; 3:1                ; 144 bits  ; 288 LEs       ; 144 LEs              ; 144 LEs                ; Yes        ; |DUT|sum_lvl_1[7][17]      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +----------------------------------------------------------------+
@@ -854,6 +843,174 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +------------------------------+-------+------+------------------+
 ; Assignment                   ; Value ; From ; To               ;
 +------------------------------+-------+------+------------------+
+; PRESERVE_REGISTER            ; on    ; -    ; x[1][3]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; x[1][2]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; x[1][1]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][8]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][7]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][6]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][5]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][4]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][3]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][2]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][0]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][8]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][7]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][6]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][5]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][4]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][3]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][2]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][0]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][8]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][7]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][6]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][5]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][4]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][3]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][2]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][0]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; x[0][0]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][8]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][7]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][6]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][5]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][4]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][3]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][2]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][0]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][8]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][7]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][6]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][5]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][4]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][3]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][2]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][0]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][8]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][7]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][6]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][5]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][4]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][3]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][2]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][0]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][8]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][7]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][6]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][5]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][4]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][3]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][2]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; x[1][0]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][0]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][8]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][7]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][6]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][5]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][4]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][3]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][2]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][17] ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][16] ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][15] ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][14] ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][13] ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][12] ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][11] ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][10] ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][9]  ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][8]  ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][8]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][7]  ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][7]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][6]  ;
@@ -918,7 +1075,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[1][13] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[1][12] ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[1][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; x[0][0]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[1][11] ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[1][11] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[1][10] ;
@@ -983,8 +1139,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_3[1][16] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_3[1][15] ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_3[1][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; x[1][0]          ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][0]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_3[1][14] ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_3[1][14] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_3[1][13] ;
@@ -1090,171 +1244,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_3[0][0]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_4[0]     ;
 ; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_4[0]     ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][8]  ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][9]  ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][10] ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][11] ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][12] ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][13] ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][14] ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][15] ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][16] ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3][17] ;
-; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; sum_lvl_2[3][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][1]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][2]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][3]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][4]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][5]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][6]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][7]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][1]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][2]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][3]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][4]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][5]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][6]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][7]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][0]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][1]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][2]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][3]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][4]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][5]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][6]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][7]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[1][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][0]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][1]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][2]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][3]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][4]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][5]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][6]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][7]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][0]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][1]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][2]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][3]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][4]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][5]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][6]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][7]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[3][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][0]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][1]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][2]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][3]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][4]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][5]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][6]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][7]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][0]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][1]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][2]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][3]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][4]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][5]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][6]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][7]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[5][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][0]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][1]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][2]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][3]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][4]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][5]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][6]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][7]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][15] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; x[1][1]          ;
-; PRESERVE_REGISTER            ; on    ; -    ; x[1][2]          ;
-; PRESERVE_REGISTER            ; on    ; -    ; x[1][3]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; x[1][4]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; x[1][5]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; x[1][6]          ;
@@ -1772,6 +1761,8 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mult_out[1][18]  ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mult_out[1][17]  ;
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mult_out[1][17]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Hsys[0][0]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Hsys[0][0]       ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mult_out[0][34]  ;
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mult_out[0][34]  ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mult_out[0][33]  ;
@@ -1808,8 +1799,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mult_out[0][18]  ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mult_out[0][17]  ;
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mult_out[0][17]  ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Hsys[0][0]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Hsys[0][0]       ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Hsys[0][1]       ;
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Hsys[0][1]       ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Hsys[0][2]       ;
@@ -2498,20 +2487,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 41                          ;
 ; cycloneiii_ff         ; 558                         ;
-;     ENA               ; 432                         ;
-;     ENA SCLR          ; 126                         ;
-; cycloneiii_lcell_comb ; 954                         ;
+;     SCLR              ; 126                         ;
+;     plain             ; 432                         ;
+; cycloneiii_lcell_comb ; 953                         ;
 ;     arith             ; 238                         ;
 ;         3 data inputs ; 238                         ;
-;     normal            ; 716                         ;
+;     normal            ; 715                         ;
 ;         0 data inputs ; 144                         ;
 ;         1 data inputs ; 144                         ;
-;         2 data inputs ; 428                         ;
+;         2 data inputs ; 427                         ;
 ; cycloneiii_mac_mult   ; 8                           ;
 ; cycloneiii_mac_out    ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.70                        ;
-; Average LUT depth     ; 1.88                        ;
+; Average LUT depth     ; 1.89                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2530,7 +2519,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Mon Apr  4 14:52:24 2022
+    Info: Processing started: Mon Apr  4 19:46:23 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DUT -c DUT
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -2538,16 +2527,16 @@ Warning (12125): Using design file DUT.v, which is not specified as a design fil
     Info (12023): Found entity 1: DUT File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 1
 Info (12127): Elaborating entity "DUT" for the top level hierarchy
 Info (278001): Inferred 8 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult6" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult7" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult4" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult5" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult3" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult6" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
-Info (12133): Instantiated megafunction "lpm_mult:Mult6" with the following parameter: File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 82
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult6" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult7" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult4" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult5" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult3" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult6" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
+Info (12133): Instantiated megafunction "lpm_mult:Mult6" with the following parameter: File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 78
     Info (12134): Parameter "LPM_WIDTHA" = "18"
     Info (12134): Parameter "LPM_WIDTHB" = "18"
     Info (12134): Parameter "LPM_WIDTHP" = "36"
@@ -2561,6 +2550,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mult
     Info (12023): Found entity 1: mult_c6t File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/db/mult_c6t.tdf Line: 29
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "mult_out[6][34]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][34]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[6][33]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][33]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[6][32]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][32]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[6][31]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][31]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[6][30]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][30]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[6][29]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][29]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[6][28]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][28]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[6][27]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][27]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[6][26]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][26]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[6][25]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
+    Info (17048): Logic cell "mult_out[7][25]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
     Info (17048): Logic cell "mult_out[6][24]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
     Info (17048): Logic cell "mult_out[7][24]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
     Info (17048): Logic cell "mult_out[6][23]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
@@ -2685,26 +2694,6 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "mult_out[1][18]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
     Info (17048): Logic cell "mult_out[0][17]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
     Info (17048): Logic cell "mult_out[1][17]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][25]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][25]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][26]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][26]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][27]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][27]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][28]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][28]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][29]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][29]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][30]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][30]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][31]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][31]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][32]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][32]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][33]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][33]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[6][34]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
-    Info (17048): Logic cell "mult_out[7][34]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 17
     Info (17048): Logic cell "Hsys[6][0]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 23
     Info (17048): Logic cell "Hsys[6][1]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 23
     Info (17048): Logic cell "Hsys[6][2]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 23
@@ -2851,18 +2840,19 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "Hsys[1][17]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 23
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sam_clk_en" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 11
     Warning (15610): No output dependent on input pin "clk" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 11
+    Warning (15610): No output dependent on input pin "sys_clk2_en" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 11
     Warning (15610): No output dependent on input pin "x_in[0]" File: /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 12
-Info (21057): Implemented 1049 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1048 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 18 output pins
-    Info (21061): Implemented 992 logic cells
+    Info (21061): Implemented 991 logic cells
     Info (21062): Implemented 16 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 768 megabytes
-    Info: Processing ended: Mon Apr  4 14:52:30 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 769 megabytes
+    Info: Processing ended: Mon Apr  4 19:46:29 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:16
 

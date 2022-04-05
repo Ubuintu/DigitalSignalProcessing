@@ -42,18 +42,15 @@ end
 always @ (posedge sys_clk)
     if (reset) 
         x[0]<=18'sd0;
-    else if (sys_clk2_en) begin
-        x[0]<=$signed( {x_in[17],x_in[17:1]} );	//format input to 2s16 to prevent overflow
-    end
     else
-        x[0]<=$signed(x[0]);
+        x[0]<=$signed( {x_in[17],x_in[17:1]} );	//format input to 2s16 to prevent overflow
 
 always @ (posedge sys_clk)
     if (reset) begin
         for(i=1; i<LENGTH; i=i+1)
             x[i]<=18'sd0;
     end
-    else if (sys_clk2_en) begin
+    else begin
         for(i=1; i<LENGTH; i=i+1)
             x[i]<=$signed(x[i-1]);
     end
@@ -64,7 +61,7 @@ always @ (posedge sys_clk)
 		 for(i=0;i<SUMLV1-1;i=i+1)
 			  sum_lvl_1[i] <= 18'sd0;
     end
-    else if (sys_clk2_en) begin
+    else begin
 		 for(i=0;i<SUMLV1-1;i=i+1)
 			  sum_lvl_1[i] <= $signed(x[i])+$signed(x[LENGTH-1-i]);
     end
@@ -72,8 +69,7 @@ always @ (posedge sys_clk)
 //cntr
 always @ (posedge sys_clk)
     if (reset) sum_lvl_1[SUMLV1-1] <= 18'sd0;
-    else if (sys_clk2_en) sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
-    else sum_lvl_1[SUMLV1-1] <= $signed(sum_lvl_1[SUMLV1-1]);
+    else sum_lvl_1[SUMLV1-1] <= $signed(x[SUMLV1-1]);
 
 /*-----------Mult_out (2s34)-----------*/
 always @ *
@@ -87,7 +83,7 @@ always @ (posedge sys_clk)
         for (i=0; i<SUMLV2; i=i+1)
             sum_lvl_2[i]<=18'sd0;
     end
-    else if (sys_clk2_en) begin
+    else begin
         for (i=0; i<SUMLV2; i=i+1)				
 	    //mult_out (2s34) -> sum_lvl_2 1s17
             sum_lvl_2[i]<=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
@@ -99,7 +95,7 @@ always @ (posedge sys_clk)
         for (i=0; i<SUMLV3; i=i+1)
             sum_lvl_3[i]<=18'sd0;
     end
-    else if (sys_clk2_en) begin
+    else begin
         for (i=0; i<SUMLV3; i=i+1)
             sum_lvl_3[i]<=$signed(sum_lvl_2[2*i])+$signed(sum_lvl_2[2*i+1]);
     end
@@ -108,27 +104,25 @@ always @ (posedge sys_clk)
 always @ (posedge sys_clk)
     if (reset)
        sum_lvl_4<=18'sd0;
-    else if (sys_clk2_en)
+    else
        sum_lvl_4<=$signed(sum_lvl_3[0])+$signed(sum_lvl_3[1]);
 
 /*-----------Output-----------*/
 always @ (posedge sys_clk)
     if (reset) 
-	y<= 18'sd0;
-    else if (sys_clk2_en)
-	y<=$signed(sum_lvl_4);
+		y<= 18'sd0;
     else 
-	y<=$signed(y);
+		y<=$signed(sum_lvl_4);
 
 /*-----------coeffs 0s18-----------*/
 initial begin
-	Hsys[0] = -18'sd348;
+	Hsys[0] = -18'sd322;
 	Hsys[1] = 18'sd0;
-	Hsys[2] = 18'sd3274;
+	Hsys[2] = 18'sd3144;
 	Hsys[3] = 18'sd0;
-	Hsys[4] = -18'sd15925;
+	Hsys[4] = -18'sd15695;
 	Hsys[5] = 18'sd0;
-	Hsys[6] = 18'sd78535;
+	Hsys[6] = 18'sd78408;
 	Hsys[7] = 18'sd131071;
 end
 

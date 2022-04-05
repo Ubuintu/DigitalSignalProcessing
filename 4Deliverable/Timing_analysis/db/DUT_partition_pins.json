@@ -84,10 +84,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sys_clk2_en",
-					"strict" : false
-				},
-				{
 					"name" : "x_in[1]",
 					"strict" : false
 				},

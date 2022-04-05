@@ -14,29 +14,29 @@ initial begin
 end
 
 always @ (posedge clk)
-    sys_clk = ~sys_clk;
+    sys_clk <= ~sys_clk;
 
 always @ (posedge sys_clk)
     if (cnt[0]==1'd0)
-        sys_clk2_en = 1'd1;
+        sys_clk2_en <= 1'd1;
     else
-        sys_clk2_en = 1'd0;
+        sys_clk2_en <= 1'd0;
 
 always @ (posedge sys_clk)
-    if(reset) cnt = 4'b0;
-    else cnt = cnt + 4'b1;
+    if(reset) cnt <= 4'b0;
+    else cnt <= cnt + 4'b1;
 
 always @ (posedge sys_clk)
     //account for delay; checks for logic and performs op on next posedge
     if ( (cnt+1)%4 == 0 )
-        sam_clk_en = 1'b1;
+        sam_clk_en <= 1'b1;
     else
-        sam_clk_en = 1'b0;
+        sam_clk_en <= 1'b0;
         
 always @ (posedge sys_clk)
     if ( cnt == 4'd15 )
-        sym_clk_en = 1'b1;
+        sym_clk_en <= 1'b1;
     else
-        sym_clk_en = 1'b0;
+        sym_clk_en <= 1'b0;
 
 endmodule

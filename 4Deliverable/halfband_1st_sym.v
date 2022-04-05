@@ -129,7 +129,7 @@ initial begin
 	Hsys[4] = -18'sd15925;
 	Hsys[5] = 18'sd0;
 	Hsys[6] = 18'sd78535;
-	Hsys[7] = 18'sd131072;
+	Hsys[7] = 18'sd131071;
 end
 
 endmodule
