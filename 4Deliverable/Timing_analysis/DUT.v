@@ -49,7 +49,7 @@ halfband_1st_sym HB1 (
 	.x_in(UpSam1),
 	.y(halfOut1),
 	.sys_clk(sys_clk),
-	.sam_clk_en(sam_clk_ena),
+	.sam_clk_en(sam_clk_en),
 	.reset(reset),
 	.clk(clk),
 	.sys_clk2_en(sys_clk2_en)
@@ -81,14 +81,17 @@ halfband_2nd_sym HB2 (
 	.x_in(UpSam2),
 	.y(halfOut2),
 	.sys_clk(sys_clk),
-	.sam_clk_en(sam_clk_ena),
+	.sam_clk_en(sam_clk_en),
 	.reset(reset),
-	.clk(clock_50),
+	.clk(clk),
 	.sys_clk2_en(sys_clk2_en)
 	);
 
 always @ (sys_clk)
-	y<=$signed(halfOut2);
+	if (reset)
+		y<=18'sd0;
+	else
+		y<=$signed(halfOut2);
 
 endmodule
 
