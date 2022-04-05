@@ -44,15 +44,12 @@ clk_en EN_CLK(
 	.clk(clk_50), 
 	.reset(rst), 
 	.sys_clk(sys_clk),
-	.sys_clk2_en(sys_clk2_en),
 	.sam_clk_en(sam_clk_en), 
 	.sym_clk_en(sym_clk_en) 
 );
 
-DUT DUT (
-    .clk(clk_50),
+GSM_101Mults DUT (
     .sys_clk(sys_clk),
-    .sys_clk2_en(sys_clk2_en),
     .sam_clk_en(sam_clk_en),
     .reset(rst),
     .x_in(x_in),
