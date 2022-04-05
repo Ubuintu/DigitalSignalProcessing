@@ -1,5 +1,5 @@
 Timing Analyzer report for filter_design
-Mon Apr  4 14:05:13 2022
+Tue Apr  5 11:36:28 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -116,15 +116,15 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.40        ;
+; Average used               ; 1.42        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  11.6%      ;
-;     Processor 3            ;   7.4%      ;
-;     Processor 4            ;   5.7%      ;
-;     Processors 5-8         ;   3.9%      ;
+;     Processor 2            ;  12.0%      ;
+;     Processor 3            ;   7.7%      ;
+;     Processor 4            ;   5.9%      ;
+;     Processors 5-8         ;   4.0%      ;
 +----------------------------+-------------+
 
 
@@ -133,7 +133,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+--------+--------------------------+
 ; SDC File Path     ; Status ; Read at                  ;
 +-------------------+--------+--------------------------+
-; filter_design.sdc ; OK     ; Mon Apr  4 14:05:08 2022 ;
+; filter_design.sdc ; OK     ; Tue Apr  5 11:36:23 2022 ;
 +-------------------+--------+--------------------------+
 
 
@@ -3429,7 +3429,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Mon Apr  4 14:05:06 2022
+    Info: Processing started: Tue Apr  5 11:36:21 2022
 Info: Command: quartus_sta filter_design -c filter_design
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -3553,8 +3553,8 @@ Info (332114): Report Metastability: Found 193 synchronizer chains.
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1056 megabytes
-    Info: Processing ended: Mon Apr  4 14:05:13 2022
+    Info: Peak virtual memory: 1055 megabytes
+    Info: Processing ended: Tue Apr  5 11:36:28 2022
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:08
 

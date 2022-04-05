@@ -17,7 +17,7 @@ always @ (posedge clk)
     sys_clk <= ~sys_clk;
 
 always @ (posedge sys_clk)
-    if (cnt[0]==1'd0)
+    if (cnt[0]==1'd1)
         sys_clk2_en <= 1'd1;
     else
         sys_clk2_en <= 1'd0;

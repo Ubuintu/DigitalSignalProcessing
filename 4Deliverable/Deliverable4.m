@@ -76,11 +76,11 @@ clear Current_Folder deltap deltas Dpass fb Fcutoff Fpass Fstop Function_folder 
 clear w;
 
 %------Upsample & filter-------
-impulse = [0 1 0].'; up1=upsample(impulse,2);
+% impulse = [0 1 0].'; 
+impulse = [0 1 0].'.*131071; 
+up1=upsample(impulse,2);
 LPF_out_1st=conv(up1,h_halfband_filtDes);
-fprintf("Expected impulse response of upsample then filt block\n");
-fprintf('\t%1.6f\n',LPF_out_1st);
-fprintf("End of  impulse response of upsample then filt block\n\n");
+LPF_out_1st=round(LPF_out_1st); %1s17
 
 % digital angular frequency, w (rads/sample)
 % w = [0:0.001:1000]/1000*pi; % half cycle
@@ -89,10 +89,15 @@ w = [0:0.001:200]/100*pi; %one whole cycle
 %------Upsample & filter-------
 up2=upsample(LPF_out_1st,2);
 LPF_out_2nd=conv(up2,h_halfband_filtDes_2nd);
-fprintf("Expected impulse response of conversion block\n");
-expected_ir_out = LPF_out_2nd;
+LPF_out_2nd=round(LPF_out_2nd);
 
-fprintf('\t%1.6f\n',expected_ir_out);
+%------Print if needed-------
+% fprintf("Expected impulse response of upsample then filt block\n");
+% fprintf('\t%1.6f\n',LPF_out_1st);
+% fprintf("End of  impulse response of upsample then filt block\n\n");
+% fprintf("Expected impulse response of conversion block\n");
+% expected_ir_out = LPF_out_2nd;
+% fprintf('\t%1.6f\n',expected_ir_out);
 
 %% First halfband coeff in 0s18
 clc

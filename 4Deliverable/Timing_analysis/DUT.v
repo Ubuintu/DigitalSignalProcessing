@@ -29,9 +29,9 @@ always @ (posedge sys_clk)
 
 always @ (posedge sys_clk)
 	if (reset)
-		halfSysCnt<=1'd0;
+		halfSysCnt=1'd0;
 	else if (sys_clk2_en)
-		halfSysCnt<=halfSysCnt+1'd1;
+		halfSysCnt=~halfSysCnt;
 		
 (* keep *) reg signed [17:0] UpSam1;
 
