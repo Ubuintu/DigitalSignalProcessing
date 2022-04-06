@@ -43,7 +43,7 @@ always @ (posedge sys_clk)
     if (reset) 
         x[0]<=18'sd0;
     else if (sys_clk2_en) begin
-        x[0]<=$signed( {x_in[17],x_in[17:1]} );	//format input to 2s16 to prevent overflow
+        x[0]<=$signed({x_in[17], x_in[17:1]});	//format input to 1s17
     end
     else
         x[0]<=$signed(x[0]);
@@ -78,7 +78,7 @@ always @ (posedge sys_clk)
 /*-----------Mult_out (2s34)-----------*/
 always @ *
 	for(i=0; i<SUMLV1; i=i+1)
-				//mult_out (2s34) = 0s18 * 2s16
+				//mult_out (2s34) = 1s17 * 1s17
 				mult_out[i] = $signed(Hsys[i])*$signed(sum_lvl_1[i]);
 
 /*-----------SUMLV2-----------*/
@@ -90,7 +90,7 @@ always @ (posedge sys_clk)
     else if (sys_clk2_en) begin
         for (i=0; i<SUMLV2; i=i+1)				
 	    //mult_out (2s34) -> sum_lvl_2 1s17
-            sum_lvl_2[i]<=$signed(mult_out[2*i][34:17])+$signed(mult_out[2*i+1][34:17]);
+            sum_lvl_2[i]<=$signed(mult_out[2*i][33:16])+$signed(mult_out[2*i+1][33:16]);
     end
 
 /*-----------SUMLV3-----------*/
@@ -120,16 +120,16 @@ always @ (posedge sys_clk)
     else 
 	y<=$signed(y);
 
-/*-----------coeffs 0s18-----------*/
+/*-----------coeffs 1s17-----------*/
 initial begin
-	Hsys[0] = -18'sd348;
+	Hsys[0] = -18'sd33;
 	Hsys[1] = 18'sd0;
-	Hsys[2] = 18'sd3274;
+	Hsys[2] = 18'sd307;
 	Hsys[3] = 18'sd0;
-	Hsys[4] = -18'sd15925;
+	Hsys[4] = -18'sd1493;
 	Hsys[5] = 18'sd0;
-	Hsys[6] = 18'sd78535;
-	Hsys[7] = 18'sd131071;
+	Hsys[6] = 18'sd7363;
+	Hsys[7] = 18'sd12288;
 end
 
 endmodule

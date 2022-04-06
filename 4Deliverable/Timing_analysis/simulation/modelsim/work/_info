@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim
 vclk_en
-Z1 !s110 1649185758
+Z1 !s110 1649188642
 !i10b 1
 !s100 zH<ANkPo0zCN0NmHa@5SA1
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,20 +20,20 @@ R0
 w1649181801
 8/home/tob208/engr-ece/Documents/EE465/4Deliverable/clk_en.v
 F/home/tob208/engr-ece/Documents/EE465/4Deliverable/clk_en.v
-!i122 5
+!i122 8
 L0 1 42
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1649185758.000000
+Z5 !s108 1649188642.000000
 !s107 /home/tob208/engr-ece/Documents/EE465/4Deliverable/clk_en.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tob208/engr-ece/Documents/EE465/4Deliverable/clk_en.v|
 !i113 1
-Z5 o-work work
-Z6 tCvgOpt 0
+Z6 o-work work
+Z7 tCvgOpt 0
 vDUT
-Z7 !s110 1649185757
+R1
 !i10b 1
 !s100 XNGKH75Y@43^f2o54DBli2
 R2
@@ -43,18 +43,18 @@ R0
 Z8 w1649185612
 Z9 8/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo
 Z10 F/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo
-!i122 3
+!i122 6
 L0 32 61859
 R4
 r1
 !s85 0
 31
-Z11 !s108 1649185757.000000
+Z11 !s108 1649188641.000000
 Z12 !s107 /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo|
 Z13 !s90 -reportprogress|300|-work|work|-stats=none|/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo|
 !i113 1
-R5
 R6
+R7
 n@d@u@t
 vfilter_TB
 R1
@@ -67,21 +67,21 @@ R0
 w1649183460
 8/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v
 F/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v
-!i122 4
+!i122 7
 L0 2 69
 R4
 r1
 !s85 0
 31
-R11
+R5
 !s107 /home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v|
 !i113 1
-R5
 R6
+R7
 nfilter_@t@b
 vhard_block
-R7
+R1
 !i10b 1
 !s100 PPhEWE>37bPRW2JV5;Z2L3
 R2
@@ -91,7 +91,7 @@ R0
 R8
 R9
 R10
-!i122 3
+!i122 6
 L0 61892 34
 R4
 r1
@@ -101,5 +101,5 @@ R11
 R12
 R13
 !i113 1
-R5
 R6
+R7

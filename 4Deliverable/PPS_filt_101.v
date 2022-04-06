@@ -39,24 +39,22 @@ module PPS_filt_101 #(
 integer i,j;
 initial begin
      tol=18'sd10;
-     for (i=0; i<SUMLV1; i=i+1)
-        sum_lvl_1[i]=18'sd0;
-     for (i=0; i<SUMLV2; i=i+1)
-        sum_lvl_2[i]=18'sd0;
-     for (i=0; i<SUMLV3; i=i+1)
-        sum_lvl_3[i]=18'sd0;
-     for (i=0; i<SUMLV4; i=i+1)
-        sum_lvl_4[i]=18'sd0;
-     for (i=0; i<SUMLV5; i=i+1)
-        sum_lvl_5[i]=18'sd0;
-     for (i=0; i<SUMLV6; i=i+1)
-        sum_lvl_6[i]=18'sd0;
-     sum_lvl_7=18'sd0;
 //     for (i=0; i<SUMLV1; i=i+1)
-//        mult_out[i]=18'sd0;
-     for (i=0; i<LENGTH; i=i+1)
-        x[i]=18'sd0;
-     y = 18'sd0;
+//        sum_lvl_1[i]=18'sd0;
+//     for (i=0; i<SUMLV2; i=i+1)
+//        sum_lvl_2[i]=18'sd0;
+//     for (i=0; i<SUMLV3; i=i+1)
+//        sum_lvl_3[i]=18'sd0;
+//     for (i=0; i<SUMLV4; i=i+1)
+//        sum_lvl_4[i]=18'sd0;
+//     for (i=0; i<SUMLV5; i=i+1)
+//        sum_lvl_5[i]=18'sd0;
+//     for (i=0; i<SUMLV6; i=i+1)
+//        sum_lvl_6[i]=18'sd0;
+//     sum_lvl_7=18'sd0;
+//     for (i=0; i<LENGTH; i=i+1)
+//        x[i]=18'sd0;
+//     y = 18'sd0;
 end
 
 //scale 1s17->2s16 for summing
@@ -64,7 +62,7 @@ always @ (posedge sys_clk)
     if (reset) 
         x[0]<=18'sd0;
     else if (sam_clk_en) begin
-        //x[0]<=$signed( {x_in[17],x_in[17:1]} );
+//        //x[0]<=$signed( {x_in[17],x_in[17:1]} );
         x[0]<=$signed(x_in);
     end
     else

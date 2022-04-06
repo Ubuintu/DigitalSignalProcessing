@@ -17,13 +17,15 @@ w = [0:0.001:200]/100*pi; %one whole cycle
 % All frequency values are in MHz.
 Fs = 12.5;  % Sampling Frequency
 
+% tried to account for BW of downsampled, didnt work
 Fpass = 0.4375;          % Passband Frequency
 % currently gives 15 coeffs; more if you decrease ripple
-Dpass = 0.00000057501127785;  % Passband Ripple
+Dpass = 0.057501127785;  % Passband Ripple
 
 % Calculate the coefficients using the function.
 h_halfband_filtDes  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';
-% Hd = dsp.FIRFilter('Numerator', b);
+% h_halfband_filtDes  = firhalfband(14, Fpass/(Fs/2)).';
+h_halfband_filtDes  = h_halfband_filtDes/sum(abs(h_halfband_filtDes))*(1-2^-17); %to scale down
 
 H_halfband_filtDes = freqz(h_halfband_filtDes,1,w).';
 
@@ -49,7 +51,6 @@ a=[Gp,Gp,Gs,Gs];        % gain vector
 wght=[1,deltap/deltas]; % weight vector
 % or could use wght=[1/deltap,1/deltas];
 h_halfband_PM=firpm(M,fb,a,wght).';   %calculate M+1 IR coefficients for vector b
-
 H_halfband_PM = freqz(h_halfband_PM,1,w).';
 
 % hold on 
@@ -66,8 +67,16 @@ close(MR_halfband_pm_vs_Des);
 % All frequency values are in MHz.
 Fs = 25;  % Sampling Frequency
 Fpass = 0.21875; % Passband Frequency; width of signal is compressed again by 2
-Dpass = 0.00000057501127785;  % Passband Ripple
-h_halfband_filtDes_2nd  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';
+Dpass = 0.057501127785;  % Passband Ripple
+% h_halfband_filtDes_2nd  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';   %no bueno
+h_halfband_filtDes_2nd  = firhalfband(14, Fpass/(Fs/2)).';
+
+H_halfband_filtDes_2nd = freqz(h_halfband_filtDes_2nd,1,w).';
+
+MR2_halfband_pm_vs_Des=superplot(w/2/pi, 20*log10(abs(H_halfband_filtDes_2nd)),'plotName',"Comparision between designer & FIRPM",'figureName',"Halfband_cmp",'yName',"Magnitude (dB)",...
+    'xName',"frequency (cycles/sample)",'yLegend',"filtDesigner",'cmpY',20*log10(abs(H_halfband_PM)),'cmpYLegend',"FIRPM",...
+    'plotAxis',[0 w(end)/2/pi -150 10]);
+close(MR2_halfband_pm_vs_Des);
 
 %% Theoretical upconv/upsampling
 %------Clean up workspace-------
@@ -99,23 +108,23 @@ LPF_out_2nd=round(LPF_out_2nd);
 % expected_ir_out = LPF_out_2nd;
 % fprintf('\t%1.6f\n',expected_ir_out);
 
-%% First halfband coeff in 0s18
+%% First halfband coeff in 1s17
 clc
 
 % Find coeffs
-safety=(2^-0)-(2^-17);  %0s18
-h_halfband_filtDes_0s18=round(h_halfband_filtDes*2^18*safety);
+safety=(2^0)-(2^-17);  %1s17
+h_halfband_filtDes_1s17=round(h_halfband_filtDes*2^17*.75);
 
 idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16
 fprintf("initial begin\n");
-for i=1:round(length(h_halfband_filtDes_0s18)/2)  %for sym
+for i=1:round(length(h_halfband_filtDes_1s17)/2)  %for sym
 % for i=1:round(length(h_halfband_filtDes_0s18))  %no reduc
-    if (h_halfband_filtDes_0s18(i)<0)
-        fprintf("\tHsys[%d] = -18'sd%d;\n",(idx),abs(h_halfband_filtDes_0s18(i)) );
+    if (h_halfband_filtDes_1s17(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(idx),abs(h_halfband_filtDes_1s17(i)) );
         idx=idx+1;
     else
-        fprintf("\tHsys[%d] = 18'sd%d;\n",(idx),abs(h_halfband_filtDes_0s18(i)) );
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(idx),abs(h_halfband_filtDes_1s17(i)) );
         idx=idx+1;
     end
 end
@@ -125,12 +134,12 @@ fprintf("end\n");
 clc
 
 % ceil to account for odd tap
-numCoeffs=ceil(length(h_halfband_filtDes_0s18)/2);
+numCoeffs=ceil(length(h_halfband_filtDes_1s17)/2);
 numMults=ceil(numCoeffs/4);
 
-num_of_sumLvls=0; coeffs2reduce=length(h_halfband_filtDes_0s18);
+num_of_sumLvls=0; coeffs2reduce=length(h_halfband_filtDes_1s17);
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
-for i=1:length(h_halfband_filtDes_0s18)
+for i=1:length(h_halfband_filtDes_1s17)
     if coeffs2reduce<=1
         break
     elseif i==2
@@ -147,23 +156,43 @@ for i=1:length(h_halfband_filtDes_0s18)
 end
 fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
 
-%% Second halfband coeff in 0s18
+%% halfband sym structure
+clc
+
+% ceil to account for odd tap
+numCoeffs=ceil(length(h_halfband_filtDes_1s17)/2);
+numMults=ceil(numCoeffs/4);
+
+num_of_sumLvls=0; coeffs2reduce=length(h_halfband_filtDes_1s17);
+tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
+for i=1:length(h_halfband_filtDes_1s17)
+    if coeffs2reduce<=1
+        break
+    else
+        num_of_sumLvls=num_of_sumLvls+1;coeffs2reduce=ceil(coeffs2reduce/2);
+        fprintf("sum level %d has %d registers\n",i,coeffs2reduce);
+        tapsPerlvl(i,1)=coeffs2reduce;
+    end
+end
+fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
+
+%% Second halfband coeff in 1s17
 clc
 
 % Find coeffs
-safety=(2^-0)-(2^-17);  %0s18
-h_halfband_filtDes_2nd_0s18=round(h_halfband_filtDes_2nd*2^18*safety);
+safety=(2^-1)-(2^-17);  %1s17
+h_halfband_filtDes_2nd_1s17=round(h_halfband_filtDes_2nd*2^17*safety);
 
 idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16
 fprintf("initial begin\n");
-for i=1:round(length(h_halfband_filtDes_2nd_0s18)/2)  %for sym
+for i=1:round(length(h_halfband_filtDes_2nd_1s17)/2)  %for sym
 % for i=1:round(length(h_halfband_filtDes_0s18))  %no reduc
-    if (h_halfband_filtDes_2nd_0s18(i)<0)
-        fprintf("\tHsys[%d] = -18'sd%d;\n",(idx),abs(h_halfband_filtDes_2nd_0s18(i)) );
+    if (h_halfband_filtDes_2nd_1s17(i)<0)
+        fprintf("\tHsys[%d] = -18'sd%d;\n",(idx),abs(h_halfband_filtDes_2nd_1s17(i)) );
         idx=idx+1;
     else
-        fprintf("\tHsys[%d] = 18'sd%d;\n",(idx),abs(h_halfband_filtDes_2nd_0s18(i)) );
+        fprintf("\tHsys[%d] = 18'sd%d;\n",(idx),abs(h_halfband_filtDes_2nd_1s17(i)) );
         idx=idx+1;
     end
 end

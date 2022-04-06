@@ -1,3 +1,44 @@
+module LFSR_23 (
+    input sys_clk, reset, load, sam_clk_en,
+    output reg cycle,
+    output reg signed[22:0] out
+    );
+
+(* preserve *) reg [22:0] x, cnt;
+/*
+initial begin
+    x = {22{1'b0}};
+    cycle = 1'b0;
+    out = {22{1'b0}};
+    cnt = 22'd1;
+end
+*/
+
+always @ (posedge sys_clk)
+    if (reset) cycle <= 1'b0;
+    else if (sam_clk_en && cnt == 23'd4194303) cycle <= 1'b1;
+    else cycle <= 1'b0;
+
+always @ (posedge sys_clk) 
+    if (reset || sam_clk_en && cnt == 23'd4194303) cnt <= 23'd1;
+    else if (sam_clk_en) cnt <= cnt + 23'd1;
+    else cnt <= cnt;
+
+always @ (posedge sys_clk)
+    if (reset) x <= 23'd0;
+    else if (load) 
+	x <= { 1'b1,1'b0,{1{1'b1}} };
+    else if (sam_clk_en) 
+	x <= $signed({ x[21:0],(x[22]^x[17]) });
+    else 
+	x <= x;
+
+always @ *
+    if (reset) out = {23{1'b0}};
+    else out = $signed(x);
+
+endmodule
+
 module LFSR_22 (
     input sys_clk, reset, load, sam_clk_en,
     output reg cycle,
@@ -39,41 +80,60 @@ always @ *
 
 endmodule
 
-module LFSR_test #(parameter WIDTH = 4)(
-    input sys_clk, reset, load, sam_clk_en,
-    output reg cycle,
-    output reg signed [WIDTH-1:0] out
-    );
+//module LFSR_test #(parameter WIDTH = 4)(
+//    input sys_clk, reset, load, sam_clk_en,
+//    output reg cycle,
+//    output reg signed [WIDTH-1:0] out
+//    );
+//
+//(* preserve *) reg signed [WIDTH-1:0] x;
+//(* preserve *) reg [WIDTH-1:0] cnt;
+//
+////for MS NEED to initialize regs to 0
+//initial begin
+//    x = {WIDTH{1'b0}};
+//    cycle = 1'b0;
+//    out = {WIDTH{1'b0}};
+//    cnt = {WIDTH{1'b0}};
+//end
+//
+//always @ (posedge sys_clk)
+//    if (reset) cycle = 1'b0;
+//    else if (sam_clk_en && cnt == { {(WIDTH-1){1'b1}},1'b0 }) cycle = 1'b1;
+//    else cycle = 1'b0;
+//
+//always @ (posedge sys_clk) 
+//    if (reset || (sam_clk_en && cnt == { {(WIDTH-1){1'b1}},1'b0}) ) cnt = {WIDTH{1'b0}};
+//    else if (sam_clk_en) cnt = cnt + {{(WIDTH-1){1'b0}},1'b1};
+//    else cnt = cnt;
+//
+//always @ (posedge sys_clk)
+//    if (reset) x = {WIDTH{1'b0}};
+//    else if (load) x = {WIDTH{1'b1}};
+//	 else if (sam_clk_en) x = $signed({ x[2:0], (x[2]^x[3]) });
+//    else x = x;
+//
+//always @ *
+//    if (reset) out = {WIDTH{1'b0}};
+//    else out = $signed(x);
+//
+//endmodule
 
-(* preserve *) reg signed [WIDTH-1:0] x;
-(* preserve *) reg [WIDTH-1:0] cnt;
-
-//for MS NEED to initialize regs to 0
-initial begin
-    x = {WIDTH{1'b0}};
-    cycle = 1'b0;
-    out = {WIDTH{1'b0}};
-    cnt = {WIDTH{1'b0}};
-end
-
-always @ (posedge sys_clk)
-    if (reset) cycle = 1'b0;
-    else if (sam_clk_en && cnt == { {(WIDTH-1){1'b1}},1'b0 }) cycle = 1'b1;
-    else cycle = 1'b0;
-
-always @ (posedge sys_clk) 
-    if (reset || (sam_clk_en && cnt == { {(WIDTH-1){1'b1}},1'b0}) ) cnt = {WIDTH{1'b0}};
-    else if (sam_clk_en) cnt = cnt + {{(WIDTH-1){1'b0}},1'b1};
-    else cnt = cnt;
-
-always @ (posedge sys_clk)
-    if (reset) x = {WIDTH{1'b0}};
-    else if (load) x = {WIDTH{1'b1}};
-	 else if (sam_clk_en) x = $signed({ x[2:0], (x[2]^x[3]) });
-    else x = x;
-
-always @ *
-    if (reset) out = {WIDTH{1'b0}};
-    else out = $signed(x);
-
-endmodule
+//module LFSR( 	input clk,
+//					input load_data,
+//					output [13:0]q);
+//					
+//	reg [15:0]q_int;
+//		always@ (posedge clk)
+//		begin
+//			if (load_data == 1'b1)
+//				q_int <= {16{1'b1}};
+//			else
+//				begin
+//					q_int <= {q_int[14:0], (q_int[1] ^ (q_int[2] ^ (q_int[4] ^ q_int[15])))};
+//				end
+//		end
+//
+//	assign q = q_int[13:0];
+//
+//endmodule 

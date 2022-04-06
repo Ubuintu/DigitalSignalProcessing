@@ -2,11 +2,12 @@ module upConv(
     input signed [17:0] x_i,
     input signed [17:0] x_q,
     input sys_clk, reset,
-    output reg [14:0] output_to_DAC,
+    output reg [13:0] output_to_DAC,
     output reg signed [17:0] upConv_out
 );
 
 (* preserve *) reg [1:0] upConvCNT;
+(* preserve *) reg signed [17:0] x_i_delayed, x_q_delayed;
 
 always @ (posedge sys_clk)
     if (reset)
@@ -14,23 +15,33 @@ always @ (posedge sys_clk)
     else
         upConvCNT<=upConvCNT+2'd1;
 
+always @ (posedge sys_clk)
+	if (reset) begin
+		x_i_delayed<=18'sd0;
+	end
+	else begin
+		x_i_delayed<=x_i;
+	end
+
+always @ (posedge sys_clk)
+	if (reset) begin
+		x_q_delayed<=18'sd0;
+	end
+	else begin
+		x_q_delayed<=x_q;
+	end
 
 always @ * 
-    if (reset)
-        upConv_out=18'sd0;
-    else begin
+    begin
         case (upConvCNT)
-            2'd0 : upConv_out = $signed(x_i);
-            2'd1 : upConv_out = -$signed(x_q); 
-            2'd2 : upConv_out = -$signed(x_i);
-            2'd3 : upConv_out = $signed(x_q); 
+            2'd0 : upConv_out = $signed(x_i_delayed);
+            2'd1 : upConv_out = -$signed(x_q_delayed); 
+            2'd2 : upConv_out = -$signed(x_i_delayed);
+            2'd3 : upConv_out = $signed(x_q_delayed); 
         endcase
     end
 
 always @ *
-    if (reset)
-		  output_to_DAC=14'd0;
-	 else
-        output_to_DAC={~upConv_out[17],upConv_out[16:4]};
+	output_to_DAC={~upConv_out[17],upConv_out[16:4]};
 
 endmodule

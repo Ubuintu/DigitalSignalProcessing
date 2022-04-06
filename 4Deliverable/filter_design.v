@@ -97,7 +97,7 @@ integer i,j;
 
 wire signed [17:0] srrc_out, srrc_outQ;
 //wire signed [17:0] srrc_input;
-wire [13:0] DAC_out;
+reg [13:0] DAC_out;
 
 /*
  EE465_filter_test SRRC_test(
@@ -140,6 +140,7 @@ wire signed [55:0] err_square;
 //output of matched DS filter
 (* keep *) wire signed [17:0] dec_var;
 (* keep *) wire signed [21:0] out;
+(* keep *) wire signed [22:0] outQ;
 (* preserve *) wire cycle;
 
 /*------------LFSR------------*/
@@ -148,6 +149,7 @@ wire signed [55:0] err_square;
 always @ *
 	if (!KEY[1]) load = 1'b1;
 	else load = 1'b0;
+	
 	
 LFSR_22 LFSR_GEN (
     .sys_clk(sys_clk), 
@@ -158,6 +160,21 @@ LFSR_22 LFSR_GEN (
     .out(out)
 );
 
+//LFSR test (
+//	.clk(sys_clk),
+//	.load_data(load),
+//	.q(outQ[13:0])
+//	);
+	
+LFSR_23 LFSR_GENQ (
+    .sys_clk(sys_clk), 
+	 .reset(~KEY[3]), 
+	 .load(load), 
+	 .sam_clk_en(sam_clk_ena),
+    .cycle(cycle),
+    .out(outQ)
+);
+
 wire signed [17:0] map_out, map_outQ;
 mapper_in SUT_input (
 	.LFSR(out[1:0]),
@@ -165,7 +182,7 @@ mapper_in SUT_input (
 );
 
 mapper_in SUT_inputQ (
-	.LFSR(out[3:2]),
+	.LFSR(outQ[13:12]),
 	.map_out(map_outQ)
 );
 
@@ -226,7 +243,7 @@ always @ (posedge sys_clk)
 	if (~KEY[3])
 		halfSysCnt<=1'd0;
 	else if (sys_clk2_en)
-		halfSysCnt<=halfSysCnt+1'd1;
+		halfSysCnt<=~halfSysCnt;
 		
 (* keep *) reg signed [17:0] UpSam1, UpSam1Q;
 
@@ -247,29 +264,51 @@ end
 /*------------First halfband LPF | 12.5 MHz------------*/
 wire signed [17:0] halfOut1;
 
-halfband_1st_sym HB1 (
-	.x_in(UpSam1),
+//halfband_1st_sym HB1 (
+////halfband_1st_sym_copy HB1 (
+//	.x_in(UpSam1),
+//	.y(halfOut1),
+//	.sys_clk(sys_clk),
+//	.sam_clk_en(sam_clk_ena),
+//	.reset(~KEY[3]),
+//	.clk(clock_50),
+//	.sys_clk2_en(sys_clk2_en)
+//	);
+
+upsample_mult HB1 (
+	.reset(~KEY[3]),
+	.x_in($signed(srrc_out)),
 	.y(halfOut1),
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
-	.reset(~KEY[3]),
-	.clk(clock_50),
-	.sys_clk2_en(sys_clk2_en)
+	.sym_clk_en(sym_clk_ena),
+	.tw_clk_en(sys_clk2_en)
 	);
 		
 /*------------First halfband LPFQ | 12.5 MHz------------*/
 wire signed [17:0] halfOut1Q;
 
-halfband_1st_sym HB1Q (
-	.x_in(UpSam1Q),
+//halfband_1st_sym HB1Q (
+//	.x_in(UpSam1Q),
+//	.y(halfOut1Q),
+//	.sys_clk(sys_clk),
+//	.sam_clk_en(sam_clk_ena),
+//	.reset(~KEY[3]),
+//	.clk(clock_50),
+//	.sys_clk2_en(sys_clk2_en)
+//	);
+
+	
+upsample_mult HB1Q (
+	.reset(~KEY[3]),
+	.x_in($signed(srrc_outQ)),
 	.y(halfOut1Q),
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
-	.reset(~KEY[3]),
-	.clk(clock_50),
-	.sys_clk2_en(sys_clk2_en)
+	.sym_clk_en(sym_clk_ena),
+	.tw_clk_en(sys_clk2_en)
 	);
-
+	
 /*------------Upsample b4 2nd LPF | 25 MHz------------*/
 (* preserve *) reg SysCnt;
 
@@ -284,14 +323,14 @@ always @ (posedge sys_clk)
 
 always @ * begin
 	case (SysCnt)
-		1'd0 : UpSam2=$signed(halfOut1);
+		1'd1 : UpSam2=$signed(halfOut1);
 		default : UpSam2=18'sd0;
 	endcase
 end
 
 always @ * begin
 	case (SysCnt)
-		1'd0 : UpSam2Q=$signed(halfOut1Q);
+		1'd1 : UpSam2Q=$signed(halfOut1Q);
 		default : UpSam2Q=18'sd0;
 	endcase
 end
@@ -325,17 +364,27 @@ halfband_2nd_sym HB2Q (
 
 /*------------Upconverter | 25 MHz------------*/
 wire signed [17:0] test_point_1;
+wire signed [13:0] test_point_1_DAC;
 upConv convUp (
-	.x_i(halfOut2),
-	.x_q(halfOut2Q),
+	.x_i(halfOut1),
+	.x_q(halfOut1Q),
 	.sys_clk(sys_clk),
 	.reset(~KEY[3]),
-	.output_to_DAC(DAC_out),
+	.output_to_DAC(test_point_1_DAC),
 	.upConv_out(test_point_1)
 	);
 
 (* keep *) wire signed [17:0] MF_out;
 
+always @ *
+	case(SW[17:16])
+		2'd0: DAC_out={~halfOut1[17],halfOut1[16:4]};
+		2'd1: DAC_out=test_point_1_DAC;
+		2'd2: DAC_out={~halfOut2[17],halfOut2[16:4]};
+		2'd3: DAC_out={~out[21],out[20:8]};
+	endcase
+
+/*
 //GSM
 //GSM_101Mults DUT_RCV (
 GSM_TS DUT_RCV (
@@ -434,6 +483,6 @@ avg_err AVG_ER (
 	.reset(~KEY[3]),
 	.err_acc(err_acc)
 );
-
+*/
 
 endmodule

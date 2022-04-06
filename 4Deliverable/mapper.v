@@ -3,7 +3,7 @@ module mapper_in (
     output reg signed [17:0] map_out
     );
 
-always @ (LFSR) begin
+always @ * begin
     case(LFSR)
         2'b00   : map_out = -18'sd98304;
         2'b01   : map_out = -18'sd32768;

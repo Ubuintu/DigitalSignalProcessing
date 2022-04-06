@@ -5,13 +5,13 @@ module clk_en (
 
 (* noprune *) reg [3:0] cnt;
 
-initial begin
-    sys_clk = 1'b0;
-    sam_clk_en = 1'b0;
-    sym_clk_en = 1'b0;
-    sys_clk2_en = 1'b0;
-    cnt = 4'b0;
-end
+//initial begin
+//    sys_clk = 1'b0;
+//    sam_clk_en = 1'b0;
+//    sym_clk_en = 1'b0;
+//    sys_clk2_en = 1'b0;
+//    cnt = 4'b0;
+//end
 
 always @ (posedge clk)
     sys_clk <= ~sys_clk;

@@ -13,13 +13,14 @@ add wave -noupdate /filter_TB/DUT/x
 add wave -noupdate /filter_TB/DUT/halfSysCnt
 add wave -noupdate /filter_TB/DUT/UpSam1
 add wave -noupdate /filter_TB/DUT/HB1/x_in
+add wave -noupdate /filter_TB/DUT/HB1/x
+add wave -noupdate /filter_TB/DUT/HB1/sum_lvl_1
+add wave -noupdate /filter_TB/DUT/HB1/sum_lvl_2
+add wave -noupdate /filter_TB/DUT/HB1/sum_lvl_3
+add wave -noupdate /filter_TB/DUT/HB1/sum_lvl_4
 add wave -noupdate /filter_TB/DUT/HB1/y
 add wave -noupdate /filter_TB/DUT/SysCnt
 add wave -noupdate /filter_TB/DUT/HB2/x_in
-add wave -noupdate /filter_TB/DUT/HB2/sum_lvl_1
-add wave -noupdate /filter_TB/DUT/HB2/sum_lvl_2
-add wave -noupdate /filter_TB/DUT/HB2/sum_lvl_3
-add wave -noupdate /filter_TB/DUT/HB2/sum_lvl_4
 add wave -noupdate /filter_TB/DUT/HB2/y
 add wave -noupdate /filter_TB/DUT/y
 #add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y

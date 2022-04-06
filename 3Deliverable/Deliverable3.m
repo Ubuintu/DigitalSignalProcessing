@@ -61,7 +61,7 @@ wc_input0=upsample(wc_input.*.75,Nsps);
 % wc_input2=upsample(wc_input.*.75,Nsps,2);
 % wc_input3=upsample(wc_input.*.75,Nsps,3);
 
-wc_PPS0=conv(abs(h_PPS),wc_input0(1:101));
+wc_PPS0=(abs(h_PPS).*wc_input0(1:101));
 wc_PPS_0=sum(wc_PPS0);
 % wc_PPS1=abs(h_PPS).*wc_input1(1:101);
 % wc_PPS_1=sum(wc_PPS1);
@@ -86,7 +86,8 @@ wc_pk0=sum(abs(wc0_h_PPS));
 
 % scale headroom to 0s18
 % h_PPS=h_PPS.*2;   %since wc nvr happens, can scale a bit more
-h_PPS=h_PPS/max(h_PPS)/2;
+% h_PPS=h_PPS/max(h_PPS)*safety;
+h_PPS=h_PPS/wc_PPS_0*safety;
 
 % Find wc scaling factor for GSM
 % theo_GSM = conv(wc_PPS_0,h_GSM);
@@ -300,10 +301,12 @@ clc
 % map_out_pwr is ~1.5k & err_square is 36235604970566
 % mapOutPwr= 1658;    %scale over; MER 41.8956
 % avgSqErr= 29455612887;
-mapOutPwr= 1561;  %scale to hdroom; MER 41.8927 BUT this has better OB1; no other coeffs met theo
-avgSqErr= 27750420549;
+% mapOutPwr= 1561;  %scale to hdroom; MER 41.8927 BUT this has better OB1; no other coeffs met theo
+% avgSqErr= 27750420549;
 % mapOutPwr= 414;   %no scale; MER 41.5913
 % avgSqErr= 7888850297;
+mapOutPwr= 1875;  %scale for worse case; MER 41.9431 OB1 is not bad
+avgSqErr= 32948044417;
 
 % GSPS to GSM % 
 % mapOutPwr= 1653;
