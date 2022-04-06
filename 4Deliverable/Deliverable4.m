@@ -159,13 +159,19 @@ fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPer
 %% halfband sym structure
 clc
 
-% ceil to account for odd tap
-numCoeffs=ceil(length(h_halfband_filtDes_1s17)/2);
-numMults=ceil(numCoeffs/4);
 
-num_of_sumLvls=0; coeffs2reduce=length(h_halfband_filtDes_1s17);
+% ceil to account for odd tap
+% numCoeffs=ceil(length(h_halfband_filtDes_1s17)/2);
+% numMults=ceil(numCoeffs/4);
+
+% lenny=zeros(1,121);
+
+% num_of_sumLvls=0; coeffs2reduce=length(h_halfband_filtDes_1s17);
+num_of_sumLvls=0; 
+coeffs2reduce=121;
 tapsPerlvl=zeros( ceil(log2(coeffs2reduce)),1 );
-for i=1:length(h_halfband_filtDes_1s17)
+% for i=1:length(h_halfband_filtDes_1s17)
+for i=1:coeffs2reduce
     if coeffs2reduce<=1
         break
     else

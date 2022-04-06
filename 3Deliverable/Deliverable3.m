@@ -29,6 +29,7 @@ Nsps=4;
 %        MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3 b Kaiser     weight 
 %  42.017901   0.145500   0.182100        101     141106  60.037561  64.921997  64.304794   0.000000         20 
 N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;  %Amplitude on SA might changed since coeffs are adjusted to 1s17 (2^18 before)
+% N=121; betaTx=0.13; betaRcv=0.13; betaK=0;  
 
 
 % *************MET SPEC*************************
@@ -41,7 +42,8 @@ M=N-1; span=M/Nsps; h_GSPS=rcosdesign(betaTx,span,Nsps); h_GSM=rcosdesign(betaRc
 fc=1/2/Nsps; fp=(1-betaTx)*fc; fs=(1+betaTx)*fc; fb=[0 fp fc fc fs .5]*2; a=[1 1 1/sqrt(2) 1/sqrt(2) 0 0]; 
 % safety=1-2^-17; %best scaling atm 
 safety=1-2^-16; 
-wght=[2.4535 1 20]; 
+% wght=[2.4535 1 20];
+wght=[2.4535 1 10]; % D4
 h_PPS=firpm(M,fb,a,wght); 
 h_PPS=h_PPS.*wn.'; 
 
@@ -61,7 +63,7 @@ wc_input0=upsample(wc_input.*.75,Nsps);
 % wc_input2=upsample(wc_input.*.75,Nsps,2);
 % wc_input3=upsample(wc_input.*.75,Nsps,3);
 
-wc_PPS0=(abs(h_PPS).*wc_input0(1:101));
+wc_PPS0=(abs(h_PPS).*wc_input0(1:N));
 wc_PPS_0=sum(wc_PPS0);
 % wc_PPS1=abs(h_PPS).*wc_input1(1:101);
 % wc_PPS_1=sum(wc_PPS1);
@@ -87,7 +89,7 @@ wc_pk0=sum(abs(wc0_h_PPS));
 % scale headroom to 0s18
 % h_PPS=h_PPS.*2;   %since wc nvr happens, can scale a bit more
 % h_PPS=h_PPS/max(h_PPS)*safety;
-h_PPS=h_PPS/wc_PPS_0*safety;
+% h_PPS=h_PPS/wc_PPS_0*safety;
 
 % Find wc scaling factor for GSM
 % theo_GSM = conv(wc_PPS_0,h_GSM);
@@ -305,11 +307,11 @@ clc
 % avgSqErr= 27750420549;
 % mapOutPwr= 414;   %no scale; MER 41.5913
 % avgSqErr= 7888850297;
-mapOutPwr= 1875;  %scale for worse case; MER 41.9431 OB1 is not bad
-avgSqErr= 32948044417;
+% mapOutPwr= 1875;  %scale for worse case; MER 41.9431 OB1 is not bad
+% avgSqErr= 32948044417;
 
 % GSPS to GSM % 
-% mapOutPwr= 1653;
-% avgSqErr= 4437263996;
+mapOutPwr= 1653;
+avgSqErr= 4437263996;
 
 MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);

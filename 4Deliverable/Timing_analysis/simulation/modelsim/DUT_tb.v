@@ -61,7 +61,7 @@ clk_en EN_CLK(
 DUT DUT (
     .sys_clk(sys_clk),
     .sam_clk_en(sam_clk_en),
-    .sys_clk2_en(sys_clk2_en),
+    //.sys_clk2_en(sys_clk2_en),
     .reset(rst),
     .x_in(x_in),
     .y(y)

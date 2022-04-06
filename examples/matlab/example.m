@@ -56,7 +56,7 @@ for i = 0:200
 end
 
 % Constants are double-precision by default; N=85 found nothing
-vec = [85 105];
+vec = [121 125];
 
 % for im
     
@@ -71,7 +71,7 @@ vec = [85 105];
 %coefficients have to be even and divisible by span w/no remainder LOOK
 %INTO THIS
 %beta MUST be greater than 0
-[MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.1 0.0001 0.2],'betaRCV',[0.1 0.0001 0.2],'MER',50);
+[MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',vec,'betaTX',[0.1 0.01 0.2],'betaRCV',[0.1 0.01 0.2],'MER',50);
 % [MER_out, betaTX_out, betaRCV_out, coeff_out] = MER_opt('Nsps',4,'numCoeffs',[25 77],'betaTX',[.01 0.01 .16],'betaRCV',[0.12 0.01 0.34],'MER',40);
 
 % last = find(~MER_out,1);
@@ -82,10 +82,6 @@ fprintf(fileID,'%10s %10s %10s %10s\r\n','MER', 'betaTX', 'betaRCV', 'length');
 A = [MER_out; betaTX_out; betaRCV_out; coeff_out];
 fprintf(fileID,'%10.6f %10.6f %10.6f %8.0f\r\n',A);
 fclose(fileID);
-
-% c_idx = find(coeff_out==121);
-% max_121 = max(MER_out(c_idx(1):c_idx(end)));
-% desired_121 = find(MER_out>=54.0679);
 
 DONE = ones(10,1);
 finish = sum(DONE(1:5));
@@ -114,7 +110,9 @@ format long
 
 % fileID = fopen('GSM_parameters_89-121_B1-0.001-2.txt'); %89-121.txt
 % fileID = fopen('GSM_parameters_73-81.txt'); %73-81.txt
-fileID = fopen('GSM_parameters_85-105_B1-0.0001-2.txt'); %85-105_B1-0.0001-2.txt
+% fileID = fopen('GSM_parameters_85-105_B1-0.0001-2.txt'); %85-105_B1-0.0001-2.txt
+% fileID = fopen('GSM_parameters_97-121_B1-0.001-2.txt'); 
+fileID = fopen('GSM_parameters.txt'); 
 formatSpec = '%s';
 N = 4;
 C_text = textscan(fileID,formatSpec,N);
@@ -128,9 +126,10 @@ cBeta = char(hex2dec('03b2'));
 % fprintf(fileID,'%10s %10s %10s %10s %10s %10s %10s %10s %10s %10s \r\n','MER', 'betaTX', 'betaRCV', 'length', 'idx TX & RCV', 'OB1', 'OB2', 'OB3','b Kaiser','weight');
 
 vTX_B=C_data0{1,2}.'; vRCV_B=C_data0{1,3}.'; vLen=C_data0{1,4}.';
-% idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %89-121.txt
+% idx_101=find(vLen==101); idx_105=find(vLen==105); idx_109=find(vLen==109); idx_113=find(vLen==113);  idx_117=find(vLen==117);%89-121.txt
 % idx_73=find(vLen==73); idx_81=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_109=find(vLen==109);  %73-81.txt
-idx_85=find(vLen==85); idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_105=find(vLen==105); idx_109=find(vLen==109);  %85-105_B1-0.0001-2.txt
+% idx_85=find(vLen==85); idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find(vLen==97); idx_101=find(vLen==101); idx_105=find(vLen==105); idx_109=find(vLen==109);  %85-105_B1-0.0001-2.txt
+idx_121=find(vLen==121); idx_125=find(vLen==125);  %
 
 % #TX&RCV length; RCV rolloff here
 % beta = 0.146600;  %trial 1
@@ -149,18 +148,21 @@ idx_85=find(vLen==85); idx_89=find(vLen==89); idx_93=find(vLen==93); idx_97=find
 % w = [0:0.001:1000]/1000*pi; %0-0.5
 w = [0:0.001:200]/100*pi; %one whole cycle
 
-N = 101;
+N = 121;
 Nsps = 4;
 span = (N-1)/4;
 % for bk = 1.5:0.01:2
 % for bk = 0.3:0.1:0.3
-for bk = 0:0.1:5
+% for bk = 0:0.1:10
+for bk = 0.0:0.1:0.0
 % for bk = 1:1
 % for bk = 2:0.1:2
-    for idx_TXnRCV = idx_105(1):(idx_105(end))
-%     for idx_TXnRCV = idx_101():(idx_101(end))
+%     for idx_TXnRCV = idx_101(639):(idx_101(639))
+%     for idx_TXnRCV = idx_105(47):(idx_105(47))  %take matlab indx & open idx_N variable
+%     for idx_TXnRCV = idx_101(1063):(idx_101(1063))
+%     for idx_TXnRCV = idx_121(2053):(idx_121(2053))
 %     for idx_TXnRCV = idx_93(4):(idx_93(5))
-%     for idx_TXnRCV = idx_97(1):(idx_97(1))
+    for idx_TXnRCV = idx_121(10):idx_121(10)
 %     for idx_TXnRCV = 505:513
         b_nom = vTX_B(idx_TXnRCV);
         beta_Rcv = vRCV_B(idx_TXnRCV);
@@ -178,7 +180,7 @@ for bk = 0:0.1:5
         fb = [0 fp fc fc fs .5]*2;
         a = [1 1 1/sqrt(2) 1/sqrt(2) 0 0];
         % wght vector needs to 2.4535 for passband
-        wght = [2.4535 1 20];   %10 for N=97; 20 for N=91-89; 40 for N>90
+        wght = [2.4535 1 10];   %10 for N=97; 20 for N=91-89; 40 for N>90
         h_pps = firpm(M,fb,a,wght);
 
         % window
@@ -256,7 +258,7 @@ fclose(fileID);
 
 TX_MR = superplot(w/2/pi,20*log10(abs(H_pps)),'plotName',"Magnitude Response of PPS",'figureName',"PracticalPSResp",'yName',"Magnitude (dB)",...
     'xName',"f0, frequency (cycles/sample)",'yLegend',"SQRT FIRPM",'cmpY',20*log10(abs(H_srrc)),'cmpYLegend',"SRRC",...
-    'plotAxis',[0 w(end)/2/pi -150 10]);
+    'plotAxis',[0 w(end)/2/pi -200 10]);
 
 hold on
 % OOB requirement 1

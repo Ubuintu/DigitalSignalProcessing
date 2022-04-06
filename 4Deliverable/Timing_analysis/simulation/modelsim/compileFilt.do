@@ -44,8 +44,8 @@ vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
 vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
 
 vsim -t 1ns -L work ${TB_Nam}
-#do filtWave.do
-do filtWave_halfBand_up.do
+do filtWave.do
+#do filtWave_halfBand_up.do
 
 run ${SIM_LEN}
 

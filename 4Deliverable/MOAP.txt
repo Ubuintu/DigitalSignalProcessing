@@ -10520,38 +10520,3 @@
  41.654010   0.149500   0.196600         97      83280  58.024468  65.338577  64.746258   0.100000         20 
  41.678347   0.149500   0.197000         97      83281  58.024468  65.338577  64.746258   0.100000         20 
  41.702335   0.149500   0.197400         97      83282  58.024468  65.338577  64.746258   0.100000         20 
-
-
-
-
-
-
-
- 
-
-	
-
-
-
-
-
-
-//upsample_mult2 HB2Q (
-//	.reset(~KEY[3]),
-//	.x_in($signed(halfOut1Q)),
-//	.y(halfOut2Q),
-//	.sys_clk(sys_clk),
-//	.sam_clk_en(sam_clk_ena),
-//	.sym_clk_en(sym_clk_ena),
-//	.tw_clk_en(sys_clk2_en)
-//	);
-
-//upsample_mult2 HB2 (
-//	.reset(~KEY[3]),
-//	.x_in($signed(halfOut1)),
-//	.y(halfOut2),
-//	.sys_clk(sys_clk),
-//	.sam_clk_en(sam_clk_ena),
-//	.sym_clk_en(sym_clk_ena),
-//	.tw_clk_en(sys_clk2_en)
-//	);

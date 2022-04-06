@@ -99,20 +99,20 @@ wire signed [17:0] srrc_out, srrc_outQ;
 //wire signed [17:0] srrc_input;
 reg [13:0] DAC_out;
 
-/*
- EE465_filter_test SRRC_test(
-						   .clock_50(clock_50),
-							.reset(~KEY[3]),
-							.output_from_filter_1s17(srrc_out),
-							.filter_input_scale(SW[2:0]),
-							.input_to_filter_1s17(srrc_input),
-							//.lfsr_value(),
-							.symbol_clk_ena(sym_clk_ena),
-							.sample_clk_ena(sam_clk_ena),
-							.system_clk(sys_clk),
-							.output_to_DAC(DAC_out)
-							);
-*/
+////Try Rory's LFSR
+// EE465_filter_test SRRC_test(
+//						   .clock_50(clock_50),
+//							.reset(~KEY[3]),
+////							.output_from_filter_1s17(srrc_out),
+////							.filter_input_scale(SW[2:0]),
+////							.input_to_filter_1s17(srrc_input),
+//							.lfsr_value(),
+//							.symbol_clk_ena(sym_clk_ena),
+//							.sample_clk_ena(sam_clk_ena),
+//							.system_clk(sys_clk),
+////							.output_to_DAC(DAC_out)
+//							);
+
 						
 clk_en EN_clk (
 	.clk(clock_50),
@@ -151,14 +151,28 @@ always @ *
 	else load = 1'b0;
 	
 	
-LFSR_22 LFSR_GEN (
-    .sys_clk(sys_clk), 
-	 .reset(~KEY[3]), 
-	 .load(load), 
-	 .sam_clk_en(sam_clk_ena),
-    .cycle(cycle),
-    .out(out)
-);
+//LFSR_22 LFSR_GEN (
+//    .sys_clk(sys_clk), 
+//	 .reset(~KEY[3]), 
+//	 .load(load), 
+//	 .sam_clk_en(sam_clk_ena),
+//    .cycle(cycle),
+//    .out(out)
+//);
+
+//Try Rory's LFSR
+ EE465_filter_test SRRC_test(
+						   .clock_50(clock_50),
+							.reset(~KEY[3]),
+//							.output_from_filter_1s17(srrc_out),
+//							.filter_input_scale(SW[2:0]),
+//							.input_to_filter_1s17(srrc_input),
+							.lfsr_value(out[1:0]),
+//							.symbol_clk_ena(sym_clk_ena),
+//							.sample_clk_ena(sam_clk_ena),
+//							.system_clk(sys_clk),
+//							.output_to_DAC(DAC_out)
+							);
 
 //LFSR test (
 //	.clk(sys_clk),
@@ -166,14 +180,28 @@ LFSR_22 LFSR_GEN (
 //	.q(outQ[13:0])
 //	);
 	
-LFSR_23 LFSR_GENQ (
-    .sys_clk(sys_clk), 
-	 .reset(~KEY[3]), 
-	 .load(load), 
-	 .sam_clk_en(sam_clk_ena),
-    .cycle(cycle),
-    .out(outQ)
-);
+//LFSR_23 LFSR_GENQ (
+//    .sys_clk(sys_clk), 
+//	 .reset(~KEY[3]), 
+//	 .load(load), 
+//	 .sam_clk_en(sam_clk_ena),
+//    .cycle(cycle),
+//    .out(outQ)
+//);
+
+//Try Rory's LFSR
+ EE465_filter_test SRRC_testQ(
+						   .clock_50(clock_50),
+							.reset(~KEY[3]),
+//							.output_from_filter_1s17(srrc_out),
+//							.filter_input_scale(SW[2:0]),
+//							.input_to_filter_1s17(srrc_input),
+							.lfsr_value(outQ[1:0]),
+//							.symbol_clk_ena(sym_clk_ena),
+//							.sample_clk_ena(sam_clk_ena),
+//							.system_clk(sys_clk),
+//							.output_to_DAC(DAC_out)
+							);
 
 wire signed [17:0] map_out, map_outQ;
 mapper_in SUT_input (
@@ -182,7 +210,7 @@ mapper_in SUT_input (
 );
 
 mapper_in SUT_inputQ (
-	.LFSR(outQ[13:12]),
+	.LFSR(outQ[1:0]),
 	.map_out(map_outQ)
 );
 
@@ -264,49 +292,27 @@ end
 /*------------First halfband LPF | 12.5 MHz------------*/
 wire signed [17:0] halfOut1;
 
-//halfband_1st_sym HB1 (
-////halfband_1st_sym_copy HB1 (
-//	.x_in(UpSam1),
-//	.y(halfOut1),
-//	.sys_clk(sys_clk),
-//	.sam_clk_en(sam_clk_ena),
-//	.reset(~KEY[3]),
-//	.clk(clock_50),
-//	.sys_clk2_en(sys_clk2_en)
-//	);
-
-upsample_mult HB1 (
-	.reset(~KEY[3]),
-	.x_in($signed(srrc_out)),
+halfband_1st_sym HB1 (
+//halfband_1st_sym_copy HB1 (
+	.x_in(UpSam1),
 	.y(halfOut1),
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
-	.sym_clk_en(sym_clk_ena),
-	.tw_clk_en(sys_clk2_en)
+	.reset(~KEY[3]),
+	.clk(clock_50),
+	.sys_clk2_en(sys_clk2_en)
 	);
-		
 /*------------First halfband LPFQ | 12.5 MHz------------*/
 wire signed [17:0] halfOut1Q;
 
-//halfband_1st_sym HB1Q (
-//	.x_in(UpSam1Q),
-//	.y(halfOut1Q),
-//	.sys_clk(sys_clk),
-//	.sam_clk_en(sam_clk_ena),
-//	.reset(~KEY[3]),
-//	.clk(clock_50),
-//	.sys_clk2_en(sys_clk2_en)
-//	);
-
-	
-upsample_mult HB1Q (
-	.reset(~KEY[3]),
-	.x_in($signed(srrc_outQ)),
+halfband_1st_sym HB1Q (
+	.x_in(UpSam1Q),
 	.y(halfOut1Q),
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
-	.sym_clk_en(sym_clk_ena),
-	.tw_clk_en(sys_clk2_en)
+	.reset(~KEY[3]),
+	.clk(clock_50),
+	.sys_clk2_en(sys_clk2_en)
 	);
 	
 /*------------Upsample b4 2nd LPF | 25 MHz------------*/
