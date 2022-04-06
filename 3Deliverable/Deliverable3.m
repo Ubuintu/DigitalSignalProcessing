@@ -90,6 +90,7 @@ wc_pk0=sum(abs(wc0_h_PPS));
 % h_PPS=h_PPS.*2;   %since wc nvr happens, can scale a bit more
 % h_PPS=h_PPS/max(h_PPS)*safety;
 % h_PPS=h_PPS/wc_PPS_0*safety;
+h_PPS=h_PPS*.95*safety;   %overflowing in D4
 
 % Find wc scaling factor for GSM
 % theo_GSM = conv(wc_PPS_0,h_GSM);

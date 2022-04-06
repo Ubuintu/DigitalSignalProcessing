@@ -89,7 +89,7 @@ always @ (posedge sys_clk)
     end
     else if (sys_clk2_en) begin
         for (i=0; i<SUMLV2; i=i+1)				
-	    //mult_out (2s34) -> sum_lvl_2 1s17
+	    //mult_out (3s33) -> sum_lvl_2 1s17
             sum_lvl_2[i]<=$signed(mult_out[2*i][33:16])+$signed(mult_out[2*i+1][33:16]);
     end
 
@@ -122,14 +122,14 @@ always @ (posedge sys_clk)
 
 /*-----------coeffs 1s17-----------*/
 initial begin
-	Hsys[0] = -18'sd33;
+	Hsys[0] = -18'sd87;
 	Hsys[1] = 18'sd0;
-	Hsys[2] = 18'sd307;
+	Hsys[2] = 18'sd819;
 	Hsys[3] = 18'sd0;
-	Hsys[4] = -18'sd1493;
+	Hsys[4] = -18'sd3981;
 	Hsys[5] = 18'sd0;
-	Hsys[6] = 18'sd7363;
-	Hsys[7] = 18'sd12288;
+	Hsys[6] = 18'sd19634;
+	Hsys[7] = 18'sd32768;
 end
 
 endmodule

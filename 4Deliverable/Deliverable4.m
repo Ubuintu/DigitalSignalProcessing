@@ -23,35 +23,11 @@ Fpass = 0.4375;          % Passband Frequency
 Dpass = 0.057501127785;  % Passband Ripple
 
 % Calculate the coefficients using the function.
-h_halfband_filtDes  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';
-% h_halfband_filtDes  = firhalfband(14, Fpass/(Fs/2)).';
-h_halfband_filtDes  = h_halfband_filtDes/sum(abs(h_halfband_filtDes))*(1-2^-17); %to scale down
+% h_halfband_filtDes  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';
+h_halfband_filtDes  = firhalfband(14, Fpass/(Fs/2)).';
+% h_halfband_filtDes  = h_halfband_filtDes/sum(abs(h_halfband_filtDes))*(1-2^-17); %to scale down
 
 H_halfband_filtDes = freqz(h_halfband_filtDes,1,w).';
-
-% ------ Using firpm ------
-Fstop=4.46875;  % MHz
-Fcutoff=0.25*Fs; % cyc/samp*samp/sec
-tw=(Fstop-Fpass)/Fs; % transition width (cycles/sample)
-% calculate the corner frequencies from fc & convert them into radians/sample
-wp = (.25-tw/2)*2*pi; 
-ws = (.25+tw/2)*2*pi; 
-deltap = 0.001;
-deltas = 0.00001;
-Gp = 1;
-Gs = 0;
-
-% Generate filter order 
-M_firpmord=firpmord([wp/pi,ws/pi],[1 0],[deltap,deltas]);
-M=round(M_firpmord)+1; % M must be even
-
-% Design the equiripple filter
-fb=[0,wp/pi,ws/pi,1];   % frequency band vector
-a=[Gp,Gp,Gs,Gs];        % gain vector
-wght=[1,deltap/deltas]; % weight vector
-% or could use wght=[1/deltap,1/deltas];
-h_halfband_PM=firpm(M,fb,a,wght).';   %calculate M+1 IR coefficients for vector b
-H_halfband_PM = freqz(h_halfband_PM,1,w).';
 
 % hold on 
 MR_halfband_pm_vs_Des=superplot(w/2/pi, 20*log10(abs(H_halfband_filtDes)),'plotName',"Comparision between designer & FIRPM",'figureName',"Halfband_cmp",'yName',"Magnitude (dB)",...
@@ -113,7 +89,7 @@ clc
 
 % Find coeffs
 safety=(2^0)-(2^-17);  %1s17
-h_halfband_filtDes_1s17=round(h_halfband_filtDes*2^17*.75);
+h_halfband_filtDes_1s17=round(h_halfband_filtDes*2^16*safety);  %keeps overflowing, not sure why
 
 idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16

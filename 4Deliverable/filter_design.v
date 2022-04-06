@@ -151,28 +151,29 @@ always @ *
 	else load = 1'b0;
 	
 	
-//LFSR_22 LFSR_GEN (
-//    .sys_clk(sys_clk), 
-//	 .reset(~KEY[3]), 
-//	 .load(load), 
-//	 .sam_clk_en(sam_clk_ena),
-//    .cycle(cycle),
-//    .out(out)
-//);
+LFSR_22 LFSR_GEN (
+    .sys_clk(sys_clk), 
+	 .reset(~KEY[3]), 
+	 .load(load), 
+	 .sam_clk_en(sam_clk_ena),
+    .cycle(cycle),
+    .out(out)
+);
 
 //Try Rory's LFSR
- EE465_filter_test SRRC_test(
-						   .clock_50(clock_50),
-							.reset(~KEY[3]),
-//							.output_from_filter_1s17(srrc_out),
-//							.filter_input_scale(SW[2:0]),
-//							.input_to_filter_1s17(srrc_input),
-							.lfsr_value(out[1:0]),
-//							.symbol_clk_ena(sym_clk_ena),
-//							.sample_clk_ena(sam_clk_ena),
-//							.system_clk(sys_clk),
-//							.output_to_DAC(DAC_out)
-							);
+// EE465_filter_test SRRC_test(
+//						   .clock_50(clock_50),
+//							.reset(~KEY[3]),
+////							.output_from_filter_1s17(srrc_out),
+////							.filter_input_scale(SW[2:0]),
+////							.input_to_filter_1s17(srrc_input),
+//							.lfsr_value(out[1:0])
+//							//,
+////							.symbol_clk_ena(sym_clk_ena),
+////							.sample_clk_ena(sam_clk_ena),
+////							.system_clk(sys_clk),
+////							.output_to_DAC(DAC_out)
+//							);
 
 //LFSR test (
 //	.clk(sys_clk),
@@ -180,28 +181,29 @@ always @ *
 //	.q(outQ[13:0])
 //	);
 	
-//LFSR_23 LFSR_GENQ (
-//    .sys_clk(sys_clk), 
-//	 .reset(~KEY[3]), 
-//	 .load(load), 
-//	 .sam_clk_en(sam_clk_ena),
-//    .cycle(cycle),
-//    .out(outQ)
-//);
+LFSR_23 LFSR_GENQ (
+    .sys_clk(sys_clk), 
+	 .reset(~KEY[3]), 
+	 .load(load), 
+	 .sam_clk_en(sam_clk_ena),
+    .cycle(cycle),
+    .out(outQ)
+);
 
 //Try Rory's LFSR
- EE465_filter_test SRRC_testQ(
-						   .clock_50(clock_50),
-							.reset(~KEY[3]),
-//							.output_from_filter_1s17(srrc_out),
-//							.filter_input_scale(SW[2:0]),
-//							.input_to_filter_1s17(srrc_input),
-							.lfsr_value(outQ[1:0]),
-//							.symbol_clk_ena(sym_clk_ena),
-//							.sample_clk_ena(sam_clk_ena),
-//							.system_clk(sys_clk),
-//							.output_to_DAC(DAC_out)
-							);
+// EE465_filter_test SRRC_testQ(
+//						   .clock_50(clock_50),
+//							.reset(~KEY[3]),
+////							.output_from_filter_1s17(srrc_out),
+////							.filter_input_scale(SW[2:0]),
+////							.input_to_filter_1s17(srrc_input),
+//							.lfsr_value(outQ[1:0])
+//							//,
+////							.symbol_clk_ena(sym_clk_ena),
+////							.sample_clk_ena(sam_clk_ena),
+////							.system_clk(sys_clk),
+////							.output_to_DAC(DAC_out)
+//							);
 
 wire signed [17:0] map_out, map_outQ;
 mapper_in SUT_input (
@@ -210,7 +212,7 @@ mapper_in SUT_input (
 );
 
 mapper_in SUT_inputQ (
-	.LFSR(outQ[1:0]),
+	.LFSR(outQ[21:20]),
 	.map_out(map_outQ)
 );
 
