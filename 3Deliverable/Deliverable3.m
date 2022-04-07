@@ -28,22 +28,23 @@ Nsps=4;
 % line 1063 in MOAP
 %        MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3 b Kaiser     weight 
 %  42.017901   0.145500   0.182100        101     141106  60.037561  64.921997  64.304794   0.000000         20 
-N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;  %Amplitude on SA might changed since coeffs are adjusted to 1s17 (2^18 before)
-% N=121; betaTx=0.13; betaRcv=0.13; betaK=0;  
+% N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;  %Amplitude on SA might changed since coeffs are adjusted to 1s17 (2^18 before)
 
 
-% *************MET SPEC*************************
-% TX's β: 0.1430 | RCV's β: 0.1780 | idx TX & RCV: 1364
-% OB1: 64.634703 | OB2: 64.497576 | OB3: 63.146043 | MER: 40.334376 | Bk: 1.6000 | Beta nominal: 0.1430 | 
+% 
+% *************MET SPEC FOR D4*************************
+% TX's β: 0.1300 | RCV's β: 0.1300 | idx TX & RCV: 2
+% OB1: 60.528075 | OB2: 64.660611 | OB3: 64.073321 | MER: 46.696386 | Bk: 1.3000 | Beta nominal: 0.1300 | 
 % baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
-% N=101; betaTx=0.1480; betaRcv=0.1690; betaK=1.6;
+% weight:    2.453500000000000   1.000000000000000   1.000000000000000
+N=121; betaTx=0.13; betaRcv=0.13; betaK=1.3000;  
 
 M=N-1; span=M/Nsps; h_GSPS=rcosdesign(betaTx,span,Nsps); h_GSM=rcosdesign(betaRcv,span,Nsps); wn=kaiser(N,betaK);
 fc=1/2/Nsps; fp=(1-betaTx)*fc; fs=(1+betaTx)*fc; fb=[0 fp fc fc fs .5]*2; a=[1 1 1/sqrt(2) 1/sqrt(2) 0 0]; 
 % safety=1-2^-17; %best scaling atm 
-safety=1-2^-16; 
+safety=1-2^-17; 
 % wght=[2.4535 1 20];
-wght=[2.4535 1 10]; % D4
+wght=[2.4535 1 1]; % D4
 h_PPS=firpm(M,fb,a,wght); 
 h_PPS=h_PPS.*wn.'; 
 
@@ -73,8 +74,8 @@ wc_PPS_0=sum(wc_PPS0);
 % wc_PPS_3=sum(wc_PPS3);
 
 % find wc output w/convolution
-wc0_h_PPS = conv(h_PPS,wc_input0);
-wc_pk0=sum(abs(wc0_h_PPS));
+% wc0_h_PPS = conv(h_PPS,wc_input0);
+% wc_pk0=sum(abs(wc0_h_PPS));
 % wc1_h_PPS = conv(h_PPS,wc_input1);
 % wc_pk1=sum(abs(wc1_h_PPS));
 % wc2_h_PPS = conv(h_PPS,wc_input2);
@@ -84,13 +85,13 @@ wc_pk0=sum(abs(wc0_h_PPS));
 % headroom    %scale headroom so that pk is less than 1s17
 % h_PPS=safety.*h_PPS/wc_PPS_0;     %scale headroom so that peak of conv is ~1
 % h_PPS=safety.*h_PPS/max(h_PPS)*.7;
-% scale_PPS=sum(abs(h_PPS));
+scale_PPS=sum(abs(h_PPS));
 
 % scale headroom to 0s18
 % h_PPS=h_PPS.*2;   %since wc nvr happens, can scale a bit more
 % h_PPS=h_PPS/max(h_PPS)*safety;
 % h_PPS=h_PPS/wc_PPS_0*safety;
-h_PPS=h_PPS*.95*safety;   %overflowing in D4
+% h_PPS=h_PPS*.97*safety;   %overflowing in D4
 
 % Find wc scaling factor for GSM
 % theo_GSM = conv(wc_PPS_0,h_GSM);
@@ -105,7 +106,7 @@ h_GSM=safety*h_GSM/wc_GSM;  % scaling down coeffs of GSM to wc 1s17 reduce MER b
 % Change Coeff
 % load('h_PPS.mat');
 % h_PPS = h_pps/2^17;
-scale_GSM=sum(abs(h_PPS));
+% scale_GSM=sum(abs(h_PPS));
 
 
 h_GSMGSPS=conv(h_GSPS,h_GSM); 
@@ -171,7 +172,6 @@ fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPer
 %% PPS coeffs
 clc
 [rows, cols] = size(MF_PPS);
-% fprintf('0s18 Coefficients for PPS filter:\n\n');
 fprintf("initial begin\n");
 for i = 1:cols
     for j = 1:rows+1
@@ -189,7 +189,6 @@ for i = 1:cols
     end
 end
 fprintf("end\n");
-% fprintf('\nEnd of 0s18 Coefficients for PPS filter:\n\n');
 
 %% Debug PPS coeff
 clc
@@ -312,7 +311,11 @@ clc
 % avgSqErr= 32948044417;
 
 % GSPS to GSM % 
-mapOutPwr= 1653;
-avgSqErr= 4437263996;
+% mapOutPwr= 1653;
+% avgSqErr= 4437263996;
+
+% NEW PPS to GSM % 
+mapOutPwr= 340;
+avgSqErr= 2999848510;
 
 MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);

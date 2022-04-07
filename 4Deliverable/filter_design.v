@@ -1,4 +1,7 @@
-module filter_design(
+module filter_design #(
+	parameter DELAY=5
+)
+(
 						   input clock_50,
 							input [17:0]SW,
 							input [3:0] KEY,
@@ -212,7 +215,7 @@ mapper_in SUT_input (
 );
 
 mapper_in SUT_inputQ (
-	.LFSR(outQ[21:20]),
+	.LFSR(outQ[1:0]),
 	.map_out(map_outQ)
 );
 
@@ -242,7 +245,8 @@ always @ * begin
 	endcase
 end
 
-PPS_filt_101 DUT_TX (
+//PPS_filt_101 DUT_TX (
+PPS_filt_121 DUT_TX (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
@@ -250,21 +254,14 @@ PPS_filt_101 DUT_TX (
 	.y(srrc_out)
 	);
 
-PPS_filt_101 DUT_TXQ (
+//PPS_filt_101 DUT_TXQ (
+PPS_filt_121 DUT_TXQ (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
 	.x_in(srrc_inputQ),
 	.y(srrc_outQ)
 	);
-	
-//GSPS_filt_101 DUT_TX (
-//	.sys_clk(sys_clk),
-//	.sam_clk_en(sam_clk_ena),
-//	.reset(~KEY[3]),
-//	.x_in(srrc_input),
-//	.y(srrc_out)
-//	);
 
 /*------------Upsample b4 1st LPF | 12.5 MHz------------*/
 (* preserve *) reg halfSysCnt;
@@ -308,6 +305,7 @@ halfband_1st_sym HB1 (
 wire signed [17:0] halfOut1Q;
 
 halfband_1st_sym HB1Q (
+//halfband_1st_sym_copy HB1Q (
 	.x_in(UpSam1Q),
 	.y(halfOut1Q),
 	.sys_clk(sys_clk),
@@ -382,8 +380,6 @@ upConv convUp (
 	.upConv_out(test_point_1)
 	);
 
-(* keep *) wire signed [17:0] MF_out;
-
 always @ *
 	case(SW[17:16])
 		2'd0: DAC_out={~halfOut1[17],halfOut1[16:4]};
@@ -392,7 +388,58 @@ always @ *
 		2'd3: DAC_out={~out[21],out[20:8]};
 	endcase
 
+
+/*------------Channel | 25 MHz------------*/
 /*
+(* preserve *) reg signed [17:0] pipeline;
+(* keep *) reg signed [17:0] mult_mux;
+
+always @ (posedge sys_clk)
+	pipeline <= test_point_1;
+
+always @ * begin
+	case (SW[1:0])
+			2'd1		:	mult_mux<=18'sd8192;
+			2'd2		:	mult_mux<=18'sd16384;
+			2'd3		:	mult_mux<=18'sd32768;
+			default	:	mult_mux<=18'sd130171;	//MF_out is pipelined @ sam_clk
+		endcase
+	end
+	
+(* keep *) reg signed [35:0] mult_out;
+
+assign mult_out=$signed(mult_mux)*$signed(pipeline);
+
+wire signed [17:0] noise;
+
+awgn_generator AWGN(
+  .clk(sys_clk),
+  .clk_en(1'd1),
+  .reset_n(~KEY[3]),  //active LOW reset
+  .awgn_out(noise)
+);
+
+reg signed [17:0] noise_ctrl;
+
+always @ *
+	case(SW[4])
+		2'd0: noise_ctrl=18'sd0;
+		default: noise_ctrl=$signed(noise);
+	endcase
+	
+(* preserve *) reg signed [17:0] test_point_2;
+(* keep *) wire [13:0] test_point_2_DAC;
+
+always @ (posedge sys_clk)
+	test_point_2 <= $signed(mult_out[34:17])+$signed(noise_ctrl);
+	
+assign test_point_2_DAC={~test_point_2[17],test_point_2[16:4]};
+	
+*/
+
+/*
+
+(* keep *) wire signed [17:0] MF_out;
 //GSM
 //GSM_101Mults DUT_RCV (
 GSM_TS DUT_RCV (

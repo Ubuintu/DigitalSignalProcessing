@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Apr  6 17:53:55 2022
+Analysis & Synthesis Status : Successful - Wed Apr  6 22:24:59 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 Revision Name : filter_design
 Top-level Entity Name : filter_design
 Family : Cyclone IV E
-Total logic elements : 24,126
-    Total combinational functions : 21,027
-    Dedicated logic registers : 13,018
-Total registers : 13018
+Total logic elements : 27,233
+    Total combinational functions : 23,880
+    Dedicated logic registers : 14,422
+Total registers : 14422
 Total pins : 110
 Total virtual pins : 0
 Total memory bits : 30,208

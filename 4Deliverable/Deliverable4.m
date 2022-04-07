@@ -30,12 +30,12 @@ h_halfband_filtDes  = firhalfband(14, Fpass/(Fs/2)).';
 H_halfband_filtDes = freqz(h_halfband_filtDes,1,w).';
 
 % hold on 
-MR_halfband_pm_vs_Des=superplot(w/2/pi, 20*log10(abs(H_halfband_filtDes)),'plotName',"Comparision between designer & FIRPM",'figureName',"Halfband_cmp",'yName',"Magnitude (dB)",...
-    'xName',"frequency (cycles/sample)",'yLegend',"filtDesigner",'cmpY',20*log10(abs(H_halfband_PM)),'cmpYLegend',"FIRPM",...
-    'plotAxis',[0 w(end)/2/pi -150 10]);
-text(0.02,-10,['{\delta_p} of filter Design: ',num2str(Dpass)]);
+% MR_halfband_pm_vs_Des=superplot(w/2/pi, 20*log10(abs(H_halfband_filtDes)),'plotName',"Comparision between designer & FIRPM",'figureName',"Halfband_cmp",'yName',"Magnitude (dB)",...
+%     'xName',"frequency (cycles/sample)",'yLegend',"filtDesigner",'cmpY',20*log10(abs(H_halfband_PM)),'cmpYLegend',"FIRPM",...
+%     'plotAxis',[0 w(end)/2/pi -150 10]);
+% text(0.02,-10,['{\delta_p} of filter Design: ',num2str(Dpass)]);
 % hold off
-close(MR_halfband_pm_vs_Des);
+% close(MR_halfband_pm_vs_Des);
 
 % filterDesigner atm gives me 3 mults per LPF; center coeff can be a bit shift
 
@@ -49,10 +49,10 @@ h_halfband_filtDes_2nd  = firhalfband(14, Fpass/(Fs/2)).';
 
 H_halfband_filtDes_2nd = freqz(h_halfband_filtDes_2nd,1,w).';
 
-MR2_halfband_pm_vs_Des=superplot(w/2/pi, 20*log10(abs(H_halfband_filtDes_2nd)),'plotName',"Comparision between designer & FIRPM",'figureName',"Halfband_cmp",'yName',"Magnitude (dB)",...
-    'xName',"frequency (cycles/sample)",'yLegend',"filtDesigner",'cmpY',20*log10(abs(H_halfband_PM)),'cmpYLegend',"FIRPM",...
-    'plotAxis',[0 w(end)/2/pi -150 10]);
-close(MR2_halfband_pm_vs_Des);
+% MR2_halfband_pm_vs_Des=superplot(w/2/pi, 20*log10(abs(H_halfband_filtDes_2nd)),'plotName',"Comparision between designer & FIRPM",'figureName',"Halfband_cmp",'yName',"Magnitude (dB)",...
+%     'xName',"frequency (cycles/sample)",'yLegend',"filtDesigner",'cmpY',20*log10(abs(H_halfband_PM)),'cmpYLegend',"FIRPM",...
+%     'plotAxis',[0 w(end)/2/pi -150 10]);
+% close(MR2_halfband_pm_vs_Des);
 
 %% Theoretical upconv/upsampling
 %------Clean up workspace-------
@@ -89,7 +89,7 @@ clc
 
 % Find coeffs
 safety=(2^0)-(2^-17);  %1s17
-h_halfband_filtDes_1s17=round(h_halfband_filtDes*2^16*safety);  %keeps overflowing, not sure why
+h_halfband_filtDes_1s17=round(h_halfband_filtDes*2^17*safety/8);
 
 idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16
@@ -162,8 +162,8 @@ fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPer
 clc
 
 % Find coeffs
-safety=(2^-1)-(2^-17);  %1s17
-h_halfband_filtDes_2nd_1s17=round(h_halfband_filtDes_2nd*2^17*safety);
+safety=(2^0)-(2^-17);  %1s17
+h_halfband_filtDes_2nd_1s17=round(h_halfband_filtDes_2nd*2^17*safety/8);
 
 idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16

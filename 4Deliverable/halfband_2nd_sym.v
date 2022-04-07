@@ -116,14 +116,14 @@ always @ (posedge sys_clk)
 
 /*-----------coeffs 0s18-----------*/
 initial begin
-	Hsys[0] = -18'sd80;
+	Hsys[0] = -18'sd20;
 	Hsys[1] = 18'sd0;
-	Hsys[2] = 18'sd786;
+	Hsys[2] = 18'sd197;
 	Hsys[3] = 18'sd0;
-	Hsys[4] = -18'sd3924;
+	Hsys[4] = -18'sd981;
 	Hsys[5] = 18'sd0;
-	Hsys[6] = 18'sd19602;
-	Hsys[7] = 18'sd32768;
+	Hsys[6] = 18'sd4900;
+	Hsys[7] = 18'sd8192;
 end
 
 endmodule

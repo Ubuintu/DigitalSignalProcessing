@@ -168,8 +168,8 @@ PPS_filt_101 DUT_TX (
 (* keep *) wire signed [17:0] MF_out;
 
 //GSM
-//GSM_101Mults DUT_RCV (
-GSM_TS DUT_RCV (
+GSM_101Mults DUT_RCV (
+//GSM_TS DUT_RCV (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),

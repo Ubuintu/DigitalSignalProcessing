@@ -153,8 +153,8 @@ Nsps = 4;
 span = (N-1)/4;
 % for bk = 1.5:0.01:2
 % for bk = 0.3:0.1:0.3
-% for bk = 0:0.1:10
-for bk = 0.0:0.1:0.0
+for bk = 0:0.1:10
+% for bk = 0.0:0.1:0.0
 % for bk = 1:1
 % for bk = 2:0.1:2
 %     for idx_TXnRCV = idx_101(639):(idx_101(639))
@@ -162,7 +162,7 @@ for bk = 0.0:0.1:0.0
 %     for idx_TXnRCV = idx_101(1063):(idx_101(1063))
 %     for idx_TXnRCV = idx_121(2053):(idx_121(2053))
 %     for idx_TXnRCV = idx_93(4):(idx_93(5))
-    for idx_TXnRCV = idx_121(10):idx_121(10)
+    for idx_TXnRCV = idx_121(1):idx_121(end)
 %     for idx_TXnRCV = 505:513
         b_nom = vTX_B(idx_TXnRCV);
         beta_Rcv = vRCV_B(idx_TXnRCV);
@@ -180,7 +180,7 @@ for bk = 0.0:0.1:0.0
         fb = [0 fp fc fc fs .5]*2;
         a = [1 1 1/sqrt(2) 1/sqrt(2) 0 0];
         % wght vector needs to 2.4535 for passband
-        wght = [2.4535 1 10];   %10 for N=97; 20 for N=91-89; 40 for N>90
+        wght = [2.4535 1 1];   %10 for N=97; 20 for N=91-89; 40 for N>90
         h_pps = firpm(M,fb,a,wght);
 
         % window

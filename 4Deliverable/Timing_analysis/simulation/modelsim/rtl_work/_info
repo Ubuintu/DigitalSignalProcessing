@@ -11,12 +11,12 @@ cModel Technology
 Z0 d/home/tob208/engr-ece/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim
 vclk_en
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1649282704
+!s110 1649301146
 !i10b 1
 !s100 a>jOMB>PO1S68D5LZ6aH41
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IgKXQ6IMT8^QPZ3T;OgA@h2
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
 w1649281844
@@ -24,50 +24,50 @@ w1649281844
 F./../../../clk_en.v
 !i122 2
 L0 1 42
-Z5 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1649282704.000000
+Z5 !s108 1649301145.000000
 !s107 ./../../../clk_en.v|
 !s90 -reportprogress|300|-sv|-work|work|./../../../clk_en.v|
 !i113 1
-Z7 o-sv -work work
-Z8 tCvgOpt 0
+Z6 o-sv -work work
+Z7 tCvgOpt 0
 vDUT
 R1
-R2
+Z8 !s110 1649301145
 !i10b 1
-!s100 U@C7_?MS7l=Ag9MKEGUW83
+!s100 gSSekZbaAoHfJA22a2E:h0
+R2
+ILSF8TTK1ORe[aA[:gSzGO3
 R3
-If1heT1B[88GMWhCMGUX:m2
-R4
 S1
 R0
-w1649282684
+w1649301125
 8./../../DUT.v
 F./../../DUT.v
 !i122 1
-L0 1 830
-R5
+L0 1 272
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 ./../../DUT.v|
 !s90 -reportprogress|300|-sv|-work|work|./../../DUT.v|
 !i113 1
+R6
 R7
-R8
 n@d@u@t
 vfilter_TB
 R1
-R2
+R8
 !i10b 1
 !s100 0VSH=`9?5;Z:hm:2i8Cn^0
-R3
+R2
 IkVzn;@:YH<QeVD>J3iRkm3
-R4
+R3
 S1
 R0
 w1649281718
@@ -75,14 +75,14 @@ w1649281718
 F./DUT_tb.v
 !i122 0
 L0 2 69
-R5
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 ./DUT_tb.v|
 !s90 -reportprogress|300|-sv|-work|work|./DUT_tb.v|
 !i113 1
+R6
 R7
-R8
 nfilter_@t@b

@@ -1,0 +1,24 @@
+       MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3   b Kaiser     weight 
+47.053060   0.146000   0.191000        113       2053  63.462808  72.214275  71.687963   0.100000         20 
+ 44.342630   0.130000   0.130000        121          2  71.841800  66.656870  66.096083   0.000000         10
+
+
+121
+sum level 1 has 61 registers
+sum level 2 has 31 registers
+sum level 3 has 16 registers
+sum level 4 has 8 registers
+sum level 5 has 4 registers
+sum level 6 has 2 registers
+sum level 7 has 1 registers
+num of sum lvls: 7 | total # of regs: 123
+
+101
+sum level 1 has 51 registers
+sum level 2 has 26 registers
+sum level 3 has 13 registers
+sum level 4 has 7 registers
+sum level 5 has 4 registers
+sum level 6 has 2 registers
+sum level 7 has 1 registers
+num of sum lvls: 7 | total # of regs: 104
