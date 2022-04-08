@@ -24,8 +24,8 @@ Fpass = 0.4375;          % Passband Frequency
 Dpass = 0.057501127785;  % Passband Ripple
 
 % Calculate the coefficients using the function.
-% h_halfband_filtDes  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';
-h_halfband_filtDes  = firhalfband(14, Fpass/(Fs/2)).';
+h_halfband_filtDes  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';
+% h_halfband_filtDes  = firhalfband(14, Fpass/(Fs/2)).';
 % h_halfband_filtDes  = h_halfband_filtDes/sum(abs(h_halfband_filtDes))*(1-2^-17); %to scale down
 
 H_halfband_filtDes = freqz(h_halfband_filtDes,1,w).';

@@ -60,18 +60,18 @@ wc_GSM=sum(abs(h_GSM));
 % ** worse case input upsampled **
 wc_input=ones(1,ceil(N/4));
 wc_input0=upsample(wc_input.*.75,Nsps);
-% wc_input1=upsample(wc_input.*.75,Nsps,1);
-% wc_input2=upsample(wc_input.*.75,Nsps,2);
-% wc_input3=upsample(wc_input.*.75,Nsps,3);
+wc_input1=upsample(wc_input.*.75,Nsps,1);
+wc_input2=upsample(wc_input.*.75,Nsps,2);
+wc_input3=upsample(wc_input.*.75,Nsps,3);
 
-wc_PPS0=(abs(h_PPS).*wc_input0(1:N));
+wc_PPS0=(abs(h_PPS).*wc_input0(1:101));
 wc_PPS_0=sum(wc_PPS0);
-% wc_PPS1=abs(h_PPS).*wc_input1(1:101);
-% wc_PPS_1=sum(wc_PPS1);
-% wc_PPS2=abs(h_PPS).*wc_input2(1:101);
-% wc_PPS_2=sum(wc_PPS2);
-% wc_PPS3=abs(h_PPS).*wc_input3(1:101);
-% wc_PPS_3=sum(wc_PPS3);
+wc_PPS1=abs(h_PPS).*wc_input1(1:101);
+wc_PPS_1=sum(wc_PPS1);
+wc_PPS2=abs(h_PPS).*wc_input2(1:101);
+wc_PPS_2=sum(wc_PPS2);
+wc_PPS3=abs(h_PPS).*wc_input3(1:101);
+wc_PPS_3=sum(wc_PPS3);
 
 % find wc output w/convolution
 % wc0_h_PPS = conv(h_PPS,wc_input0);
