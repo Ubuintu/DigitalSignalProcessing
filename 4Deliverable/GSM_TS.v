@@ -254,7 +254,8 @@ always @ (posedge sys_clk)
 	else
         y<=$signed(y);
 		
-
+/*
+//Scale up since map_out_pwr is too low
 initial begin
 	Hsys[0] = 18'sd73;
 	Hsys[1] = -18'sd7;
@@ -307,6 +308,61 @@ initial begin
 	Hsys[48] = 18'sd23440;
 	Hsys[49] = 18'sd34770;
 	Hsys[50] = 18'sd39137;
+end
+*/
+
+initial begin
+	Hsys[0] = 18'sd245;
+	Hsys[1] = -18'sd25;
+	Hsys[2] = -18'sd297;
+	Hsys[3] = -18'sd333;
+	Hsys[4] = -18'sd74;
+	Hsys[5] = 18'sd290;
+	Hsys[6] = 18'sd457;
+	Hsys[7] = 18'sd254;
+	Hsys[8] = -18'sd201;
+	Hsys[9] = -18'sd560;
+	Hsys[10] = -18'sd511;
+	Hsys[11] = -18'sd40;
+	Hsys[12] = 18'sd522;
+	Hsys[13] = 18'sd733;
+	Hsys[14] = 18'sd387;
+	Hsys[15] = -18'sd291;
+	Hsys[16] = -18'sd785;
+	Hsys[17] = -18'sd685;
+	Hsys[18] = -18'sd31;
+	Hsys[19] = 18'sd675;
+	Hsys[20] = 18'sd840;
+	Hsys[21] = 18'sd280;
+	Hsys[22] = -18'sd580;
+	Hsys[23] = -18'sd993;
+	Hsys[24] = -18'sd498;
+	Hsys[25] = 18'sd616;
+	Hsys[26] = 18'sd1427;
+	Hsys[27] = 18'sd1071;
+	Hsys[28] = -18'sd471;
+	Hsys[29] = -18'sd2138;
+	Hsys[30] = -18'sd2448;
+	Hsys[31] = -18'sd663;
+	Hsys[32] = 18'sd2361;
+	Hsys[33] = 18'sd4450;
+	Hsys[34] = 18'sd3541;
+	Hsys[35] = -18'sd595;
+	Hsys[36] = -18'sd5645;
+	Hsys[37] = -18'sd7862;
+	Hsys[38] = -18'sd4584;
+	Hsys[39] = 18'sd3395;
+	Hsys[40] = 18'sd11414;
+	Hsys[41] = 18'sd13298;
+	Hsys[42] = 18'sd5446;
+	Hsys[43] = -18'sd9753;
+	Hsys[44] = -18'sd23631;
+	Hsys[45] = -18'sd24951;
+	Hsys[46] = -18'sd6014;
+	Hsys[47] = 18'sd32117;
+	Hsys[48] = 18'sd78502;
+	Hsys[49] = 18'sd116447;
+	Hsys[50] = 18'sd131071;
 end
 
 endmodule 

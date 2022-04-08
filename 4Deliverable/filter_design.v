@@ -367,7 +367,6 @@ wire signed [17:0] noise;
 awgn_generator AWGN(
   .clk(sys_clk),
   .clk_en(1'd1),
-//  .clk_en(sam_clk_ena),
   .reset_n(KEY[3]),  //active LOW reset
   .awgn_out(noise)
 );
@@ -464,10 +463,9 @@ always @ (posedge sys_clk)
 		dnSam_I_2 <= halfOut_dn_I_2;
 
 
-
+/*------------GSM for I channel------------*/
 (* keep *) wire signed [17:0] MF_out;
-//GSM
-//GSM_101Mults DUT_RCV (
+
 GSM_TS DUT_RCV (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),

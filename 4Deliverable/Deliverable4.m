@@ -18,7 +18,8 @@ w = [0:0.001:200]/100*pi; %one whole cycle
 Fs = 12.5;  % Sampling Frequency
 
 % tried to account for BW of downsampled, didnt work
-Fpass = 0.4375;          % Passband Frequency
+% Fpass = 0.4375;          % Passband Frequency
+Fpass = 0.875;          % Passband Frequency
 % currently gives 15 coeffs; more if you decrease ripple
 Dpass = 0.057501127785;  % Passband Ripple
 
@@ -43,6 +44,7 @@ H_halfband_filtDes = freqz(h_halfband_filtDes,1,w).';
 % All frequency values are in MHz.
 Fs = 25;  % Sampling Frequency
 Fpass = 0.21875; % Passband Frequency; width of signal is compressed again by 2
+Fpass = 0.875; 
 Dpass = 0.057501127785;  % Passband Ripple
 % h_halfband_filtDes_2nd  = firhalfband('minorder', Fpass/(Fs/2), Dpass).';   %no bueno
 h_halfband_filtDes_2nd  = firhalfband(14, Fpass/(Fs/2)).';
@@ -179,3 +181,11 @@ for i=1:round(length(h_halfband_filtDes_2nd_1s17)/2)  %for sym
     end
 end
 fprintf("end\n");
+
+%% MER calculation from circuit
+clear
+clc
+mapOutPwr= 16;
+avgSqErr= 787342840896;
+
+MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);

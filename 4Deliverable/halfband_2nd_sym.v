@@ -115,19 +115,9 @@ always @ (posedge sys_clk)
 		y<=$signed(sum_lvl_4);
 
 /*-----------coeffs 0s18-----------*/
-/*
-initial begin
-	Hsys[0] = -18'sd80;
-	Hsys[1] = 18'sd0;
-	Hsys[2] = 18'sd786;
-	Hsys[3] = 18'sd0;
-	Hsys[4] = -18'sd3924;
-	Hsys[5] = 18'sd0;
-	Hsys[6] = 18'sd19602;
-	Hsys[7] = 18'sd32768;
-end
-*/
 
+/*
+//Fp=0.21875
 initial begin
 	Hsys[0] = -18'sd161;
 	Hsys[1] = 18'sd0;
@@ -138,5 +128,20 @@ initial begin
 	Hsys[6] = 18'sd39204;
 	Hsys[7] = 18'sd65536;
 end
+*/
+
+/*
+//Fp=0.875| did not help with MER
+initial begin
+	Hsys[0] = -18'sd174;
+	Hsys[1] = 18'sd0;
+	Hsys[2] = 18'sd1637;
+	Hsys[3] = 18'sd0;
+	Hsys[4] = -18'sd7962;
+	Hsys[5] = 18'sd0;
+	Hsys[6] = 18'sd39267;
+	Hsys[7] = 18'sd65536;
+end
+*/
  
 endmodule

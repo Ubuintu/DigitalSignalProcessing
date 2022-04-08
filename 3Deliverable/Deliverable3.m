@@ -97,11 +97,12 @@ h_PPS=h_PPS*.92*safety;   %overflowing in D4 | 0.5-0.9 is safe; 0.92 is the high
 % theo_GSM = conv(wc_PPS_0,h_GSM);
 % scale_GSM = sum(abs(theo_GSM));
 
+% ---------Removed scaling of GSM for D4---------
 % h_GSPS=safety*h_GSPS/wc_GSPS;  %comment this to see if peak agrees
-h_GSM=safety*h_GSM/wc_GSM;  % scaling down coeffs of GSM to wc 1s17 reduce MER by a decimal of a dB
+% h_GSM=safety*h_GSM/wc_GSM;  % scaling down coeffs of GSM to wc 1s17 reduce MER by a decimal of a dB
 % h_GSM=.85*h_GSM/scale_GSM;
 % h_GSM=safety*h_GSM/max(abs(h_GSM));
-% h_GSM=h_GSM.*.7;
+h_GSM=h_GSM/max(h_GSM)*(.5-2^-18);
 
 % Change Coeff
 % load('h_PPS.mat');
@@ -170,7 +171,7 @@ for i=1:N
 end
 fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
 
-% PPS coeffs
+%% PPS coeffs
 clc
 [rows, cols] = size(MF_PPS);
 fprintf("initial begin\n");
@@ -316,7 +317,7 @@ clc
 % avgSqErr= 4437263996;
 
 % NEW PPS to GSM % 
-mapOutPwr= 340;
-avgSqErr= 2999848510;
+mapOutPwr= 11;
+avgSqErr= 579568122839;
 
 MER=10*log10( (2.^38)*mapOutPwr/avgSqErr);
