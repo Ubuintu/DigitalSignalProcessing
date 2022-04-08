@@ -323,7 +323,7 @@ upConv convUp (
 	);
 
 //halfOut_dn_I_1; I_out; dnSam_I_1
-//currently circuit is usin SW: 4|AWGN, 2:0|Gain, 17:14|DAC_out, 13:12|Channel Delay, 11:10|MER MUX
+//currently circuit is usin SW: 4|AWGN, 2:0|Gain, 17:14|DAC_out, 13:12|Channel Delay, 11:10|MER MUX, 9:8|1st dn, 7:6|2nd dn
 
 /*------------DAC OUT MUX------------*/
 always @ *
@@ -395,7 +395,6 @@ assign test_point_2_DAC={~test_point_2[17],test_point_2[16:4]};
 dnConv convDn (
 	.tp2(test_point_2),
 	.sys_clk(sys_clk),
-	//currently circuit is usin SW: 4, 2-0, & 17-14, 13-12,
 	.SW(SW[13:12]),
 	.output_to_DAC_I(output_to_DAC_I),
 	.output_to_DAC_Q(output_to_DAC_Q),
@@ -426,7 +425,8 @@ halfband_2nd_sym HB_dn_I_1 (
 	);
 
 /*------------dn sample for I_1------------*/
-(* preserve *) reg signed [17:0] dnSam_I_1;
+(* preserve *) reg signed [17:0] dnSam_I_1_d[3:0];
+(* keep *) reg signed [17:0] dnSam_I_1;
 (* keep *) reg signed [35:0] dnSam_I_1_mult;	//scale amplitude to account for attenuation
 
 //scale output of HB by 2 since M=2; 2*2^15 = 65535 (3s15)
@@ -436,9 +436,22 @@ always @ *
 
 //sample output @ sampling rate 2x slower
 always @ (posedge sys_clk)
-	if (sys_clk2_en)
-//		dnSam_I_1 <= halfOut_dn_I_1;
-		dnSam_I_1 <= $signed(dnSam_I_1_mult[33:16]);		//2s16; images @ samp r8 BUT A is the same, gonna try 1s17 (didnt work) 2s16 is better?
+	if (sys_clk2_en) begin
+		for (i=0; i<4; i=i+1)
+			if (i==0)
+				dnSam_I_1_d[i]<=halfOut_dn_I_1;
+			else
+				dnSam_I_1_d[i]<=dnSam_I_1_d[i-1];
+	end
+//		dnSam_I_1 <= $signed(dnSam_I_1_mult[33:16]);		//2s16; images @ samp r8 BUT A is the same, gonna try 1s17 (didnt work) 2s16 is better?
+
+always @ *
+	case(SW[9:8])
+		2'd0: dnSam_I_1=halfOut_dn_I_1;
+		2'd1: dnSam_I_1=dnSam_I_1_d[0];
+		2'd2: dnSam_I_1=dnSam_I_1_d[1];
+		2'd3: dnSam_I_1=dnSam_I_1_d[2];
+	endcase
 		
 /*------------halfband filt 2 for I------------*/
 wire signed [17:0] halfOut_dn_I_2;
@@ -455,13 +468,25 @@ halfband_1st_sym HB_dn_I_2 (
 	);
 
 /*------------dn sample for I_2------------*/
-(* preserve *) reg signed [17:0] dnSam_I_2;
+(* preserve *) reg signed [17:0] dnSam_I_2_d[3:0];
+(* keep *) reg signed [17:0] dnSam_I_2;
 
-//sample output @ sampling rate 2x slower
 always @ (posedge sys_clk)
-	if (sam_clk_ena)
-		dnSam_I_2 <= halfOut_dn_I_2;
+	if (sam_clk_ena) begin
+		for (i=0; i<4; i=i+1)
+			if (i==0)
+				dnSam_I_2_d[i]<=halfOut_dn_I_2;
+			else
+				dnSam_I_2_d[i]<=dnSam_I_2_d[i-1];
+	end
 
+always @ *
+	case(SW[7:6])
+		2'd0: dnSam_I_2=halfOut_dn_I_2;
+		2'd1: dnSam_I_2=dnSam_I_2_d[0];
+		2'd2: dnSam_I_2=dnSam_I_2_d[1];
+		2'd3: dnSam_I_2=dnSam_I_2_d[2];
+	endcase
 
 /*------------GSM for I channel------------*/
 (* keep *) wire signed [17:0] MF_out;
@@ -562,6 +587,88 @@ avg_err AVG_ER (
 	.reset(~KEY[3]),
 	.err_acc(err_acc)
 );
+			
+/*									 
+// ------------------------------------------------------------------------------
+// In-System Sources and Probes (ISSP) Code
+//
+// - instantiate ISSP cores; two cores are used:
+// -- one to emulate switches and LEDs on the DE2 board (active high)
+// -- one to emulate push-button keys on the DE2 board (active low)
+// 
+// - connect relevant signals to and from the core
+//
+// - note 1: push-button key outputs from ISSP will be passed through
+//   a hold circuit to better simulate what happens when a button is pushed
+// - note 2: core outputs will be used by the circuit only if 
+//   the 'ISSP enable' bit is active (set to 1)
+// -------------------------------------------------------------------------------                   
 
+// direct connections to ISSP core
+wire [49:0] issp_sw_sources;
+wire [49:0] issp_probes;
+
+// demultiplexed outputs from ISSP cores
+wire [17:0] issp_sw;
+wire  [3:0] issp_key;
+wire        issp_en;
+
+// outputs to remainder of circuit
+reg [17:0] SW;
+reg  [3:0] KEY;
+
+
+// Instantiate ISSP core #1 (switch and LED emulator)
+switch_led_emulator switch_led_emulator_inst (
+  .source (issp_sw_sources[49:0]), // outputs from core
+  .probe  (issp_probes[49:0])   // inputs to core
+);
+
+// de-multiplex output bus from ISSP
+//
+assign issp_en = issp_sw_sources[49];
+// bits 48:22 are currently unused for this lab
+assign issp_sw[17:0] = issp_sw_sources[17:0];
+
+// combine inputs to ISSP
+assign issp_probes[17:0] = LEDR[17:0];
+assign issp_probes[21:18] = LEDG[3:0];
+assign issp_probes[49:22] = 'b0; // set unused inputs to 0
+
+
+// Instantiate ISSP core #2 (push-button key emulator)
+// 4 output ports, no input ports
+// (core configured to set outputs to 1 by default)
+
+key_emulator key_emulator_inst (
+  .source (issp_key[3:0])
+);
+
+// -------------------------------------------------------------
+// Instantiate pulse generator circuit for each key here
+// -------------------------------------------------------------
+
+wire [3:0] issp_key_pulse;
+
+KeyCCT	#(.PERSIST(1)) k0	(.clk(clk), .key(issp_key[0]), .key_out(issp_key_pulse[0]));
+KeyCCT	#(.PERSIST(1)) k1	(.clk(clk), .key(issp_key[1]), .key_out(issp_key_pulse[1]));
+KeyCCT	#(.PERSIST(1)) k2	(.clk(clk), .key(issp_key[2]), .key_out(issp_key_pulse[2]));
+KeyCCT	#(.PERSIST(1)) k3	(.clk(clk), .key(issp_key[3]), .key_out(issp_key_pulse[3]));
+
+
+// Only use ISSP outputs if the enable bit is set (otherwise use on-board components).
+// This allows students to use the physical switches and keys if they have a board.
+always @ (*)
+    if(issp_en == 1'b1)
+      begin
+        SW[17:0] <= issp_sw[17:0];
+        KEY[3:0] <= issp_key_pulse[3:0];
+      end
+    else
+      begin
+        SW[17:0] <= PHYS_SW[17:0];
+        KEY[3:0] <= PHYS_KEY[3:0];
+      end
+*/
 
 endmodule

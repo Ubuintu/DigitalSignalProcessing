@@ -36,13 +36,14 @@ always @ (posedge sys_clk) //cascade
 //always @ (posedge clk_50) //2nd halfband
     if(rst)
         x_in <=18'sd0;
-
+/*
     //for others
     else if (sam_clk_en)
         $fscanf(file_in,"%d\n",x_in);
-/*    else if (sys_clk2_en) //for halfband
+*/
+    else if (sys_clk2_en) //for halfband
         $fscanf(file_in,"%d\n",x_in);
-*/    else
+    else
         x_in<=x_in;
 /*
     //2nd halfband
@@ -59,9 +60,10 @@ clk_en EN_CLK(
 );
 
 DUT DUT (
+    .clk(clk_50), 
     .sys_clk(sys_clk),
     .sam_clk_en(sam_clk_en),
-    //.sys_clk2_en(sys_clk2_en),
+    .sys_clk2_en(sys_clk2_en),    //for 12.5 clk
     .reset(rst),
     .x_in(x_in),
     .y(y)
