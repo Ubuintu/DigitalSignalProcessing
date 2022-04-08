@@ -99,22 +99,7 @@ integer i,j;
 					
 
 wire signed [17:0] srrc_out, srrc_outQ;
-//wire signed [17:0] srrc_input;
 reg [13:0] DAC_out;
-
-////Try Rory's LFSR
-// EE465_filter_test SRRC_test(
-//						   .clock_50(clock_50),
-//							.reset(~KEY[3]),
-////							.output_from_filter_1s17(srrc_out),
-////							.filter_input_scale(SW[2:0]),
-////							.input_to_filter_1s17(srrc_input),
-//							.lfsr_value(),
-//							.symbol_clk_ena(sym_clk_ena),
-//							.sample_clk_ena(sam_clk_ena),
-//							.system_clk(sys_clk),
-////							.output_to_DAC(DAC_out)
-//							);
 
 						
 clk_en EN_clk (
@@ -125,14 +110,7 @@ clk_en EN_clk (
 	.sym_clk_en(sym_clk_ena),
 	.sys_clk2_en(sys_clk2_en)
 	);
-			  
-//ee465_gold_standard_srrc filly(
-//			.sys_clk(sys_clk), //system clock, your design may not use this
-//			.sam_clk(sam_clk_ena), //sampling clock
-//			.sig_in(srrc_input), //4-ASK input value 1s17
-//			.sig_out(srrc_out) //output of SRRC filter 1s17
-//			);
-
+	
 /* keep for combinational; preserve for registers; noprune for fan out*/
 (* preserve *) reg [21:0] counter;
 	
@@ -144,7 +122,7 @@ wire signed [55:0] err_square;
 (* keep *) wire signed [17:0] dec_var;
 (* keep *) wire signed [21:0] out;
 (* keep *) wire signed [22:0] outQ;
-(* preserve *) wire cycle;
+(* preserve *) wire cycle, cycleQ;
 
 /*------------LFSR------------*/
 (* keep *) reg load;
@@ -162,51 +140,15 @@ LFSR_22 LFSR_GEN (
     .cycle(cycle),
     .out(out)
 );
-
-//Try Rory's LFSR
-// EE465_filter_test SRRC_test(
-//						   .clock_50(clock_50),
-//							.reset(~KEY[3]),
-////							.output_from_filter_1s17(srrc_out),
-////							.filter_input_scale(SW[2:0]),
-////							.input_to_filter_1s17(srrc_input),
-//							.lfsr_value(out[1:0])
-//							//,
-////							.symbol_clk_ena(sym_clk_ena),
-////							.sample_clk_ena(sam_clk_ena),
-////							.system_clk(sys_clk),
-////							.output_to_DAC(DAC_out)
-//							);
-
-//LFSR test (
-//	.clk(sys_clk),
-//	.load_data(load),
-//	.q(outQ[13:0])
-//	);
 	
 LFSR_23 LFSR_GENQ (
     .sys_clk(sys_clk), 
 	 .reset(~KEY[3]), 
 	 .load(load), 
 	 .sam_clk_en(sam_clk_ena),
-    .cycle(cycle),
+    .cycle(cycleQ),
     .out(outQ)
 );
-
-//Try Rory's LFSR
-// EE465_filter_test SRRC_testQ(
-//						   .clock_50(clock_50),
-//							.reset(~KEY[3]),
-////							.output_from_filter_1s17(srrc_out),
-////							.filter_input_scale(SW[2:0]),
-////							.input_to_filter_1s17(srrc_input),
-//							.lfsr_value(outQ[1:0])
-//							//,
-////							.symbol_clk_ena(sym_clk_ena),
-////							.sample_clk_ena(sam_clk_ena),
-////							.system_clk(sys_clk),
-////							.output_to_DAC(DAC_out)
-//							);
 
 wire signed [17:0] map_out, map_outQ;
 mapper_in SUT_input (
@@ -380,16 +322,22 @@ upConv convUp (
 	.upConv_out(test_point_1)
 	);
 
-//halfOut_dn_I_1; I_out
-	
+//halfOut_dn_I_1; I_out; dnSam_I_1
+//currently circuit is usin SW: 4|AWGN, 2:0|Gain, 17:14|DAC_out, 13:12|Channel Delay, 11:10|MER MUX
+
+/*------------DAC OUT MUX------------*/
 always @ *
-	case(SW[17:16])
-//		2'd0: DAC_out={~halfOut1[17],halfOut1[16:4]};
-		2'd0: DAC_out={~halfOut_dn_I_1[17],halfOut_dn_I_1[16:4]};	//output of first halfband
-		2'd1: DAC_out=test_point_1_DAC;
-//		2'd2: DAC_out={~halfOut2[17],halfOut2[16:4]};
-		2'd2: DAC_out={~I_out[17],I_out[16:4]};	//I channel output of downconverter
-		2'd3: DAC_out=test_point_2_DAC;
+	case(SW[17:14])
+		4'd0: DAC_out={~halfOut1[17],halfOut1[16:4]};
+		4'd1: DAC_out={~halfOut2[17],halfOut2[16:4]};
+		4'd2: DAC_out=test_point_1_DAC;
+		4'd3: DAC_out=test_point_2_DAC;
+		4'd4: DAC_out={~I_out[17],I_out[16:4]};	//I channel output of downconverter ONLY power of I and NOT Q channel
+		4'd5: DAC_out={~halfOut_dn_I_1[17],halfOut_dn_I_1[16:4]};	//output of first halfband dn
+		4'd6: DAC_out={~dnSam_I_1[17],dnSam_I_1[16:4]};	//test scaling
+		4'd7: DAC_out={~halfOut_dn_I_2[17],halfOut_dn_I_2[16:4]};	//output of first halfband dn
+		4'd8: DAC_out={~dnSam_I_2[17],dnSam_I_2[16:4]};	//test scaling
+		default: DAC_out={~UpSam1[17],UpSam1[16:4]};
 	endcase
 
 
@@ -419,7 +367,8 @@ wire signed [17:0] noise;
 awgn_generator AWGN(
   .clk(sys_clk),
   .clk_en(1'd1),
-  .reset_n(~KEY[3]),  //active LOW reset
+//  .clk_en(sam_clk_ena),
+  .reset_n(KEY[3]),  //active LOW reset
   .awgn_out(noise)
 );
 
@@ -447,8 +396,8 @@ assign test_point_2_DAC={~test_point_2[17],test_point_2[16:4]};
 dnConv convDn (
 	.tp2(test_point_2),
 	.sys_clk(sys_clk),
-	//currently circuit is usin SW: 4, 2-0, & 17-16
-	.SW(SW[15:14]),
+	//currently circuit is usin SW: 4, 2-0, & 17-14, 13-12,
+	.SW(SW[13:12]),
 	.output_to_DAC_I(output_to_DAC_I),
 	.output_to_DAC_Q(output_to_DAC_Q),
 	.I_out(I_out),
@@ -479,11 +428,18 @@ halfband_2nd_sym HB_dn_I_1 (
 
 /*------------dn sample for I_1------------*/
 (* preserve *) reg signed [17:0] dnSam_I_1;
+(* keep *) reg signed [35:0] dnSam_I_1_mult;	//scale amplitude to account for attenuation
+
+//scale output of HB by 2 since M=2; 2*2^15 = 65535 (3s15)
+always @ *
+	// 4s32 = 1s17*3s15
+	dnSam_I_1_mult=halfOut_dn_I_1*18'sd65535;
 
 //sample output @ sampling rate 2x slower
 always @ (posedge sys_clk)
 	if (sys_clk2_en)
-		dnSam_I_1 <= halfOut_dn_I_1;
+//		dnSam_I_1 <= halfOut_dn_I_1;
+		dnSam_I_1 <= $signed(dnSam_I_1_mult[33:16]);		//2s16; images @ samp r8 BUT A is the same, gonna try 1s17 (didnt work) 2s16 is better?
 		
 /*------------halfband filt 2 for I------------*/
 wire signed [17:0] halfOut_dn_I_2;
@@ -507,7 +463,7 @@ always @ (posedge sys_clk)
 	if (sam_clk_ena)
 		dnSam_I_2 <= halfOut_dn_I_2;
 
-/*
+
 
 (* keep *) wire signed [17:0] MF_out;
 //GSM
@@ -516,7 +472,7 @@ GSM_TS DUT_RCV (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
-	.x_in(srrc_out),
+	.x_in(dnSam_I_2),
 	.y(MF_out)
 );
 
@@ -542,7 +498,7 @@ always @ (posedge sys_clk)
 
 always @ (posedge sys_clk)
 	if (sym_clk_ena) begin
-		case(SW[17:16])
+		case(SW[11:10])
 			2'd1		:	MUX_out<=$signed(MDELAY[1]);
 			2'd2		:	MUX_out<=$signed(MDELAY[2]);
 			2'd3		:	MUX_out<=$signed(MDELAY[3]);
@@ -608,6 +564,6 @@ avg_err AVG_ER (
 	.reset(~KEY[3]),
 	.err_acc(err_acc)
 );
-*/
+
 
 endmodule

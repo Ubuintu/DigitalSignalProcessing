@@ -1,5 +1,5 @@
 Flow report for filter_design
-Thu Apr  7 21:47:12 2022
+Fri Apr  8 02:02:09 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Thu Apr  7 21:47:12 2022           ;
+; Flow Status                        ; Successful - Fri Apr  8 02:02:08 2022           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Standard Edition ;
 ; Revision Name                      ; filter_design                                   ;
 ; Top-level Entity Name              ; filter_design                                   ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE115F29C7                                   ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 27,304 / 114,480 ( 24 % )                       ;
-;     Total combinational functions  ; 24,683 / 114,480 ( 22 % )                       ;
-;     Dedicated logic registers      ; 14,003 / 114,480 ( 12 % )                       ;
-; Total registers                    ; 14003                                           ;
-; Total pins                         ; 110 / 529 ( 21 % )                              ;
+; Total logic elements               ; 32,686                                          ;
+;     Total combinational functions  ; 29,294                                          ;
+;     Dedicated logic registers      ; 18,108                                          ;
+; Total registers                    ; 18108                                           ;
+; Total pins                         ; 110                                             ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 103,936 / 3,981,312 ( 3 % )                     ;
-; Embedded Multiplier 9-bit elements ; 102 / 532 ( 19 % )                              ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
+; Total memory bits                  ; 103,936                                         ;
+; Embedded Multiplier 9-bit elements ; 128                                             ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/07/2022 21:45:00 ;
+; Start date & time ; 04/08/2022 02:01:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; filter_design       ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 194042950595565.164938950031481                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 194042950595565.164940488204441                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -131,12 +131,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:40     ; 1.0                     ; 990 MB              ; 00:01:02                           ;
-; Fitter               ; 00:01:07     ; 1.2                     ; 2188 MB             ; 00:02:05                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 721 MB              ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.5                     ; 1123 MB             ; 00:00:09                           ;
-; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 1006 MB             ; 00:00:04                           ;
-; Total                ; 00:02:03     ; --                      ; --                  ; 00:03:23                           ;
+; Analysis & Synthesis ; 00:00:42     ; 1.0                     ; 1052 MB             ; 00:01:00                           ;
+; Total                ; 00:00:42     ; --                      ; --                  ; 00:01:00                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -146,10 +142,6 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name ; OS Version ; Processor type ;
 +----------------------+------------------+---------+------------+----------------+
 ; Analysis & Synthesis ; engr-elec74-11L  ; Red Hat ; Red Hat    ; x86_64         ;
-; Fitter               ; engr-elec74-11L  ; Red Hat ; Red Hat    ; x86_64         ;
-; Assembler            ; engr-elec74-11L  ; Red Hat ; Red Hat    ; x86_64         ;
-; Timing Analyzer      ; engr-elec74-11L  ; Red Hat ; Red Hat    ; x86_64         ;
-; EDA Netlist Writer   ; engr-elec74-11L  ; Red Hat ; Red Hat    ; x86_64         ;
 +----------------------+------------------+---------+------------+----------------+
 
 
@@ -157,10 +149,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off filter_design -c filter_design
-quartus_fit --read_settings_files=off --write_settings_files=off filter_design -c filter_design
-quartus_asm --read_settings_files=off --write_settings_files=off filter_design -c filter_design
-quartus_sta filter_design -c filter_design
-quartus_eda --read_settings_files=off --write_settings_files=off filter_design -c filter_design
 
 
 
