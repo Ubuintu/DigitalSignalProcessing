@@ -245,8 +245,8 @@ always @ * begin
 	endcase
 end
 
-//PPS_filt_101 DUT_TX (
-PPS_filt_121 DUT_TX (
+PPS_filt_101 DUT_TX (
+//PPS_filt_121 DUT_TX (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
@@ -254,8 +254,8 @@ PPS_filt_121 DUT_TX (
 	.y(srrc_out)
 	);
 
-//PPS_filt_101 DUT_TXQ (
-PPS_filt_121 DUT_TXQ (
+PPS_filt_101 DUT_TXQ (
+//PPS_filt_121 DUT_TXQ (
 	.sys_clk(sys_clk),
 	.sam_clk_en(sam_clk_ena),
 	.reset(~KEY[3]),
@@ -380,17 +380,21 @@ upConv convUp (
 	.upConv_out(test_point_1)
 	);
 
+//halfOut_dn_I_1; I_out
+	
 always @ *
 	case(SW[17:16])
-		2'd0: DAC_out={~halfOut1[17],halfOut1[16:4]};
+//		2'd0: DAC_out={~halfOut1[17],halfOut1[16:4]};
+		2'd0: DAC_out={~halfOut_dn_I_1[17],halfOut_dn_I_1[16:4]};	//output of first halfband
 		2'd1: DAC_out=test_point_1_DAC;
-		2'd2: DAC_out={~halfOut2[17],halfOut2[16:4]};
-		2'd3: DAC_out={~out[21],out[20:8]};
+//		2'd2: DAC_out={~halfOut2[17],halfOut2[16:4]};
+		2'd2: DAC_out={~I_out[17],I_out[16:4]};	//I channel output of downconverter
+		2'd3: DAC_out=test_point_2_DAC;
 	endcase
 
 
 /*------------Channel | 25 MHz------------*/
-/*
+
 (* preserve *) reg signed [17:0] pipeline;
 (* keep *) reg signed [17:0] mult_mux;
 
@@ -399,14 +403,14 @@ always @ (posedge sys_clk)
 
 always @ * begin
 	case (SW[1:0])
-			2'd1		:	mult_mux<=18'sd8192;
-			2'd2		:	mult_mux<=18'sd16384;
-			2'd3		:	mult_mux<=18'sd32768;
-			default	:	mult_mux<=18'sd130171;	//MF_out is pipelined @ sam_clk
+			2'd1		:	mult_mux=18'sd8192;
+			2'd2		:	mult_mux=18'sd16384;
+			2'd3		:	mult_mux=18'sd32768;
+			default	:	mult_mux=18'sd130171;	//MF_out is pipelined @ sam_clk
 		endcase
 	end
 	
-(* keep *) reg signed [35:0] mult_out;
+(* keep *) wire signed [35:0] mult_out;
 
 assign mult_out=$signed(mult_mux)*$signed(pipeline);
 
@@ -435,7 +439,73 @@ always @ (posedge sys_clk)
 	
 assign test_point_2_DAC={~test_point_2[17],test_point_2[16:4]};
 	
-*/
+/*------------RCV | 25 MHz | Channel has 2 delays @ sys_clk------------*/
+/*------------downconverter------------*/
+(* keep *) wire [13:0] output_to_DAC_I, output_to_DAC_Q;
+(* keep *) wire signed [17:0] I_out, Q_out;
+
+dnConv convDn (
+	.tp2(test_point_2),
+	.sys_clk(sys_clk),
+	//currently circuit is usin SW: 4, 2-0, & 17-16
+	.SW(SW[15:14]),
+	.output_to_DAC_I(output_to_DAC_I),
+	.output_to_DAC_Q(output_to_DAC_Q),
+	.I_out(I_out),
+	.Q_out(Q_out)
+);
+
+(* preserve *) reg signed [17:0] I_pipe, Q_pipe;
+
+//still 25 MHz
+always @ (posedge sys_clk)
+	I_pipe <= $signed(I_out);
+	
+always @ (posedge sys_clk)
+	Q_pipe <= $signed(Q_out);
+
+/*------------halfband filt 1 for I------------*/
+wire signed [17:0] halfOut_dn_I_1, halfOut_dn_Q_1;
+
+halfband_2nd_sym HB_dn_I_1 (
+	.x_in(I_pipe),
+	.y(halfOut_dn_I_1),
+	.sys_clk(sys_clk),
+	.sam_clk_en(sam_clk_ena),
+	.reset(~KEY[3]),
+	.clk(clock_50),
+	.sys_clk2_en(sys_clk2_en)
+	);
+
+/*------------dn sample for I_1------------*/
+(* preserve *) reg signed [17:0] dnSam_I_1;
+
+//sample output @ sampling rate 2x slower
+always @ (posedge sys_clk)
+	if (sys_clk2_en)
+		dnSam_I_1 <= halfOut_dn_I_1;
+		
+/*------------halfband filt 2 for I------------*/
+wire signed [17:0] halfOut_dn_I_2;
+
+halfband_1st_sym HB_dn_I_2 (
+//halfband_1st_sym_copy HB1Q (
+	.x_in(dnSam_I_1),
+	.y(halfOut_dn_I_2),
+	.sys_clk(sys_clk),
+	.sam_clk_en(sam_clk_ena),
+	.reset(~KEY[3]),
+	.clk(clock_50),
+	.sys_clk2_en(sys_clk2_en)
+	);
+
+/*------------dn sample for I_2------------*/
+(* preserve *) reg signed [17:0] dnSam_I_2;
+
+//sample output @ sampling rate 2x slower
+always @ (posedge sys_clk)
+	if (sam_clk_ena)
+		dnSam_I_2 <= halfOut_dn_I_2;
 
 /*
 

@@ -28,7 +28,7 @@ Nsps=4;
 % line 1063 in MOAP
 %        MER     betaTX    betaRCV     length idx TX & RCV        OB1        OB2        OB3 b Kaiser     weight 
 %  42.017901   0.145500   0.182100        101     141106  60.037561  64.921997  64.304794   0.000000         20 
-% N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;  %Amplitude on SA might changed since coeffs are adjusted to 1s17 (2^18 before)
+N=101; betaTx=0.145500; betaRcv=0.182100; betaK=0;  %Amplitude on SA might changed since coeffs are adjusted to 1s17 (2^18 before)
 
 
 % 
@@ -37,14 +37,14 @@ Nsps=4;
 % OB1: 60.528075 | OB2: 64.660611 | OB3: 64.073321 | MER: 46.696386 | Bk: 1.3000 | Beta nominal: 0.1300 | 
 % baseband bnd frequency: 0.1400 | OB1 bnd frequency: 0.1752 | OB2 bnd frequency: 0.4200 | OB3 bnd frequency: 0.7000 |
 % weight:    2.453500000000000   1.000000000000000   1.000000000000000
-N=121; betaTx=0.13; betaRcv=0.13; betaK=1.3000;  
+% N=121; betaTx=0.13; betaRcv=0.13; betaK=1.3000;  
 
 M=N-1; span=M/Nsps; h_GSPS=rcosdesign(betaTx,span,Nsps); h_GSM=rcosdesign(betaRcv,span,Nsps); wn=kaiser(N,betaK);
 fc=1/2/Nsps; fp=(1-betaTx)*fc; fs=(1+betaTx)*fc; fb=[0 fp fc fc fs .5]*2; a=[1 1 1/sqrt(2) 1/sqrt(2) 0 0]; 
 % safety=1-2^-17; %best scaling atm 
 safety=1-2^-17; 
-% wght=[2.4535 1 20];
-wght=[2.4535 1 1]; % D4
+wght=[2.4535 1 20];
+% wght=[2.4535 1 1]; % D4
 h_PPS=firpm(M,fb,a,wght); 
 h_PPS=h_PPS.*wn.'; 
 
@@ -91,7 +91,7 @@ scale_PPS=sum(abs(h_PPS));
 % h_PPS=h_PPS.*2;   %since wc nvr happens, can scale a bit more
 % h_PPS=h_PPS/max(h_PPS)*safety;
 % h_PPS=h_PPS/wc_PPS_0*safety;
-% h_PPS=h_PPS*.97*safety;   %overflowing in D4
+h_PPS=h_PPS*.92*safety;   %overflowing in D4 | 0.5-0.9 is safe; 0.92 is the highest
 
 % Find wc scaling factor for GSM
 % theo_GSM = conv(wc_PPS_0,h_GSM);
@@ -151,7 +151,8 @@ ASK_out = [-3*a -a a 3*a];
 
 % 1s17 input is truncated to 2s16 sum_level_1 in filter
 % coeffs of PPS are less
-MF_PPS=round(ASK_out.'*h_PPS.*2^17*safety);
+% MF_PPS=round(ASK_out.'*h_PPS.*2^17*safety);
+MF_PPS=ceil(ASK_out.'*h_PPS.*2^17*safety); %D4
 MF_GSPS=round(ASK_out.'*h_GSPS.*2^17*safety);
 
 num_of_sumLvls=0; 
@@ -169,7 +170,7 @@ for i=1:N
 end
 fprintf("num of sum lvls: %d | total # of regs: %d\n",num_of_sumLvls,sum(tapsPerlvl));
 
-%% PPS coeffs
+% PPS coeffs
 clc
 [rows, cols] = size(MF_PPS);
 fprintf("initial begin\n");

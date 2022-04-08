@@ -89,7 +89,7 @@ clc
 
 % Find coeffs
 safety=(2^0)-(2^-17);  %1s17
-h_halfband_filtDes_1s17=round(h_halfband_filtDes*2^17*safety/8);
+h_halfband_filtDes_1s17=round(h_halfband_filtDes*2^17*safety);
 
 idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16
@@ -163,7 +163,7 @@ clc
 
 % Find coeffs
 safety=(2^0)-(2^-17);  %1s17
-h_halfband_filtDes_2nd_1s17=round(h_halfband_filtDes_2nd*2^17*safety/8);
+h_halfband_filtDes_2nd_1s17=round(h_halfband_filtDes_2nd*2^17*safety);
 
 idx=0;
 % halfband coeffs are 0s18 to account for sum_lvls being 2s16
