@@ -1,6 +1,6 @@
 Assembler report for GSM_101Mults
-Thu Mar 31 11:35:50 2022
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
+Tue Apr 12 00:52:21 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Mar 31 11:35:50 2022 ;
+; Assembler Status      ; Successful - Tue Apr 12 00:52:21 2022 ;
 ; Revision Name         ; GSM_101Mults                          ;
 ; Top-level Entity Name ; GSM_101Mults                          ;
 ; Family                ; Cyclone IV E                          ;
@@ -53,13 +53,13 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                        ;
-+--------------------------------------------------------------------------------------------------+
-; File Name                                                                                        ;
-+--------------------------------------------------------------------------------------------------+
-; /home/tob208/engr-ece/Documents/EE465/3Deliverable/Timing_analysis/output_files/GSM_101Mults.sof ;
-+--------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                ;
++------------------------------------------------------------------------------------------+
+; File Name                                                                                ;
++------------------------------------------------------------------------------------------+
+; /home/ubuintu/Documents/EE465/3Deliverable/Timing_analysis/output_files/GSM_101Mults.sof ;
++------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------+
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+---------------------------+
 ; Option         ; Setting                   ;
 +----------------+---------------------------+
-; JTAG usercode  ; 0x007FA28A                ;
-; Checksum       ; 0x007FA28A                ;
+; JTAG usercode  ; 0x007FB880                ;
+; Checksum       ; 0x007FB880                ;
 +----------------+---------------------------+
 
 
@@ -77,16 +77,16 @@ https://fpgasoftware.intel.com/eula.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Thu Mar 31 11:35:47 2022
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Apr 12 00:52:08 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off GSM_101Mults -c GSM_101Mults
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 646 megabytes
-    Info: Processing ended: Thu Mar 31 11:35:50 2022
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 376 megabytes
+    Info: Processing ended: Tue Apr 12 00:52:21 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:14
 
 
