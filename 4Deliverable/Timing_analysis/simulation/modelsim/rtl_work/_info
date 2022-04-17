@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim
 vclk_en
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1650229364
+Z2 !s110 1650230184
 !i10b 1
 !s100 a>jOMB>PO1S68D5LZ6aH41
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1650229364.000000
+Z7 !s108 1650230184.000000
 !s107 ./../../../clk_en.v|
 !s90 -reportprogress|300|-sv|-work|work|./../../../clk_en.v|
 !i113 1
@@ -38,17 +38,17 @@ vDUT
 R1
 R2
 !i10b 1
-!s100 W2K13X?N01c84=5FmhRD=2
+!s100 zcfUS:8cC:H[_MNBd_l020
 R3
-IHb03nGT_g6H^Nf^BYbkig0
+I50e2>dEY9>cNVAP2EzR:S1
 R4
 S1
 R0
-w1650229360
+w1650230180
 8./../../DUT.v
 F./../../DUT.v
 !i122 1
-L0 1 162
+L0 1 163
 R6
 r1
 !s85 0

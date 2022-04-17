@@ -2,7 +2,7 @@ module DUT #(
 //Will have to manually adjust line 110 if statements based on len of filt & sum lvls required
     parameter WIDTH=18,
     parameter LENGTH=15,
-    parameter DELAY=3,
+    parameter DELAY=4,
     parameter SUMLV1=8,
     parameter SUMLV2=4,
     parameter SUMLV3=2
@@ -143,6 +143,7 @@ always @ (posedge clk)
         //acc<=acc+$signed(sum_lvl_2);
 
 /*-----------Y output-----------*/
+//always @ (posedge sys_clk)
 always @ (posedge clk)
     if (sys_clk2_en)
         y<=$signed(acc);

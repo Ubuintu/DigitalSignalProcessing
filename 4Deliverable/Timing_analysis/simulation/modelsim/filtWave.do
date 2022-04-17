@@ -23,6 +23,7 @@ add wave -noupdate /filter_TB/DUT/sum_lvl_1
 #add wave -noupdate /filter_TB/DUT/mult_in
 #add wave -noupdate /filter_TB/DUT/mult_coeff
 add wave -noupdate /filter_TB/DUT/mult_out
+add wave -noupdate /filter_TB/DUT/center_coeff
 #add wave -noupdate -radix decimal /filter_TB/DUT/mult_out[34:17]
 add wave -noupdate /filter_TB/DUT/sum_lvl_2
 add wave -noupdate /filter_TB/DUT/sum_lvl_3
@@ -32,9 +33,8 @@ add wave -noupdate /filter_TB/DUT/sum_lvl_6
 add wave -noupdate /filter_TB/DUT/sum_lvl_7
 add wave -noupdate /filter_TB/DUT/pipe
 add wave -noupdate /filter_TB/DUT/acc
-add wave -noupdate /filter_TB/DUT/center_coeff
 add wave -noupdate /filter_TB/DUT/y
-add wave -noupdate -format Analog-Interpolated -height 84 -max 39137.0 -min -7450.0 /filter_TB/DUT/y
+add wave -noupdate -format Analog-Interpolated -height 84 -max 65536.0 -min -7450.0 /filter_TB/DUT/y
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {130 ns} 0}
 quietly wave cursor active 1
