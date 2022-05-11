@@ -22,7 +22,7 @@ module DUT #(
 (* preserve *) reg signed [WIDTH-1:0] acc;
 (* preserve *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
 //0s18 coeffs
-(* keep *) reg signed [WIDTH-1:0] Hsys[SUMLV1:0];
+(* keep *) reg signed [WIDTH-1:0] Hsys[SUMLV1-1:0];
 //run @ 50 MHz
 (* preserve *) reg [1:0] cnt;
 
@@ -115,7 +115,7 @@ always @ * begin
         2'd0: center_coeff=(18'sd0);
         2'd1: center_coeff=(18'sd0);
         2'd2: center_coeff=(18'sd0);
-        2'd3: center_coeff=$signed(sum_lvl_1[7]);
+        2'd3: center_coeff=$signed( { sum_lvl_1[7][WIDTH-1],sum_lvl_1[7][WIDTH-1:1] } );
     endcase
 end
 

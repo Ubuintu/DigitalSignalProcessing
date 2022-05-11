@@ -1,135 +1,137 @@
 # reading modelsim.ini
-# Loading project DUT_TA_school
-cd ~
-# reading modelsim.ini
-# reading /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini
-ls
-# Desktop
-# Documents
-# Downloads
-# google-chrome-stable_current_amd64.deb
-# intelFPGA
-# intelFPGA_lite
-# Music
-# Pictures
-# Public
-# snap
-# Templates
-# transcript
-# Videos
-cd Documents/Verilog
-do script.do
-# ** Error: extra characters after close-brace
-# Error in macro ./script.do line 1
-# extra characters after close-brace
-#     while executing
-# "proc printTxt { msg }{"
-do script.do
-# 1000ns
-# ** Error: can't read "timeUnits": no such variable
-# Error in macro ./script.do line 15
-# can't read "timeUnits": no such variable
-#     while executing
-# "echo $now $timeUnits: $msg"
-#     (procedure "printTxt" line 4)
-#     invoked from within
-# "printTxt $scriptFolder"
-#     (procedure "getScriptDirectory" line 4)
-#     invoked from within
-# "getScriptDirectory"
-#     invoked from within
-# "set SRC_DIR [getScriptDirectory]"
-time
-# wrong # args: should be "time command ?count?"
-do script.do
-# 1000ns
-# ** Error: can't read "get_simulation_time": no such variable
-# Error in macro ./script.do line 14
-# can't read "get_simulation_time": no such variable
-#     while executing
-# "echo $now $get_simulation_time: $msg"
-#     (procedure "printTxt" line 3)
-#     invoked from within
-# "printTxt $scriptFolder"
-#     (procedure "getScriptDirectory" line 4)
-#     invoked from within
-# "getScriptDirectory"
-#     invoked from within
-# "set SRC_DIR [getScriptDirectory]"
-do script.do
-# 1000ns
-# 0 : .
-# .
-# DUT_tb
-# button_conditioner
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
+# Loading project LaptopSim
+do Laptop_TimeSim.do
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Copying /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:29:19 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# ** Error: (vlog-13069) ./DUT_tb.sv(37): near "EOF": syntax error, unexpected end of source code.
-# End time: 23:29:19 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/vlog failed.
-# Executing ONERROR command at macro ./script.do line 28
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:29:19 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:29:19 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:29:19 on Apr 30,2022
-# ** Error: (vsim-3170) Could not find 'DUT_tb'.
+# vmap work work 
+# Modifying /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# ** Warning: (vlib-34) Library already exists at "cycloneive_ver".
+# ** Warning: (vlib-34) Library already exists at "altera_mf_ver".
+# ** Warning: (vlib-34) Library already exists at "altera_ver".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap cycloneive_ver 
+# Reading /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# "cycloneive_ver" maps to directory /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/verilog/cycloneive.
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap altera_mf_ver 
+# Reading /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# "altera_mf_ver" maps to directory /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/verilog/altera_mf.
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap altera_ver 
+# Reading /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# "altera_ver" maps to directory /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/verilog/altera.
+# Compile of DUT.vo was successful.
+# Compile of DUT_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.filter_TB 
+# Start time: 21:48:17 on May 10,2022
+# Loading work.filter_TB
+# ** Error: (vsim-3033) Instantiation of 'clk_en' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /filter_TB File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v Line: 53
 #         Searched libraries:
-#             /home/ubuintu/Documents/Verilog/rtl_work
+#             /home/ubuintu/intelFPGA/20.1/modelsim_ase/altera/verilog/cycloneive
+#             /home/ubuintu/intelFPGA/20.1/modelsim_ase/altera/verilog/altera_mf
+#             /home/ubuintu/intelFPGA/20.1/modelsim_ase/altera/verilog/altera
+#             /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/work
+# Loading work.DUT
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
 # Error loading design
 # Error: Error loading design
 #        Pausing macro execution
-# MACRO ./script.do PAUSED at line 31
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 0 : .
+# MACRO ./Laptop_TimeSim.do PAUSED at line 17
+do Laptop_TimeSim.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# ** Warning: (vlib-34) Library already exists at "cycloneive_ver".
+# ** Warning: (vlib-34) Library already exists at "altera_mf_ver".
+# ** Warning: (vlib-34) Library already exists at "altera_ver".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap cycloneive_ver 
+# Reading /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# "cycloneive_ver" maps to directory /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/verilog/cycloneive.
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap altera_mf_ver 
+# Reading /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# "altera_mf_ver" maps to directory /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/verilog/altera_mf.
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap altera_ver 
+# Reading /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# "altera_ver" maps to directory /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/verilog/altera.
+# Compile of DUT.vo was successful.
+# Compile of DUT_tb.v was successful.
+# Compile of clk_en.v was successful.
+# 3 compiles, 0 failed with no errors.
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.filter_TB 
+# Start time: 21:48:17 on May 10,2022
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ps  Iteration: 0  Instance: /filter_TB File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v Line: 45
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/rstdo'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 25
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_1'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 28
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/mult_in'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 29
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/mult_coeff'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 30
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_3'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 33
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_4'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 34
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_5'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 35
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/acc_out'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 36
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/det_edge'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 38
+# .main_pane.wave.interior.cs.body.pw.wf
+# 1
+do compileFilt.do
+# 3000ns
 # .
-# set TB_MOD "DUT_tb"
 # DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
+# filter_TB
+# clk_en
+# DUT
+# script is: compileFilt.do
+# DUT is: 
+# DUT is: DUT
+# TB is: 
+# TB is: DUT_tb
 # 
 # if {[file exists rtl_work]} {
 #     vdel -lib rtl_work -all
@@ -139,201 +141,103 @@ do script.do
 # vmap work rtl_work
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work rtl_work 
-# Modifying modelsim.ini
+# Modifying /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
 # 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:30:10 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
+# Start time: 22:12:26 on May 10,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
 # 
 # Top level modules:
-# 	DUT_tb
-# End time: 23:30:10 on Apr 30,2022, Elapsed time: 0:00:00
+# 	filter_TB
+# End time: 22:12:26 on May 10,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:30:10 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
+# Start time: 22:12:26 on May 10,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
 # 
 # Top level modules:
-# 	button_conditioner
-# End time: 23:30:10 on Apr 30,2022, Elapsed time: 0:00:00
+# 	DUT
+# End time: 22:12:27 on May 10,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:12:27 on May 10,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 22:12:27 on May 10,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ns -L work ${TB_MOD}
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:29:19 on Apr 30,2022
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 22:12:27 on May 10,2022, Elapsed time: 0:24:10
+# Errors: 1, Warnings: 8
+# vsim -t 1ns -L work filter_TB 
+# Start time: 22:12:27 on May 10,2022
 # Loading sv_std.std
-# Loading work.DUT_tb
-# ** Error: (vsim-3037) Missing instance name in instantiation of 'button_conditioner'.
-#    Time: 0 ns  Iteration: 0  Instance: /DUT_tb File: ./DUT_tb.sv Line: 36
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./script.do PAUSED at line 31
-cd Documents/Verilog
-# couldn't change working directory to "Documents/Verilog": no such file or directory
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 0 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:30:57 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:30:57 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:30:57 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:30:57 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:29:19 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# run ${SIM_LEN}
-add wave -position insertpoint  \
-sim:/DUT_tb/clk
-add wave -position insertpoint  \
-sim:/DUT_tb/btn
-add wave -position insertpoint  \
-sim:/DUT_tb/out
-add wave -position insertpoint  \
-sim:/DUT_tb/DUT/out \
-sim:/DUT_tb/DUT/ctr_d \
-sim:/DUT_tb/DUT/ctr_q \
-sim:/DUT_tb/DUT/sync_d \
-sim:/DUT_tb/DUT/sync_q
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/ubuintu/Documents/Verilog/waveBTNCON.do
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:33:12 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:33:12 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:33:12 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:33:12 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:33:13 on Apr 30,2022, Elapsed time: 0:03:54
-# Errors: 2, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:33:13 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 44
+# do filtWave.do
 # onerror {resume}
 # quietly WaveActivateNextPane {} 0
-# add wave -noupdate /DUT_tb/clk
-# add wave -noupdate /DUT_tb/btn
-# add wave -noupdate /DUT_tb/DUT/out
-# add wave -noupdate /DUT_tb/DUT/ctr_d
-# add wave -noupdate /DUT_tb/DUT/ctr_q
-# add wave -noupdate /DUT_tb/DUT/sync_d
-# add wave -noupdate /DUT_tb/DUT/sync_q
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+#add wave -noupdate /filter_TB/EN_CLK/cnt
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+#add wave -noupdate /filter_TB/EN_CLK/sam_clk_en
+#add wave -noupdate -radix unsigned /filter_TB/EN_CLK/cnt
+#add wave -noupdate /filter_TB/EN_CLK/sym_clk_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+#add wave -noupdate /filter_TB/DUT/x[0]
+#add wave -noupdate /filter_TB/DUT/x[2]
+#add wave -noupdate /filter_TB/DUT/x[4]
+#add wave -noupdate /filter_TB/DUT/x[6]
+#add wave -noupdate /filter_TB/DUT/x[8]
+#add wave -noupdate /filter_TB/DUT/x[10]
+#add wave -noupdate /filter_TB/DUT/x[12]
+#add wave -noupdate /filter_TB/DUT/x[14]
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+#add wave -noupdate /filter_TB/DUT/mult_in
+#add wave -noupdate /filter_TB/DUT/mult_coeff
+# add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/center_coeff
+#add wave -noupdate -radix decimal /filter_TB/DUT/mult_out[34:17]
+# add wave -noupdate /filter_TB/DUT/sum_lvl_2
+# add wave -noupdate /filter_TB/DUT/sum_lvl_3
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_3'.
+# Executing ONERROR command at macro ./filtWave.do line 29
+# add wave -noupdate /filter_TB/DUT/sum_lvl_4
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_4'.
+# Executing ONERROR command at macro ./filtWave.do line 30
+# add wave -noupdate /filter_TB/DUT/sum_lvl_5
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_5'.
+# Executing ONERROR command at macro ./filtWave.do line 31
+# add wave -noupdate /filter_TB/DUT/sum_lvl_6
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_6'.
+# Executing ONERROR command at macro ./filtWave.do line 32
+# add wave -noupdate /filter_TB/DUT/sum_lvl_7
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_7'.
+# Executing ONERROR command at macro ./filtWave.do line 33
+# add wave -noupdate /filter_TB/DUT/pipe
+# add wave -noupdate /filter_TB/DUT/acc
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 65536.0 -min -7450.0 /filter_TB/DUT/y
 # TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {115 ns} 0}
+# WaveRestoreCursors {{Cursor 1} {130 ns} 0}
 # quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 316
 # configure wave -justifyvalue left
 # configure wave -signalnamewidth 0
 # configure wave -snapdistance 10
@@ -346,1068 +250,80 @@ do script.do
 # configure wave -timeline 0
 # configure wave -timelineunits ns
 # update
-# WaveRestoreZoom {50 ns} {964 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
+# WaveRestoreZoom {0 ns} {959 ns}
+#do filtWave_halfBand_up.do
 # 
 # run ${SIM_LEN}
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/ubuintu/Documents/Verilog/waveBTNCON.do
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
 # 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
+do Laptop_TimeSim.do
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:35:11 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:35:11 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:35:12 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:35:12 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:35:12 on Apr 30,2022, Elapsed time: 0:01:59
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:35:12 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate -radix binary /DUT_tb/clk
-# add wave -noupdate -radix binary /DUT_tb/btn
-# add wave -noupdate -radix binary /DUT_tb/DUT/out
-# add wave -noupdate -radix decimal /DUT_tb/DUT/ctr_d
-# add wave -noupdate -radix decimal /DUT_tb/DUT/ctr_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_d
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_q
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {45 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ns} {230 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
-# printTxt [getScriptDirectory]
-# 0 : .
-# 0 : .
-# 
-# run ${SIM_LEN}
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/ubuintu/Documents/Verilog/waveBTNCON.do
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
+# vmap work work 
+# Modifying /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# ** Warning: (vlib-34) Library already exists at "cycloneive_ver".
+# ** Warning: (vlib-34) Library already exists at "altera_mf_ver".
+# ** Warning: (vlib-34) Library already exists at "altera_ver".
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:36:23 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# ** Error: (vlog-13069) ./DUT_tb.sv(32): near "#": syntax error, unexpected '#', expecting ';'.
-# End time: 23:36:23 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/vlog failed.
-# Executing ONERROR command at macro ./script.do line 28
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:36:23 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:36:23 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:36:24 on Apr 30,2022, Elapsed time: 0:01:12
-# Errors: 1, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:36:24 on Apr 30,2022
-# ** Error: (vsim-3170) Could not find 'DUT_tb'.
-#         Searched libraries:
-#             /home/ubuintu/Documents/Verilog/rtl_work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./script.do PAUSED at line 31
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 0 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
+# vmap cycloneive_ver 
+# Reading /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# "cycloneive_ver" maps to directory /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/verilog/cycloneive.
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:38:34 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# ** Error: (vlog-13069) ./DUT_tb.sv(32): near "#": syntax error, unexpected '#', expecting ';'.
-# End time: 23:38:34 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/vlog failed.
-# Executing ONERROR command at macro ./script.do line 28
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:38:34 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:38:35 on Apr 30,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:36:24 on Apr 30,2022
-# ** Error: (vsim-3170) Could not find 'DUT_tb'.
-#         Searched libraries:
-#             /home/ubuintu/Documents/Verilog/rtl_work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./script.do PAUSED at line 31
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 0 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
+# vmap altera_mf_ver 
+# Reading /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# "altera_mf_ver" maps to directory /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/verilog/altera_mf.
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:41:30 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:41:30 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:41:30 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:41:30 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:36:24 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate -radix binary /DUT_tb/clk
-# add wave -noupdate -radix binary /DUT_tb/btn
-# add wave -noupdate -radix decimal /DUT_tb/DUT/ctr_d
-# add wave -noupdate -radix decimal /DUT_tb/DUT/ctr_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_d
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/out
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {3 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ns} {230 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
-# printTxt [getScriptDirectory]
-# 0 : .
-# 0 : .
-# 
-# run ${SIM_LEN}
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:42:31 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:42:31 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:42:31 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:42:32 on Apr 30,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:42:32 on Apr 30,2022, Elapsed time: 0:06:08
-# Errors: 3, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:42:32 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate -radix binary /DUT_tb/clk
-# add wave -noupdate -radix binary /DUT_tb/btn
-# add wave -noupdate -radix decimal /DUT_tb/DUT/ctr_d
-# add wave -noupdate -radix decimal /DUT_tb/DUT/ctr_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_d
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/out
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {3 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ns} {230 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
-# printTxt [getScriptDirectory]
-# 0 : .
-# 0 : .
-# 
-# run ${SIM_LEN}
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/ubuintu/Documents/Verilog/waveBTNCON.do
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:43:21 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:43:21 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:43:21 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:43:21 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:43:22 on Apr 30,2022, Elapsed time: 0:00:50
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:43:22 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate -radix binary /DUT_tb/clk
-# add wave -noupdate -radix binary /DUT_tb/btn
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_d
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_d
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/out
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {52 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ns} {230 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
-# printTxt [getScriptDirectory]
-# 0 : .
-# 0 : .
-# 
-# run ${SIM_LEN}
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:45:04 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:45:04 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:45:04 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:45:04 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:45:05 on Apr 30,2022, Elapsed time: 0:01:43
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:45:05 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate -radix binary /DUT_tb/clk
-# add wave -noupdate -radix binary /DUT_tb/btn
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_d
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_d
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/out
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {52 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ns} {230 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
-# printTxt [getScriptDirectory]
-# 0 : .
-# 0 : .
-# 
-# run ${SIM_LEN}
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:48:16 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:48:16 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:48:16 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:48:16 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:48:17 on Apr 30,2022, Elapsed time: 0:03:12
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:48:17 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate -radix binary /DUT_tb/clk
-# add wave -noupdate -radix binary /DUT_tb/btn
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_d
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_d
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/out
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {52 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ns} {230 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
-# printTxt [getScriptDirectory]
-# 0 : .
-# 0 : .
-# 
-# run ${SIM_LEN}
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:48:45 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:48:45 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:48:45 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:48:45 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:48:46 on Apr 30,2022, Elapsed time: 0:00:29
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:48:46 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate -radix binary /DUT_tb/clk
-# add wave -noupdate -radix binary /DUT_tb/btn
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_d
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_d
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/out
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {52 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ns} {230 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
-# printTxt [getScriptDirectory]
-# 0 : .
-# 0 : .
-# 
-# run ${SIM_LEN}
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:52:22 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:52:22 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:52:22 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:52:22 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:52:23 on Apr 30,2022, Elapsed time: 0:03:37
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:52:23 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate -radix binary /DUT_tb/clk
-# add wave -noupdate -radix binary /DUT_tb/btn
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_d
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_d
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/out
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {52 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ns} {230 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
-# printTxt [getScriptDirectory]
-# 0 : .
-# 0 : .
-# 
-# run ${SIM_LEN}
-do script.do
-# proc printTxt { msg } {
-#     global now
-#     echo $now : $msg
-# }
-# 
-# proc getScriptDirectory {} {
-#     set dispScriptFile [file normalize [info script]]
-#     set scriptFolder [file dirname $dispScriptFile]
-#     printTxt $scriptFolder
-#     return $scriptFolder
-# }
-# 
-# set SIM_LEN 1000ns
-# 1000ns
-# set SRC_DIR [getScriptDirectory]
-# 1000 : .
-# .
-# set TB_MOD "DUT_tb"
-# DUT_tb
-# set DUT "button_conditioner"
-# button_conditioner
-# 
-# onerror {resume}
-# transcript on
-# 
-# if {[file exists rtl_work]} {
-#     vdel -lib rtl_work -all
-# }
-# 
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:52:34 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./DUT_tb.sv 
-# -- Compiling module DUT_tb
-# 
-# Top level modules:
-# 	DUT_tb
-# End time: 23:52:35 on Apr 30,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work ${SRC_DIR}/${DUT}.v
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:52:35 on Apr 30,2022
-# vlog -reportprogress 300 -sv -work work ./button_conditioner.v 
-# -- Compiling module button_conditioner
-# 
-# Top level modules:
-# 	button_conditioner
-# End time: 23:52:35 on Apr 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ns -L work ${TB_MOD}
-# End time: 23:52:35 on Apr 30,2022, Elapsed time: 0:00:12
-# Errors: 0, Warnings: 0
-# vsim -t 1ns -L work DUT_tb 
-# Start time: 23:52:35 on Apr 30,2022
-# Loading sv_std.std
-# Loading work.DUT_tb
-# Loading work.button_conditioner
-# 
-# do waveBTNCON.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate -radix binary /DUT_tb/clk
-# add wave -noupdate -radix binary /DUT_tb/btn
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_d
-# add wave -noupdate -radix unsigned /DUT_tb/DUT/ctr_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_d
-# add wave -noupdate -radix binary /DUT_tb/DUT/sync_q
-# add wave -noupdate -radix binary /DUT_tb/DUT/out
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {52 ns} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ns} {230 ns}
-# 
-# printTxt "Hello World"
-# 0 : Hello World
-# printTxt [getScriptDirectory]
-# 0 : .
-# 0 : .
-# 
-# run ${SIM_LEN}
-quit sim
-# unknown switch: sim
-# End time: 00:28:29 on May 01,2022, Elapsed time: 0:35:54
-# Errors: 0, Warnings: 0
+# vmap altera_ver 
+# Reading /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# "altera_ver" maps to directory /home/ubuintu/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/verilog/altera.
+# Compile of DUT.vo was successful.
+# Compile of DUT_tb.v was successful.
+# Compile of clk_en.v was successful.
+# 3 compiles, 0 failed with no errors.
+# End time: 22:12:42 on May 10,2022, Elapsed time: 0:00:15
+# Errors: 0, Warnings: 3
+# vsim -L cycloneive_ver -L altera_mf_ver -L altera_ver work.filter_TB 
+# Start time: 22:12:42 on May 10,2022
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ps  Iteration: 0  Instance: /filter_TB File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v Line: 44
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/rstdo'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 25
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_1'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 28
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/mult_in'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 29
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/mult_coeff'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 30
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_3'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 33
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_4'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 34
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/sum_lvl_5'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 35
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/acc_out'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 36
+# ** UI-Msg: (vish-4014) No objects found matching '/filter_TB/DUT/det_edge'.
+# Executing ONERROR command at macro ./Laptop_TimeSim.do line 38
+# .main_pane.wave.interior.cs.body.pw.wf
+# 1
+# End time: 22:14:28 on May 10,2022, Elapsed time: 0:01:46
+# Errors: 0, Warnings: 2

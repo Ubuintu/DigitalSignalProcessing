@@ -76,6 +76,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "sys_clk2_en",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
 					"strict" : false
 				},
@@ -84,27 +92,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "sam_clk_en",
-					"strict" : false
-				},
-				{
-					"name" : "x_in[16]",
-					"strict" : false
-				},
-				{
 					"name" : "x_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "x_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "x_in[15]",
-					"strict" : false
-				},
-				{
-					"name" : "x_in[5]",
 					"strict" : false
 				},
 				{
@@ -117,6 +105,10 @@
 				},
 				{
 					"name" : "x_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "x_in[5]",
 					"strict" : false
 				},
 				{
@@ -153,6 +145,14 @@
 				},
 				{
 					"name" : "x_in[14]",
+					"strict" : false
+				},
+				{
+					"name" : "x_in[15]",
+					"strict" : false
+				},
+				{
+					"name" : "x_in[16]",
 					"strict" : false
 				},
 				{
