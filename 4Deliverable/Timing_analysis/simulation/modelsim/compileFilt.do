@@ -7,7 +7,7 @@ proc getScriptDirectory {} {
     return $scriptFolder
 }
 
-set SIM_LEN 20000ns
+set SIM_LEN 3000ns
 #set SIM_LEN 9000ns
 set SRC_DIR [getScriptDirectory]
 set TB_MOD "DUT_tb"

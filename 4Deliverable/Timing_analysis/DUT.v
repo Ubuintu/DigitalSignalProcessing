@@ -121,7 +121,7 @@ end
 
 always @ (posedge clk)
 //always @ *
-    sum_lvl_2=$signed(mult_out[33:17])+center_coeff;
+    sum_lvl_2<=$signed(mult_out[33:17])+center_coeff;
 
 /*-----------Delay-----------*/
 reg signed [17:0] pipe [DELAY-1:0];
