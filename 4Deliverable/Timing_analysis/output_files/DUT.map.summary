@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue May 10 22:11:46 2022
+Analysis & Synthesis Status : Successful - Thu May 12 20:48:31 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : DUT
 Top-level Entity Name : DUT
 Family : Cyclone IV E
-Total logic elements : 596
-    Total combinational functions : 560
-    Dedicated logic registers : 416
-Total registers : 416
+Total logic elements : 615
+    Total combinational functions : 561
+    Dedicated logic registers : 435
+Total registers : 435
 Total pins : 41
 Total virtual pins : 0
-Total memory bits : 36
+Total memory bits : 72
 Embedded Multiplier 9-bit elements : 2
 Total PLLs : 0

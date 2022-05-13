@@ -34,9 +34,11 @@ add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl_3
 add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl_4
 add wave -noupdate -radix decimal /filter_TB/DUT/sum_lvl_5
 add wave -noupdate -radix decimal /filter_TB/DUT/acc_out
+add wave -noupdate -radix decimal /filter_TB/DUT/acc
+add wave -noupdate -radix decimal /filter_TB/DUT/acc2
 add wave -noupdate -radix decimal /filter_TB/DUT/y
 add wave -noupdate -radix binary /filter_TB/DUT/det_edge
-add wave -noupdate -format Analog-Interpolated -height 74 -max 50000.0 -min -10000.0 -radix decimal /filter_TB/y
+add wave -noupdate -format Analog-Interpolated -height 74 -max 32768.0 -min -10000.0 -radix decimal /filter_TB/y
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {6855967 ps} 0}
 quietly wave cursor active 1

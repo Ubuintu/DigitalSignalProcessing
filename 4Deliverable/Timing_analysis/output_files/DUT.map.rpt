@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DUT
-Tue May 10 22:11:46 2022
+Thu May 12 20:48:31 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -21,7 +21,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  13. Registers Packed Into Inferred Megafunctions
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
  15. Source assignments for Top-level Entity: |DUT
- 16. Source assignments for altshift_taps:pipe_rtl_0|shift_taps_f6m:auto_generated|altsyncram_2e81:altsyncram2
+ 16. Source assignments for altshift_taps:pipe_rtl_0|shift_taps_h6m:auto_generated|altsyncram_8e81:altsyncram2
  17. Parameter Settings for User Entity Instance: Top-level Entity: |DUT
  18. Parameter Settings for Inferred Entity Instance: altshift_taps:pipe_rtl_0
  19. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
@@ -56,18 +56,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 10 22:11:46 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu May 12 20:48:31 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DUT                                         ;
 ; Top-level Entity Name              ; DUT                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 596                                         ;
-;     Total combinational functions  ; 560                                         ;
-;     Dedicated logic registers      ; 416                                         ;
-; Total registers                    ; 416                                         ;
+; Total logic elements               ; 615                                         ;
+;     Total combinational functions  ; 561                                         ;
+;     Dedicated logic registers      ; 435                                         ;
+; Total registers                    ; 435                                         ;
 ; Total pins                         ; 41                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 36                                          ;
+; Total memory bits                  ; 72                                          ;
 ; Embedded Multiplier 9-bit elements ; 2                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -187,9 +187,9 @@ https://fpgasoftware.intel.com/eula.
 ; lpm_counter.inc                  ; yes             ; Megafunction                 ; /home/ubuintu/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_counter.inc   ;         ;
 ; lpm_compare.inc                  ; yes             ; Megafunction                 ; /home/ubuintu/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_compare.inc   ;         ;
 ; lpm_constant.inc                 ; yes             ; Megafunction                 ; /home/ubuintu/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_constant.inc  ;         ;
-; db/shift_taps_f6m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/shift_taps_f6m.tdf    ;         ;
-; db/altsyncram_2e81.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/altsyncram_2e81.tdf   ;         ;
-; db/cntr_4pf.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/cntr_4pf.tdf          ;         ;
+; db/shift_taps_h6m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/shift_taps_h6m.tdf    ;         ;
+; db/altsyncram_8e81.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/altsyncram_8e81.tdf   ;         ;
+; db/cntr_7pf.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/cntr_7pf.tdf          ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /home/ubuintu/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf      ;         ;
 ; aglobal201.inc                   ; yes             ; Megafunction                 ; /home/ubuintu/intelFPGA_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc    ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /home/ubuintu/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc   ;         ;
@@ -200,37 +200,37 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 596         ;
-;                                             ;             ;
-; Total combinational functions               ; 560         ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 73          ;
-;     -- 3 input functions                    ; 120         ;
-;     -- <=2 input functions                  ; 367         ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 458         ;
-;     -- arithmetic mode                      ; 102         ;
-;                                             ;             ;
-; Total registers                             ; 416         ;
-;     -- Dedicated logic registers            ; 416         ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 41          ;
-; Total memory bits                           ; 36          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 2           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; x[14][14]~0 ;
-; Maximum fan-out                             ; 359         ;
-; Total fan-out                               ; 2691        ;
-; Average fan-out                             ; 2.50        ;
-+---------------------------------------------+-------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 615           ;
+;                                             ;               ;
+; Total combinational functions               ; 561           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 73            ;
+;     -- 3 input functions                    ; 120           ;
+;     -- <=2 input functions                  ; 368           ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 458           ;
+;     -- arithmetic mode                      ; 103           ;
+;                                             ;               ;
+; Total registers                             ; 435           ;
+;     -- Dedicated logic registers            ; 435           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 41            ;
+; Total memory bits                           ; 72            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 2             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; sys_clk~input ;
+; Maximum fan-out                             ; 377           ;
+; Total fan-out                               ; 2767          ;
+; Average fan-out                             ; 2.52          ;
++---------------------------------------------+---------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -238,11 +238,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name     ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; |DUT                                   ; 560 (559)           ; 416 (415)                 ; 36          ; 2            ; 0       ; 1         ; 41   ; 0            ; |DUT                                                                                    ; DUT             ; work         ;
-;    |altshift_taps:pipe_rtl_0|          ; 1 (0)               ; 1 (0)                     ; 36          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DUT|altshift_taps:pipe_rtl_0                                                           ; altshift_taps   ; work         ;
-;       |shift_taps_f6m:auto_generated|  ; 1 (0)               ; 1 (0)                     ; 36          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DUT|altshift_taps:pipe_rtl_0|shift_taps_f6m:auto_generated                             ; shift_taps_f6m  ; work         ;
-;          |altsyncram_2e81:altsyncram2| ; 0 (0)               ; 0 (0)                     ; 36          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DUT|altshift_taps:pipe_rtl_0|shift_taps_f6m:auto_generated|altsyncram_2e81:altsyncram2 ; altsyncram_2e81 ; work         ;
-;          |cntr_4pf:cntr1|              ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DUT|altshift_taps:pipe_rtl_0|shift_taps_f6m:auto_generated|cntr_4pf:cntr1              ; cntr_4pf        ; work         ;
+; |DUT                                   ; 561 (559)           ; 435 (433)                 ; 72          ; 2            ; 0       ; 1         ; 41   ; 0            ; |DUT                                                                                    ; DUT             ; work         ;
+;    |altshift_taps:pipe_rtl_0|          ; 2 (0)               ; 2 (0)                     ; 72          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DUT|altshift_taps:pipe_rtl_0                                                           ; altshift_taps   ; work         ;
+;       |shift_taps_h6m:auto_generated|  ; 2 (0)               ; 2 (0)                     ; 72          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DUT|altshift_taps:pipe_rtl_0|shift_taps_h6m:auto_generated                             ; shift_taps_h6m  ; work         ;
+;          |altsyncram_8e81:altsyncram2| ; 0 (0)               ; 0 (0)                     ; 72          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DUT|altshift_taps:pipe_rtl_0|shift_taps_h6m:auto_generated|altsyncram_8e81:altsyncram2 ; altsyncram_8e81 ; work         ;
+;          |cntr_7pf:cntr1|              ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DUT|altshift_taps:pipe_rtl_0|shift_taps_h6m:auto_generated|cntr_7pf:cntr1              ; cntr_7pf        ; work         ;
 ;    |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |DUT|lpm_mult:Mult0                                                                     ; lpm_mult        ; work         ;
 ;       |mult_c6t:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |DUT|lpm_mult:Mult0|mult_c6t:auto_generated                                             ; mult_c6t        ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
@@ -254,7 +254,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 ; Name                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
 +-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; altshift_taps:pipe_rtl_0|shift_taps_f6m:auto_generated|altsyncram_2e81:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 2            ; 18           ; 2            ; 18           ; 36   ; None ;
+; altshift_taps:pipe_rtl_0|shift_taps_h6m:auto_generated|altsyncram_8e81:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 4            ; 18           ; 4            ; 18           ; 72   ; None ;
 +-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 
 
@@ -281,6 +281,24 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 ; Register Name                              ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
 +--------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; acc2[0]                                    ; yes                                                              ; yes                                        ;
+; acc2[1]                                    ; yes                                                              ; yes                                        ;
+; acc2[2]                                    ; yes                                                              ; yes                                        ;
+; acc2[3]                                    ; yes                                                              ; yes                                        ;
+; acc2[4]                                    ; yes                                                              ; yes                                        ;
+; acc2[5]                                    ; yes                                                              ; yes                                        ;
+; acc2[6]                                    ; yes                                                              ; yes                                        ;
+; acc2[7]                                    ; yes                                                              ; yes                                        ;
+; acc2[8]                                    ; yes                                                              ; yes                                        ;
+; acc2[9]                                    ; yes                                                              ; yes                                        ;
+; acc2[10]                                   ; yes                                                              ; yes                                        ;
+; acc2[11]                                   ; yes                                                              ; yes                                        ;
+; acc2[12]                                   ; yes                                                              ; yes                                        ;
+; acc2[13]                                   ; yes                                                              ; yes                                        ;
+; acc2[14]                                   ; yes                                                              ; yes                                        ;
+; acc2[15]                                   ; yes                                                              ; yes                                        ;
+; acc2[16]                                   ; yes                                                              ; yes                                        ;
+; acc2[17]                                   ; yes                                                              ; yes                                        ;
 ; acc[0]                                     ; yes                                                              ; yes                                        ;
 ; acc[1]                                     ; yes                                                              ; yes                                        ;
 ; acc[2]                                     ; yes                                                              ; yes                                        ;
@@ -678,7 +696,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; x[11][17]                                  ; yes                                                              ; yes                                        ;
 ; x[1][17]                                   ; yes                                                              ; yes                                        ;
 ; x[13][17]                                  ; yes                                                              ; yes                                        ;
-; Total number of protected registers is 397 ;                                                                  ;                                            ;
+; Total number of protected registers is 415 ;                                                                  ;                                            ;
 +--------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 
 
@@ -687,12 +705,12 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 416   ;
+; Total registers                              ; 435   ;
 ; Number of registers using Synchronous Clear  ; 72    ;
 ; Number of registers using Synchronous Load   ; 18    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 377   ;
+; Number of registers using Clock Enable       ; 395   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -713,7 +731,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +-------------------+--------------+------------+
 ; Register Name     ; Megafunction ; Type       ;
 +-------------------+--------------+------------+
-; pipe[0..3][0..17] ; pipe_rtl_0   ; SHIFT_TAPS ;
+; pipe[0..5][0..17] ; pipe_rtl_0   ; SHIFT_TAPS ;
 +-------------------+--------------+------------+
 
 
@@ -732,25 +750,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +------------------------------+-------+------+------------------+
 ; Assignment                   ; Value ; From ; To               ;
 +------------------------------+-------+------+------------------+
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][15] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; cnt[0]           ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][14] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][13] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][12] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][11] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][10] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][9]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][8]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][7]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][6]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][5]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][4]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][3]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][2]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][1]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][17] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][16] ;
-; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][15] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][14] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][13] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][12] ;
@@ -766,7 +766,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][2]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][1]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][0]  ;
-; PRESERVE_REGISTER            ; on    ; -    ; x[0][0]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][17] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][16] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][15] ;
@@ -784,6 +783,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][3]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][2]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; x[0][0]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[4][0]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][17] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[2][16] ;
@@ -837,7 +837,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[3]     ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[2]     ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[1]     ;
-; PRESERVE_REGISTER            ; on    ; -    ; x[1][0]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; acc[17]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; acc[16]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; acc[15]          ;
@@ -855,9 +854,46 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; PRESERVE_REGISTER            ; on    ; -    ; acc[3]           ;
 ; PRESERVE_REGISTER            ; on    ; -    ; acc[2]           ;
 ; PRESERVE_REGISTER            ; on    ; -    ; acc[1]           ;
+; PRESERVE_REGISTER            ; on    ; -    ; x[1][0]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[17]         ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[16]         ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[15]         ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[14]         ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[13]         ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[12]         ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[11]         ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[10]         ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[9]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[8]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[7]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[6]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[5]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[4]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[3]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[2]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[1]          ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[0][0]  ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_2[0]     ;
 ; PRESERVE_REGISTER            ; on    ; -    ; acc[0]           ;
+; PRESERVE_REGISTER            ; on    ; -    ; acc2[0]          ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][15] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][16] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[6][17] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][1]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][2]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][3]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][4]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][5]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][6]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][7]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][8]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][9]  ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][10] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][11] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][12] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][13] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][14] ;
+; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][15] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][16] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; sum_lvl_1[7][17] ;
 ; PRESERVE_REGISTER            ; on    ; -    ; x[1][1]          ;
@@ -1311,7 +1347,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 
 
 +-----------------------------------------------------------------------------------------------------------+
-; Source assignments for altshift_taps:pipe_rtl_0|shift_taps_f6m:auto_generated|altsyncram_2e81:altsyncram2 ;
+; Source assignments for altshift_taps:pipe_rtl_0|shift_taps_h6m:auto_generated|altsyncram_8e81:altsyncram2 ;
 +---------------------------------+--------------------+------+---------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                          ;
 +---------------------------------+--------------------+------+---------------------------------------------+
@@ -1326,7 +1362,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------+-------+--------------------------------------------+
 ; WIDTH          ; 18    ; Signed Integer                             ;
 ; LENGTH         ; 15    ; Signed Integer                             ;
-; DELAY          ; 4     ; Signed Integer                             ;
+; DELAY          ; 6     ; Signed Integer                             ;
 ; SUMLV1         ; 8     ; Signed Integer                             ;
 ; SUMLV2         ; 4     ; Signed Integer                             ;
 ; SUMLV3         ; 2     ; Signed Integer                             ;
@@ -1341,10 +1377,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+----------------+-----------------------------------------+
 ; WIDTH_BYTEENA  ; 1              ; Untyped                                 ;
 ; NUMBER_OF_TAPS ; 1              ; Untyped                                 ;
-; TAP_DISTANCE   ; 4              ; Untyped                                 ;
+; TAP_DISTANCE   ; 6              ; Untyped                                 ;
 ; WIDTH          ; 18             ; Untyped                                 ;
 ; POWER_UP_STATE ; CLEARED        ; Untyped                                 ;
-; CBXI_PARAMETER ; shift_taps_f6m ; Untyped                                 ;
+; CBXI_PARAMETER ; shift_taps_h6m ; Untyped                                 ;
 +----------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1392,7 +1428,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances ; 1                        ;
 ; Entity Instance            ; altshift_taps:pipe_rtl_0 ;
 ;     -- NUMBER_OF_TAPS      ; 1                        ;
-;     -- TAP_DISTANCE        ; 4                        ;
+;     -- TAP_DISTANCE        ; 6                        ;
 ;     -- WIDTH               ; 18                       ;
 +----------------------------+--------------------------+
 
@@ -1423,13 +1459,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 41                          ;
-; cycloneiii_ff         ; 416                         ;
-;     ENA               ; 305                         ;
+; cycloneiii_ff         ; 435                         ;
+;     ENA               ; 323                         ;
 ;     ENA SCLR          ; 72                          ;
 ;     SLD               ; 18                          ;
-;     plain             ; 21                          ;
-; cycloneiii_lcell_comb ; 560                         ;
-;     arith             ; 102                         ;
+;     plain             ; 22                          ;
+; cycloneiii_lcell_comb ; 561                         ;
+;     arith             ; 103                         ;
+;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 102                         ;
 ;     normal            ; 458                         ;
 ;         0 data inputs ; 72                          ;
@@ -1442,7 +1479,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ram_block  ; 18                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.70                        ;
-; Average LUT depth     ; 1.56                        ;
+; Average LUT depth     ; 1.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1461,7 +1498,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue May 10 22:11:35 2022
+    Info: Processing started: Thu May 12 20:48:19 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DUT -c DUT
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1471,21 +1508,21 @@ Info (12127): Elaborating entity "DUT" for the top level hierarchy
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276034): Inferred altshift_taps megafunction from the following design logic: "pipe_rtl_0"
         Info (286033): Parameter NUMBER_OF_TAPS set to 1
-        Info (286033): Parameter TAP_DISTANCE set to 4
+        Info (286033): Parameter TAP_DISTANCE set to 6
         Info (286033): Parameter WIDTH set to 18
 Info (278001): Inferred 1 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 109
 Info (12130): Elaborated megafunction instantiation "altshift_taps:pipe_rtl_0"
 Info (12133): Instantiated megafunction "altshift_taps:pipe_rtl_0" with the following parameter:
     Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
-    Info (12134): Parameter "TAP_DISTANCE" = "4"
+    Info (12134): Parameter "TAP_DISTANCE" = "6"
     Info (12134): Parameter "WIDTH" = "18"
-Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_f6m.tdf
-    Info (12023): Found entity 1: shift_taps_f6m File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/shift_taps_f6m.tdf Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2e81.tdf
-    Info (12023): Found entity 1: altsyncram_2e81 File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/altsyncram_2e81.tdf Line: 28
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_4pf.tdf
-    Info (12023): Found entity 1: cntr_4pf File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/cntr_4pf.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_h6m.tdf
+    Info (12023): Found entity 1: shift_taps_h6m File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/shift_taps_h6m.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_8e81.tdf
+    Info (12023): Found entity 1: altsyncram_8e81 File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/altsyncram_8e81.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_7pf.tdf
+    Info (12023): Found entity 1: cntr_7pf File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/db/cntr_7pf.tdf Line: 26
 Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 109
 Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 109
     Info (12134): Parameter "LPM_WIDTHA" = "18"
@@ -1595,16 +1632,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sam_clk_en" File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 11
     Warning (15610): No output dependent on input pin "x_in[0]" File: /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/DUT.v Line: 12
-Info (21057): Implemented 675 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 694 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 18 output pins
-    Info (21061): Implemented 614 logic cells
+    Info (21061): Implemented 633 logic cells
     Info (21064): Implemented 18 RAM segments
     Info (21062): Implemented 2 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 392 megabytes
-    Info: Processing ended: Tue May 10 22:11:46 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Processing ended: Thu May 12 20:48:31 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:26
 
 
