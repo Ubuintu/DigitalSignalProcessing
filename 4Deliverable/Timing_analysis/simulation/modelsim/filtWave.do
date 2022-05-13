@@ -33,6 +33,7 @@ add wave -noupdate /filter_TB/DUT/sum_lvl_6
 add wave -noupdate /filter_TB/DUT/sum_lvl_7
 add wave -noupdate /filter_TB/DUT/pipe
 add wave -noupdate /filter_TB/DUT/acc
+add wave -noupdate /filter_TB/DUT/acc2
 add wave -noupdate /filter_TB/DUT/y
 add wave -noupdate -format Analog-Interpolated -height 84 -max 65536.0 -min -7450.0 /filter_TB/DUT/y
 TreeUpdate [SetDefaultTree]

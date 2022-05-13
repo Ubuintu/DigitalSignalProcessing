@@ -2,7 +2,7 @@ module DUT #(
 //Will have to manually adjust line 110 if statements based on len of filt & sum lvls required
     parameter WIDTH=18,
     parameter LENGTH=15,
-    parameter DELAY=4,
+    parameter DELAY=6,
     parameter SUMLV1=8,
     parameter SUMLV2=4,
     parameter SUMLV3=2
@@ -19,7 +19,7 @@ module DUT #(
 (* preserve *) reg signed [WIDTH-1:0] mult_in;
 (* preserve *) reg signed [WIDTH-1:0] mult_coeff;
 (* preserve *) reg signed [WIDTH-1:0] center_coeff;
-(* preserve *) reg signed [WIDTH-1:0] acc;
+(* preserve *) reg signed [WIDTH-1:0] acc, acc2;
 (* preserve *) reg signed [WIDTH-1:0] x[(LENGTH-1):0];
 //0s18 coeffs
 (* keep *) reg signed [WIDTH-1:0] Hsys[SUMLV1-1:0];
@@ -142,11 +142,17 @@ always @ (posedge clk)
         acc<=acc+$signed(pipe[DELAY-1]);
         //acc<=acc+$signed(sum_lvl_2);
 
-/*-----------Y output-----------*/
+/*-----------Accumulator2-----------*/
 //always @ (posedge sys_clk)
 always @ (posedge clk)
     if (sys_clk2_en)
-        y<=$signed(acc);
+        acc2<=$signed(acc);
+
+/*-----------Y output-----------*/
+always @ (posedge sys_clk)
+//always @ (posedge clk)
+    if (sys_clk2_en)
+        y<=$signed(acc2);
 
 /*-----------Impulse response of filter-----------*/
 initial begin
