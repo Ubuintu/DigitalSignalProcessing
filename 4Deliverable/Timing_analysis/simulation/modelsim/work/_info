@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim
 vclk_en
-Z1 !s110 1652410528
+Z1 !s110 1658040963
 !i10b 1
 !s100 zH<ANkPo0zCN0NmHa@5SA1
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ R0
 w1649746285
 8/home/ubuintu/Documents/EE465/4Deliverable/clk_en.v
 F/home/ubuintu/Documents/EE465/4Deliverable/clk_en.v
-!i122 2
+!i122 8
 L0 1 42
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1652410528.000000
+Z5 !s108 1658040963.000000
 !s107 /home/ubuintu/Documents/EE465/4Deliverable/clk_en.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/ubuintu/Documents/EE465/4Deliverable/clk_en.v|
 !i113 1
@@ -43,7 +43,7 @@ R0
 Z8 w1652410135
 Z9 8/home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo
 Z10 F/home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT.vo
-!i122 0
+!i122 6
 L0 32 20649
 R4
 r1
@@ -67,7 +67,7 @@ R0
 w1652241197
 8/home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v
 F/home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/DUT_tb.v
-!i122 1
+!i122 7
 L0 2 70
 R4
 r1
@@ -91,7 +91,7 @@ R0
 R8
 R9
 R10
-!i122 0
+!i122 6
 L0 20682 34
 R4
 r1

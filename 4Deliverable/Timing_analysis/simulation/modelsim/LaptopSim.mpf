@@ -96,7 +96,7 @@ twentynm_hssi_ver = $MODEL_TECH/../altera/verilog/twentynm_hssi
 twentynm_hip_ver = $MODEL_TECH/../altera/verilog/twentynm_hip
 cyclone10lp_ver = $MODEL_TECH/../altera/verilog/cyclone10lp
 
-work = work
+work = rtl_work
 [vcom]
 ; VHDL93 variable selects language version as the default. 
 ; Default is VHDL-2002.
@@ -220,7 +220,7 @@ Resolution = ps
 UserTimeUnit = default
 
 ; Default run length
-RunLength = 0 ps
+RunLength = 0 ns
 
 ; Maximum iterations that can be run without advancing simulation time
 IterationLimit = 5000
