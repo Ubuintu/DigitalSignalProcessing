@@ -447,3 +447,109 @@ do compileFilt.do
 # 
 # run ${SIM_LEN}
 # 
+do compileFilt.do
+# 3000ns
+# .
+# DUT_tb
+# filter_TB
+# clk_en
+# DUT
+# script is: compileFilt.do
+# DUT is: 
+# DUT is: DUT
+# TB is: 
+# TB is: DUT_tb
+# 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# 
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/ubuintu/Documents/EE465/4Deliverable/Timing_analysis/simulation/modelsim/LaptopSim.mpf
+# 
+# vlog -sv -work work ${SRC_DIR}/${TB_MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:58:12 on Jul 23,2022
+# vlog -reportprogress 300 -sv -work work ./DUT_tb.v 
+# -- Compiling module filter_TB
+# 
+# Top level modules:
+# 	filter_TB
+# End time: 21:58:12 on Jul 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../${MOD}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:58:12 on Jul 23,2022
+# vlog -reportprogress 300 -sv -work work ./../../DUT.v 
+# -- Compiling module DUT
+# 
+# Top level modules:
+# 	DUT
+# End time: 21:58:12 on Jul 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work ${SRC_DIR}/../../../${EN}.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:58:12 on Jul 23,2022
+# vlog -reportprogress 300 -sv -work work ./../../../clk_en.v 
+# -- Compiling module clk_en
+# 
+# Top level modules:
+# 	clk_en
+# End time: 21:58:12 on Jul 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ns -L work ${TB_Nam}
+# End time: 21:58:13 on Jul 23,2022, Elapsed time: 0:08:35
+# Errors: 0, Warnings: 2
+# vsim -t 1ns -L work filter_TB 
+# Start time: 21:58:13 on Jul 23,2022
+# Loading sv_std.std
+# Loading work.filter_TB
+# Loading work.clk_en
+# Loading work.DUT
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /filter_TB File: ./DUT_tb.v Line: 44
+# do filtWave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /filter_TB/EN_CLK/clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk
+# add wave -noupdate /filter_TB/EN_CLK/sys_clk2_en
+# add wave -noupdate /filter_TB/rst
+# add wave -noupdate /filter_TB/DUT/x_in
+# add wave -noupdate /filter_TB/DUT/x
+# add wave -noupdate -radix unsigned /filter_TB/DUT/cnt
+# add wave -noupdate /filter_TB/DUT/sum_lvl_1
+# add wave -noupdate /filter_TB/DUT/mult_out
+# add wave -noupdate /filter_TB/DUT/center_coeff
+# add wave -noupdate /filter_TB/DUT/sum_lvl_2
+# add wave -noupdate /filter_TB/DUT/pipe
+# add wave -noupdate /filter_TB/DUT/acc
+# add wave -noupdate /filter_TB/DUT/acc2
+# add wave -noupdate /filter_TB/DUT/y
+# add wave -noupdate -format Analog-Interpolated -height 84 -max 32768.0 -min -7450.0 /filter_TB/DUT/y
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {1965 ns} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 237
+# configure wave -valuecolwidth 246
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {306 ns} {2386 ns}
+#do filtWave_halfBand_up.do
+# 
+# run ${SIM_LEN}
+# 

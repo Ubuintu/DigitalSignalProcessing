@@ -106,8 +106,8 @@ integer i;
 
     always @ (posedge clk)  
         for (i=0; i<DELAY; i=i+1)   
-                                  if (i==0)  pipe[i] <= sum_lvl_2;
-                                  else       pipe[i] <= pipe[i-1];
+            if (i==0)  pipe[i] <= sum_lvl_2;
+            else       pipe[i] <= pipe[i-1];
 
 /*-----------Accumulator-----------*/
     always @ (posedge clk)
