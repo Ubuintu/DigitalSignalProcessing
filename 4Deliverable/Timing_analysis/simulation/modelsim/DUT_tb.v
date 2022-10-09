@@ -68,4 +68,10 @@ DUT DUT (
     .y(y)
 );
 
+integer i;
+//initial begin
+//    for (i=0; i<36; i=i+1)
+//        DUT.mult_out[i]=0;
+//end
+
 endmodule

@@ -28,22 +28,22 @@ module DUT #(
 integer i;
 
 /*-----------comment out for Quartus-----------*/
-    initial begin
-         for (i=0; i<SUMLV1; i=i+1)
-            sum_lvl_1[i] = 18'sd0;
-
-         for (i=0; i<LENGTH; i=i+1)
-            x[i]         = 18'sd0;
-
-         mult_out     = 36'sd0;
-         mult_in      = 18'sd0;
-         mult_coeff   = 18'sd0;
-         y            = 18'sd0;
-         sum_lvl_2    = 18'sd0;
-         center_coeff = 18'sd0;
-         acc          = 18'sd0;
-         cnt          = 2'd3;
-    end
+//    initial begin
+//         for (i=0; i<SUMLV1; i=i+1)
+//            sum_lvl_1[i] = 18'sd0;
+//
+//         for (i=0; i<LENGTH; i=i+1)
+//            x[i]         = 18'sd0;
+//
+//         mult_out     = 36'sd0;
+//         mult_in      = 18'sd0;
+//         mult_coeff   = 18'sd0;
+//         y            = 18'sd0;
+//         sum_lvl_2    = 18'sd0;
+//         center_coeff = 18'sd0;
+//         acc          = 18'sd0;
+//         cnt          = 2'd3;
+//    end
 
 //cnt
     always @ (posedge clk)

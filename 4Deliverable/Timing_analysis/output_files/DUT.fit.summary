@@ -1,11 +1,11 @@
-Fitter Status : Successful - Thu May 12 20:48:47 2022
+Fitter Status : Successful - Tue Jul 26 22:31:34 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : DUT
 Top-level Entity Name : DUT
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 614 / 114,480 ( < 1 % )
+Total logic elements : 612 / 114,480 ( < 1 % )
     Total combinational functions : 561 / 114,480 ( < 1 % )
     Dedicated logic registers : 435 / 114,480 ( < 1 % )
 Total registers : 435

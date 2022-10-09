@@ -5,6 +5,7 @@ module clk_en (
 
 (* noprune *) reg [3:0] cnt;
 
+//Needs to be uncommented for Time & Func sim
 initial begin
     sys_clk = 1'b0;
     sam_clk_en = 1'b0;
